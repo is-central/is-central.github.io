@@ -12,11 +12,24 @@ Welcome to the IS5 section! Here you'll find comprehensive guides and resources 
 <div class="guide-button-container">
   <a href="/is5-sarkaz/yato-soul-escort-guide/" class="guide-button">
     <div class="button-image">
-      <img src="/yato.webp" alt="Yato" class="yato-avatar" />
+      <img src="/guides/is5-sarkaz/yato-soul-escort-guide/yato-avatar.webp" alt="Yato" class="operator-avatar" />
     </div>
     <div class="button-content">
       <span class="button-title">Yato Soul Escort Guide for DLC2</span>
       <span class="button-subtitle">Original author: Sansheng ycyx | Translator: Mei</span>
+    </div>
+    <div class="button-arrow">→</div>
+  </a>
+</div>
+
+<div class="guide-button-container">
+  <a href="/is5-sarkaz/sniper-med-rosmontis/" class="guide-button">
+    <div class="button-image">
+      <img src="/guides/is5-sarkaz/sniper-med-rosmontis/rosmontis-avatar.webp" alt="Rosmontis" class="operator-avatar" />
+    </div>
+    <div class="button-content">
+      <span class="button-title">Sniper/Medic Rosmontis Guide</span>
+      <span class="button-subtitle">Original author: Bait</span>
     </div>
     <div class="button-arrow">→</div>
   </a>
