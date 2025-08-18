@@ -1,0 +1,36 @@
+/* --- General Design Tweaks --- */
+:root {
+  /* Makes the main content area slightly wider */
+  --sl-content-width: 80rem;
+}
+
+/* --- Center the Homepage Hero Content --- */
+.hero .stack {
+  align-items: center;
+  text-align: center;
+}
+
+/* --- Banner Card Hover Effects --- */
+.sl-pl-8 .astro-card {
+  /* Removes the default padding to let the image fill the card */
+  padding: 0;
+  overflow: hidden; /* Ensures the image respects the card's rounded corners */
+}
+
+.sl-pl-8 .astro-card a {
+  display: block;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.sl-pl-8 .astro-card a:hover {
+  transform: scale(1.03); /* Slightly enlarges the banner */
+  box-shadow: 0 0 20px rgba(0, 150, 255, 0.8); /* Adds a blue glow */
+}
+
+/* --- Mobile-Friendly Banner Grid --- */
+@media (max-width: 50em) {
+  /* Stacks the banners in a single column on smaller screens */
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}

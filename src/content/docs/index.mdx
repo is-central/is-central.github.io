@@ -1,45 +1,52 @@
 ---
 title: Welcome to IS Central
-description: The central hub for guides and resources for Arknights Integrated Strategies.
 template: splash
 hero:
-  tagline: A curated collection of high-quality guides for Arknights Integrated Strategies, created by the community, for the community.
-  image:
-    # You can replace this with a cool Arknights IS image!
-    # Place your image in `src/assets/` and update the path here.
-    file: ../../assets/houston.webp
+  tagline: Your central hub for guides and resources for Arknights Integrated Strategies. Curated by the community, for the community.
   actions:
     - text: Join the IS Central Discord
       link: https://discord.gg/fqRBzQWVfK
       icon: external
       variant: primary
-    - text: View All Guides
+    - text: Read the Introduction
       link: /introduction/
       icon: right-arrow
 ---
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
+{/* Import your banner images here */}
+import is2Banner from '../../assets/CN_Phantom_&_Crimson_Solitaire_banner.png';
+import is3Banner from '../../assets/CN_Mizuki_&_Caerula_Arbor_banner.png';
+import is4Banner from '../../assets/CN_Expeditioners_Joklumarkar_banner.png';
+import is5Banner from '../../assets/CN_Sarkazs_Furnaceside_Fables_banner.png';
+import is6Banner from '../../assets/CN_Suis_Garden_of_Grotesqueries_banner.png';
+
 ## Select an Integrated Strategies Theme
 
-<CardGrid stagger>
-	<Card title="Phantom & Crimson Solitaire (IS2)" icon="puzzle-piece">
-		Navigate the secrets of the Crimson Troupe and challenge the Phantom in his castle.
-		<a href="/is2-phantom/overview/">Explore IS2 Guides →</a>
+<CardGrid>
+	<Card title="" icon="puzzle-piece">
+		<a href="/is2-phantom/overview/">
+			<img src={is2Banner.src} alt="Phantom & Crimson Solitaire Banner" />
+		</a>
 	</Card>
-	<Card title="Mizuki & Caerula Arbor (IS3)" icon="waves">
-		Dive into the abyssal depths under Gran Faro and uncover the mysteries of the sea.
-		<a href="/is3-mizuki/overview/">Explore IS3 Guides →</a>
+	<Card title="" icon="waves">
+		<a href="/is3-mizuki/overview/">
+			<img src={is3Banner.src} alt="Mizuki & Caerula Arbor Banner" />
+		</a>
 	</Card>
-	<Card title="Expeditioner's Joklumarkar (IS4)" icon="compass">
-		Brave the frozen, unforgiving wastes of Sami and survive the trials of the snowfields.
-		<a href="/is4-expeditioners/overview/">Explore IS4 Guides →</a>
+	<Card title="" icon="compass">
+		<a href="/is4-expeditioners/overview/">
+			<img src={is4Banner.src} alt="Expeditioner's Joklumarkar Banner" />
+		</a>
 	</Card>
-    <Card title="Sarkaz's Furnaceside Fables (IS5)" icon="flame">
-		Witness the grim tales forged in the furnaces of the Sarkaz and their endless conflict.
-		<a href="/is5-sarkaz/overview/">Explore IS5 Guides →</a>
+    <Card title="" icon="flame">
+		<a href="/is5-sarkaz/overview/">
+			<img src={is5Banner.src} alt="Sarkaz's Furnaceside Fables Banner" />
+		</a>
 	</Card>
-    <Card title="Sui's Garden of Grotesqueries (IS6)" icon="potted-plant">
-		Step into a bizarre garden where Sui's siblings present their peculiar challenges.
-		<a href="/is6-sui/overview/">Explore IS6 Guides →</a>
+    <Card title="" icon="potted-plant">
+		<a href="/is6-sui/overview/">
+			<img src={is6Banner.src} alt="Sui's Garden of Grotesqueries Banner" />
+		</a>
 	</Card>
 </CardGrid>

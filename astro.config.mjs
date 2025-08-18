@@ -18,6 +18,7 @@ export default defineConfig({
 			href: 'https://discord.gg/fqRBzQWVfK',
 		},
 	  ],
+	  customCss: ['/src/styles/custom.css'],
       sidebar: [
         {
           label: 'Introduction',
