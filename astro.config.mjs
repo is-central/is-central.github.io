@@ -9,11 +9,15 @@ export default defineConfig({
     starlight({
       title: 'IS Central',
       logo: {
-        src: 'src/assets/logo.svg',
+        src: '/src/assets/logo.svg',
       },
-      social: {
-        discord: 'https://discord.gg/fqRBzQWVfK',
-      },
+      social: [
+		{
+			icon: 'discord',
+			label: 'Discord',
+			href: 'https://discord.gg/fqRBzQWVfK',
+		},
+	  ],
       sidebar: [
         {
           label: 'Introduction',
