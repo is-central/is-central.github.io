@@ -4,6 +4,7 @@ import starlight from '@astrojs/starlight';
 
 export default defineConfig({
   site: 'https://is-central.github.io',
+  base: 'is-central.github.io',
 
   integrations: [
     starlight({
