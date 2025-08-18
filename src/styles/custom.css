@@ -1,9 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap');
+
+:root {
+  --sl-font: 'Inter', sans-serif;
+  --sl-font-headings: 'Poppins', sans-serif;
+}
+
 /* --- Center the Homepage Hero --- */
 .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding-block: 1.5rem !important; 
+    margin-top: 0 !important; 
 }
 
 .hero .stack,
@@ -22,6 +33,14 @@
 }
 
 /* --- Banner Card Hover Effects --- */
+
+/* Lighter card background compared to site background */
+.card-grid .card {
+  background-color: #2a2a2a; 
+  border: 1px solid #3a3a3a; 
+  border-radius: 12px;       
+  padding: 1rem;
+}
 
 /* Prepare the card for a smooth animation */
 .card-grid .card a {
