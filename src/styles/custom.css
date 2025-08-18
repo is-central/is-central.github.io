@@ -1,27 +1,31 @@
-/* --- Center the Homepage Hero & "Select Theme" Heading --- */
+/* --- Center the Homepage Hero --- */
 .hero .stack,
-.splash-page h2 {
-    /* Aligns the text and buttons to the center */
+.hero .copy,
+.hero .actions {
     text-align: center;
-    /* Aligns the items themselves in the center of their container */
     align-items: center;
     margin-left: auto;
     margin-right: auto;
 }
 
+/* Center the "Select Theme" heading */
+.sl-heading-wrapper {
+    text-align: center;
+    justify-content: center;
+}
+
 /* --- Banner Card Hover Effects --- */
 
-/* First, prepare the card for a smooth animation */
-.card-grid .astro-card a {
+/* Prepare the card for a smooth animation */
+.card-grid .card a {
     display: block;
     border-radius: inherit; /* Ensures the image doesn't break rounded corners */
     overflow: hidden;
-    /* This sets up the animation for the hover effect */
     transition: all 0.2s ease-in-out;
 }
 
-/* Now, define what happens ON HOVER */
-.card-grid .astro-card a:hover {
+/* Define what happens on hover */
+.card-grid .card a:hover {
     transform: scale(1.03); /* Slightly enlarges the banner */
     box-shadow: 0 0 25px rgba(0, 150, 255, 0.9); /* Adds a strong blue glow */
 }
