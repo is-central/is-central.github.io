@@ -26,31 +26,31 @@ export default defineConfig({
         {
           label: 'Phantom & Crimson Solitaire (IS2)',
           items: [
-            { label: 'Overview', link: '/is2-phantom/overview/' },
+            { label: 'Overview', slug: 'is2-phantom/overview/' },
           ],
         },
         {
           label: 'Mizuki & Caerula Arbor (IS3)',
           items: [
-            { label: 'Overview', link: '/is3-mizuki/overview/' },
+            { label: 'Overview', slug: '/is3-mizuki/overview/' },
           ],
         },
         {
           label: 'Expeditioner\'s Joklumarkar (IS4)',
           items: [
-            { label: 'Overview', link: '/is4-expeditioners/overview/' },
+            { label: 'Overview', slug: '/is4-expeditioners/overview/' },
           ],
         },
         {
           label: 'Sarkaz\'s Furnaceside Fables (IS5)',
           items: [
-            { label: 'Overview', link: '/is5-sarkaz/overview/' },
+            { label: 'Overview', slug: '/is5-sarkaz/overview/' },
           ],
         },
         {
           label: 'Sui\'s Garden of Grotesqueries (IS6)',
           items: [
-            { label: 'Overview', link: '/is6-sui/overview/' },
+            { label: 'Overview', slug: '/is6-sui/overview/' },
           ],
         },
       ],
