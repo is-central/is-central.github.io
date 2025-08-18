@@ -1,4 +1,11 @@
 /* --- Center the Homepage Hero --- */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 .hero .stack,
 .hero .copy,
 .hero .actions {
@@ -35,4 +42,36 @@
     .card-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* --- Custom Banner Icon Colors --- */
+
+/* IS2: Phantom & Crimson Solitaire */
+.sl-card-icon-puzzle-piece .icon {
+	background-color: #B71C1C !important; /* Deep red from Phantom's coat */
+	color: white !important;
+}
+
+/* IS3: Mizuki & Caerula Arbor */
+.sl-card-icon-waves .icon {
+	background-color: #3949AB !important; /* Deep blue from the water */
+	color: white !important;
+}
+
+/* IS4: Expeditioner's Joklumarkar */
+.sl-card-icon-compass .icon {
+	background-color: #64B5F6 !important; /* Icy blue from the environment */
+	color: white !important;
+}
+
+/* IS5: Sarkaz's Furnaceside Fables */
+.sl-card-icon-flame .icon {
+	background-color: #FBC02D !important; /* Gold from the stage lights */
+	color: black !important;
+}
+
+/* IS6: Sui's Garden of Grotesqueries */
+.sl-card-icon-potted-plant .icon {
+	background-color: #EC407A !important; /* Pink from the lotus flowers */
+	color: white !important;
 }
