@@ -23,6 +23,7 @@ jobs:
       - name: Install, build, and upload your site
         uses: withastro/action@v3
         with:
+          # Force a clean build by adding this comment
           path: .
         # with:
           # path: . # The root location of your Astro project inside the repository. (optional)
