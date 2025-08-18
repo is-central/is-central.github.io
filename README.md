@@ -1,49 +1,50 @@
-# Starlight Starter Kit: Basics
+# IS Central - Arknights Integrated Strategies Hub
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
-```
-npm create astro@latest -- --template starlight
-```
+Welcome to the official repository for the **IS Central** website, a community-driven hub for guides and resources for the "Integrated Strategies" (IS) game mode in the mobile game Arknights.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+**Live Site:** [is-central.github.io](https://is-central.github.io)
 
-## 🚀 Project Structure
+## 🚀 Mission
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+Our goal is to create a beautifully organized, centralized, and easy-to-navigate collection of high-quality strategic content for all IS themes. This project is built by the community, for the community.
 
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
-```
+## 🤝 Contributing
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+This project is built using [Astro](https://astro.build/) and the [Starlight](https://starlight.astro.build/) documentation theme. Content is written in Markdown (`.md` or `.mdx`).
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+If you wish to contribute a guide or suggest an edit, the best way to get involved is to join the **IS Central Discord server** and connect with the project leads and other content creators.
 
-Static assets, like favicons, can be placed in the `public/` directory.
+## 🧞 Local Development
 
-## 🧞 Commands
+To run this website on your local machine, follow these steps:
 
-All commands are run from the root of the project, from a terminal:
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/is-central/is-central.github.io.git](https://github.com/is-central/is-central.github.io.git)
+    ```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+2.  **Navigate into the project directory:**
+    ```bash
+    cd is-central.github.io
+    ```
 
-## 👀 Want to learn more?
+3.  **Install dependencies:**
+    (Requires [Node.js](https://nodejs.org/en))
+    ```bash
+    npm install
+    ```
 
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+4.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+    The site will be available at `http://localhost:4321`.
+
+## ✨ Credits
+
+* **Framework:** [Astro](https://astro.build/)
+* **Theme:** [Starlight](https://starlight.astro.build/)
+* **Hosting:** [GitHub Pages](https://pages.github.com/)
+* **Community:** IS Central Discord
