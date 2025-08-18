@@ -1,6 +1,6 @@
 ---
-title: IS2 Overview
-description: An overview of Phantom & Crimson Solitaire.
+title: IS6 Overview
+description: An overview of Sui's Garden of Grotesqueries.
 ---
 
-Content for IS2 is coming soon!
+Content for IS6 is coming soon!

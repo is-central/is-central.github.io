@@ -1,6 +1,6 @@
 ---
-title: IS2 Overview
-description: An overview of Phantom & Crimson Solitaire.
+title: IS5 Overview
+description: An overview of Sarkaz's Furnaceside Fables (IS5).
 ---
 
-Content for IS2 is coming soon!
+Content for IS5 is coming soon!

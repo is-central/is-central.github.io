@@ -1,6 +1,6 @@
 ---
-title: IS2 Overview
-description: An overview of Phantom & Crimson Solitaire.
+title: IS4 Overview
+description: An overview of Expeditioner's Joklumarkar.
 ---
 
-Content for IS2 is coming soon!
+Content for IS4 is coming soon!
