@@ -90,3 +90,104 @@
     border-color: #EC407A !important;
     color: white !important;
 }
+
+/* --- Guide Button Styles --- */
+.guide-button-container {
+    margin: 2rem 0;
+}
+
+.guide-button {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.25rem 1.75rem;
+    background: var(--sl-color-accent-low);
+    color: var(--sl-color-text);
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid var(--sl-color-border);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.guide-button:hover {
+    background: var(--sl-color-accent);
+    border-color: var(--sl-color-accent-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.guide-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.button-image {
+    flex-shrink: 0;
+}
+
+.yato-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--sl-color-border);
+    transition: border-color 0.2s ease;
+}
+
+.guide-button:hover .yato-avatar {
+    border-color: var(--sl-color-accent-border);
+}
+
+.button-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+}
+
+.button-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--sl-color-text);
+}
+
+.button-subtitle {
+    font-size: 0.875rem;
+    color: var(--sl-color-text-subtle);
+    font-weight: 400;
+}
+
+.button-arrow {
+    font-size: 1.25rem;
+    color: var(--sl-color-text-subtle);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.guide-button:hover .button-arrow {
+    transform: translateX(2px);
+    color: var(--sl-color-text);
+}
+
+/* Mobile responsiveness for the button */
+@media (max-width: 768px) {
+    .guide-button {
+        padding: 1rem 1.25rem;
+        gap: 1rem;
+    }
+    
+    .yato-avatar {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .button-title {
+        font-size: 1rem;
+    }
+    
+    .button-subtitle {
+        font-size: 0.8rem;
+    }
+}
