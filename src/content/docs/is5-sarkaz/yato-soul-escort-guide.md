@@ -1,3 +1,8 @@
+---
+title: Yato Soul Escort Guide for DLC2
+description: The definitive guide to the Soul Escort squad, featuring the powerful Yato-Kafka combination that revolutionized IS5 strategy.
+---
+
 # The Greatest Discovery of IS5: A Guide to the Yato Soul Escort Squad
 
 Hello IS players, please allow me to recommend the greatest discovery of IS5, the Soul Escort squad! This squad completely revolutionizes our operational strategy with a high power level. On the 26th of March, I achieved a d18 ED245 10x winstreak after only 22 runs, and only losing 2 out of the 22 runs. Now, let me explain why this comp is so powerful.
@@ -133,8 +138,6 @@ I have recorded the free Inspirers for 20 runs for a total sample size of 300 in
 |March|4|
 |Excavate|4|
 |Mercenary|3|
-
-Export to Sheets
 
 With the data above, we can easily see that different Inspirers have different rates. The most common is
 
