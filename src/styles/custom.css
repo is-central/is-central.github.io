@@ -127,7 +127,7 @@
     flex-shrink: 0;
 }
 
-.yato-avatar {
+.operator-avatar {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -178,7 +178,7 @@
         gap: 1rem;
     }
     
-    .yato-avatar {
+    .operator-avatar {
         width: 36px;
         height: 36px;
     }
