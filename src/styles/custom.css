@@ -31,10 +31,30 @@
     transition: all 0.2s ease-in-out;
 }
 
-/* Define what happens on hover */
-.card-grid .card a:hover {
+/* Define unique hover effects for each banner */
+.card-grid .card:nth-child(1) a:hover {
     transform: scale(1.03); /* Slightly enlarges the banner */
-    box-shadow: 0 0 25px rgba(0, 150, 255, 0.9); /* Adds a strong blue glow */
+    box-shadow: 0 0 25px rgba(183, 28, 28, 0.9); /* Red glow for IS2 Phantom */
+}
+
+.card-grid .card:nth-child(2) a:hover {
+    transform: scale(1.03); /* Slightly enlarges the banner */
+    box-shadow: 0 0 25px rgba(57, 73, 171, 0.9); /* Blue glow for IS3 Mizuki */
+}
+
+.card-grid .card:nth-child(3) a:hover {
+    transform: scale(1.03); /* Slightly enlarges the banner */
+    box-shadow: 0 0 25px rgba(100, 181, 246, 0.9); /* Light blue glow for IS4 Expeditioners */
+}
+
+.card-grid .card:nth-child(4) a:hover {
+    transform: scale(1.03); /* Slightly enlarges the banner */
+    box-shadow: 0 0 25px rgba(251, 192, 45, 0.9); /* Yellow glow for IS5 Sarkaz */
+}
+
+.card-grid .card:nth-child(5) a:hover {
+    transform: scale(1.03); /* Slightly enlarges the banner */
+    box-shadow: 0 0 25px rgba(236, 64, 122, 0.9); /* Pink glow for IS6 Sui */
 }
 
 /* --- Mobile-Friendly Banner Grid (Unchanged) --- */
