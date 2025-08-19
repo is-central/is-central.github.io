@@ -233,7 +233,7 @@
   font-weight: 500;
   text-align: center;
   transition: all 0.3s ease-in-out;
-  border: 2px solid transparent;
+  border: 3px solid #000000;
   cursor: default;
   /* Ensure uniform sizing - fixed dimensions */
   height: 60px;
@@ -256,6 +256,9 @@
   /* Better background for game images */
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
+  /* Add softer outline for better contrast */
+  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline-offset: -1px;
 }
 
 /* Stage Icon Styles - Removed since no images */
@@ -278,29 +281,35 @@
 
 /* Combat Stage Cards */
 .stage-card.combat {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(30, 58, 138, 0.6) 100%);
+  background: #4a0252;
   color: white;
-  border-color: #60a5fa;
-  box-shadow: 0 6px 16px rgba(30, 58, 138, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border-color: #2d0132;
+  border-width: 3px;
+  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline-offset: -1px;
+  box-shadow: 0 6px 16px rgba(74, 2, 82, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .stage-card.combat:hover {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(59, 130, 246, 0.7) 100%);
-  border-color: #93c5fd;
+  background: #780382;
+  border-color: #4a0252;
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(120, 3, 130, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 /* Emergency Combat Cards */
 .stage-card.emergency {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(220, 38, 38, 0.6) 100%);
+  background: #dc2626;
   color: white;
   border-color: #f87171;
+  border-width: 3px;
+  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline-offset: -1px;
   box-shadow: 0 6px 16px rgba(220, 38, 38, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .stage-card.emergency:hover {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(239, 68, 68, 0.7) 100%);
+  background: #ef4444;
   border-color: #fca5a5;
   transform: translateY(-3px);
   box-shadow: 0 8px 24px rgba(239, 68, 68, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
@@ -308,17 +317,20 @@
 
 /* Boss Stage Cards */
 .stage-card.boss {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(124, 45, 18, 0.6) 100%);
+  background: #451a0a;
   color: white;
-  border-color: #fb923c;
-  box-shadow: 0 6px 16px rgba(124, 45, 18, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border-color: #92400e;
+  border-width: 3px;
+  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline-offset: -1px;
+  box-shadow: 0 6px 16px rgba(69, 26, 10, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .stage-card.boss:hover {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(251, 146, 60, 0.7) 100%);
-  border-color: #fdba74;
+  background: #7c2d12;
+  border-color: #451a0a;
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(251, 146, 60, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(124, 45, 18, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 /* Legend Styles */
@@ -348,8 +360,8 @@
 }
 
 .legend-icon.combat {
-  background-color: #1e3a8a;
-  border-color: #3b82f6;
+  background-color: #4a0252;
+  border-color: #2d0132;
 }
 
 .legend-icon.emergency {
@@ -358,8 +370,8 @@
 }
 
 .legend-icon.boss {
-  background-color: #7c2d12;
-  border-color: #ea580c;
+  background-color: #451a0a;
+  border-color: #92400e;
 }
 
 /* Mobile Responsiveness for Stage Cards */
@@ -376,6 +388,8 @@
     font-size: 10px;
     height: 55px;
     width: 110px;
+    border-width: 2px;
+    outline: 1px solid rgba(255, 255, 255, 0.3);
   }
   
   .stage-name {
@@ -402,6 +416,8 @@
     height: 50px;
     width: 100px;
     font-size: 9px;
+    border-width: 2px;
+    outline: 1px solid rgba(255, 255, 255, 0.3);
   }
   
   .stage-name {
@@ -414,15 +430,18 @@
 .stage-card.spine-epoch {
   position: relative;
   border-color: #d97706;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(217, 119, 6, 0.4) 100%);
-  box-shadow: 0 6px 16px rgba(217, 119, 6, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border-width: 3px;
+  background: #4a0252;
+  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline-offset: -1px;
+  box-shadow: 0 6px 16px rgba(74, 2, 82, 0.4);
 }
 
 .stage-card.spine-epoch:hover {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(245, 158, 11, 0.5) 100%);
+  background: #780382;
   border-color: #f59e0b;
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(217, 119, 6, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(120, 3, 130, 0.5);
 }
 
 .stage-card.spine-epoch::before {
