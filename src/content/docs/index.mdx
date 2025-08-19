@@ -13,6 +13,7 @@ hero:
       icon: right-arrow
 ---
 import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
 
 {/* Import your banner images here */}
 import is2Banner from '../../assets/CN_Phantom_&_Crimson_Solitaire_banner.png';
@@ -27,27 +28,27 @@ import is6Banner from '../../assets/CN_Suis_Garden_of_Grotesqueries_banner.png';
         {/* not useful until later */}
         {/* <Card title="" icon="potted-plant">
                 <a href="/is6-sui/overview/">
-                        <img src={is6Banner.src} alt="Sui's Garden of Grotesqueries Banner" />
+                        <Image src={is6Banner} alt="Sui's Garden of Grotesqueries Banner" />
                 </a>
         </Card> */}
         <Card title="">
                 <a href="/is5-sarkaz/overview/">
-                        <img src={is5Banner.src} alt="Sarkaz's Furnaceside Fables Banner" />
+                        <Image src={is5Banner} alt="Sarkaz's Furnaceside Fables Banner" />
                 </a>
         </Card>
         <Card title="">
                 <a href="/is4-expeditioners/overview/">
-                        <img src={is4Banner.src} alt="Expeditioner's Joklumarkar Banner" />
+                        <Image src={is4Banner} alt="Expeditioner's Joklumarkar Banner" />
                 </a>
         </Card>
         <Card title="">
                 <a href="/is3-mizuki/overview/">
-                        <img src={is3Banner.src} alt="Mizuki & Caerula Arbor Banner" />
+                        <Image src={is3Banner} alt="Mizuki & Caerula Arbor Banner" />
                 </a>
         </Card>
         <Card title="">
                 <a href="/is2-phantom/overview/">
-                        <img src={is2Banner.src} alt="Phantom & Crimson Solitaire Banner" />
+                        <Image src={is2Banner} alt="Phantom & Crimson Solitaire Banner" />
                 </a>
         </Card>
 </CardGrid>
