@@ -38,7 +38,7 @@ A comprehensive reference guide for all combats and events you may encounter acr
   <div class="stage-card combat spine-epoch">
     <span class="stage-name">Clear the Crowd</span>
   </div>
-  <div class="stage-card combat">
+  <div class="stage-card combat spine-epoch">
     <span class="stage-name">Dense Jungle</span>
   </div>
   <div class="stage-card combat spine-epoch">

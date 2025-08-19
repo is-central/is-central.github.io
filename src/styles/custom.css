@@ -229,7 +229,7 @@
 /* Stage Card Base Styles */
 .stage-card {
   padding: 0.125rem;
-  border-radius: 10px;
+  border-radius: 0;
   font-weight: 500;
   text-align: center;
   transition: all 0.3s ease-in-out;
@@ -502,6 +502,59 @@
     padding: 0.75rem 1rem;
     margin: 1rem 0;
     font-size: 0.85rem;
+  }
+}
+
+/* Additional Mobile Optimizations */
+@media (max-width: 768px) {
+  .stage-grid {
+    gap: 0.4rem;
+    margin: 0.75rem 0;
+  }
+  
+  .stage-card {
+    border-width: 1px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .stage-card:hover {
+    transform: translateY(-1px);
+  }
+  
+  .stage-card.combat:hover,
+  .stage-card.emergency:hover,
+  .stage-card.boss:hover,
+  .stage-card.spine-epoch:hover {
+    transform: translateY(-1px);
+  }
+}
+
+@media (max-width: 480px) {
+  .stage-grid {
+    gap: 0.3rem;
+    margin: 0.5rem 0;
+  }
+  
+  .stage-card {
+    border-width: 1px;
+    padding: 0.05rem;
+  }
+  
+  .spine-epoch-disclaimer {
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+    font-size: 0.85rem;
+  }
+}
+
+/* Touch-friendly interactions for mobile */
+@media (hover: none) and (pointer: coarse) {
+  .stage-card {
+    transition: all 0.15s ease-in-out;
+  }
+  
+  .stage-card:active {
+    transform: scale(0.98);
   }
 }
 
