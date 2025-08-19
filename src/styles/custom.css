@@ -217,18 +217,18 @@
 /* Stage Grid Layout */
 .stage-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 125px);
+  grid-template-columns: repeat(auto-fill, 140px);
   gap: 0.75rem;
   margin: 1rem 0;
   justify-content: center;
   /* Fix vertical alignment */
   align-items: start;
-  grid-auto-rows: 50px;
+  grid-auto-rows: 60px;
 }
 
 /* Stage Card Base Styles */
 .stage-card {
-  padding: 0.125rem;
+  padding: 0.25rem;
   border-radius: 0;
   font-weight: 500;
   text-align: center;
@@ -236,8 +236,8 @@
   border: 2px solid transparent;
   cursor: default;
   /* Ensure uniform sizing - fixed dimensions */
-  height: 50px;
-  width: 125px;
+  height: 60px;
+  width: 140px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -248,8 +248,8 @@
   text-overflow: ellipsis;
   /* Force consistent sizing */
   box-sizing: border-box;
-  line-height: 1.1;
-  font-size: 11px;
+  line-height: 1.2;
+  font-size: 12px;
   /* Fix grid positioning */
   margin: 0;
   position: relative;
@@ -262,10 +262,10 @@
 
 /* Stage Name Styles */
 .stage-name {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
-  max-width: 115px;
+  max-width: 130px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -365,22 +365,22 @@
 /* Mobile Responsiveness for Stage Cards */
 @media (max-width: 768px) {
   .stage-grid {
-    grid-template-columns: repeat(auto-fill, 100px);
+    grid-template-columns: repeat(auto-fill, 110px);
     gap: 0.5rem;
     justify-content: center;
-    grid-auto-rows: 45px;
+    grid-auto-rows: 55px;
   }
   
   .stage-card {
-    padding: 0.1rem;
-    font-size: 9px;
-    height: 45px;
-    width: 100px;
+    padding: 0.2rem;
+    font-size: 10px;
+    height: 55px;
+    width: 110px;
   }
   
   .stage-name {
-    font-size: 9px;
-    max-width: 90px;
+    font-size: 10px;
+    max-width: 100px;
   }
   
   .legend {
@@ -393,20 +393,20 @@
 /* Extra small mobile devices */
 @media (max-width: 480px) {
   .stage-grid {
-    grid-template-columns: repeat(auto-fill, 90px);
+    grid-template-columns: repeat(auto-fill, 100px);
     gap: 0.4rem;
-    grid-auto-rows: 40px;
+    grid-auto-rows: 50px;
   }
   
   .stage-card {
-    height: 40px;
-    width: 90px;
-    font-size: 8px;
+    height: 50px;
+    width: 100px;
+    font-size: 9px;
   }
   
   .stage-name {
-    font-size: 8px;
-    max-width: 80px;
+    font-size: 9px;
+    max-width: 90px;
   }
 }
 
