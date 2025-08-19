@@ -14,48 +14,48 @@ A comprehensive reference guide for all combats and events you may encounter acr
 ## Floor 1
 
 <div class="stage-grid">
-  <div class="stage-card combat spine-epoch">
+  <a href="/is5-sarkaz/stages/bad-neighbors" class="stage-card combat spine-epoch">
     <span class="stage-name">Bad Neighbors</span>
-  </div>
-  <div class="stage-card combat">
+  </a>
+  <a href="/is5-sarkaz/stages/hasty-escape" class="stage-card combat">
     <span class="stage-name">Hasty Escape</span>
-  </div>
-  <div class="stage-card combat">
+  </a>
+  <a href="/is5-sarkaz/stages/ice-age" class="stage-card combat">
     <span class="stage-name">Ice Age</span>
-  </div>
-  <div class="stage-card combat spine-epoch">
+  </a>
+  <a href="/is5-sarkaz/stages/safety-inspection" class="stage-card combat spine-epoch">
     <span class="stage-name">Safety Inspection</span>
-  </div>
-  <div class="stage-card combat">
+  </a>
+  <a href="/is5-sarkaz/stages/vermin" class="stage-card combat">
     <span class="stage-name">Vermin</span>
-  </div>
+  </a>
 </div>
 
 ---
 
 ## Floor 2
 <div class="stage-grid">
-  <div class="stage-card combat spine-epoch">
+  <a href="/is5-sarkaz/stages/clear-the-crowd" class="stage-card combat spine-epoch">
     <span class="stage-name">Clear the Crowd</span>
-  </div>
-  <div class="stage-card combat spine-epoch">
+  </a>
+  <a href="/is5-sarkaz/stages/dense-jungle" class="stage-card combat spine-epoch">
     <span class="stage-name">Dense Jungle</span>
-  </div>
-  <div class="stage-card combat spine-epoch">
+  </a>
+  <a href="/is5-sarkaz/stages/dissuasion-seminar" class="stage-card combat spine-epoch">
     <span class="stage-name">Dissuasion Seminar</span>
-  </div>
-  <div class="stage-card combat spine-epoch">
+  </a>
+  <a href="/is5-sarkaz/stages/exhaust-vents" class="stage-card combat spine-epoch">
     <span class="stage-name">Exhaust Vents</span>
-  </div>
-  <div class="stage-card combat spine-epoch">
+  </a>
+  <a href="/is5-sarkaz/stages/furnace-volunteers" class="stage-card combat spine-epoch">
     <span class="stage-name">Furnace Volunteers</span>
-  </div>
-  <div class="stage-card combat">
+  </a>
+  <a href="/is5-sarkaz/stages/kaz-falls" class="stage-card combat">
     <span class="stage-name">Kaz Falls</span>
-  </div>
-  <div class="stage-card combat">
+  </a>
+  <a href="/is5-sarkaz/stages/temporary-patchup" class="stage-card combat">
     <span class="stage-name">Temporary Patchup</span>
-  </div>
+  </a>
 </div>
 
 ---
@@ -63,99 +63,99 @@ A comprehensive reference guide for all combats and events you may encounter acr
 ## Floor 3
 
 <div class="stage-grid">
-  <div class="stage-card combat spine-epoch">
+  <a href="/is5-sarkaz/stages/blotted-sky" class="stage-card combat spine-epoch">
     <span class="stage-name">Blotted Sky</span>
-  </div>
-  <div class="stage-card combat spine-epoch">
+  </a>
+  <a href="/is5-sarkaz/stages/bloodline-debates" class="stage-card combat spine-epoch">
     <span class="stage-name">Bloodline Debates</span>
-  </div>
-  <div class="stage-card combat">
+  </a>
+  <a href="/is5-sarkaz/stages/careless-magic" class="stage-card combat">
     <span class="stage-name">Careless Magic</span>
-  </div>
-  <div class="stage-card combat">
+  </a>
+  <a href="/is5-sarkaz/stages/firepower-squad" class="stage-card combat">
     <span class="stage-name">Firepower Squad</span>
-  </div>
-  <div class="stage-card combat spine-epoch">
+  </a>
+  <a href="/is5-sarkaz/stages/lottery-fight" class="stage-card combat spine-epoch">
     <span class="stage-name">Lottery Fight</span>
-  </div>
-  <div class="stage-card combat spine-epoch">
+  </a>
+  <a href="/is5-sarkaz/stages/morning-labor" class="stage-card combat spine-epoch">
     <span class="stage-name">Morning Labor</span>
-  </div>
-  <div class="stage-card combat spine-epoch">
+  </a>
+  <a href="/is5-sarkaz/stages/motorized-squad" class="stage-card combat spine-epoch">
     <span class="stage-name">Motorized Squad</span>
-  </div>
-  <div class="stage-card combat spine-epoch">
+  </a>
+  <a href="/is5-sarkaz/stages/simulated-skirmish" class="stage-card combat spine-epoch">
     <span class="stage-name">Simulated Skirmish</span>
-  </div>
+  </a>
 </div>
 
 ---
 
 ## Floor 4
 <div class="stage-grid">
-  <div class="stage-card combat">
+  <a href="/is5-sarkaz/stages/chaos" class="stage-card combat">
     <span class="stage-name">Chaos</span>
-  </div>
-  <div class="stage-card combat">
+  </a>
+  <a href="/is5-sarkaz/stages/crimson-corridor" class="stage-card combat">
     <span class="stage-name">Crimson Corridor</span>
-  </div>
-  <div class="stage-card combat spine-epoch">
+  </a>
+  <a href="/is5-sarkaz/stages/epochal-gaps" class="stage-card combat spine-epoch">
     <span class="stage-name">Epochal Gaps</span>
-  </div>
-  <div class="stage-card combat">
+  </a>
+  <a href="/is5-sarkaz/stages/elusive-merc" class="stage-card combat">
     <span class="stage-name">Elusive Merc</span>
-  </div>
-  <div class="stage-card combat spine-epoch">
+  </a>
+  <a href="/is5-sarkaz/stages/frequent-dispute" class="stage-card combat spine-epoch">
     <span class="stage-name">Frequent Dispute</span>
-  </div>
-  <div class="stage-card combat">
+  </a>
+  <a href="/is5-sarkaz/stages/ghost-city" class="stage-card combat">
     <span class="stage-name">Ghost City</span>
-  </div>
-  <div class="stage-card combat spine-epoch">
+  </a>
+  <a href="/is5-sarkaz/stages/past-the-aquapit" class="stage-card combat spine-epoch">
     <span class="stage-name">Past The Aquapit</span>
-  </div>
-  <div class="stage-card combat">
+  </a>
+  <a href="/is5-sarkaz/stages/rules-of-modern-warfare" class="stage-card combat">
     <span class="stage-name">Rules of Modern Warfare</span>
-  </div>
-  <div class="stage-card combat spine-epoch">
+  </a>
+  <a href="/is5-sarkaz/stages/sordid-surveillance" class="stage-card combat spine-epoch">
     <span class="stage-name">Sordid Surveillance</span>
-  </div>
-  <div class="stage-card combat spine-epoch">
+  </a>
+  <a href="/is5-sarkaz/stages/timeworn-tensions" class="stage-card combat spine-epoch">
     <span class="stage-name">Timeworn Tensions</span>
-  </div>
+  </a>
 </div>
 
 ---
 
 ## Floor 5
 <div class="stage-grid">
-  <div class="stage-card combat">
+  <a href="/is5-sarkaz/stages/aerial-assault" class="stage-card combat">
     <span class="stage-name">Aerial Assault</span>
-  </div>
-  <div class="stage-card combat">
+  </a>
+  <a href="/is5-sarkaz/stages/guiltless-paradise" class="stage-card combat">
     <span class="stage-name">Guiltless Paradise</span>
-  </div>
-  <div class="stage-card combat">
+  </a>
+  <a href="/is5-sarkaz/stages/land-reclamation" class="stage-card combat">
     <span class="stage-name">Land Reclamation</span>
-  </div>
-  <div class="stage-card combat spine-epoch">
+  </a>
+  <a href="/is5-sarkaz/stages/passage-blockade" class="stage-card combat spine-epoch">
     <span class="stage-name">Passage Blockade</span>
-  </div>
-  <div class="stage-card combat">
+  </a>
+  <a href="/is5-sarkaz/stages/regular-army" class="stage-card combat">
     <span class="stage-name">Regular Army</span>
-  </div>
-  <div class="stage-card combat">
+  </a>
+  <a href="/is5-sarkaz/stages/rhine-guardians" class="stage-card combat">
     <span class="stage-name">Rhine Guardians</span>
-  </div>
-  <div class="stage-card combat">
+  </a>
+  <a href="/is5-sarkaz/stages/rogue-mercenary" class="stage-card combat">
     <span class="stage-name">Rogue Mercenary</span>
-  </div>
-  <div class="stage-card combat">
+  </a>
+  <a href="/is5-sarkaz/stages/witch-curse-alliance" class="stage-card combat">
     <span class="stage-name">Witch-Curse Alliance</span>
-  </div>
-  <div class="stage-card combat spine-epoch">
+  </a>
+  <a href="/is5-sarkaz/stages/wrecked-academy" class="stage-card combat spine-epoch">
     <span class="stage-name">Wrecked Academy</span>
-  </div>
+  </a>
 </div>
 
 ---
@@ -163,18 +163,18 @@ A comprehensive reference guide for all combats and events you may encounter acr
 ## Floor 6
 
 <div class="stage-grid combat">
-  <div class="stage-card combat">
+  <a href="/is5-sarkaz/stages/divine-desire" class="stage-card combat">
     <span class="stage-name">Divine Desire</span>
-  </div>
-  <div class="stage-card combat">
+  </a>
+  <a href="/is5-sarkaz/stages/heavenly-paradise" class="stage-card combat">
     <span class="stage-name">Heavenly Paradise</span>
-  </div>
-  <div class="stage-card combat">
+  </a>
+  <a href="/is5-sarkaz/stages/heretics" class="stage-card combat">
     <span class="stage-name">'Heretics'</span>
-  </div>
-  <div class="stage-card combat">
+  </a>
+  <a href="/is5-sarkaz/stages/quest-for-consensus" class="stage-card combat">
     <span class="stage-name">Quest For Consensus</span>
-  </div>
+  </a>
 </div>
 
 ---

@@ -234,7 +234,7 @@
   text-align: center;
   transition: all 0.3s ease-in-out;
   border: 3px solid #000000;
-  cursor: default;
+  cursor: pointer;
   /* Ensure uniform sizing - fixed dimensions */
   height: 60px;
   width: 140px;
@@ -259,6 +259,9 @@
   /* Add softer outline for better contrast */
   outline: 2px solid rgba(255, 255, 255, 0.3);
   outline-offset: -1px;
+  /* Link styling */
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Stage Icon Styles - Removed since no images */
