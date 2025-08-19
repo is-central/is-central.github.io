@@ -5,6 +5,8 @@ description: Rhine Guardians stage guide for IS5 Sarkaz's Furnaceside Fables
 
 # Rhine Guardians
 
+<img src="/stages/rhine-guardians.png" alt="Rhine Guardians" />
+
 **Floor:** 5  
 **Type:** Combat  
 **Spine of Epoch:** No  

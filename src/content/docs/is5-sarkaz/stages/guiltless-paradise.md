@@ -5,6 +5,8 @@ description: Guiltless Paradise stage guide for IS5 Sarkaz's Furnaceside Fables
 
 # Guiltless Paradise
 
+<img src="/stages/guiltless-paradise.png" alt="Guiltless Paradise" />
+
 **Floor:** 5  
 **Type:** Combat  
 **Spine of Epoch:** No  

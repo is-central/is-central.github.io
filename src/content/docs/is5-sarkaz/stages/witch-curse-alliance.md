@@ -5,6 +5,8 @@ description: Witch-Curse Alliance stage guide for IS5 Sarkaz's Furnaceside Fable
 
 # Witch-Curse Alliance
 
+<img src="/stages/witch-curse-alliance.png" alt="Witch-Curse Alliance" />
+
 **Floor:** 5  
 **Type:** Combat  
 **Spine of Epoch:** No  
