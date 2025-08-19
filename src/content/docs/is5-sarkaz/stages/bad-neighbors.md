@@ -7,7 +7,7 @@ description: Bad Neighbors stage guide for IS5 Sarkaz's Furnaceside Fables
 
 **Floor:** 1  
 **Type:** Combat  
-**Spine of Epoch:** No  
+**Spine of Epoch:** Yes  
 
 ---
 
