@@ -41,7 +41,7 @@ Welcome to the IS5 section! Here you'll find comprehensive guides and resources 
       <img src="/guides/is5-sarkaz/guard-vanguard-silverash/silverash-avatar.webp" alt="Silverash" class="operator-avatar" />
     </div>
     <div class="button-content">
-      <span class="button-title">Guard Vanguard Silverash Strategy Guide</span>
+      <span class="button-title">Guard Vanguard Silverash Guide</span>
       <span class="button-subtitle">Original author: Eyanx | Translator: Mei of May</span>
     </div>
     <div class="button-arrow">→</div>
