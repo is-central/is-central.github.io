@@ -27,7 +27,7 @@ Welcome to the IS5 section! Here you'll find comprehensive guides and resources 
 <div class="guide-button-container">
   <a href="/is5-sarkaz/sniper-med-rosmontis/" class="guide-button">
     <div class="button-image">
-      <img src="/guides/is5-sarkaz/sniper-med-rosmontis/rosmontis-avatar.webp" alt="Rosmontis" class="operator-avatar" />
+      <img src="/guides/is5-sarkaz/sniper-med-rosmontis/rosmontis-avatar.webp" alt="Rosmontis" class="operator-avatar" loading="lazy" decoding="async" />
     </div>
     <div class="button-content">
       <span class="button-title">Sniper/Medic Rosmontis Guide</span>
@@ -40,7 +40,7 @@ Welcome to the IS5 section! Here you'll find comprehensive guides and resources 
 <div class="guide-button-container">
   <a href="/is5-sarkaz/yato-soul-escort-guide/" class="guide-button">
     <div class="button-image">
-      <img src="/guides/is5-sarkaz/yato-soul-escort-guide/yato-avatar.webp" alt="Yato" class="operator-avatar" />
+      <img src="/guides/is5-sarkaz/yato-soul-escort-guide/yato-avatar.webp" alt="Yato" class="operator-avatar" loading="lazy" decoding="async" />
     </div>
     <div class="button-content">
       <span class="button-title">Yato Soul Escort Guide for DLC2</span>
@@ -53,7 +53,7 @@ Welcome to the IS5 section! Here you'll find comprehensive guides and resources 
 <div class="guide-button-container">
   <a href="/is5-sarkaz/guard-vanguard-silverash/" class="guide-button">
     <div class="button-image">
-      <img src="/guides/is5-sarkaz/guard-vanguard-silverash/silverash-avatar.webp" alt="Silverash" class="operator-avatar" />
+      <img src="/guides/is5-sarkaz/guard-vanguard-silverash/silverash-avatar.webp" alt="Silverash" class="operator-avatar" loading="lazy" decoding="async" />
     </div>
     <div class="button-content">
       <span class="button-title">Guard Vanguard Silverash Guide</span>
