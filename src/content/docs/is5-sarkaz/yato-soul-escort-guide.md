@@ -139,6 +139,8 @@ I have recorded the free Inspirers for 20 runs for a total sample size of 300 in
 |Excavate|4|
 |Mercenary|3|
 
+![Graph](/guides/is5-sarkaz/yato-soul-escort-guide/300trial-graph.png)
+
 With the data above, we can easily see that different Inspirers have different rates. The most common is
 
 **Civil War**, appearing 33 times out of 300, which is 30 times more than the least common Inspirer Mercenary. We can also see that the strong Inspirers I mentioned all have high drop rates.
