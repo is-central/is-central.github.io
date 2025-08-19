@@ -1,5 +1,12 @@
 /* --- KaTeX CSS for LaTeX Math Support --- */
 @import url('https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap');
+
+:root {
+  --sl-font: 'Inter', sans-serif;
+  --sl-font-headings: 'Poppins', sans-serif;
+}
 
 /* --- Center the Homepage Hero --- */
 .hero {
@@ -7,6 +14,8 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding-block: 1.5rem !important; 
+    margin-top: 0 !important; 
 }
 
 .hero .stack,
@@ -25,6 +34,14 @@
 }
 
 /* --- Banner Card Hover Effects --- */
+
+/* Lighter card background compared to site background */
+.card-grid .card {
+  background-color: #2a2a2a; 
+  border: 1px solid #3a3a3a; 
+  border-radius: 12px;       
+  padding: 1rem;
+}
 
 /* Prepare the card for a smooth animation */
 .card-grid .card a {
@@ -92,4 +109,105 @@
     background-color: #EC407A !important;
     border-color: #EC407A !important;
     color: white !important;
+}
+
+/* --- Guide Button Styles --- */
+.guide-button-container {
+    margin: 1.5rem 0;
+}
+
+.guide-button {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 0.625rem 1.25rem;
+    background: var(--sl-color-accent-low);
+    color: var(--sl-color-text);
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid var(--sl-color-border);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.guide-button:hover {
+    background: var(--sl-color-accent);
+    border-color: var(--sl-color-accent-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.guide-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.button-image {
+    flex-shrink: 0;
+}
+
+.operator-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--sl-color-border);
+    transition: border-color 0.2s ease;
+}
+
+.guide-button:hover .yato-avatar {
+    border-color: var(--sl-color-accent-border);
+}
+
+.button-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    flex: 1;
+}
+
+.button-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--sl-color-text);
+}
+
+.button-subtitle {
+    font-size: 0.8rem;
+    color: var(--sl-color-text-subtle);
+    font-weight: 400;
+}
+
+.button-arrow {
+    font-size: 1.25rem;
+    color: var(--sl-color-text-subtle);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.guide-button:hover .button-arrow {
+    transform: translateX(2px);
+    color: var(--sl-color-text);
+}
+
+/* Mobile responsiveness for the button */
+@media (max-width: 768px) {
+    .guide-button {
+        padding: 0.5rem 1rem;
+        gap: 1rem;
+    }
+    
+    .operator-avatar {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .button-title {
+        font-size: 1rem;
+    }
+    
+    .button-subtitle {
+        font-size: 0.75rem;
+    }
 }
