@@ -1,3 +1,6 @@
+/* --- KaTeX CSS for LaTeX Math Support --- */
+@import url('https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css');
+
 /* --- Center the Homepage Hero --- */
 .hero {
     display: flex;
