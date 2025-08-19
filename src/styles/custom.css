@@ -211,3 +211,298 @@
         font-size: 0.75rem;
     }
 }
+
+/* --- Stage Cards for IS5 Stages Page --- */
+
+/* Stage Grid Layout */
+.stage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 125px);
+  gap: 0.75rem;
+  margin: 1rem 0;
+  justify-content: center;
+  /* Fix vertical alignment */
+  align-items: start;
+  grid-auto-rows: 50px;
+}
+
+/* Stage Card Base Styles */
+.stage-card {
+  padding: 0.125rem;
+  border-radius: 10px;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid transparent;
+  cursor: default;
+  /* Ensure uniform sizing - fixed dimensions */
+  height: 50px;
+  width: 125px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Prevent any text wrapping or overflow issues */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* Force consistent sizing */
+  box-sizing: border-box;
+  line-height: 1.1;
+  font-size: 11px;
+  /* Fix grid positioning */
+  margin: 0;
+  position: relative;
+  /* Better background for game images */
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+/* Stage Icon Styles - Removed since no images */
+
+/* Stage Name Styles */
+.stage-name {
+  font-size: 11px;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+  max-width: 115px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+  line-height: 1.2;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+/* Combat Stage Cards */
+.stage-card.combat {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(30, 58, 138, 0.6) 100%);
+  color: white;
+  border-color: #60a5fa;
+  box-shadow: 0 6px 16px rgba(30, 58, 138, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.stage-card.combat:hover {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(59, 130, 246, 0.7) 100%);
+  border-color: #93c5fd;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Emergency Combat Cards */
+.stage-card.emergency {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(220, 38, 38, 0.6) 100%);
+  color: white;
+  border-color: #f87171;
+  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.stage-card.emergency:hover {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(239, 68, 68, 0.7) 100%);
+  border-color: #fca5a5;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Boss Stage Cards */
+.stage-card.boss {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(124, 45, 18, 0.6) 100%);
+  color: white;
+  border-color: #fb923c;
+  box-shadow: 0 6px 16px rgba(124, 45, 18, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.stage-card.boss:hover {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(251, 146, 60, 0.7) 100%);
+  border-color: #fdba74;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(251, 146, 60, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Legend Styles */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #1f2937;
+  border-radius: 12px;
+  border: 1px solid #374151;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #d1d5db;
+}
+
+.legend-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 2px solid;
+}
+
+.legend-icon.combat {
+  background-color: #1e3a8a;
+  border-color: #3b82f6;
+}
+
+.legend-icon.emergency {
+  background-color: #dc2626;
+  border-color: #ef4444;
+}
+
+.legend-icon.boss {
+  background-color: #7c2d12;
+  border-color: #ea580c;
+}
+
+/* Mobile Responsiveness for Stage Cards */
+@media (max-width: 768px) {
+  .stage-grid {
+    grid-template-columns: repeat(auto-fill, 100px);
+    gap: 0.5rem;
+    justify-content: center;
+    grid-auto-rows: 45px;
+  }
+  
+  .stage-card {
+    padding: 0.1rem;
+    font-size: 9px;
+    height: 45px;
+    width: 100px;
+  }
+  
+  .stage-name {
+    font-size: 9px;
+    max-width: 90px;
+  }
+  
+  .legend {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+  .stage-grid {
+    grid-template-columns: repeat(auto-fill, 90px);
+    gap: 0.4rem;
+    grid-auto-rows: 40px;
+  }
+  
+  .stage-card {
+    height: 40px;
+    width: 90px;
+    font-size: 8px;
+  }
+  
+  .stage-name {
+    font-size: 8px;
+    max-width: 80px;
+  }
+}
+
+/* Spine of Epoch Stage Cards */
+.stage-card.spine-epoch {
+  position: relative;
+  border-color: #d97706;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(217, 119, 6, 0.4) 100%);
+  box-shadow: 0 6px 16px rgba(217, 119, 6, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.stage-card.spine-epoch:hover {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(245, 158, 11, 0.5) 100%);
+  border-color: #f59e0b;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(217, 119, 6, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.stage-card.spine-epoch::before {
+  content: '';
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(135deg, #d97706, #f59e0b);
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+/* Mobile responsiveness for Spine of Epoch indicator */
+@media (max-width: 768px) {
+  .stage-card.spine-epoch::before {
+    width: 10px;
+    height: 10px;
+    top: 0.2rem;
+    right: 0.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stage-card.spine-epoch::before {
+    width: 8px;
+    height: 8px;
+    top: 0.15rem;
+    right: 0.15rem;
+  }
+}
+
+/* Spine of Epoch Disclaimer */
+.spine-epoch-disclaimer {
+  background: linear-gradient(135deg, rgba(217, 119, 6, 0.1) 0%, rgba(245, 158, 11, 0.1) 100%);
+  border: 2px solid #d97706;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  color: #fbbf24;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.spine-epoch-disclaimer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #d97706, #f59e0b, #fbbf24);
+}
+
+.spine-epoch-disclaimer strong {
+  color: #f59e0b;
+  font-weight: 700;
+}
+
+/* Mobile responsiveness for disclaimer */
+@media (max-width: 768px) {
+  .spine-epoch-disclaimer {
+    padding: 0.875rem 1.25rem;
+    margin: 1.25rem 0;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .spine-epoch-disclaimer {
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+    font-size: 0.85rem;
+  }
+}
+
+/* --- End of Stage Cards CSS --- */
