@@ -1,10 +1,15 @@
 // astro.config.mjs
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 export default defineConfig({
   site: 'https://is-central.github.io',
-
+  markdown: {
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeKatex],
+  },
   integrations: [
     starlight({
       title: 'IS Central',
@@ -23,6 +28,10 @@ export default defineConfig({
         {
           label: 'Introduction',
           link: '/introduction/',
+        },
+        {
+          label: 'Getting Started',
+          link: '/getting-started/',
         },
         {
           label: 'Phantom & Crimson Solitaire (IS2)',
