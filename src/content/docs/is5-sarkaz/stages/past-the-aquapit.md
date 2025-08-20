@@ -3,6 +3,14 @@ title: Past The Aquapit
 description: Past The Aquapit stage guide for IS5 Sarkaz's Furnaceside Fables
 ---
 
+<div class="back-button-container">
+  <a href="/is5-sarkaz/stages/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">Back to IS5 Stages</span>
+  </a>
+</div>
+
+
 <img src="/stages/past-the-aquapit.png" alt="Past The Aquapit" />
 
 **Floor:** 4  
@@ -10,5 +18,6 @@ description: Past The Aquapit stage guide for IS5 Sarkaz's Furnaceside Fables
 **Spine of Epoch:** 1  
 
 ---
+
 
 *Content to be added.*

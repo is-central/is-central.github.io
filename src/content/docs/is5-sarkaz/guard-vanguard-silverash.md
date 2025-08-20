@@ -3,6 +3,13 @@ title: Guard Vanguard Silverash Guide
 description: A comprehensive guide to the SUH2A (Silverash + Ulpianus + Hoederer + double Agents) strategy for IS5 DLC2 Vanguard Guard squad.
 ---
 
+<div class="back-button-container">
+  <a href="/is5-sarkaz/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">Back to IS5 Overview</span>
+  </a>
+</div>
+
 # Arknights IS5 DLC2 - SUH2A VGG Strategy Guide
 
 > **Author**: Eyanx  
