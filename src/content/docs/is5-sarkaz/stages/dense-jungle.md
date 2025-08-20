@@ -3,11 +3,11 @@ title: Dense Jungle
 description: Dense Jungle stage guide for IS5 Sarkaz's Furnaceside Fables
 ---
 
-# Dense Jungle
+<img src="/stages/dense-jungle.png" alt="Dense Jungle" />
 
 **Floor:** 2  
 **Type:** Combat  
-**Spine of Epoch:** Yes  
+**Spine of Epoch:** 1  
 
 ---
 

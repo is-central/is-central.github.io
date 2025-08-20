@@ -3,11 +3,11 @@ title: Temporary Patchup
 description: Temporary Patchup stage guide for IS5 Sarkaz's Furnaceside Fables
 ---
 
-# Temporary Patchup
+<img src="/stages/temporary-patchup.png" alt="Temporary Patchup" />
 
 **Floor:** 2  
 **Type:** Combat  
-**Spine of Epoch:** No  
+**Spine of Epoch:** 1 (EM)  
 
 ---
 

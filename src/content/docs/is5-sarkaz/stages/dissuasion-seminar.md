@@ -3,11 +3,11 @@ title: Dissuasion Seminar
 description: Dissuasion Seminar stage guide for IS5 Sarkaz's Furnaceside Fables
 ---
 
-# Dissuasion Seminar
+<img src="/stages/dissuasion-seminar.png" alt="Dissuasion Seminar" />
 
 **Floor:** 2  
 **Type:** Combat  
-**Spine of Epoch:** Yes  
+**Spine of Epoch:** 1  
 
 ---
 

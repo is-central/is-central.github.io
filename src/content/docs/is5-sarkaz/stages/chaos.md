@@ -3,8 +3,6 @@ title: Chaos
 description: Chaos stage guide for IS5 Sarkaz's Furnaceside Fables
 ---
 
-# Chaos
-
 <img src="/stages/chaos.png" alt="Chaos" />
 
 **Floor:** 4  
