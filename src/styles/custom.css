@@ -113,14 +113,19 @@
 
 /* --- Guide Button Styles --- */
 .guide-button-container {
-    margin: 1.5rem 0;
+    margin: 0.75rem 0;
+}
+
+/* First button container should have less top margin for better section spacing */
+.guide-button-container:first-of-type {
+    margin-top: 0.5rem;
 }
 
 .guide-button {
     display: flex;
     align-items: center;
     gap: 1.25rem;
-    padding: 0.625rem 1.25rem;
+    padding: 0.75rem 1.25rem;
     background: var(--sl-color-accent-low);
     color: var(--sl-color-text);
     text-decoration: none;
@@ -145,6 +150,22 @@
 
 .button-image {
     flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Normalize the emoji-based reference icon so it centers like avatars */
+.reference-icon {
+    font-size: 28px;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
 }
 
 .operator-avatar {
@@ -163,20 +184,24 @@
 .button-content {
     display: flex;
     flex-direction: column;
-    gap: 0.125rem;
+    gap: 0.25rem;
     flex: 1;
+    justify-content: center;
+    transform: translateY(-0.45rem);
 }
 
 .button-title {
     font-size: 1.125rem;
     font-weight: 600;
     color: var(--sl-color-text);
+    line-height: 1.2;
 }
 
 .button-subtitle {
     font-size: 0.8rem;
     color: var(--sl-color-text-subtle);
     font-weight: 400;
+    line-height: 1.2;
 }
 
 .button-arrow {
@@ -184,10 +209,11 @@
     color: var(--sl-color-text-subtle);
     transition: transform 0.2s ease;
     flex-shrink: 0;
+    transform: translateY(-0.45rem);
 }
 
 .guide-button:hover .button-arrow {
-    transform: translateX(2px);
+    transform: translateX(2px) translateY(-0.45rem);
     color: var(--sl-color-text);
 }
 
