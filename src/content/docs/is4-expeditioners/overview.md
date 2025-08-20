@@ -27,7 +27,7 @@ Welcome to the IS4 section! Here you'll find comprehensive guides and resources 
 <div class="guide-button-container">
   <a href="/is4-expeditioners/love-in-sami/" class="guide-button">
     <div class="button-image">
-      <img src="/guides/is4-expeditioners/love-in-sami/rosmontis-avatar.webp" alt="Rosmontis" class="operator-avatar" loading="lazy" decoding="async" />
+      <img src="/guides/is4-expeditioners/love-in-sami/page10_img1.png" alt="Rosmontis" class="operator-avatar" loading="lazy" decoding="async" />
     </div>
     <div class="button-content">
       <span class="button-title">Ending 4 Guide: Love in Sami</span>
