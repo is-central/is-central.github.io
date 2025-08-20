@@ -19,6 +19,14 @@ description: A comprehensive guide to the SUH2A (Silverash + Ulpianus + Hoederer
 | SUH2A | Silverash + Ulpianus + Hoederer + double Agents |
 | VGG | Vanguard Guard squad |
 | SNP | Sniper Medic squad |
+| en route survivability | the ability of an operator, playstyle, relic, etc. to keep you alive during the run before the bosses. |
+| playstyle | a systematic and specific set of draft plans, squad, Fated Encounter relic that together form a coherent overall strategic plan. |
+| Highroll/lowroll run | A run with high/low power due to relics, thoughts, pathing, ending RNG, etc., or the lack thereof. |
+| Power ceiling/floor | the maximum/minimum power of an operator. |
+| home classes | the two classes which get a Hope discount for a particular class squad |
+| away class(es) | classes which do not get a Hope discount for a particular class squad |
+| hard stage(s) | stages that are particularly difficult or challenging |
+| one-shot threshold | the damage it takes to one-shot an operator or enemy, a useful metric to measure survivability | 
 
 ---
 
@@ -43,6 +51,8 @@ Please allow me to introduce the greatest discovery in IS5 DLC2: the Silverash U
 The SUH2A playstyle, or the Silverash Ulpianus Hoederer Double Agent playstyle in full. Silverash is responsible for a high power floor during a lowroll in the early game and a high power ceiling in the mid-late game when paired with collectables. I needn't say more for Silverash's power ceiling, but his power floor is also incredibly high, especially his dominance on F2 under mental load. He can beat all Epochs and hidden enemies, and even carry up to F5 as the only E2 6-star under extreme circumstances. Ulpianus is responsible for the midgame en route survivability when lacking King's and an extremely high power ceiling with an infinite S3. Ulpianus is much stronger than Hoederer on the first 3 floors or without Lance, which is why Ulpianus is prioritised over Hoederer, en route survivability is more important than anything else. Hoederer is responsible for F4/5 en route survivability with Lance at E1 and soloing bosses with Chalice for a high power ceiling. I can only say that Hoederer with full Lamp including Chalice is a brain smoothening experience, you'll feel it when you use it. Upon closer inspection, you'll see that these three ops are top level in both power floor or ceiling. Double Agent of course refers to the newly released Surfer and Cantabile, two 5-star Agents rather than Ines [TN: personally, Canta into Puzzle/Chilchuck is sufficient for now].
 
 ## Drafting
+
+(You can also reference a tiered drafting guide at [this Reddit post](https://www.reddit.com/r/arknights/comments/1mvasej/))
 
 I often say that in IS, you can't only look at the strength of a playstyle after you've drafted all operators, instead, the en route survivability that allows you to draft all operators in the playstyle is what actually matters the most. This is also a display of one's ability to strategise. SUH2A with three 6-stars and two 5-stars have almost perfect en route survivability, there won't be cases where you're stuck with dead tickets, you're able to draft from any ticket given. But if you draft Ines who costs 5+2 Hope, then my condolences, there goes your Hoederer or Eyja2. Ever since the release of IS5, I've proposed that VGG's Cantabile had a higher priority over Ines, not necessarily because Cantabile was stronger than Ines, but rather because in that playstyle, Cantabile had higher en route survivability, and so overall has higher priority. Why is this the case? Simple, it's Silverash. Out of Ines' main three strengths of anti-invis, FRD, and DP gen, Silverash alone encompasses the first two, and thanks to his Leader talent, Surfer and Cantabile in Silverash playstyles have an innate decreased redeployment time. Two 5-star Agents for 2 Hope is significantly stronger than Surfer/Cantabile + Ines for 8 Hope, not to mention the en route survivability on F4/5 when there is typically an E2 plus an E1, in which case double 5-star completely destroys single 5-star plus Ines. This is also Silverash's biggest advantage over Mlynar which I have proposed ever since the release of IS5, it was doubted by many back then, but time and practical play has given us the answer. Alright, enough chit-chat, let's discuss operational strategy, my turn!
 
