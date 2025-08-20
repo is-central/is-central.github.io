@@ -1,0 +1,14 @@
+---
+title: Battle of Survival
+description: Battle of Survival boss stage guide for IS5 Sarkaz's Furnaceside Fables
+---
+
+<img src="/stages/battle-of-survival.png" alt="Battle of Survival" />
+
+**Floor:** 3  
+**Type:** Boss Stage  
+**Spine of Epoch:** Yes (2)
+
+---
+
+*Content to be added.*
