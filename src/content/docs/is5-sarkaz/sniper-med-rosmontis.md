@@ -7,13 +7,17 @@ Overview
 
 Sniper/Medic Rosmontis start is one of the most powerful strategies in IS5 DLC2. It uses the most overpowered hand, has the best common relics buffing it, and uses operators who are all independently strong regardless of relics. I don't wish to spend too much time singing the praises of Sniper/Medic; I think its virtues are self-evident.
 
-That being said, Sniper/Medic is not without weaknesses. The first is the reliance on HP buffing. Before ED5 was released, it was feasible to beat Quilon without max HP buffing beyond Rise and Fall. Now, due to Amiya existing, we must hit ~4000 HP on our operators to survive Amiya’s blast with Shamare's help. This is doable consistently with the help of Eyja alter, making it so that we only need Rise and Fall + Eyja S3 up to do so. However, Epochs complicate the process significantly since Suffering's Epoch makes it very easy to get one-shot by the ball releasing your operator. As such, Windows has become a high priority. Thankfully with Rise and Fall + Window, you also survive Amiya's blast without Eyja.
+That being said, Sniper/Medic is not without weaknesses. The first is that compared to Soul Escort (likely the strongest Lamp Squad), Sniper/Medic has a significantly lower chance of getting the Grand Wish inspirer which forces a prosperity epoch to happen. Epochs on boss stages are one of the biggest variables when playing since they can create unwinnable scenarios such as Sufferings Epoch in ED5 (the ball will one shot the operator as they get released) or Oddities in ED4 (+50% hp Envy's and Quilon is often untenable).
 
-Another weakness is that Sniper/Medic no longer has the strength to win with just Lamp relics, requiring more damage relics than just what is provided. Neither of these past two weaknesses are unique to Sniper/Medic; however, Sniper/Medic is also a bit weak into F4 Shop Rob. Without a way to cheat the start of the fight with the 3 hovering chests (Mr. Boom, Initial DP, Initial SP, 2 agents, Mercenary Inspirer, knight lance pro, etc.), Sniper/Medic is reliant on Kroos Alter stun RNG assuming only King's Lance + crown.
+Another weakness is that Sniper/Medic no longer has the strength to win with just Lamp relics. As such, we need to find ways to bridge the gap. The most obvious solution is acquiring damage relics. Base attack relics in particular like Silver Forks can singlehandedly solve the damage issue. Less obvious is that we can also compensate for lacking damage through more creative play like with White Dance Shoes which lets us place ranged operators out of harms way so they can dps for longer, or spawn pillars in ways we couldn't before. Squad size relics also factor into this, since at minimum every extra squad size we get is a body which stuns for 5s on deploy with very tanky stats. 
+
+Sniper/Medic is also a bit weak into F4 Shop Rob. Without a way to cheat the start of the fight with the 3 hovering chests (Mr. Boom, Initial DP, Initial SP, 2 agents, Mercenary Inspirer, knight lance pro, etc.), Sniper/Medic is reliant on Kroos Alter stun RNG assuming only King's Lance + Crown.
+
+While these are 3 notable weaknesses of Sniper/Medic, it should be noted that these weaknesses are not unique. Every squad except Soul Escort needs to find a proper solution to the Shop Rob and relies on rng to get Grand Wish. Every squad including Soul Escort also greatly struggles when put in a position with only lamp relics.
 
 With DLC2, Wisadel-less flingers no longer have the raw power to just blast through every stage. Instead, the game plan is now to abuse pillars. Understanding the spawning logic for Rosmontis pillars is critical to success. You can get away with extremely weak clears as long as you have enough casters and snipers to throw at the enemy. This guide is primarily for players doing d18 245 runs (endings 2, 4, and 5 in one run).
 
-Sniper/Medic is about voucher efficiency. Your total hope requirements are low, but your total voucher requirements are high. Your goal is to reduce the RNG of vouchers as much as possible. Your final squad will likely look like Rosmontis, Greyy, Kroos Alter (Krooster), Amiya, Indigo, Ethan, Gravel, Kal’tsit (Kal), Shamare, 2 of Eyja Alter/Silence/Rose Salt, 2 agents, and Ray (optional).
+Sniper/Medic is about voucher efficiency. Your total hope requirements are low, but your total voucher requirements are high. Your goal is to reduce the RNG of vouchers as much as possible. Your final squad will likely look like Rosmontis, Greyy, Kroos Alter (Krooster), Amiya, Indigo, Ethan, Gravel, Kal’tsit (Kal), Shamare, 1 or 2 of Eyja Alter/Silence/Rose Salt, 2 agents, and Ray (optional).
 
 
 
@@ -167,6 +171,12 @@ Floor 1
 
 3. Always take Krooster first, then Greyy (both E1). Promote Krooster after recruiting Greyy.
 
+4. You should only spend hope in F1 combats if you get a Sniper or Vanguard voucher or if you get a hope relic.
+
+   * The reason we don't acquire Amiya from F1 combats is because of her extreme availability. Since she is available in 3 different vouchers we will almost certaintly acquire her even if we delay it. 
+   
+   * Having 5 hope entering F1 shop means we can acquire Kroos Alter, Greyy Alter and Surfer if their vouchers are available. Even if they are not, we can then buy Amiya on the second page of the shop.
+
 The priority for the path on F1 is:
 
 1. The path with the most amount of combats
@@ -189,7 +199,7 @@ Your primary goal in the shop is the vouchers.
 
 5. Every other voucher is for either getting/promoting Amiya or grabbing a free 4* operator if you have spare ingots.
 
-Use your first ticket from guard, caster, and medic vouchers on Amiya usually. The second one will also usually be to promote Amiya. After that, guard vouchers can be used for Quartz, Castle, and later on Hoederer. Caster vouchers after Amiya should be for Indigo if you have spare hope (enough to be ready to recruit Surfer if she shows up next combat) or Durin. Medic vouchers after Amiya should ideally be for Kal; otherwise, Silence or Rose Salt are good picks, but these are low priority early on. Specialist vouchers are extremely important; take Ethan first then Gravel. They both ideally should be E2, but you can live with Gravel being E1 if need be.
+Use your first ticket from guard, caster, and medic vouchers on Amiya usually. The second one will also usually be to promote Amiya. After that, guard vouchers can be used for Quartz, Castle, and later on Hoederer. Caster vouchers after Amiya should be for Indigo if you have spare hope (enough to be ready to recruit Surfer if she shows up next combat) or Durin. Medic vouchers after Amiya should ideally be for Kal; otherwise, Silence or Rose Salt are good picks, but these are low priority early on. Specialist vouchers are extremely important; take Gravel first then Ethan. The reason for this is because even though Ethan is more important for ED4, Gravel is effectively mandatory for ED5 and helps more with surviving en route (Dense Jungle, ED2, Cadence baiting). Ethan is also more easily replaced since in the event that you never get a second specialist voucher, you can draft Qiubai as a worse but functional replacement. Ethan and Gravel both ideally should be E2, but you can live with Gravel being E1 if need be.
 
 The rest of the shop is heavily context-dependent, and it is difficult to give exact priorities since relic quality is so varied. Here are some common things to look out for:
 
@@ -257,8 +267,6 @@ I will now discuss the cursed collectibles and their level of severity:
    * +20% attack makes Theresis far harder to tank, envys in ED4 will have 6.2k attack, and Amiya blast is harder to survive.
    
    * +20% defence is also quite annoying since Krooster is often our choice of boat killer and Quilon burst.
-   
-   * It also makes Amiya’s defence egregiously high, to the point where even with Shamare, flingers with only lamp relics do minimum damage.
    
    * None of the other curse relics are large problems, but this one is a huge one. The worst part of this relic is the minimal counterplay you can have with it; you simply must out-stat it.
 
@@ -337,7 +345,22 @@ A F4 shop rob is essential for the consistency of the run. It is the most diffic
 
 The most challenging part of this fight is the initial 3 hovering chests. This is why we often need to adapt to our relics for this. By far the most valuable support item for this is Mr. Boom, who single-handedly solves the start. Initial DP, initial SP/SP gen relics also solve the chests. Of note is that Surfer with the Mercenary inspirer (without ED2 relic and not fractured) will give enough DP to deploy everyone we need for the opener. Since Mercenary is a common inspirer, this is a preferred solution for runs without Mr. Boom. Note that this needs P6 Surfer and Kroos Alter (The writer of this guide also has a P2 Kal’tsit).
 
-Suppose we don’t get any of these though; we then need to look at our operators. 2 agents will significantly alleviate the issue. A single agent with more attack speed than just King's Lance is a significant boon here. Ines S3 is unlikely to be available here but if she is, then her bind also solves this part. Ray can also substitute for the initial 3 chests instead of Krooster, being a better option in basically every way. It is important to note that if you don’t have Mr. Boom, I’d recommend you to not combine the ending 2 relics to avoid the +3 DP penalty. Once Krooster and Kal are properly set up, the top side is mostly solved. Remember to set Kal to S2 for this fight.
+Suppose we don’t get any of these though; we then need to look at our operators. 2 agents will significantly alleviate the issue. A single agent with more attack speed than just King's Lance is a significant boon here. Ines S3 is unlikely to be available here but if she is, then her bind also solves this part. Ray can also substitute for the initial 3 chests instead of Krooster, being a better option in basically every way. It is important to note that if you don’t have Mr. Boom, I’d recommend you to not combine the ending 2 relics to avoid the +3 DP penalty. Once Krooster and Kal are properly set up, the top side is mostly solved. Remember to set Kal to S2 for this fight. 
+
+The table below shows tested solves in descending order of viability, but it is ultimately up to the player to adapt to their circumstances as needed. Often the lower tier solutions should be combined for maximum consistency in the shop rob.
+
+| Solve    | Notes   |
+| -------- | ------- |
+| Mr. Boom     | By far the best way to solve it. Only 8 ingots from F1 shop and you have a ~35% chance of getting it|
+| Knight Lance Pro | Cannot alone will give 150 ingots so you can completely ignore the top.     |
+| Initial DP Relics   | Immediately being able to place down Krooster and Kal solves the chests    |
+| Primordial Vestige | 16 ingots from F1 shop so it's expensive. It is basically an initial dp relic for only shop |
+| Glory Pack | Deploy any operator with a summon like Deep Color and place the summon beside the chests and retreat. Note that Kal doesn't work for it |
+| Civil War Inspirer | Basically an initial dp relic but you have to save the inspirer which is often annoying |
+| Ines | Use s3 to bind the chests once they start moving. Pretty consistent solution but expensive |
+| Initial SP Relics | Lets Krooster stun and dps more consistently, but you still need to place down Kal in time |
+| Ray | Can get the initial chests but you're a bit short damage wise with just Kings Lance + Crown |
+| ASPD Relics | Lets Surfer generate more dp and Krooster stunlock. |
 
 You can watch a commentated shop rob here: [[Arknights] IS#5 D18: Narrative Offer (Shop Rob) (Rosmontis/Flinger) - YouTube](https://youtu.be/B9W6dtZemuE?si=nW-yGtV_QtOEWDF4)
 
