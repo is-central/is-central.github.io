@@ -2,6 +2,14 @@
 title: Sniper/Medic Rosmontis Guide
 description: A comprehensive guide to the Sniper/Medic Rosmontis strategy in IS5 DLC2, covering drafting, strategy, and boss fights.
 ---
+
+<div class="back-button-container">
+  <a href="/is5-sarkaz/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">Back to IS5 Overview</span>
+  </a>
+</div>
+
 Overview
 --------
 
