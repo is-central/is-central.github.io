@@ -80,7 +80,26 @@ A comprehensive reference guide for all combats and events you may encounter acr
   </a>
 </div>
 
----
+<div class="stage-grid boss-grid">
+  <a href="/is4-expeditioners/stages/blade-signifier" class="stage-card boss">
+    <span class="stage-name">Blade Signifier</span>
+  </a>
+  <a href="/is4-expeditioners/stages/new-tribe" class="stage-card boss">
+    <span class="stage-name">New Tribe</span>
+  </a>
+  <a href="/is4-expeditioners/stages/natures-wrath" class="stage-card boss">
+    <span class="stage-name">Nature's Wrath</span>
+  </a>
+  <a href="/is4-expeditioners/stages/breathing" class="stage-card boss">
+    <span class="stage-name">Breathing</span>
+  </a>
+  <a href="/is4-expeditioners/stages/tree-snatcher" class="stage-card boss">
+    <span class="stage-name">Tree-Snatcher</span>
+  </a>
+  <a href="/is4-expeditioners/stages/the-earth-wakes" class="stage-card boss">
+    <span class="stage-name">The Earth Wakes</span>
+  </a>
+</div>
 
 ## Floor 4
 
@@ -142,7 +161,20 @@ A comprehensive reference guide for all combats and events you may encounter acr
   </a>
 </div>
 
----
+<div class="stage-grid boss-grid">
+  <a href="/is4-expeditioners/stages/lofty-silverfrost" class="stage-card boss">
+    <span class="stage-name">Lofty Silverfrost</span>
+  </a>
+  <a href="/is4-expeditioners/stages/ice-cold-image" class="stage-card boss">
+    <span class="stage-name">Ice-Cold Image</span>
+  </a>
+  <a href="/is4-expeditioners/stages/samis-entropy" class="stage-card boss">
+    <span class="stage-name">Sami's Entropy</span>
+  </a>
+  <a href="/is4-expeditioners/stages/hollow-visage" class="stage-card boss">
+    <span class="stage-name">Hollow Visage</span>
+  </a>
+</div>
 
 ## Floor 6
 
@@ -155,4 +187,17 @@ A comprehensive reference guide for all combats and events you may encounter acr
   </a>
 </div>
 
----
+<div class="stage-grid boss-grid">
+  <a href="/is4-expeditioners/stages/gardener" class="stage-card boss">
+    <span class="stage-name">Gardener</span>
+  </a>
+  <a href="/is4-expeditioners/stages/sands-of-time" class="stage-card boss">
+    <span class="stage-name">Sands of Time</span>
+  </a>
+  <a href="/is4-expeditioners/stages/sentinel" class="stage-card boss">
+    <span class="stage-name">Sentinel</span>
+  </a>
+  <a href="/is4-expeditioners/stages/enter-eternity" class="stage-card boss">
+    <span class="stage-name">Enter Eternity</span>
+  </a>
+</div>

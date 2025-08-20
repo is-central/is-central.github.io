@@ -24,6 +24,19 @@ Welcome to the IS4 section! Here you'll find comprehensive guides and resources 
 
 ## Available Guides
 
+<div class="guide-button-container">
+  <a href="/is4-expeditioners/love-in-sami/" class="guide-button">
+    <div class="button-image">
+      <img src="/guides/is4-expeditioners/love-in-sami/rosmontis-avatar.webp" alt="Rosmontis" class="operator-avatar" loading="lazy" decoding="async" />
+    </div>
+    <div class="button-content">
+      <span class="button-title">Ending 4 Guide: Love in Sami</span>
+      <span class="button-subtitle">Tsundere Kermit</span>
+    </div>
+    <div class="button-arrow">→</div>
+  </a>
+</div>
+
 *More IS4 guides coming soon!*
 
 ---
