@@ -1,0 +1,36 @@
+---
+import fs from 'fs';
+import path from 'path';
+
+// 1. Set the directory you want to read
+const directoryPath = path.resolve('src/content/docs/is5-sarkaz/stages');
+
+// 2. Read all files in the directory
+const files = fs.readdirSync(directoryPath); 
+
+// Optional: sort alphabetically
+files.sort();
+---
+<html>
+  <head>
+    <title>Directory Files</title>
+  </head>
+  <body>
+    <h1>Files in {directoryPath}</h1>
+
+    <table border="1" style="border-collapse: collapse; width: 100%;">
+      <thead>
+        <tr>
+          <th>Filename</th>
+        </tr>
+      </thead>
+      <tbody>
+        {files.map(file => (
+          <tr>
+            <td>{file}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </body>
+</html>

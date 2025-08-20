@@ -7,6 +7,11 @@ description: An overview of Sarkaz's Furnaceside Fables (IS5).
 
 Welcome to the IS5 section! Here you'll find comprehensive guides and resources for the fifth installment of Integrated Strategies.
 
+## Progress
+<a href="/is5-stage-progress" >
+asdas
+</a>
+
 ## Quick Reference
 
 <div class="guide-button-container">
