@@ -89,6 +89,36 @@ A comprehensive reference guide for all combats and events you may encounter acr
   </a>
 </div>
 
+<div class="stage-grid boss-grid">
+  <a href="/is5-sarkaz/stages/river-watcher" class="stage-card boss">
+    <span class="stage-name">River Watcher</span>
+  </a>
+  <a href="/is5-sarkaz/stages/silent-guardian" class="stage-card boss">
+    <span class="stage-name">Silent Guardian</span>
+  </a>
+  <a href="/is5-sarkaz/stages/battle-of-survival" class="stage-card boss">
+    <span class="stage-name">Battle of Survival</span>
+  </a>
+  <a href="/is5-sarkaz/stages/veil-of-probability" class="stage-card boss">
+    <span class="stage-name">Veil of Probability</span>
+  </a>
+  <a href="/is5-sarkaz/stages/devoted-warrior" class="stage-card boss">
+    <span class="stage-name">Devoted Warrior</span>
+  </a>
+  <a href="/is5-sarkaz/stages/decapitation" class="stage-card boss">
+    <span class="stage-name">Decapitation</span>
+  </a>
+  <a href="/is5-sarkaz/stages/courtyard-of-farewells" class="stage-card boss">
+    <span class="stage-name">Courtyard of Farewells</span>
+  </a>
+  <a href="/is5-sarkaz/stages/brave-souls-marching" class="stage-card boss">
+    <span class="stage-name">Brave Souls Marching</span>
+  </a>
+  <a href="/is5-sarkaz/stages/under-the-crown" class="stage-card boss">
+    <span class="stage-name">Under The Crown</span>
+  </a>
+</div>
+
 ---
 
 ## Floor 4
@@ -158,9 +188,24 @@ A comprehensive reference guide for all combats and events you may encounter acr
   </a>
 </div>
 
+<div class="stage-grid f5-boss-grid">
+  <a href="/is5-sarkaz/stages/emergency-lecture" class="stage-card f5-boss">
+    <span class="stage-name">Emergency Lecture</span>
+  </a>
+  <a href="/is5-sarkaz/stages/court-visit" class="stage-card f5-boss">
+    <span class="stage-name">Court Visit</span>
+  </a>
+  <a href="/is5-sarkaz/stages/cognitive-correction" class="stage-card f5-boss">
+    <span class="stage-name">Cognitive Correction</span>
+  </a>
+  <a href="/is5-sarkaz/stages/the-court-of-souls" class="stage-card f5-boss">
+    <span class="stage-name">The Court of Souls</span>
+  </a>
+</div>
+
 ---
 
-## Floor 6
+## Floor 6/7
 
 <div class="stage-grid combat">
   <a href="/is5-sarkaz/stages/divine-desire" class="stage-card combat">
@@ -174,6 +219,21 @@ A comprehensive reference guide for all combats and events you may encounter acr
   </a>
   <a href="/is5-sarkaz/stages/quest-for-consensus" class="stage-card combat">
     <span class="stage-name">Quest For Consensus</span>
+  </a>
+</div>
+
+<div class="stage-grid f5-boss-grid">
+  <a href="/is5-sarkaz/stages/holy-city" class="stage-card f5-boss">
+    <span class="stage-name">Holy City</span>
+  </a>
+  <a href="/is5-sarkaz/stages/the-dharma-sermon" class="stage-card f5-boss">
+    <span class="stage-name">The Dharma Sermon</span>
+  </a>
+</div>
+
+<div class="stage-grid fates-finale-grid">
+  <a href="/is5-sarkaz/stages/fates-finale" class="stage-card fates-finale">
+    <span class="stage-name">Fate's Finale</span>
   </a>
 </div>
 
