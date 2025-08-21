@@ -1,0 +1,235 @@
+---
+export interface Props {
+  title: string;
+  author?: string;
+  defaultOpen?: boolean;
+}
+
+const { title, author, defaultOpen = false } = Astro.props;
+---
+
+<div class="strategy-item">
+  <button class="strategy-header" data-default-open={defaultOpen}>
+    <span class="strategy-title">{title}</span>
+    {author && <span class="strategy-author">by {author}</span>}
+    <span class="strategy-toggle">▼</span>
+  </button>
+  <div class="strategy-content">
+    <slot />
+  </div>
+</div>
+
+<script>
+  function initializeStrategySections() {
+    const headers = document.querySelectorAll('.strategy-header');
+    
+    headers.forEach(header => {
+      const isDefaultOpen = header.getAttribute('data-default-open') === 'true';
+      const content = header.nextElementSibling;
+      const toggle = header.querySelector('.strategy-toggle');
+      
+      if (!content || !toggle || !(content instanceof HTMLElement) || !(toggle instanceof HTMLElement)) {
+        return;
+      }
+      
+      // Set initial state - all closed by default
+      if (isDefaultOpen) {
+        content.style.display = 'block';
+        toggle.textContent = '▼';
+        header.classList.add('active');
+      } else {
+        content.style.display = 'none';
+        toggle.textContent = '';
+        header.classList.remove('active');
+      }
+      
+      // Add click handler
+      header.addEventListener('click', function() {
+        if (!content || !toggle || !(content instanceof HTMLElement) || !(toggle instanceof HTMLElement)) {
+          return;
+        }
+        
+        if (content.style.display === 'none' || content.style.display === '') {
+          content.style.display = 'block';
+          toggle.textContent = '▼';
+          header.classList.add('active');
+        } else {
+          content.style.display = 'none';
+          toggle.textContent = '';
+          header.classList.remove('active');
+        }
+      });
+    });
+  }
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeStrategySections);
+  } else {
+    initializeStrategySections();
+  }
+</script>
+
+<style>
+  .strategy-item {
+    border: 2px solid var(--sl-color-accent);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    background: var(--sl-color-surface-1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+  }
+
+  .strategy-item:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+    border-color: var(--sl-color-accent-high);
+  }
+
+  .strategy-header {
+    width: 100%;
+    padding: 1.25rem;
+    background: var(--sl-color-surface-2);
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+    color: var(--sl-color-text);
+    border-bottom: 1px solid var(--sl-color-accent-low);
+  }
+
+  .strategy-header:hover {
+    background: var(--sl-color-surface-3);
+  }
+
+  .strategy-header.active {
+    background: var(--sl-color-accent-low);
+    border-bottom-color: var(--sl-color-accent);
+  }
+
+  .strategy-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--sl-color-text);
+    flex: 1;
+    margin-right: 1rem;
+  }
+
+  .strategy-author {
+    font-size: 0.9rem;
+    color: var(--sl-color-text-subtle);
+    font-style: italic;
+    margin-right: 1rem;
+    white-space: nowrap;
+  }
+
+  .strategy-toggle {
+    font-size: 1rem;
+    color: var(--sl-color-text-subtle);
+    transition: all 0.2s ease;
+    min-width: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .strategy-content {
+    padding: 1.5rem;
+    background: var(--sl-color-surface-1);
+    color: var(--sl-color-text);
+  }
+
+  .strategy-content h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--sl-color-text);
+  }
+
+  .strategy-content h4:first-child {
+    margin-top: 0;
+  }
+
+  .strategy-content ul {
+    margin: 0.75rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .strategy-content li {
+    margin: 0.5rem 0;
+  }
+
+  .strategy-content img {
+    max-width: 100%;
+    height: auto;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .strategy-content p {
+    margin: 0.75rem 0;
+    line-height: 1.6;
+  }
+
+  /* Mobile-friendly adjustments */
+  @media (max-width: 768px) {
+    .strategy-item {
+      margin-bottom: 1rem;
+      border-radius: 8px;
+    }
+
+    .strategy-header {
+      padding: 1rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .strategy-title {
+      font-size: 1rem;
+      margin-right: 0.5rem;
+      flex-basis: 100%;
+      order: 1;
+    }
+
+    .strategy-author {
+      font-size: 0.85rem;
+      margin-right: 0.5rem;
+      order: 2;
+    }
+
+    .strategy-toggle {
+      order: 3;
+      margin-left: auto;
+    }
+
+    .strategy-content {
+      padding: 1rem;
+    }
+
+    .strategy-content img {
+      margin: 1rem 0;
+    }
+  }
+
+  /* Small mobile devices */
+  @media (max-width: 480px) {
+    .strategy-header {
+      padding: 0.875rem;
+    }
+
+    .strategy-content {
+      padding: 0.875rem;
+    }
+
+    .strategy-title {
+      font-size: 0.95rem;
+    }
+
+    .strategy-author {
+      font-size: 0.8rem;
+    }
+  }
+</style>
