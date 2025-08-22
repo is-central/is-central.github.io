@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: is-central/is-central.github.io
+  name: git-gateway
   branch: decap
 
 media_folder: "public/media"
