@@ -1,0 +1,74 @@
+---
+title: Contribute
+description: Contribute to the IS Central website
+---
+
+The IS Central website is a community-driven project. We welcome contributions from the community to help us improve the website.
+
+## How to Contribute
+
+### Adding a new stage guide
+First, go to the [IS Central GitHub repository](https://github.com/IS-Central/is-central) and **fork** the repository.
+
+![Fork the repository](/contribute/fork.png)
+
+You can simply click the "**Create fork**" button.
+
+![Create a new fork](/contribute/create-fork.png)
+
+Now you have a copy of the repository on your own GitHub account, modifying the files in your fork will not affect the original repository.
+
+Navigate to the `src/content/docs/` directory and you will see a list of all the guides.
+
+![List of guides](/contribute/list-of-guides.png)
+
+I'll be using stage guides for IS5-Sarkaz as an example.
+
+Navigate to the `src/content/docs/is5-sarkaz/stages/` directory and you will see a list of all the stage guides, click on the one you want to edit.
+
+Here, I'll be editing the `ice-age.mdx` file. Which is the file for the stage "Ice Age". Go ahead and click on pencil icon to edit the file.
+![Ice Age](/contribute/ice-age-example.png)
+
+![Edit file](/contribute/editing.png)
+
+Woah! Code! Don't worry, you don't need to know how to code to contribute to the website.
+
+The code is written in markdown, which is a simple markup language for writing text.
+
+You can learn more about markdown [here](https://www.markdownguide.org/getting-started/).
+
+Write your guide in markdown format, after you're done, first paste this code block into the file:
+```
+import StrategySection from '../../../../components/StrategySection.astro';
+
+<StrategySection title="Stage Analysis" author="Your Name" defaultOpen={true}>
+// Your guide here
+</StrategySection>
+```
+Now, paste your guide in between the `<StrategySection>` tags. Edit the title and author to your liking. If you prefer to have the guide open by default, set `defaultOpen` to `true`.
+
+It should look like this:
+![Example](/contribute/edited-ice-age.png)
+
+After you're done, click on the "**Commit changes**" button at the upper right corner.
+Leave all the fields as is, and click on the "**Commit changes**" button.
+
+Now, you can submit a pull request to the original repository. Go back to your forked repository:
+![pull request](/contribute/pull-request.png)
+
+Click on the "**Contribute**" button, and click on the "**Open pull request**" button.
+Add any description you want, and click on the "**Create pull request**" button.
+
+![pull request](/contribute/create-pull.png)
+
+Now, you've submitted your pull request! You can now wait for the pull request to be merged, and your guide will be live on the website.
+
+![just like that](/contribute/just-like-that.png)
+
+
+
+
+
+
+
+
