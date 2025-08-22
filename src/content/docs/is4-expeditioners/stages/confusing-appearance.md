@@ -10,9 +10,11 @@ description: Confusing Appearance stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
+<img src="/stages/is4/confusing-appearance.png" alt="Confusing Appearance" />
+
 # Confusing Appearance
 
-**Floor:** 5  
+**Floor:** 4  
 **Type:** Combat  
 
 ---

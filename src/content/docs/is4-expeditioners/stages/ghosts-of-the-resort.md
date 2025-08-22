@@ -10,9 +10,11 @@ description: Ghosts of the Resort stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
+<img src="/stages/is4/ghosts-of-the-resort.png" alt="Ghosts of the Resort" />
+
 # Ghosts of the Resort
 
-**Floor:** 1  
+**Floor:** 4  
 **Type:** Combat  
 
 ---

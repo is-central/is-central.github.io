@@ -1,6 +1,6 @@
 ---
-title: Altar of Craving
-description: Altar of Craving stage guide for IS4 Expeditioner's Joklumarkar
+title: The Earth Wakes
+description: The Earth Wakes stage guide for IS4 Expeditioner's Joklumarkar
 ---
 
 <div class="back-button-container">
@@ -10,9 +10,11 @@ description: Altar of Craving stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
-# Altar of Craving
+<img src="/stages/is4/the-earth-wakes.png" alt="The Earth Wakes" />
 
-**Floor:** 3  
+# The Earth Wakes
+
+**Floor:** 4  
 **Type:** Combat  
 
 ---

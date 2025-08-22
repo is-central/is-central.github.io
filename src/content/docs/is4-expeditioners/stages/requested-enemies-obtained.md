@@ -10,9 +10,11 @@ description: Requested Enemies Obtained stage guide for IS4 Expeditioner's Joklu
   </a>
 </div>
 
+<img src="/stages/is4/requested-enemies-obtained.png" alt="Requested Enemies Obtained" />
+
 # Requested Enemies Obtained
 
-**Floor:** 5  
+**Floor:** 4  
 **Type:** Combat  
 
 ---

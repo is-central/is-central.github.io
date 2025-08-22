@@ -10,6 +10,8 @@ description: The Big Migration stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
+<img src="/stages/is4/the-big-migration.png" alt="The Big Migration" />
+
 # The Big Migration
 
 **Floor:** 4  

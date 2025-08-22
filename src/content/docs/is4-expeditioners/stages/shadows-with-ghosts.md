@@ -1,6 +1,6 @@
 ---
-title: Shadows With Ghosts
-description: Shadows With Ghosts stage guide for IS4 Expeditioner's Joklumarkar
+title: Shadows with Ghosts
+description: Shadows with Ghosts stage guide for IS4 Expeditioner's Joklumarkar
 ---
 
 <div class="back-button-container">
@@ -10,9 +10,11 @@ description: Shadows With Ghosts stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
-# Shadows With Ghosts
+<img src="/stages/is4/shadows-with-ghosts.png" alt="Shadows with Ghosts" />
 
-**Floor:** 2  
+# Shadows with Ghosts
+
+**Floor:** 4  
 **Type:** Combat  
 
 ---

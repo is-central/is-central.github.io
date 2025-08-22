@@ -1,6 +1,6 @@
 ---
-title: Low-Altitude Maneuvering
-description: Low-Altitude Maneuvering stage guide for IS4 Expeditioner's Joklumarkar
+title: Low Altitude Maneuvering
+description: Low Altitude Maneuvering stage guide for IS4 Expeditioner's Joklumarkar
 ---
 
 <div class="back-button-container">
@@ -10,9 +10,11 @@ description: Low-Altitude Maneuvering stage guide for IS4 Expeditioner's Jokluma
   </a>
 </div>
 
-# Low-Altitude Maneuvering
+<img src="/stages/is4/low-altitude-maneuvering.png" alt="Low Altitude Maneuvering" />
 
-**Floor:** 2  
+# Low Altitude Maneuvering
+
+**Floor:** 4  
 **Type:** Combat  
 
 ---

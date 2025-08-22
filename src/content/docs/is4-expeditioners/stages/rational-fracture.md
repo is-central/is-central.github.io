@@ -10,9 +10,11 @@ description: Rational Fracture stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
+<img src="/stages/is4/rational-fracture.png" alt="Rational Fracture" />
+
 # Rational Fracture
 
-**Floor:** 3  
+**Floor:** 4  
 **Type:** Combat  
 
 ---

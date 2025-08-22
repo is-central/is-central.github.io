@@ -1,6 +1,6 @@
 ---
-title: Confusing Appearance
-description: Confusing Appearance stage guide for IS4 Expeditioner's Joklumarkar
+title: Ice Cold Image
+description: Ice Cold Image stage guide for IS4 Expeditioner's Joklumarkar
 ---
 
 <div class="back-button-container">
@@ -10,9 +10,11 @@ description: Confusing Appearance stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
-# Confusing Appearance
+<img src="/stages/is4/ice-cold-image.png" alt="Ice Cold Image" />
 
-**Floor:** 5  
+# Ice Cold Image
+
+**Floor:** 4  
 **Type:** Combat  
 
 ---

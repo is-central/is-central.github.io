@@ -10,9 +10,11 @@ description: So Close and Yet So Far stage guide for IS4 Expeditioner's Joklumar
   </a>
 </div>
 
+<img src="/stages/is4/so-close-and-yet-so-far.png" alt="So Close and Yet So Far" />
+
 # So Close and Yet So Far
 
-**Floor:** 3  
+**Floor:** 4  
 **Type:** Combat  
 
 ---

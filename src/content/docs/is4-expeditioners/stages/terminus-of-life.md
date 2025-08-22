@@ -10,9 +10,11 @@ description: Terminus of Life stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
+<img src="/stages/is4/terminus-of-life.png" alt="Terminus of Life" />
+
 # Terminus of Life
 
-**Floor:** 6  
+**Floor:** 4  
 **Type:** Combat  
 
 ---

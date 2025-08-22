@@ -1,6 +1,6 @@
 ---
-title: Terminus of Life
-description: Terminus of Life stage guide for IS4 Expeditioner's Joklumarkar
+title: Enter Eternity
+description: Enter Eternity stage guide for IS4 Expeditioner's Joklumarkar
 ---
 
 <div class="back-button-container">
@@ -10,9 +10,11 @@ description: Terminus of Life stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
-# Terminus of Life
+<img src="/stages/is4/enter-eternity.png" alt="Enter Eternity" />
 
-**Floor:** 6  
+# Enter Eternity
+
+**Floor:** 4  
 **Type:** Combat  
 
 ---
