@@ -9,7 +9,7 @@ public_folder: "/media"
 editor:
   preview: true
 
-# publish_mode: editorial_workflow
+publish_mode: editorial_workflow
 
 collections:
   - name: "general"
