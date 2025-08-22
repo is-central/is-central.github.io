@@ -1,0 +1,13 @@
+---
+// HeadingWithIcon.astro
+const { level = 3, icon, textAlign = 'center' } = Astro.props;
+const Tag = `h${level}`;
+---
+<Tag style={`display: flex; justify-content: ${textAlign}; align-items: center; gap: 0.3em;`}>
+  {icon && <img src={icon} alt="icon" style="height:1em; width:auto;" />}
+  <span style={`text-align: ${textAlign};`}><slot /></span>
+</Tag>
+
+
+
+
