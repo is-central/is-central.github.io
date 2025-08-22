@@ -49,7 +49,7 @@ collections:
     extension: "mdx"
     format: "frontmatter"
     nested:
-      depth: 2
+      depth: 3
     fields:
       - { name: "title", label: "Title", widget: "string", required: false }
       - { name: "description", label: "Description", widget: "text", required: false }
@@ -64,7 +64,7 @@ collections:
     extension: "mdx"
     format: "frontmatter"
     nested:
-      depth: 2
+      depth: 3
     fields:
       - { name: "title", label: "Title", widget: "string", required: false }
       - { name: "description", label: "Description", widget: "text", required: false }
@@ -79,7 +79,8 @@ collections:
     extension: "mdx"
     format: "frontmatter"
     nested:
-      depth: 2
+      depth: 3
+      summary: '{{title}}'
     fields:
       - { name: "title", label: "Title", widget: "string", required: false }
       - { name: "description", label: "Description", widget: "text", required: false }
@@ -94,7 +95,7 @@ collections:
     extension: "mdx"
     format: "frontmatter"
     nested:
-      depth: 2
+      depth: 3
     fields:
       - { name: "title", label: "Title", widget: "string", required: false }
       - { name: "description", label: "Description", widget: "text", required: false }
