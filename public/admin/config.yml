@@ -1,8 +1,7 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: is-central/is-central.github.io
   branch: decap
-
-site_url: "https://is-central-auth.netlify.app"
 
 media_folder: "public/media"
 public_folder: "/media"
