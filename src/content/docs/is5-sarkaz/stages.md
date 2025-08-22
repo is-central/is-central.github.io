@@ -155,6 +155,13 @@ A comprehensive reference guide for all combats and events you may encounter acr
   </a>
 </div>
 
+
+<div class="stage-grid narrative-offer-grid">
+  <a href="/is5-sarkaz/stages/narrative-offer" class="stage-card combat">
+    <span class="stage-name">Narrative Offer</span>
+  </a>
+</div>
+
 ---
 
 ## Floor 5
