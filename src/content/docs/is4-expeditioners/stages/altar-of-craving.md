@@ -10,6 +10,8 @@ description: Altar of Craving stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
+<img src="/stages/is4/altar-of-craving.png" alt="Altar of Craving" />
+
 # Altar of Craving
 
 **Floor:** 3  

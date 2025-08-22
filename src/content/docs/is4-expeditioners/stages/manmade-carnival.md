@@ -10,9 +10,11 @@ description: Manmade Carnival stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
+<img src="/stages/is4/manmade-carnival.png" alt="Manmade Carnival" />
+
 # Manmade Carnival
 
-**Floor:** 5  
+**Floor:** 4  
 **Type:** Combat  
 
 ---

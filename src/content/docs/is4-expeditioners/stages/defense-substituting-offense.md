@@ -10,6 +10,8 @@ description: Defense Substituting Offense stage guide for IS4 Expeditioner's Jok
   </a>
 </div>
 
+<img src="/stages/is4/defense-substituting-offense.png" alt="Defense Substituting Offense" />
+
 # Defense Substituting Offense
 
 **Floor:** 4  

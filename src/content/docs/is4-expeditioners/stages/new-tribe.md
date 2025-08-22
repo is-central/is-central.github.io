@@ -1,6 +1,6 @@
 ---
-title: Altar of Craving
-description: Altar of Craving stage guide for IS4 Expeditioner's Joklumarkar
+title: New Tribe
+description: New Tribe stage guide for IS4 Expeditioner's Joklumarkar
 ---
 
 <div class="back-button-container">
@@ -10,9 +10,11 @@ description: Altar of Craving stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
-# Altar of Craving
+<img src="/stages/is4/new-tribe.png" alt="New Tribe" />
 
-**Floor:** 3  
+# New Tribe
+
+**Floor:** 4  
 **Type:** Combat  
 
 ---

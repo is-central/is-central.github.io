@@ -1,6 +1,6 @@
 ---
-title: Altar of Craving
-description: Altar of Craving stage guide for IS4 Expeditioner's Joklumarkar
+title: Nature's Wrath
+description: Nature's Wrath stage guide for IS4 Expeditioner's Joklumarkar
 ---
 
 <div class="back-button-container">
@@ -10,9 +10,11 @@ description: Altar of Craving stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
-# Altar of Craving
+<img src="/stages/is4/natures-wrath.png" alt="Nature's Wrath" />
 
-**Floor:** 3  
+# Nature's Wrath
+
+**Floor:** 4  
 **Type:** Combat  
 
 ---

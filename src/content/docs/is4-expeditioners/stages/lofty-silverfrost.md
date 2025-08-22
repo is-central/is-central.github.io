@@ -1,6 +1,6 @@
 ---
-title: Confusing Appearance
-description: Confusing Appearance stage guide for IS4 Expeditioner's Joklumarkar
+title: Lofty Silverfrost
+description: Lofty Silverfrost stage guide for IS4 Expeditioner's Joklumarkar
 ---
 
 <div class="back-button-container">
@@ -10,9 +10,11 @@ description: Confusing Appearance stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
-# Confusing Appearance
+<img src="/stages/is4/lofty-silverfrost.png" alt="Lofty Silverfrost" />
 
-**Floor:** 5  
+# Lofty Silverfrost
+
+**Floor:** 4  
 **Type:** Combat  
 
 ---

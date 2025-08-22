@@ -1,6 +1,6 @@
 ---
-title: Confusing Appearance
-description: Confusing Appearance stage guide for IS4 Expeditioner's Joklumarkar
+title: Sami's Entropy
+description: Sami's Entropy stage guide for IS4 Expeditioner's Joklumarkar
 ---
 
 <div class="back-button-container">
@@ -10,9 +10,11 @@ description: Confusing Appearance stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
-# Confusing Appearance
+<img src="/stages/is4/samis-entropy.png" alt="Sami's Entropy" />
 
-**Floor:** 5  
+# Sami's Entropy
+
+**Floor:** 4  
 **Type:** Combat  
 
 ---

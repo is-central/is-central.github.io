@@ -10,9 +10,11 @@ description: Frost and Sand stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
+<img src="/stages/is4/frost-and-sand.png" alt="Frost and Sand" />
+
 # Frost and Sand
 
-**Floor:** 6  
+**Floor:** 4  
 **Type:** Combat  
 
 ---

@@ -1,6 +1,6 @@
 ---
-title: Where be No Mounts and Seas
-description: Where be No Mounts and Seas stage guide for IS4 Expeditioner's Joklumarkar
+title: Where Be No Mounts and Seas
+description: Where Be No Mounts and Seas stage guide for IS4 Expeditioner's Joklumarkar
 ---
 
 <div class="back-button-container">
@@ -10,9 +10,11 @@ description: Where be No Mounts and Seas stage guide for IS4 Expeditioner's Jokl
   </a>
 </div>
 
-# Where be No Mounts and Seas
+<img src="/stages/is4/where-be-no-mounts-and-seas.png" alt="Where Be No Mounts and Seas" />
 
-**Floor:** 5  
+# Where Be No Mounts and Seas
+
+**Floor:** 4  
 **Type:** Combat  
 
 ---

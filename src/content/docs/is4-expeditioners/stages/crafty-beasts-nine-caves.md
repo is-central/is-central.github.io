@@ -1,6 +1,6 @@
 ---
-title: Crafty Beasts' Nine-Caves
-description: Crafty Beasts' Nine-Caves stage guide for IS4 Expeditioner's Joklumarkar
+title: Crafty Beasts Nine Caves
+description: Crafty Beasts Nine Caves stage guide for IS4 Expeditioner's Joklumarkar
 ---
 
 <div class="back-button-container">
@@ -10,9 +10,11 @@ description: Crafty Beasts' Nine-Caves stage guide for IS4 Expeditioner's Joklum
   </a>
 </div>
 
-# Crafty Beasts' Nine-Caves
+<img src="/stages/is4/crafty-beasts-nine-caves.png" alt="Crafty Beasts Nine Caves" />
 
-**Floor:** 3  
+# Crafty Beasts Nine Caves
+
+**Floor:** 4  
 **Type:** Combat  
 
 ---

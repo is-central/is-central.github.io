@@ -10,9 +10,11 @@ description: Pretense Turned True stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
+<img src="/stages/is4/pretense-turned-true.png" alt="Pretense Turned True" />
+
 # Pretense Turned True
 
-**Floor:** 3  
+**Floor:** 4  
 **Type:** Combat  
 
 ---

@@ -1,6 +1,6 @@
 ---
-title: Stay Away From Strangers
-description: Stay Away From Strangers stage guide for IS4 Expeditioner's Joklumarkar
+title: Stay Away from Strangers
+description: Stay Away from Strangers stage guide for IS4 Expeditioner's Joklumarkar
 ---
 
 <div class="back-button-container">
@@ -10,9 +10,11 @@ description: Stay Away From Strangers stage guide for IS4 Expeditioner's Jokluma
   </a>
 </div>
 
-# Stay Away From Strangers
+<img src="/stages/is4/stay-away-from-strangers.png" alt="Stay Away from Strangers" />
 
-**Floor:** 5  
+# Stay Away from Strangers
+
+**Floor:** 4  
 **Type:** Combat  
 
 ---

@@ -1,6 +1,6 @@
 ---
-title: Harass With Strength
-description: Harass With Strength stage guide for IS4 Expeditioner's Joklumarkar
+title: Harass with Strength
+description: Harass with Strength stage guide for IS4 Expeditioner's Joklumarkar
 ---
 
 <div class="back-button-container">
@@ -10,9 +10,11 @@ description: Harass With Strength stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
-# Harass With Strength
+<img src="/stages/is4/harass-with-strength.png" alt="Harass with Strength" />
 
-**Floor:** 3  
+# Harass with Strength
+
+**Floor:** 4  
 **Type:** Combat  
 
 ---
