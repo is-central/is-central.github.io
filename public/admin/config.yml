@@ -1,0 +1,33 @@
+backend:
+  name: github
+  repo: is-central/is-central.github.io
+  branch: decap
+  open_authoring: true # This allows any GitHub user to contribute
+  auth_scope: repo # Ensures proper write permissions
+
+media_folder: "public/media"
+public_folder: "/media"
+
+editor:
+  preview: true
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "docs"
+    label: "All Documentation"
+    folder: "src/content/docs"
+    create: true
+    slug: "{{slug}}"
+    extension: "mdx"
+    format: "frontmatter"
+    meta: { path: { widget: string, label: 'Path', index_file: '_index' } }
+    nested:
+      depth: 4
+      subfolders: true
+      summary: "{{title}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: false }
+      - { name: "description", label: "Description", widget: "text", required: false }
+      - { name: "template", label: "Template", widget: "string", required: false }
+      - { name: "body", label: "Body", widget: "markdown" }
