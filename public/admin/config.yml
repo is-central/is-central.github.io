@@ -2,6 +2,8 @@ backend:
   name: github
   repo: is-central/is-central.github.io
   branch: decap
+  open_authoring: true # This allows any GitHub user to contribute
+  auth_scope: repo # Ensures proper write permissions
 
 media_folder: "public/media"
 public_folder: "/media"
