@@ -3,7 +3,7 @@ backend:
   repo: is-central/is-central.github.io
   branch: main
   open_authoring: true # This allows any GitHub user to contribute
-  auth_scope: repo # Ensures proper write permissions
+  auth_scope: public_repo # Limit to public repo permissions only - no admin bypass
 
 # Note: CMS is designed to be used via the deployed Netlify site, not locally
 # If you want to test the CMS with a development branch setup, reach out to maintainers
