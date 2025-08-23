@@ -362,8 +362,26 @@
   box-shadow: 0 8px 24px rgba(124, 45, 18, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
+/* Encounter Stage Card - Cyan Theme */
+.stage-card.encounter{
+  background: #2a7a74;
+  color: white;
+  border-color: #1f6762;
+  border-width: 3px;
+  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline-offset: -1px;
+  box-shadow: 0 6px 16px rgba(27, 94, 94, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.stage-card.encounter:hover {
+  background: #3da099;
+  border-color: #358681;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(42, 128, 128, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
 /* Narrative Offer Stage Card - Dark Green Theme */
-.stage-card[href*="narrative-offer"] {
+.stage-card.shop{
   background: #1b5e20;
   color: white;
   border-color: #0d4f14;
@@ -373,11 +391,29 @@
   box-shadow: 0 6px 16px rgba(27, 94, 32, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-.stage-card[href*="narrative-offer"]:hover {
+.stage-card.shop:hover {
   background: #2e7d32;
   border-color: #1b5e20;
   transform: translateY(-3px);
   box-shadow: 0 8px 24px rgba(46, 125, 50, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Face-Off Stage Card - Cyan Theme */
+.stage-card.faceoff{
+  background: #2a7a74;
+  color: white;
+  border-color: #1f6762;
+  border-width: 3px;
+  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline-offset: -1px;
+  box-shadow: 0 6px 16px rgba(27, 94, 94, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.stage-card.faceoff:hover {
+  background: #3da099;
+  border-color: #358681;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(42, 128, 128, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 /* Narrative Offer Grid - Centered single stage */
