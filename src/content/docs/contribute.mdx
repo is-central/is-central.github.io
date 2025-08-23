@@ -18,8 +18,47 @@ Visit [https://is-central.netlify.app/admin/index.html#/](https://is-central.net
 
 
 
+Make sure to make a fork. Netlify work on your account on behalf of you, so if you want to use this fork for the method below you can switch anytime.
+
+Now let's pick a stage to update. Using the dropdown menus or the search bar, we can navigate to a stage guide of our choice. 
 
 
+
+For this example I'll be editing the guide for Beasts Awaiting Slaughter (an IS4 stage).
+
+You can toggle between Rich text (like a Google Doc) and Markdown (like Discord). Markdown is generally preferred.
+
+Start writing your guide below the `---` lines. The preview bar isn't a perfect match for what it would look like on the sight, but it is fairly close.
+
+When you are done, paste this code block in
+
+```
+import StrategySection from '../../../../components/StrategySection.astro';
+
+<StrategySection title="Stage Analysis" author="Your Name" defaultOpen={true}>
+// Your guide here
+</StrategySection>
+```
+and copy the content of your guide into where the `//your guide here` is.
+
+Edit the title (currently `"Stage Analysis"`) and the author (currently `"Your Name"`) if needed.
+
+Then click Save.
+
+
+If you wait a bit a refresh, there should be a preview site in the upper right. You can click it to get a preview of what the actual site will look like. We can navigate on that site to our Beasts stage guide page.
+
+
+If you want to indicate that your draft is ready to be reviewed, you can change the status from Draft to In Review. From there, the maintainers will choose to (hopefully) accept your edits and add your guide to the main site.
+
+The preview site should start generating as soon as you click Save for the time, so there is no need to rush the post to In Review.
+
+
+You can view your current posts in the Workflow tab and upload media in the Media tab. Happy guide writing!
+
+#### For admins
+
+There is a Publish button
 
 
 ### Adding a new stage guide with Github
