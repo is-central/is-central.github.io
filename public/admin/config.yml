@@ -14,90 +14,17 @@ editor:
 publish_mode: editorial_workflow
 
 collections:
-  - name: "general"
-    label: "General Documentation"
+  - name: "docs"
+    label: "All Documentation"
     folder: "src/content/docs"
     create: true
     slug: "{{slug}}"
     extension: "mdx"
     format: "frontmatter"
-    filter: {field: "path", pattern: "^src/content/docs/[^/]+\\.mdx$"}
-    fields:
-      - { name: "title", label: "Title", widget: "string", required: false }
-      - { name: "description", label: "Description", widget: "text", required: false }
-      - { name: "template", label: "Template", widget: "string", required: false }
-      - { name: "body", label: "Body", widget: "markdown" }
-
-  - name: "is2"
-    label: "IS2 - Phantom & Crimson Solitaire"
-    folder: "src/content/docs/is2-phantom"
-    create: true
-    slug: "{{slug}}"
-    extension: "mdx"
-    format: "frontmatter"
     nested:
-      depth: 2
-    fields:
-      - { name: "title", label: "Title", widget: "string", required: false }
-      - { name: "description", label: "Description", widget: "text", required: false }
-      - { name: "template", label: "Template", widget: "string", required: false }
-      - { name: "body", label: "Body", widget: "markdown" }
-
-  - name: "is3"
-    label: "IS3 - Mizuki & Caerula Arbor"
-    folder: "src/content/docs/is3-mizuki"
-    create: true
-    slug: "{{slug}}"
-    extension: "mdx"
-    format: "frontmatter"
-    nested:
-      depth: 3
-    fields:
-      - { name: "title", label: "Title", widget: "string", required: false }
-      - { name: "description", label: "Description", widget: "text", required: false }
-      - { name: "template", label: "Template", widget: "string", required: false }
-      - { name: "body", label: "Body", widget: "markdown" }
-
-  - name: "is4"
-    label: "IS4 - Expeditioners"
-    folder: "src/content/docs/is4-expeditioners"
-    create: true
-    slug: "{{slug}}"
-    extension: "mdx"
-    format: "frontmatter"
-    nested:
-      depth: 3
-    fields:
-      - { name: "title", label: "Title", widget: "string", required: false }
-      - { name: "description", label: "Description", widget: "text", required: false }
-      - { name: "template", label: "Template", widget: "string", required: false }
-      - { name: "body", label: "Body", widget: "markdown" }
-
-  - name: "is5"
-    label: "IS5 - Sarkaz"
-    folder: "src/content/docs/is5-sarkaz"
-    create: true
-    slug: "{{slug}}"
-    extension: "mdx"
-    format: "frontmatter"
-    nested:
-      depth: 3
-      summary: '{{title}}'
-    fields:
-      - { name: "title", label: "Title", widget: "string", required: false }
-      - { name: "description", label: "Description", widget: "text", required: false }
-      - { name: "template", label: "Template", widget: "string", required: false }
-      - { name: "body", label: "Body", widget: "markdown" }
-
-  - name: "is6"
-    label: "IS6 - Sui"
-    folder: "src/content/docs/is6-sui"
-    create: true
-    slug: "{{slug}}"
-    extension: "mdx"
-    format: "frontmatter"
-    nested:
-      depth: 3
+      depth: 4
+      summary: "{{title}}"
+    meta: { path: { widget: string, label: 'Path', index_file: 'cms_index' } }
     fields:
       - { name: "title", label: "Title", widget: "string", required: false }
       - { name: "description", label: "Description", widget: "text", required: false }
