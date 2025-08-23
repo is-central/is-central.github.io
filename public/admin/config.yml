@@ -21,7 +21,7 @@ collections:
     slug: "{{slug}}"
     extension: "mdx"
     format: "frontmatter"
-    meta: { path: { widget: string, label: 'Path', index_file: 'cms_index' } }
+    meta: { path: { widget: string, label: 'Path', index_file: '_index' } }
     nested:
       depth: 4
       subfolders: true
