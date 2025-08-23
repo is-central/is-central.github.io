@@ -10,9 +10,11 @@ description: Shady Frozen Sea stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
+<img src="/stages/is4/shady-frozen-sea.png" alt="Shady Frozen Sea" />
+
 # Shady Frozen Sea
 
-**Floor:** 3  
+**Floor:** 4  
 **Type:** Combat  
 
 ---

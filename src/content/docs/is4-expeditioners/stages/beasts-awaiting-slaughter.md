@@ -10,6 +10,8 @@ description: Beasts Awaiting Slaughter stage guide for IS4 Expeditioner's Joklum
   </a>
 </div>
 
+<img src="/stages/is4/beasts-awaiting-slaughter.png" alt="Beasts Awaiting Slaughter" />
+
 # Beasts Awaiting Slaughter
 
 **Floor:** 1  

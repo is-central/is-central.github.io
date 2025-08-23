@@ -10,6 +10,8 @@ description: Collapsals' Afternoon stage guide for IS4 Expeditioner's Joklumarka
   </a>
 </div>
 
+<img src="/stages/is4/collapsals-afternoon.png" alt="Collapsals' Afternoon" />
+
 # Collapsals' Afternoon
 
 **Floor:** 4  

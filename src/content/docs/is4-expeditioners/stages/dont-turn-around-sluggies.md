@@ -1,6 +1,6 @@
 ---
-title: Don't Turn Around, Sluggies
-description: Don't Turn Around, Sluggies stage guide for IS4 Expeditioner's Joklumarkar
+title: Don't Turn Around Sluggies
+description: Don't Turn Around Sluggies stage guide for IS4 Expeditioner's Joklumarkar
 ---
 
 <div class="back-button-container">
@@ -10,9 +10,11 @@ description: Don't Turn Around, Sluggies stage guide for IS4 Expeditioner's Jokl
   </a>
 </div>
 
-# Don't Turn Around, Sluggies
+<img src="/stages/is4/dont-turn-around-sluggies.png" alt="Don't Turn Around Sluggies" />
 
-**Floor:** 2  
+# Don't Turn Around Sluggies
+
+**Floor:** 4  
 **Type:** Combat  
 
 ---

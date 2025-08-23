@@ -10,9 +10,11 @@ description: March of the Dead stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
+<img src="/stages/is4/march-of-the-dead.png" alt="March of the Dead" />
+
 # March of the Dead
 
-**Floor:** 5  
+**Floor:** 4  
 **Type:** Combat  
 
 ---

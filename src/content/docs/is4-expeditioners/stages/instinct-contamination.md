@@ -10,9 +10,11 @@ description: Instinct Contamination stage guide for IS4 Expeditioner's Joklumark
   </a>
 </div>
 
+<img src="/stages/is4/instinct-contamination.png" alt="Instinct Contamination" />
+
 # Instinct Contamination
 
-**Floor:** 5  
+**Floor:** 4  
 **Type:** Combat  
 
 ---

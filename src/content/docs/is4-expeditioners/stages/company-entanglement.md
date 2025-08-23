@@ -10,6 +10,8 @@ description: Company Entanglement stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
+<img src="/stages/is4/company-entanglement.png" alt="Company Entanglement" />
+
 # Company Entanglement
 
 **Floor:** 4  

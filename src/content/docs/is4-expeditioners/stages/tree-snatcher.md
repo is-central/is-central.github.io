@@ -1,6 +1,6 @@
 ---
-title: Altar of Craving
-description: Altar of Craving stage guide for IS4 Expeditioner's Joklumarkar
+title: Tree Snatcher
+description: Tree Snatcher stage guide for IS4 Expeditioner's Joklumarkar
 ---
 
 <div class="back-button-container">
@@ -10,9 +10,11 @@ description: Altar of Craving stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
-# Altar of Craving
+<img src="/stages/is4/tree-snatcher.png" alt="Tree Snatcher" />
 
-**Floor:** 3  
+# Tree Snatcher
+
+**Floor:** 4  
 **Type:** Combat  
 
 ---

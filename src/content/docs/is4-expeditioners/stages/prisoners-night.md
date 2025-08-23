@@ -1,6 +1,6 @@
 ---
-title: Prisoners' Night
-description: Prisoners' Night stage guide for IS4 Expeditioner's Joklumarkar
+title: Prisoner's Night
+description: Prisoner's Night stage guide for IS4 Expeditioner's Joklumarkar
 ---
 
 <div class="back-button-container">
@@ -10,9 +10,11 @@ description: Prisoners' Night stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
-# Prisoners' Night
+<img src="/stages/is4/prisoners-night.png" alt="Prisoner's Night" />
 
-**Floor:** 1  
+# Prisoner's Night
+
+**Floor:** 4  
 **Type:** Combat  
 
 ---

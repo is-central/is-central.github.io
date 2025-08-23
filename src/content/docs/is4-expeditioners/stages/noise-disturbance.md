@@ -10,6 +10,8 @@ description: Noise Disturbance stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
+<img src="/stages/is4/noise-disturbance.png" alt="Noise Disturbance" />
+
 # Noise Disturbance
 
 **Floor:** 4  

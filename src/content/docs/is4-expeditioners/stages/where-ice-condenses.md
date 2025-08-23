@@ -10,6 +10,8 @@ description: Where Ice Condenses stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
+<img src="/stages/is4/where-ice-condenses.png" alt="Where Ice Condenses" />
+
 # Where Ice Condenses
 
 **Floor:** 4  

@@ -10,9 +10,11 @@ description: Unwell stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
+<img src="/stages/is4/unwell.png" alt="Unwell" />
+
 # Unwell
 
-**Floor:** 2  
+**Floor:** 4  
 **Type:** Combat  
 
 ---

@@ -10,6 +10,8 @@ description: Restricted Zone stage guide for IS4 Expeditioner's Joklumarkar
   </a>
 </div>
 
+<img src="/stages/is4/restricted-zone.png" alt="Restricted Zone" />
+
 # Restricted Zone
 
 **Floor:** 4  
