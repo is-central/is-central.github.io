@@ -13,6 +13,12 @@ editor:
 
 publish_mode: editorial_workflow
 
+# Editorial workflow configuration with admin warning
+editorial_workflow:
+  publish_button_text: "If you are an admin, this forces a push onto main!"
+  confirm_publish: true
+  publish_confirmation_text: "Are you sure you want to publish this to the live site? This will push directly to main branch and be visible immediately."
+
 collections:
   - name: "docs"
     label: "All Documentation"
