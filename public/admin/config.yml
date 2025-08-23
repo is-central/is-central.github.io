@@ -28,12 +28,13 @@ collections:
     slug: "{{slug}}"
     extension: "mdx"
     format: "frontmatter"
+    identifier_field: "title"
     nested:
       depth: 10
       summary: "{{title}}"
       path: {widget: string, label: 'Path', index_file: '_index'}
     fields:
-      - { name: "title", label: "Title", widget: "string", required: false }
+      - { name: "title", label: "Title", widget: "string", required: true }
       - { name: "description", label: "Description", widget: "text", required: false }
       - { name: "template", label: "Template", widget: "string", required: false }
       - { name: "body", label: "Body", widget: "markdown" }
