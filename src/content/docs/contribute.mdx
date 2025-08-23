@@ -2,33 +2,35 @@
 title: Contribute
 description: Contribute to the IS Central website
 ---
-
 The IS Central website is a community-driven project. We welcome contributions from the community to help us improve the website.
 
 ## How to Contribute
 
 We currently have two main ways of contributing, via Netlify CMS (an online editor) or via Github.
 
-
 ### Adding a new stage guide with Netlify CMS
 
-Register a Github account if you don't have one. We still require the Github account for tracking who is responsible for what edits.
+Register a Github account if you don't have one.
 
-Visit [https://is-central.netlify.app/admin/index.html#/](https://is-central.netlify.app/admin/index.html#/) and login with Github.
-
-
+Visit <https://is-central.netlify.app/admin/index.html#/> and login with Github.
 
 Make sure to make a fork. Netlify work on your account on behalf of you, so if you want to use this fork for the method below you can switch anytime.
 
 Now let's pick a stage to update. Using the dropdown menus or the search bar, we can navigate to a stage guide of our choice. 
 
+![search](https://imgur.com/grxXadN)
 
+![dropdown](https://imgur.com/844zEBj)
 
 For this example I'll be editing the guide for Beasts Awaiting Slaughter (an IS4 stage).
 
-You can toggle between Rich text (like a Google Doc) and Markdown (like Discord). Markdown is generally preferred.
+You can toggle between Rich text (like a Google Doc) and Markdown (like Discord). Markdown is generally preferred. You can also toggle between hide/show preview with the eye icon.
+
+![](https://imgur.com/M8S8GvT)
 
 Start writing your guide below the `---` lines. The preview bar isn't a perfect match for what it would look like on the sight, but it is fairly close.
+
+![real and true](https://imgur.com/M8S8GvT)
 
 When you are done, paste this code block in
 
@@ -39,20 +41,26 @@ import StrategySection from '../../../../components/StrategySection.astro';
 // Your guide here
 </StrategySection>
 ```
+
 and copy the content of your guide into where the `//your guide here` is.
 
 Edit the title (currently `"Stage Analysis"`) and the author (currently `"Your Name"`) if needed.
 
-Then click Save.
+![](https://imgur.com/Vc7gjou)
 
+Then click Save. If all goes right, a green popup indicated Entry Saved should appear.
+
+![](https://imgur.com/82o5xkx)
 
 If you wait a bit a refresh, there should be a preview site in the upper right. You can click it to get a preview of what the actual site will look like. We can navigate on that site to our Beasts stage guide page.
 
+![](https://imgur.com/82o5xkx)
+
+![](https://imgur.com/cSpSAmw)
 
 If you want to indicate that your draft is ready to be reviewed, you can change the status from Draft to In Review. From there, the maintainers will choose to (hopefully) accept your edits and add your guide to the main site.
 
 The preview site should start generating as soon as you click Save for the time, so there is no need to rush the post to In Review.
-
 
 You can view your current posts in the Workflow tab and upload media in the Media tab. Happy guide writing!
 
@@ -60,8 +68,8 @@ You can view your current posts in the Workflow tab and upload media in the Medi
 
 There is a Publish button
 
-
 ### Adding a new stage guide with Github
+
 First, go to the [IS Central GitHub repository](https://github.com/IS-Central/is-central) and **fork** the repository.
 
 ![Fork the repository](/contribute/fork.png)
@@ -92,6 +100,7 @@ The code is written in markdown, which is a simple markup language for writing t
 You can learn more about markdown [here](https://www.markdownguide.org/getting-started/).
 
 Write your guide in markdown format, after you're done, first paste this code block into the file:
+
 ```
 import StrategySection from '../../../../components/StrategySection.astro';
 
@@ -99,6 +108,7 @@ import StrategySection from '../../../../components/StrategySection.astro';
 // Your guide here
 </StrategySection>
 ```
+
 Now, paste your guide in between the `<StrategySection>` tags. Edit the title and author to your liking. If you prefer to have the guide open by default, set `defaultOpen` to `true`.
 
 It should look like this:
@@ -118,11 +128,3 @@ Add any description you want, and click on the "**Create pull request**" button.
 Now, you've submitted your pull request! You can now wait for the pull request to be merged, and your guide will be live on the website.
 
 ![just like that](/contribute/just-like-that.png)
-
-
-
-
-
-
-
-
