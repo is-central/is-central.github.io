@@ -24,7 +24,7 @@ collections:
     nested:
       depth: 4
       summary: "{{title}}"
-    meta: { path: { widget: string, label: 'Path', index_file: 'cms_index' } }
+      index_file: 'index'
     fields:
       - { name: "title", label: "Title", widget: "string", required: false }
       - { name: "description", label: "Description", widget: "text", required: false }
