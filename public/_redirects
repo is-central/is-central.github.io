@@ -1,5 +1,0 @@
-# Keep admin routes on Netlify for CMS functionality
-/admin/* 200
-
-# Redirect all other traffic to GitHub Pages
-/* https://is-central.github.io/:splat 301!
