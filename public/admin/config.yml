@@ -18,9 +18,7 @@ publish_mode: editorial_workflow
 
 # Editorial workflow configuration with admin warning
 editorial_workflow:
-  publish_button_text: "If you are an admin, this forces a push onto main!"
   confirm_publish: true
-  publish_confirmation_text: "Are you sure you want to publish this to the live site? This will push directly to main branch and be visible immediately."
 
 collections:
   - name: "docs"
@@ -30,11 +28,10 @@ collections:
     slug: "{{slug}}"
     extension: "mdx"
     format: "frontmatter"
-    meta: { path: { widget: string, label: 'Folder Path (e.g. is5-sarkaz/stages, /)', index_file: '_index', hint: 'Specify which folder to save this file in. Leave empty for root docs folder.' } }
     nested:
       depth: 10
-      subfolders: true
       summary: "{{title}}"
+      path: {widget: string, label: 'Path', index_file: '_index'}
     fields:
       - { name: "title", label: "Title", widget: "string", required: false }
       - { name: "description", label: "Description", widget: "text", required: false }
