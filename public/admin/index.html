@@ -38,6 +38,7 @@
       } else if (hostname.includes('netlify.app') && hostname !== 'is-central.netlify.app') {
         // Netlify preview deploy - show warning with option to proceed
         const warningDiv = document.createElement('div');
+        warningDiv.id = 'preview-warning';
         warningDiv.style.cssText = `
           position: fixed; 
           top: 0; 
@@ -55,10 +56,17 @@
             <strong>⚠️ Preview Deploy Warning</strong><br>
             You are currently on a preview page. While it is possible to use the admin panel here, it is strongly discouraged. 
             <a href="https://is-central.netlify.app/admin/" style="color: #0066cc;">Go to main admin page</a> or 
-            <button onclick="this.parentElement.parentElement.style.display='none'" style="background: #6c757d; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer;">Proceed Anyway</button>
+            <button onclick="document.getElementById('preview-warning').style.display='none'" style="background: #6c757d; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer;">Proceed Anyway</button>
           </div>
         `;
         document.body.insertBefore(warningDiv, document.body.firstChild);
+        
+        // Also show warning after CMS loads (for already logged in users)
+        setTimeout(() => {
+          if (document.getElementById('preview-warning')) {
+            document.getElementById('preview-warning').style.display = 'block';
+          }
+        }, 2000);
       }
       
       // Initialize Netlify Identity (only on correct domains)
