@@ -24,15 +24,15 @@ editorial_workflow:
 
 collections:
   - name: "docs"
-    label: "All Documentation"
+    label: "Posts"
     folder: "src/content/docs"
     create: true
     slug: "{{slug}}"
     extension: "mdx"
     format: "frontmatter"
-    meta: { path: { widget: string, label: 'Path', index_file: '_index' } }
+    meta: { path: { widget: string, label: 'Folder Path (e.g. is5-sarkaz/stages, /)', index_file: '_index', hint: 'Specify which folder to save this file in. Leave empty for root docs folder.' } }
     nested:
-      depth: 4
+      depth: 10
       subfolders: true
       summary: "{{title}}"
     fields:
