@@ -21,10 +21,10 @@ collections:
     slug: "{{slug}}"
     extension: "mdx"
     format: "frontmatter"
+    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
     nested:
       depth: 4
       summary: "{{title}}"
-      index_file: 'index'
     fields:
       - { name: "title", label: "Title", widget: "string", required: false }
       - { name: "description", label: "Description", widget: "text", required: false }
