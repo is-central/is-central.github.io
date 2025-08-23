@@ -3,6 +3,13 @@ title: Stage Compilation
 description: A complete list of all stages in Sarkaz's Furnaceside Fables.
 ---
 
+<div class="back-button-container">
+  <a href="/is5-sarkaz/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">Back to IS5 Overview</span>
+  </a>
+</div>
+
 A comprehensive reference guide for all combats and events you may encounter across all floors of Sarkaz's Furnaceside Fables.
 
 <div class="spine-epoch-disclaimer">
@@ -155,13 +162,6 @@ A comprehensive reference guide for all combats and events you may encounter acr
   </a>
 </div>
 
-
-<div class="stage-grid narrative-offer-grid">
-  <a href="/is5-sarkaz/stages/narrative-offer" class="stage-card combat">
-    <span class="stage-name">Narrative Offer</span>
-  </a>
-</div>
-
 ---
 
 ## Floor 5
@@ -243,5 +243,67 @@ A comprehensive reference guide for all combats and events you may encounter acr
     <span class="stage-name">Fate's Finale</span>
   </a>
 </div>
+
+---
+
+## Encounters / Downtime Recreation
+
+<div class="stage-grid combat">
+  <a href="/is5-sarkaz/stages/failed-dare" class="stage-card encounter">
+    <span class="stage-name">Failed Dare</span>
+  </a>
+  <a href="/is5-sarkaz/stages/signal-light" class="stage-card encounter">
+    <span class="stage-name">Signal Light</span>
+  </a>
+  <a href="/is5-sarkaz/stages/illusory-heist" class="stage-card encounter">
+    <span class="stage-name">Illusory Heist</span>
+  </a>
+  <a href="/is5-sarkaz/stages/duck-speed-highway" class="stage-card encounter">
+    <span class="stage-name">Duck-Speed Highway</span>
+  </a>
+</div>
+<div class="stage-grid boss-grid">
+  <a href="/is5-sarkaz/stages/beside-the-battlefield" class="stage-card encounter">
+    <span class="stage-name">Beside The Battlefield</span>
+  </a>
+  <a href="/is5-sarkaz/stages/legacy" class="stage-card encounter">
+    <span class="stage-name">Legacy</span>
+  </a>
+  <a href="/is5-sarkaz/stages/revenge-of-the-toys" class="stage-card encounter">
+    <span class="stage-name">Revenge of the Toys</span>
+  </a>
+</div>
+
+---
+
+## Rogue Trader
+
+<div class="stage-grid f5-boss-grid">
+  <a href="/is5-sarkaz/stages/property-dispute" class="stage-card shop">
+    <span class="stage-name">Property Dispute</span>
+  </a>
+  <a href="/is5-sarkaz/stages/narrative-offer" class="stage-card shop">
+    <span class="stage-name">Narrative Offer</span>
+  </a>
+</div>
+
+---
+
+## Face-Offs
+<div class="stage-grid combat">
+  <a href="/is5-sarkaz/stages/eye-for-an-eye" class="stage-card faceoff">
+    <span class="stage-name">Eye For an Eye</span>
+  </a>
+  <a href="/is5-sarkaz/stages/narrow-path" class="stage-card faceoff">
+    <span class="stage-name">Narrow Path</span>
+  </a>
+  <a href="/is5-sarkaz/stages/twin-gargoyles" class="stage-card faceoff">
+    <span class="stage-name">Twin Gargoyles</span>
+  </a>
+  <a href="/is5-sarkaz/stages/the-boat-home" class="stage-card faceoff">
+    <span class="stage-name">The Boat Home</span>
+  </a>
+</div>
+
 
 ---
