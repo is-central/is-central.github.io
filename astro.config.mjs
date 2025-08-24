@@ -31,6 +31,10 @@ export default defineConfig({
           link: '/introduction/',
         },
         {
+          label: 'Contribute',
+          link: '/contribute/',
+        },
+        {
           label: 'Getting Started',
           link: '/getting-started/',
         },

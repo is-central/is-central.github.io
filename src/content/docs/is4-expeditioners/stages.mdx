@@ -3,6 +3,13 @@ title: Stage Compilation
 description: A complete list of all stages in Expeditioner's Joklumarkar.
 ---
 
+<div class="back-button-container">
+  <a href="/is4-expeditioners/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">Back to IS4 Overview</span>
+  </a>
+</div>
+
 A comprehensive reference guide for all combats and events you may encounter across all floors of Expeditioner's Joklumarkar.
 
 ---
