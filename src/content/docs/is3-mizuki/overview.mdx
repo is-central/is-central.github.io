@@ -7,13 +7,13 @@ Welcome to the IS3 section! Here you'll find comprehensive guides and resources 
 ## Quick Reference
 
 <div class="guide-button-container">
-  <a href="" class="guide-button">
+  <a href="/is3-mizuki/stages" class="guide-button">
     <div class="button-image">
       <div class="reference-icon">📋</div>
     </div>
     <div class="button-content">
       <span class="button-title">Stage Compilation</span>
-      <span class="button-subtitle">A complete repository of all IS4 stages</span>
+      <span class="button-subtitle">A complete repository of all IS3 stages</span>
     </div>
     <div class="button-arrow">→</div>
   </a>
