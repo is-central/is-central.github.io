@@ -1,0 +1,364 @@
+---
+title: Damage Calculations
+description: A high level guide to Integrated Strategies damage calculations
+---
+
+<div class="back-button-container">
+  <a href="/general-knowledge/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">Back to General Knowledge Overview</span>
+  </a>
+</div>
+
+
+
+
+{/* ## Collectibles (written by Die Alive) */}
+## Introduction
+Collectibles are one of the most important factors in IS to improve the success rate of the run. Being able to identify what collectible is best to pick on a given situation will contribute to this. In order to know which collectible could benefit your squad better there are multiple factors to consider; such as knowing, throughout the run, what set of collectibles are essential to clear the endings and/or stages required and which are not, which collectibles would be more important earlier than later, and which collectibles boost your operator damage, HP, and reduce damage taken better, this article focuses on the last part.
+
+## Stats calculations in IS
+In arknights there are four main types of damage: Physical, Arts, True, and Elemental damage. Physical and Arts damage being the most common. In addition to these, there is a 5th form of applying damage referred to in game as Elemental Injury, this instead fills a new elemental-tied circular meter according to the respective element:
+<ul style={{ paddingLeft: '2.5em' }}>
+  <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+    <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+    <img 
+      src="/guides/general-assets/elemental-damage/45px-Necrosis_Damage.png" 
+      alt="Necrosis" 
+      style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} 
+    />
+    <span style={{ lineHeight: 1 }}>Necrosis damage</span>
+  </li>
+  <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+    <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+    <img 
+      src="/guides/general-assets/elemental-damage/45px-Burn_Damage.png" 
+      alt="Burn" 
+      style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} 
+    />
+    <span style={{ lineHeight: 1 }}>Burn damage</span>
+  </li>
+  <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+    <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+    <img 
+      src="/guides/general-assets/elemental-damage/45px-Nervous_Impairment.png" 
+      alt="nervous" 
+      style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} 
+    />
+    <span style={{ lineHeight: 1 }}>Nervous Impairment</span>
+  </li>
+  <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+    <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+    <img 
+      src="/guides/general-assets/elemental-damage/45px-Corrosion_Damage.png" 
+      alt="corrosion" 
+      style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} 
+    />
+    <span style={{ lineHeight: 1 }}>Corrosion damage</span>
+  </li>
+</ul>
+
+
+
+The following diagrams explain how the attack stats of an operator are carried out, including certain types of modifiers that can appear in IS.
+
+![Attack calculation formula](/guides/general-knowledge/damage-calculations/attack-calc.png)
+
+
+Base ATK: refers to the base attack of the operator, this is visible on the operator interface before starting a stage.
+
+External modifiers: refers to any modifier that affects the given stat (ATK, HP, DEF) that cannot change within the stage, because of this reason it is easy to identify which collectibles could fall into this type of modifier. These stats are often determined immediately when the stage has begun and are generally visible on the operator interface before they are deployed. In this case we will be using ATK as an example. All IS have a skill tree which buffs all operators by a certain percentage, in IS5 for example this is an extra 30% (after DLC2) for Atk, Hp, and DEF, and is considered as an external buff.
+
+Internal modifiers: refers to any dynamic modifier that affects the given stat (ATK, HP, DEF) that can conditionally change within the stage. Operators’ skills that are generally denoted as “ATK +x%” are also considered as internal modifiers (Not to be confused with ATK Scale skills, denoted as dealing x% ATK). While most relics are represented this way, the rule of thumb is that if they cannot change given a certain condition within the stage, they are a external modifier instead. For example, Emperor’s Favor, which gives +15% ATK to melee units is a external modifier, since “melee” is an inherent attribute of operators that doesn’t depend on the stage. These modifiers are generally visible on the operator interface only after they are deployed.
+
+Inspire: refers to the specific “Inspire” buff obtained from bards, such as Heidi and Skalter.
+
+%Debuff: refers to percentage debuffs, often applied by certain enemies.
+
+Final ATK: is the final attack value that will appear in the operator interface, from which the following calculations are based off.
+
+![Damage calcuation formula](/guides/general-knowledge/damage-calculations/dmg-calc.png)
+
+ATK Scale: refers to the multiplier in which some skills base their damage off, generally denoted as “dealing x% ATK as Physical/Arts damage”.
+
+DEF and RES: refer to the type of damage reduction applied according to the damage type. DEF is only applied to physical damage and is simply a subtraction, making high ATK values good when dealing physical damage. RES is only applied to arts damage and works as a damage percentage reduction, making arts damage generally bad when high RES values are present on enemies.
+
+Damage modifiers: this encompasses multiple types of multipliers. Some can be of the same type, stacking additively while others can be of different types and stack multiplicatively. Examples of additively stacking modifiers would be Emperor’s Collection (+30% arts damage) and ‘Brilliant Lament’ (+40% arts damage) resulting in a $(1 + 0.3 + 0.4)$ multiplier instead of a $(1 + 0.3) \cdot (1 + 0.4)$, whereas Emperor’s Collection and Scout’s Scope (Damage taken increased based on distance up to 100%) would stack multiplicatively: $(1 + 0.3) \cdot (1 + 1)$ (assuming for Scope that the enemy at max distance of 6 tiles or higher).
+
+True and elemental damage bypass DEF, RES, and damage modifiers, making them really good options for certain situations where enemies are bloated in these stats.
+
+In general, buffs within the same category (external buffs for example) stack additively, while most are applied multiplicatively with each other (external buffs with internal buffs), as explained in the previous diagrams.
+
+While these calculations work for the damage an operator deals to an enemy, the same formulas are applied into an operator when they receive damage, with the addition of certain damage reduction buffs like sanctuary, physical damage reduction, arts damage reduction, and others, that are applied in the damage modifiers category.
+
+### Calculations Examples
+Now that we know the basics of how damage calculations work, lets see a few examples.
+
+
+#### Physical damage
+Let's see a physical damage example with Młynar. First we take a look at his base stats and modifiers:
+* Base ATK: $$ 366.9 $$
+* Trait: ATK gradually increases up to +200% over 40s.
+* Talent: ATK increased to 110% when attacking. If there are 3 or more enemies nearby, ATK increased to 115%.
+* S3: Trait effect increased by 2x (trait multiplier -10% for each enemy defeated), attacks hit 5 targets for 180% ATK as physical damage.
+
+Now let's analyze the wording of these effects to see which pertains to each category. His trait explicitly says that his ATK stat increased up to +200%, this refers to an internal modifier. While the talent wording is very similar, here it says that ATK is increased to "110%", this refers to ATK scale, if it said "+110%" then it would likely refer to an internal modifier instead; here we take 115% ATK as there are enemies nearby. Similarly, his skill says he attacks the target for 180% ATK as physical damage, this also refers to another ATK scale multiplier. In addition to this, his skill doubles his trait effect, having a total of +400% internal ATK before defeating any enemy.
+
+Simplifying this, we then have:
+* Internal modifier: $$ 1 + 2 = 3 $$
+* ATK scale: $$ 1 \cdot 1.15 \cdot 1.8 = 2.07 $$
+
+In this example we are on an IS5 run with extra damage collectibles which further affect his damage output. In this run we have triple kings, this is +150% internal attack, on top of the +30% ATK from the tree buff, resulting in:
+* External modifier: $$ 1 + 0.3 = 1.3 $$
+* Internal modifier: $$ 1 + 2 + 1.5 = 4.5 $$
+
+This results in a total final ATK of $$ 366.9 * 1.3 * 4.5 = 2146 $$, as we see here.
+
+![Młynar's final ATK](/guides/general-knowledge/damage-calculations/mlynar-final-atk.png)
+
+ATK scale isn't applied in the operator's stats, instead it is only visible when dealing damage. If we activate his skill his trait goes from +200% ATK to +400% ATK and we have:
+* External modifier: $$ 1 + 0.3 = 1.3 $$
+* Internal modifier: $$ 1 + 4 + 1.5 = 6.5 $$
+* ATK scale: $$ 1 \cdot 1.15 \cdot 1.8 = 2.07 $$
+
+before applying the DEF reduction his damage output would be of $$ 6,418 $$ per hit. Here we have 2 targets:
+* Sarkaz Wither Maw: DEF $$ = 0 $$
+* Padmasana of Rebirth: DEF $$ = 2500 $$
+
+Two additional relics we have are Balor'sača's Arrogance and Worn-out Group Photo, the first one applying +20% DEF and the second one -12% DEF. More of this will be explained later but the result of these effects on the boat is $$ 2500 \cdot (1 + 0.2) \cdot (1 - 0.12) = 2640 $$.
+
+The last thing left to apply are the final damage modifiers. These can be found on relics that explicitly say physical damage or damage taken is amplified or damage reductions such as the 10% physical and arts damage reduction applied by the IS5 D10 effect. In this case we have Framework of The End, while this relic says that all enemies take 20% less physical and arts damage, this overrides the D10 damage reduction.
+
+The final calculation from this results in:
+* Sarkaz Wither Maw: $$ (6,418 - 0) \cdot (1 - 0.2) = 5,134 $$
+* Padmasana of Rebirth: $$ (6,418 - 2,640) \cdot (1 - 0.2) = 3,022 $$
+
+which is what we observe in this example.
+
+![Młynar's damage output](/guides/general-knowledge/damage-calculations/mlynar-dmg-output.png)
+
+
+#### Arts damage
+Let's consider now an example with arts damage. Here we have Texas the Omertosa with the following base stats and modifiers:
+* Base ATK: $$ 682 $$
+* Trait: +10% ATK when no allied units in the four adjacent tiles.
+* Talent: +28% ATK during the duration of the passive skill.
+* S2: deals 240% ATK as Arts damage and inflicts -30% RES for 10 seconds; ATK +55%.
+
+Following the logic from the previous example, we can identify here that the trait, talent, and 3rd effect of her skill are all internal modifiers, while the first effect of her skill is ATK scale. Then we have:
+* Internal modifier: $$ 1 + 0.1 + 0.28 + 0.55 = 1.93 $$
+* ATK scale: $$ 1 \cdot 2.4 = 2.4 $$
+
+Next we look at the relics and other modifiers we have. For external modifiers we have:
+* Tree: +30% ATK
+* Soul Binding Bone (13 stacks): +39% ATK
+* Sabotage Co-op Elimination (5 stacks): +40% ATK
+* Commander's Portrait: +10% ATK
+
+and for internal modifiers:
+* Triple kings: +150% ATK
+* Rusted Blade - Lone Force: +70% ATK
+* Ribbon of Honor: +100% ATK
+
+resulting in the following final modifiers:
+* External modifier: $$ 1 + 0.3 + 0.39 + 0.4 + 0.1 = 2.19 $$
+* Internal modifier: $$ 1 + 0.1 + 0.28 + 0.55 + 1.5 + 0.7 + 1.0 = 5.13 $$
+
+If we look at the operator's stats before deployment only the external modifiers would be applied, this gives us $$ 682 \cdot 2.19 = 1494 $$ ATK.
+
+![Texas's ATK before deployment](/guides/general-knowledge/damage-calculations/texas-atk-before-deployment.png)
+
+After deployment, with all the conditions met for the given relics we would then apply the internal ATK modifier, resulting in $$ 682 \cdot 2.19 \cdot 5.13 = 7664 $$ final ATK.
+
+![Texas's final ATK](/guides/general-knowledge/damage-calculations/texas-final-atk.png)
+
+Lastly we factor in her 240% ATK scale and look at the RES of the enemy and damage modifiers. Here we have a Shanhaizhong Oracle, this enemy has 40 RES, however, Texas has a -30% RES reduction, resulting in $$ 40 \cdot (1 - 0.3 = 28) $$ RES. We also have Framework of The End, adding a 20% arts damage reduction but we also have 'Brilliant Lament' which boosts arts damage dealt by 40%. Adding all this together we have the final damage dealt:
+* Shanhaizhong Oracle: $$ 7664 \cdot 2.4 \cdot (1 - 0.28) \cdot (1 - 0.2) \cdot (1 + 0.4) = 14,833 $$
+
+![Texas's damage output](/guides/general-knowledge/damage-calculations/texas-dmg-output.png)
+
+
+#### True damage
+True damage calculations are more simple in comparison, here we don't have to worry about any damage reductions like DEF, RES or physical and arts damage modifiers; because of this, true damage is particularly good against enemies with high amounts of damage reductions, such as Theresis.
+
+In the following example we have Theresis on phase 2 where he gains 90% damage reduction at 1 tile away from Theresa, and we have Amiya (caster) who can deal true damage with her S3, having the following stats:
+- Base ATK: $$ 715 $$
+- S3: +230% ATK
+
+This ATK modifier is an internal modifier. In addition to this we have +30% ATK from the tree buff, +30% ATK from RnF, +8% ATK from Screaming Cherry - $$\gamma$$, and +150% ATK from triple kings, resulting in:
+- External modifiers: $$ 1 + 0.3 + 0.3 + 0.08 = 1.68 $$
+- Internal modifiers: $$ 1 + 2.3 + 1.5 = 4.8 $$
+
+giving us a total final ATK of $$ 715 \cdot 1.68 \cdot 4.8 = 5765 $$.
+
+![Amiya's final ATK](/guides/general-knowledge/damage-calculations/amiya-final-atk.png)
+
+Theresis has 2500 DEF and 60 RES as base stats but because we deal true damage we don't care about those. We also have Framework of The End which adds a further 20% damage reduction; however, true damage bypasses all these reductions, and on top of that we have the relic 'Civilight Eterna'. This relics amplifies true damage enemy units take by +150% resulting in the following damage output:
+- Theresis: $$ 5765 \cdot (1 + 1.5) = 14,412 $$
+
+![Amiya's damage output](/guides/general-knowledge/damage-calculations/amiya-dmg-output.png)
+
+
+#### Conclusions
+In the physical damage example, we can see how for operators where their damage stacked into a single hit, DEF stops being meaningful, it ends up being just a small flat damage reduction per hit; while for operators with multiple low damage hits they can struggle a lot to deal any damage. With Arts damage, RES ends up being just another percentage damage modifier, and so regardless of the amount of damage they deal they can get punished very easily against high RES enemies, meaning any RES reductions can be very impactful in these scenarios. Lastly, as we saw with true damage, it is very convenient in scenarios where both DEF and RES stats are very high or the enemy has high physical and arts damage reductions.
+
+
+### Stats bloating
+Understanding how these buffs interact with each other can help maximize damage given different collectibles options. As an example, let us work through the calculations for Surtr’s S3 damage buffed by two different types of sources, an external modifier attack buff from Rise and Fall (+30% ATK) and an interal buff from an E1 Warfarin on S2 (+60% ATK).
+
+Naively, one would predict that the damage increase provided by Warfarin is larger than that provided by Rise and Fall by comparing the buff numbers. However, this is incorrect, as we will work out together.
+
+Surtr has a base ATK of 800 outside of IS. First we factor in the stat buffs of 20% ATK provided by the fully expanded skill tree,
+$$\text{Surtr\_base\_atk} = 800 \cdot 1.2 = 960$$.
+
+![](/getting-started/surtr_1.jpg)
+![](/getting-started/surtr_2.jpg)
+
+After activating Surtr’s S3 and applying warfarin’s buff, Surtr’s final attack stat is found to be
+
+![](/getting-started/surtr_3.jpg)
+![](/getting-started/surtr_4.png)
+![](/getting-started/surtr_5.png)
+
+$\text{Surtr\_final\_atk} = 960 \cdot (1+3.3+0.6) = 4704$
+
+Accounting for Surtr’s RES ignore talent, the final damage dealt on a spine is
+$\text{Dmg\_dealt} = 4704 \cdot (1-(0.5-0.22)) = 3387$
+
+(Note: this calculation is done below D14 difficulty, at D14 and above, the spine would take half that damage since enemies within Mark of Epoch take 50% less physical and arts damage.
+Next we consider the situation with Rise and Fall. With Rise and Fall, Surtr’s attack without the skill up becomes $\text{Surtr\_base\_atk} = 800 \cdot (1+0.2+0.3) = 1200$
+
+![](/getting-started/surtr_6.png)
+![](/getting-started/surtr_7.png)
+
+
+Because Rise and Fall is an external modifier attack buff rather than an internal buff, it does not stack additively with the +330% ATK buff provided by Surtr’s skill. Instead, it stacks multiplicatively. Hence the final attack Surtr has after S3 is activated is $\text{Surtr\_final\_atk} = 1200 \cdot (1+3.3) = 5160$, which is higher than the result we got with E1 Warfarin.
+Here is a summary of the calculations done:
+
+
+| Base ATK | ATK with IS buff | ATK on S3 in IS | ATK on S3 with Warf in IS |
+|----------|------------------|------------------|--------------------------|
+| 800 | 960 | 4128 | 4704 |
+
+| Base ATK | ATK with IS buff | ATK with IS buff + talons | ATK on S3 with talons in IS |
+|----------|------------------|---------------------------|----------------------------|
+| 800 | 960 | 1200 | 5160 |
+
+
+
+The main reason why we get a counterintuitive result for which attack buff is better for Surtr for more damage is because Surtr gets so much internal +ATK% buff from her skill activation that the marginal +60% from Warfarin is severely washed out.
+
+To conclude, diversifying your sources of buffs from skills and collectibles improves damage output the most. Moreover, when choosing which collectibles to improve your damage, maximizing the stat region that is the lowest is the best way to amplify your damage.
+
+### Defensive collectibles
+While offensive relics are generally important in order to finish a run successfully, often defensive relics can be really helpful or even required to deal with certain mechanics. The calculation for these is very similar to the Final Atk calculation, replacing Base Atk by the operator’s base defense or hp. A noticeable mention here is with Aegis (+60% max hp), while most hp relics are applied as an external buff, this one stands out for working as an internal buff, being multiplicative to all other stacked hp external buffs.
+
+
+## Attack speed
+Another important part of dealing damage is the attack speed of the operator, or as referred to in game, attack interval. This stat is generally only available through external resources and can be modified by ASPD or as an attack interval modifier. ASPD is a percentage based increase, all operators have a base of 100 ASPD and any further increase is added to this, while the attack interval modifier is generally applied directly to the attack interval value before ASPD is applied, calculated as:
+
+$$ \text{final\_attack\_interval} = 100 \cdot \frac{\text{attack\_interval}}{\text{attack\_speed}} $$
+
+ASPD is bounded in a range between 20 and 600. If accounting for frame rounding then the real attack interval value would be:
+
+$$ \text{real\_attack\_interval} = \frac{\text{round}(\text{final\_attack\_interval} \cdot 30)}{30} $$
+
+
+## Skill cycles - DPS
+When we evaluate the damage output of an operator we can often think of a metric appropriate for this and damage per second (DPS) might come up. When we evaluate the DPS of an operator, this won't necessarily establish the value of it, while more damage is always good, in a game mode like IS, we often want both damage and utility.
+With that said, when we evaluate damage dealt of an operator it is important to consider the specific circumstances in which the operator will have to meet said damage checks.
+I.e., beyond just analyzing the skill uptime and skill downtime combined durations, we can have a scenario in which we only care about a small burst of damage for a 5s time window (Sentinel), or we need to deploy and undeploy an operator over cycles of boats spawning with slightly variable time intervals that can be slowed down (Theresis).
+Skill cycles and DPS aren't everything but in the scenarios where they can give an insightful comparison between operators, all conditions should be taken into account.
+
+
+## Enemy stats
+So far we looked at how operator's stats and damage dealt is calculated but enemy stats are just as important to understand. Most of enemy stat buffs are applied multiplicatively but there are some are additive with each other or flat buffs applied in between. First let's list the most common modifiers we can find:
+* EM modifiers
+* Flat buffs
+* Multiplicative modifiers
+  * Difficulty modifiers
+  * Floor difficulty modifiers
+  * Other modifiers
+
+EM modifiers refers to the stat increases by doing the EM version of a stage or applied by doing the harder version of an ending like Court Visit with Anasa's Karma, while this relic only specifies a +50% HP increase, it stats that dreadful foes will be more difficult, this applies a 25% ATK, DEF and HP increase on all enemies that is applied to the base stat before any other flat modifiers, which in this case could be Gul'dul's Silence. Next all other modifiers are applied multiplicatively.
+
+### Difficulty modifiers
+These modifiers refer to explicit modifiers added when increasing the difficulty, for example, on IS D7 Elite and Leader enemies gain +10% ATK, on D4 elite and Leader enemies gain +20% HP, on D14 Theresis gains 50% HP, here these 2 are applied multiplicatively, resulting in a x1.6 multiplier.
+
+While on IS5 these stack multiplicatively, this is not the case for IS4. In IS4 we have a +5% ATK and HP increase at D5, a +10% ATK increase at D10, a +5% HP increase at D14, and a +10% ATK and HP increase at D15. These all stack additively to +20% HP and +25% ATK.
+
+Going back to IS5, an example of additively stacking modifiers we have are found in Spines of Epoch. At D3 they gain +20% HP, we also have the Catastrophes epoch which increases their HP by +200%, on top of that we have the floor difficulty scaling (exaplined in the next section) and lastly we have the Demolition inspirer which their HP by 50%. One might think that this inspirer is really good, especially during catastrophes given that it should halve their HP but this is not how it works. Their final HP is calculated as follows:
+
+$$ \text{Final\_HP} = \text{Base\_HP} \cdot \text{Difficulty\_buff} \cdot (1 + \text{D3\_buff} + \text{Catastrophes} + \text{Demolition}) \cdot \text{Other\_modifiers} $$
+
+Next let's compare the HP reduction of demolition with and without catastrophes. Spines have a base HP of $$ 12,000 $$, applying the different HP modifiers we get:
+
+$$ \text{HP\_No\_Demolition} = 12,000 \cdot 1.22 \cdot (1 + 0.2) \cdot 1 = 17,568 $$
+
+$$ \text{HP\_Demolition} = 12,000 \cdot 1.22 \cdot (1 + 0.2 - 0.5) \cdot 1 = 10,248 $$
+
+$$ \text{HP\_Catastrophes\_No\_Demolition} = 12,000 \cdot 1.22 \cdot (1 + 0.2 + 2.0) \cdot 1 = 46,848 $$
+
+$$ \text{HP\_Catastrophes\_Demolition} = 12,000 \cdot 1.22 \cdot (1 + 0.2 + 2.0 - 0.5) \cdot 1 = 39,528 $$
+
+We have a $$ 1 - 10,248/17,568 = 0.4166 $$, 41.66% HP reduction without catastrophes and $$ 1 - 39,528/46,848 = 0.15625 $$, 15.63% HP reduction with catastrophes, given that demolition is additive with catastrophes, it has a similar effect to what was discussed previously in stats bloating.
+
+
+
+### Floor difficulty modifiers
+In this section we see how difficulty buffs are calculated. The general formula is very straight forward. Enemy ATK and HP scale with both difficulty and floor as follows:
+
+$$ \text{difficulty\_buff} = (1 + \frac{\text{difficulty\_scaling}}{100})^{\text{floor}} $$
+
+The difficulty scaling factor varies across IS and is stated as “Enemy Difficulty” when selecting the run difficulty. Here the floor acts as an exponent to the added value from the difficulty, this means on lower floors, apart from other external difficulty debuffs, the enemy stats might not feel very different from low difficulty runs, but as the run progresses this will become way more noticeable and make the need for more damage and survivability relics higher. Note that Wander into Wonderland/Bosky Passages/Possibility nodes in IS3/IS4/IS5 do not count toward the floor number for the purposes of enemy stat calculation. If you took a Bosky Passage earlier and are now on F3, the value of floor is 3, not 4.
+
+{/* Some difficulty levels also have specific +stat% increase modifiers from individual difficulty level effects. These effects are all multiplicative of each other. For example, the D11 + D15 effects in IS3 (Elites and bosses get +20% HP) and (Elites and bosses get +20% HP/ATK/DEF) stack multiplicatively, meaning they get a total of +44%.
+Enemy stat multipliers from the effects of emergency versions of combat stages are multiplicative with other stat modifiers. If the emergency effect of an emergency stage provides two individual multipliers to the same stat, they are also multiplicative with each other. For example, Safety Inspection has the following emergency modifier: All enemy units have +20% ATK, +20% DEF and +30% Max HP
+Additional 1 &lt;Sarkaz Maze Returner&gt; appears and all &lt;Sarkaz Maze Returner&gt; have additional +30% Max HP.
+Sarkaz Maze Returners would get a net +69% HP effect to their HP. */}
+
+
+Here is a table with the difficulty scaling variable for each IS given their respective difficulty:
+
+| Difficulty | IS3 Scaling | IS4 Scaling | IS5 Scaling |
+|:----------:|:-----------:|:-----------:|:-----------:|
+| 0          | 0           | 0           | 0           |
+| 1          | 1           | 0           | 0           |
+| 2          | 2           | 0           | 0           |
+| 3          | 3           | 0           | 0           |
+| 4          | 4           | 0           | 0           |
+| 5          | 5           | 1           | 1           |
+| 6          | 6           | 2           | 2           |
+| 7          | 7           | 3           | 3           |
+| 8          | 8           | 4           | 5           |
+| 9          | 9           | 5           | 6           |
+| 10         | 10          | 6           | 7           |
+| 11         | 11          | 8           | 8           |
+| 12         | 12          | 10          | 10          |
+| 13         | 13          | 12          | 13          |
+| 14         | 14          | 14          | 16          |
+| 15         | 15          | 16          | 20          |
+| 16         | 16*         | -           | 21          |
+| 17         | 17*         | -           | 22          |
+| 18         | 18*         | -           | 22          |
+
+*For IS3 D16, 17 and 18 are marked as enemy difficulty of 16, 17 and 18 respectively, while the stats increases are as follows:
+
+| Enemy difficulty | ATK  | HP   |
+|:----------------:|:----:|:----:|
+| 16               | +20% | +20% |
+| 17               | +20% | +25% |
+| 18               | +20% | +30% |
+
+### Other modifiers
+Enemy stats are calculated slightly different than the operator's stats, while similar buffs stack additively for an operator, for the enemy it is always multiplicative, even with similar relics such as Gold-Plated Die (-15% HP) and ‘Profound Silence’ (-20% HP), where these result in a $(1-0.15)\cdot(1-0.20)=0.68$ multiplier, stacking multiplicatively with the difficulty buff to the enemy base stats. Additionally, while defense does not stack with difficulty or floors, enemy defense relics are still applied in this way. Enemy HP reduction collectibles are particularly potent because killing weaker enemies due to them having less HP is equivalent to enemies taking an overall damage increase debuff. Having Profound Silence applied on enemies is equivalent to having a $\frac{1}{1-0.2} = 25\%$ overall damage increase to all your DPS operators.
+
+
+## Movement speed
+In arknights enemies move at a certain speed, this is referred to as movement speed and is denoted by MS or MSPD.
+MS is often measured as the amount of time it takes an enemy to move 2 tiles at x1 speed. While by convention MS is implicitly denoted in tiles/2s, for an easier understanding or simplicity, for most calculations here it will be specified when it is taken as tiles/s.
+
+Time can be easily measured with operators' redeployment time or DP recovery as in standard conditions this is 1 DP/s, these ways of measuring time scale at x2 which makes them very reliable.
+
+There are certain operators that apply *Slow* or reduce the movement speed of the enemy. These two are different effects, *Slow* is by default a -80% movement speed reduction and can't stack with itself, that is if 2 different operators apply slow, the enemy will only be slowed by 80%. Other movement speed reductions, stated explicitly in the operator description and the movement speed reduction amount, can stack with each other multiplicatively, for example, Ascalon S2 has a -60% movement speed reduction, her trait further reduces movement speed by 20% and her talent has an 18% movement speed reduction that stacks up to 3 times, these would stack reducing the movement speed of the enemy to $$ (1 - 0.6) \cdot (1 - 0.2) \cdot (1 - 0.18 \cdot 3) = 0.1472 $$, being a 85.28% movement speed reduction. Enemies have a limit to how slow they can be moving, being 0.1 tiles/2s or 0.05 tiles/s.
+
