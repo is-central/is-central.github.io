@@ -1,0 +1,53 @@
+---
+import fs from 'fs';
+import path from 'path';
+import { getCollection, getEntry } from 'astro:content';
+const allDocPosts = await getCollection('is5_stage_guides');
+---
+
+<div>
+  <h2> Has Analysis</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Stage</th>
+        <th>Body Length</th>
+        <th>Analysis Sections</th>
+      </tr>
+    </thead>
+    <tbody>
+      {allDocPosts
+        .slice()
+        .filter(a=>a.body.split("</StrategySection>").length-1)
+        .sort((a,b)=> b.body.split("</StrategySection>").length - a.body.split("</StrategySection>").length || b.body.length-a.body.length)
+        .map((post) => (
+          <tr>
+            <td><a href={`/is5-sarkaz/stages/${post.id}`}>{post.data.title}</a></td>
+            <td>{post.body.length}</td>
+            <td>{post.body.split("</StrategySection>").length-1}</td>
+          </tr>
+      ))}
+    </tbody>
+  </table>
+  <h2> No Analysis </h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Stage</th>
+        <th>Body Length</th>
+      </tr>
+    </thead>
+    <tbody>
+      {allDocPosts
+        .slice()
+        .filter(a=>a.body.split("</StrategySection>").length-1 == 0)
+        .sort((a,b)=> b.body.length-a.body.length)
+        .map((post) => (
+          <tr>
+            <td><a href={`/is5-sarkaz/stages/${post.id}`}>{post.data.title}</a></td>
+            <td>{post.body.length}</td>
+          </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

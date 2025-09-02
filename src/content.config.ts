@@ -6,7 +6,7 @@ import { glob, file } from 'astro/loaders';
 export const collections = {
 	docs: defineCollection({ loader: docsLoader(), schema: docsSchema() }),
 	is5_stage_guides: defineCollection({
-		loader: glob({ pattern: "*.md", base: "src/content/docs/is5-sarkaz/stages" }),
+		loader: glob({ pattern: "!(_)*.mdx", base: "src/content/docs/is5-sarkaz/stages" }),
 		schema: docsSchema(),
 	}),
 };
