@@ -26,10 +26,14 @@ import HeadingWithIcon from '../../../../components/HeadingWithIcon.astro';
 
 <StrategySection title="Stage Analysis" author="Die Alive" defaultOpen={true}>
 
+While most stages have at most 2 or even 3 spines, this stage stands out for having a total of 5 (6 with catastrophes epoch) which makes it the most resource-valuable stage.
+This benefit comes at a cost, as the increased amount of spines heavily restricts your operators' placements in the opening.
 
-Epochal gaps is the stage with the most value out of all stages in IS5, you can get 5 plans out of it which is the most value resource (next to your sanity after resetting 10 times for 2 plans+fated encounter).
-
-This stage often isn't a problem and can be solved with a variety of different operators if played correctly. The main mechanic to look out for here is that of chapter 12 with Norport Civilians, Roadside Emergency Reserves (DP boxes) and lower initial DP limit. This stage starts with a DP limit reduced to 30, with each of these boxes giving you 5 DP and an additional 5 DP limit when cleared, while the Norport Civilians increase your DP limit by 2 if the enter the blue box after being revealed. The stage starts with 3 of these boxes, one of which blocks a specific path, funneling all enemies into a side of the blue box, if the reserve box is destroyed enemies will take the shortest path into the blue box.
+This stage often isn't a problem and can be solved with a variety of different operators if played correctly.
+The main mechanic to look out for here is that of chapter 12 with Norport Civilians, Roadside Emergency Reserves (DP boxes) and lower initial DP limit.
+This stage starts with a DP limit reduced to 30, with each of these boxes giving you 5 DP and an additional 5 DP limit when cleared, while the Norport Civilians increase your DP limit by 2 if the enter the blue box after being revealed.
+The stage starts with 3 of these boxes, one of which blocks a specific path, funneling all enemies into a side of the blue box, if the reserve box is destroyed enemies will take the shortest path into the blue box.
+A common strategy is to not clear box blocking either path to focus all your operators into dealing with a single lane.
 
 The second particularity of this stage is the 5 spines, limiting most of the available tiles for deployment at the start. At the point of encountering this stages it is reasonable to assume there are good operators recruited able to clear spines without issues, in the situation where this isn't the case the stage difficulty can significantly spike as the enemies waves will slowly apply more pressure and having clearing spines will almost always be a requirement to deal with these.
 
@@ -46,7 +50,20 @@ The emergency version of this stage adds into its difficulty mainly by increasin
 ## Stage Variants / Permutations:
 The main variant to look out for here is the reserve box placement, this can block either the middle or the top path and is what defines how to approach the stage.
 * Open mid lane (top box placement): this placement funnels all enemies into the mid path, generally considered the slightly harder variant as there isn't a good choke point to deal with all enemy waves, instead it forces you to reveal bottom enemies soon after they spawn and can often end up placing a mark of epoch on your main blocker while the mid and top waves approach.
+
+<img src="/guides/is5-sarkaz/stage-guides/epochal-gaps/top-box.png" alt="Top box" />
+
+This leaves the following tiles safe from the mark of epoch:
+
+<img src="/guides/is5-sarkaz/stage-guides/epochal-gaps/top-box-banned-tiles.png" alt="Top box mark of epoch tiles" />
+
 * Open top lane (mid box placement): this placement relieves pressure out of your main blocker, giving you more time to reveal the bottom enemies, allowing you to place the mark of epoch on a more convenient tile and funnel all enemies into a single lane.
+
+<img src="/guides/is5-sarkaz/stage-guides/epochal-gaps/mid-box.png" alt="Middle box" />
+
+This leaves the following tiles safe from the mark of epoch:
+
+<img src="/guides/is5-sarkaz/stage-guides/epochal-gaps/mid-box-banned-tiles.png" alt="Mid box mark of epoch tiles" />
 
 <HeadingWithIcon
   level={3}
@@ -56,10 +73,12 @@ The main variant to look out for here is the reserve box placement, this can blo
   ## Finale Cadence
 </HeadingWithIcon>
 
+An interaction that can be seen on other stages between Cadence and some types of devices, in Past The Aquapit for example, is that Cadence is able to attack the devices if no operator is deployed to take aggro. In this stage luckily that is not the case, otherwise with all boxes cleared it could complicate funneling the enemies into a single lane.
+
 Depending on the box placement Cadence can have a shorter or longer path into the blue box. With a top placement the path is shorter, making leaking it faster and reducing its threat during the stage; with a bottom placement however, the time it takes to reach the blue box will be longer, and if not careful ending up taking damage while clearing enemy waves as it walks into the blue box. While the Cadence can often attack devices in some stages, it can't kill the DP boxes here.
 
 ## Notable Epochs and debuffs
-{/* <HeadingWithIcon
+<HeadingWithIcon
   level={3}
   icon="/guides/is5-sarkaz/images/epochs/90px-Epoch-Catastrophes.png"
   id="catastrophes"
@@ -67,7 +86,7 @@ Depending on the box placement Cadence can have a shorter or longer path into th
   ### Catastrophes
 </HeadingWithIcon>
 
-The impact of this epoch will depend on how you set up your operators for the stage, sometimes the extra spine won't be an issue but sometimes it will block a possible free tile you could use to start clearing the spines. */}
+This epoch affects the stage in two ways. The first one is making all epochs in the stage harder to kill, which can be an issue without good operators to clear them. The second is banning one extra tile for placement in the opening, this is E8 in both variants, which can be more of an issue with the top box variant as this was the only safe range tile in the high ground tiles next to the blue box, this makes it so you are forced to start clearing the spines from the bottom safe tiles and is harder to reach the top right spines to free up those high ground tiles.
 
 <HeadingWithIcon
   level={3}
