@@ -31,8 +31,12 @@ export default defineConfig({
           link: '/introduction/',
         },
         {
-          label: 'Getting Started',
-          link: '/getting-started/',
+          label: 'Contribute',
+          link: '/contribute/',
+        },
+        {
+          label: 'General Knowledge',
+          link: '/general-knowledge/overview/',
         },
         {
           label: 'Phantom & Crimson Solitaire (IS2)',

@@ -1,0 +1,40 @@
+backend:
+  name: github
+  repo: is-central/is-central.github.io
+  branch: main
+  open_authoring: true # This allows any GitHub user to contribute
+  auth_scope: repo # Need full repo permissions for editorial workflow
+
+# Note: CMS is designed to be used via the deployed Netlify site, not locally
+# If you want to test the CMS with a development branch setup, reach out to maintainers
+
+media_folder: "public"
+public_folder: "/"
+
+editor:
+  preview: true
+
+publish_mode: editorial_workflow
+
+# Editorial workflow configuration with admin warning
+editorial_workflow:
+  confirm_publish: true
+
+collections:
+  - name: "docs"
+    label: "Posts"
+    folder: "src/content/docs"
+    create: true
+    slug: "{{slug}}"
+    extension: "mdx"
+    format: "frontmatter"
+    identifier_field: "title"
+    nested:
+      depth: 10
+      summary: "{{title}}"
+      path: {widget: string, label: 'Path', index_file: '_index'}
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "description", label: "Description", widget: "text", required: false }
+      - { name: "template", label: "Template", widget: "string", required: false }
+      - { name: "body", label: "Body", widget: "markdown" }

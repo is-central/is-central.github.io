@@ -113,14 +113,19 @@
 
 /* --- Guide Button Styles --- */
 .guide-button-container {
-    margin: 1.5rem 0;
+    margin: 0.75rem 0;
+}
+
+/* First button container should have less top margin for better section spacing */
+.guide-button-container:first-of-type {
+    margin-top: 0.5rem;
 }
 
 .guide-button {
     display: flex;
     align-items: center;
     gap: 1.25rem;
-    padding: 0.625rem 1.25rem;
+    padding: 0.75rem 1.25rem;
     background: var(--sl-color-accent-low);
     color: var(--sl-color-text);
     text-decoration: none;
@@ -145,6 +150,22 @@
 
 .button-image {
     flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Normalize the emoji-based reference icon so it centers like avatars */
+.reference-icon {
+    font-size: 28px;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
 }
 
 .operator-avatar {
@@ -163,20 +184,24 @@
 .button-content {
     display: flex;
     flex-direction: column;
-    gap: 0.125rem;
+    gap: 0.25rem;
     flex: 1;
+    justify-content: center;
+    transform: translateY(-0.45rem);
 }
 
 .button-title {
     font-size: 1.125rem;
     font-weight: 600;
     color: var(--sl-color-text);
+    line-height: 1.2;
 }
 
 .button-subtitle {
     font-size: 0.8rem;
     color: var(--sl-color-text-subtle);
     font-weight: 400;
+    line-height: 1.2;
 }
 
 .button-arrow {
@@ -184,10 +209,11 @@
     color: var(--sl-color-text-subtle);
     transition: transform 0.2s ease;
     flex-shrink: 0;
+    transform: translateY(-0.45rem);
 }
 
 .guide-button:hover .button-arrow {
-    transform: translateX(2px);
+    transform: translateX(2px) translateY(-0.45rem);
     color: var(--sl-color-text);
 }
 
@@ -334,6 +360,81 @@
   border-color: #451a0a;
   transform: translateY(-3px);
   box-shadow: 0 8px 24px rgba(124, 45, 18, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Encounter Stage Card - Cyan Theme */
+.stage-card.encounter{
+  background: #2a7a74;
+  color: white;
+  border-color: #1f6762;
+  border-width: 3px;
+  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline-offset: -1px;
+  box-shadow: 0 6px 16px rgba(27, 94, 94, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.stage-card.encounter:hover {
+  background: #3da099;
+  border-color: #358681;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(42, 128, 128, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Narrative Offer Stage Card - Dark Green Theme */
+.stage-card.shop{
+  background: #1b5e20;
+  color: white;
+  border-color: #0d4f14;
+  border-width: 3px;
+  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline-offset: -1px;
+  box-shadow: 0 6px 16px rgba(27, 94, 32, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.stage-card.shop:hover {
+  background: #2e7d32;
+  border-color: #1b5e20;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(46, 125, 50, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Face-Off Stage Card - Cyan Theme */
+.stage-card.faceoff{
+  background: #2a7a74;
+  color: white;
+  border-color: #1f6762;
+  border-width: 3px;
+  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline-offset: -1px;
+  box-shadow: 0 6px 16px rgba(27, 94, 94, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.stage-card.faceoff:hover {
+  background: #3da099;
+  border-color: #358681;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(42, 128, 128, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Narrative Offer Grid - Centered single stage */
+.narrative-offer-grid {
+  grid-template-columns: 140px;
+  justify-content: center;
+  gap: 0;
+  margin: 1rem 0;
+}
+
+/* Mobile responsiveness for Narrative Offer Grid */
+@media (max-width: 768px) {
+  .narrative-offer-grid {
+    grid-template-columns: 110px;
+  }
+}
+
+@media (max-width: 480px) {
+  .narrative-offer-grid {
+    grid-template-columns: 100px;
+  }
 }
 
 /* Legend Styles */
@@ -580,4 +681,300 @@
   }
 }
 
+/* Boss Grid Layout - Exactly 3 per row */
+.boss-grid {
+  grid-template-columns: repeat(3, 140px);
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Mobile responsiveness for Boss Grid */
+@media (max-width: 768px) {
+  .boss-grid {
+    grid-template-columns: repeat(3, 110px);
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .boss-grid {
+    grid-template-columns: repeat(3, 100px);
+    gap: 0.5rem;
+  }
+}
+
+/* Extra small mobile devices - stack to 2 columns for very small screens */
+@media (max-width: 360px) {
+  .boss-grid {
+    grid-template-columns: repeat(2, 90px);
+    gap: 0.4rem;
+  }
+  
+  .boss-grid .stage-card {
+    height: 45px;
+    width: 90px;
+    font-size: 8px;
+  }
+  
+  .boss-grid .stage-name {
+    font-size: 8px;
+    max-width: 80px;
+  }
+}
+
+/* F5 Boss Grid Layout - Exactly 2 per row, larger size */
+.f5-boss-grid {
+  grid-template-columns: repeat(2, 180px);
+  justify-content: center;
+  gap: 1.5rem;
+  grid-auto-rows: 80px;
+}
+
+/* F5 Boss Stage Cards - Larger size with red/dark theme */
+.stage-card.f5-boss {
+  height: 80px;
+  width: 180px;
+  background: #8b0000;
+  color: white;
+  border-color: #4a0000;
+  border-width: 3px;
+  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline-offset: -1px;
+  box-shadow: 0 6px 16px rgba(139, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  font-size: 14px;
+}
+
+.stage-card.f5-boss:hover {
+  background: #b22222;
+  border-color: #8b0000;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(178, 34, 34, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.stage-card.f5-boss .stage-name {
+  font-size: 14px;
+  max-width: 170px;
+}
+
+/* Mobile responsiveness for F5 Boss Grid */
+@media (max-width: 768px) {
+  .f5-boss-grid {
+    grid-template-columns: repeat(2, 140px);
+    gap: 1rem;
+    grid-auto-rows: 70px;
+  }
+  
+  .stage-card.f5-boss {
+    height: 70px;
+    width: 140px;
+    font-size: 12px;
+  }
+  
+  .stage-card.f5-boss .stage-name {
+    font-size: 12px;
+    max-width: 130px;
+  }
+}
+
+@media (max-width: 480px) {
+  .f5-boss-grid {
+    grid-template-columns: repeat(2, 120px);
+    gap: 0.75rem;
+    grid-auto-rows: 60px;
+  }
+  
+  .stage-card.f5-boss {
+    height: 60px;
+    width: 120px;
+    font-size: 11px;
+  }
+  
+  .stage-card.f5-boss .stage-name {
+    font-size: 11px;
+    max-width: 110px;
+  }
+}
+
+/* Extra small mobile devices - stack to 1 column for very small screens */
+@media (max-width: 360px) {
+  .f5-boss-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    grid-auto-rows: 55px;
+  }
+  
+  .stage-card.f5-boss {
+    height: 55px;
+    width: 100px;
+    font-size: 10px;
+  }
+  
+  .stage-card.f5-boss .stage-name {
+    font-size: 10px;
+    max-width: 90px;
+  }
+}
+
+
+
+/* Fate's Finale Grid - Centered single stage with spacing */
+.fates-finale-grid {
+  grid-template-columns: 220px;
+  justify-content: center;
+  gap: 0;
+  grid-auto-rows: 90px;
+  margin: 3rem 0 2rem 0;
+}
+
+/* Fate's Finale Stage Card - Longer button with special styling */
+.stage-card.fates-finale {
+  height: 90px;
+  width: 220px;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: white;
+  border-color: #0f3460;
+  border-width: 4px;
+  outline: 3px solid rgba(255, 255, 255, 0.4);
+  outline-offset: -2px;
+  box-shadow: 0 8px 24px rgba(26, 26, 46, 0.6), inset 0 2px 0 rgba(255, 255, 255, 0.2);
+  font-size: 16px;
+  position: relative;
+}
+
+.stage-card.fates-finale:hover {
+  background: linear-gradient(135deg, #16213e, #0f3460);
+  border-color: #1a1a2e;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(15, 52, 96, 0.7), inset 0 2px 0 rgba(255, 255, 255, 0.3);
+}
+
+.stage-card.fates-finale .stage-name {
+  font-size: 16px;
+  max-width: 200px;
+  font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+
+
+/* Mobile responsiveness for Fate's Finale */
+@media (max-width: 768px) {
+  .fates-finale-grid {
+    grid-template-columns: 180px;
+    grid-auto-rows: 80px;
+    margin: 2rem 0 1.5rem 0;
+  }
+  
+  .stage-card.fates-finale {
+    height: 80px;
+    width: 180px;
+    font-size: 14px;
+  }
+  
+  .stage-card.fates-finale .stage-name {
+    font-size: 14px;
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fates-finale-grid {
+    grid-template-columns: 160px;
+    grid-auto-rows: 70px;
+    margin: 1.5rem 0 1.25rem 0;
+  }
+  
+  .stage-card.fates-finale {
+    height: 70px;
+    width: 160px;
+    font-size: 13px;
+  }
+  
+  .stage-card.fates-finale .stage-name {
+    font-size: 13px;
+    max-width: 140px;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 360px) {
+  .fates-finale-grid {
+    grid-template-columns: 140px;
+    grid-auto-rows: 60px;
+    margin: 1.25rem 0 1rem 0;
+  }
+  
+  .stage-card.fates-finale {
+    height: 60px;
+    width: 140px;
+    font-size: 12px;
+  }
+  
+  .stage-card.fates-finale .stage-name {
+    font-size: 12px;
+    max-width: 120px;
+  }
+}
+
 /* --- End of Stage Cards CSS --- */
+
+/* --- Back Button Component --- */
+.back-button-container {
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: var(--sl-color-gray-6);
+    color: var(--sl-color-text);
+    text-decoration: none;
+    border-radius: 6px;
+    border: 1px solid var(--sl-color-gray-5);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.back-button:hover {
+    background: var(--sl-color-gray-5);
+    border-color: var(--sl-color-gray-4);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+
+.back-button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.back-arrow {
+    font-size: 1rem;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.back-button:hover .back-arrow {
+    transform: translateX(-2px);
+}
+
+.back-text {
+    color: var(--sl-color-text);
+}
+
+/* Mobile responsiveness for back button */
+@media (max-width: 768px) {
+    .back-button {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+        gap: 0.4rem;
+    }
+    
+    .back-arrow {
+        font-size: 0.9rem;
+    }
+}
