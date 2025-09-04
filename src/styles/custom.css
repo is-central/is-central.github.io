@@ -6,6 +6,230 @@
 :root {
   --sl-font: 'Inter', sans-serif;
   --sl-font-headings: 'Poppins', sans-serif;
+
+  --text-color:#d1d1d1;
+
+  /* --combat-bg: #4a0252;
+  --combat-border: #2d0132;
+  --combat-outline: rgba(255, 255, 255, 0.3);
+  --combat-shadow: rgba(74, 2, 82, 0.4);
+  --combat-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --combat-hover-bg: #780382;
+  --combat-hover-border:#4a0252;
+  --combat-hover-shadow: rgba(120, 3, 130, 0.5);
+  --combat-hover-inner-shadow: rgba(255, 255, 255, 0.2);
+
+
+  --spine-bg: #4a0252;
+  --spine-border: #d97706;
+  --spine-outline: rgba(255, 255, 255, 0.3);
+  --spine-shadow: rgba(74, 2, 82, 0.4);
+  --spine-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --spine-hover-bg: #780382;
+  --spine-hover-border:#f59e0b;
+  --spine-hover-shadow: rgba(120, 3, 130, 0.5);
+  --spine-hover-inner-shadow: rgba(255, 255, 255, 0.2);
+
+  --spine-marker-bg: linear-gradient(135deg, #d97706, #f59e0b);
+  --spine-marker-border: rgba(255, 255, 255, 0.8);
+  --spine-marker-shadow: rgba(0, 0, 0, 0.3);
+  
+  --emergency-bg: #dc2626;
+  --emergency-border: #f87171;
+  --emergency-outline: rgba(255, 255, 255, 0.3);
+  --emergency-shadow: rgba(220, 38, 38, 0.3);
+  --emergency-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --emergency-hover-bg: #ef4444;
+  --emergency-hover-border: #fca5a5;
+  --emergency-hover-shadow: rgba(239, 68, 68, 0.4);
+  --emergency-hover-inner-shadow: rgba(255, 255, 255, 0.2);
+
+  
+  --boss-bg: #451a0a;
+  --boss-border: #92400e;
+  --boss-outline: rgba(255, 255, 255, 0.3);
+  --boss-shadow: rgba(69, 26, 10, 0.4);
+  --boss-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --boss-hover-bg: #7c2d12;
+  --boss-hover-border:#451a0a;
+  --boss-hover-shadow: rgba(124, 45, 18, 0.5);
+  --boss-hover-inner-shadow: rgba(255, 255, 255, 0.2);
+
+
+  --encounter-bg: #2a7a74;
+  --encounter-border: #1f6762;
+  --encounter-outline: rgba(255, 255, 255, 0.3);
+  --encounter-shadow: rgba(27, 94, 94, 0.4);
+  --encounter-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --encounter-hover-bg: #3da099;
+  --encounter-hover-border:#358681;
+  --encounter-hover-shadow: rgba(42, 128, 128, 0.4);
+  --encounter-hover-inner-shadow: rgba(255, 255, 255, 0.2);
+
+
+  --shop-bg: #1b5e20;
+  --shop-border: #0d4f14;
+  --shop-outline: rgba(255, 255, 255, 0.3);
+  --shop-shadow: rgba(27, 94, 32, 0.4);
+  --shop-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --shop-hover-bg: #2e7d32;
+  --shop-hover-border:#1b5e20;
+  --shop-hover-shadow: rgba(46, 125, 50, 0.5);
+  --shop-hover-inner-shadow: rgba(255, 255, 255, 0.2);
+
+
+  --faceoff-bg: #2a7a74;
+  --faceoff-border: #1f6762;
+  --faceoff-outline: rgba(255, 255, 255, 0.3);
+  --faceoff-shadow: rgba(27, 94, 94, 0.4);
+  --faceoff-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --faceoff-hover-bg: #3da099;
+  --faceoff-hover-border:#358681;
+  --faceoff-hover-shadow: rgba(42, 128, 128, 0.4);
+  --faceoff-hover-inner-shadow: rgba(255, 255, 255, 0.2);
+
+
+  --f5boss-bg: #8b0000;
+  --f5boss-border: #4a0000;
+  --f5boss-outline: rgba(255, 255, 255, 0.3);
+  --f5boss-shadow: rgba(139, 0, 0, 0.4);
+  --f5boss-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --f5boss-hover-bg: #b22222;
+  --f5boss-hover-border:#8b0000;
+  --f5boss-hover-shadow: rgba(178, 34, 34, 0.5);
+  --f5boss-hover-inner-shadow: rgba(255, 255, 255, 0.2);
+
+
+  --finale-bg: linear-gradient(135deg, #1a1a2e, #16213e);
+  --finale-border: #0f3460;
+  --finale-outline: rgba(255, 255, 255, 0.4);
+  --finale-shadow: rgba(26, 26, 46, 0.6);
+  --finale-inner-shadow: rgba(255, 255, 255, 0.2);
+
+  --finale-hover-bg: linear-gradient(135deg, #16213e, #0f3460);
+  --finale-hover-border:#1a1a2e;
+  --finale-hover-shadow: rgba(15, 52, 96, 0.7);
+  --finale-hover-inner-shadow: rgba(255, 255, 255, 0.3); */
+
+
+  --combat-bg: #5a518a;
+  --combat-border: #5a518a;
+  --combat-outline: black;
+  /* --combat-shadow: rgba(90, 81, 138, 0.4); */
+  /* --combat-inner-shadow: rgba(255, 255, 255, 0.1); */
+
+  --combat-hover-bg: #5a518a;
+  --combat-hover-border:#5a518a;
+  --combat-hover-shadow: rgba(90, 81, 138, 0.4);
+  --combat-hover-inner-shadow: rgba(255, 255, 255, 0);
+
+
+  --spine-bg: #5a518a;
+  --spine-border: #5a518a;
+  --spine-outline: black;
+  /* --spine-shadow: rgba(90, 81, 138, 0.4); */
+  /* --spine-inner-shadow: rgba(255, 255, 255, 0.1); */
+
+  --spine-hover-bg: #5a518a;
+  --spine-hover-border:#5a518a;
+  --spine-hover-shadow: rgba(90, 81, 138, 0.4);
+  --spine-hover-inner-shadow: rgba(255, 255, 255, 0);
+
+  --spine-marker-bg: #53401b;
+  --spine-marker-border: black;
+  /* --spine-marker-shadow: rgba(0, 0, 0, 0.3); */
+  
+  --emergency-bg: #dc2626;
+  --emergency-border: #f87171;
+  --emergency-outline: rgba(255, 255, 255, 0.3);
+  /* --emergency-shadow: rgba(220, 38, 38, 0.3);
+  --emergency-inner-shadow: rgba(255, 255, 255, 0.1); */
+
+  --emergency-hover-bg: #ef4444;
+  --emergency-hover-border: #fca5a5;
+  --emergency-hover-shadow: rgba(239, 68, 68, 0.4);
+  --emergency-hover-inner-shadow: rgba(255, 255, 255, 0);
+
+  
+  --boss-bg: #730c9b;
+  --boss-border: #730c9b;
+  --boss-outline: black;
+  /* --boss-shadow: rgba(69, 26, 10, 0.4);
+  --boss-inner-shadow: rgba(255, 255, 255, 0.1); */
+
+  --boss-hover-bg: #730c9b;
+  --boss-hover-border:#730c9b;
+  --boss-hover-shadow: rgba(115, 12, 155, 0.5);
+  --boss-hover-inner-shadow: rgba(255, 255, 255, 0);
+
+
+  --encounter-bg: #307781;
+  --encounter-border: #307781;
+  --encounter-outline: black;
+  /* --encounter-shadow: rgba(27, 94, 94, 0.4);
+  --encounter-inner-shadow: rgba(255, 255, 255, 0.1); */
+
+  --encounter-hover-bg: #307781;
+  --encounter-hover-border:#307781;
+  --encounter-hover-shadow: rgba(48, 119, 129, 0.4);
+  --encounter-hover-inner-shadow: rgba(255, 255, 255, 0);
+
+
+  --shop-bg: #145644;
+  --shop-border: #145644;
+  --shop-outline: black;
+  /* --shop-shadow: rgba(27, 94, 32, 0.4);
+  --shop-inner-shadow: rgba(255, 255, 255, 0.1); */
+
+  --shop-hover-bg: #145644;
+  --shop-hover-border:#145644;
+  --shop-hover-shadow: rgba(20, 86, 68, 0.5);
+  --shop-hover-inner-shadow: rgba(255, 255, 255, 0);
+
+
+  --faceoff-bg: #347483;
+  --faceoff-border: #347483;
+  --faceoff-outline: black;
+  /* --faceoff-shadow: rgba(27, 94, 94, 0.4);
+  --faceoff-inner-shadow: rgba(255, 255, 255, 0.1); */
+
+  --faceoff-hover-bg: #347483;
+  --faceoff-hover-border:#347483;
+  --faceoff-hover-shadow: rgba(52, 116, 131, 0.4);
+  --faceoff-hover-inner-shadow: rgba(255, 255, 255, 0);
+
+
+  --f5boss-bg: #a50f0b;
+  --f5boss-border: #a50f0b;
+  --f5boss-outline: black;
+  /* --f5boss-shadow: rgba(139, 0, 0, 0.4);
+  --f5boss-inner-shadow: rgba(255, 255, 255, 0.1); */
+
+  --f5boss-hover-bg: #a50f0b;
+  --f5boss-hover-border:#a50f0b;
+  --f5boss-hover-shadow: rgba(165, 15, 11, 0.5);
+  --f5boss-hover-inner-shadow: rgba(255, 255, 255, 0);
+
+
+  --finale-bg: #2c3051;
+  --finale-border: #2c3051;
+  --finale-outline: black;
+  /* --finale-shadow: rgba(26, 26, 46, 0.6);
+  --finale-inner-shadow: rgba(255, 255, 255, 0.2); */
+
+  --finale-hover-bg: #2c3051;
+  --finale-hover-border:#2c3051;
+  --finale-hover-shadow: rgba(44, 48, 81, 0.7);
+  --finale-hover-inner-shadow: rgba(255, 255, 255, 0);
+
 }
 
 /* --- Center the Homepage Hero --- */
@@ -297,11 +521,12 @@
   font-size: 12px;
   font-weight: 700;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+  /* -webkit-text-stroke: 0.1px black; */
   max-width: 130px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: #ffffff;
+  color: var(--text-color);
   letter-spacing: 0.3px;
   line-height: 1.2;
   flex-shrink: 0;
@@ -310,110 +535,110 @@
 
 /* Combat Stage Cards */
 .stage-card.combat {
-  background: #4a0252;
+  background: var(--combat-bg);
   color: white;
-  border-color: #2d0132;
+  border-color: var(--combat-border);
   border-width: 3px;
-  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline: 2px solid var(--combat-outline);
   outline-offset: -1px;
-  box-shadow: 0 6px 16px rgba(74, 2, 82, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 16px var(--combat-shadow), inset 0 1px 0 var(--combat-inner-shadow);
 }
 
 .stage-card.combat:hover {
-  background: #780382;
-  border-color: #4a0252;
+  background: var(--combat-hover-bg);
+  border-color: var(--combat-hover-border);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(120, 3, 130, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px var(--combat-hover-shadow), inset 0 1px 0 var(--combat-hover-inner-shadow);
 }
 
 /* Emergency Combat Cards */
 .stage-card.emergency {
-  background: #dc2626;
+  background: var(--emergency-bg);
   color: white;
-  border-color: #f87171;
+  border-color: var(--emergency-border);
   border-width: 3px;
-  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline: 2px solid var(--emergency-outline);
   outline-offset: -1px;
-  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 16px var(--emergency-shadow), inset 0 1px 0 var(--emergency-inner-shadow);
 }
 
 .stage-card.emergency:hover {
-  background: #ef4444;
-  border-color: #fca5a5;
+  background: var(--emergency-hover-bg);
+  border-color: var(--emergency-hover-border);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px var(--emergency-hover-shadow) inset 0 1px 0 var(--emergency-hover-inner-shadow);
 }
 
 /* Boss Stage Cards */
 .stage-card.boss {
-  background: #451a0a;
+  background: var(--boss-bg);
   color: white;
-  border-color: #92400e;
+  border-color: var(--boss-border);
   border-width: 3px;
-  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline: 2px solid var(--boss-outline);
   outline-offset: -1px;
-  box-shadow: 0 6px 16px rgba(69, 26, 10, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 16px var(--boss-shadow), inset 0 1px 0 var(--boss-inner-shadow);
 }
 
 .stage-card.boss:hover {
-  background: #7c2d12;
-  border-color: #451a0a;
+  background: var(--boss-hover-bg);
+  border-color: var(--boss-hover-border);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(124, 45, 18, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px var(--boss-hover-shadow), inset 0 1px 0 var(--boss-hover-inner-shadow);
 }
 
 /* Encounter Stage Card - Cyan Theme */
 .stage-card.encounter{
-  background: #2a7a74;
+  background: var(--encounter-bg);
   color: white;
-  border-color: #1f6762;
+  border-color: var(--encounter-border);
   border-width: 3px;
-  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline: 2px solid var(--encounter-outline);
   outline-offset: -1px;
-  box-shadow: 0 6px 16px rgba(27, 94, 94, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 16px var(--encounter-shadow), inset 0 1px 0 var(--encounter-inner-shadow);
 }
 
 .stage-card.encounter:hover {
-  background: #3da099;
-  border-color: #358681;
+  background: var(--encounter-hover-bg);
+  border-color: var(--encounter-hover-border);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(42, 128, 128, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px var(--encounter-hover-shadow), inset 0 1px 0 var(--encounter-hover-inner-shadow);
 }
 
 /* Narrative Offer Stage Card - Dark Green Theme */
 .stage-card.shop{
-  background: #1b5e20;
+  background: var(--shop-bg);
   color: white;
-  border-color: #0d4f14;
+  border-color: var(--shop-border);
   border-width: 3px;
-  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline: 2px solid var(--shop-outline);
   outline-offset: -1px;
-  box-shadow: 0 6px 16px rgba(27, 94, 32, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 16px var(--shop-shadow), inset 0 1px 0 var(--shop-inner-shadow);
 }
 
 .stage-card.shop:hover {
-  background: #2e7d32;
-  border-color: #1b5e20;
+  background: var(--shop-hover-bg);
+  border-color: var(--shop-hover-border);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(46, 125, 50, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px var(--shop-hover-shadow), inset 0 1px 0 var(--shop-hover-inner-shadow);
 }
 
 /* Face-Off Stage Card - Cyan Theme */
 .stage-card.faceoff{
-  background: #2a7a74;
+  background: var(--faceoff-bg);
   color: white;
-  border-color: #1f6762;
+  border-color: var(--faceoff-border);
   border-width: 3px;
-  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline: 2px solid var(--faceoff-outline);
   outline-offset: -1px;
-  box-shadow: 0 6px 16px rgba(27, 94, 94, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 16px var(--faceoff-shadow), inset 0 1px 0 var(--faceoff-inner-shadow);
 }
 
 .stage-card.faceoff:hover {
-  background: #3da099;
-  border-color: #358681;
+  background: var(--faceoff-hover-bg);
+  border-color: var(--faceoff-hover-border);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(42, 128, 128, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px var(--faceoff-hover-shadow), inset 0 1px 0 var(--faceoff-hover-inner-shadow);
 }
 
 /* Narrative Offer Grid - Centered single stage */
@@ -533,19 +758,19 @@
 /* Spine of Epoch Stage Cards */
 .stage-card.spine-epoch {
   position: relative;
-  border-color: #d97706;
+  border-color: var(--spine-border);
   border-width: 3px;
-  background: #4a0252;
-  outline: 2px solid rgba(255, 255, 255, 0.3);
+  background: var(--spine-bg);
+  outline: 2px solid black;
   outline-offset: -1px;
-  box-shadow: 0 6px 16px rgba(74, 2, 82, 0.4);
+  box-shadow: 0 6px 16px var(--spine-shadow);
 }
 
 .stage-card.spine-epoch:hover {
-  background: #780382;
-  border-color: #f59e0b;
+  background: var(--spine-hover-bg);
+  border-color: var(--spine-hover-border);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(120, 3, 130, 0.5);
+  box-shadow: 0 8px 24px var(--spine-hover-shadow);
 }
 
 .stage-card.spine-epoch::before {
@@ -555,10 +780,10 @@
   right: 0.25rem;
   width: 12px;
   height: 12px;
-  background: linear-gradient(135deg, #d97706, #f59e0b);
+  background: var(--spine-marker-bg);
   border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--spine-marker-border);
+  box-shadow: 0 2px 4px var(--spine-marker-shadow);
   z-index: 1;
 }
 
@@ -734,21 +959,21 @@
 .stage-card.f5-boss {
   height: 80px;
   width: 180px;
-  background: #8b0000;
+  background: var(--f5boss-bg);
   color: white;
-  border-color: #4a0000;
+  border-color: var(--f5boss-border);
   border-width: 3px;
-  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline: 2px solid var(--f5boss-outline);
   outline-offset: -1px;
-  box-shadow: 0 6px 16px rgba(139, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 16px var(--f5boss-shadow), inset 0 1px 0 var(--f5boss-inner-shadow);
   font-size: 14px;
 }
 
 .stage-card.f5-boss:hover {
-  background: #b22222;
-  border-color: #8b0000;
+  background: var(--f5boss-hover-bg);
+  border-color: var(--f5boss-hover-border);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(178, 34, 34, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px var(--f5boss-hover-shadow), inset 0 1px 0 var(--f5boss-hover-inner-shadow);
 }
 
 .stage-card.f5-boss .stage-name {
@@ -830,22 +1055,22 @@
 .stage-card.fates-finale {
   height: 90px;
   width: 220px;
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  background: var(--finale-bg);
   color: white;
-  border-color: #0f3460;
+  border-color: var(--finale-border);
   border-width: 4px;
-  outline: 3px solid rgba(255, 255, 255, 0.4);
+  outline: 3px solid var(--finale-outline);
   outline-offset: -2px;
-  box-shadow: 0 8px 24px rgba(26, 26, 46, 0.6), inset 0 2px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px var(--finale-shadow), inset 0 2px 0 var(--finale-inner-shadow);
   font-size: 16px;
   position: relative;
 }
 
 .stage-card.fates-finale:hover {
-  background: linear-gradient(135deg, #16213e, #0f3460);
-  border-color: #1a1a2e;
+  background: var(--finale-hover-bg);
+  border-color: var(--finale-hover-border);
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(15, 52, 96, 0.7), inset 0 2px 0 rgba(255, 255, 255, 0.3);
+  box-shadow: 0 12px 32px var(--finale-hover-shadow), inset 0 2px 0 var(--finale-hover-inner-shadow);
 }
 
 .stage-card.fates-finale .stage-name {
