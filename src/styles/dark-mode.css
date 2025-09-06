@@ -412,7 +412,7 @@
 
 } */
 
-/* Dark mode theme, with shadows, 3d */
+/* Dark mode theme, with shadows, 3d (new is4) */
 html[data-theme="dark"]{
 
   --card-color:#2a2a2a;
@@ -451,6 +451,18 @@ html[data-theme="dark"]{
   --spine-marker-border: black;
   --spine-marker-shadow: rgba(0, 0, 0, 0.3);
   --spine-icon: url('spine.png');
+
+
+  --is4-boss-bg: #782315;
+  --is4-boss-border: #782315;
+  --is4-boss-outline: black;
+  --is4-boss-shadow: rgba(120, 35, 21, 0.4);
+  --is4-boss-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --is4-boss-hover-bg: #912A1A;
+  --is4-boss-hover-border:#912A1A;
+  --is4-boss-hover-shadow: rgba(145, 42, 26, 0.4);
+  --is4-boss-hover-inner-shadow: rgba(255, 255, 255, 0.1);
 
   
   --boss-bg: #280e33;
@@ -499,6 +511,18 @@ html[data-theme="dark"]{
   --faceoff-hover-border:#2C4649;
   --faceoff-hover-shadow: rgba(44, 70, 73, 0.4);
   --faceoff-hover-inner-shadow: rgba(255, 255, 255, 0.1);
+
+
+  --is4-f5boss-bg: #5C2215;
+  --is4-f5boss-border: #5C2215;
+  --is4-f5boss-outline: black;
+  --is4-f5boss-shadow: rgba(92, 34, 21, 0.5);
+  --is4-f5boss-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --is4-f5boss-hover-bg: #752A1A;
+  --is4-f5boss-hover-border:#752A1A;
+  --is4-f5boss-hover-shadow: rgba(117, 42, 26, 0.5);
+  --is4-f5boss-hover-inner-shadow: rgba(255, 255, 255, 0.1);
 
 
   --f5boss-bg: #420c0a;

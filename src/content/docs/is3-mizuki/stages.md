@@ -195,7 +195,7 @@ A comprehensive reference guide for all combats and events you may encounter acr
 
 ## Floor 6
 
-<div class="stage-grid">
+<div class="stage-grid stage-2-stage-grid">
   <a href="/is3-mizuki/stages/water-and-fire-union" class="stage-card combat">
     <span class="stage-name">Water and Fire Union</span>
   </a>

@@ -418,13 +418,13 @@
 .stage-name {
   font-size: 12px;
   font-weight: 700;
-  text-shadow: 1px 1px 2px var(--text-shadow);
+  /* text-shadow: 1px 1px 2px var(--text-shadow); */
   /* -webkit-text-stroke: 0.1px black; */
   max-width: 130px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: var(--text-color);
+  /* color: var(--text-color); */
   letter-spacing: 0.3px;
   line-height: 1.2;
   flex-shrink: 0;
@@ -434,7 +434,8 @@
 /* Combat Stage Cards */
 .stage-card.combat {
   background: var(--combat-bg);
-  color: white;
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px var(--text-shadow);
   border-color: var(--combat-border);
   border-width: 3px;
   outline: 2px solid var(--combat-outline);
@@ -452,7 +453,8 @@
 /* Emergency Combat Cards */
 .stage-card.emergency {
   background: var(--emergency-bg);
-  color: white;
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px var(--text-shadow);
   border-color: var(--emergency-border);
   border-width: 3px;
   outline: 2px solid var(--emergency-outline);
@@ -470,7 +472,8 @@
 /* Boss Stage Cards */
 .stage-card.boss {
   background: var(--boss-bg);
-  color: white;
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px var(--text-shadow);
   border-color: var(--boss-border);
   border-width: 3px;
   outline: 2px solid var(--boss-outline);
@@ -485,10 +488,30 @@
   box-shadow: 0 8px 24px var(--boss-hover-shadow), inset 0 1px 0 var(--boss-hover-inner-shadow);
 }
 
+/* IS4 F3 Boss Stage Cards */
+.stage-card.is4-boss {
+  background: var(--is4-boss-bg);
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px var(--text-shadow);
+  border-color: var(--is4-boss-border);
+  border-width: 3px;
+  outline: 2px solid var(--is4-boss-outline);
+  outline-offset: -1px;
+  box-shadow: 0 6px 16px var(--is4-boss-shadow), inset 0 1px 0 var(--is4-boss-inner-shadow);
+}
+
+.stage-card.is4-boss:hover {
+  background: var(--is4-boss-hover-bg);
+  border-color: var(--is4-boss-hover-border);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px var(--is4-boss-hover-shadow), inset 0 1px 0 var(--is4-boss-hover-inner-shadow);
+}
+
 /* Encounter Stage Card - Cyan Theme */
 .stage-card.encounter{
   background: var(--encounter-bg);
-  color: white;
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px var(--text-shadow);
   border-color: var(--encounter-border);
   border-width: 3px;
   outline: 2px solid var(--encounter-outline);
@@ -506,7 +529,8 @@
 /* Narrative Offer Stage Card - Dark Green Theme */
 .stage-card.shop{
   background: var(--shop-bg);
-  color: white;
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px var(--text-shadow);
   border-color: var(--shop-border);
   border-width: 3px;
   outline: 2px solid var(--shop-outline);
@@ -524,7 +548,8 @@
 /* Face-Off Stage Card - Cyan Theme */
 .stage-card.faceoff{
   background: var(--faceoff-bg);
-  color: white;
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px var(--text-shadow);
   border-color: var(--faceoff-border);
   border-width: 3px;
   outline: 2px solid var(--faceoff-outline);
@@ -539,11 +564,35 @@
   box-shadow: 0 8px 24px var(--faceoff-hover-shadow), inset 0 1px 0 var(--faceoff-hover-inner-shadow);
 }
 
+
+/* Narrative Offer Grid - Centered single stage */
+.stage-2-stage-grid {
+  grid-template-columns: repeat(2, 140px);
+  justify-content: center;
+  gap: 4rem;
+  margin: 1rem 0;
+}
+
+/* Mobile responsiveness for Narrative Offer Grid */
+@media (max-width: 768px) {
+  .stage-2-stage-grid {
+    grid-template-columns: 110px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stage-2-stage-grid {
+    grid-template-columns: 100px;
+  }
+}
+
+
+
 /* Narrative Offer Grid - Centered single stage */
 .narrative-offer-grid {
-  grid-template-columns: 140px;
+  grid-template-columns: repeat(2, 140px);
   justify-content: center;
-  gap: 0;
+  gap: 4rem;
   margin: 1rem 0;
 }
 
@@ -656,6 +705,8 @@
 /* Spine of Epoch Stage Cards */
 .stage-card.spine-epoch {
   position: relative;
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px var(--text-shadow);
   border-color: var(--spine-border);
   border-width: 3px;
   background: var(--spine-bg);
@@ -859,7 +910,8 @@
   height: 80px;
   width: 180px;
   background: var(--f5boss-bg);
-  color: white;
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px var(--text-shadow);
   border-color: var(--f5boss-border);
   border-width: 3px;
   outline: 2px solid var(--f5boss-outline);
@@ -876,6 +928,33 @@
 }
 
 .stage-card.f5-boss .stage-name {
+  font-size: 14px;
+  max-width: 170px;
+}
+
+/* IS4 F5 Boss Stage Cards - Larger size with red/dark theme */
+.stage-card.is4-f5-boss {
+  height: 80px;
+  width: 180px;
+  background: var(--is4-f5boss-bg);
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px var(--text-shadow);
+  border-color: var(--is4-f5boss-border);
+  border-width: 3px;
+  outline: 2px solid var(--is4-f5boss-outline);
+  outline-offset: -1px;
+  box-shadow: 0 6px 16px var(--is4-f5boss-shadow), inset 0 1px 0 var(--is4-f5boss-inner-shadow);
+  font-size: 14px;
+}
+
+.stage-card.is4-f5-boss:hover {
+  background: var(--is4-f5boss-hover-bg);
+  border-color: var(--is4-f5boss-hover-border);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px var(--is4-f5boss-hover-shadow), inset 0 1px 0 var(--is4-f5boss-hover-inner-shadow);
+}
+
+.stage-card.is4-f5-boss .stage-name {
   font-size: 14px;
   max-width: 170px;
 }
@@ -955,7 +1034,8 @@
   height: 80px;
   width: 180px;
   background: var(--finale-bg);
-  color: white;
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px var(--text-shadow);
   border-color: var(--finale-border);
   border-width: 3px;
   outline: 2px solid var(--finale-outline);
