@@ -151,8 +151,8 @@
 
 /* Lighter card background compared to site background */
 .card-grid .card {
-  background-color: #2a2a2a; 
-  border: 1px solid #3a3a3a; 
+  background-color: var(--card-color); 
+  border: 1px solid var(--card-border); 
   border-radius: 12px;       
   padding: 1rem;
 }
@@ -165,28 +165,36 @@
     transition: all 0.2s ease-in-out;
 }
 
+/* Remove title space to center the image */
+.card-grid .card .title {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 /* Define unique hover effects for each banner */
-.card-grid .card:nth-child(1) a:hover {
+.card-grid .card:nth-child(4) a:hover {
     transform: scale(1.03); /* Slightly enlarges the banner */
     box-shadow: 0 0 25px rgba(183, 28, 28, 0.9); /* Red glow for IS2 Phantom */
 }
 
-.card-grid .card:nth-child(2) a:hover {
+.card-grid .card:nth-child(3) a:hover {
     transform: scale(1.03); /* Slightly enlarges the banner */
     box-shadow: 0 0 25px rgba(57, 73, 171, 0.9); /* Blue glow for IS3 Mizuki */
 }
 
-.card-grid .card:nth-child(3) a:hover {
+.card-grid .card:nth-child(2) a:hover {
     transform: scale(1.03); /* Slightly enlarges the banner */
     box-shadow: 0 0 25px rgba(100, 181, 246, 0.9); /* Light blue glow for IS4 Expeditioners */
 }
 
-.card-grid .card:nth-child(4) a:hover {
+.card-grid .card:nth-child(1) a:hover {
     transform: scale(1.03); /* Slightly enlarges the banner */
     box-shadow: 0 0 25px rgba(251, 192, 45, 0.9); /* Yellow glow for IS5 Sarkaz */
 }
 
-.card-grid .card:nth-child(5) a:hover {
+.card-grid .card:nth-child(0) a:hover {
     transform: scale(1.03); /* Slightly enlarges the banner */
     box-shadow: 0 0 25px rgba(236, 64, 122, 0.9); /* Pink glow for IS6 Sui */
 }
@@ -410,7 +418,7 @@
 .stage-name {
   font-size: 12px;
   font-weight: 700;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+  text-shadow: 1px 1px 2px var(--text-shadow);
   /* -webkit-text-stroke: 0.1px black; */
   max-width: 130px;
   overflow: hidden;
@@ -651,9 +659,9 @@
   border-color: var(--spine-border);
   border-width: 3px;
   background: var(--spine-bg);
-  outline: 2px solid black;
+  outline: 2px solid var(--spine-outline);
   outline-offset: -1px;
-  box-shadow: 0 6px 16px var(--spine-shadow);
+  box-shadow: 0 6px 16px var(--spine-shadow), inset 0 1px 0 var(--spine-inner-shadow);
 }
 
 .stage-card.spine-epoch:hover {
@@ -666,14 +674,15 @@
 .stage-card.spine-epoch::before {
   content: '';
   position: absolute;
-  top: 0.25rem;
-  right: 0.25rem;
-  width: 12px;
-  height: 12px;
-  background: var(--spine-marker-bg);
-  border-radius: 50%;
-  border: 2px solid var(--spine-marker-border);
-  box-shadow: 0 2px 4px var(--spine-marker-shadow);
+  bottom: 0rem;
+  right: 0rem;
+  width: 20px;
+  height: 20px;
+  /* background: var(--spine-marker-bg); */
+  background: var(--spine-icon) no-repeat center/contain;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
   z-index: 1;
 }
 
@@ -698,12 +707,12 @@
 
 /* Spine of Epoch Disclaimer */
 .spine-epoch-disclaimer {
-  background: linear-gradient(135deg, rgba(217, 119, 6, 0.1) 0%, rgba(245, 158, 11, 0.1) 100%);
+  background: var(--spine-disclaimer-bg);
   border: 2px solid #d97706;
   border-radius: 12px;
   padding: 1rem 1.5rem;
   margin: 1.5rem 0;
-  color: #fbbf24;
+  color: var(--spine-disclaimer-text);
   font-size: 0.95rem;
   line-height: 1.5;
   box-shadow: 0 4px 12px rgba(217, 119, 6, 0.2);
@@ -722,7 +731,7 @@
 }
 
 .spine-epoch-disclaimer strong {
-  color: #f59e0b;
+  color: var(--spine-disclaimer-text);
   font-weight: 700;
 }
 
@@ -934,40 +943,40 @@
 
 /* Fate's Finale Grid - Centered single stage with spacing */
 .fates-finale-grid {
-  grid-template-columns: 220px;
+  grid-template-columns: 180px;
   justify-content: center;
   gap: 0;
-  grid-auto-rows: 90px;
-  margin: 3rem 0 2rem 0;
+  grid-auto-rows: 80px;
+  /* margin: 2rem 0 2rem 0; */
 }
 
 /* Fate's Finale Stage Card - Longer button with special styling */
 .stage-card.fates-finale {
-  height: 90px;
-  width: 220px;
+  height: 80px;
+  width: 180px;
   background: var(--finale-bg);
   color: white;
   border-color: var(--finale-border);
-  border-width: 4px;
-  outline: 3px solid var(--finale-outline);
-  outline-offset: -2px;
-  box-shadow: 0 8px 24px var(--finale-shadow), inset 0 2px 0 var(--finale-inner-shadow);
-  font-size: 16px;
-  position: relative;
+  border-width: 3px;
+  outline: 2px solid var(--finale-outline);
+  outline-offset: -1px;
+  box-shadow: 0 6px 16px var(--finale-shadow), inset 0 1px 0 var(--finale-inner-shadow);
+  font-size: 14px;
+  /* position: relative; */
 }
 
 .stage-card.fates-finale:hover {
   background: var(--finale-hover-bg);
   border-color: var(--finale-hover-border);
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px var(--finale-hover-shadow), inset 0 2px 0 var(--finale-hover-inner-shadow);
+  box-shadow: 0 8px 24px var(--finale-hover-shadow), inset 0 1px 0 var(--finale-hover-inner-shadow);
 }
 
 .stage-card.fates-finale .stage-name {
-  font-size: 16px;
-  max-width: 200px;
-  font-weight: 800;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  font-size: 14px;
+  max-width: 170px;
+  /* font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); */
 }
 
 

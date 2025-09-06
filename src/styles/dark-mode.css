@@ -209,6 +209,7 @@
 /* html[data-theme="dark"]{
 
   --text-color:#ffffff;
+  --text-shadow: rgba(0, 0, 0, 0.5);
 
   --combat-bg: #333333;
   --combat-border: #333333;
@@ -323,9 +324,10 @@
 } */
 
 /* Dark mode theme, no shadows */
-html[data-theme="dark"]{
+/* html[data-theme="dark"]{
 
   --text-color:#ffffff;
+  --text-shadow: rgba(0, 0, 0, 0.5);
 
   --combat-bg: #333333;
   --combat-border: #333333;
@@ -408,8 +410,120 @@ html[data-theme="dark"]{
   --finale-hover-shadow: rgba(66, 12, 10, 0.5);
   --finale-hover-inner-shadow: rgba(255, 255, 255, 0);
 
+} */
+
+/* Dark mode theme, with shadows, 3d */
+html[data-theme="dark"]{
+
+  --card-color:#2a2a2a;
+  --card-border: #3a3a3a;
+
+  --spine-disclaimer-bg: linear-gradient(135deg, rgba(217, 119, 6, 0.1) 0%, rgba(245, 158, 11, 0.1) 100%);
+  --spine-disclaimer-text: #fbbf24;
+
+  --text-color:#ffffff;
+  --text-shadow: rgba(0, 0, 0, 0.5);
+
+  --combat-bg: #333333;
+  --combat-border: #333333;
+  --combat-outline: black;
+  --combat-shadow: rgba(51, 51, 51, 0.4);
+  --combat-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --combat-hover-bg: #4C4C4C;
+  --combat-hover-border:#4C4C4C;
+  --combat-hover-shadow: rgba(76, 76, 76, 0.4);
+  --combat-hover-inner-shadow: rgba(255, 255, 255, 0.1);
+
+
+  --spine-bg: #333333;
+  --spine-border: #333333;
+  --spine-outline: black;
+  --spine-shadow: rgba(51, 51, 51, 0.4);
+  --spine-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --spine-hover-bg: #4C4C4C;
+  --spine-hover-border:#4C4C4C;
+  --spine-hover-shadow: rgba(76, 76, 76, 0.4);
+  --spine-hover-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --spine-marker-bg: #271400;
+  --spine-marker-border: black;
+  --spine-marker-shadow: rgba(0, 0, 0, 0.3);
+  --spine-icon: url('spine.png');
+
+  
+  --boss-bg: #280e33;
+  --boss-border: #280e33;
+  --boss-outline: black;
+  --boss-shadow: rgba(40, 14, 51, 0.4);
+  --boss-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --boss-hover-bg: #3B154C;
+  --boss-hover-border:#3B154C;
+  --boss-hover-shadow: rgba(59, 21, 76, 0.4);
+  --boss-hover-inner-shadow: rgba(255, 255, 255, 0.1);
+
+
+  --encounter-bg: #1d2f31;
+  --encounter-border: #1d2f31;
+  --encounter-outline: black;
+  --encounter-shadow: rgba(29, 47, 49, 0.4);
+  --encounter-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --encounter-hover-bg: #2C4649;
+  --encounter-hover-border:#2C4649;
+  --encounter-hover-shadow: rgba(44, 70, 73, 0.4);
+  --encounter-hover-inner-shadow: rgba(255, 255, 255, 0.1);
+
+
+  --shop-bg: #12332b;
+  --shop-border: #12332b;
+  --shop-outline: black;
+  --shop-shadow: rgba(18, 51, 43, 0.4);
+  --shop-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --shop-hover-bg: #1B4C40;
+  --shop-hover-border:#1B4C40;
+  --shop-hover-shadow: rgba(27, 76, 64, 0.4);
+  --shop-hover-inner-shadow: rgba(255, 255, 255, 0.1);
+
+
+  --faceoff-bg: #1d2f31;
+  --faceoff-border: #1d2f31;
+  --faceoff-outline: black;
+  --faceoff-shadow: rgba(29, 47, 49, 0.4);
+  --faceoff-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --faceoff-hover-bg: #2C4649;
+  --faceoff-hover-border:#2C4649;
+  --faceoff-hover-shadow: rgba(44, 70, 73, 0.4);
+  --faceoff-hover-inner-shadow: rgba(255, 255, 255, 0.1);
+
+
+  --f5boss-bg: #420c0a;
+  --f5boss-border: #420c0a;
+  --f5boss-outline: black;
+  --f5boss-shadow: rgba(66, 12, 10, 0.5);
+  --f5boss-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --f5boss-hover-bg: #59100E;
+  --f5boss-hover-border:#59100E;
+  --f5boss-hover-shadow: rgba(89, 16, 14, 0.5);
+  --f5boss-hover-inner-shadow: rgba(255, 255, 255, 0.1);
+
+
+  --finale-bg: #420c0a;
+  --finale-border: #420c0a;
+  --finale-outline: black;
+  --finale-shadow: rgba(66, 12, 10, 0.5);
+  --finale-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --finale-hover-bg: #59100E;
+  --finale-hover-border:#59100E;
+  --finale-hover-shadow: rgba(89, 16, 14, 0.5);
+  --finale-hover-inner-shadow: rgba(255, 255, 255, 0.1);
+
 }
-
-
 
 
