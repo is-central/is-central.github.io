@@ -62,8 +62,9 @@ In arknights there are four main types of damage: Physical, Arts, True, and Elem
 
 The following diagrams explain how the attack stats of an operator are carried out, including certain types of modifiers that can appear in IS.
 
-![Attack calculation formula](/guides/general-knowledge/damage-calculations/attack-calc.png)
-
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Attack calculation formula](/guides/general-knowledge/damage-calculations/Final_atk.svg)
+</div>
 
 Base ATK: refers to the base attack of the operator, this is visible on the operator interface before starting a stage.
 
@@ -77,7 +78,9 @@ Inspire: refers to the specific “Inspire” buff obtained from bards, such as 
 
 Final ATK: is the final attack value that will appear in the operator interface, from which the following calculations are based off.
 
-![Damage calcuation formula](/guides/general-knowledge/damage-calculations/dmg-calc.png)
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Damage calcuation formula](/guides/general-knowledge/damage-calculations/Final_dmg.svg)
+</div>
 
 ATK Scale: refers to the multiplier in which some skills base their damage off, generally denoted as “dealing x% ATK as Physical/Arts damage”.
 
@@ -211,14 +214,13 @@ Naively, one would predict that the damage increase provided by Warfarin is larg
 Surtr has a base ATK of 800 outside of IS. First we factor in the stat buffs of 20% ATK provided by the fully expanded skill tree,
 $$\text{Surtr\_base\_atk} = 800 \cdot 1.2 = 960$$.
 
-![](/getting-started/surtr_1.jpg)
-![](/getting-started/surtr_2.jpg)
+![Surtr base ATK](/guides/general-knowledge/damage-calculations/surtr_1.jpg)
+![Surtr ATK in IS](/guides/general-knowledge/damage-calculations/surtr_2.jpg)
 
 After activating Surtr’s S3 and applying warfarin’s buff, Surtr’s final attack stat is found to be
 
-![](/getting-started/surtr_3.jpg)
-![](/getting-started/surtr_4.png)
-![](/getting-started/surtr_5.png)
+![Surtr ATK with internal buffs and skill](/guides/general-knowledge/damage-calculations/surtr_3.jpg)
+![Damage dealt to the spine](/guides/general-knowledge/damage-calculations/surtr_4.jpg)
 
 $\text{Surtr\_final\_atk} = 960 \cdot (1+3.3+0.6) = 4704$
 
@@ -228,8 +230,8 @@ $\text{Dmg\_dealt} = 4704 \cdot (1-(0.5-0.22)) = 3387$
 (Note: this calculation is done below D14 difficulty, at D14 and above, the spine would take half that damage since enemies within Mark of Epoch take 50% less physical and arts damage.
 Next we consider the situation with Rise and Fall. With Rise and Fall, Surtr’s attack without the skill up becomes $\text{Surtr\_base\_atk} = 800 \cdot (1+0.2+0.3) = 1200$
 
-![](/getting-started/surtr_6.png)
-![](/getting-started/surtr_7.png)
+![Surtr base ATK with external buffs](/guides/general-knowledge/damage-calculations/surtr_5.png)
+![Surtr base ATK with external buffs and skill](/guides/general-knowledge/damage-calculations/surtr_6.png)
 
 
 Because Rise and Fall is an external modifier attack buff rather than an internal buff, it does not stack additively with the +330% ATK buff provided by Surtr’s skill. Instead, it stacks multiplicatively. Hence the final attack Surtr has after S3 is activated is $\text{Surtr\_final\_atk} = 1200 \cdot (1+3.3) = 5160$, which is higher than the result we got with E1 Warfarin.
