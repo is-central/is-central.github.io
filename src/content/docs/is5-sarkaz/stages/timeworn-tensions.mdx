@@ -22,5 +22,80 @@ description: Timeworn Tensions stage guide for IS5 Sarkaz's Furnaceside Fables
 
 ---
 
+import HeadingWithIcon from '/src/components/HeadingWithIcon.astro';
+import StrategySection from '/src/components/StrategySection.astro';
 
-*Content to be added.*
+<StrategySection title="Stage Analysis" author="Bait" defaultOpen={true}>
+
+
+
+## Stage Description
+
+Timeworn Tensions is a stage which checks for a single thing: how well you can deal with Holy Automaton (drills). The stage is, in principle, fairly simple, but its simplicity belies how quickly things can go awry when it is not managed properly.
+
+There are two main parts of the stage to discuss. The first and most immediately evident upon loading into the stage are the 4 Sarkaz Worldcursers that spawn on the bottom of the map. They start off in their Standby state where they will not attack. Worldcursers will only enter their Combat state when damage is dealt to them. Once activated they are fairly threatening. They target 2 at once and do 2590 arts damage on Emergency. If never damaged, the Worldcursers will idle at the bottom of the map and slowly walk towards the left blue box. The first one (leftmost) will start moving 100s into the map. The second one will take 150s. The last 2 will move at once and go at 240s. From this description, the intended approach becomes clear. We want to deal with each Worldcurser one at a time. Although they are threatening, their stats aren’t so high that a standard team can’t handle a single one. 
+
+Naturally the stage isn’t going to just let you pick off Worldcursers without putting up a fight. From the top of the stage, enemies will spawn. Sarkaz Maze Guides (wizard guys) will spawn from the top left box. These are basically just trash mobs. At most they’ll harass your operators a little with their attacks. The real problems come from the top right box. The first enemy to come out of the box are Sarkaz Maze Returners. These are also mostly trash mobs, they are only threatening when a necrosis field is up. Which leads us to the drills. Drills represent a crowd control or damage check. Should we leak one, everything on the map will take 2215 physical damage on Emergency. This includes the Worldcursers on the bottom of the map. Should this happen, every Worldcurser will wake up and beeline into the blue box, annihilating everything in their path with their combined attacks. As such, we have to kill every drill before they enter the blue box on the right. This is where the Emergency variant pulls a devious trick by giving every drill a dreadkaz mark as well. Not only does the dreadkaz mark cause your operators to get necrosis, it gives a damage reduction field to everything in it, including the drills that quickly follow the first. This significantly increases the damage check on the drills, making it so that stunning them to keep them in place is highly recommended. The maze returners that we called trash mobs earlier also love the necrosis field that you’re forced to create, making them far more threatening than on the regular version of the map. The first drill will spawn 90 seconds in, a second will spawn as the first normally enters the blue box. Then 150 seconds into the stage, 4 drills will spawn in quick succession.  
+
+With the description of the stage done, the way to solve it should become clear. We will largely ignore the bottom of the stage, only committing one or two operators to deal with the Worldcursers one by one. The top of the stage is what we’ll commit most of our attention and resources to. Above all else, we must make sure that the drills do not leak. As such we will use crowd control such as stuns or simply kill them before they enter the box. An important thing to note is that all the range tiles on the top of the map are completely safe from the Worldcursers. As such, any ranged operators should be placed there (unfortunately this also makes them likely to be in the necrosis field). Suppose we lack the dps to kill the wave of 4 drills, then we have another route to deal with the stage. We try to kill as many World Cursers as possible and then let the rest leak when the drill leaks. Since our operators are all stationed at the top, the Worldcursers can be leaked safely which only costs us 4 life points at most. Should we do this strategy, we can retreat our operators the moment the drills come out to avoid having them get blown up by 4 drills entering the blue box in quick succession. They will be back before the last wave of enemies.
+
+## Stage Variants
+
+There are no notable stage variants. The spine of epoch can spawn either on the top or bottom but this does not significantly impact your strategy.
+
+<HeadingWithIcon
+  level={3}
+  icon="/guides/is5-sarkaz/images/enemies/Finale_Cadence_sprite.png"
+  id="cadence"
+>
+  ## Finale Cadence
+</HeadingWithIcon>
+
+Unproblematic on this stage. This stage is quite convenient for it since it can easily be leaked or killed without much difficulty.
+
+
+## Notable Epochs and Debuffs
+
+<HeadingWithIcon
+  level={3}
+  icon="/guides/is5-sarkaz/images/epochs/90px-Epoch-Oddities.png"
+  id="oddities"
+>
+  ### Oddities
+</HeadingWithIcon>
+
+Making the dps check of killing drills higher can be deadly
+
+<HeadingWithIcon
+  level={3}
+  icon="/guides/is5-sarkaz/images/epochs/90px-Epoch-King_of_Sarkaz.png"
+  id="kos"
+>
+  ### King of Sarkaz
+</HeadingWithIcon>
+
+Tanking even a single Worldcurser becomes significantly harder with this epoch. Carefully plan ahead whether you will be able to tank its hits.
+
+<HeadingWithIcon
+  level={3}
+  icon="/guides/is5-sarkaz/images/collectibles/rogue_4_relic_curse_1.png"
+  id="gulduls"
+>
+  ### Gul'dul's Silence
+</HeadingWithIcon>
+
+Same as with Oddities, the dps check for killing drills is increased.
+ 
+
+## Recommendations
+
+Any operator who can stun or bind like May and Ethan are good on this stage to hold the drills in place. Aside from that, the only requirement is to have enough damage. There are many operators who can handle the bottom such as Kal’tsit and Ulpianus.
+
+### Good Operators
+
+May, Ethan, Kroos Alter: Good sources of crowd control for the drills.
+
+
+
+
+</StrategySection>
