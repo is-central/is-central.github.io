@@ -271,31 +271,6 @@ Each boat can load up to 3 operators but will forcefully retreat every operator 
 
 If theresis isn't shifted on phase 2, this makes it so a boat spawns on average every 20.4s, with their movement speed being 0.4 tiles/s, they would be spaced by 8.16 tiles. This means if we place an operator on a ranged tile, they would only have 20 seconds to deal damage before having to be retreated, as well as having multiple tiles obstructed by these simultaneously.
 
-{/* The most common solution to deal with Theresis phase 2 in this scenario is with Amiya+May. Amiya deals true damage with her S3 and can be placed early to start charging her skill.
-
-<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
-  ![Amiya placement 1](/guides/is5-sarkaz/stage-guides/court-visit/ed2-amiya-1.png)
-</div>
-
-When boats start spawning, as mentioned earlier, she will be on a timer to charge her skill and deal damage, for this we deploy May to slow down the boats and buy more time for Amiya. Their placements go as follows:
-
-<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
-  ![Amiya placement 2](/guides/is5-sarkaz/stage-guides/court-visit/ed2-amiya-2.png)
-</div>
-
-The idea behind this placement is that Amiya's range extension will make it so she gets distracted by enemies as they path down below Theresis. Placing Amiya facing up makes it so she can charge her skill on the Sarkaz Withers and her range extension allows her to attack Theresis, limiting her range so she can't get distracted.
-
-Previously we saw that Sarkaz enemies defeated restore 3 SP on Theresa, while this is taken into consideration with the 4 Sarkaz Wither spawns per explosion for the average boat spawns cycle calculated earlier, this also means that each cycle and boat spacing can vary depending on how many Sarkaz Withers are defeated in between each cycle. This can be abused to maximize the spacing between 2 boats to increase the uptime of an operator to be deployed on a range tile; however, this needs to be performed in advance. The next scenario will help visualize how to manipulate Theresa's explosion cycles.
-
-We want to deploy Amiya on F10 as soon as a boat exits this tile to start charging her skill and maximize her deployment duration.
-Let the first boat that spawns after Amiya reaches $R$ redeployment time be $A$.
-We will wait until boat $A$ passes F10 to deploy Amiya, this will take $R$ seconds.
-After $A$ spawns, we want to maximize the time until the next boat spawns so that Amiya has the maximum amount of time to charge and finish her skill, and we do this by delaying defeating Sarkaz Withers after $A$ spawns.
-$A$ has to travel 15 tiles to reach F10 and 15.5 tiles to exit this tile which allows Amiya to be deplyed, without any movement speed reductions this takes $R=38.75$s, any boat spawning after Amiya has 38.75s redeployment time left will pass through the tile when Amiya is ready to be deployed; then the boat spawning after $A$, is the boat we want to delay from spawning.
-Knowing this timing we are now able to plan how we should play to maximize their distance away from each other. Depending on the way we are dealing with the Sarkaz Withers, we can try to speed up defeating as many as possible, specially those who have low HP, to force an explosion after the 38.75s mark as we will deploy Amiya after this boat passes F10, right as this boat spawns we should slow, stall, or delay killing them for as long as possible.
-With the relic 'Painful Happiness', which reduces MS by 15%, the boats' MS would be 0.34 tiles/s, giving us the timer 45.59s instead.
-An alternative option to maximize the spacing between these 2 boats is to load an opeartor on the second boat, the boat's movement speed is reduced by 50%, delaying the boat long enough that the 3rd boat spawn would reach F10 faster than the second boat, in which case we would want to delay the 2 boats spawns after $A$. */}
-
 ### Fractured
 When fractured, Theresa will spawn 7 Deathveil Assassins instead of the 4 dreadkaz marked Sarkaz Wither Maws when Theresis is defeated. These are invisible and it is recommended to have an operator with invisibility reveal to deal with them more easily.
 
@@ -450,8 +425,10 @@ Next we compare the total damage per cycle, a cycle being, given a certain ASPD 
 In practice her redeployment time might not match the time she isn't deployed but this doesn't reflect much difference in this analysis.
 
 Simulating the previous scenario (with E1 May) shows that the impact of ASPD relics is much higher than just increasing her damage per hit.
-At the bottom we have 50 ASPD, the scenario without Toy or Chalice. Just obtaining Toy with 80 ingots is enough to quadruple her damage and in most scenarios we would have more than just 80 ingots, however, if we look at the damage with an additional 200% external damage this a x2.5 increase.
-With Chalice we can see an even bigger increase of damage that no realistic run would get enough damage to match it.
+At the bottom we have 50 ASPD, the scenario without Toy or Chalice.
+Just obtaining Toy with 80 ingots increases her damage by a factor of x4.7 and in most scenarios we would have more than just 80 ingots, however, if we look at the damage with an additional 200% external damage this a x2.5 increase.
+This difference appears mainly because she only gets around 5s of skill uptime before she has to be retreated, compared to 17.5s at 100 ASPD, in which case it would be significantly better to load an operator into the boat instead of relying on May to slow down the boat.
+With Chalice we can see an even bigger increase of damage that no realistic run would get enough external damage to match it.
 
 *Note: this analysis takes into consideration Soul Escort squad redeployment time reduction but the analysis result remains the same.*
 
@@ -467,11 +444,11 @@ Even in this case the ASPD impact is still very noticeable.
   ![Amiya damage per cycle with E2 May](/guides/is5-sarkaz/stage-guides/court-visit/strategy-amiya-may/amiya-may-damage-cycle-e2-may.png)
 </div>
 
-Something interesting we can observe here is that at 350 ASPD it seems like E2 May performs slightly worse than E1.
+{/* Something interesting we can observe here is that at 350 ASPD it seems like E2 May performs slightly worse than E1.
 This is likely due to her own skill cycle on the boats.
 At high ASPD values there is a point where May will slow down the second boat enough for the third to catch up and will constantly be switching over between them, but Amiya gets retreated when any of the two reaches F10.
 Depending on different ASPD values this can create different skill cycle patterns in which the slow uptime of both boats can go up and down, creating certain ASPD intervals in which a slightly higher ASPD value is worse.
-Unfortunately this is too hard to control and shouldn't be taken into consideration, as the point where this happens it is likely that more damage on Theresis won't be needed, nor will it make a meaningful difference.
+Unfortunately this is too hard to control and shouldn't be taken into consideration, as the point where this happens it is likely that more damage on Theresis won't be needed, nor will it make a meaningful difference. */}
 
 Considering the scenario where we only have King's Lance, it takes roughly ~28s to get enough SP to charge Amiya's skill.
 This creates a cycle of $28 + 30 + 70 = 128$s, as her skill duration is of 30s and her redeployment time is 70s.
