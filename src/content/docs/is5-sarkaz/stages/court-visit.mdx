@@ -164,8 +164,8 @@ Without any MS debuffs, and without block shifting Theresis, the spheres can be 
 |:------:|:---------------:|:-------:|:-------------------:|:--------------------------:|
 | 1      | G7              | G7      | G7                  | G7                         |
 | 2      | G7/G8           | G7/G8   | G7/G8               | G7                         |
-| 3      | G8              | G8      | F9                  | G7/G8                      |
-| 4      | E8              | E8      | E8                  | F9                         |
+| 3      | E8              | G8      | F9                  | G8                         |
+| 4      |                 | E8      | E8                  | F9                         |
 | 5      |                 |         |                     | E8                         |
 </div>
 
@@ -319,7 +319,9 @@ This epoch will easily eliminate tanking Theresis as an option. In addition to t
   ### Sufferings
 </HeadingWithIcon>
 
-This stage opening is relatively slow compared to other stages, this gives enough time to set up your operators and heal any that would require so. For the second phase however, depending on the strategy chosen, if operators must be constantly deployed as Theresa is constantly charging her skill at +5 SP/s, this will not allow your operators to survive and do their job if they aren't healed in time.
+This stage opening is relatively slow compared to other stages, this gives enough time to set up your operators and heal any that would require so.
+While the danger of this epoch doesn't show itself as it does for most other stages, here it means that the operator which could have survived tanking Theresis' sphere now dies, resulting in a heavy DP loss, specially with ED5 egg or when fractured.
+For the second phase, depending on the strategy chosen, if operators must be constantly deployed as Theresa is constantly charging her skill at +5 SP/s, this will not allow your operators to survive and do their job if they aren't healed in time.
 
 
 <HeadingWithIcon
@@ -404,6 +406,8 @@ Before the phase starts Amiya can be placed early to start charging her skill.
   ![Amiya placement 1](/guides/is5-sarkaz/stage-guides/court-visit/strategy-amiya-may/ed2-amiya-1.png)
 </div>
 
+This placement optimizes damage with Scout's Scope. If Theresa has any SP previous to starting the phase and Amiya's skill isn't fully charged it might be better to simply place Amiya on F10. With no MS reductions, the boat takes 27.5s to reach E11 (the tile under Amiyas placement in the diagram), while Amiya's skill lasts 30s.
+
 After boats start spawning she will be on a timer to charge her skill and deal damage, for this we deploy May to slow down the boats and buy more time for Amiya. Their placements go as follows:
 
 <div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
@@ -412,7 +416,11 @@ After boats start spawning she will be on a timer to charge her skill and deal d
 
 The idea behind this placement is that Amiya's range extension will make it so she gets distracted by enemies as they path down below Theresis. Placing Amiya facing up makes it so she can charge her skill on the Sarkaz Withers and her range extension allows her to attack Theresis, limiting her range so she can't get distracted.
 
-In most cases Amiya skill will give her enough HP to survive Theresa's explosions, on the other hand, May will usually instantly die after a few cycles if she does not have a decent amount of HP, as these explosions can reach 5,000 Arts damage as the phase progresses, starting from 500 and increasing by 200 every explosion. Because of this, the placement should be carefully thought of in consideration of the boats position in the cycle and Theresa's SP bar. Sarkaz Withers can be defeated to manipulate Theresa's SP bar, by killing devouers to force an early explosion, or avoid killing them for a late explosion, as killing a sarkaz enemy restores 3 SP.
+In most cases Amiya skill will give her enough HP to survive Theresa's explosions, on the other hand, May will usually instantly die after a few cycles if she does not have a decent amount of HP, as these explosions can reach 5,000 Arts damage as the phase progresses, starting from 500 and increasing by 200 every explosion.
+Because of this, the placement should be carefully thought of in consideration of the boats position in the cycle and Theresa's SP bar.
+Sarkaz Withers can be defeated to manipulate Theresa's SP bar, by killing devouers to force an early explosion, or avoid killing them for a late explosion, as killing a sarkaz enemy restores 3 SP.
+
+Lastly, as soon as Amiya is retreated, May should be retreated as well to save DP and so their redeployment times match and we don't deploy May late on the next cycle.
 
 #### Damage output analysis
 In order to analyze how much damage Amiya can output on phase 2, first we need to look at the cycle in which she can be deployed and deal damage.
@@ -427,15 +435,18 @@ This gives us until the next boat approaches Amiya, as we don't want her to get 
 During this time May will be slowing down the boats, with enough ASPD she can slow the second boat enough for the third to catch up and so she will start switching targets between the two of them.
 Simulating this we can consider the following scenarios to compare the impact if ASPD relics vs damage relics.
 
-At this point of the run it is fair to assume that we have triple King's relics, that is King's Crown providing 150% internal damage. We also have 30% external attack from the tree and likely a few more external attack buffs, given how common they are in comparison to other internal buffs. Here we can consider the following additional ASPD breakpoints:
+At this point of the run it is fair to assume that we have triple King's relics, that is King's Lance providing +50 ASPD and King's Crown with 150% internal damage.
+We also have 30% external attack from the tree and likely a few more external attack buffs, given how common they are in comparison to other internal buffs.
+Here we can consider the following additional ASPD breakpoints:
 * King's Lance = 50 ASPD
 * King's Lance + 80 ingots Toy = ~100 ASPD
 * King's Lance + 150 ingots Toy and Chalice = 350 ASPD
 * Max ASPD = 500 ASPD
 
-Something reasonable to consider into this analysis is the effect of the relic Civilight Eterna, which increases True damage taken by enemies by 250%, resulting in a x3.5 final damage output multiplier. This simply ends up being a x3.5 multiplier to her final DPS output, which will depend on her base damage and ASPD, meaning that at low ASPD scenarios it won't perform as well as one might expect.
+Something reasonable to consider into this analysis is the effect of the relic Civilight Eterna, which increases True damage taken by enemies by 250%, resulting in a x3.5 final damage output multiplier.
+This simply ends up being a x3.5 multiplier to her final DPS output, which will depend on her base damage and ASPD, meaning that at low ASPD scenarios it won't perform as well as one might expect.
 
-Next we compare the total DPS per cycle, a cycle being, given a certain ASPD on May to slow down the boat, the time Amiya gets to deal damage, either by charging her skill and being forcefully retreated by it or manually retreating her before a boat kidnaps her, in addition to her redeployment time.
+Next we compare the total damage per cycle, a cycle being, given a certain ASPD on May to slow down the boat, the time Amiya gets to deal damage, either by charging her skill and being forcefully retreated by it or manually retreating her before a boat kidnaps her, in addition to her redeployment time.
 In practice her redeployment time might not match the time she isn't deployed but this doesn't reflect much difference in this analysis.
 
 Simulating the previous scenario (with E1 May) shows that the impact of ASPD relics is much higher than just increasing her damage per hit.
@@ -445,14 +456,15 @@ With Chalice we can see an even bigger increase of damage that no realistic run 
 *Note: this analysis takes into consideration Soul Escort squad redeployment time reduction but the analysis result remains the same.*
 
 <div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
-  ![Amiya DPS cycle with E1 May](/guides/is5-sarkaz/stage-guides/court-visit/strategy-amiya-may/amiya-may-dps-cycle-e1-may.png)
+  ![Amiya damage per cycle with E1 May](/guides/is5-sarkaz/stage-guides/court-visit/strategy-amiya-may/amiya-may-damage-cycle-e1-may.png)
 </div>
 
-
-It is important to note that this analysis is done considering E1 May. E2 May will have an easier time slowing down the boats and providing Amiya more time to charge her skill which is the biggest problem on low ASPD scenarios. Even in this case the ASPD impact is still very noticeable.
+It is important to note that this analysis is done considering E1 May.
+E2 May will have an easier time slowing down the boats and providing Amiya more time to charge her skill which is the biggest problem on low ASPD scenarios.
+Even in this case the ASPD impact is still very noticeable.
 
 <div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
-  ![Amiya DPS cycle with E2 May](/guides/is5-sarkaz/stage-guides/court-visit/strategy-amiya-may/amiya-may-dps-cycle-e2-may.png)
+  ![Amiya damage per cycle with E2 May](/guides/is5-sarkaz/stage-guides/court-visit/strategy-amiya-may/amiya-may-damage-cycle-e2-may.png)
 </div>
 
 Something interesting we can observe here is that at 350 ASPD it seems like E2 May performs slightly worse than E1.
@@ -465,12 +477,21 @@ Considering the scenario where we only have King's Lance, it takes roughly ~28s 
 This creates a cycle of $28 + 30 + 70 = 128$s, as her skill duration is of 30s and her redeployment time is 70s.
 First cycle only lasts 30s as we can usually prepare Amiya's skill while we stall Theresis on the previous phase, with this we can fit 4 cycles before the 500s pass by, $30 + 3 \cdot 128 = 414$s.
 This gives plenty of time for boats to pass by.
-While it is optimistic to manage to get a full skill duration before a boat reaches Amiya on a low ASPD scenario, we can still achieve a close estimate if we have additional operators to load into the boats to buy more time for her.
+While it is very optimistic to get a full skill duration before a boat reaches Amiya on a low ASPD scenario, we can still achieve a close estimate if we have additional operators to load into the boats to buy more time for her.
+Next let's consider a minimal relics scenario to see how this would be in practice.
 
-Amiya has 762 base ATK, with the +30% external ATK from the tree, King's Crown +150% internal ATK, Rise and Fall +30% external ATK, and her skill +230% internal ATK, this would be 5,852 ATK.
+Amiya has 762 base ATK, let's assume the following buffs:
+* +30% external ATK from the tree
+* +30% external ATK from Rise and Fall
+* +150% internal ATK from King's Crown +150%
+* +230% internal ATK from her skill +230%
+
+After applying these buffs we get 5,852 ATK.
 Amiya has an ATK Interval of 1.6s, with 50 ASPD from King's Lance this would be 1.0667s.
-For a 30s skill, this would be 164,592 total damage, over 4 cycles this would be 60% of Theresis HP.
-A combination of ASPD or external ATK buffs would be ideal to allow Amiya to deal with the entire stage when no ASPD was able to be obtained and no other operators were drafted to help with the damage, although it is important to consider that the stage will grow harder the longer Theresis remains alive and this still requires Amiya to be able to use her skill for its full duration.
+For a 30s skill duration, this results in 164,592 total damage, over 4 cycles this would be 60% of Theresis HP.
+A combination of ASPD or external ATK buffs would be ideal to allow Amiya to deal with the entire stage when no additional ASPD was obtained and no other operators were drafted to help with the damage.
+It is important to consider that the stage will grow harder the longer Theresis remains alive and this still requires Amiya to be able to use her skill for its full duration.
+Additionally, Theresa's damage will continuously ramp up, meaning there is a point in which May won't be able to survive an explosion, this is something worth considering when planning how to approach the stage.
 
 #### Optimization
 
