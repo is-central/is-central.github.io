@@ -21,4 +21,471 @@ description: Court Visit boss stage guide for IS5 Sarkaz's Furnaceside Fables
 
 ---
 
-*Content to be added.*
+import HeadingWithIcon from '/src/components/HeadingWithIcon.astro';
+import StrategySection from '/src/components/StrategySection.astro';
+
+<StrategySection title="Stage Analysis" author="Die Alive" defaultOpen={true}>
+
+## Mechanics
+Theresis is a Sarkaz melee Leader enemy, can deal additional ranged attacks with his special attacks. Part of his mechanics are tied to Theresa, considered a device; she doesn't move, has an SP bar (100 SP), and some of her and Theresis' mechanics scale based on their distance away from each other, this is telegraphed by a link line to Theresis that changes color depending on their distance:
+* $\leq$ 3.5 tiles: red link (intensity increases as they get closer)
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Red link](/guides/is5-sarkaz/stage-guides/court-visit/stage-analysis/ed2-red-link.png)
+</div>
+
+* \> 3.5 tiles: white link
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![White link](/guides/is5-sarkaz/stage-guides/court-visit/stage-analysis/ed2-white-link.png)
+</div>
+
+### Special attacks
+
+**Theresa**
+
+Given that Theresa is considered as a device, her stats don't scale with difficulty, dealing the same damage on D0 as D18.
+It is important to take into consideration that even at D18 her damage can be threatening.
+
+ATK: 1,000
+
+* SP regen -1.
+* Restores 3 SP for every Sarkaz enemy defeated.
+* Shock of Will: at 100 SP deals Arts damage and summons 4 Sarkaz Wither Devourers.
+    * Damage starts at 50% ATK, increasing by 20% per explosion, up to 500% ATK.
+
+First form
+* Every 10s summon a Shadow of the Lord.
+* When Theresis dies for the first time, enter second form.
+
+Second form
+* Gains SP regen based on her distance away from Theresis.
+<div style={{ display: "flex", justifyContent: "center" }}>
+| Distance      | SP recovery |
+|:-------------:|:-----------:|
+| > 3.5         | +1          |
+| > 2.5         | +2          |
+| > 1.5         | +3          |
+| > 1.0         | +3.5        |
+| $\leq$ 1.0    | +5.0        |
+</div>
+* When Theresis is defeated for the second time, deal 500% ATK as Arts damage to all allied units.
+
+**Theresis**
+
+ATK: 1,800\
+HP: 120,000
+
+At D18 with Anasa's Karma this would be:\
+ATK: 6,689\
+HP: 1,094,597
+
+First form
+* Twins: Theresis deals more damage and takes less damage based on how close he is to Theresa.
+<div style={{ display: "flex", justifyContent: "center" }}>
+| Distance      | Damage increase | Damage reduction |
+|:-------------:|:---------------:|:----------------:|
+| > 3.5         | 0%              | 35%              |
+| > 2.5         | 50%             | 50%              |
+| > 1.5         | 100%            | 60%              |
+| > 1.0         | 150%            | 75%              |
+| $\leq$ 1.0    | 200%            | 90%              |
+</div>
+* Brandish: Theresis charges for 9s and releases a ranged attack that deals 150% ATK as Physical damage.
+The direction of this attack can be telegraphed by where Theresis is facing and red lines forming a rectangle along the attack's direction, rotating left > up > right > down.
+    * 10s cooldown (3s initial cooldown).
+    * Ignores camouflage.
+    * Shadows of the Lord will use Brandish as well with Theresis.
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Brandish](/guides/is5-sarkaz/stage-guides/court-visit/stage-analysis/ed2-brandish.png)
+</div>
+
+* Guardian: Theresis releases an energy sphere into Theresa. This sphere can be blocked by any operator or summon placed in between its pathing.
+    * 18s cooldown.
+    * If the sphere reaches Theresa it will restore 35 SP.
+    * If the sphere is blocked it will deal 100% ATK as Arts damage to the ally unit that blocked it.
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Guardian](/guides/is5-sarkaz/stage-guides/court-visit/stage-analysis/ed2-guardian.png)
+</div>
+
+Second form:
+* Gemini: Same damage reduction from Twins with the addition of Theresa gaining increased SP recovery.
+<div style={{ display: "flex", justifyContent: "center" }}>
+| Distance      | Damage reduction | SP recovery |
+|:-------------:|:----------------:|:-----------:|
+| > 3.5         | 35%              | +1          |
+| > 2.5         | 50%              | +2          |
+| > 1.5         | 60%              | +3          |
+| > 1.0         | 75%              | +3.5        |
+| $\leq$ 1.0    | 90%              | +5.0        |
+</div>
+
+* Reshape Will: After 500s (8 minutes and 20s), takes 99 LP.
+
+## Enemies
+* Touch of Benevolence (slugs): have relatively low HP but a passive 90% Physical and Arts damage reduction and increase the block count of the allied unit they are blocked by.
+* Sarkaz Heirbearer ASV: increases the ATK of the slugs by 10% and grants them an additional 10% of ATK as necrosis damage. 
+* Sarkaz Wither Devourer/Maw: swallow the first operator they are blocked by, instantly retreating them. When defeated the swallowed operator will be avaliable to deploy without any redeployment cooldown. These only spawn with Theresa's explosions and when Theresis is defeated for the second time, making them a threat only on second phase.
+* Deathveil Assassin: 40% Physical and Arts damage evasion, dashes once when being blocked after their HP goes below 50%. These only appear on the fractured version of the stage, replacing the Sarkaz Withers that spawn when Theresis is defeated for the second time.
+
+## Stage description and analysis
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Stage tiles](/guides/is5-sarkaz/stage-guides/court-visit/stage-analysis/ed2-tiles.png)
+</div>
+
+Theresis has 2 phases. First phase consists of Theresis simply walking along its path to the blue box while cycling his special attacks. After Theresis dies for the first time he teleports to the right of Theresa, enters a state of self-bind and enters second form where he won't attack.
+
+
+This stage starts with Theresa, Theresis, and multiple shadows of the Lord spawning in the center of the stage (G6-D6, G9-D9, B6-B7). Theresa will only spawn Shadows of the Lord on tiles G2-D2 and G12-D12, which means after the Shadows in the center are defeated they never respawn.
+
+The stage can be divided into different sections:
+* Theresis phase 1
+* Touch of Benevolence (slugs) waves
+* Theresis phase 2
+
+### Phase 1
+Theresis can remain on phase 1 indefinitely, while phase 2 and the slug waves have set durations. The slug waves start either 250s after the stage begins or when Theresis is defeated for the first time. This 250s timer can also be seen on the Shadows of the Lord that spawn initially in the center of the stage.
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Shadow timer](/guides/is5-sarkaz/stage-guides/court-visit/stage-analysis/ed2-timer.png)
+</div>
+
+The enemies and waves to deal with in this stage are relatively simple, the complexity of solving this stage lies on dealing properly with each respective section, this often means dealing with Theresis phase 1 while simultaneously dealing with the slug waves. There are multiple strategies which involve stalling Theresis as tanking him directly is not always optimal, this way certain operators are allocated to stall Theresis while others deal with the slugs.
+
+Dealing with Theresis phase 1 requires paying attention to Theresis' position and the shadows that remain alive, as Theresis will be constantly cycling Brandish with the shadows mimicking, while Theresa slowly respawns shadows. The order of respawning shadows goes from G2 to D2, continues from G12 to D12 and repeats. While the shadows with Brandish can easily kill most operators, killing the shadows isn't particularly hard and if taken care of properly this doesn't pose much of a threat.
+
+Guardian is the other important mechanic we constantly have to deal with, if the spheres aren't blocked Theresa will reach 100 SP and spawn enemies that are just unecessary for us to deal with, as well as start ramping up her damage earlier than we need it to. Blocking the spheres is relatively simple, any allied unit placed in between the sphere trajectory and Theresa will block it, taking high Arts damage and often dying; for this cheap summons or FRD operators are often used. It is important to take into consideration that when operators are deployed they have around 1s of invulnerability, this makes it so they won't actually block the sphere until this invulnerability window ends, making the reaction time very tight if Theresis is close to Theresa or we want to place the operator right next to Theresis. Most summons don't have this issue. If Theresis ends up being tanked, the operator tanking him will often block the sphere on its own if they are positioned in between the sphere trajectory.
+
+Without any MS debuffs, and without block shifting Theresis, the spheres can be blocked by placing an operator in the following tiles:
+<div style={{ display: "flex", justifyContent: "center" }}>
+| Sphere | No MS reduction | Halo    | 'Painful Happiness' | Halo + 'Painful Happiness' |
+|:------:|:---------------:|:-------:|:-------------------:|:--------------------------:|
+| 1      | G7              | G7      | G7                  | G7                         |
+| 2      | G7/G8           | G7/G8   | G7/G8               | G7                         |
+| 3      | G8              | G8      | F9                  | G7/G8                      |
+| 4      | E8              | E8      | E8                  | F9                         |
+| 5      |                 |         |                     | E8                         |
+</div>
+
+For tiles past E8 it is visually easy to tell where to deploy an operator to block the ball.
+
+One of the main threats of the slugs is that some have a dreadkaz mark, this is specially impactful on ground operators, or range operators if not placed in a safe tile.
+
+**General approach**\
+Here it is ideal to delay phasing Theresis for as long as the slug waves keep spawning, as this makes next phase easier.
+To achieve this, we need some way to stall Theresis without dealing too much damage to him, while simultaneously having an operator with good AOE dealing with the slugs effectively and another operator blocking the spheres.
+
+### Phase transition
+Depending on the way Theresis is being dealt with, this can allow for a slightly easier phase 2. If Theresis is being stalled this can give us enough time to prepare operators where we want to place them on the next phase to immediately activate their skills and speed up this phase before the threats start. This avoids having to micromanage DP generation, redeployment times, theresis explosions, deployment limit required by other operators to deal with Sarkaz Withers, and boats with Anasa's Karma right as we just phased Theresis.
+
+When Theresis is defeated for the first time he will transition to phase 2. During phase transition Theresa preserves her SP charge, however, if she just reached 100 SP and the animation to spawn the Sarkaz Withers and boats (with Anasa's Karma) starts as Theresis phases she won't spawn any enemies. This requires that her animation starts, this means that if Theresis phases before Theresa's SP bar turns orange and starts to deplete she will spawn the enemies immediately as phase 2 starts. While this isn't something one should aim to do, it is a useful trick that can help ease phase 2 start when Theresis is able to be phased on a precise timing and spheres weren't able to be blocked, resulting in Theresa gaining SP.
+
+### Phase 2
+After Theresis' is defeated for the first time, phase 2 will start.
+Theresis teleports to the right of Theresa while she gains SP regeneration, using Shock of Will at 100 SP.
+The main threat here is on the constant explosions and damage ramp up from Theresa.
+Here it is important to take into consideration the shift tiles we are provided with in the stage.
+Theresis has a weight of 5; operators usually have between 2-3 shift force, remembering the shift distance table:
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+| Final force | Push distance | Pull distance |
+|:-----------:|:-------------:|:-------------:|
+| -3 or below | 0             | 0             |
+| -2          | 0.12          | 0.03          |
+| -1          | 0.44          | 0.035         |
+| 0           | 1.7           | $\infty$      |
+| 1           | 2.14          | $\infty$      |
+| 2           | 2.96          | $\infty$      |
+| 3           | 3.53          | $\infty$      |
+</div>
+
+We can see here that a minimum force of 3 is needed to shift Theresis, this is to increase his distance away from Theresa and significantly reduce the rate in which she uses her skill, reducing both the explosions and Sarkaz Wither Devourer spawns frequency.
+
+It is important to emphasize that the previous tables of damage reduction and SP regen increase in steps, this means that, given that Theresis starts phase 2 exactly at 1 tile away from Theresa, shifting him just slightly is enough to push him into the next threshold in which his damage reduction is of 75% and Theresa's SP recovery is +3.5.
+
+After Theresis is defeated for the second time Theresa will deal 5,000 Arts damage to all alied units and 4 Sarkaz Wither Maws will spawn, each with a dreadkaz mark.
+
+**General approach**\
+There are multiple approaches for this part of the fight that depend on the operators drafted.
+One option is to simply burst down Theresis as fast as possible, this is because of 2 reasons, first one being that shift operators are often expensive to draft and the second is that the damage dealt by Theresa will ramp up making the stage harder as Theresis remains alive.
+If we are able to shift Theresis instead, this results on reducing the frequency of the explosions and Sarkaz Wither spawns, alleviating the pressure of constant Sarkaz Wither and boats spawns.
+
+In general, it is recommended to have a way to deal with the constant spawns of Sarkaz Withers, this can be an operator that either kills them quickly or can stall them, like an ambusher.
+
+If Theresis remains at 1 tile away from Theresa; that is at 90% damage reduction, it is highly recommended to have a source of true damage to deal with him.
+
+## Stage Variants
+<HeadingWithIcon
+  level={3}
+  icon="/guides/is5-sarkaz/images/collectibles/rogue_4_relic_final_6.png"
+  id="anasas"
+>
+  ### Anasa's Karma
+</HeadingWithIcon>
+When going for ED4, Anasa's Karma is required and this adds another layer of difficulty to this stage. So far we have talked about the mechanics and enemies which define how ED2 is played out but the significance of this relic might make this the most important section here. This relic affects the stage in the following ways:
+* Padmasana of Rebirth (boats) are added into the stage.
+* Leader and Elite enemies gain +50% HP, this affects:
+    * Theresis
+    * Sarkaz Withers
+    * Boats
+    * Sarkaz Heirbearer ASV
+    * Deathveil Assassins
+    * Portal/Window/Chests from inspirers
+* The fight turns into a pseudo emergency version, that is, while it doesn't count as an emergency fight that would stack relics like Minoan Ode or Friston.P, all enemies in the stage gain +25% ATK, HP, and DEF, as well as adding dreadkaz marks to 18 slugs, for a total of 26.
+
+To put it into perspective, these changes make it so bruteforcing the stage is often not a viable option anymore or results being more complicated, the constant boat spawns deny most ranged tiles; obtaining this relic in addition restricts your economy throughout the run so the solutions (operators that solve the stage) for this ending will be limited given that simultaneous solutions for ED4 are required as well.
+Comparing the stats increase on D18, we go from Theresis having:
+* ATK: 5,351
+* HP: 583,785
+* DEF: 2,000
+
+to:
+* ATK: 6,689
+* HP: 1,094,597
+* DEF: 2,500
+
+This is almost double the HP which scales worse with negative epochs or cursed relics.
+In practice this makes it so either the squad or composition being played out has to have hope efficient strong counters to the stage or strong relics such as Golden Chalice or 'Civilight Eterna' (given we have a true damage dealer operator) to reduce the chances of losing the run.
+
+The stage starts with 2 boats on C10 and C5 following the next trajectory:
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Boat 1 path](/guides/is5-sarkaz/stage-guides/court-visit/stage-analysis/ed2-boat-1.png)
+</div>
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Boat 2 path](/guides/is5-sarkaz/stage-guides/court-visit/stage-analysis/ed2-boat-2.png)
+</div>
+
+In addition to this, on every explosion from Theresa a boat will spawn from the bottom red box, following the next trajectory and leaving the deployable tiles marked on green safe:
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Safe tiles](/guides/is5-sarkaz/stage-guides/court-visit/stage-analysis/ed2-safe-tiles.png)
+</div>
+
+When a boat reaches a tile in which an operator is deployed, the operator will be immediately retreated and loaded into the boat, reducing its movement speed by 50%. If the boat leaves the stage the operator will not be able to be deployed until the next stage. If the boat is defeated the operator redeployment time will unfreeze.
+
+Each boat can load up to 3 operators but will forcefully retreat every operator on its path regardless.
+
+If theresis isn't shifted on phase 2, this makes it so a boat spawns on average every 20.4s, with their movement speed being 0.4 tiles/s, they would be spaced by 8.16 tiles. This means if we place an operator on a ranged tile, they would only have 20 seconds to deal damage before having to be retreated, as well as having multiple tiles obstructed by these simultaneously.
+
+{/* The most common solution to deal with Theresis phase 2 in this scenario is with Amiya+May. Amiya deals true damage with her S3 and can be placed early to start charging her skill.
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Amiya placement 1](/guides/is5-sarkaz/stage-guides/court-visit/ed2-amiya-1.png)
+</div>
+
+When boats start spawning, as mentioned earlier, she will be on a timer to charge her skill and deal damage, for this we deploy May to slow down the boats and buy more time for Amiya. Their placements go as follows:
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Amiya placement 2](/guides/is5-sarkaz/stage-guides/court-visit/ed2-amiya-2.png)
+</div>
+
+The idea behind this placement is that Amiya's range extension will make it so she gets distracted by enemies as they path down below Theresis. Placing Amiya facing up makes it so she can charge her skill on the Sarkaz Withers and her range extension allows her to attack Theresis, limiting her range so she can't get distracted.
+
+Previously we saw that Sarkaz enemies defeated restore 3 SP on Theresa, while this is taken into consideration with the 4 Sarkaz Wither spawns per explosion for the average boat spawns cycle calculated earlier, this also means that each cycle and boat spacing can vary depending on how many Sarkaz Withers are defeated in between each cycle. This can be abused to maximize the spacing between 2 boats to increase the uptime of an operator to be deployed on a range tile; however, this needs to be performed in advance. The next scenario will help visualize how to manipulate Theresa's explosion cycles.
+
+We want to deploy Amiya on F10 as soon as a boat exits this tile to start charging her skill and maximize her deployment duration.
+Let the first boat that spawns after Amiya reaches $R$ redeployment time be $A$.
+We will wait until boat $A$ passes F10 to deploy Amiya, this will take $R$ seconds.
+After $A$ spawns, we want to maximize the time until the next boat spawns so that Amiya has the maximum amount of time to charge and finish her skill, and we do this by delaying defeating Sarkaz Withers after $A$ spawns.
+$A$ has to travel 15 tiles to reach F10 and 15.5 tiles to exit this tile which allows Amiya to be deplyed, without any movement speed reductions this takes $R=38.75$s, any boat spawning after Amiya has 38.75s redeployment time left will pass through the tile when Amiya is ready to be deployed; then the boat spawning after $A$, is the boat we want to delay from spawning.
+Knowing this timing we are now able to plan how we should play to maximize their distance away from each other. Depending on the way we are dealing with the Sarkaz Withers, we can try to speed up defeating as many as possible, specially those who have low HP, to force an explosion after the 38.75s mark as we will deploy Amiya after this boat passes F10, right as this boat spawns we should slow, stall, or delay killing them for as long as possible.
+With the relic 'Painful Happiness', which reduces MS by 15%, the boats' MS would be 0.34 tiles/s, giving us the timer 45.59s instead.
+An alternative option to maximize the spacing between these 2 boats is to load an opeartor on the second boat, the boat's movement speed is reduced by 50%, delaying the boat long enough that the 3rd boat spawn would reach F10 faster than the second boat, in which case we would want to delay the 2 boats spawns after $A$. */}
+
+### Fractured
+When fractured, Theresa will spawn 7 Deathveil Assassins instead of the 4 dreadkaz marked Sarkaz Wither Maws when Theresis is defeated. These are invisible and it is recommended to have an operator with invisibility reveal to deal with them more easily.
+
+## Notable Epochs and Debuffs
+
+<HeadingWithIcon
+  level={3}
+  icon="/guides/is5-sarkaz/images/epochs/90px-Epoch-King_of_Sarkaz.png"
+  id="kos"
+>
+  ### King of Sarkaz
+</HeadingWithIcon>
+
+This epoch will easily eliminate tanking Theresis as an option. In addition to the damage increase, being unable to retreat operators placed on marks of epoch can result in a heavy DP loss when blocking the spheres if Theresis is being stalled in the center of the stage as slugs with dreadkaz marks die.
+
+<HeadingWithIcon
+  level={3}
+  icon="/guides/is5-sarkaz/images/epochs/90px-Epoch-Sufferings.png"
+  id="sufferings"
+>
+  ### Sufferings
+</HeadingWithIcon>
+
+This stage opening is relatively slow compared to other stages, this gives enough time to set up your operators and heal any that would require so. For the second phase however, depending on the strategy chosen, if operators must be constantly deployed as Theresa is constantly charging her skill at +5 SP/s, this will not allow your operators to survive and do their job if they aren't healed in time.
+
+
+<HeadingWithIcon
+  level={3}
+  icon="/guides/is5-sarkaz/images/epochs/90px-Epoch-Oddities.png"
+  id="oddities"
+>
+  ### Oddities
+</HeadingWithIcon>
+
+As usual, this epoch increases your relics damage check. For some strategies that rely on a crusher tanking Theresis, this allows them to stall for longer before it forcefully gets phased.
+
+<HeadingWithIcon
+  level={3}
+  icon="/guides/is5-sarkaz/images/epochs/90px-Epoch-Congestion.png"
+  id="congestion"
+>
+  ### Congestion
+</HeadingWithIcon>
+
+It is not rare to reach this point without any additional deployment limit. There is a huge difference between 3/4/5 deploy Theresis. While it depends on the squad, 3 deploy limit will often allow little to no mistakes and require operators that can deal with multiple threats of the stage simultaneously or force you to constantly rotate redeploying operators. The difference between 3 and 4 deploy limit is very noticeable, 4 deploy limit will open up many other easier options to deal with Theresis, the slug waves, and constantly regenerate DP. 5 deploy limit is not much different from 6+ and will often only force you to be slightly more careful about how different threats are dealt with.
+
+<HeadingWithIcon
+  level={3}
+  icon="/guides/is5-sarkaz/images/collectibles/rogue_4_relic_curse_1.png"
+  id="gulduls"
+>
+  ### Gul'dul's Silence
+</HeadingWithIcon>
+
+At the point of reaching this stage it is reasonable to have enough damage where 3,000 DEF is not as noticeable and has little impact on Theresis given that Gul'dul's Silence's stacks are cleared relatively fast. There is however a small threat this relic has, this effect also applies to the Shadows of the Lord, if the operator clearing up the shadows on the sides is not strong enough to deal with the increased DEF they might be unable to clear them in the interval where Theresa spawns them soon before Brandish starts.
+
+
+<HeadingWithIcon
+  level={3}
+  icon="/guides/is5-sarkaz/images/collectibles/rogue_4_relic_curse_3.png"
+  id="ballsack"
+>
+  ### Balor'sača's Arrogance
+</HeadingWithIcon>
+
+The impact of this relic becomes more noticeable on the higher floors, F5/6/7. Luckily, on this floor it usually is manageable without having to obtain too many damage relics. The damage increase would be something to be considered if the approach for the stage is tanking Theresis, specially with King of Sarkaz epoch.
+
+## Good operators
+* Kal'tsit: S3 deals true damage, being able to deal with Theresis second phase without having to shift. In addition to this, Mon3tr summon can often tank Theresis on phase 1.
+* Mon3tr: Deals true damage and can jump next to Theresis to avoid the boats.
+* Feater: E1 Feater has 2 force, with her S2 range and placement on the shift tile, this is enough to shift Theresis to push him into the next damage reduction and SP regen threshold. In addition to this, there are strategies in which E2 Feater can push Theresis far enough to reach 50% damage reduction.
+* Rope: Similar to Feater, Rope E2 can pull Theresis with either skill from the shift tile.
+* Deepcolor: Her summons allow her to block Theresis' spheres.
+* Gravel: Similar to deepcolor, her redeployment time allows her to cycle blocking Theresis' spheres and block-shift.
+* Greyy/Rosmontis: Good way to deal with the slug waves.
+* Shu: While Shu isn't often drafted due to the low hope economy, she is a known counter to Theresis 2nd phase with her teleport mechanic.
+* Quartz: given how well crushers scale on IS5, E2 Quartz HP pool often allows her to tank Theresis phase 1 with a healer that can sustain its damage.
+* Logos: S1 is great to instantly execute slugs, releaving most of their pressure. S3 is great damage and applies necrosis better than S1, helping bypassing Theresis' damage reduction.
+* Ethan: With enough ASPD, he can stall Theresis phase 1 and stall the Sarkaz Withers on phase 2.
+* Croissant: E2 can shift Theresis
+* Hoederer: Can often tank Theresis and/or deal with the slugs, as well as being able to perma stun the Sarkaz Withers on phase 2.
+* Ulpianus: Great lane holder against the slugs, S1 can pull Theresis with Gravity defying machine.
+* Ines/SA/Scene: This is mostly for the fractured version, as all three provide invis reveal.
+* Ray: Her bind and high damage allows her to kill the boats.
+
+### Operator combos
+* Amiya (caster) + May: Amiya paired with May is a hope efficient solution to deal with phase 2. Amiya deals true damage while May slows down the boats to buy time for Amiya to charge and use her skill.
+* May + Beanstalk: With enough ASPD May can perma slow Theresis while beanstalk summon cycles perfectly to block Theresis' SP sphere, with any FRD blocker Theresis can then be block shifted to be perma stalled.
+* May + Gravel: If positioned correctly Gravel can take the job of block shifting Theresis while blocking the spheres, removing the need for Beanstalk.
+* Ela + Gravel: Ela S1 can slow down Theresis long enough to achieve the same effect as May, while also providing some damage and AOE slow for the Sarkaz Withers on phase 2. The slow from S3 doesn't last enough for one full cycle but can be used if there are multiple operators that can block shift Theresis or other sources of slow.
+* Angelina + Rope: Angelina provides -2 weight which allows Rope to pull theresis all the way down, trivializing phase 2. Additionally, Rope can cancel brandish which lowers the HP requirement to tank him during phase 1.
+
+</StrategySection>
+
+
+<StrategySection title="Strategy: Amiya-May" author="Die Alive" defaultOpen={false}>
+
+## Amiya - May
+The most common and one of the cheapest solutions to deal with Theresis phase 2 with Anasa's Karma is Amiya + May.
+Amiya's S3 deals true damage, allowing her to DPS Theresis without requiring to shift him, while May buys time for her to charge her skill and deal damage by slowing down the boats.
+
+#### Placements
+Before the phase starts Amiya can be placed early to start charging her skill.
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Amiya placement 1](/guides/is5-sarkaz/stage-guides/court-visit/strategy-amiya-may/ed2-amiya-1.png)
+</div>
+
+After boats start spawning she will be on a timer to charge her skill and deal damage, for this we deploy May to slow down the boats and buy more time for Amiya. Their placements go as follows:
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Amiya placement 2](/guides/is5-sarkaz/stage-guides/court-visit/strategy-amiya-may/ed2-amiya-2.png)
+</div>
+
+The idea behind this placement is that Amiya's range extension will make it so she gets distracted by enemies as they path down below Theresis. Placing Amiya facing up makes it so she can charge her skill on the Sarkaz Withers and her range extension allows her to attack Theresis, limiting her range so she can't get distracted.
+
+In most cases Amiya skill will give her enough HP to survive Theresa's explosions, on the other hand, May will usually instantly die after a few cycles if she does not have a decent amount of HP, as these explosions can reach 5,000 Arts damage as the phase progresses, starting from 500 and increasing by 200 every explosion. Because of this, the placement should be carefully thought of in consideration of the boats position in the cycle and Theresa's SP bar. Sarkaz Withers can be defeated to manipulate Theresa's SP bar, by killing devouers to force an early explosion, or avoid killing them for a late explosion, as killing a sarkaz enemy restores 3 SP.
+
+#### Damage output analysis
+In order to analyze how much damage Amiya can output on phase 2, first we need to look at the cycle in which she can be deployed and deal damage.
+After phase 2 starts, Theresa starts charging an amount of SP based on how close Theresis is to her, most of the time we won't be able to shift Theresis and so Theresa will regenerate 5 SP/s.
+In addition to her SP regen she gains 3 SP for every Sarkaz enemy that dies, with the 4 devourers that spawn this makes it so on average she has 12 initial SP per cycle.
+After Theresa reaches 100 SP she deals Arts damage to everyone and spawns a boat.
+The explosion has an approximate SP lockout of 2.8s and the boat spawns around 4.7s after she reaches 100 SP. Considering the 12 initial SP from the devourers that would eventually die, each explosion cycle lasts around 20.4s.
+
+Amiya will be deployed as previously demonstrated in the diagram right after the boat passes F10, by this time the next boat would be around $0.4$ tiles/s $\cdot$ $20.4$s $= 8.16$ tiles behind, this is on B11, and a 3rd boat would be spawning.
+May is then deployed on D10 after the first boat is out of range (D8), while the second boat would be exiting D11 and the 3rd boat would be on B5-B6.
+This gives us until the next boat approaches Amiya, as we don't want her to get kidnapped, to charge her skill and deal damage to Theresis.
+During this time May will be slowing down the boats, with enough ASPD she can slow the second boat enough for the third to catch up and so she will start switching targets between the two of them.
+Simulating this we can consider the following scenarios to compare the impact if ASPD relics vs damage relics.
+
+At this point of the run it is fair to assume that we have triple King's relics, that is King's Crown providing 150% internal damage. We also have 30% external attack from the tree and likely a few more external attack buffs, given how common they are in comparison to other internal buffs. Here we can consider the following additional ASPD breakpoints:
+* King's Lance = 50 ASPD
+* King's Lance + 80 ingots Toy = ~100 ASPD
+* King's Lance + 150 ingots Toy and Chalice = 350 ASPD
+* Max ASPD = 500 ASPD
+
+Something reasonable to consider into this analysis is the effect of the relic Civilight Eterna, which increases True damage taken by enemies by 250%, resulting in a x3.5 final damage output multiplier. This simply ends up being a x3.5 multiplier to her final DPS output, which will depend on her base damage and ASPD, meaning that at low ASPD scenarios it won't perform as well as one might expect.
+
+Next we compare the total DPS per cycle, a cycle being, given a certain ASPD on May to slow down the boat, the time Amiya gets to deal damage, either by charging her skill and being forcefully retreated by it or manually retreating her before a boat kidnaps her, in addition to her redeployment time.
+In practice her redeployment time might not match the time she isn't deployed but this doesn't reflect much difference in this analysis.
+
+Simulating the previous scenario (with E1 May) shows that the impact of ASPD relics is much higher than just increasing her damage per hit.
+At the bottom we have 50 ASPD, the scenario without Toy or Chalice. Just obtaining Toy with 80 ingots is enough to quadruple her damage and in most scenarios we would have more than just 80 ingots, however, if we look at the damage with an additional 200% external damage this a x2.5 increase.
+With Chalice we can see an even bigger increase of damage that no realistic run would get enough damage to match it.
+
+*Note: this analysis takes into consideration Soul Escort squad redeployment time reduction but the analysis result remains the same.*
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Amiya DPS cycle with E1 May](/guides/is5-sarkaz/stage-guides/court-visit/strategy-amiya-may/amiya-may-dps-cycle-e1-may.png)
+</div>
+
+
+It is important to note that this analysis is done considering E1 May. E2 May will have an easier time slowing down the boats and providing Amiya more time to charge her skill which is the biggest problem on low ASPD scenarios. Even in this case the ASPD impact is still very noticeable.
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Amiya DPS cycle with E2 May](/guides/is5-sarkaz/stage-guides/court-visit/strategy-amiya-may/amiya-may-dps-cycle-e2-may.png)
+</div>
+
+Something interesting we can observe here is that at 350 ASPD it seems like E2 May performs slightly worse than E1.
+This is likely due to her own skill cycle on the boats.
+At high ASPD values there is a point where May will slow down the second boat enough for the third to catch up and will constantly be switching over between them, but Amiya gets retreated when any of the two reaches F10.
+Depending on different ASPD values this can create different skill cycle patterns in which the slow uptime of both boats can go up and down, creating certain ASPD intervals in which a slightly higher ASPD value is worse.
+Unfortunately this is too hard to control and shouldn't be taken into consideration, as the point where this happens it is likely that more damage on Theresis won't be needed, nor will it make a meaningful difference.
+
+Considering the scenario where we only have King's Lance, it takes roughly ~28s to get enough SP to charge Amiya's skill.
+This creates a cycle of $28 + 30 + 70 = 128$s, as her skill duration is of 30s and her redeployment time is 70s.
+First cycle only lasts 30s as we can usually prepare Amiya's skill while we stall Theresis on the previous phase, with this we can fit 4 cycles before the 500s pass by, $30 + 3 \cdot 128 = 414$s.
+This gives plenty of time for boats to pass by.
+While it is optimistic to manage to get a full skill duration before a boat reaches Amiya on a low ASPD scenario, we can still achieve a close estimate if we have additional operators to load into the boats to buy more time for her.
+
+Amiya has 762 base ATK, with the +30% external ATK from the tree, King's Crown +150% internal ATK, Rise and Fall +30% external ATK, and her skill +230% internal ATK, this would be 5,852 ATK.
+Amiya has an ATK Interval of 1.6s, with 50 ASPD from King's Lance this would be 1.0667s.
+For a 30s skill, this would be 164,592 total damage, over 4 cycles this would be 60% of Theresis HP.
+A combination of ASPD or external ATK buffs would be ideal to allow Amiya to deal with the entire stage when no ASPD was able to be obtained and no other operators were drafted to help with the damage, although it is important to consider that the stage will grow harder the longer Theresis remains alive and this still requires Amiya to be able to use her skill for its full duration.
+
+#### Optimization
+
+Previously we saw that Sarkaz enemies defeated restore 3 SP on Theresa, while this is taken into consideration with the 4 Sarkaz Wither spawns per explosion for the average boat spawns cycle calculated earlier, this also means that each cycle and boat spacing can vary depending on how many Sarkaz Withers are defeated in between each cycle. This can be abused to maximize the spacing between 2 boats to increase the uptime of an operator to be deployed on a range tile; however, this needs to be performed in advance. The next scenario will help visualize how to manipulate Theresa's explosion cycles.
+
+We want to deploy Amiya on F10 as soon as a boat exits this tile to start charging her skill and maximize her deployment duration.
+Let the first boat that spawns after Amiya reaches $R$ redeployment time be $A$.
+We will wait until boat $A$ passes F10 to deploy Amiya, this will take $R$ seconds.
+After $A$ spawns, we want to maximize the time until the next boat spawns so that Amiya has the maximum amount of time to charge and finish her skill, and we do this by delaying defeating Sarkaz Withers after $A$ spawns.
+$A$ has to travel 15 tiles to reach F10 and 15.5 tiles to exit this tile which allows Amiya to be deplyed, without any movement speed reductions this takes $R=38.75$s, any boat spawning after Amiya has 38.75s redeployment time left will pass through the tile when Amiya is ready to be deployed; then the boat spawning after $A$, is the boat we want to delay from spawning.
+Knowing this timing we are now able to plan how we should play to maximize their distance away from each other. Depending on the way we are dealing with the Sarkaz Withers, we can try to speed up defeating as many as possible, specially those who have low HP, to force an explosion after the 38.75s mark as we will deploy Amiya after this boat passes F10, right as this boat spawns we should slow, stall, or delay killing them for as long as possible.
+With the relic 'Painful Happiness', which reduces MS by 15%, the boats' MS would be 0.34 tiles/s, giving us the timer 45.59s instead.
+An alternative option to maximize the spacing between these 2 boats is to load an opeartor on the second boat, the boat's movement speed is reduced by 50%, delaying the boat long enough that the 3rd boat spawn would reach F10 faster than the second boat, in which case we would want to delay the 2 boats spawns after $A$.
+
+</StrategySection>
+
+
+
