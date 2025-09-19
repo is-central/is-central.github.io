@@ -423,8 +423,8 @@ Here we can consider the following additional ASPD breakpoints:
 * King's Lance + 150 ingots Toy and Chalice = 350 ASPD
 * Max ASPD = 500 ASPD
 
-Something reasonable to consider into this analysis is the effect of the relic Civilight Eterna, which increases True damage taken by enemies by 250%, resulting in a x3.5 final damage output multiplier.
-This simply ends up being a x3.5 multiplier to her final DPS output, which will depend on her base damage and ASPD, meaning that at low ASPD scenarios it won't perform as well as one might expect.
+Something reasonable to consider into this analysis is the effect of the relic Civilight Eterna, which increases True damage taken by enemies by 150%, resulting in a x2.5 final damage output multiplier.
+This simply ends up being a x2.5 multiplier to her final DPS output, which will depend on her base damage and ASPD, meaning that at low ASPD scenarios it won't perform as well as one might expect.
 
 Next we compare the total damage per cycle, a cycle being, given a certain ASPD on May to slow down the boat, the time Amiya gets to deal damage, either by charging her skill and being forcefully retreated by it or manually retreating her before a boat kidnaps her, in addition to her redeployment time.
 In practice her redeployment time might not match the time she isn't deployed but this doesn't reflect much difference in this analysis.
@@ -432,7 +432,7 @@ In practice her redeployment time might not match the time she isn't deployed bu
 Simulating the previous scenario (with E1 May) shows that the impact of ASPD relics is much higher than just increasing her damage per hit.
 At the bottom we have 50 ASPD, the scenario without Toy or Chalice.
 Just obtaining Toy with 80 ingots increases her damage by a factor of x4.7 and in most scenarios we would have more than just 80 ingots, however, if we look at the damage with an additional 200% external damage this a x2.5 increase.
-This difference appears mainly because she only gets around 5s of skill uptime before she has to be retreated, compared to 17.5s at 100 ASPD, in which case it would be significantly better to load an operator into the boat instead of relying on May to slow down the boat.
+This difference appears mainly because she only gets around 5s of skill uptime before she has to be retreated, compared to 17.5s at 100 ASPD, in which case it would be significantly better to load an operator into the boat instead of relying on May to slow it down.
 With Chalice we can see an even bigger increase of damage that no realistic run would get enough external damage to match it.
 
 *Note: this analysis takes into consideration Soul Escort squad redeployment time reduction but the analysis result remains the same.*
@@ -441,12 +441,125 @@ With Chalice we can see an even bigger increase of damage that no realistic run 
   ![Amiya damage per cycle with E1 May](/guides/is5-sarkaz/stage-guides/court-visit/strategy-amiya-may/amiya-may-damage-cycle-e1-may.png)
 </div>
 
-It is important to note that this analysis is done considering E1 May.
+To put into perspective the impact of these buffs we can also measure the damage dealt as a percentage of Theresis' HP as shown in the next table (Theresis' HP being 1,094,597).
+Here we assume the the same internal ATK values from before and we compare the two scenarios with and without Rise and Fall.
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+<table>
+  <thead>
+    <tr>
+      <th align="center">ASPD</th>
+      <th align="center">Damage per cycle</th>
+      <th align="center">Theresis HP %</th>
+      <th></th>
+      <th align="center">Damage per cycle</th>
+      <th align="center">Theresis HP %</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td colspan="2" align="center">+30% external ATK (baseline)</td>
+      <td></td>
+      <td colspan="2" align="center">+60% external ATK (Rise and Fall)</td>
+    </tr>
+    <tr>
+      <td align="center">50</td>
+      <td align="center">19,028</td>
+      <td align="center">1.74%</td>
+      <td align="center"></td>
+      <td align="center">23,404</td>
+      <td align="center">2.14%</td>
+    </tr>
+    <tr>
+      <td align="center">100</td>
+      <td align="center">99,897</td>
+      <td align="center">9.13%</td>
+      <td align="center"></td>
+      <td align="center">122,871</td>
+      <td align="center">11.23%</td>
+    </tr>
+    <tr>
+      <td align="center">350</td>
+      <td align="center">385,317</td>
+      <td align="center">35.20%</td>
+      <td align="center"></td>
+      <td align="center">473,931</td>
+      <td align="center">43.30%</td>
+    </tr>
+    <tr>
+      <td align="center">500</td>
+      <td align="center">532,784</td>
+      <td align="center">48.67%</td>
+      <td align="center"></td>
+      <td align="center">655,310</td>
+      <td align="center">59.87%</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+It is important to note that this analysis is done considering E1 May and that she is the only source of slow for the boats.
 E2 May will have an easier time slowing down the boats and providing Amiya more time to charge her skill which is the biggest problem on low ASPD scenarios.
 Even in this case the ASPD impact is still very noticeable.
 
 <div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
   ![Amiya damage per cycle with E2 May](/guides/is5-sarkaz/stage-guides/court-visit/strategy-amiya-may/amiya-may-damage-cycle-e2-may.png)
+</div>
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+<table>
+  <thead>
+    <tr>
+      <th align="center">ASPD</th>
+      <th align="center">Damage per cycle</th>
+      <th align="center">Theresis HP %</th>
+      <th></th>
+      <th align="center">Damage per cycle</th>
+      <th align="center">Theresis HP %</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td colspan="2" align="center">+30% external ATK (baseline)</td>
+      <td></td>
+      <td colspan="2" align="center">+60% external ATK (Rise and Fall)</td>
+    </tr>
+    <tr>
+      <td align="center">50</td>
+      <td align="center">80,869</td>
+      <td align="center">7.39%</td>
+      <td align="center"></td>
+      <td align="center">99,467</td>
+      <td align="center">9.09%</td>
+    </tr>
+    <tr>
+      <td align="center">100</td>
+      <td align="center">152,224</td>
+      <td align="center">13.91%</td>
+      <td align="center"></td>
+      <td align="center">187,232</td>
+      <td align="center">17.11%</td>
+    </tr>
+    <tr>
+      <td align="center">350</td>
+      <td align="center">385,317</td>
+      <td align="center">35.20%</td>
+      <td align="center"></td>
+      <td align="center">473,931</td>
+      <td align="center">43.30%</td>
+    </tr>
+    <tr>
+      <td align="center">500</td>
+      <td align="center">532,784</td>
+      <td align="center">48.67%</td>
+      <td align="center"></td>
+      <td align="center">655,310</td>
+      <td align="center">59.87%</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 
 {/* Something interesting we can observe here is that at 350 ASPD it seems like E2 May performs slightly worse than E1.
