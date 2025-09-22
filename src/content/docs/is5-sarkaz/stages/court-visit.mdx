@@ -368,9 +368,114 @@ The impact of this relic becomes more noticeable on the higher floors, F5/6/7. L
 </StrategySection>
 
 
-<StrategySection title="Strategy: Amiya-May" author="Die Alive" defaultOpen={false}>
+## Phase 1 strategies
 
-## Amiya - May
+<StrategySection title="Strategy: Ela + Gravel stall" author="Die Alive" defaultOpen={false}>
+### Ela + Gravel stall
+Ela is a great operator that can adapt to different situations across different runs, taking advantage of her 3 skills.
+* S1 applies the *Slow* debuff, reducing the targets movement speed by 80% for 10s which can be used to perma stall Theresis with the help of Gravel to block shift.
+
+#### Placements
+Following this placement, Ela must be deployed only after Theresis does its last right side Brandish on the C column, without movement speed debuffs this is usually around C6, with movement speed debuffs this is around C2.
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Ela placement](/guides/is5-sarkaz/stage-guides/court-visit/strategy-ela-gravel/ela-gravel-placement.png)
+</div>
+
+In this position Ela can clear the shadows in F12, E12 and D12, freeing up the high ground tiles on the left side, mainly E4, for a range operator to deal with the slugs waves throughout phase 1, while also providing slow mines to permastall Theresis in tiles G2-H2.
+
+#### Strategy
+This strategy consists on letting Theresis walk to G2-H2, deploying a mine to slow him down, deploy gravel as soon as Guardian animation starts to block the sphere and block shift him back and repeat.
+
+An easy visual queue on when to deploy Gravel is when Theresis closes its eyes.
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Guardian visual queue](/guides/is5-sarkaz/stage-guides/court-visit/strategy-ela-gravel/ela-gravel-guardian-visual-queue.png)
+</div>
+
+While for the slow mine is when the Brandish attack from the shadows on the sides passes the tiles on the opposite side of the stage, this is for example, for a shadow in G12, when its Brandish just passes G2.
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Brandish visual queue](/guides/is5-sarkaz/stage-guides/court-visit/strategy-ela-gravel/ela-gravel-brandish-visual-queue.png)
+</div>
+
+#### Precautions
+Something to look out for is the cycle of Theresis attacks, from the start of the stage he does Brandish -> walk -> Guardian -> repeat.
+If Theresis is blocked, forcing an attack as the ball attack cooldown finishes he might skip it, breaking this cycle and delaying the next ball to happen in between the walk.
+This can be very problematic as Ela's slow lasts just long enough to slow for the full walk duration, in the case where he throws the sphere in between the walk this will case the slow effect to end before finishing the walk and allowing him to reach the checkpoint tile, breaking the stall and resulting into leaking him.
+To deal with this issue, a second mine can simply be placed, however it is important to consider this might be an issue without SP regen, another option is to double or triple shift Theresis.
+
+</StrategySection>
+
+
+<StrategySection title="Strategy: May + Beanstalk + Gravel stall" author="Die Alive" defaultOpen={false}>
+### May + Beanstalk + Gravel stall
+This strategy is mainly used with Soul Escort but can be applied to other squads, in which they would be more restricted by the longer FRD and VG agent redeployment times.
+The objective in this strategy is to stall Theresis for as long as possible, this is done by using May S1 to slow Theresis, Beanstalk summon to block the sphere (in which its respawn cycle matches Theresis sphere cycle perfectly), and a fast redeploy to block shift back Theresis.
+
+May S1 is an offensive recovery skill that slows the target
+- S1 lvl 7: 4 SP and 2s Slow
+- S1M3: 3 SP and 2.5s Slow
+
+Given a Slow duration $S$, May would have to refresh it every $S$ seconds in order to permaslow a target.
+Applying Slow every $S$ seconds requires May to attack a number of times $SP\_cost+1$ within $S$ seconds, that is having a final ATK Interval of $S/(SP\_cost+1)$.
+At E1 with $S = 2$s and $SP\_cost+1 = 5$, she would need a final ATK Interval of 0.4 in order to permaslow theresis, with her base ATK Interval 1s, given the final ATK Interval formula:
+
+$final\_ATK\_Interval = 100 \cdot \frac{ATK\_Interval}{100+ASPD}$
+
+Solving for additional ASPD:
+
+$ASPD = 100 \cdot \frac{ATK\_Interval}{final\_ATK\_Interval} - 100$
+
+This makes it so that 150 additional ASPD is needed at E1 to permaslow, while at E2 with Mod3 only 53 additional ASPD is needed.
+Given King's Lance provided by lamp, this makes it so in order to permaslow you require:
+- S1 lvl 7: Coin-Operated Toy with 167 ingots or Golden Chalice + Coin-Operated Toy with 50 ingots
+- S1M3+Mod3: Coin-Operated Toy with 1 ingot
+
+#### Placements
+There are 2 positions where to stall Theresis:
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![May - Beanstalk position 1](/guides/is5-sarkaz/stage-guides/court-visit/strategy-may-beanstalk-gravel/may-beanstalk-gravel-position-1.png)
+</div>
+
+In this first position Theresis walks from F9 to D9 being slowed down by May, then proceeds to throw a sphere into Beanstalk's plant, follows up with Brandish, and lastly Gravel block shift Theresis back into F9 and the cycle repeats.
+
+This positioning requires clearing the shadow that initially spawns on B8, as well as paying attention to the shadows that repeatedly spawn on F2 and F12, as they would kill Beanstalk, while the shadow in F12 might look out of reach, maintaining the shadow at E12 alive will be required for Yato S3 to be able to reach F12, alternatively, with enough deploy limit a ranged operator can be deployed on H12 to clear the shadow.
+
+In extremly dire scenarios Beanstalk can be completely ommited and let Gravel do both jobs of tanking the sphere and block shifting with enough ASPD for an agent VG to consistently provide DP, otherwise leaving the job of blocking spheres to Beanstalk will be heavily preferable, specially with Egg and E1 Gravel, as she doesn't have the DP refund mod.
+
+While this position sounds easy to implement on paper, there are other factors to consider.
+Slugs start spawning at some point, this may cause May to stop focusing Theresis, or in the situation where May deals too much damage to any of the dreadkaz slugs, dreadkaz will spawn and will difficult block shifting Theresis back.
+It is important to know that when an operator is deployed, it prioritizes blocking the enemy closest to the center of the tile.
+Another issue is a potential mark of epoch spawn on top of May, leaving her unable to slow Theresis.
+If Theresis is not permaslowed or block shifted he will easily reach the checkpoint tile, passing the point where it can get block shifted up and breaking the cycle.
+If this happens, the stall can continue between tiles E9-D9.
+Past this point, ideally the slugs waves should be close to finished.
+Theresis will continue walking but due to the sphere and Brandish special attacks it will take some time to reach any threatening tile.
+
+Something important to look out for is how Theresis attack pattern works.
+As mentioned, he walks, throws a sphere and immediately after does Brandish, however, if he is blocked and manages to finish an attack or the attack animation is forced very closely to the sphere mechanic, this can desynchronize his attack pattern, potentially delaying the sphere to be thrown after brandish.
+This is a problem because if the sphere doesn't reach the plant to kill it and start the respawn timer, brandish will.
+This can be fixed by using Beanstalk S1 which immediately respawns the plant to block the sphere but ideally should be avoided in the first place.
+With that said, unless DP is really needed, it is better to save S1 for these situations, also given that using it at a bad timing may cause the plant to be killed either by Brandish or slugs early, completely desynchronizing it from the sphere cycle and letting it reach Theresa.
+
+If Beanstalk's plant happens to survive Theresis' sphere due to Medicine Sticks or dodge, it is important to manually kill it right after, otherwise Brandish or the slugs might do so late, delaying its respawn to block the next ball.
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![May - Beanstalk position 2](/guides/is5-sarkaz/stage-guides/court-visit/strategy-may-beanstalk-gravel/may-beanstalk-gravel-position-2.png)
+</div>
+
+This second position has its own advantages and disadvantages.
+It takes away the risk of breaking the cycle early which can potentially cause many issues by using Brandish on an inconvinient tile but it requires a precise timing to clear the shadows in G2, F2 and E2 as May would forcefully get distracted by these and the shadow in E12 that would kill her.
+Yato usually does not have a problem with this if cycled correctly and both Yato or an agent VG can easily clear E12.
+
+This position also allows Theresis to continue being permastalled even after the waves of slugs finished and allows you to kill a window or portal with ease, as well as setting up your operators to burst P2.
+
+The main disadvantage of this position is that it is not recoverable if any mistakes happen during the stall, at this point either you burst him down or it enters into the blue box.
+
+</StrategySection>
+
+
+## Phase 2 strategies
+
+<StrategySection title="Strategy: Amiya-May" author="Die Alive" defaultOpen={false}>
+### Amiya - May
 The most common and one of the cheapest solutions to deal with Theresis phase 2 with Anasa's Karma is Amiya + May.
 Amiya's S3 deals true damage, allowing her to DPS Theresis without requiring to shift him, while May buys time for her to charge her skill and deal damage by slowing down the boats.
 
@@ -603,5 +708,114 @@ An alternative option to maximize the spacing between these 2 boats is to load a
 
 </StrategySection>
 
+<StrategySection title="Strategy: Kal'tsit" author="Die Alive" defaultOpen={false}>
+### Kal'tsit
+Kal'tsit is an operator that stands out on phase 2 due to its true damage from her summon.
+
+#### Placements
+Before the phase starts Kal'tsit can be placed early, along with its summon, to start charging her skill.
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Kal'tsit placement](/guides/is5-sarkaz/stage-guides/court-visit/strategy-kaltsit/kaltsit-placement.png)
+</div>
+
+This placement maximizes her deployment time, allowing her to remain on the field before the first boat reaches her.
+
+Assuming Theresis wasn't shifted, that is Theresa's SP regen is 5 SP/s, making the first boat to take ~24.7s to spawn (considering its spawn delay from Theresa's explosion).
+Additionally, without any MS debuffs, the boat would take another $28.5$ tiles $/$ $0.4$ tiles/s $= 71.25$s to reach Kal'tsit.
+This is a total of 95.95s, enough for Kal'tsit to use 2.74 skills with no SP regen buffs.
+
+Here it is important to notice that some relics affect specifically operators only while others specify *"all allied units"*, which include summons.
+King's relics, Rise and Fall, the tree buff, Coin-Operator Toy, Chalice, and Chivalric Commandments are examples of buffs that affect all allied units.
+
+Considering the scenario with triple King's relics, we can calculate the damage output within this time.
+Mon3tr summon has 1402 base ATK, ISW-$\alpha$ mod gives +50% internal ATK and S3M3 gives +260% internal ATK that decays over time.
+This results in:
+* Internal ATK: 1 + 0.5 + 1.5 + 2.6 = 5.6; decaying to 3
+* External ATK: 1 + 0.3 + 0.3 = 1.6
+
+Applying these buffs on Mon3tr summon we get a final ATK of $1402 \cdot 5.6 \cdot 1.6 = 12,561.92$ that decays to $6,729.6$.
+The total damage output in 2.74 skills would be:
+<div style={{ display: "flex", justifyContent: "center" }}>
+<table>
+  <thead>
+    <tr>
+      <th align="center">ASPD</th>
+      <th align="center">Total damage</th>
+      <th align="center">Theresis HP %</th>
+      <th></th>
+      <th align="center">Total damage</th>
+      <th align="center">Theresis HP %</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td colspan="2" align="center">+30% external ATK (baseline)</td>
+      <td></td>
+      <td colspan="2" align="center">+60% external ATK (Rise and Fall)</td>
+    </tr>
+    <tr>
+      <td align="center">50</td>
+      <td align="center">-</td>
+      <td align="center">-%</td>
+      <td align="center"></td>
+      <td align="center">-</td>
+      <td align="center">-%</td>
+    </tr>
+    <tr>
+      <td align="center">100</td>
+      <td align="center">-</td>
+      <td align="center">-%</td>
+      <td align="center"></td>
+      <td align="center">-</td>
+      <td align="center">-%</td>
+    </tr>
+    <tr>
+      <td align="center">350</td>
+      <td align="center">-</td>
+      <td align="center">-%</td>
+      <td align="center"></td>
+      <td align="center">-</td>
+      <td align="center">-%</td>
+    </tr>
+    <tr>
+      <td align="center">500</td>
+      <td align="center">-</td>
+      <td align="center">-%</td>
+      <td align="center"></td>
+      <td align="center">-</td>
+      <td align="center">-%</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 
+
+
+
+</StrategySection>
+
+
+<StrategySection title="Strategy: Mon3tr" author="Die Alive" defaultOpen={false}>
+### Mon3tr
+
+
+</StrategySection>
+
+
+
+<StrategySection title="Strategy: Mlynar - Gravel" author="Die Alive" defaultOpen={false}>
+### Mlynar - Gravel
+
+
+</StrategySection>
+
+
+
+<StrategySection title="Strategy: Feater push" author="Die Alive" defaultOpen={false}>
+### Feater push
+
+
+</StrategySection>
