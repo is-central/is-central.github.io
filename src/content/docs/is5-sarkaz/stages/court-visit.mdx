@@ -474,7 +474,7 @@ The main disadvantage of this position is that it is not recoverable if any mist
 
 ## Phase 2 strategies
 
-<StrategySection title="Strategy: Amiya-May" author="Die Alive" defaultOpen={false}>
+<StrategySection title="Strategy: Amiya - May" author="Die Alive" defaultOpen={false}>
 ### Amiya - May
 The most common and one of the cheapest solutions to deal with Theresis phase 2 with Anasa's Karma is Amiya + May.
 Amiya's S3 deals true damage, allowing her to DPS Theresis without requiring to shift him, while May buys time for her to charge her skill and deal damage by slowing down the boats.
@@ -713,29 +713,58 @@ An alternative option to maximize the spacing between these 2 boats is to load a
 Kal'tsit is an operator that stands out on phase 2 due to its true damage from her summon.
 
 #### Placements
-Before the phase starts Kal'tsit can be placed early, along with its summon, to start charging her skill.
+Before the phase starts Kal'tsit, if possible, Kal'tsit and her summon should be deployed early to start charging her skill.
 
 <div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
-  ![Kal'tsit placement](/guides/is5-sarkaz/stage-guides/court-visit/strategy-kaltsit/kaltsit-placement.png)
+  ![Kal'tsit first placement](/guides/is5-sarkaz/stage-guides/court-visit/strategy-kaltsit/kaltsit-placement.png)
 </div>
 
-This placement maximizes her deployment time, allowing her to remain on the field before the first boat reaches her.
+This placement maximizes her deployment initial uptime, allowing her to remain on the field before the first boat reaches her.
 
-Assuming Theresis wasn't shifted, that is Theresa's SP regen is 5 SP/s, making the first boat to take ~24.7s to spawn (considering its spawn delay from Theresa's explosion).
-Additionally, without any MS debuffs, the boat would take another $28.5$ tiles $/$ $0.4$ tiles/s $= 71.25$s to reach Kal'tsit.
-This is a total of 95.95s, enough for Kal'tsit to use 2.74 skills with no SP regen buffs.
+Assuming Theresis wasn't shifted, that is Theresa's SP regen is 5 SP/s, the first boat would take ~24.7s to spawn (considering its spawn delay from Theresa's explosion).
+For the time the boat takes to reach her (28.5 tiles to travel) we can consider 4 scenarios:
+* No MS debuffs
+* 'Painful Happiness'
+* Boat with an operator loaded
+* 'Painful Happiness' + Boat with an operator loaded
 
-Here it is important to notice that some relics affect specifically operators only while others specify *"all allied units"*, which include summons.
+In the first scenario the boat would take $28.5$ tiles $/$ $0.4$ tiles/s $= 71.25$s to reach Kal'tsit.
+On the second scenario, the boat's MS would be $0.85 * 0.4 = 0.34$ tiles/s, so the boat takes 83.82s to reach Kal'tsit.
+On the third scenario where an operator is loaded into the boat, it would be sufficiently slowed so that the second boat that spawns reaches Kal'tsit first, this would be the time of the first scenario in addition to the 24.7s it takes the next boat to spawn, resulting in 95.95s.
+Last scenario would follow the same logic as the previous one, taking the time the boat takes 'Painful Happiness' instead.
+Then in these three scenarios, Kal'tsit would remain deployed for:
+* No MS debuffs: 95.95s
+* 'Painful Happiness': 108.52s
+* Boat with an operator loaded: 120.65s
+* 'Painful Happiness' + Boat with an operator loaded: 133.22s
+
+The best and worst phase 2 start possible scenarios are:
+* Kal'tsit skill ready on phase 2 start
+* Mon3tr summon retreated as Theresis dies
+
+Kal'tsit's skill is a 35s cycle skill and her summon redeployment time is 25s. This results in Kal'tsit being able to use her skill the following number of times:
+* Kal'tsit skill ready on phase 2 start
+  * No MS debuffs: 
+  * 'Painful Happiness': 3 skills
+  * Boat with an operator loaded: 3 skills
+  * 'Painful Happiness' + Boat with an operator loaded: 4 skills
+* Mon3tr summon retreated as Theresis dies
+  * No MS debuffs: 2 skills
+  * 'Painful Happiness': 2 skills
+  * Boat with an operator loaded: 2 skills
+  * 'Painful Happiness' + Boat with an operator loaded: 3 skills
+
+Next, it is important to notice that some relics affect specifically operators only while others specify *"all allied units"*, which include summons.
 King's relics, Rise and Fall, the tree buff, Coin-Operator Toy, Chalice, and Chivalric Commandments are examples of buffs that affect all allied units.
 
 Considering the scenario with triple King's relics, we can calculate the damage output within this time.
-Mon3tr summon has 1402 base ATK, ISW-$\alpha$ mod gives +50% internal ATK and S3M3 gives +260% internal ATK that decays over time.
+Mon3tr summon has 1402 base ATK, ISW-$\alpha$ mod gives +50% internal ATK and S3M3 gives +260% internal ATK that decays by 13% ATK per second for the 20s skill duration, resulting on an average of +136.5% ATK.
 This results in:
-* Internal ATK: 1 + 0.5 + 1.5 + 2.6 = 5.6; decaying to 3
+* Internal ATK: 1 + 0.5 + 1.5 + 1.365 = 4.365
 * External ATK: 1 + 0.3 + 0.3 = 1.6
 
-Applying these buffs on Mon3tr summon we get a final ATK of $1402 \cdot 5.6 \cdot 1.6 = 12,561.92$ that decays to $6,729.6$.
-The total damage output in 2.74 skills would be:
+Applying these buffs on Mon3tr summon we get a final ATK of $1402 \cdot 4.365 \cdot 1.6 = 9,791.568$.
+The total damage output per skill would be:
 <div style={{ display: "flex", justifyContent: "center" }}>
 <table>
   <thead>
@@ -757,42 +786,56 @@ The total damage output in 2.74 skills would be:
     </tr>
     <tr>
       <td align="center">50</td>
-      <td align="center">-</td>
-      <td align="center">-%</td>
+      <td align="center">89,501.05</td>
+      <td align="center">0.08%</td>
       <td align="center"></td>
-      <td align="center">-</td>
-      <td align="center">-%</td>
+      <td align="center">110,155.14</td>
+      <td align="center">0.10%</td>
     </tr>
     <tr>
       <td align="center">100</td>
-      <td align="center">-</td>
-      <td align="center">-%</td>
+      <td align="center">119,334.74</td>
+      <td align="center">0.11%</td>
       <td align="center"></td>
-      <td align="center">-</td>
-      <td align="center">-%</td>
+      <td align="center">146,873.52</td>
+      <td align="center">0.13%</td>
     </tr>
     <tr>
       <td align="center">350</td>
-      <td align="center">-</td>
-      <td align="center">-%</td>
+      <td align="center">275,387.85</td>
+      <td align="center">0.25%</td>
       <td align="center"></td>
-      <td align="center">-</td>
-      <td align="center">-%</td>
+      <td align="center">338,938.89</td>
+      <td align="center">0.31%</td>
     </tr>
     <tr>
       <td align="center">500</td>
-      <td align="center">-</td>
-      <td align="center">-%</td>
+      <td align="center">358,004.21</td>
+      <td align="center">0.33%</td>
       <td align="center"></td>
-      <td align="center">-</td>
-      <td align="center">-%</td>
+      <td align="center">440,620.56</td>
+      <td align="center">0.40%</td>
     </tr>
   </tbody>
 </table>
 </div>
 
+As we can see here, in a non-highroll scenario Kal'tsit would require multiple skill activations to defeat Theresis all by herself.
+After she has to be retreated she can be placed on H12, the only safe range tile.
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Kal'tsit second placement](/guides/is5-sarkaz/stage-guides/court-visit/strategy-kaltsit/kaltsit-placement-2.png)
+</div>
 
+Here Kal'tsit would get 2 skills per Mon3tr summon deployment, as it loses 50% of its max HP when no enemies die during the skill, and we will continuously need to be redeployed.
+At this point Theresa's damage will continuously keep ramping up, meaning that if Kal'tsit's HP isn't high enough she will immediately die to it at some point.
+After this point the overall DPS will heavily decrease.
 
+If there is not enough damage to finish the phase quick enough or HP to avoid this last scenario, it is better to have a second source of damage to help deal with this phase.
+
+#### Optimization
+A trick we can take advantage of with Kal'tsit is with initial SP relics.
+Kal'tsit is unable to charge her skill her summon isn't deployed, this forces her to lose any initial SP when she is deployed, however, if her summon is deployed on the same frame as her she will retain her initial SP.
+This can easily be achieved by pause deploying her, followed by pause deploying her summon without losing frames when unpausing.
 
 
 </StrategySection>
