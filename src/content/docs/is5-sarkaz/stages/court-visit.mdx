@@ -40,6 +40,9 @@ Theresis is a Sarkaz melee Leader enemy, can deal additional ranged attacks with
   ![White link](/guides/is5-sarkaz/stage-guides/court-visit/stage-analysis/ed2-white-link.png)
 </div>
 
+*Note: during phase 1 the color of the link changes matching the distance thresholds listed in the next section.
+For phase 2 however, the color changes at 1, 2, 3, and 4 tiles of distance; remains to be tested if the damage reduction and SP regen match this.*
+
 ### Special attacks
 
 **Theresa**
@@ -190,15 +193,15 @@ Here it is important to take into consideration the shift tiles we are provided 
 Theresis has a weight of 5; operators usually have between 2-3 shift force, remembering the shift distance table:
 
 <div style={{ display: "flex", justifyContent: "center" }}>
-| Final force | Push distance | Pull distance |
-|:-----------:|:-------------:|:-------------:|
-| -3 or below | 0             | 0             |
-| -2          | 0.12          | 0.03          |
-| -1          | 0.44          | 0.035         |
-| 0           | 1.7           | $\infty$      |
-| 1           | 2.14          | $\infty$      |
-| 2           | 2.96          | $\infty$      |
-| 3           | 3.53          | $\infty$      |
+| Final force | Non-projectile push distance | Projectile push distance | Pull distance |
+|:-----------:|:----------------------------:|:------------------------:|:-------------:|
+| -3 or below | 0                            | 0                        | 0             |
+| -2          | 0.08492                      | 0.11825                  | 0.03          |
+| -1          | 0.37363                      | 0.44030                  | 0.035         |
+| 0           | 1.56247                      | 1.69580                  | $\infty$      |
+| 1           | 1.98705                      | 2.13705                  | $\infty$      |
+| 2           | 2.77347                      | 2.95013                  | $\infty$      |
+| 3           | 3.33058                      | 3.52392                  | $\infty$      |
 </div>
 
 We can see here that a minimum force of 3 is needed to shift Theresis, this is to increase his distance away from Theresa and significantly reduce the rate in which she uses her skill, reducing both the explosions and Sarkaz Wither Devourer spawns frequency.
@@ -738,6 +741,8 @@ Then in these three scenarios, Kal'tsit would remain deployed for:
 * Boat with an operator loaded: 120.65s
 * 'Painful Happiness' + Boat with an operator loaded: 133.22s
 
+#### Damage output analysis
+
 The best and worst phase 2 start possible scenarios are:
 * Kal'tsit skill ready on phase 2 start
 * Mon3tr summon retreated as Theresis dies
@@ -837,28 +842,164 @@ A trick we can take advantage of with Kal'tsit is with initial SP relics.
 Kal'tsit is unable to charge her skill her summon isn't deployed, this forces her to lose any initial SP when she is deployed, however, if her summon is deployed on the same frame as her she will retain her initial SP.
 This can easily be achieved by pause deploying her, followed by pause deploying her summon without losing frames when unpausing.
 
-
 </StrategySection>
 
+<StrategySection title="Strategy: Mlynar - Gravel - Ethan" author="Die Alive" defaultOpen={false}>
+### Mlynar - Gravel - Ethan
+Mlynar's S3 on top of dealing a decent amount of AOE damage, has a special effect in which Kazimierz operators within Mlynar's range deal 12% of Mlynar's ATK as True damage, this synergizes particularly well with Gravel.
+Gravel has a hidden trait that makes her split her damage into 2 instances of damage, each of these applying the 12% ATK as True damage from Mlynar, making her a decent True damage dealer option to deal with Theresis.
 
-<StrategySection title="Strategy: Mon3tr" author="Die Alive" defaultOpen={false}>
-### Mon3tr
+#### Placements
 
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Placements diagram](/guides/is5-sarkaz/stage-guides/court-visit/strategy-mlynar-gravel-ethan/mlynar-gravel-ethan-placements.png)
+</div>
+
+Ethan's job here is to bind the devourers so that Mlynar defeats them with his AOE damage, with enough ASPD Ethan can usually bind the devourers in columns 6, 7, 8, and 9 long enough for Mlynar to do his job.
+Usually being better to cycle his skill when Mlynar's skill is down.
+
+#### Damage output analysis
+
+Assuming triple King's relics, 150 ingots with Coin-Operated Toy and Golden Chalice, no Rise and Fall, this results in:
+- External ATK: +30%
+- Internal ATK: +150%
+- ASPD: 350
+
+Pot 1 E2 Lvl 90 Mlynar has 385 base ATK, his talent provides 110% ATK scale, S3 adds 180% ATK scale and doubles its trait to +400% Internal ATK.
+Assuming no devourers are defeated yet, his ATK can be calculated to be:
+
+$Final\_ATK = 385 * 1.3 * 6.5 = 3,253$
+
+With ATK scale buffs buffing his own damage applied before penetrating DEF.
+From his final ATK, Gravel would make Mlynar deal an additional 390 True damage per instance of damage.
+Gravel has a base ATK Interval of 0.93s, after ASPD is applied this results in 0.2, or 0.1 considering each instance of damage as a separate attack.
+This results in 3900 True damage DPS, or 109,200 True damage dealt over the duration of the skill. This is roughly 10% of Theresis HP with Anasa's Karma.
+
+Adding up Mlynar's own damage, applying ATK scale and DEF his damage results in roughly 3941 damage per attack, which is further reduced to 354 after damage reduction is applied. After ASPD, his total damage per skill results in 37,170, adding up to the True damage calculation, in total he deals around 13.4% of Theresis HP per cycle.
 
 </StrategySection>
-
-
-
-<StrategySection title="Strategy: Mlynar - Gravel" author="Die Alive" defaultOpen={false}>
-### Mlynar - Gravel
-
-
-</StrategySection>
-
-
 
 <StrategySection title="Strategy: Feater push" author="Die Alive" defaultOpen={false}>
 ### Feater push
+This strategy is based on <a href="https://www.bilibili.com/video/BV1vyRzYmEEC/?p=3&share_source=copy_web" target="_blank" rel="noopener noreferrer">this video</a>.
 
+This approach focuses only on solving phase 2, which is done by pushing Theresis away from Theresa to reduce her SP regeneration and Theresis' damage reduction.
+This strategy consists of utilizing Feater's module to increase her shift force to push Theresis more easily.
+
+Theresis has a weight of 5. Feater S3M3 has a shift force of 3, her Mod1 provides +1 shift force when blocking 2 or more enemies.
+In this stage we also have two Specialist Tactical Point tiles, the tiles in which operators gain +1 shift force located on C7 and C8.
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![ED2 Stage reference map](/guides/is5-sarkaz/stage-guides/court-visit/strategy-feater-push/ed2-tiles.png)
+</div>
+
+We can also remember the distance enemies are pushed based on push force from the following table:
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+| Final force | Push distance (non-projectile push) | Push distance (projectile push) |
+|:-----------:|:-----------------------------------:|:-------------------------------:|
+| -3 or below | 0                                   | 0                               |
+| -2          | 0.08492                             | 0.11825                         |
+| -1          | 0.37363                             | 0.44030                         |
+| 0           | 1.56247                             | 1.69580                         |
+| 1           | 1.98705                             | 2.13705                         |
+| 2           | 2.77347                             | 2.95013                         |
+| 3           | 3.33058                             | 3.52392                         |
+</div>
+
+Feater push is a non-projectile push so we don't care about the last column here.
+
+This strategy is conformed by different types of push.
+The next two sections will explain the logic behind them while the last section contains a concise step guide to perform the strategy.
+These two sections are not required to fully understand to perform the strategy, they simply provide an explanation of the general idea behind it.
+
+#### Right side long push
+In the first part of this strategy Theresis is pushed slightly to the right so he can be targetted from both columns 8 and 9 later on, as well as to increase his distance away from Theresa.
+For this, the distance to be pushed has to be less than 1 tile, looking at the table -1 final force would be ideal.
+This is achieved by Feater having force 4, utilizing the module, which requires her to block 2 enemies before being pushed.
+On phase 2 we only have devourers spawning and we must stack 2 of them so that Feater blocks 2 before being swallowed by one of them.
+To achieve this we can slow down one of them in order to synchronize their pathing.
+
+The 2 devourers that walk through tile F6, from which Feater will push Theresis, spawn from I6 and I7 red boxes and stand by on H6 and H7 respectively for 10s.
+After the 10s stand by time, I6 devourer travels a distance of 1.5 tiles before reaching Feater, while I7 devourer travels from H7 -> G7 -> G6 -> G6-F6 middle point, this is 2.5 tiles.
+To simplify this, both of their paths intercept on G6 center, so we need I6 devourer to reach G6 center, that is 1 tile, in the same time devourer I7 reaches G6 center, that is 2 tiles.
+To achieve this we must slow down the devourer on the left (I6).
+
+Next we will find when we need to slow it down and for how long.
+We will refer to both devourers as: $R$ for the devourer on the right (I7 spawn) and $L$ for the devourer on the left (I6 spawn), then their respective distances in which they intercept each other are $D_R$ and $D_L$.
+Lastly, the time they would take to travel will depend on their movement speed $MS$ as follows:
+
+$$ T_R = \frac{D_R}{MS} $$,
+
+$$ T_L = \frac{D_L}{MS} + \frac{D_{L_s}}{MS_s} $$,
+
+where $MS_s$ is the movement speed of the devourer slowed down and $D_{L_s}$ the distance traveled by the devourer slowed down. We want the devourers to reach G6 center at the same time, that is $T_R=T_L$.
+
+$$ \frac{D_R}{MS} = \frac{D_L}{MS} + \frac{D_{L_s}}{MS_s} $$.
+
+Here we are looking for an expression for the slow duration (we will call $T$) for the left devourer that satisfies this equality. For this we require leaving the expression in terms of variables we know.
+If we look back at the pathing the left devourer takes, it covers 1 tile of distance in which part of it should be covered at its normal $MS$ while the other is at its slowed $MS_s$, that is:
+
+$$ D_L + D_{L_s} = 1 $$.
+
+We know that $D_{L_s}$ will have a movement speed $MS_s$, then the time it takes to cover this distance would be $T = D_{L_s}/MS_s$. Substituting $D_{L_s}$ on the previous equation we get $D_L = 1 - MS_s \cdot T$
+
+Having the expressions $D_L = 1 - MS_s \cdot T$ and $D_{L_s} = MS_s \cdot T$, we can leave the previous equality in terms of $T$.
+
+$$ \frac{D_R}{MS} = \frac{1-MS_s \cdot T}{MS} + \frac{MS_s \cdot T}{MS_s} $$
+
+$$ D_R = 1-MS_s \cdot T + MS \cdot T $$
+
+$$ D_R - 1 = \left( MS_1 - MS_2 \right) T $$
+
+$$ T = \frac{D_R - 1}{MS - MS_s} $$
+
+This leaves us with this simple expression depending on the devourer base movement speed, the slowed down movement speed and the distance the right devourer has to travel.
+
+We know that $D_R = 2$ and devourers MS is 0.6 tiles/2s or 0.3 tiles/s, for simplicity we will work with tiles/s.
+The slowed movement speed under the standard -80% movement speed reduction effect would be 0.06 tiles/s. With effects like 'Painful Happiness' or Halo, considering the minimum MS value is 0.05, we obtain the following values:
+* Slow + 'Painful Happiness' = 0.051
+* Slow + Halo = 0.05
+
+The times we obtain from here are:
+* 80% Slow: 4.166s
+* Slow + 'Painful Happiness' = 4.902s
+* Slow + Halo = 6.25s
+
+Now we need to figure out how we would slow the devourer. An easy option is with Ela mines, either S1 or S3 can work. S1 has a duration of 10s while S3 lasts 7s, both taking around 0.4s to explode after deployment.
+This means that we would need to deploy them (applying only the -80% MS slow) $10+0.4-4.166=6.234$ seconds before the devourer starts moving for S1 and $7+0.4-4.166=3.234$ seconds for S3.
+If the devourer stands by for 10s, then the mine would be deployed for the following values right as the devourer stops on H6:
+<div style={{ display: "flex", justifyContent: "center" }}>
+| MS reductions       | Ela S1    | Ela S3 |
+|:-------------------:|:---------:|:------:|
+| No MS reductions    | 3.766s    | 6.766s |
+| 'Painful Happiness' | 4.5s      | 7.5s   |
+| Halo                | 5.85s     | 8.85s  |
+</div>
+
+#### Upwards long push
+At this point Theresis should be in between tiles F8 and F9.
+The next step is to push him upwards, previously Feater had 4 Force with her skill and module, by placing her on C8 she would have 5 Force, this gives us a push distance of 1.7 tiles, repeating this push twice would leave Theresis in between tiles I8 and I9, where any operator with enough range can be placed on H12, the only safe tile from the boats.
+
+In order to push Theresis this far we need to use her module, which requires devourer stacking again.
+Here it is a lot easier and there are more options to stack them.
+An option is to simply block shift one of the devourers multiple times until the other one catches up, we can also slow one down and if the second one passes it we can also block shift it or slow both down again.
+
+#### Final strategy
+So far we have seen how we can push Theresis.
+In practice we need Feater to be redeployed multiple times but this isn't an issue as we can take advantage of the devourer's effect in which after swallowing an operator and dying the operator returns immediately without waiting for its redeploy time.
+With this we would do the following:
+* (F6) Feater push
+* (F6) Feater long push
+* Let devourer swallow
+* (C8) Feater long push
+* Let devourer swallow
+* (C8) Feater long push
+* Retreat
+
+This would require to kill the devourer immediately after it swallows Feater.
+The strategy then consists of doing one small push as phase 2 starts to immediately reduce the SP regen from Theresa, then wait for the devourers to spawn and continue with the long pushes.
+
+This leaves Theresis at a distance of $1 + 0.08492 + 0.37363 = 1.45855$ tiles to the right and $1.56247 \cdot 2 = 3.12494$ tiles upwards away from Theresa, that is $\sqrt{1.45855^2 + 3.12494^2} = 3.46$ tiles away from Theresa, leaving him at 50% damage reduction and 2 SP/s regen on Theresa.
 
 </StrategySection>
