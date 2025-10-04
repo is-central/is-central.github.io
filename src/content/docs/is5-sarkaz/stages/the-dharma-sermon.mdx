@@ -43,24 +43,49 @@ There are two main timing methods to achieve this explained in the following sec
 
 #### Visual reference method
 This method consists on using a visual reference between the boat position the the ground texture to tell when Mon3tr's S3 should be used.
-In the next image we can see Mon3tr's position and the boat's position on the frame we must use her skill.
 
+There are multiple different reference frames we can use as a visual aid to distinguish the boat position in which Mon3tr skill should be used.
+If we hover over a non-deployed operator the camera tilts with certain angle (this is constant across all non-deployed operators), if we hover over a deployed operator the angle is different and varies with the position of the deployed operator.
+From here we can use 3 different reference frames:
+* Mon3tr hover
+* Non-deployed operator hover
+* Standard camera angle
+
+**Mon3tr hover**
 <div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
-  ![Boat reference 1](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/mon3tr-boat-reference-1.png)
-</div>
-
-The visual reference we use is the line on the ground tile and the line on the back of the boat:
-
-<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
-  ![Boat reference 2](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/mon3tr-boat-reference-2.png)
-</div>
-
-<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
-  ![Boat reference 3](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/mon3tr-boat-reference-3.png)
+  ![Mon3tr hover reference](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/mon3tr-boat-reference-5.png)
 </div>
 
 <div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
-  ![Boat reference 4](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/mon3tr-boat-reference-4.png)
+  ![Mon3tr hover reference zoom](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/mon3tr-boat-reference-7.png)
+</div>
+
+**Non-deployed operator hover**
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Non-deployed operator hover reference](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/mon3tr-boat-reference-6.png)
+</div>
+
+The visual reference we use is when the line on the ground tile lines up just past the line marked at the back of the boat:
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Non-deployed operator hover reference zoom](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/mon3tr-boat-reference-2.png)
+</div>
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Non-deployed operator hover reference zoom mark 1](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/mon3tr-boat-reference-3.png)
+</div>
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Non-deployed operator hover reference zoom mark 2](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/mon3tr-boat-reference-4.png)
+</div>
+
+**Standard camera angle**
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Standard camera angle reference](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/mon3tr-boat-reference-8.png)
+</div>
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Standard camera angle reference zoom](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/mon3tr-boat-reference-9.png)
 </div>
 
 **Movement speed reductions**\
@@ -91,6 +116,13 @@ This doesn't often happen and is usually a result of an operator with extremely 
 <div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
   ![Splash effect](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/splash-effect.png)
 </div>
+
+Another issue we can have using the second visual reference is that we need to be able to hover Mon3tr without losing any frames, in this case it might be better to use the first reference frame and just time it having Mon3tr pre-selected.
+
+**Emulator resolution**\
+It is unknown if the emulator resolution can affect the reference frame used here. So far it has been tested with the following resolutions:
+* 1920 x 1080
+* 1800 x 900
 
 **Video examples**
 * <a href="https://www.youtube.com/live/xECk9_JEWrM?si=uJYxI3PygJ3kOgOU&t=7390" target="_blank" rel="noopener noreferrer">Standard timing reference</a>
