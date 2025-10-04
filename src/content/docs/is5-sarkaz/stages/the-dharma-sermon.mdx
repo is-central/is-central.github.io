@@ -21,4 +21,83 @@ description: The Dharma Sermon boss stage guide for IS5 Sarkaz's Furnaceside Fab
 
 ---
 
-*Content to be added.*
+import HeadingWithIcon from '/src/components/HeadingWithIcon.astro';
+import StrategySection from '/src/components/StrategySection.astro';
+
+
+<StrategySection title="Stage Analysis" author="" defaultOpen={false}>
+dont let the envy kill your operators
+</StrategySection>
+
+## Strategies
+
+<StrategySection title="Strategy: Mon3tr Boat Jump" author="Die Alive" defaultOpen={false}>
+### Mon3tr Boat Jump
+Mon3tr is a really strong operator on this fight given her ability to provide value on both maps without the downside operators have when being loaded into the boat, as she's able to remain on the field in the first map after being loaded.
+To achieve this Mon3tr has to use S3 as the boat approaches her, which gives roughly a 2 frames time window, requiring a very precise timing method.
+
+There are two main timing methods to achieve this explained in the following sections, the first one simply uses a visual reference between the boat position and the ground texture while the second times the boat movement from the frame it spawns at.
+
+*Note: if Mon3tr is retreated after being loaded into the boat she won't be able to be deployed until the second map.*
+
+#### Visual reference method
+This method consists on using a visual reference between the boat position the the ground texture to tell when Mon3tr's S3 should be used.
+In the next image we can see Mon3tr's position and the boat's position on the frame we must use her skill.
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Boat reference 1](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/mon3tr-boat-reference-1.png)
+</div>
+
+The visual reference we use is the line on the ground tile and the line on the back of the boat:
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Boat reference 2](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/mon3tr-boat-reference-2.png)
+</div>
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Boat reference 3](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/mon3tr-boat-reference-3.png)
+</div>
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Boat reference 4](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/mon3tr-boat-reference-4.png)
+</div>
+
+**Movement speed reductions**\
+It is important to remark that this works specifically without any MS debuffs.
+Relics like 'Painful Happiness' (-15% MS) and Rusted Blade - Protraction (-5% MS per specialist on the field), or any other MS modifiers will affect this timing.
+When we use Mon3tr S3 there is a delay between her leaving the high-ground tile and jumping into the ground, what we do with the original reference frame is time her skill press so the boat kidnaps her on the frame window she jumps into the ground given that jump delay.
+With the boat moving more slowly this means it would take more time to reach the frame in which Mon3tr gets loaded as she jumps to the ground but we can adjust accordingly.
+
+From the original reference frame and without MS debuffs the boat takes 22 frames of movement to load Mon3tr into the boat.
+Frames of movement mean frames in which the boat moves, as it doesn't actually move on every single frame of the emulator you unpause.
+Knowing that the boat MS is 0.4 tiles/s we can calculate the distance $d$ between the frame of reference and the frame in which Mon3tr gets loaded, that is $d = 0.4 \cdot 22/30$.
+If the boat is slowed down with a resulting MS $v$, then the time it takes the boat to reach the loading frame from the reference frame would be $t=d/v$, resulting in $f = \text{ROUND}(t \cdot 30)$ frames.
+Then the frames of movement we have to lose after our reference frame would be $f-22 = \text{ROUND}(0.4/v \cdot 22)-22$.
+
+| Relics                                        | Final MS (tiles/s) | Frames to lose |
+|:---------------------------------------------:|:------------------:|:--------------:|
+| Protraction (1 stack)                         | 0.38               | 1              |
+| Protraction (2 stacks)                        | 0.36               | 2              |
+| 'Painful Happiness' or Protraction (3 stacks) | 0.34               | 4              |
+| 'Painful Happiness' + Protraction (1 stack)   | 0.323              | 5              |
+| Protraction (4 stacks)                        | 0.32               | 6              |
+| 'Painful Happiness' + Protraction (2 stacks)  | 0.306              | 7              |
+
+**Disadvantages**\
+Something we need to be careful with is that visual effects around this tile may make it difficult to tell when the boat is in the frame Mon3tr needs to jump.
+This doesn't often happen and is usually a result of an operator with extremely big visual effects around it being deployed on this tile that ends up covering the ground visual refference or a range operator that attacks the boat and creates a splash effect around it.
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Splash effect](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/splash-effect.png)
+</div>
+
+**Video examples**
+* <a href="https://www.youtube.com/live/xECk9_JEWrM?si=uJYxI3PygJ3kOgOU&t=7390" target="_blank" rel="noopener noreferrer">Standard timing reference</a>
+* <a href="https://youtu.be/LYISylZA6go" target="_blank" rel="noopener noreferrer">'Painful Happiness' reference</a>
+
+
+#### Frame counting method (written by Mei)
+soon tm
+
+
+</StrategySection>
