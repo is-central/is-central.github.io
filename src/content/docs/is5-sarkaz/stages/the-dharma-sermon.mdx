@@ -34,7 +34,8 @@ dont let the envy kill your operators
 <StrategySection title="Strategy: Mon3tr Boat Jump" author="Die Alive" defaultOpen={false}>
 ### Mon3tr Boat Jump
 Mon3tr is a really strong operator on this fight given her ability to provide value on both maps without the downside operators have when being loaded into the boat, as she's able to remain on the field in the first map after being loaded.
-To achieve this Mon3tr has to use S3 as the boat approaches her, which gives roughly a 2 frames time window, requiring a very precise timing method.
+To achieve this Mon3tr has to use S3 as the boat approaches her, timed so that she is loaded into the boat as she jumps into the ground.
+This gives a 2 frames time window, requiring a precise timing method.
 
 There are two main timing methods to achieve this explained in the following sections, the first one simply uses a visual reference between the boat position and the ground texture while the second times the boat movement from the frame it spawns at.
 
@@ -70,8 +71,8 @@ With the boat moving more slowly this means it would take more time to reach the
 
 From the original reference frame and without MS debuffs the boat takes 22 frames of movement to load Mon3tr into the boat.
 Frames of movement mean frames in which the boat moves, as it doesn't actually move on every single frame of the emulator you unpause.
-Knowing that the boat MS is 0.4 tiles/s we can calculate the distance $d$ between the frame of reference and the frame in which Mon3tr gets loaded, that is $d = 0.4 \cdot 22/30$.
-If the boat is slowed down with a resulting MS $v$, then the time it takes the boat to reach the loading frame from the reference frame would be $t=d/v$, resulting in $f = \text{ROUND}(t \cdot 30)$ frames.
+Knowing that the boat MS is 0.4 tiles/s we can calculate the distance $\alpha$ between the frame of reference and the frame in which Mon3tr gets loaded, that is $\alpha = 0.4 \cdot 22/30$.
+If the boat is slowed down with a resulting MS $v$, then the time it takes the boat to reach the loading frame from the reference frame would be $t=\alpha/v$, resulting in $f = \text{ROUND}(t \cdot 30)$ frames.
 Then the frames of movement we have to lose after our reference frame would be $f-22 = \text{ROUND}(0.4/v \cdot 22)-22$.
 
 | Relics                                        | Final MS (tiles/s) | Frames to lose |
