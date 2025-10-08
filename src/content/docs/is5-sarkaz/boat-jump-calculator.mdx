@@ -1,0 +1,33 @@
+---
+title: Boat Jump Calculator
+description: Calculate precise timing for boat jumps in the Quillon boss fight.
+---
+
+import BoatJumpCalculator from '../../../components/BoatJumpCalculator.astro';
+
+<div class="back-button-container">
+  <a href="/is5-sarkaz/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">Back to IS5 Overview</span>
+  </a>
+</div>
+
+## Boat Jump Calculator
+
+This calculator helps you determine the precise timing for boat jumps during the Quillon boss fight. It automates the calculation steps after you've noted down the initial timer value.
+
+### How to Use
+
+Follow these steps to use the boat jump calculator:
+
+1. **Phase Quillon** to 75% or 25% HP
+2. **Deploy and undeploy an operator** that takes longer than 40s to redeploy (this starts the timer)
+3. **Wait for the yellow line** that indicates boat pathing to appear on the map
+4. **Pause** once the yellow line reaches the blue box
+5. **Frame advance** until the boat information appears on the top right
+6. **Frame advance 1 more frame** after boat info appears
+7. **Note the exact timer value** (e.g., 65.5) - this is your "initial time"
+8. **Frame advance** until the timer changes (e.g., 65.5 → 65.4) and count how many frame advances it took
+9. **Enter the values below** along with your relics/conditions
+
+<BoatJumpCalculator />x
