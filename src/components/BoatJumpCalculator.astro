@@ -5,7 +5,7 @@
 <div class="boat-jump-calculator">
   <h3>🚤 Boat Jump Calculator</h3>
   <p class="calculator-description">
-    Calculate the precise timing for boat jumps in Quillon boss fight. This calculator handles steps after noting down the initial timer.
+    Calculate the precise timing for boat jumps in Qui'lon boss fight. This calculator handles steps after noting down the initial timer.
   </p>
   
   <div class="calculator-form">
@@ -64,20 +64,28 @@
     <div id="results" class="results-section" style="display: none;">
       <h4>Results:</h4>
       <div class="result-item">
-        <strong>Actual Frame:</strong> <span id="actualFrame"></span>
+        <strong>Initial Timer:</strong>
+        <span class="value"><span id="initialTimer"></span> seconds</span>
       </div>
       <div class="result-item">
-        <strong>Boat Speed Multiplier:</strong> <span id="speedMultiplier"></span>x
+        <strong>Final MSPD Multiplier:</strong>
+        <span class="value"><span id="speedMultiplier"></span> x</span>
       </div>
       <div class="result-item">
-        <strong>Total Time Delta:</strong> <span id="timeDelta"></span> seconds (<span id="timeDeltaFrames"></span> frames)
+        <strong>Final MSPD:</strong>
+        <span class="value"><span id="finalMSPD"></span> tiles/s</span>
+      </div>
+      <div class="result-item">
+        <strong>&#916;Time:</strong>
+        <span class="value"><span id="timeDelta"></span> seconds (<span id="timeDeltaFrames"></span> frames)</span>
       </div>
       <div class="result-item highlight">
-        <strong>Jump Timer:</strong> <span id="jumpTimer"></span> seconds
+        <strong>Jump Timer:</strong>
+        <span class="value"><span id="jumpTimer"></span> seconds</span>
       </div>
-      <div class="result-item highlight">
-        <strong>Jump Frame:</strong> <span id="jumpFrame"></span>
-      </div>
+      <!-- <div class="result-item highlight">
+        <strong>Skill Press Frame:</strong> <span id="jumpFrame"></span>
+      </div> -->
       <div class="jump-instruction">
         <p>🎯 <strong>When to Jump:</strong> When the timer changed to <strong><span id="jumpTimerDisplay"></span></strong> seconds, advance <strong><span id="jumpFrameDisplay"></span></strong> frames, then activate Mon3tr's skill</p>
       </div>
@@ -231,6 +239,13 @@
     color: var(--sl-color-text);
   }
 
+  .result-item .value {
+  display: inline-flex;
+  align-items: center;
+  text-align: right;
+  gap: 0.25rem;
+}
+
   .result-item.highlight {
     background: rgba(251, 192, 45, 0.15);
     border: 2px solid #FBC02D;
@@ -316,6 +331,7 @@
 
     // Calculate actual frame based on frames to change
     const actualFrame = framesToChange - 1; // 1→0, 2→1, 3→2
+    const initialTimer = initialTime + actualFrame * 1/30
 
     // Calculate movement speed multiplier (multiplicative)
     let speedMultiplier = 1.0;
@@ -334,10 +350,11 @@
     // Apply protraction stacks (each stack -5% speed, additive within protraction, then multiplicative)
     const protractionMultiplier = 1 - (protractionStacks * 0.05); // Additive: 2 stacks = 1 - 0.10 = 0.90
     speedMultiplier *= protractionMultiplier;
+    const finalMSPD = 0.4 * speedMultiplier
 
     // Calculate time delta using the formula: (408.75 / MSPD) + 284.75
     // This formula accounts for boat travel mechanics in Arknights
-    const timeDeltaFrames = (408.75 / speedMultiplier) + 283.75;
+    const timeDeltaFrames = Math.ceil((408.75 / speedMultiplier) + 283.75);
     const timeDelta = timeDeltaFrames / FPS;
 
     // Calculate jump timing
@@ -354,7 +371,9 @@
     const jumpFrame = actualFrame;
 
     // Display results
-    const actualFrameEl = document.getElementById('actualFrame');
+    const initialTimerEl = document.getElementById('initialTimer');
+    const finalMSPDEl = document.getElementById('finalMSPD');
+    // const actualFrameEl = document.getElementById('actualFrame');
     const speedMultiplierEl = document.getElementById('speedMultiplier');
     const timeDeltaEl = document.getElementById('timeDelta');
     const timeDeltaFramesEl = document.getElementById('timeDeltaFrames');
@@ -365,7 +384,9 @@
     const resultsEl = document.getElementById('results');
     const errorEl = document.getElementById('error');
 
-    if (actualFrameEl) actualFrameEl.textContent = String(actualFrame);
+    if (initialTimerEl) initialTimerEl.textContent = initialTimer.toFixed(3);
+    if (finalMSPDEl) finalMSPDEl.textContent = finalMSPD.toFixed(3);
+    // if (actualFrameEl) actualFrameEl.textContent = String(actualFrame);
     if (speedMultiplierEl) speedMultiplierEl.textContent = speedMultiplier.toFixed(4);
     if (timeDeltaEl) timeDeltaEl.textContent = timeDelta.toFixed(3);
     if (timeDeltaFramesEl) timeDeltaFramesEl.textContent = Math.round(timeDeltaFrames).toString();

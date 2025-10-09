@@ -1,6 +1,6 @@
 ---
 title: Boat Jump Calculator
-description: Calculate precise timing for boat jumps in the Quillon boss fight.
+description: Calculate precise timing for boat jumps in the Qui'lon boss fight.
 ---
 
 import BoatJumpCalculator from '../../../components/BoatJumpCalculator.astro';
@@ -14,20 +14,42 @@ import BoatJumpCalculator from '../../../components/BoatJumpCalculator.astro';
 
 ## Boat Jump Calculator
 
-This calculator helps you determine the precise timing for boat jumps during the Quillon boss fight. It automates the calculation steps after you've noted down the initial timer value.
+This calculator helps you determine the precise timing for boat jumps during the Qui'lon boss fight. It automates the calculation steps after you've noted down the initial timer value.
+
+### Frame advancing
+This calculator requires the user to be able to *frame advance*.
+The game runs at 30 FPS, that is one second contains 30 frames and advancing 1 frame means advancing $1/30 = 0.0333$ seconds.
+If we bind the pause button we can unpause (with said bind) and pause immediately after with the ESC bind, this allow us to unpause and pause in less than a frame window, and so we can slowly advance frame by frame.
+An easy way to tell when we actually advance a frame is by looking at the DP bar, each time it moves is a frame we have advanced.
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Frame advance example](/guides/is5-sarkaz/boat-jump-calculator/frame-advance.png)
+</div>
+
+This is important because operators' redeployment times are displayed up to the first decimal.
+This means, for example, that a timer at $65.5$ could be either $65.566$, $65.533$, or $65.500$.
+By frame advancing and looking at how many frames it takes for the operator redeployment time to go from $65.5$ to $65.4$ we can tell the exact frame we were at initially.
+
+While this may sound too complicated or confusing for anyone not familiarized with frame counting, the important takeaway here is only to know how to frame advance.
 
 ### How to Use
 
 Follow these steps to use the boat jump calculator:
 
-1. **Phase Quillon** to 75% or 25% HP
+1. **Phase Qui'lon** to 75% or 25% HP
 2. **Deploy and undeploy an operator** that takes longer than 40s to redeploy (this starts the timer)
 3. **Wait for the yellow line** that indicates boat pathing to appear on the map
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Yellow line reference](/guides/is5-sarkaz/boat-jump-calculator/yellow-line.png)
+</div>
 4. **Pause** once the yellow line reaches the blue box
 5. **Frame advance** until the boat information appears on the top right
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Boat information box reference](/guides/is5-sarkaz/boat-jump-calculator/boat-info-message.png)
+</div>
 6. **Frame advance 1 more frame** after boat info appears
-7. **Note the exact timer value** (e.g., 65.5) - this is your "initial time"
-8. **Frame advance** until the timer changes (e.g., 65.5 → 65.4) and count how many frame advances it took
-9. **Enter the values below** along with your relics/conditions
+7. **Note the exact timer value** (e.g., 65.5) - this is your first input into the calc "Initial Time"
+8. **Frame advance** until the timer changes (e.g., 65.5 → 65.4) and count how many frame advances it took - this is your second input
+9. **Enter the values below** according to your relics/conditions
+10. **Advance frame by frame** as indicated in the results (recommended to hover Mon3tr to be ready to press the skill)
 
 <BoatJumpCalculator />
