@@ -87,7 +87,7 @@
         <strong>Skill Press Frame:</strong> <span id="jumpFrame"></span>
       </div> -->
       <div class="jump-instruction">
-        <p>🎯 <strong>When to Jump:</strong> When the timer changed to <strong><span id="jumpTimerDisplay"></span></strong> seconds, advance <strong><span id="jumpFrameDisplay"></span></strong> frames, then activate Mon3tr's skill</p>
+        <p>🎯 <strong>When to Jump:</strong> When the timer changes to <strong><span id="jumpTimerDisplay"></span></strong> seconds, advance <strong><span id="jumpFrameDisplay"></span></strong> frames, then activate Mon3tr's skill</p>
       </div>
     </div>
 
@@ -363,12 +363,17 @@
     
     // For practical use: show exact timing
     const exactTime = Math.floor(jumpTimeSeconds * 10) / 10; // Round down to previous 0.1 second
+
+    // Gets the final jump timer frame e.g. for 65.566 the frame would be 0.066 -> 2 frames
+    const currentFrame = Math.round((jumpTimeSeconds - exactTime) * 30)
+    const framesToAdvance = 2 - currentFrame // Calculate frames to advance based on the current frame to jump at
+
     // When timer changes DOWN, you're at frame 2 of that second
     // We need to advance to reach the target frame (actualFrame for exact timing)
-    const framesToAdvance = 2 - actualFrame; // Calculate frames to advance based on actualFrame
+    // const framesToAdvance = 2 - actualFrame; // Calculate frames to advance based on actualFrame
     
     // Show the frame to advance to (actual frame)
-    const jumpFrame = actualFrame;
+    // const jumpFrame = actualFrame;
 
     // Display results
     const initialTimerEl = document.getElementById('initialTimer');
@@ -378,7 +383,7 @@
     const timeDeltaEl = document.getElementById('timeDelta');
     const timeDeltaFramesEl = document.getElementById('timeDeltaFrames');
     const jumpTimerEl = document.getElementById('jumpTimer');
-    const jumpFrameEl = document.getElementById('jumpFrame');
+    // const jumpFrameEl = document.getElementById('jumpFrame');
     const jumpTimerDisplayEl = document.getElementById('jumpTimerDisplay');
     const jumpFrameDisplayEl = document.getElementById('jumpFrameDisplay');
     const resultsEl = document.getElementById('results');
@@ -391,7 +396,7 @@
     if (timeDeltaEl) timeDeltaEl.textContent = timeDelta.toFixed(3);
     if (timeDeltaFramesEl) timeDeltaFramesEl.textContent = Math.round(timeDeltaFrames).toString();
     if (jumpTimerEl) jumpTimerEl.textContent = jumpTimeSeconds.toFixed(3);
-    if (jumpFrameEl) jumpFrameEl.textContent = String(jumpFrame);
+    // if (jumpFrameEl) jumpFrameEl.textContent = String(jumpFrame);
     if (jumpTimerDisplayEl) jumpTimerDisplayEl.textContent = exactTime.toFixed(1);
     if (jumpFrameDisplayEl) jumpFrameDisplayEl.textContent = String(framesToAdvance);
 
