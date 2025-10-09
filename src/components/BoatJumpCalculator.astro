@@ -335,9 +335,9 @@
     const protractionMultiplier = 1 - (protractionStacks * 0.05); // Additive: 2 stacks = 1 - 0.10 = 0.90
     speedMultiplier *= protractionMultiplier;
 
-    // Calculate time delta using the formula: (408 / MSPD) + 285
+    // Calculate time delta using the formula: (408.75 / MSPD) + 284.75
     // This formula accounts for boat travel mechanics in Arknights
-    const timeDeltaFrames = (408 / speedMultiplier) + 285;
+    const timeDeltaFrames = (408.75 / speedMultiplier) + 283.75;
     const timeDelta = timeDeltaFrames / FPS;
 
     // Calculate jump timing
