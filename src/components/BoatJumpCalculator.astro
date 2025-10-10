@@ -37,17 +37,22 @@
       <div class="checkbox-group">
         <label class="checkbox-label">
           <input type="checkbox" id="painfulHappiness" class="relic-checkbox" />
-          <span>Painful Happiness (-15% boat speed)</span>
+          <img src="/guides/is5-sarkaz/images/collectibles/rogue_4_relic_legacy_178.png" alt="Example" width="25" height="25">
+          <span>Painful Happiness (-15% MSPD)</span>
         </label>
         <label class="checkbox-label">
           <input type="checkbox" id="rollingAncestors" class="relic-checkbox" />
-          <span>Rolling Ancestors (+30% boat speed)</span>
+          <img src="/guides/is5-sarkaz/images/collectibles/rogue_4_relic_explore_7.png" alt="Example" width="25" height="25">
+          <span>Rolling Ancestors (+30% MSPD)</span>
         </label>
       </div>
     </div>
 
     <div class="input-group">
-      <label for="protractionStacks">Protraction Book Stacks:</label>
+      <label for="protractionStacks" class="label-with-image">
+        <img src="/guides/is5-sarkaz/images/collectibles/rogue_4_relic_book_4.png" alt="Example" width="25" height="25">
+        Protraction Book Stacks:
+      </label>
       <input 
         type="number" 
         id="protractionStacks" 
@@ -56,7 +61,7 @@
         value="0"
         placeholder="0"
       />
-      <small>Each stack: -5% boat speed (multiplicative with other effects)</small>
+      <small>Each stack: -5% MSPD (additive with itself, multiplicative with other effects)</small>
     </div>
 
     <button id="calculateBtn" class="calculate-button">Calculate Jump Timing</button>
@@ -168,6 +173,18 @@
     font-size: 0.85rem;
   }
 
+  .label-with-image {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .label-with-image img {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0.3rem;
+  }
+
   .checkbox-group {
     display: flex;
     flex-direction: column;
@@ -182,7 +199,14 @@
     font-weight: normal;
   }
 
+  .checkbox-label img {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0.3rem;
+  }
+
   .checkbox-label input[type="checkbox"] {
+    vertical-align: middle;
     width: 18px;
     height: 18px;
     cursor: pointer;
