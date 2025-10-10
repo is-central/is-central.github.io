@@ -979,7 +979,7 @@ The times we obtain from here are:
 
 Now we need to figure out how we would slow the devourer. An easy option is with Ela mines, either S1 or S3 can work. S1 has a duration of 10s while S3 lasts 7s, both taking around 0.4s to explode after deployment.
 This means that we would need to deploy them (applying only the -80% MS slow) $10+0.4-4.166=6.234$ seconds before the devourer starts moving for S1 and $7+0.4-4.166=3.234$ seconds for S3.
-If the devourer stands by for 10s, then the mine would be deployed for the following values right as the devourer stops on H6:
+Given that the devourer stands by for 10s after reaching H6, then the mine would be deployed after the time specified in the next table, measured from the moment the devourer stops moving.
 <div style={{ display: "flex", justifyContent: "center" }}>
 | MS reductions       | Ela S1    | Ela S3 |
 |:-------------------:|:---------:|:------:|
@@ -987,10 +987,12 @@ If the devourer stands by for 10s, then the mine would be deployed for the follo
 | 'Painful Happiness' | 4.5s      | 7.5s   |
 | Halo                | 5.85s     | 8.85s  |
 </div>
+For example, with no MS reductions and Ela S1 we get 3.766s, as soon as the devourer stops on H6 we pause, note down an operator redeployment time (e.g. 35.5s), then we would deploy the mine when the timer marks $35.5-3.766 = 31.7$s.
+
 
 #### Upwards long push
 At this point Theresis should be in between tiles F8 and F9.
-The next step is to push him upwards, previously Feater had 4 Force with her skill and module, by placing her on C8 she would have 5 Force, this gives us a push distance of 1.7 tiles, repeating this push twice would leave Theresis in between tiles I8 and I9, where any operator with enough range can be placed on H12, the only safe tile from the boats.
+The next step is to push him upwards, previously Feater had 4 Force with her skill and module, by placing her on C8 she would have 5 Force, this gives us a push distance of 1.56247 tiles, repeating this push twice would leave Theresis in between tiles I8 and I9, where any operator with enough range can be placed on H12, the only safe tile from the boats.
 
 In order to push Theresis this far we need to use her module, which requires devourer stacking again.
 Here it is a lot easier and there are more options to stack them.
