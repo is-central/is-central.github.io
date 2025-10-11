@@ -62,6 +62,19 @@
         placeholder="0"
       />
       <small>Each stack: -5% MSPD (additive with itself, multiplicative with other effects)</small>
+      <label for="operatorLoaded" class="label-with-image">
+        <img src="/guides/is5-sarkaz/boat-jump-calculator/boat.png" alt="Example" width="25" height="25">
+        <span>Operator loaded at frame x from boat spawn (-50% MSPD)</span>
+        </label>
+        <input 
+        type="number" 
+        id="operatorLoaded" 
+        min="0" 
+        max="500"
+        value="0"
+        placeholder="0"
+      />
+      <small>Leave this at 0 if no operator is loaded, otherwise specify the frame in which an operator is loaded into the boat from the boat spawn frame</small>
     </div>
 
     <button id="calculateBtn" class="calculate-button">Calculate Jump Timing</button>
@@ -330,12 +343,14 @@
     const initialTimeInput = document.getElementById('initialTime') as HTMLInputElement | null;
     const framesToChangeInput = document.getElementById('framesToChange') as HTMLSelectElement | null;
     const protractionStacksInput = document.getElementById('protractionStacks') as HTMLInputElement | null;
+    const operatorLoadedInput = document.getElementById('operatorLoaded') as HTMLInputElement | null;
 
-    if (!initialTimeInput || !framesToChangeInput || !protractionStacksInput) return;
+    if (!initialTimeInput || !framesToChangeInput || !protractionStacksInput || !operatorLoadedInput) return;
 
     const initialTime = parseFloat(initialTimeInput.value);
     const framesToChange = parseInt(framesToChangeInput.value);
     const protractionStacks = parseInt(protractionStacksInput.value) || 0;
+    const operatorLoadedFrames = parseInt(operatorLoadedInput.value) || 0;
 
     // Validation
     if (isNaN(initialTime) || initialTime <= 0) {
@@ -378,8 +393,18 @@
 
     // Calculate time delta using the formula: (408.75 / MSPD) + 284.75
     // This formula accounts for boat travel mechanics in Arknights
-    const timeDeltaFrames = Math.ceil((408.75 / speedMultiplier) + 283.75);
-    const timeDelta = timeDeltaFrames / FPS;
+    let timeDeltaFrames = Math.ceil((408.75 / speedMultiplier) + 304.75);
+    
+
+    // If operator loaded:
+    if (operatorLoadedFrames != 0) {
+      timeDeltaFrames = (timeDeltaFrames - operatorLoadedFrames) * (Math.max(finalMSPD, 0.05)/Math.max((finalMSPD/2), 0.05)) + operatorLoadedFrames
+    }
+
+    timeDeltaFrames -= 21
+    
+    const timeDelta = (timeDeltaFrames) / FPS;
+    
 
     // Calculate jump timing
     // Formula: jump_time = initial_time - time_delta + (actual_frame / FPS)
