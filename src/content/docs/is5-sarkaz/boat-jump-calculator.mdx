@@ -42,14 +42,18 @@ Follow these steps to use the boat jump calculator:
   ![Yellow line reference](/guides/is5-sarkaz/boat-jump-calculator/yellow-line.png)
 </div>
 4. **Pause** once the yellow line reaches the blue box
-5. **Frame advance** until the boat information appears on the top right
+
+5. **Frame advance** until the boat spawns
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Boat spawn frame reference](/guides/is5-sarkaz/boat-jump-calculator/boat-spawn-frame.png)
+</div>
+As a visual queue you can use the boat information that appears a frame early if the game doesn't lag
 <div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
   ![Boat information box reference](/guides/is5-sarkaz/boat-jump-calculator/boat-info-message.png)
 </div>
-6. **Frame advance 1 more frame** after boat info appears
-7. **Note the exact timer value** (e.g., 65.5) - this is your first input into the calc "Initial Time"
-8. **Frame advance** until the timer changes (e.g., 65.5 → 65.4) and count how many frame advances it took - this is your second input
-9. **Enter the values below** according to your relics/conditions
-10. **Advance frame by frame** as indicated in the results (recommended to hover Mon3tr to be ready to press the skill)
+6. **Note the exact timer** of your undeployed operator at the boat spawn frame (e.g., 65.5) - this is your first input into the calc "Initial Time"
+7. **Frame advance** until the timer changes (e.g., 65.5 → 65.4) and count how many frame advances it took - this is your second input
+8. **Enter the values below** according to your relics/conditions
+9. **Advance frame by frame** as indicated in the results (recommended to hover Mon3tr to be ready to press the skill)
 
 <BoatJumpCalculator />
