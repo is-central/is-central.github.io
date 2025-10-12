@@ -411,7 +411,7 @@
     const jumpTimeSeconds = initialTime - timeDelta + (actualFrame / FPS);
     
     // For practical use: show exact timing
-    const exactTime = Math.floor(jumpTimeSeconds * 10) / 10; // Round down to previous 0.1 second
+    const exactTime = Math.floor((jumpTimeSeconds + 0.001) * 10) / 10; // Round down to previous 0.1 second
 
     // Gets the final jump timer frame e.g. for 65.566 the frame would be 0.066 -> 2 frames
     const currentFrame = Math.round((jumpTimeSeconds - exactTime) * 30)
