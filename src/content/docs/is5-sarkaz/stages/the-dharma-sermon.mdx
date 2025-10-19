@@ -33,16 +33,68 @@ dont let the envy kill your operators
 
 <StrategySection title="Strategy: Mon3tr Boat Jump" author="Die Alive" defaultOpen={false}>
 ### Mon3tr Boat Jump
-Mon3tr is a really strong operator on this fight given her ability to provide value on both maps without the downside operators have when being loaded into the boat, as she's able to remain on the field in the first map after being loaded.
+Mon3tr is a really strong operator on this fight given her ability to provide value on both maps without the downside operators have after being loaded into the boat, as she's able to remain on the field in the first map after being loaded until she is manually retreated.
 To achieve this Mon3tr has to use S3 as the boat approaches her, timed so that she is loaded into the boat as she jumps into the ground.
-This gives a 2 frames time window, requiring a precise timing method.
+This strategy requires a very precise timing and as such, the analysis should allow a precise and consistent way to perform this.
 
-There are two main timing methods to achieve this explained in the following sections, the first one simply uses a visual reference between the boat position and the ground texture while the second times the boat movement from the frame it spawns at.
+The most common Mon3tr placement is on the tile E2, which is what is assumed in this strategy; however, this analysis can be extended to any placement across the boat path.
 
-*Note: if Mon3tr is retreated after being loaded into the boat she won't be able to be deployed until the second map.*
+This strategy section is divided into an analysis of the boat movement, followed by the 2 main methods to perform the boat jump.
+
+### Boat movement analysis
+Soon after Qui'lon is phased to any of the 3 HP thresholds: 75%, 50%, and 25% HP, a boat spawns from tiles E1 (75% and 25% HP) and F1 (50% HP).
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Stage map](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/stage-map-mon3tr.png)
+</div>
+
+Given the assumed Mon3tr placement, we can use either the first or third boats to perform the boat jump.
+The boat movement goes as follows:
+* E1 spawn
+* Travel to E2
+* Wait 10s on E2
+* Travel to E14
+
+We only care about the boat reching the tile E7, which is where Mon3tr is deployed.
+From here we can see that the boat travels 1 tile as it spawns, waits 10 seconds, and then has to travel 4.5 tiles to reach Mon3tr.
+
+After analyzing the boat movement frame by frame, over multiple runs at different movement speeds, the following is found:
+* The boat has a slowed constant starting movement speed of 0.01 tiles/s for the first 5 frames as it spawns
+* The wait time on E2 is exactly 300 frames
+* There is a 3 frames window range for Mon3tr to be loaded into the boat regardles of the boat's movement speed.
+    * The first frame starts as the center of the boat just reaches the edge of E7, that is exactly at 5.5 tiles from its spawn tile E1.
+
+This means the exact frame Mon3tr can be successfully loaded into the boat can easily be calculated from this.
+
+We consider that the boat spawns on frame 0 at position 0.
+So far we know that the boat spawns with a constant movement speed of $0.01$ tiles/s for the first 5 frames, the checkpoint tile is reached when the boat position is $\geq 1$.
+The number of frames the boat takes to reach the checkpoint for a given movement speed $MS$ would then be:
+
+$\text{Spawn frames} = \text{CEILING}(5 + 0.95 \cdot 30/MS)$.
+
+The boat then stands by for $\text{Stand by frames} = 300$ frames before it continues moving at its movement speed.
+When the boat reaches the checkpoint, its position isn't reset, this means that the checkpoint position could be for example $1.01$ at $MS=0.4$ (standard movement speed), or $1.0$ at $MS=0.38$ (protraction book at 1 stack).
+When calculating the boat position to reach the position of 5.5 tiles this must be considered.
+The distance the boat would travel to reach a given position $P$ would be:
+
+$\text{Travel frames} = \text{CEILING}(P \cdot 30/MS)$,
+
+$P$ is the remaining distance to travel, that is:
+
+$P=4.5 - (\text{CEILING}(0.95 \cdot 30/MS) \cdot MS/30 + (5 \cdot 0.01) - 1)$.
+
+The total number of frames would then be:
+
+$\text{Total frames} = \text{Spawn frames} + \text{Stand by frames} + \text{Travel frames}$,
+
+$\text{Total frames} = \text{CEILING}(5 + 0.95 \cdot 30/MS) + 300 + \text{CEILING}(P \cdot 30/MS)$,
+
+$\text{Total frames} = \text{CEILING}(5 + 0.95 \cdot 30/MS) + 300 + \text{CEILING}((4.5 - (\text{CEILING}(0.95 \cdot 30/MS) \cdot MS/30 + (5 \cdot 0.01) - 1)) \cdot 30/MS)$.
+
+Because Mon3tr's skill takes 22 frames to perform the jump after skill activation, then the timing to activate her skill would be $\text{Total frames} - 22$.
 
 #### Visual reference method
-This method consists on using a visual reference between the boat position and the ground texture to tell when Mon3tr's S3 should be used.
+This method consists on using a visual reference between the boat position and the ground texture to tell when Mon3tr's skill should be used.
 
 There are multiple different reference frames we can use as a visual aid to distinguish the boat position in which Mon3tr skill should be used.
 If we hover over a non-deployed operator the camera tilts to a certain angle (this is constant across all non-deployed operators), if we hover over a deployed operator the angle is different and varies with the position of the deployed operator.
@@ -89,6 +141,8 @@ The visual reference we use is when the line on the ground tile lines up just pa
 </div>
 
 **Movement speed reductions**\
+*Note: this is just an approximation cause i'm too lazy to calculate it properly*
+
 It is important to remark that this works specifically without any MS debuffs.
 Relics like 'Painful Happiness' (-15% MS) and Rusted Blade - Protraction (-5% MS per specialist on the field), or any other MS modifiers will affect this timing.
 When we use Mon3tr S3 there is a delay between her leaving the high-ground tile and jumping into the ground, what we do with the original reference frame is time her skill press so the boat kidnaps her on the frame window she jumps into the ground given that jump delay.
@@ -129,8 +183,65 @@ It is unknown if the emulator resolution can affect the reference frame used her
 * <a href="https://youtu.be/LYISylZA6go" target="_blank" rel="noopener noreferrer">'Painful Happiness' reference</a>
 
 
-#### Frame counting method (written by Mei)
-soon tm
+#### Frame counting method
+Following the previous boat movement analysis, we can count frames to have a precise timing for the boat jump.
+
+This method requires the following:
+* Being able to unpause and pause within a frame window
+* Staying below max DP to be able to tell when a frame advances
+* Having an operator with a long redeployment time remaining (~50+ seconds)
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+**Frame advancing**
+</div>
+
+The game runs at 30 FPS, that is, one second contains 30 frames and advancing 1 frame means advancing $1/30 = 0.0333$ seconds.
+If we bind the pause button we can unpause (with said bind) and pause immediately after with the ESC bind, this allow us to unpause and pause in less than a frame window, and so we can slowly advance frame by frame.
+An easy way to tell when we actually advance a frame is by looking at the DP bar, each time it moves is a frame we have advanced.
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Frame advance example](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/frame-advance.png)
+</div>
+
+This is important because operators' redeployment times are displayed up to the first decimal.
+This means, for example, that a timer at $65.5$ could be either $65.566$, $65.533$, or $65.500$.
+By frame advancing and looking at how many frames it takes for the operator redeployment time to go from $65.5$ to $65.4$ we can tell the exact frame we were at initially.
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+**Boat spawn**
+</div>
+
+As Qui'lon reaches either its 75% or 25% HP threshold, a yellow line marking the boat path will appear.
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Yellow line](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/yellow-line.png)
+</div>
+
+Soon after this the boat spawns, this is what we consider our frame 0.
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Boat spawn frame](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/boat-spawn-frame.png)
+</div>
+
+As a visual queue, we can use the boat info message which appears a frame early and is visually more noticeable.
+Because we require to know the exact frame in which the boat spawns, it is essentially required to advance frame by frame until we reach this frame.
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Boat info message](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/boat-info-message.png)
+</div>
+
+Given our frame 0, we now use any operator timer to determine in which frame we are on, that is, if the timer displays 65.5, if that is 65.566, 65.533, or 65.500.
+We do this by advancing frames and counting how many frames it takes for the timer to display 65.4.
+If it takes 3 frames, that means the initial deployment time was 65.566 as it had to go through 65.533, 65.500, and 65.466.
+Similarly, for all frame advances count it would be:
+* 3 frames: 0.066
+* 2 frames: 0.033
+* 1 frame: 0.000
+
+We now have the initial time of reference, next we calculate what timer the operator would have when we require activating Mon3tr's skill.
+For this we can use the formula in the previous analysis.
+This results in 692 frames for the standard boat movement speed, then if the initial deployment time was 65.566 for example, the deployment time in which we need to activate Mon3tr's skill would be 42.500.
+This is, after we watch the timer change from 42.6 into 42.5, we advance 2 frames.
+As the timer would actually be 42.566, then advancing one frame takes us to 42.533 and advancing 2 frames takes us to 42.500, our jump frame.
+
+This calculation might seem too tedious to do every time, the following <a href="/is5-sarkaz/boat-jump-calculator" target="_blank" rel="noopener noreferrer">calculator</a> automates most of the process and makes it easier.
+
 
 
 </StrategySection>
