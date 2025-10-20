@@ -394,9 +394,9 @@
     // Calculate time delta using the formula: (408.75 / MSPD) + 284.75
     // This formula accounts for boat travel mechanics in Arknights
     // let timeDeltaFrames = Math.ceil((408.75 / speedMultiplier) + 304.75);
-    let spawnFrames = Math.ceil(5 + 0.95 * 30 / finalMSPD);
+    let spawnFrames = 5 + Math.ceil(28.5 / finalMSPD);
     let standByFrames = 300;
-    let travelFrames = Math.ceil((5.45-Math.ceil(0.95 * 30 / finalMSPD) * finalMSPD / 30) * 30 / finalMSPD);
+    let travelFrames = Math.ceil((163.5 / finalMSPD) - Math.ceil(28.5 / finalMSPD));
     let timeDeltaFrames = spawnFrames + standByFrames + travelFrames;
 
     // If operator loaded:
