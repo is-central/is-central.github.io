@@ -33,11 +33,11 @@ dont let the envy kill your operators
 
 <StrategySection title="Strategy: Mon3tr Boat Jump" author="Die Alive" defaultOpen={false}>
 ### Mon3tr Boat Jump
-Mon3tr is a really strong operator on this fight given her ability to provide value on both maps without the downside operators have after being loaded into the boat, as she's able to remain on the field in the first map after being loaded until she is manually retreated.
-To achieve this Mon3tr has to use S3 as the boat approaches her, timed so that she is loaded into the boat as she jumps into the ground.
-This strategy requires a very precise timing and as such, the analysis should allow a precise and consistent way to perform this.
+Mon3tr is a really strong operator on this fight given her ability to provide value on both maps without the downside operators have after being loaded into the boat, as she's able to remain on the field in the first map after being loaded until she is retreated.
+To achieve this, Mon3tr has to use S3 as the boat approaches her, timed so that she is loaded into the boat as she jumps into the ground.
+This strategy requires a very precise timing and as such, it should allow a precise and consistent way to perform this.
 
-The most common Mon3tr placement is on the tile E2, which is what is assumed in this strategy; however, this analysis can be extended to any placement across the boat path.
+The most common Mon3tr placement is on the tile E2, which is what is assumed in this strategy; however, the boat jump can be extended to any placement across the boat path from the analysis presented here.
 
 This strategy section is divided into an analysis of the boat movement, followed by the 2 main methods to perform the boat jump.
 
@@ -50,10 +50,10 @@ Soon after Qui'lon is phased to any of the 3 HP thresholds: 75%, 50%, and 25% HP
 
 Given the assumed Mon3tr placement, we can use either the first or third boats to perform the boat jump.
 The boat movement goes as follows:
-* E1 spawn
-* Travel to E2
-* Wait 10s on E2
-* Travel to E14
+    1. E1 spawn
+    2. Travel to E2
+    3. Wait 10s on E2
+    4. Travel to E14
 
 We only care about the boat reching the tile E7, which is where Mon3tr is deployed.
 From here we can see that the boat travels 1 tile as it spawns, waits 10 seconds, and then has to travel 4.5 tiles to reach Mon3tr.
@@ -61,20 +61,20 @@ From here we can see that the boat travels 1 tile as it spawns, waits 10 seconds
 After analyzing the boat movement frame by frame, over multiple runs at different movement speeds, the following is found:
 * The boat has a slowed constant starting movement speed of 0.01 tiles/s for the first 5 frames as it spawns
 * The wait time on E2 is exactly 300 frames
-* There is a 3 frames window range for Mon3tr to be loaded into the boat regardles of the boat's movement speed.
+* There is a 3 frames window for Mon3tr to be loaded into the boat, regardles of its movement speed.
     * The first frame starts as the center of the boat just reaches the edge of E7, that is exactly at 5.5 tiles from its spawn tile E1.
 
-This means the exact frame Mon3tr can be successfully loaded into the boat can easily be calculated from this.
+This means that the exact frame in which Mon3tr can be successfully loaded into the boat can easily be calculated from this.
 
 We consider that the boat spawns on frame 0 at position 0.
 So far we know that the boat spawns with a constant movement speed of $0.01$ tiles/s for the first 5 frames, the checkpoint tile is reached when the boat position is $\geq 1$.
 The number of frames the boat takes to reach the checkpoint for a given movement speed $MS$ would then be:
 
-$\text{Spawn frames} = \text{CEILING}(5 + 0.95 \cdot 30/MS)$.
+$\text{Spawn frames} = 5 + \text{CEILING}(0.95 \cdot 30/MS)$.
 
 The boat then stands by for $\text{Stand by frames} = 300$ frames before it continues moving at its movement speed.
-When the boat reaches the checkpoint, its position isn't reset, this means that the checkpoint position could be for example $1.01$ at $MS=0.4$ (standard movement speed), or $1.0$ at $MS=0.38$ (protraction book at 1 stack).
-When calculating the boat position to reach the position of 5.5 tiles this must be considered.
+When the boat reaches this stand by checkpoint, its position isn't reset, this means that the checkpoint position could be, for example, $1.01$ at $MS=0.4$ (standard movement speed), or $1.0$ at $MS=0.38$ (protraction book at 1 stack).
+This must be considered when calculating the boat position to reach the position of 5.5 tiles.
 The distance the boat would travel to reach a given position $P$ would be:
 
 $\text{Travel frames} = \text{CEILING}(P \cdot 30/MS)$,
@@ -87,9 +87,9 @@ The total number of frames would then be:
 
 $\text{Total frames} = \text{Spawn frames} + \text{Stand by frames} + \text{Travel frames}$,
 
-$\text{Total frames} = \text{CEILING}(5 + 0.95 \cdot 30/MS) + 300 + \text{CEILING}(P \cdot 30/MS)$,
+$\text{Total frames} = 5 + \text{CEILING}(0.95 \cdot 30/MS) + 300 + \text{CEILING}(P \cdot 30/MS)$,
 
-$\text{Total frames} = \text{CEILING}(5 + 0.95 \cdot 30/MS) + 300 + \text{CEILING}((4.5 - (\text{CEILING}(0.95 \cdot 30/MS) \cdot MS/30 + (5 \cdot 0.01) - 1)) \cdot 30/MS)$.
+$\text{Total frames} = \text{CEILING}(28.5/MS) + 305 + \text{CEILING}(163.5/MS - \text{CEILING}(28.5/MS))$.
 
 Because Mon3tr's skill takes 22 frames to perform the jump after skill activation, then the timing to activate her skill would be $\text{Total frames} - 22$.
 
@@ -188,8 +188,8 @@ Following the previous boat movement analysis, we can count frames to have a pre
 
 This method requires the following:
 * Being able to unpause and pause within a frame window
-* Staying below max DP to be able to tell when a frame advances
-* Having an operator with a long redeployment time remaining (~50+ seconds)
+* Staying below max DP to be able to distinguish frame advances
+* Having an operator with a long remaining redeployment time (~50+ seconds)
 
 <div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
 **Frame advancing**
