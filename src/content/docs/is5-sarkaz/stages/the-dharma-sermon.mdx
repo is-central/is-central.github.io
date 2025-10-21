@@ -39,7 +39,7 @@ This strategy requires a very precise timing and as such, it should allow a prec
 
 The most common Mon3tr placement is on the tile E2, which is what is assumed in this strategy; however, the boat jump can be extended to any placement across the boat path from the analysis presented here.
 
-This strategy section is divided into an analysis of the boat movement, followed by the 2 main methods to perform the boat jump.
+This strategy section is divided into an analysis of the boat movement, followed by the 2 main methods to perform the boat jump, a quick overview and comparison between the advantages and disadvantages of each method and video examples.
 
 ### Boat movement analysis
 Soon after Qui'lon is phased to any of the 3 HP thresholds: 75%, 50%, and 25% HP, a boat spawns from tiles E1 (75% and 25% HP) and F1 (50% HP).
@@ -89,7 +89,11 @@ $\text{Total frames} = \text{Spawn frames} + \text{Stand by frames} + \text{Trav
 
 $\text{Total frames} = 5 + \text{CEILING}(0.95 \cdot 30/MS) + 300 + \text{CEILING}(P \cdot 30/MS)$,
 
-$\text{Total frames} = \text{CEILING}(28.5/MS) + 305 + \text{CEILING}(163.5/MS - \text{CEILING}(28.5/MS))$.
+$\text{Total frames} = \text{CEILING}(28.5/MS) + 305 + \text{CEILING}(163.5/MS - \text{CEILING}(28.5/MS))$,
+
+given that $\text{Spawn frames}$ is always an integer, the formula can be simplified to:
+
+$\text{Total frames} = \text{CEILING}(163.5/MS) + 305$.
 
 Because Mon3tr's skill takes 22 frames to perform the jump after skill activation, then the timing to activate her skill would be $\text{Total frames} - 22$.
 
@@ -114,21 +118,29 @@ Here we use 3 different reference frames:
 
 **Non-deployed operator hover**
 <div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
-  ![Non-deployed operator hover reference](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/mon3tr-boat-reference-6.png)
+  ![Non-deployed operator hover reference](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/operator-hover-frame.png)
+</div>
+Frame 1
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Non-deployed operator hover reference 1](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/jump-frame-1.png)
+</div>
+Frame 2
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Non-deployed operator hover reference 2](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/jump-frame-2.png)
+</div>
+Frame 3
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Non-deployed operator hover reference 3](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/jump-frame-3.png)
 </div>
 
 The visual reference we use is when the line on the ground tile lines up just past the line marked at the back of the boat:
 
 <div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
-  ![Non-deployed operator hover reference zoom](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/mon3tr-boat-reference-2.png)
+  ![Non-deployed operator hover reference zoom](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/jump-frame-1-small.png)
 </div>
 
 <div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
-  ![Non-deployed operator hover reference zoom mark 1](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/mon3tr-boat-reference-3.png)
-</div>
-
-<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
-  ![Non-deployed operator hover reference zoom mark 2](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/mon3tr-boat-reference-4.png)
+  ![Non-deployed operator hover reference zoom](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/jump-frame-1-small-marked.png)
 </div>
 
 **Standard camera angle**
@@ -141,46 +153,39 @@ The visual reference we use is when the line on the ground tile lines up just pa
 </div>
 
 **Movement speed reductions**\
-*Note: this is just an approximation cause i'm too lazy to calculate it properly*
-
 It is important to remark that this works specifically without any MS debuffs.
 Relics like 'Painful Happiness' (-15% MS) and Rusted Blade - Protraction (-5% MS per specialist on the field), or any other MS modifiers will affect this timing.
 When we use Mon3tr S3 there is a delay between her leaving the high-ground tile and jumping into the ground, what we do with the original reference frame is time her skill press so the boat kidnaps her on the frame window she jumps into the ground given that jump delay.
 With the boat moving more slowly this means it would take more time to reach the frame in which Mon3tr gets loaded as she jumps to the ground but we can adjust accordingly.
 
-From the original reference frame and without MS debuffs the boat takes 22 frames of movement to load Mon3tr into the boat.
-Frames of movement mean frames in which the boat moves, as it doesn't actually move on every single frame of the emulator you unpause.
-Knowing that the boat MS is 0.4 tiles/s we can calculate the distance $\alpha$ between the frame of reference and the frame in which Mon3tr gets loaded, that is $\alpha = 0.4 \cdot 22/30$.
-If the boat is slowed down with a resulting MS $v$, then the time it takes the boat to reach the loading frame from the reference frame would be $t=\alpha/v$, resulting in $f = \text{ROUND}(t \cdot 30)$ frames.
-Then the frames of movement we have to lose after our reference frame would be $f-22 = \text{ROUND}(0.4/v \cdot 22)-22$.
+In the original reference frame, the boat is at the position of 5.21 tiles from its spawn tile center.
+After this, it takes 22 frames to reach the jump frame.
+For any movement speed reduction, with a resulting movement speed $MS'$, the distance advances per frame would be $d = MS'/30$.
+The number of frames the boat would take to reach this position would be:
+
+$\text{frames} = \text{CEILING}((5.5 - 5.21)/(MS'/30))$.
+
+It is important to emphasize here that, while the reference image shows the position at the standard movement speed, resulting on the exact position of 5.21 tiles, any other movement speed value could result in the boat being slightly displaced from this position.
+Because the reference image uses the earliest possible frame on a 3 frame window to perform the boat jump, it is recommended to either take the position of the boat displaced past the 5.21 tiles or to lose 1 additional frame.
+
+Then the number of frames to lose when using the reference image would be:
+
+$\text{frames to lose} = \text{CEILING}(8.7/MS') - 22$.
 
 | Relics                                        | Final MS (tiles/s) | Frames to lose |
 |:---------------------------------------------:|:------------------:|:--------------:|
 | Protraction (1 stack)                         | 0.38               | 1              |
-| Protraction (2 stacks)                        | 0.36               | 2              |
+| Protraction (2 stacks)                        | 0.36               | 3              |
 | 'Painful Happiness' or Protraction (3 stacks) | 0.34               | 4              |
 | 'Painful Happiness' + Protraction (1 stack)   | 0.323              | 5              |
 | Protraction (4 stacks)                        | 0.32               | 6              |
 | 'Painful Happiness' + Protraction (2 stacks)  | 0.306              | 7              |
 
-**Disadvantages**\
-Something we need to be careful with is that visual effects around this tile may make it difficult to tell when the boat is in the frame Mon3tr needs to jump.
-This doesn't often happen and is usually a result of an operator with extremely big visual effects around it being deployed on this tile that ends up covering the ground visual refference or a range operator that attacks the boat and creates a splash effect around it.
-
-<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
-  ![Splash effect](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/splash-effect.png)
-</div>
-
-Another issue we can have using the second visual reference is that we need to be able to hover Mon3tr without losing any frames, in this case it might be better to use the first reference frame and just time it having Mon3tr pre-selected.
 
 **Emulator resolution**\
 It is unknown if the emulator resolution can affect the reference frame used here. So far it has been tested with the following resolutions:
 * 1920 x 1080
 * 1800 x 900
-
-**Video examples**
-* <a href="https://www.youtube.com/live/xECk9_JEWrM?si=uJYxI3PygJ3kOgOU&t=7390" target="_blank" rel="noopener noreferrer">Standard timing reference</a>
-* <a href="https://youtu.be/LYISylZA6go" target="_blank" rel="noopener noreferrer">'Painful Happiness' reference</a>
 
 
 #### Frame counting method
@@ -242,6 +247,22 @@ As the timer would actually be 42.566, then advancing one frame takes us to 42.5
 
 This calculation might seem too tedious to do every time, the following <a href="/is5-sarkaz/boat-jump-calculator" target="_blank" rel="noopener noreferrer">calculator</a> automates most of the process and makes it easier.
 
+#### Methods comparison
+Both methods have their advantages and disadvantages.
+Frame counting allows for a precise timing but has the disadvantages of requiring an operator to be retreated soon before the boat spawns in order to count frames, in addition to being unable to stay at max DP.
+The visual reference is a quick way to perform the boat jump without the drawbacks frame counting has but it requires being able to remember the exact reference frame to jump at.
+
+Another drawback to be careful of, when using the visual reference method, is that visual effects around this tile may make it difficult to tell when the boat is in the frame Mon3tr needs to jump.
+This doesn't often happen and is usually a result of an operator with extremely big visual effects around it, being deployed on the ground tile, that ends up covering the ground visual refference or a range operator that attacks the boat and creates a splash effect around it.
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Splash effect](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/splash-effect.png)
+</div>
+
+
+#### Video examples
+* <a href="https://www.youtube.com/live/xECk9_JEWrM?si=uJYxI3PygJ3kOgOU&t=7390" target="_blank" rel="noopener noreferrer">Standard timing (visual reference method)</a>
+* <a href="https://youtu.be/LYISylZA6go" target="_blank" rel="noopener noreferrer">'Painful Happiness' (visual reference method)</a>
 
 
 </StrategySection>
