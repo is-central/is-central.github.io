@@ -3,9 +3,123 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap');
 
+@import './dark-mode.css';
+@import './light-mode.css';
+
 :root {
   --sl-font: 'Inter', sans-serif;
   --sl-font-headings: 'Poppins', sans-serif;
+
+  /* --combat-bg: #4a0252;
+  --combat-border: #2d0132;
+  --combat-outline: rgba(255, 255, 255, 0.3);
+  --combat-shadow: rgba(74, 2, 82, 0.4);
+  --combat-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --combat-hover-bg: #780382;
+  --combat-hover-border:#4a0252;
+  --combat-hover-shadow: rgba(120, 3, 130, 0.5);
+  --combat-hover-inner-shadow: rgba(255, 255, 255, 0.2);
+
+
+  --spine-bg: #4a0252;
+  --spine-border: #d97706;
+  --spine-outline: rgba(255, 255, 255, 0.3);
+  --spine-shadow: rgba(74, 2, 82, 0.4);
+  --spine-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --spine-hover-bg: #780382;
+  --spine-hover-border:#f59e0b;
+  --spine-hover-shadow: rgba(120, 3, 130, 0.5);
+  --spine-hover-inner-shadow: rgba(255, 255, 255, 0.2);
+
+  --spine-marker-bg: linear-gradient(135deg, #d97706, #f59e0b);
+  --spine-marker-border: rgba(255, 255, 255, 0.8);
+  --spine-marker-shadow: rgba(0, 0, 0, 0.3);
+  
+  --emergency-bg: #dc2626;
+  --emergency-border: #f87171;
+  --emergency-outline: rgba(255, 255, 255, 0.3);
+  --emergency-shadow: rgba(220, 38, 38, 0.3);
+  --emergency-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --emergency-hover-bg: #ef4444;
+  --emergency-hover-border: #fca5a5;
+  --emergency-hover-shadow: rgba(239, 68, 68, 0.4);
+  --emergency-hover-inner-shadow: rgba(255, 255, 255, 0.2);
+
+  
+  --boss-bg: #451a0a;
+  --boss-border: #92400e;
+  --boss-outline: rgba(255, 255, 255, 0.3);
+  --boss-shadow: rgba(69, 26, 10, 0.4);
+  --boss-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --boss-hover-bg: #7c2d12;
+  --boss-hover-border:#451a0a;
+  --boss-hover-shadow: rgba(124, 45, 18, 0.5);
+  --boss-hover-inner-shadow: rgba(255, 255, 255, 0.2);
+
+
+  --encounter-bg: #2a7a74;
+  --encounter-border: #1f6762;
+  --encounter-outline: rgba(255, 255, 255, 0.3);
+  --encounter-shadow: rgba(27, 94, 94, 0.4);
+  --encounter-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --encounter-hover-bg: #3da099;
+  --encounter-hover-border:#358681;
+  --encounter-hover-shadow: rgba(42, 128, 128, 0.4);
+  --encounter-hover-inner-shadow: rgba(255, 255, 255, 0.2);
+
+
+  --shop-bg: #1b5e20;
+  --shop-border: #0d4f14;
+  --shop-outline: rgba(255, 255, 255, 0.3);
+  --shop-shadow: rgba(27, 94, 32, 0.4);
+  --shop-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --shop-hover-bg: #2e7d32;
+  --shop-hover-border:#1b5e20;
+  --shop-hover-shadow: rgba(46, 125, 50, 0.5);
+  --shop-hover-inner-shadow: rgba(255, 255, 255, 0.2);
+
+
+  --faceoff-bg: #2a7a74;
+  --faceoff-border: #1f6762;
+  --faceoff-outline: rgba(255, 255, 255, 0.3);
+  --faceoff-shadow: rgba(27, 94, 94, 0.4);
+  --faceoff-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --faceoff-hover-bg: #3da099;
+  --faceoff-hover-border:#358681;
+  --faceoff-hover-shadow: rgba(42, 128, 128, 0.4);
+  --faceoff-hover-inner-shadow: rgba(255, 255, 255, 0.2);
+
+
+  --f5boss-bg: #8b0000;
+  --f5boss-border: #4a0000;
+  --f5boss-outline: rgba(255, 255, 255, 0.3);
+  --f5boss-shadow: rgba(139, 0, 0, 0.4);
+  --f5boss-inner-shadow: rgba(255, 255, 255, 0.1);
+
+  --f5boss-hover-bg: #b22222;
+  --f5boss-hover-border:#8b0000;
+  --f5boss-hover-shadow: rgba(178, 34, 34, 0.5);
+  --f5boss-hover-inner-shadow: rgba(255, 255, 255, 0.2);
+
+
+  --finale-bg: linear-gradient(135deg, #1a1a2e, #16213e);
+  --finale-border: #0f3460;
+  --finale-outline: rgba(255, 255, 255, 0.4);
+  --finale-shadow: rgba(26, 26, 46, 0.6);
+  --finale-inner-shadow: rgba(255, 255, 255, 0.2);
+
+  --finale-hover-bg: linear-gradient(135deg, #16213e, #0f3460);
+  --finale-hover-border:#1a1a2e;
+  --finale-hover-shadow: rgba(15, 52, 96, 0.7);
+  --finale-hover-inner-shadow: rgba(255, 255, 255, 0.3); */
+
 }
 
 /* --- Center the Homepage Hero --- */
@@ -37,8 +151,8 @@
 
 /* Lighter card background compared to site background */
 .card-grid .card {
-  background-color: #2a2a2a; 
-  border: 1px solid #3a3a3a; 
+  background-color: var(--card-color); 
+  border: 1px solid var(--card-border); 
   border-radius: 12px;       
   padding: 1rem;
 }
@@ -51,28 +165,36 @@
     transition: all 0.2s ease-in-out;
 }
 
+/* Remove title space to center the image */
+.card-grid .card .title {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 /* Define unique hover effects for each banner */
-.card-grid .card:nth-child(1) a:hover {
+.card-grid .card:nth-child(4) a:hover {
     transform: scale(1.03); /* Slightly enlarges the banner */
     box-shadow: 0 0 25px rgba(183, 28, 28, 0.9); /* Red glow for IS2 Phantom */
 }
 
-.card-grid .card:nth-child(2) a:hover {
+.card-grid .card:nth-child(3) a:hover {
     transform: scale(1.03); /* Slightly enlarges the banner */
     box-shadow: 0 0 25px rgba(57, 73, 171, 0.9); /* Blue glow for IS3 Mizuki */
 }
 
-.card-grid .card:nth-child(3) a:hover {
+.card-grid .card:nth-child(2) a:hover {
     transform: scale(1.03); /* Slightly enlarges the banner */
     box-shadow: 0 0 25px rgba(100, 181, 246, 0.9); /* Light blue glow for IS4 Expeditioners */
 }
 
-.card-grid .card:nth-child(4) a:hover {
+.card-grid .card:nth-child(1) a:hover {
     transform: scale(1.03); /* Slightly enlarges the banner */
     box-shadow: 0 0 25px rgba(251, 192, 45, 0.9); /* Yellow glow for IS5 Sarkaz */
 }
 
-.card-grid .card:nth-child(5) a:hover {
+.card-grid .card:nth-child(0) a:hover {
     transform: scale(1.03); /* Slightly enlarges the banner */
     box-shadow: 0 0 25px rgba(236, 64, 122, 0.9); /* Pink glow for IS6 Sui */
 }
@@ -296,12 +418,13 @@
 .stage-name {
   font-size: 12px;
   font-weight: 700;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+  /* text-shadow: 1px 1px 2px var(--text-shadow); */
+  /* -webkit-text-stroke: 0.1px black; */
   max-width: 130px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: #ffffff;
+  /* color: var(--text-color); */
   letter-spacing: 0.3px;
   line-height: 1.2;
   flex-shrink: 0;
@@ -310,117 +433,166 @@
 
 /* Combat Stage Cards */
 .stage-card.combat {
-  background: #4a0252;
-  color: white;
-  border-color: #2d0132;
+  background: var(--combat-bg);
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px var(--text-shadow);
+  border-color: var(--combat-border);
   border-width: 3px;
-  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline: 2px solid var(--combat-outline);
   outline-offset: -1px;
-  box-shadow: 0 6px 16px rgba(74, 2, 82, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 16px var(--combat-shadow), inset 0 1px 0 var(--combat-inner-shadow);
 }
 
 .stage-card.combat:hover {
-  background: #780382;
-  border-color: #4a0252;
+  background: var(--combat-hover-bg);
+  border-color: var(--combat-hover-border);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(120, 3, 130, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px var(--combat-hover-shadow), inset 0 1px 0 var(--combat-hover-inner-shadow);
 }
 
 /* Emergency Combat Cards */
 .stage-card.emergency {
-  background: #dc2626;
-  color: white;
-  border-color: #f87171;
+  background: var(--emergency-bg);
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px var(--text-shadow);
+  border-color: var(--emergency-border);
   border-width: 3px;
-  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline: 2px solid var(--emergency-outline);
   outline-offset: -1px;
-  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 16px var(--emergency-shadow), inset 0 1px 0 var(--emergency-inner-shadow);
 }
 
 .stage-card.emergency:hover {
-  background: #ef4444;
-  border-color: #fca5a5;
+  background: var(--emergency-hover-bg);
+  border-color: var(--emergency-hover-border);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px var(--emergency-hover-shadow) inset 0 1px 0 var(--emergency-hover-inner-shadow);
 }
 
 /* Boss Stage Cards */
 .stage-card.boss {
-  background: #451a0a;
-  color: white;
-  border-color: #92400e;
+  background: var(--boss-bg);
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px var(--text-shadow);
+  border-color: var(--boss-border);
   border-width: 3px;
-  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline: 2px solid var(--boss-outline);
   outline-offset: -1px;
-  box-shadow: 0 6px 16px rgba(69, 26, 10, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 16px var(--boss-shadow), inset 0 1px 0 var(--boss-inner-shadow);
 }
 
 .stage-card.boss:hover {
-  background: #7c2d12;
-  border-color: #451a0a;
+  background: var(--boss-hover-bg);
+  border-color: var(--boss-hover-border);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(124, 45, 18, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px var(--boss-hover-shadow), inset 0 1px 0 var(--boss-hover-inner-shadow);
+}
+
+/* IS4 F3 Boss Stage Cards */
+.stage-card.is4-boss {
+  background: var(--is4-boss-bg);
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px var(--text-shadow);
+  border-color: var(--is4-boss-border);
+  border-width: 3px;
+  outline: 2px solid var(--is4-boss-outline);
+  outline-offset: -1px;
+  box-shadow: 0 6px 16px var(--is4-boss-shadow), inset 0 1px 0 var(--is4-boss-inner-shadow);
+}
+
+.stage-card.is4-boss:hover {
+  background: var(--is4-boss-hover-bg);
+  border-color: var(--is4-boss-hover-border);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px var(--is4-boss-hover-shadow), inset 0 1px 0 var(--is4-boss-hover-inner-shadow);
 }
 
 /* Encounter Stage Card - Cyan Theme */
 .stage-card.encounter{
-  background: #2a7a74;
-  color: white;
-  border-color: #1f6762;
+  background: var(--encounter-bg);
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px var(--text-shadow);
+  border-color: var(--encounter-border);
   border-width: 3px;
-  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline: 2px solid var(--encounter-outline);
   outline-offset: -1px;
-  box-shadow: 0 6px 16px rgba(27, 94, 94, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 16px var(--encounter-shadow), inset 0 1px 0 var(--encounter-inner-shadow);
 }
 
 .stage-card.encounter:hover {
-  background: #3da099;
-  border-color: #358681;
+  background: var(--encounter-hover-bg);
+  border-color: var(--encounter-hover-border);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(42, 128, 128, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px var(--encounter-hover-shadow), inset 0 1px 0 var(--encounter-hover-inner-shadow);
 }
 
 /* Narrative Offer Stage Card - Dark Green Theme */
 .stage-card.shop{
-  background: #1b5e20;
-  color: white;
-  border-color: #0d4f14;
+  background: var(--shop-bg);
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px var(--text-shadow);
+  border-color: var(--shop-border);
   border-width: 3px;
-  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline: 2px solid var(--shop-outline);
   outline-offset: -1px;
-  box-shadow: 0 6px 16px rgba(27, 94, 32, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 16px var(--shop-shadow), inset 0 1px 0 var(--shop-inner-shadow);
 }
 
 .stage-card.shop:hover {
-  background: #2e7d32;
-  border-color: #1b5e20;
+  background: var(--shop-hover-bg);
+  border-color: var(--shop-hover-border);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(46, 125, 50, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px var(--shop-hover-shadow), inset 0 1px 0 var(--shop-hover-inner-shadow);
 }
 
 /* Face-Off Stage Card - Cyan Theme */
 .stage-card.faceoff{
-  background: #2a7a74;
-  color: white;
-  border-color: #1f6762;
+  background: var(--faceoff-bg);
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px var(--text-shadow);
+  border-color: var(--faceoff-border);
   border-width: 3px;
-  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline: 2px solid var(--faceoff-outline);
   outline-offset: -1px;
-  box-shadow: 0 6px 16px rgba(27, 94, 94, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 16px var(--faceoff-shadow), inset 0 1px 0 var(--faceoff-inner-shadow);
 }
 
 .stage-card.faceoff:hover {
-  background: #3da099;
-  border-color: #358681;
+  background: var(--faceoff-hover-bg);
+  border-color: var(--faceoff-hover-border);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(42, 128, 128, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px var(--faceoff-hover-shadow), inset 0 1px 0 var(--faceoff-hover-inner-shadow);
 }
+
+
+/* Narrative Offer Grid - Centered single stage */
+.stage-2-stage-grid {
+  grid-template-columns: repeat(2, 140px);
+  justify-content: center;
+  gap: 4rem;
+  margin: 1rem 0;
+}
+
+/* Mobile responsiveness for Narrative Offer Grid */
+@media (max-width: 768px) {
+  .stage-2-stage-grid {
+    grid-template-columns: 110px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stage-2-stage-grid {
+    grid-template-columns: 100px;
+  }
+}
+
+
 
 /* Narrative Offer Grid - Centered single stage */
 .narrative-offer-grid {
-  grid-template-columns: 140px;
+  grid-template-columns: repeat(2, 140px);
   justify-content: center;
-  gap: 0;
+  gap: 4rem;
   margin: 1rem 0;
 }
 
@@ -533,32 +705,35 @@
 /* Spine of Epoch Stage Cards */
 .stage-card.spine-epoch {
   position: relative;
-  border-color: #d97706;
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px var(--text-shadow);
+  border-color: var(--spine-border);
   border-width: 3px;
-  background: #4a0252;
-  outline: 2px solid rgba(255, 255, 255, 0.3);
+  background: var(--spine-bg);
+  outline: 2px solid var(--spine-outline);
   outline-offset: -1px;
-  box-shadow: 0 6px 16px rgba(74, 2, 82, 0.4);
+  box-shadow: 0 6px 16px var(--spine-shadow), inset 0 1px 0 var(--spine-inner-shadow);
 }
 
 .stage-card.spine-epoch:hover {
-  background: #780382;
-  border-color: #f59e0b;
+  background: var(--spine-hover-bg);
+  border-color: var(--spine-hover-border);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(120, 3, 130, 0.5);
+  box-shadow: 0 8px 24px var(--spine-hover-shadow);
 }
 
 .stage-card.spine-epoch::before {
   content: '';
   position: absolute;
-  top: 0.25rem;
-  right: 0.25rem;
-  width: 12px;
-  height: 12px;
-  background: linear-gradient(135deg, #d97706, #f59e0b);
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  bottom: 0rem;
+  right: 0rem;
+  width: 20px;
+  height: 20px;
+  /* background: var(--spine-marker-bg); */
+  background: var(--spine-icon) no-repeat center/contain;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
   z-index: 1;
 }
 
@@ -583,12 +758,12 @@
 
 /* Spine of Epoch Disclaimer */
 .spine-epoch-disclaimer {
-  background: linear-gradient(135deg, rgba(217, 119, 6, 0.1) 0%, rgba(245, 158, 11, 0.1) 100%);
+  background: var(--spine-disclaimer-bg);
   border: 2px solid #d97706;
   border-radius: 12px;
   padding: 1rem 1.5rem;
   margin: 1.5rem 0;
-  color: #fbbf24;
+  color: var(--spine-disclaimer-text);
   font-size: 0.95rem;
   line-height: 1.5;
   box-shadow: 0 4px 12px rgba(217, 119, 6, 0.2);
@@ -607,7 +782,7 @@
 }
 
 .spine-epoch-disclaimer strong {
-  color: #f59e0b;
+  color: var(--spine-disclaimer-text);
   font-weight: 700;
 }
 
@@ -734,24 +909,52 @@
 .stage-card.f5-boss {
   height: 80px;
   width: 180px;
-  background: #8b0000;
-  color: white;
-  border-color: #4a0000;
+  background: var(--f5boss-bg);
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px var(--text-shadow);
+  border-color: var(--f5boss-border);
   border-width: 3px;
-  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline: 2px solid var(--f5boss-outline);
   outline-offset: -1px;
-  box-shadow: 0 6px 16px rgba(139, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 16px var(--f5boss-shadow), inset 0 1px 0 var(--f5boss-inner-shadow);
   font-size: 14px;
 }
 
 .stage-card.f5-boss:hover {
-  background: #b22222;
-  border-color: #8b0000;
+  background: var(--f5boss-hover-bg);
+  border-color: var(--f5boss-hover-border);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(178, 34, 34, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px var(--f5boss-hover-shadow), inset 0 1px 0 var(--f5boss-hover-inner-shadow);
 }
 
 .stage-card.f5-boss .stage-name {
+  font-size: 14px;
+  max-width: 170px;
+}
+
+/* IS4 F5 Boss Stage Cards - Larger size with red/dark theme */
+.stage-card.is4-f5-boss {
+  height: 80px;
+  width: 180px;
+  background: var(--is4-f5boss-bg);
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px var(--text-shadow);
+  border-color: var(--is4-f5boss-border);
+  border-width: 3px;
+  outline: 2px solid var(--is4-f5boss-outline);
+  outline-offset: -1px;
+  box-shadow: 0 6px 16px var(--is4-f5boss-shadow), inset 0 1px 0 var(--is4-f5boss-inner-shadow);
+  font-size: 14px;
+}
+
+.stage-card.is4-f5-boss:hover {
+  background: var(--is4-f5boss-hover-bg);
+  border-color: var(--is4-f5boss-hover-border);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px var(--is4-f5boss-hover-shadow), inset 0 1px 0 var(--is4-f5boss-hover-inner-shadow);
+}
+
+.stage-card.is4-f5-boss .stage-name {
   font-size: 14px;
   max-width: 170px;
 }
@@ -819,40 +1022,41 @@
 
 /* Fate's Finale Grid - Centered single stage with spacing */
 .fates-finale-grid {
-  grid-template-columns: 220px;
+  grid-template-columns: 180px;
   justify-content: center;
   gap: 0;
-  grid-auto-rows: 90px;
-  margin: 3rem 0 2rem 0;
+  grid-auto-rows: 80px;
+  /* margin: 2rem 0 2rem 0; */
 }
 
 /* Fate's Finale Stage Card - Longer button with special styling */
 .stage-card.fates-finale {
-  height: 90px;
-  width: 220px;
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
-  color: white;
-  border-color: #0f3460;
-  border-width: 4px;
-  outline: 3px solid rgba(255, 255, 255, 0.4);
-  outline-offset: -2px;
-  box-shadow: 0 8px 24px rgba(26, 26, 46, 0.6), inset 0 2px 0 rgba(255, 255, 255, 0.2);
-  font-size: 16px;
-  position: relative;
+  height: 80px;
+  width: 180px;
+  background: var(--finale-bg);
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px var(--text-shadow);
+  border-color: var(--finale-border);
+  border-width: 3px;
+  outline: 2px solid var(--finale-outline);
+  outline-offset: -1px;
+  box-shadow: 0 6px 16px var(--finale-shadow), inset 0 1px 0 var(--finale-inner-shadow);
+  font-size: 14px;
+  /* position: relative; */
 }
 
 .stage-card.fates-finale:hover {
-  background: linear-gradient(135deg, #16213e, #0f3460);
-  border-color: #1a1a2e;
+  background: var(--finale-hover-bg);
+  border-color: var(--finale-hover-border);
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(15, 52, 96, 0.7), inset 0 2px 0 rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 24px var(--finale-hover-shadow), inset 0 1px 0 var(--finale-hover-inner-shadow);
 }
 
 .stage-card.fates-finale .stage-name {
-  font-size: 16px;
-  max-width: 200px;
-  font-weight: 800;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  font-size: 14px;
+  max-width: 170px;
+  /* font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); */
 }
 
 
