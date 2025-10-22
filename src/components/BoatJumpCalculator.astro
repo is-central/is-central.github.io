@@ -389,19 +389,24 @@
     // Apply protraction stacks (each stack -5% speed, additive within protraction, then multiplicative)
     const protractionMultiplier = 1 - (protractionStacks * 0.05); // Additive: 2 stacks = 1 - 0.10 = 0.90
     speedMultiplier *= protractionMultiplier;
-    const finalMSPD = 0.4 * speedMultiplier
+    const finalMSPD = Math.max(0.4 * speedMultiplier, 0.05);
 
     // Calculate time delta using the formula: (408.75 / MSPD) + 284.75
     // This formula accounts for boat travel mechanics in Arknights
-    let timeDeltaFrames = Math.ceil((408.75 / speedMultiplier) + 304.75);
+    // let timeDeltaFrames = Math.ceil((408.75 / speedMultiplier) + 304.75);
     
+    // let spawnFrames = 5 + Math.ceil(28.5 / finalMSPD);
+    // let standByFrames = 300;
+    // let travelFrames = Math.ceil((163.5 / finalMSPD) - Math.ceil(28.5 / finalMSPD));
+    
+    let timeDeltaFrames = Math.ceil(163.5 / finalMSPD) + 305;
 
     // If operator loaded:
     if (operatorLoadedFrames != 0) {
       timeDeltaFrames = (timeDeltaFrames - operatorLoadedFrames) * (Math.max(finalMSPD, 0.05)/Math.max((finalMSPD/2), 0.05)) + operatorLoadedFrames
     }
 
-    timeDeltaFrames -= 21
+    timeDeltaFrames -= 22
     
     const timeDelta = (timeDeltaFrames) / FPS;
     
