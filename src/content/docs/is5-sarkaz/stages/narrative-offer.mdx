@@ -21,4 +21,52 @@ description: Narrative Offer stage guide for IS5 Sarkaz's Furnaceside Fables
 
 ---
 
-*Content to be added.*
+import StrategySection from '../../../../components/StrategySection.astro';
+
+<StrategySection title="Stage Analysis" author="Mei of May" defaultOpen={true}>
+
+The stage can be roughly split into 4 sections: [the opener](#opener), toplane laneholding, [**midlane laneholding**](#middle-lane-standard), and [**Cannot bursting**](#bursting-cannot-standard).
+
+The opener consists of 3 flying chests positioned 4/3/2 tiles from the top right blue box, AFKing for 5/7/9 seconds respectively, they will then beeline to the blue box in 22s+25f, 17s+4f, and 11s+12f respectively (AK runs at 30 frames per second). In total, you have 27s+25f for the left chest, 24s+4f for the middle chest, and 20s+12f for the right chest. That is, the right chest will leak when the DP counter is approximately at 30.4 DP under standard conditions.
+
+<img src="/guides/is5-sarkaz/stage-guides/narrative-offer/opener.png" alt="Narrative Offer Opener" />
+
+The middle lane is long and curvy with a constant stream of 26 Holy Automatons with Dreadkazs markings, spaced 6s apart. These finish entering the blue box approximately during the final wave and when Cannot reaches the bottom left of the map.
+
+After the Holy Automatons begin spawning, 2 waves of 3 boxers will spawn, followed by 2 Sarkaz Maze Returners (50%) or 2 cars (50%).
+
+Next, a total of 7 flying Machines will slowly drift to the blue box on top lane, finishing approximately during the final wave and when Cannot is halfway to the blue box.
+
+The final wave consists of 2 waves of 3 boxers plus 2 waves of 3 Sarkaz Maze Returners or 2 waves of 2 cars (same enemy as the first ones that spawned).
+
+Cannot is the boss of this stage, he is tanky but not unreasonably so. He spawn 3 chests at 75% HP and another 3 at 50% HP for a total of 60 ingots, You MUST take out these chests for the ingots, otherwise they steal ingots upon leaking. Cannot cannot spawn chests when under hard control, such as stun or freeze, so refrain from activating skills that can stun or deploying operators who can stun before he spawns all 6 chests. These chests hit very hard and are somewhat tanky, so avoid blocking them.
+
+
+Shop rob is THE most important combat in any ED4 Lamp run; if you can't take out all the chests, then you may as well have already lost to Quilon. Therefore, it is of utmost importance to play shop rob perfectly. I cannot emphasise how important it is to learn to play a perfect shop rob consistently under any conditions, whether it be low damage, missing drafts, 7op, medicless, Oddities, Congestion, or whatever other debuffs.
+
+### Why rob on F4?
+
+This is a common and reasonable question. Lamp comps in general take F3 LnF, F4 shop rob, and F5 boats, though you obviously need to adapt if F4 doesn't have a shop. Most Lamp comps struggle against ED2 without ASPD relics (Coin-operated Toy, Golden Chalice), so it's important to rob shop before ED2. Taking boats then robbing shop is generally less optimal because some Lamp comps require ASPD relics to take boats and Anasa's Karma increases HP of elites and bosses in shop rob. However, if no shops spawn on F4, you may be forced into boats into shop. Since Lamp's gameplan revolves so heavily around taking shop on F4, you should use any means possible to secure shop rob, such as aggressively refreshing for Kings' relics on F2/3, targeting key collectibles on F1 shop (stun bomb, fog machine, initial SP, ect), or otherwise playing towards a successful rob.
+<img src="/guides/is5-sarkaz/stage-guides/narrative-offer/important-events.png" alt="Why rob on F4" />
+
+### Opener
+
+The 3 flying chests are a massive opener check, if you don't have a strong opener (e.g. Agents + anti-air) or niche counters (e.g. stun bomb, Glory Pack Deepcolour), you may leak the opener chests and thereby lose the entire run. Yellow toll drastically increases the opener difficulty with +3 DP per deployment and -0.2SP/s. If you can't open under yellow toll (quite likely), then you may need to reach green toll at whatever the cost necessary, even if it means tossing important Thoughts. Pledge of Babel (ED2 relic) also increases operator by +3 DP, consider combining it after shop rob or after a shop rob solution has been acquired (e.g. Specialist voucher overflow allowing Contrail draft). Each comp has their own unique mainline opening: VGG uses an Agent into Silverash + May, Snipemed uses an Agent into Kroos alter + Rosmontis/Kal'tsit, Tacfort uses Blitz into Hoederer, Soul Escort spams Yato, Talons uses an Agent into various highroll DPS ops or leaks them. There are also some optional solutions that may need to be searched for en route: green toll, not combining Pledge of Babel, Contrail, stun bomb, fog machine, Glory Pack + summoner (not Kal'tsit), initial SP relics, cycle SP relics, or the fabled White Shoes Eureka.
+
+### Middle lane (standard)
+
+Avoid attacking or stalling the Automatons. Since they do not incur a life point penalty, the standard strategy is to leak all of them so that no Dreadkazs or Marks of Epoch spawn onto your operators. You can achieve this by reducing your damage, facing your operators away from middle lane, or using operators as helidrops. They provide some healing pressure over the course of the stage which forces a Medic or strong redeployment abilities, However, the healing pressure is not significant, a Medmiya who constantly attacks top lane typically provides sufficient healing for herself and another operator with 2K.
+
+### Bursting Cannot (standard)
+
+Finally, after all the Holy Automatons have leaked, redeploy your operators on the bottom to take out the last wave of enemies and burst down Cannot. You may need to keep one or more operators in reserve in case your top lane laneholders can't redeploy in time for the last wave, though they will be in time to burst cannot. The cars variant is more difficult because the cars travel closer to the blue box than Sarkaz Maze Returners by the time all the Holy Automatons leak, they're also tankier and spawn extra trash mobs. When bursting down Cannot, avoid stunning or using other hard controls on him before his HP drops below 50% which prevents him from spawning chests. If you stun him when he spawns his chests, the consequences are dire. You have effectively lost your entire run then and there. Common suspects include Wiš'adel talent, Rosmontis S2, Kroos talent, Mon3tr (summon) explosion, Ulpianus S3, Hoederer S2, Glory Pack, Gummy talent, and Angelina S3.
+
+### Middle lane (highroll)
+
+With enough damage, you can brute force the middle lane by destroying everything, usually achieved with Greyy the Lightningbearer, Ethan, and one or more primary DPS operators like Mlynar, Logos, or Rosmontis. This is only viable for Talons comps because they are already highrolling by the time they rob shop on F6, Snipemed may very occasionally use the highroll strat for F5 shop rob.
+
+#### Reference Videos
+* <a href="https://www.youtube.com/watch?v=upjPG1OfMEQ" target="_blank">2k Guldul Shop Rob commentated (GVG)</a> By Mei of May
+* <a href="https://www.youtube.com/watch?v=ad2_vjBxgNw" target="_blank">F5 lowroll Ylis Shop Rob Commentated (GVG)</a> By Mei of May
+* <a href="https://www.youtube.com/watch?v=B9W6dtZemuE" target="_blank">Narrative Offer (Shop Rob) (Rosmontis/Flinger)</a> By Bait
+</StrategySection>
