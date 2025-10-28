@@ -1120,6 +1120,12 @@
   }
 }
 
+/* --- Events Section Styling --- */
+.events-section-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(236, 64, 122, 0.9);
+}
+
 /* --- End of Stage Cards CSS --- */
 
 /* --- Back Button Component --- */

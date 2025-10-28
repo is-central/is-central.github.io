@@ -1,0 +1,192 @@
+---
+title: Kazdel Kasino 2
+description: A team-based IS tournament.
+template: doc
+---
+
+import TournamentScoreboard from '../../../components/TournamentScoreboard.astro';
+
+<div style="position: relative; width: 100%; max-width: 800px; margin: 0 auto;"><img src="/events/kazdel-kasino-2/kazdel-kasino-2-banner.png" alt="Kazdel Kasino 2 Tournament Banner" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /></div>
+
+## Overview
+
+Kazdel Kasino 2 is a team-based tournament with teams of 3 players. Players earn money by completing objectives during their runs, then convert those dollars into placement points using a summon simulator at the end. The top 8 teams proceed to Round 2; the final placement is also leaderboard-based.
+
+<div class="guide-button-container">
+  <a href="https://forms.gle/9Q4ZTF3ghVtnpe367" class="guide-button" target="_blank" rel="noopener noreferrer">
+    <div class="button-image">
+      <div class="reference-icon">📝</div>
+    </div>
+    <div class="button-content">
+      <span class="button-title">Team Registration</span>
+      <span class="button-subtitle">Submit your team and required screenshots</span>
+    </div>
+    <div class="button-arrow">→</div>
+  </a>
+</div>
+
+
+
+## Live Scoreboard
+
+<TournamentScoreboard
+  title="Scoreboard"
+  dataUrl="/events/kazdel-kasino-2/scoreboard.json"
+  refreshMs={15000}
+/> 
+
+## Format
+
+- Team of 3 players
+- Player 3: Difficulty 18
+- Players 1 and 2 choose difficulties so that the sum across all three is 48
+- Players finish their run, then immediately use the summon simulator to earn placement points
+- Leaderboard: Top 8 proceed to Round 2; final placement determined by Round 2 leaderboard
+
+## Registration Requirements
+- Players must be able to stream runs on Discord.
+- Runs may be streamed on `twitch.tv/oyana1234`.
+- Players must be members of the <a href="https://discord.gg/fqRBzQWVfK" target="_blank" rel="noopener noreferrer">IS Central Discord</a>.
+
+![Registration Requirements](/events/kazdel-kasino-2/registration-guidelines.png)
+
+**Registration Form:** https://forms.gle/9Q4ZTF3ghVtnpe367
+
+## Rules
+
+### Fated Encounter
+Each team cannot select the following relics more than once per team: "Talons of Hatred", "Lamp of Wishes".
+
+### Wisadel
+Wisadel cannot be picked unless it's a temporary recruit after a combat or Silver Seal.
+
+### Balance Limit Withdrawal
+- Players 1 and 2 share 100 ingots; Player 3 has 50 initial ingots to withdraw.
+- Every ingot withdrawn deducts the player \$500 per ingot.
+
+### Run Preparation
+- Only the following floor 3 bonus buffs are allowed: Kettle, 2 Hope, 2 Plans.
+- Players can finish the first combat but cannot select any relics from the first combat.
+- Players must select an encounter as their 2nd node on the floor.
+- The 2nd node must be "Fated encounter" and players must stop at this screen.
+- If a player does not want a Fated Encounter relic, they must stop after the first combat. Rerolling the 2nd node is allowed.
+
+### Reset
+- All players start with 0 available resets.
+- Emulator crashes: each player allowed 1 restart per tournament (subject to organizer review).
+
+### Miscellaneous
+- Players may change squads after rerolling.
+- The relic "Masterless Memories" is allowed.
+- Players may only use the account used to register.
+- CN/TW server accounts are not allowed.
+- All bonuses and penalties are calculated at end of run.
+
+## Tournament Dynamic
+
+Players complete tasks to gain Dollars; Players 1 and 2 also earn Yen. Player 3 can spend Yen at the Yen Shop to purchase bonuses. After all runs, teams spend accumulated Dollars in a gacha simulator to determine final score.
+
+### Dollars Currency
+- Spent on: Operators, Starting squads, Final score
+- Obtained from: Bias bonuses, General stages, Conditional stages, Achievements, Final collectibles count
+
+### Final Scoring: Summon Simulator
+- One teammate streams `https://lungmendragons.com/gachasim`
+- Any banner can be selected or changed at any time; if Reset History is clicked, score is based on pre-reset VOD state.
+- Scoring: 6★ = 360 pts; 5★ = 120 pts; 3–4★ = 10 pts
+
+### Operator Costs (excerpt)
+- 6★ selector list – \$75: Exu Alter, Tragodia, Mon3tr, Hoederer, Rosmontis
+- 6★ selector list – \$50: Kal'tsit, Kirin R Yato, Ela, Logos, Narantuya, Eyja Alter, SilverAsh, Ulpianus, Mizuki, Degenbrecher
+- All other non-bias 6★: \$35
+
+### Penalties
+- If a 6★ is recruited twice within a team: cost × 3
+- If a 6★ is recruited three times: cost × 6
+- Bias bonuses do not trigger duplicate penalties.
+
+### Temporary Operators
+- All temporary operators do not cost money; Temporary Bias bonus operators do not incur the -\$25 penalty.
+
+### Starting Squads
+- Players 1 and 2: \$1000 starting allowance; Player 3: \$500
+- Players cannot go into debt
+
+Squad costs:
+
+```
+Cast spec: 0$
+Guard vg: 500$
+Def sup: 300$
+Sniper medic: 500$
+Soul escort: 500$
+Collection: 250$
+Ingots: 250$
+Top gun: 301$
+Spearhead: -200$
+Mimic squad: 100$
+First class squad: 250$
+Blueprint: 650$ | 120min time limit, -1000pts every 30mins after (10min grace)
+Any other squad: 1000$
+```
+
+### Bias Bonuses (excerpt)
+
+Each bonus can only be claimed once per team. Operators mentioned do not cost dollars if the objective is completed; otherwise -\$25 per 6★.
+
+- Easy – \$50: Carnelian, Ascalon, Lappland Alter, Yu, Vina Victoria
+- Medium – \$100: Saileach, Angelina, Blitz
+- Hard – \$150: Ines, Qiu Bai, Stainless, Mlynar, Texas Alter, Archetto, Swire TW, Feater, Rathalos S Noir Corne
+- Ultra hard – \$200: Mudrock, Blaze the Igniting Spark, Viviana, Tachanka, Nymph
+- Insane – \$777: Friston-3, Melantha
+
+### General Stages (excerpt)
+
+Only the highest amount per category is obtained unless specified; with Talons of Hatred, a player may claim each category more than once.
+
+- Category 1: Dense Jungle (E) \$25; Kazfalls (E) \$35
+- Category 2: Simulated Skirmish (E) \$20; Motorized Squad (E) \$50; Firepower Squad (E) \$30; Any F3 (E) \$15
+- Category 3: Chaos (E) \$70; Elusive Merc (E) \$80; Frequent Dispute (E) \$100; Any F4 (E) \$50
+- Category 4: Land Reclamation (E) \$80; Rhine Guardians (E) \$90; Regular Army (E) \$100; Any F5 (E) \$60
+- Category 5: Quest for Consensus (E) \$70; Divine Desire (E) \$70; Heretics (E) \$120; Heavenly Paradise (E) \$150
+- Category 6: Veil of Probability/Devoted Warrior/Decapitation \$120; Brave Souls Marching/Under the Crown \$130; Courtyard of Farewells \$150; Any F3 Boss \$100
+
+### Boss Achievements (excerpt)
+- ED5: Fate's Finale \$500; Fractured +\$50
+- ED4: Dharma Sermon \$400; Fractured +\$50; Kill Quillon +\$250
+- ED3: Holy City \$100; Fractured +\$100; Kill Patriot without manual retreats +\$200
+- ED2: Court Visit \$100; with Anasa's Karma +\$200; Fractured and leak all 7 assassins +\$77
+- ED1: Emergency Lecture \$50; with Anasa's Karma +\$150; Fractured +\$30; Teleport 5 with Punishment of Foolishness +\$200
+
+### Conditional Stages
+- Bloodline Debate \$120; Epochal Gaps \$200; Sordid Surveillance \$140 (no Plans may be taken on reward screen)
+
+Accidental Plan pickup on these stages may be dropped once to still claim the bonus; from the 2nd time onward the bonus is forfeited.
+
+### Achievements (excerpt)
+- Individual: Lost Treasure feast \$100; Win 3 Face Offs \$120; F6 with Anasa's Karma and kill Cadence then pick Despair — Normal \$250 / Emergency \$500; Rolling Ancestors Dreadful Foe +\$100 each; Reality of the End Dreadful Foe +\$100 each; Leak 5 boss enemies +\$350; Plausible But False — Ask them for help +\$150; Enter F5 receive Assembly Furnace + 1 Plan +\$150; Offer all belongings with ≥20 ingots +\$3/ingot up to \$301; Lamp of Wishes with ≥4 active hands +\$500.
+- Team: Sleep an enemy 60s straight +\$100; All four Fated Encounters across teammates +\$1000; Clear Endings 2+4+5 on D18 +\$3000; Three boats task +\$333.
+
+### Collectibles Count
+- < 40: +\$400; 41–50: +\$300; 51–60: +\$200; 61+: +\$100
+
+## Yen Shop
+
+### Yen Objectives
+- Endings 1–5 between Players 1 and 2: 500¥
+- Triple ending: 500¥ each
+- Ultra hard or Insane challenges: 100¥ each (unique)
+- Ending 5 with "Reality of the End": 1000¥ (once per team)
+- Floor 7 with last 3 Dreadful Foes under fractured mental toil: 800¥ (once per team)
+
+### Yen Shop Bonuses
+- Collectibles count bonus (highest) — 500¥ (stock 1)
+- +10 ingot withdrawal limit — 50¥ (stock 10)
+- +\$500 to Player 3 starting allowance — 200¥ (stock 1)
+- Remove Blueprint time limit restriction — 1000¥ (stock 1)
+- Allow a Floor 4 reset — 1000¥ (stock 1)
+- Recruit Operator Wisadel without penalty/restriction — 2000¥ (stock 1)
+- Remove repeated-operator penalty — 300¥ per operator
+- Remove starting collectible restriction; allow a relic to be chosen after first combat — 1000¥ (stock 1)
+
+
