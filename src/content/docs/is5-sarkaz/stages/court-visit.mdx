@@ -394,7 +394,7 @@ Following this placement, Ela must be deployed only after Theresis does its last
   ![Ela placement](/guides/is5-sarkaz/stage-guides/court-visit/strategy-ela-gravel/ela-gravel-placement.png)
 </div>
 
-In this position Ela can clear the shadows in F12, E12 and D12, freeing up the high ground tiles on the left side, mainly E4, for a range operator to deal with the slugs waves throughout phase 1, while also providing slow mines to permastall Theresis in tiles G2-H2.
+In this position Ela can clear the shadows in F12, E12 and D12, freeing up the high ground tiles on the left side, mainly E4, for a range operator to deal with the slug waves throughout phase 1, while also providing slow mines to permastall Theresis in tiles G2-H2.
 
 #### Strategy
 This strategy consists on letting Theresis walk to G2-H2, deploying a mine to slow him down, deploy gravel as soon as Guardian animation starts to block the sphere and block shift him back and repeat.
@@ -415,14 +415,34 @@ If Theresis is blocked, forcing an attack as the ball attack cooldown finishes h
 This can be very problematic as Ela's slow lasts just long enough to slow for the full walk duration, in the case where he throws the sphere in between the walk this will case the slow effect to end before finishing the walk and allowing him to reach the checkpoint tile, breaking the stall and resulting into leaking him.
 To deal with this issue, a second mine can simply be placed, however it is important to consider this might be an issue without SP regen, another option is to double or triple shift Theresis.
 
+#### Video example
+* <a href="https://youtu.be/ZIWmiJDBrF0?si=Tn5_-7kvNxIEtmRc&t=855" target="_blank" rel="noopener noreferrer">Ela + Gravel stall</a>
+
 </StrategySection>
 
 
-<StrategySection title="Strategy: May + Beanstalk + Gravel stall" author="Die Alive" defaultOpen={false}>
-### May + Beanstalk + Gravel stall
+<StrategySection title="Strategy: May + Gravel stall" author="Die Alive" defaultOpen={false}>
+### May + Gravel stall
 This strategy is mainly used with Soul Escort but can sometimes be applied to other squads, in which they would be more restricted by the longer FRD and VG agent redeployment times.
 The objective in this strategy is to stall Theresis for as long as possible to deal with him after the slug waves finish.
-This is done by using May S1 to slow Theresis, Beanstalk summon to block the sphere (in which its respawn cycle matches Theresis sphere cycle perfectly), and a fast redeploy to block shift back Theresis.
+
+When the stage starts, Theresis' attack pattern is:
+* Brandish → walk → Guardian → walk → repeat
+
+Brandish has a charging time of 9s with a cooldown of 10s (starting after charging time) and Guardian has a cooldown of 18s, this makes it so Guardian will always be forced to be in between 2 Brandish attacks.
+Guardian ha its own casting time which makes it happen further into the cycle, eventually delaying it enough to be casted right before Brandish.
+This makes it so after 2 Guardian attacks, the skill will be delayed enough to be casted right before Brandish and give us the consistent attack pattern:
+* Brandish → walk → Guardian → repeat
+
+This attack pattern is what we want Theresis to follow and should be careful not to break it.
+Any auto attack from Theresis that we let him do on the blocker can break this cycle and will take some time to fix it, unnecessarily complicating the stall.
+
+The walk time in here is Guardian cooldown minus the time Theresis stands still casting Brandish, this is exactly the 9s of charging time.
+Given Theresis' MS of 0.175 tiles/s, this gives him enough time to move 1.575 tiles.
+However, if Theresis was slowed down by the standard 80% movement speed slow, this would result on $\text{MIN}(0.175 \cdot 0.2,\, 0.05) = 0.05$, allowing him to walk only 0.45 tiles, less than half of a tile which is around how far he gets pushed when being block-shifted.
+This allows for a stall method with any source of slow and block-shifter with less than around 19s of redeployment time.
+
+This is done by using May S1 to slow Theresis, and a gravel to block-shift Theresis.
 
 May S1 is an offensive recovery skill that slows the target
 - S1 lvl 7: 4 SP and 2s Slow
@@ -440,48 +460,79 @@ $\text{ASPD} = 100 \cdot \frac{\text{ATK\_Interval}}{\text{final\_ATK\_Interval}
 
 This makes it so that 150 additional ASPD is needed at E1 to permaslow, while at E2 with Mod3 only 53 additional ASPD is needed.
 Given King's Lance provided by lamp, this makes it so in order to permaslow you require:
-- S1 lvl 7: Coin-Operated Toy with 167 ingots or Golden Chalice + Coin-Operated Toy with 50 ingots
-- S1M3+Mod3: Coin-Operated Toy with 1 ingot
+- S1 lvl 7: Coin-Operated Toy with 170 ingots or Golden Chalice + Coin-Operated Toy with 50 ingots
+- S1M3+Mod3: Coin-Operated Toy with 5 ingots
 
-#### Placements
-There are 2 positions where to stall Theresis:
+#### Placement
+The most optimal placement to do this is on the top right.
 <div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
-  ![May - Beanstalk position 1](/guides/is5-sarkaz/stage-guides/court-visit/strategy-may-beanstalk-gravel/may-beanstalk-gravel-position-1.png)
+  ![May - Gravel top right position](/guides/is5-sarkaz/stage-guides/court-visit/strategy-may-beanstalk-gravel/top-right.png)
 </div>
 
-In this first position Theresis walks from F9 to D9 being slowed down by May, then proceeds to throw a sphere into Beanstalk's plant, follows up with Brandish, and lastly Gravel block shift Theresis back into F9 and the cycle repeats.
+This placement allows Gravel to block the sphere as she shifts Theresis but requires the shadow in G9 to be cleared as the stage starts and to spend a few extra bodies to shift Theresis.
+As Theresis walks into G9, May will take some time to clear the shadow in G9 and to slow Theresis down (even if the shadow was already cleared), this makes it so Theresis has to be block-shifted twice to avoid letting him reach the checkpoint in G9 from which he won't be able to be block-shifted back into G8.
 
-This positioning requires clearing the shadow that initially spawns on B8, as well as paying attention to the shadows that repeatedly spawn on F2 and F12, as they would kill Beanstalk, while the shadow in F12 might look out of reach, maintaining the shadow at E12 alive will be required for Yato S3 to be able to reach F12, alternatively, with enough deploy limit a ranged operator can be deployed on H12 to clear the shadow.
+Once setting up the stall, there are 2 things to worry about afterwards:
+* Shadow in G12 respawning
+* Slugs spawning on G9
 
-In extremly dire scenarios Beanstalk can be completely ommited and let Gravel do both jobs of tanking the sphere and block shifting with enough ASPD for an agent VG to consistently provide DP, otherwise leaving the job of blocking spheres to Beanstalk will be heavily preferable, specially with Egg and E1 Gravel, as she doesn't have the DP refund mod.
-
-While this position sounds easy to implement on paper, there are other factors to consider.
-Slugs start spawning at some point, this may cause May to stop focusing Theresis, or in the situation where May deals too much damage to any of the dreadkaz slugs, dreadkaz will spawn and will difficult block shifting Theresis back.
-It is important to know that when an operator is deployed, it prioritizes blocking the enemy closest to the center of the tile.
-Another issue is a potential mark of epoch spawn on top of May, leaving her unable to slow Theresis.
-If Theresis is not permaslowed or block shifted he will easily reach the checkpoint tile, passing the point where it can get block shifted up and breaking the cycle.
-If this happens, the stall can continue between tiles E9-D9.
-Past this point, ideally the slugs waves should be close to finished.
-Theresis will continue walking but due to the sphere and Brandish special attacks it will take some time to reach any threatening tile.
-
-Something important to look out for is how Theresis attack pattern works.
-As mentioned, he walks, throws a sphere and immediately after does Brandish, however, if he is blocked and manages to finish an attack or the attack animation is forced very closely to the sphere mechanic, this can desynchronize his attack pattern, potentially delaying the sphere to be thrown after brandish.
-This is a problem because if the sphere doesn't reach the plant to kill it and start the respawn timer, brandish will.
-This can be fixed by using Beanstalk S1 which immediately respawns the plant to block the sphere but ideally should be avoided in the first place.
-With that said, unless DP is really needed, it is better to save S1 for these situations, also given that using it at a bad timing may cause the plant to be killed either by Brandish or slugs early, completely desynchronizing it from the sphere cycle and letting it reach Theresa.
-
-If Beanstalk's plant happens to survive Theresis' sphere due to Medicine Sticks or dodge, it is important to manually kill it right after, otherwise Brandish or the slugs might do so late, delaying its respawn to block the next ball.
 <div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
-  ![May - Beanstalk position 2](/guides/is5-sarkaz/stage-guides/court-visit/strategy-may-beanstalk-gravel/may-beanstalk-gravel-position-2.png)
+**Shadow respawns**
 </div>
 
-This second position has its own advantages and disadvantages.
-It takes away the risk of breaking the cycle early which can potentially cause many issues by using Brandish on an inconvinient tile but it requires a precise timing to clear the shadows in G2, F2 and E2 as May would forcefully get distracted by these and the shadow in E12 that would kill her.
-Yato usually does not have a problem with this if cycled correctly and both Yato or an agent VG can easily clear E12.
+The shadow in G12 will constantly respawn around every 96s and will make it so May gets distracted from slowing down Theresis, here it is better to have an extra body ready to block-shift twice if May isn't able to clear the shadow in time, or some extra help to clear the shadow.
+While clearing the slugs one might lose track of which was the last shadow that has spawned, an easy way to check this is by looking at the timer under the shadows, the most recent one would be the bar that is fully charged, in this case it's the one in the middle.
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Shadows timers](/guides/is5-sarkaz/stage-guides/court-visit/strategy-may-beanstalk-gravel/shadow-timers.png)
+</div>
+Additionally, Theresa has an animation when spawning the shadows, paying attention to this we can tell exactly when the G12 shadow will respawn.
 
-This position also allows Theresis to continue being permastalled even after the waves of slugs finished and allows you to kill a window or portal with ease, as well as setting up your operators to burst P2.
+Before the slugs start spawning, the G12 shadow respawns a total of 3 times.
+The first spawn is at a safe timing, during Brandish, which usually gives May enough time to deal with it.
+The remaining 2 spawns are while Theresis is walking and will require either double block-shifting or some help to instantly clear the shadow.
+During the slug waves, the shadow respawns only once halfway through, this shadow spawns during Brandish animation, which is at a safe timing as well.
 
-The main disadvantage of this position is that it is not recoverable if any mistakes happen during the stall, at this point either you burst him down or it enters into the blue box.
+It is important to note that if Theresis isn't slowed down even for a very small portion of the walk, it is very likely that the stall will break, giving May a very small window to kill the shadow, depending when the last slow was applied to Theresis.
+Because of this, it is better to be safe and help May clearing the shadow, as well as double block-shifting when needed.
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+**Slug waves**
+</div>
+
+The threat of slugs spawning on G9 could suggest that May gets distracted from slowing down Theresis or that when deploying Gravel, the slug gets blocked, leaving Theresis as the 2nd target getting blocked from which it can get shifted slightly upwards or downwards, possibly messing up the walk timing.
+These two possibilities aren't actually as dangerous as they may appear.
+
+First, for the threat in which Gravel could block the slug before Theresis, luckily this isn't the case.
+When Theresis has to be block-shifted, regardless of the slug remaining standing still on the tile, Gravel will prioritize blocking Theresis first.
+
+When the slugs spawn on G9 they stand still for a few seconds, May will continue attacking Theresis while they stand still, only after the slug starts moving May will attack it.
+
+Theresis' attack timings are fixed, as well as the slugs spawn timings.
+Given that Theresis attacks don't get delayed by an attack animation right before Guardian or Brandish, this makes it so the slugs' spawn timings are consistent with Theresis Guardian and Brandish timings.
+There are 6 slugs in total that spawn on G9. The most threatening one is the first one that starts moving before Theresis starts Guardian, May can easily get distracted here (heavily favoring E2 May over E1 for the extra slow time) and might require double block-shifting.
+The 2nd slug starts moving just a few frames before Guardian but shouldn't generally cause any issues with May getting distracted as Theresis should remain slowed down for the remaining part of the walk.
+The remaining 4 slugs start moving during Guardian/Brandish animations.
+
+If May has too much ASPD to slow down the slugs, she might stall the slugs long enough to remain distracted after Brandish animation finishes, double block-shifting should be enough to deal with this.
+
+One additional problem out of these slugs is that May could kill them, spawning a Dreadkaz.
+While this is rare and mainly happens when May has too much damage, this is only an issue if the Dreadkaz spawns on G9 instead of F9 (the tile below).
+Either a block 2 operator would be required to double block-shift Theresis in case May gets distracted or to place Gravel on G7 to block the sphere and block Theresis during Brandish animation afterwards.
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+**Video example**
+</div>
+* <a href="https://youtu.be/ZIWmiJDBrF0?si=2N32hWcf59gjEbWA&t=0" target="_blank" rel="noopener noreferrer">E2 May with 55 additional ASPD</a>
+
+#### Bottom left
+After the slug waves are done, Theresis should be lowered down and operators should be prepared to deal with Phase 2.
+While this can be done in the top right position, this requires May to deal with the shadow in G12 which isn't very optimal, for this reason it is better to let Theresis walk after lowering down his HP to continue the stall on the bottom left corner.
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![May - Gravel bottom left position](/guides/is5-sarkaz/stage-guides/court-visit/strategy-may-beanstalk-gravel/bottom-left.png)
+</div>
+
+This placement allows Gravel to block the sphere while shifting at the same time and leaving Theresis' Brandish to ban the C row and columns 2 and 3, which aren't generally used for placements to prepare for Phase 2, appart from pullers with relatively fast skills to charge that can be deployed after phasing.
 
 </StrategySection>
 
@@ -758,16 +809,16 @@ The best and worst phase 2 start possible scenarios are:
 * Kal'tsit skill ready on phase 2 start
 * Mon3tr summon retreated as Theresis dies
 
-Kal'tsit's skill is a 35s cycle skill and her summon redeployment time is 25s. This results in Kal'tsit being able to use her skill the following number of times:
+Kal'tsit's skill has a 35s cycle and her summon redeployment time is 25s. This results in Kal'tsit being able to use her skill the following number of times:
 * Kal'tsit skill ready on phase 2 start
-  * No MS debuffs: 
+  * No MS debuffs: 3 Skills
   * 'Painful Happiness': 3 skills
-  * Boat with an operator loaded: 3 skills
+  * Boat with an operator loaded: 3.75 skills (Kal will have to be undeployed 5s before her 4th skill completes)
   * 'Painful Happiness' + Boat with an operator loaded: 4 skills
 * Mon3tr summon retreated as Theresis dies
   * No MS debuffs: 2 skills
   * 'Painful Happiness': 2 skills
-  * Boat with an operator loaded: 2 skills
+  * Boat with an operator loaded: 2.5 skills
   * 'Painful Happiness' + Boat with an operator loaded: 3 skills
 
 Next, it is important to notice that some relics affect specifically operators only while others specify *"all allied units"*, which include summons.
@@ -802,35 +853,35 @@ The total damage output per skill would be:
     </tr>
     <tr>
       <td align="center">50</td>
-      <td align="center">89,501.05</td>
-      <td align="center">0.08%</td>
+      <td align="center">119,334.74</td>
+      <td align="center">10.90%</td>
       <td align="center"></td>
-      <td align="center">110,155.14</td>
-      <td align="center">0.10%</td>
+      <td align="center">146,873.52</td>
+      <td align="center">13.42%</td>
     </tr>
     <tr>
       <td align="center">100</td>
-      <td align="center">119,334.74</td>
-      <td align="center">0.11%</td>
+      <td align="center">159,112.98</td>
+      <td align="center">14.54%</td>
       <td align="center"></td>
-      <td align="center">146,873.52</td>
-      <td align="center">0.13%</td>
+      <td align="center">195,831.36</td>
+      <td align="center">17.89%</td>
     </tr>
     <tr>
       <td align="center">350</td>
-      <td align="center">275,387.85</td>
-      <td align="center">0.25%</td>
+      <td align="center">367,183.8</td>
+      <td align="center">33.55%</td>
       <td align="center"></td>
-      <td align="center">338,938.89</td>
-      <td align="center">0.31%</td>
+      <td align="center">451,918.5231</td>
+      <td align="center">41.29%</td>
     </tr>
     <tr>
       <td align="center">500</td>
-      <td align="center">358,004.21</td>
-      <td align="center">0.33%</td>
+      <td align="center">477,338.94</td>
+      <td align="center">43.61%</td>
       <td align="center"></td>
-      <td align="center">440,620.56</td>
-      <td align="center">0.40%</td>
+      <td align="center">587,494.08</td>
+      <td align="center">53.67%</td>
     </tr>
   </tbody>
 </table>
