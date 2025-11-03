@@ -1,0 +1,162 @@
+---
+const { title = 'Leaderboard', dataUrl = '/events/kazdel-kasino-2/scoreboard.json', refreshMs = 15000 } = Astro.props;
+---
+
+<style>
+  .scoreboard {
+    margin: 1rem 0 2rem 0;
+    background: var(--sl-color-bg-nav);
+    border: 1px solid var(--sl-color-border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0,0,0,.15);
+    width: 100%;
+    display: block;
+  }
+  .scoreboard-body {
+    padding: 0 1rem 1rem;
+  }
+  .scoreboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .875rem 1rem;
+    background: var(--sl-color-accent-low);
+    border-bottom: 1px solid var(--sl-color-border);
+  }
+  .scoreboard-title {
+    font-weight: 700;
+    margin: 0;
+  }
+  .refresh-hint {
+    font-size: .85rem;
+    color: var(--sl-color-text-subtle);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  thead th {
+    text-align: left;
+    font-size: .9rem;
+    color: var(--sl-color-text-subtle);
+    padding: .75rem 2rem;
+    border-bottom: 1px solid var(--sl-color-border);
+  }
+  thead th.points { text-align: left; }
+  tbody td {
+    padding: .75rem 2rem;
+    border-bottom: 1px solid var(--sl-color-hairline);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  tbody tr:hover {
+    background: var(--sl-color-gray-6);
+  }
+  .team {
+    font-weight: 600;
+    width: 30%;
+  }
+  .players {
+    width: 50%;
+  }
+  .points {
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+    width: 20%;
+  }
+  .updated {
+    padding: .5rem 1rem;
+    font-size: .8rem;
+    color: var(--sl-color-text-subtle);
+  }
+  @media (max-width: 640px) {
+    thead { display: none; }
+    table, tbody, tr, td { display: block; width: 100%; }
+    tbody tr { border-bottom: 1px solid var(--sl-color-border); }
+    tbody td { display: flex; justify-content: space-between; }
+    tbody td::before { content: attr(data-label); color: var(--sl-color-text-subtle); }
+    .points { text-align: left; }
+  }
+</style>
+
+<div class="scoreboard" id="scoreboard-container">
+  <div class="scoreboard-header">
+    <h3 class="scoreboard-title">{title}</h3>
+  </div>
+  <div class="scoreboard-body">
+    <table id="kk2-table">
+      <thead>
+        <tr>
+          <th class="team">Team</th>
+          <th class="players">Players</th>
+          <th class="points">Points</th>
+        </tr>
+      </thead>
+      <tbody id="kk2-tbody">
+        <tr><td class="updated" colspan="3">Loading…</td></tr>
+      </tbody>
+    </table>
+    <div class="updated" id="kk2-updated"></div>
+  </div>
+</div>
+
+<script define:vars={{ dataUrl, refreshMs }}>
+  console.log('Scoreboard script starting...', dataUrl);
+  
+  const scoreboard = document.getElementById('scoreboard-container');
+  if (!scoreboard) {
+    console.error('Scoreboard container not found');
+    return;
+  }
+  
+  const tbody = document.getElementById('kk2-tbody');
+  const updatedEl = document.getElementById('kk2-updated');
+  
+  if (!tbody || !updatedEl) {
+    console.error('Required elements not found', { tbody: !!tbody, updatedEl: !!updatedEl });
+    return;
+  }
+
+  async function loadScores() {
+    try {
+      console.log('Fetching scores from:', dataUrl);
+      const res = await fetch(dataUrl + '?t=' + Date.now(), { cache: 'no-store' });
+      console.log('Response status:', res.status);
+      
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      
+      const json = await res.json();
+      console.log('Received data:', json);
+      
+      const rows = Array.isArray(json.teams) ? json.teams : [];
+      rows.sort((a,b) => (b.points||0) - (a.points||0));
+      
+      tbody.innerHTML = '';
+      rows.forEach((t, idx) => {
+        const tr = document.createElement('tr');
+        const players = (t.players||[]).join(', ');
+        tr.innerHTML = `
+          <td class="team">${t.team||''}</td>
+          <td class="players">${players}</td>
+          <td class="points">${t.points??0}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+      
+      const updated = json.updatedAt ? new Date(json.updatedAt) : new Date();
+      updatedEl.textContent = ``;
+      console.log('Scoreboard updated successfully');
+    } catch (e) {
+      console.error('Scoreboard error:', e);
+      tbody.innerHTML = '<tr><td class="updated" colspan="3">Failed to load scores: ' + e.message + '</td></tr>';
+    }
+  }
+
+  console.log('Starting scoreboard...');
+  loadScores();
+  setInterval(loadScores, refreshMs);
+</script>
+
+

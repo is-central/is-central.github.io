@@ -1,0 +1,538 @@
+---
+title: Kazdel Kasino 2
+description: A team-based IS tournament.
+template: doc
+---
+
+import TournamentScoreboard from '../../../components/TournamentScoreboard.astro';
+
+<div style="position: relative; width: 100%; max-width: 800px; margin: 0 auto;"><img src="/events/kazdel-kasino-2/kazdel-kasino-2-banner.png" alt="Kazdel Kasino 2 Tournament Banner" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /></div>
+
+Kazdel Kasino 2 is a team-based tournament with teams of 3 players. Players earn money by completing objectives during their runs, then convert those dollars into placement points using a summon simulator at the end. The top 8 teams proceed to Round 2; the final placement is also leaderboard-based.
+
+
+{/*
+<TournamentScoreboard
+  title="Scoreboard"
+  dataUrl="/events/kazdel-kasino-2/scoreboard.json"
+  refreshMs={15000}
+/> 
+*/}
+
+## Format
+
+- Team of 3 players
+- Player 3: Difficulty 18
+- Players 1 and 2 choose difficulties so that the sum across all three is 48
+- Players finish their run, then immediately use the summon simulator to earn placement points
+- Leaderboard: Top 8 proceed to Round 2; final placement determined by Round 2 leaderboard
+
+## Registration Requirements
+- Players 1 and 2 must provide screenshots of clearing **Facing souls 15+** with the **lost key** relic.
+- Player 3 must provide screenshots of clearing **Facing souls 18** with either the **lost key** or **anasas karma relic** without the **prophet horn relic**.
+- Players must be able to stream runs on Discord.
+- Runs may be streamed on <a href="https://twitch.tv/oyana1234" target="_blank" rel="noopener noreferrer">twitch.tv/oyana1234</a>.
+- Players must be members of the <a href="https://discord.gg/fqRBzQWVfK" target="_blank" rel="noopener noreferrer">IS Central Discord</a>.
+
+![Registration Requirements](/events/kazdel-kasino-2/registration-guidelines.png)
+
+**Registration:** <a href="https://forms.gle/9Q4ZTF3ghVtnpe367" target="_blank" rel="noopener noreferrer">Google registration form</a>
+
+## Rules
+
+### Fated Encounter
+Each team cannot select the following relics more than once per team: "Talons of Hatred", "Lamp of Wishes".
+
+### Wiš'adel
+Wiš'adel cannot be picked unless it's a temporary recruit after a combat or Silver Seal.
+
+### Balance Limit Withdrawal
+- Players 1 and 2 share 100 ingots; Player 3 has 50 initial ingots to withdraw.
+- Every ingot withdrawn deducts the player \$500 per ingot.
+
+### Run Preparation
+- Only the following floor 3 bonus buffs are allowed: Kettle, 2 Hope, 2 Plans.
+- Players can finish the first combat but cannot select any relics from the first combat.
+- Players must select an encounter as their 2nd node on the floor.
+- The 2nd node must be "Fated encounter" and players must stop at this screen.
+- If a player does not want a Fated Encounter relic, they must stop after the first combat. Rerolling the 2nd node is allowed.
+
+### Reset
+- All players start with 0 available resets.
+- Emulator crashes: each player allowed 1 restart per tournament (subject to organizer review).
+
+### Miscellaneous
+- Players are allowed to change squads after rerolling
+- Players are allowed to openly communicate at all times during their runs.
+- The relic “Masterless Memories” is allowed to be selected in the run
+- Players may only use the account they used to register with.
+- Players cannot use Chinese and Taiwanese server accounts.
+- All bonuses and penalties will be calculated at the end of the run.
+
+## Tournament Dynamic
+
+The tournament consists of all players completing a variety of tasks from which they gain dollars, while players 1 and 2 also earn yen. Player 3 can spend yen in the yen shop to buy bonuses to facilitate their run. After all runs are completed, the dollars accumulated are used in a gacha simulator to determine the final score.
+
+
+### Dollars Currency
+Starting and throughout the run, dollars are used to buy their starting squad and operators according to their cost. Throughout the run, players can get more dollars to either spend into more operators or save for the gacha simulator.
+
+- Dollars are spent in: Operators, Starting squads, Final score
+- Dollars are obtained by completing: Bias bonuses, General stages, Conditional stages, Achievements, Final collectibles count
+
+### Final Scoring
+- After the 3rd player finishes their run, the Team can now spend all the accumulated Dollars on a Summon Simulator.
+- A player from the team must stream the following website <a href="https://lungmendragons.com/gachasim" target="_blank" rel="noopener noreferrer">Lungmen Dragons gacha simulator</a>
+- The team can select any banner from the simulator and can change the banner at any time during the session.
+- If reset history is clicked, the pulling will continue from that moment onwards. The VOD will be reviewed to determine the score before the reset history was clicked.
+- The summon simulator follows the same rules and rates as the in-game summoning system such as pity.
+- Teams will receive score based on the rarity of the operators recruited:
+  - For Every 6 star operator summoned = 360 pts
+  - For Every 5 star operator summoned = 120 pts
+  - For Every 3 and 4 star operator summoned = 10pts
+
+
+### Operator Costs
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Operators](/events/kazdel-kasino-2/operators.png)
+</div>
+- 6★ selector list (\$75):
+  - Exusiai the New Covenant
+  - Tragodia
+  - Mon3tr
+  - Hoederer
+  - Rosmontis
+- 6★ selector list (\$50):
+  - Kal'tsit
+  - Kirin R Yato
+  - Ela
+  - Logos
+  - Narantuya
+  - Eyjafjalla the Hvít Aska
+  - SilverAsh
+  - Ulpianus
+  - Mizuki
+  - Degenbrecher
+- All other non-bias 6★: \$35
+- The Amy list (35\$)
+  - Greyy alter
+  - Surfer
+  - Cantabile
+  - Amiya
+  - Tin man
+
+
+
+
+### Penalties
+- If a 6★ operator is recruited twice within the team, the cost of the operator will be original cost x3
+- If a 6★ operator is recruited three times within the team, the cost of the operator will be original cost x6
+- Bias bonus do not count towards the duplicate penalty (more on this later)
+
+### Temporary Operators
+- All temporary operators do not cost money; Temporary Bias bonus operators do not incur the -\$25 penalty.
+
+### Starting Squads
+- Players 1 and 2: \$1000 starting allowance
+- Player 3: \$500
+- Players cannot go into debt
+
+#### Squad costs:
+<div style={{ display: "flex", justifyContent: "center" }}>
+| Squad                                                                                                                                                                                                         | Cost  |
+|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----:|
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Soul_Escort_Squad.png" alt="Soul Escort" />Soul Escort</span>                                                                    | $500  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Erudite_Squad.png" alt="Erudite" />Erudite</span>                                                                                | -$100 |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Blueprint_Squad.png" alt="Blueprint" />Blueprint*</span>                                                                          | $650  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Spearhead_Squad_5.png" alt="Spearhead" />Spearhead</span>                                                                        | -$200 |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Assault_Squad_5.png" alt="Tactical Assault Squad (Guard/VG)" />Tactical Assault Squad (Guard/VG)</span>                 | $500  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Fortification_Squad_5.png" alt="Tactical Fortification Squad (Def/Sup)" />Tactical Fortification Squad (Def/Sup)</span> | $300  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Ranged_Squad_5.png" alt="Tactical Ranged Squad (Sniper/Med)" />Tactical Ranged Squad (Sniper/Med)</span>                | $500  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Destruction_Squad_5.png" alt="Tactical Destruction Squad (Spec/Cast)" />Tactical Destruction Squad (Spec/Cast)</span>   | $0    |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-First-Class_Squad_5.png" alt="First-Class" />First-Class</span>                                                                  | $250  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Ingots_Squad.png" alt="Ingots" />Ingots</span>                                                                                   | $250  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Collection_Squad.png" alt="Collection" />Collection</span>                                                                       | $250  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Mimic_Squad.png" alt="Mimic" />Mimic</span>                                                                                      | $100  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Top_Gun_Squad.png" alt="Top Gun" />Top Gun</span>                                                                                | $301  |
+| Other                                                                                                                                                                                                         | $1000 |
+</div>
+
+$^*$Blueprint squad has a 120 minutes time limit, -1000pts every 30 minutes afterwards (10 minutes grace period)
+
+{/* ```
+Cast spec: 0$
+Guard vg: 500$
+Def sup: 300$
+Sniper medic: 500$
+Soul escort: 500$
+Collection: 250$
+Ingots: 250$
+Top gun: 301$
+Spearhead: -200$
+Mimic squad: 100$
+First class squad: 250$
+Blueprint: 650$ | 120min time limit, -1000pts every 30mins after (10min grace)
+Any other squad: 1000$
+``` */}
+
+### Bias Bonuses
+
+Each bonus can only be claimed once per team. Operators mentioned do not cost dollars if the objective is completed; otherwise -\$25 per 6★.
+
+<ul style={{ paddingLeft: '2.5em' }}>
+  <li>
+    Easy (\$50)
+    <ul style={{ paddingLeft: '1.5em' }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Carnelian_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Carnelian: Kill 5 enemies with 1 skill</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Ascalon_Skin_1_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Ascalon: Have both protraction hand and book by the end of the run</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Lappland_the_Decadenza_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Lappland the Decadenza: Recruit and promote a 5 star splash caster in the squad</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Yu_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Yu: With S3 active, proc burn on a dreadful foe</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Vina_Victoria_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Vina Victoria: While s3 is active, have 7 allies take damage at the same time</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    Medium (\$100)
+    <ul style={{ paddingLeft: '1.5em' }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Saileach_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Saileach: Heal 2 healing chests with only saileach</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Angelina_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Angelina: With angelina s3 active, shift a dreadful foe at least 4 tiles in a single skill activation</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Blitz_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Blitz: Stun 3 flying enemies in 1 skill activation</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    Hard ($150)
+    <ul style={{ paddingLeft: '1.5em' }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Ines_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Ines: Cannot be invisible after recruitment</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Qiubai_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Qiubai: Recruit Qiubai as the starting operator at elite 1</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Stainless_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Stainless: After recruitment, Deploy Stainless within the first 15 enemies killed of every stage</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Młynar_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Młynar: While blocking Qui'lon, Deal 25% of HP damage in 1 skill activation</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Texas_the_Omertosa_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Texas the Omertosa: Stun 5 bind casters within a single stage</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Archetto_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Archetto: After recruitment, do not deal any damage to any spines</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Swire_the_Elegant_Wit_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Swire the Elegant Wit: Defy death 5 times in a single deployment</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-FEater_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Feater: Push with Feater 4 times in 2 different positions within 90seconds</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Rathalos_S_Noir_Corne_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Rathalos S Noir Corne: Resist 5 attacks from a dreadful foe in a single deployment</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    Ultra hard ($200)
+    <ul style={{ paddingLeft: '1.5em' }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Mudrock_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Mudrock: Deal a full hp bar of damage to a dreadful foe</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Blaze_the_Igniting_Spark_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Blaze the Igniting Spark: Have an Enemy hit blaze and activate Talent2 3 times in a single combat without un-deploying blaze</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Viviana_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Viviana: Deal a full hp bar of damage to a dreadful foe</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Tachanka_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Tachanka: Clear a face off while only deploying tachanka</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Nymph_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Nymph: While having a supporter trigger necrosis, use the skill "Crumbling heart" to deal damage to a dreadful foe on floor 5 or higher</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    Insane ($777)
+    <ul style={{ paddingLeft: '1.5em' }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Friston-3_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Friston-3: Use Friston to tank Theresis above 90% hp and friston cannot die or be undeployed until Theresis phase 2</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Melantha_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Melantha: Deal a full hp bar of damage to Amiya, Furnace's Finale' 2nd Form</span>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+
+{/* 
+- Easy (\$50):
+  - Carnelian: Kill 5 enemies with 1 skill
+  - Ascalon: Have both protraction hand and book by the end of the run
+  - Lappland the Decadenza: Recruit and promote a 5 star splash caster in the squad
+  - Yu: With S3 active, proc burn on a dreadful foe
+  - Vina Victoria: While s3 is active, have 7 allies take damage at the same time
+- Medium (\$100):
+  - Saileach: Heal 2 healing chests with only saileach
+  - Angelina: With angelina s3 active, shift a dreadful foe at least 4 tiles in a single skill activation
+  - Blitz: Stun 3 flying enemies in 1 skill activation
+- Hard (\$150):
+  - Ines: Cannot be invisible after recruitment
+  - Qiu Bai: Recruit Qiu bai as the starting operator at elite 1
+  - Stainless: After recruitment, Deploy Stainless within the first 15 enemies killed of every stage
+  - Młynar: While blocking Qui'lon, Deal 25% of HP damage in 1 skill activation
+  - Texas the Omertosa: Stun 5 bind casters within a single stage
+  - Archetto: After recruitment, do not deal any damage to any spines
+  - Swire the Elegant Wit: Defy death 5 times in a single deployment
+  - Feater: Push with Feater 4 times in 2 different positions within 90seconds
+  - Rathalos S Noir Corne: Resist 5 attacks from a dreadful foe in a single deployment
+- Ultra hard (\$200):
+  - Mudrock: Deal a full hp bar of damage to a dreadful foe
+  - Blaze the Igniting Spark: Have an Enemy hit blaze and activate Talent2 3 times in a single combat without un-deploying blaze
+  - Viviana: Deal a full hp bar of damage to a dreadful foe
+  - Tachanka: Clear a face off while only deploying tachanka
+  - Nymph: While having a supporter trigger necrosis, use the skill "Crumbling heart" to deal damage to a dreadful foe on floor 5 or higher
+- Insane (\$777):
+  - Friston-3: use Friston to tank Theresis above 90% hp and friston cannot die or be undeployed until Theresis phase 2
+  - Melantha: deal a full hp bar of damage to Amiya, Furnace's Finale' 2nd Form */}
+
+### General Stages
+General stages are classified into different categories, only the highest amount of dollars from each category will be obtained unless specified otherwise (multiple teammates can get the same bonuses). If a player has talons of hatred, they claim each category bonus more than once.
+
+#### Category 1:
+- Clear emergency Dense Jungle: \$25
+- Clear emergency Kaz Falls: \$35
+
+#### Category 2:
+- Clear emergency Simulated Skirmish: \$20
+- Clear emergency Motorized Squad: \$50
+- Clear emergency Firepower Squad: \$30
+- Clear any floor 3 emergency stage: \$15
+
+#### Category 3: 
+- Clear emergency Chaos: \$70
+- Clear emergency Elusive Merc: \$80
+- Clear emergency Frequent Dispute: \$100
+- Clear any floor 4 emergency: \$50
+
+#### Category 4:   
+- Clear emergency Land Reclamation: \$80
+- Clear emergency Rhine Guardians: \$90
+- Clear emergency Regular Army: \$100
+- Clear any floor 5 emergency: \$60
+
+#### Category 5:
+- Clear emergency Quest For Consensus: \$70
+- Clear emergency Divine Desire: \$70
+- Clear emergency 'Heretics': \$120
+- Clear emergency Heavenly Paradise: \$150
+
+#### Category 6:
+- Clear Veil of Probability or Devoted Warrior or Decapitation: \$120
+- Clear Brave Souls Marching or Under The Crown: \$130
+- Clear Courtyard of Farewells: \$150
+- Clear any f3 boss stage: \$100
+
+### Boss Achievements
+Complete the following conditions per run to obtain bonus money:
+#### ED5
+- Clear Fate's Finale: \$500
+- Clearing Fractured Fate's Finale: additional \$50
+
+#### ED4
+- Clear The Dharma Sermon: \$400
+- Clearing Fractured The Dharma Sermon: additional \$50
+- Kill Qui'lon: additional \$250
+
+#### ED3
+- Clear Holy City: \$100
+- Clear Holy City Fractured: additional \$100
+- Kill Patriot without manually retreating any operator during the whole fight: \$200
+
+#### ED2
+- Clear Court Visit: \$100
+- Clear with Anasa's Karma: additional \$200
+- Clear while fractured and leak all 7 assassins: \$77
+
+#### ED1
+- Clear Emergency Lecture: \$50
+- Clear with Anasas Karma: additional \$150
+- Clear Fractured: additional \$30
+- Have at least 5 operators teleported with the skill Punishment of foolishness: \$200
+
+### Conditional Stages
+Completing the following stages and not taking a plan will grant bonus money:
+- Bloodline Debate: \$120
+- Epochal Gaps: \$200
+- Sordid Surveillance: \$140
+
+Spines can be destroyed but taking any plans during the reward screen after stage will nullify the bonus.
+
+If a player picks up plans by accident on the bonus plan stages, you are allowed to drop the plan and get the bonus once. From the 2nd time onwards you pick up the plan from a bonus stage, you can no longer drop plans towards the bonus.
+
+### Achievements
+#### Individual achievements:
+<div style={{ display: "flex", justifyContent: "center" }}>
+| Achievement                                                                                                                                     | Reward                           |
+|:-----------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------:|
+| Win 3 Face Off nodes in a single run                                                                                                            | \$120                            |
+| In the Encounter "Plausible But False" select the option "Ask them for help"                                                                    | \$150                            |
+| In the Encounter “Lost treasure” select the option “I'd rather have a feast”                                                                    | \$100                            |
+| In the Encounter "Good fortune to you" select the option "Offer all of your belongings" while you have at least 20 ingots                       | \$3 per ingot spent up to \$301  |
+| Upon entering floor 5 receive the Assembly Furnace and 1 plan                                                                                   | \$150                            |
+| Have At least 100 “Shrivel and Sprouts” in your inventory at one time                                                                           | \$777                            |
+| Clear a stage on floor 6 with Anasa’s Karma and kill the cadence in the stage and pick up despair                                               | \$250 (NM) \| \$500 (EM)         |
+| Leak 5 boss enemies in a single stage                                                                                                           | \$350                            |
+| For Every dreadful foe stage cleared while you possess the relic "Rolling Ancestors"                                                            | \$100                            |
+| For Every dreadful foe stage cleared while possessing the relic "Reality of the End"                                                            | \$100                            |
+| While having the lamp of wishes, acquire at least 4 active hands (Hands are active when the squad has an operator that is affected by the hand) | \$500                           |
+</div>
+
+{/* The following Achievements can be claimed once per run.
+- In the Encounter “Lost treasure” select the option “I'd rather have a feast” -  100$
+- Win 3 Face Off nodes in a single run - 120$
+- Clear a stage on floor 6 with Anasa’s Karma and kill the cadence in the stage and pick up despair:
+  - Normal floor 6 stage -  250$
+  - Emergency floor 6 stage - 500$
+- For Every dreadful foe stage cleared while you possess the relic "Rolling Ancestors" - 100$
+- For Every dreadful foe stage cleared while possessing the relic "Reality of the End" - 100$
+- Leak 5 boss enemies in a single stage - 350$
+- In the Encounter "Plausible But False" select the option "Ask them for help" - 150$
+- Upon entering floor 5 receive the Assembly Furnace and 1 plan - 150$
+- In the Encounter "Good fortune to you" select the option "Offer all of your belongings" while you have at least 20 ingots - 3$ per ingot spent up to 301$.
+- While having the lamp of wishes, acquire at least 4 active hands - 500$ (Hands are active when the squad has an operator that is affected by the hand)
+- Have At least 100 “Shrivel and Sprouts” in your inventory at one time. - 777$ */}
+
+#### Team-based achievements:
+<div style={{ display: "flex", justifyContent: "center" }}>
+| Achievement                                                                                                                                                                                         | Reward |
+|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:------:|
+| Sleep an enemy for 60s straight within a stage                                                                                                                                                      | \$100  |
+| Between all teammates, have all 4 fated encounters options by the end screen                                                                                                                        | \$1000 |
+| Clear endings 2+4+5 on Difficulty 18                                                                                                                                                                 | \$3000 |
+| Across 3 Players, Load 3 different operators on a single boat on 3 different dreadful foe stages, while having all 3 operators be the same across all 3 boats and have each boat enter the blue box | \$333  |
+</div>
+
+{/* - Sleep an enemy for 60s straight - 100$
+- Between all teammates, have all 4 fated encounters options by the end screen. - 1000$
+- Clear ending 2+4+5 on Difficulty 18 - 3000$
+- Across 3 Players, Load 3 different operators on a single boat on 3 different dreadful foe stages, while having all 3 operators be the same across all 3 boats and have each boat enter the blue box. - 333$ */}
+
+
+### Collectibles Count
+- < 40: \$400
+- 41–50: \$300
+- 51–60: \$200
+- 61+: \$100
+
+## Yen Shop
+
+### Yen Objectives
+<div style={{ display: "flex", justifyContent: "center" }}>
+| Objective                                                     | Reward                    |
+|:-------------------------------------------------------------:|:-------------------------:|
+| Endings 1–5 between Players 1 and 2                                           | 500¥      |
+| Triple ending                                                                 | 500¥ each |
+| Ultra hard or Insane challenges (unique per challenge)                        | 100¥ each |
+| Ending 5 with "Reality of the End" (once per team)                            | 1000¥     |
+| Floor 7 with last 3 Dreadful Foes under fractured mental toil (once per team) | 800¥      |
+</div>
+
+{/* - Endings 1–5 between Players 1 and 2: 500¥
+- Triple ending: 500¥ each
+- Ultra hard or Insane challenges: 100¥ each (unique)
+- Ending 5 with "Reality of the End": 1000¥ (once per team)
+- Floor 7 with last 3 Dreadful Foes under fractured mental toil: 800¥ (once per team) */}
+
+### Yen Shop Bonuses
+<div style={{ display: "flex", justifyContent: "center" }}>
+| Bonus                                                                                  | Cost  | Stock    |
+|:--------------------------------------------------------------------------------------:|:-----:|:--------:|
+| Collectibles count bonus (highest)                                                     | 500¥  | 1        |
+| +10 ingot withdrawal limit                                                             | 50¥   | 10       |
+| +\$500 to Player 3 starting allowance                                                  | 200¥  | 1        |
+| Remove Blueprint time limit restriction                                                | 1000¥ | 1        |
+| Allow a Floor 4 reset                                                                  | 1000¥ | 1        |
+| Recruit Operator Wiš'adel without penalty/restriction                                  | 2000¥ | 1        |
+| Remove repeated-operator penalty (per operator)                                        | 300¥  | $\infty$ |
+| Remove starting collectible restriction; allow a relic to be chosen after first combat | 1000¥ | 1        |
+</div>
+
+{/* - Collectibles count bonus (highest) — 500¥ (stock 1)
+- +10 ingot withdrawal limit — 50¥ (stock 10)
+- +\$500 to Player 3 starting allowance — 200¥ (stock 1)
+- Remove Blueprint time limit restriction — 1000¥ (stock 1)
+- Allow a Floor 4 reset — 1000¥ (stock 1)
+- Recruit Operator Wiš'adel without penalty/restriction — 2000¥ (stock 1)
+- Remove repeated-operator penalty — 300¥ per operator
+- Remove starting collectible restriction; allow a relic to be chosen after first combat — 1000¥ (stock 1)
+ */}
+

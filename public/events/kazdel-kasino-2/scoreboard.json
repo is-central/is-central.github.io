@@ -1,0 +1,8 @@
+{
+  "updatedAt": "2025-01-28T10:30:00.000Z",
+  "teams": [
+    { "team": "Team Name", "players": ["Player1", "Player2", "Player3"], "points": 0 }
+  ]
+}
+
+
