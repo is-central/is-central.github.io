@@ -141,7 +141,7 @@ Throughout the run, players can get more dollars to either spend into more opera
 ### Starting Squads
 - Players 1 and 2: \$1000 starting allowance
 - Player 3: \$500
-- Players cannot go into debt
+- Players cannot go into debt when choosing a squad
 
 #### Squad costs:
 <div style={{ display: "flex", justifyContent: "center" }}>
@@ -304,7 +304,7 @@ Each bonus can only be claimed once per team. Operators mentioned do not cost do
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Nymph_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Nymph: While having a supporter trigger necrosis, use the skill "Crumbling heart" to deal damage to a dreadful foe on floor 5 or higher</span>
+        <span style={{ lineHeight: 1 }}>Nymph: While having a Supporter trigger necrosis, use the skill "Crumbling heart" to deal damage to a dreadful foe on floor 5 or higher</span>
       </li>
     </ul>
   </li>
@@ -534,3 +534,32 @@ This can only be claimed if the run is won.
 - Remove starting collectible restriction; allow a relic to be chosen after first combat — 1000¥ (stock 1)
  */}
 
+## FAQ
+
+**Q**: If Players 1 and 2 both draft the same bias bonus operator, how are the penalty dollars calculated?\
+**A**: The base cost of a bias bonus operator is \$25 and is only \$0 when the corresponding bias challenge is completed.
+
+Consider the following scenarios with Młynar being the bias bonus operator:
+1. Player 1 completes the Młynar bonus challenge while player 2 drafts Młynar but does not complete the challenge; the incurred cost on player 2 is \$$25 \cdot 3$ = \$75
+2. Player 1 does not complete the Młynar bonus challenge while player 2 completes the challenge; the incurred cost on player 1 is \$25
+3. Player 1 and 2 both fail the challenge, the incurred cost is \$25 + \$75 = \$100
+4. Player 1 and 2 both complete the challenge, the incurred cost is \$0 for both players. However the bonus can only be claimed once (\$$150 \cdot 1$)
+
+**Q**: How does the operator restriction penalty removal work in the Yen shop?\
+**A**: The operator restriction penalty removal reward only applies to Player 3, effectively setting the base cost of an operator to $0. Players 1 and 2 are not affected by this removal. 
+
+**Q**: What is a triple ending?\
+**A**: A triple ending is an Integrated Strategies run where three ending boss have been defeated. Ending bosses include Floor 5,6,7 Dreadful foe stages. Clearing only Victory Rewind does not count as defeating an ending boss. 
+
+**Q**: What is the "Across 3 Players, select 3 different dradful foes to load the same 3 operators on a boat,..." team achievement? Any examples of what counts/does not count?\
+**A**: Consider the following scenarios:
+1. Player 1 loads Deepcolor, May and Beanstalk on a boat on Court Visit. Player 2 and 3 also load the same operators on Dharma Sermon and Fate's Finale respectively. The achievement is considered completed.
+2. Player 1 loads Deepcolor, May and Beanstalk on a boat on Court Visit and Dharma Sermon. Player 3 also load the same operators on Fate's Finale. The achievement is considered completed.
+3. Player 1 loads Deepcolor, May and Beanstalk on a boat on Court Visit and Dharma Sermon. Player 2 and 3 also load the same operators on Dharma Sermon but not Fate's Finale respectively. The achievement is considered incomplete.
+4. Player 1 loads Deepcolor, May and Beanstalk on a boat on Court Visit. Player 2 and 3 also load the same operators on Dharma Sermon and Fate's Finale respectively. However, the boat does not reach the blue box in Fate's Finale. The achievement is considered incomplete. 
+
+**Q**: Does drafting initial 6★ operators during initial recruitment consume dollars in the starting allowance?\
+**A**: No, the choice of your initial operator draft does not impact your ability to choose which starting squad, only your starting allowance. The remainder of your starting allowance is converted into dollars. 
+
+**Q**: When are dollar bonuses/penalties calculated?\
+**A**: Dollar bonuses/penalties are calculated at the end of the player's individual run. 
