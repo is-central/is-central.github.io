@@ -1131,6 +1131,11 @@ html[data-theme="light"]{
   --finale-hover-shadow: rgba(212, 17, 10, 0.4);
   --finale-hover-inner-shadow: rgba(0, 0, 0, 0.1);
 
+
+  --schedule-card-bg: #dddddd;
+  --schedule-card-border: #181818;
+  --schedule-card-font-color1: #141414;
+  --schedule-card-font-color2: #444444;
 }
 
 /* Middle contrast/saturation, no shadows */

@@ -2,9 +2,17 @@
 title: Kazdel Kasino 2
 description: A team-based IS tournament.
 template: doc
+
+qualifiersStart: "2025-11-03T08:00:00Z"
+qualifiersEnd: "2025-11-20T07:59:00Z"
+preliminaryStart: "2025-11-21T08:00:00Z"
+preliminaryEnd: "2025-12-01T07:59:00Z"
+finalsStart: "2025-12-01T08:00:00Z"
+finalsEnd: "2025-12-08T07:59:00Z"
 ---
 
 import TournamentScoreboard from '../../../components/TournamentScoreboard.astro';
+import LocalTime from '../../../components/LocalTime.astro'
 
 <div style="position: relative; width: 100%; max-width: 800px; margin: 0 auto;"><img src="/events/kazdel-kasino-2/kazdel-kasino-2-banner.png" alt="Kazdel Kasino 2 Tournament Banner" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /></div>
 
@@ -28,9 +36,38 @@ Kazdel Kasino 2 is a team-based tournament with teams of 3 players. Players earn
 - Leaderboard: Top 8 proceed to Round 2; final placement determined by Round 2 leaderboard
 
 ## Schedule
-- Qualifiers: November 3-19
-- Preliminary Round: November 21-30
-- Tournament Finals: December 1-7
+<section class="tournament-schedule">
+  <div class="round">
+    <h3>Qualifiers</h3>
+    <p class="date-range">
+      <span class="start"><LocalTime datetime={frontmatter.qualifiersStart} format="long" /></span><br>
+      <span class="to">to</span>
+      </br>
+      <span class="end"><LocalTime datetime={frontmatter.qualifiersEnd} format="long" /></span>
+    </p>
+  </div>
+
+  <div class="round">
+    <h3>Preliminary Round</h3>
+    <p class="date-range">
+      <span class="start"><LocalTime datetime={frontmatter.preliminaryStart} format="long" /></span><br>
+      <span class="to">to</span>
+      </br>
+      <span class="end"><LocalTime datetime={frontmatter.preliminaryEnd} format="long" /></span>
+    </p>
+  </div>
+
+  <div class="round">
+    <h3>Tournament Finals</h3>
+    <p class="date-range">
+      <span class="start"><LocalTime datetime={frontmatter.finalsStart} format="long" /></span><br>
+      <span class="to">to</span>
+      </br>
+      <span class="end"><LocalTime datetime={frontmatter.finalsEnd} format="long" /></span>
+    </p>
+  </div>
+</section>
+Displayed in your local timezone.
 
 ## Registration Requirements
 - Players 1 and 2 must provide screenshots of clearing **Facing souls 15+** with the **Endless key** relic.
@@ -104,6 +141,131 @@ Throughout the run, players can get more dollars to either spend into more opera
 <div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
   ![Operators](/events/kazdel-kasino-2/operators.png)
 </div>
+
+<ul style={{ paddingLeft: '2.5em' }}>
+  <li>
+    6★ selector list (\$75):
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Exusiai_the_New_Covenant_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Exusiai the New Covenant</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Tragodia_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Tragodia</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Mon3tr_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Mon3tr</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Hoederer_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Hoederer</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Rosmontis_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Rosmontis</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    6★ selector list (\$50)
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Kal'tsit_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Kal'tsit</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Kirin_R_Yato_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Kirin R Yato</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Ela_Skin_1_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Ela</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Logos_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Logos</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Narantuya_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Narantuya</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Eyjafjalla_the_Hvít_Aska_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Eyjafjalla the Hvít Aska</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-SilverAsh_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>SilverAsh</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Ulpianus_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Ulpianus</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Mizuki_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Mizuki</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Degenbrecher_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Degenbrecher</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    All other non-bias 6★: \$35
+  </li>
+  <li>
+    The Amy list (\$35):
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Greyy_the_Lightningbearer_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Greyy the Lightningbearer</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Surfer_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Surfer</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Cantabile_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Cantabile</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Amiya_(Medic)_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Amiya</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Tin_Man_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Tin Man</span>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+{/* 
 - 6★ selector list (\$75):
   - Exusiai the New Covenant
   - Tragodia
@@ -127,7 +289,7 @@ Throughout the run, players can get more dollars to either spend into more opera
   - Surfer
   - Cantabile
   - Amiya
-  - Tin man
+  - Tin man */}
 
 
 ### Penalties
@@ -172,29 +334,29 @@ Each bonus can only be claimed once per team. Operators mentioned do not cost do
 <ul style={{ paddingLeft: '2.5em' }}>
   <li>
     Easy (\$50)
-    <ul style={{ paddingLeft: '1.5em' }}>
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
-        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Carnelian_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
         <span style={{ lineHeight: 1 }}>Carnelian: Kill 5 enemies with 1 skill</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
-        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Ascalon_Skin_1_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
         <span style={{ lineHeight: 1 }}>Ascalon: Have both protraction hand and book by the end of the run</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
-        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Lappland_the_Decadenza_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
         <span style={{ lineHeight: 1 }}>Lappland the Decadenza: Recruit and promote a 5 star splash caster in the squad</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
-        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Yu_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
         <span style={{ lineHeight: 1 }}>Yu: With S3 active, proc burn on a dreadful foe</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
-        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Vina_Victoria_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
         <span style={{ lineHeight: 1 }}>Vina Victoria: While S3 is active, have 7 allies take damage at the same time</span>
       </li>
@@ -203,24 +365,24 @@ Each bonus can only be claimed once per team. Operators mentioned do not cost do
 
   <li>
     Medium (\$100)
-    <ul style={{ paddingLeft: '1.5em' }}>
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
-        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Saileach_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
         <span style={{ lineHeight: 1 }}>Saileach: Heal 2 healing chests with only saileach</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
-        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Angelina_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
         <span style={{ lineHeight: 1 }}>Angelina: With angelina S3 active, shift a dreadful foe at least 4 tiles in a single skill activation</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
-        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Blitz_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
         <span style={{ lineHeight: 1 }}>Blitz: Stun 3 flying enemies in 1 skill activation</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
-        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Erato_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
         <span style={{ lineHeight: 1 }}>Erato: Have Erato stop an enemy's channeled ability by utilizing sleep</span>
       </li>
@@ -229,49 +391,49 @@ Each bonus can only be claimed once per team. Operators mentioned do not cost do
 
   <li>
     Hard ($150)
-    <ul style={{ paddingLeft: '1.5em' }}>
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
-        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Ines_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
         <span style={{ lineHeight: 1 }}>Ines: Cannot be invisible after recruitment</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
-        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Qiubai_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
         <span style={{ lineHeight: 1 }}>Qiubai: Recruit Qiubai as the starting operator at elite 1</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
-        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Stainless_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
         <span style={{ lineHeight: 1 }}>Stainless: After recruitment, Deploy Stainless within the first 15 enemies killed of every stage</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
-        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Młynar_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
         <span style={{ lineHeight: 1 }}>Młynar: While blocking Qui'lon, Deal 25% of HP damage in 1 skill activation</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
-        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Texas_the_Omertosa_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
         <span style={{ lineHeight: 1 }}>Texas the Omertosa: Stun 5 bind casters within a single stage</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
-        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Archetto_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
         <span style={{ lineHeight: 1 }}>Archetto: After recruitment, do not deal any damage to any spines</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
-        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Swire_the_Elegant_Wit_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
         <span style={{ lineHeight: 1 }}>Swire the Elegant Wit: Defy death 5 times in a single deployment</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
-        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-FEater_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
         <span style={{ lineHeight: 1 }}>Feater: Push with Feater 4 times in 2 different positions within 90 seconds</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
-        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Rathalos_S_Noir_Corne_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
         <span style={{ lineHeight: 1 }}>Rathalos S Noir Corne: Resist 5 attacks from a dreadful foe in a single deployment</span>
       </li>
@@ -280,29 +442,29 @@ Each bonus can only be claimed once per team. Operators mentioned do not cost do
 
   <li>
     Ultra hard ($200)
-    <ul style={{ paddingLeft: '1.5em' }}>
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
-        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Mudrock_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
         <span style={{ lineHeight: 1 }}>Mudrock: Deal a full hp bar of damage to a dreadful foe</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
-        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Blaze_the_Igniting_Spark_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
         <span style={{ lineHeight: 1 }}>Blaze the Igniting Spark: Have an Enemy hit blaze and activate 2nd Talent 3 times in a single combat without un-deploying blaze</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
-        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Viviana_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
         <span style={{ lineHeight: 1 }}>Viviana: Deal a full hp bar of damage to a dreadful foe</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
-        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Tachanka_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
         <span style={{ lineHeight: 1 }}>Tachanka: Clear a face off while only deploying tachanka</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
-        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Nymph_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
         <span style={{ lineHeight: 1 }}>Nymph: While having a Supporter trigger necrosis, use the skill "Crumbling heart" to deal damage to a dreadful foe on floor 5 or higher</span>
       </li>
@@ -311,14 +473,14 @@ Each bonus can only be claimed once per team. Operators mentioned do not cost do
 
   <li>
     Insane ($777)
-    <ul style={{ paddingLeft: '1.5em' }}>
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
-        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Friston-3_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
         <span style={{ lineHeight: 1 }}>Friston-3: Use Friston to block Theresis before Theresis' HP goes below 90%. Friston-3 cannot die or be undeployed until Theresis phase 2</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
-        <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Melantha_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
         <span style={{ lineHeight: 1 }}>Melantha: Deal a full hp bar of damage to Amiya, Furnace's Finale' 2nd Form</span>
       </li>
@@ -546,20 +708,28 @@ Consider the following scenarios with Młynar being the bias bonus operator:
 4. Player 1 and 2 both complete the challenge, the incurred cost is \$0 for both players. However the bonus can only be claimed once (\$$150 \cdot 1$)
 
 **Q**: How does the operator restriction penalty removal work in the Yen shop?\
-**A**: The operator restriction penalty removal reward only applies to Player 3, effectively setting the base cost of an operator to $0. Players 1 and 2 are not affected by this removal. 
+**A**: The operator restriction penalty removal reward only applies to Player 3, effectively setting the cost of the operator back to its base cost. Players 1 and 2 are not affected by this effect.
 
 **Q**: What is a triple ending?\
-**A**: A triple ending is an Integrated Strategies run where three ending boss have been defeated. Ending bosses include Floor 5,6,7 Dreadful foe stages. Clearing only Victory Rewind does not count as defeating an ending boss. 
+**A**: A triple ending is an Integrated Strategies run where three ending boss have been defeated. Ending bosses include Floor 5,6,7 Dreadful foe stages. Clearing only Victory Rewind does not count as defeating an ending boss.
 
 **Q**: What is the "Across 3 Players, select 3 different dradful foes to load the same 3 operators on a boat,..." team achievement? Any examples of what counts/does not count?\
 **A**: Consider the following scenarios:
 1. Player 1 loads Deepcolor, May and Beanstalk on a boat on Court Visit. Player 2 and 3 also load the same operators on Dharma Sermon and Fate's Finale respectively. The achievement is considered completed.
 2. Player 1 loads Deepcolor, May and Beanstalk on a boat on Court Visit and Dharma Sermon. Player 3 also load the same operators on Fate's Finale. The achievement is considered completed.
 3. Player 1 loads Deepcolor, May and Beanstalk on a boat on Court Visit and Dharma Sermon. Player 2 and 3 also load the same operators on Dharma Sermon but not Fate's Finale respectively. The achievement is considered incomplete.
-4. Player 1 loads Deepcolor, May and Beanstalk on a boat on Court Visit. Player 2 and 3 also load the same operators on Dharma Sermon and Fate's Finale respectively. However, the boat does not reach the blue box in Fate's Finale. The achievement is considered incomplete. 
+4. Player 1 loads Deepcolor, May and Beanstalk on a boat on Court Visit. Player 2 and 3 also load the same operators on Dharma Sermon and Fate's Finale respectively. However, the boat does not reach the blue box in Fate's Finale. The achievement is considered incomplete.
 
 **Q**: Does drafting initial 6★ operators during initial recruitment consume dollars in the starting allowance?\
-**A**: No, the choice of your initial operator draft does not impact your ability to choose which starting squad, only your starting allowance. The remainder of your starting allowance is converted into dollars. 
+**A**: No, the choice of your initial operator draft does not impact your ability to choose which starting squad, only your starting allowance. The remainder of your starting allowance is converted into dollars.
 
 **Q**: When are dollar bonuses/penalties calculated?\
-**A**: Dollar bonuses/penalties are calculated at the end of the player's individual run. 
+**A**: Dollar bonuses/penalties are calculated at the end of the player's individual run.
+
+**Q:** Are Amy list operators increasing in price as all other 6* operators?\
+**A:** No, 5★ Amy list operators are still at \$35 no matter how many players in your team picks them 
+
+## Changelog
+**2025/11/04**
+* Operator cost removal from Yen shop rewards resets its cost to its original cost instead of reducing it to 0.
+* Clarification into increased cost on operators from the Amy list added in the FAQ -- their cost does not increase regardless of being recruited multiple times.

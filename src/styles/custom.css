@@ -1138,6 +1138,34 @@
   height: 25px;
 }
 
+.tournament-schedule {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.round {
+  text-align: center;
+  border: 1px solid var(--schedule-card-border);
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--schedule-card-bg);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.round h3 { 
+  margin-bottom: .5rem;
+  text-align: center;
+}
+.date-range {
+  text-align: center;
+  line-height: 1.4;
+  color: var(--schedule-card-font-color1);
+}
+.date-range .to {
+  font-size: 0.85rem;
+  color: var(--schedule-card-font-color2);
+}
+
+
 /* --- End of Stage Cards CSS --- */
 
 /* --- Back Button Component --- */
