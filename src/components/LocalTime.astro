@@ -1,0 +1,44 @@
+---
+const { datetime, format = "default" } = Astro.props;
+---
+
+<time data-localdate datetime={datetime} data-format={format}></time>
+
+<script is:inline>
+  (() => {
+    document.querySelectorAll('[data-localdate]').forEach(el => {
+      const datetime = el.getAttribute('datetime');
+      const format = el.getAttribute('data-format') || 'default';
+      if (!datetime) return;
+
+      const date = new Date(datetime);
+      let options;
+
+      // Define different display presets
+      switch (format) {
+        case 'compact':
+          options = { dateStyle: 'short', timeStyle: 'short' };
+          break;
+        case 'date-only':
+          options = { dateStyle: 'long' };
+          break;
+        case 'long':
+          options = {
+            month: 'long',   // e.g., "November"
+            day: 'numeric',  // e.g., "4"
+            weekday: 'long', // e.g., "Tuesday"
+            hour: 'numeric',
+            minute: '2-digit',
+        };
+          break;
+        case 'full':
+          options = { dateStyle: 'full', timeStyle: 'long' };
+          break;
+        default:
+          options = { dateStyle: 'medium', timeStyle: 'short' };
+      }
+
+      el.textContent = date.toLocaleString(undefined, options);
+    });
+  })();
+</script>

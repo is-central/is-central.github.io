@@ -548,6 +548,11 @@ html[data-theme="dark"]{
   --finale-hover-shadow: rgba(89, 16, 14, 0.5);
   --finale-hover-inner-shadow: rgba(255, 255, 255, 0.1);
 
+
+  --schedule-card-bg: #1d1d1d;
+  --schedule-card-border: #ddd;
+  --schedule-card-font-color1: #ccc;
+  --schedule-card-font-color2: #888;
 }
 
 
