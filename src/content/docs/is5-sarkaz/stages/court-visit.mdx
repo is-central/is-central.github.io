@@ -452,16 +452,34 @@ Given a Slow duration $S$, May would have to refresh it every $S$ seconds in ord
 Applying Slow every $S$ seconds requires May to attack a number of times $\text{SP\_cost}+1$ within $S$ seconds, that is having a final ATK Interval of $S/(\text{SP\_cost}+1)$.
 At E1 with $S = 2$s and $\text{SP\_cost}+1 = 5$, she would need a final ATK Interval of 0.4 in order to permaslow theresis, with her base ATK Interval 1s, given the final ATK Interval formula:
 
-$\text{final\_ATK\_Interval} = 100 \cdot \frac{\text{ATK\_Interval}}{100+\text{ASPD}}$
+$\text{final\_ATK\_Interval} = \text{ROUND}\left(100 \cdot \frac{\text{ATK\_Interval}}{100+\text{ASPD}} \cdot 30\right)/30$,
 
-Solving for additional ASPD:
+solving for additional ASPD:
 
-$\text{ASPD} = 100 \cdot \frac{\text{ATK\_Interval}}{\text{final\_ATK\_Interval}} - 100$
+$30 \cdot \text{final\_ATK\_Interval} = \text{ROUND}\left(3000 \cdot \frac{\text{ATK\_Interval}}{100+\text{ASPD}}\right)$,
 
-This makes it so that 150 additional ASPD is needed at E1 to permaslow, while at E2 with Mod3 only 53 additional ASPD is needed.
-Given King's Lance provided by lamp, this makes it so in order to permaslow you require:
-- S1 lvl 7: Coin-Operated Toy with 170 ingots or Golden Chalice + Coin-Operated Toy with 50 ingots
-- S1M3+Mod3: Coin-Operated Toy with 5 ingots
+given the rounding function, we get:
+
+$30 \cdot \text{final\_ATK\_Interval} - 0.5 \leq 3000 \cdot \frac{\text{ATK\_Interval}}{100+\text{ASPD}} < 30 \cdot \text{final\_ATK\_Interval} + 0.5$,
+
+$\frac{3000 \cdot \text{ATK\_Interval}}{30 \cdot \text{final\_ATK\_Interval} + 0.5} - 100 < \text{ASPD} \leq \frac{3000 \cdot \text{ATK\_Interval}}{30 \cdot \text{final\_ATK\_Interval} - 0.5} - 100$,
+
+we only care about the minimum ASPD required, that is:
+
+$\text{ASPD} > \frac{3000 \cdot \text{ATK\_Interval}}{30 \cdot \text{final\_ATK\_Interval} + 0.5} - 100$.
+
+{/* $\text{ASPD} = 100 \cdot \frac{\text{ATK\_Interval}}{\text{final\_ATK\_Interval}} - 100$. */}
+
+As ASPD is an integer value, then the following expression will always give us a value that makes this inequality true:
+
+$\text{ASPD} > \text{FLOOR}\left(\frac{3000 \cdot \text{ATK\_Interval}}{30 \cdot \text{final\_ATK\_Interval} + 0.5} - 100\right) + 1$.
+
+Considering that May gets 5 ASPD from her Talent at E1, this makes it so that 136 additional ASPD is needed to permaslow, while at E2 with her talent increasing to 8 ASPD, and Mod3 adding 3 ASPD, only 52 additional ASPD is needed.
+* S1 lvl 7: 136 ASPD
+  * King's Lance + Coin-Operated Toy with 145 ingots
+  * King's Lance + Golden Chalice + Coin-Operated Toy with 45 ingots
+* S1M3+Mod3: 52 ASPD
+  * King's Lance + Coin-Operated Toy with 5 ingots
 
 #### Placement
 The most optimal placement to do this is on the top right.
