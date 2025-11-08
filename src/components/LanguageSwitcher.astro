@@ -5,7 +5,7 @@ const { currentLang, groupId } = Astro.props;
 const availableLangs = Object.keys(translations[groupId] || {});
 
 function getLabel(code) {
-  const labels = { en: "English", jp: "日本語", kr: "" };
+  const labels = { en: "English", jp: "日本語", kr: "한국어" };
   return labels[code] || code.toUpperCase();
 }
 ---
