@@ -1,0 +1,19 @@
+---
+import LanguageSwitcher from "../components/LanguageSwitcher.astro";
+const { frontmatter } = Astro.props;
+---
+
+<html lang={frontmatter?.lang || "en"}>
+  <body class="bg-gray-50 text-gray-900">
+    <header class="flex justify-end p-4">
+      <LanguageSwitcher
+        currentLang={frontmatter?.lang}
+        groupId={frontmatter?.groupId}
+      />
+    </header>
+
+    <main class="p-6">
+      <slot /> <!-- 👈 This is where your MDX content will appear -->
+    </main>
+  </body>
+</html>
