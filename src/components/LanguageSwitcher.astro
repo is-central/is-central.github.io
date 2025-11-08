@@ -1,0 +1,27 @@
+---
+import { translations } from "../i18n/translations.js";
+
+const { currentLang, groupId } = Astro.props;
+const availableLangs = Object.keys(translations[groupId] || {});
+
+function getLabel(code) {
+  const labels = { en: "English", jp: "日本語", kr: "" };
+  return labels[code] || code.toUpperCase();
+}
+---
+
+{availableLangs.length > 1 && (
+  <select
+    onchange="if (this.value) window.location.href = this.value;"
+    class="rounded-md border px-2 py-1 bg-white text-gray-700 cursor-pointer"
+  >
+    {availableLangs.map(lang => (
+      <option
+        value={translations[groupId][lang]}
+        selected={lang === currentLang}
+      >
+        {getLabel(lang)}
+      </option>
+    ))}
+  </select>
+)}

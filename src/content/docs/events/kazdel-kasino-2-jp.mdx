@@ -1,0 +1,776 @@
+---
+title: Kazdel Kasino 2
+description: A team-based IS tournament.
+template: doc
+
+lang: jp
+groupId: kazdel-kasino-2
+
+qualifiersStart: "2025-11-03T08:00:00Z"
+qualifiersEnd: "2025-11-20T07:59:00Z"
+preliminaryStart: "2025-11-21T08:00:00Z"
+preliminaryEnd: "2025-12-01T07:59:00Z"
+finalsStart: "2025-12-01T08:00:00Z"
+finalsEnd: "2025-12-08T07:59:00Z"
+---
+
+import TournamentScoreboard from '../../../components/TournamentScoreboard.astro';
+import LocalTime from '../../../components/LocalTime.astro';
+import TournamentLayout from "../../../layouts/TournamentLayout.astro";
+
+<div class="back-button-container">
+  <a href="/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">メインページに戻る</span>
+  </a>
+</div>
+
+<TournamentLayout frontmatter={frontmatter} />
+
+<div style="position: relative; width: 100%; max-width: 800px; margin: 0 auto;"><img src="/events/kazdel-kasino-2/kazdel-kasino-2-banner.png" alt="Kazdel Kasino 2 Tournament Banner" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /></div>
+
+カズデルカジノ2は3人1チームのチーム制トーナメントです。プレイヤーは探索中に目標を達成することで資金を獲得し、最終的に召喚シミュレーターを使用してその資金を順位ポイントに変換します。上位8チームがラウンド2に進出し、最終順位はラウンド2のリーダーボードで決定されます
+
+{/*
+<TournamentScoreboard
+  title="Scoreboard"
+  dataUrl="/events/kazdel-kasino-2/scoreboard.json"
+  refreshMs={15000}
+/> 
+*/}
+
+## 形式
+
+- 3人1チーム
+- プレイヤー3: 難易度18
+- プレイヤー1と2は、3人の合計難易度が48になるように各自の難易度を選択
+- 最後のプレイヤーの探索終了後、直ちに召喚シミュレーターを使用して順位ポイントを獲得
+- リーダーボード: 上位8チームがラウンド2進出。最終順位はラウンド2のリーダーボードで決定
+
+## スケジュール
+<section class="tournament-schedule">
+  <div class="round">
+    <h3>予選</h3>
+    <p class="date-range">
+      <span class="start"><LocalTime datetime={frontmatter.qualifiersStart} format="long" /></span><br>
+      <span class="to">〜</span>
+      </br>
+      <span class="end"><LocalTime datetime={frontmatter.qualifiersEnd} format="long" /></span>
+    </p>
+  </div>
+
+  <div class="round">
+    <h3>一次予選</h3>
+    <p class="date-range">
+      <span class="start"><LocalTime datetime={frontmatter.preliminaryStart} format="long" /></span><br>
+      <span class="to">〜</span>
+      </br>
+      <span class="end"><LocalTime datetime={frontmatter.preliminaryEnd} format="long" /></span>
+    </p>
+  </div>
+
+  <div class="round">
+    <h3>トーナメント本戦</h3>
+    <p class="date-range">
+      <span class="start"><LocalTime datetime={frontmatter.finalsStart} format="long" /></span><br>
+      <span class="to">〜</span>
+      </br>
+      <span class="end"><LocalTime datetime={frontmatter.finalsEnd} format="long" /></span>
+    </p>
+  </div>
+</section>
+現地時間で表示されます。
+
+## 参加条件
+- プレイヤー1と2は、**魂に直面15以上**でエンドレスキーの秘宝を所持しクリアしたスクリーンショットの提出が必要です
+- プレイヤー3は、**魂に直面18でエンドレスキー**または**アナサのカルマ**の秘宝を所持し（**予言者の角**の秘宝なしで）クリアした**スクリーンショット**の提出が必要です。
+- プレイヤーはDiscordで探索を配信できなければなりません。
+- 探索は<a href="https://twitch.tv/oyana1234" target="_blank" rel="noopener noreferrer">twitch.tv/oyana1234</a>で配信される場合があります。
+- プレイヤーは<a href="https://discord.gg/fqRBzQWVfK" target="_blank" rel="noopener noreferrer">IS Central Discord</a>のメンバーである必要があります。
+
+![Registration Requirements](/events/kazdel-kasino-2/registration-guidelines.png)
+
+**登録:** <a href="https://forms.gle/9Q4ZTF3ghVtnpe367" target="_blank" rel="noopener noreferrer">Google登録フォーム</a>
+
+## ルール
+
+### 宿命の出会い
+各チームは以下の秘宝をチームごとに1回までしか選択できません:
+- 「憎悪の時代での恨み」
+- 「理想の時代への未練」
+
+### Wiš'adel
+Wiš'adelは、戦闘後や銀印章による一時的な募集でない限り、選択できません。
+
+### 資金引出制限
+- プレイヤー1と2は100源石錐を共有。プレイヤー3は初期50源石錐を引き出せます。
+- 制限を超えて引き出した源石錐1つごとに、該当プレイヤーは1源石錐あたり\$500が控除されます。
+
+### 探索準備
+- 許可されている3層目のボーナス強化は以下のみ: やかん、希望+2、計画+2。
+- プレイヤーは最初の戦闘をクリアできますが、最初の戦闘で任何る秘宝も選択してはなりません。
+- プレイヤーは2つ目のマスで遭遇を選択しなければなりません。
+- 2つ目のマスは「宿命の出会い」であり、プレイヤーはこの画面で停止しなければなりません。
+- プレイヤーが宿命の出会いの秘宝を望まない場合、最初の戦闘後に停止しなければなりません。2つ目のマスの再抽選は許可されます。
+
+### リセット
+- 全プレイヤーは利用可能なリセット回数0で開始します。
+- エミュレーターのクラッシュ: プレイヤーごとにトーナメント中1回の再開が許可されます（主催者の確認による）。
+
+### その他
+- プレイヤーは再抽選後に分隊を変更することが許可されます。
+- プレイヤーは探索中、常時自由に通話することが許可されます。
+- 秘宝「主なき回想」は探索中に選択することが許可されます。
+- プレイヤーは登録に使用したアカウントのみ使用できます。
+- すべてのボーナスとペナルティは探索終了時に計算されます。
+
+### 制限事項
+#### 使用禁止オペレーター（トラゴディア以降実装）
+* レイズ・ザ・サンダーブリンガー、レコードキーパー、ラディアン
+* ホシグマ・ザ・ブリーチャー、ハルカ、キチセイ、マツキリ
+* 戸川咲子、八幡海、若葉睦、三角烏伊香、夢淵ニャム
+* マントラ、スネグロチカ、ヴェトチキ
+* シルバーアッシュ・ザ・レインフロスト、プラマニクス・ザ・プリリタ、アステジーニ・ザ・ライトチェイサー、スノーハンター、ハディヤ、アコルト
+
+#### 使用禁止モジュール（トラゴディア以降実装）
+* ティフォン ModY
+* ゴールデングロー ModY
+* 百錬ガヴィル ModY
+* 原始種術師 モジュール (全て)
+* 遊龍チェン ModY
+* 琳琅スワイヤー Mod$\alpha$
+* ペペ RA
+* ループシューター モジュール (全て)
+* 聖約イグゼキュター ModY
+* エイヤフィヤトラ ModY
+* 術師タイプ重装 モジュール (全て)
+* ヴィーナ・ヴィクトリア ModY
+
+## トーナメントの仕組み
+このトーナメントでは、全プレイヤーが様々な任務を達成してドルを獲得します。プレイヤー1と2はさらに円も獲得します。
+プレイヤー3は円ショップで円を使い、探索を有利に進めるためのボーナスを購入できます。
+全員の探索終了後、蓄積されたドルはガチャシミュレーターで最終スコアを決定するために使用されます。
+
+### ドル通貨
+探索開始時および探索中、ドルは初期分隊とオペレーターをそのコストに応じて購入するために使用されます。
+探索中、プレイヤーはさらにドルを獲得し、それをオペレーター購入に使うか、ガチャシミュレーターのために貯めることができます。
+
+- ドルは以下に使用: オペレーター、初期分隊、最終スコア
+- ドルは以下を達成することで獲得: 偏愛ボーナス、通常ステージ、条件付きステージ、実績、最終所持品数
+
+### 最終スコア計算
+- 3人目のプレイヤーの探索終了後、チームは蓄積された全ドルを召喚シミュレーターで使用できます。
+- チームの代表者が以下のウェブサイト<a href="https://lungmendragons.com/gachasim" target="_blank" rel="noopener noreferrer">Lungmen Dragons gacha simulator</a>の操作を配信する必要があります。
+- チームはシミュレーター内のいずれかのバナーを選択でき、セッション中いつでもバナーを変更できます。
+- 「履歴をリセット」がクリックされた場合、その時点から引き続き行われます。リセット前のスコアはVODを確認して決定します。
+- 召喚シミュレーターは、ピティなど、ゲーム内の召喚システムと同じルールと確率に従います。
+- チームは召喚したオペレーターのレアリティに基づいてスコアを獲得します:
+  - 6星オペレーター召喚ごとに = 360 pts
+  - 5星オペレーター召喚ごとに = 120 pts
+  - 3星および4星オペレーター召喚ごとに = 10pts
+
+
+### オペレーターコスト
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Operators](/events/kazdel-kasino-2/operators.png)
+</div>
+
+<ul style={{ paddingLeft: '2.5em' }}>
+  <li>
+    6★ 選択リスト (\$75):
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Exusiai_the_New_Covenant_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>新約エクシア</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Tragodia_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>酒神</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Mon3tr_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Mon3tr</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Hoederer_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ヘドリー</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Rosmontis_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ロスモンティス</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    6★ 選択リスト (\$50)
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Kal'tsit_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ケルシー</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Kirin_R_Yato_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>キリンRヤトウ</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Ela_Skin_1_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Ela</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Logos_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ロゴス</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Narantuya_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ナラントゥヤ</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Eyjafjalla_the_Hvít_Aska_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>純燼エイヤフィヤトラ</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-SilverAsh_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>シルバーアッシュ</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Ulpianus_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ウルピアヌス</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Mizuki_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ミヅキ</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Degenbrecher_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>デーゲンブレヒャー</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    その他、偏愛対象外の6★: \$35
+  </li>
+  <li>
+    アミィリスト (\$35):
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Greyy_the_Lightningbearer_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>承曦グレイ</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Surfer_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>サーファー</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Cantabile_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>カンタービレ</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Amiya_(Medic)_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>アーミヤ</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Tin_Man_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ブリキ</span>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+{/* 
+- 6★ selector list (\$75):
+  - Exusiai the New Covenant
+  - Tragodia
+  - Mon3tr
+  - Hoederer
+  - Rosmontis
+- 6★ selector list (\$50):
+  - Kal'tsit
+  - Kirin R Yato
+  - Ela
+  - Logos
+  - Narantuya
+  - Eyjafjalla the Hvít Aska
+  - SilverAsh
+  - Ulpianus
+  - Mizuki
+  - Degenbrecher
+- All other non-bias 6★: \$35
+- The Amy list (\$35)
+  - Greyy alter
+  - Surfer
+  - Cantabile
+  - Amiya
+  - Tin man */}
+
+
+### ペナルティ
+- チーム内で6★オペレーターが2回招集された場合、そのオペレーターのコストは元のコストx3になります。
+- チーム内で6★オペレーターが3回招集された場合、そのオペレーターのコストは元のコストx6になります。
+- 達成済みの偏愛ボーナスは重複ペナルティの対象外です（後述）。
+
+### 一時的オペレーター
+- 全ての一時的オペレーターはドルを消費しません。一時的な偏愛ボーナスオペレーターは-$25のペナルティを受けません（偏愛ボーナスについては後述）。
+
+### 初期分隊
+- プレイヤー1と2: \$1000 初期資金
+- プレイヤー3: \$500
+- プレイヤーは分隊選択時に借金状態になることはできません。
+
+#### 分隊コスト:
+<div style={{ display: "flex", justifyContent: "center" }}>
+| 分隊                                                                                                                                                                   | コスト   |
+|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----:|
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Soul_Escort_Squad.png" alt="魂の護送" />魂の護送</span>                                    | $500  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Erudite_Squad.png" alt="博学者" />博学者</span>                                            | -$100 |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Blueprint_Squad.png" alt="設計図" />設計図*</span>                                         | $650  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Spearhead_Squad_5.png" alt="先鋭" />先鋭</span>                                            | -$200 |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Assault_Squad_5.png" alt="強襲戦術 (前衛/先鋒)" />強襲戦術 (前衛/先鋒)</span>       | $500  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Fortification_Squad_5.png" alt="堅固戦術 (重装/補助)" />堅固戦術 (重装/補助)</span> | $300  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Ranged_Squad_5.png" alt="射撃戦術 (狙撃/医療)" />射撃戦術 (狙撃/医療)</span>        | $500  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Destruction_Squad_5.png" alt="殲滅戦術 (特殊/術師)" />殲滅戦術 (特殊/術師)</span>   | $0    |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-First-Class_Squad_5.png" alt="一流" />一流</span>                                          | $250  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Ingots_Squad.png" alt="源石錐" />源石錐</span>                                             | $250  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Collection_Squad.png" alt="収集" />収集</span>                                             | $250  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Mimic_Squad.png" alt="擬態" />擬態</span>                                                  | $100  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Top_Gun_Squad.png" alt="トップガン" />トップガン</span>                                     | $301  |
+| その他                                                                                                                                                                  | $1000 |
+</div>
+
+$^*$設計図分隊には120分の制限時間があり、その後30分ごとに-1000pts（10分の猶予期間あり）
+
+### 偏愛ボーナス
+
+各ボーナスはチームごとに1回のみ請求できます。記載されているオペレーターは、対応する偏愛チャレンジを達成した場合にのみ\$0になります。達成しなかった場合、6★あたり-\$25のペナルティが発生します。
+
+
+<ul style={{ paddingLeft: '2.5em' }}>
+  <li>
+    イージー (\$50)
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Carnelian_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>カーネリアン: 1回のスキルで5体の敵を倒す</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Ascalon_Skin_1_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>アスカロン: 探索終了時までに「延長の手」と「記録の書」の両方を所持する</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Lappland_the_Decadenza_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>荒蕪ラップランド: 5星範囲術師を招集し、昇進させる</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Yu_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ユー: S3発動中に、強敵に燃焼状態を付与する</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Vina_Victoria_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ヴィーナ・ヴィクトリア: S3発動中に、7体の味方が同時にダメージを受ける</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    ミディアム (\$100)
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Saileach_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>サイラッハ: セイリーチのみで2つの回復箱を修理する</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Angelina_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>アンジェリーナ: アンジェリーナのS3発動中に、1回のスキル発動で強敵を少なくとも4マスシフトさせる</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Blitz_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Blitz: 1回のスキル発動で3体の飛行ユニットをスタンさせる</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Erato_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>エラト: エラトが睡眠を利用して敵のチャネリングスキルを中断させる</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    ハード ($150)
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Ines_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>イネス: 招集後、隠密状態になってはならない</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Qiubai_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>チューバイ: 初期オペレーターとしてエリート1のチュウバイを招集する</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Stainless_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ステインレス: 招集後、全てのステージにおいて敵を15体倒す以内にステンレスを配置する</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Młynar_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ムリナール: キロンをブロック中に、1回のスキル発動でHPの25%分のダメージを与える</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Texas_the_Omertosa_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>血掟テキサス: 1ステージ内で5体のバインダーをスタンさせる</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Archetto_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>アルケット: 招集後、任何るスパインにもダメージを与えてはならない</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Swire_the_Elegant_Wit_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>琳琅スワイヤー: 1回の配置中に5回戦線復帰を発動する</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-FEater_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>エフイーター: 90秒以内に2つの異なる位置でフィーダーで合計4回プッシュする</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Rathalos_S_Noir_Corne_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>レウスSノイルホーン: 1回の配置中に強敵からの攻撃を5回耐える</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    ウルトラハード ($200)
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Mudrock_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>マドロック: 強敵にHP1本分のダメージを与える</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Blaze_the_Igniting_Spark_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>熾炎ブレイズ: 1回の戦闘中に、敵がブレイズを攻撃し、第2天賦を3回発動させる（ブレイズを撤退させずに）</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Viviana_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ヴィヴィアナ: 強敵にHP1本分のダメージを与える</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Tachanka_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Tachanka: タチャンカのみを配置して対決をクリアする</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Nymph_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ニンフ: サポーターが壊死を付与している状態で、スキル「崩れゆく心」を使用し、5層以上の強敵にダメージを与える</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    インセイン ($777)
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Friston-3_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Friston-3: テレジスのHPが90%を切る前にフリストンを使用してテレジスをブロックする。テレジスがフェーズ2になるまで、フリストン-3は戦闘不能になる、テレジスのブロックを止める、または撤退してはならない</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Melantha_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>メランサ: アミヤ、焔炉の終曲の第2形態にHP1本分のダメージを与える</span>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+
+{/* 
+- Easy (\$50):
+  - Carnelian: Kill 5 enemies with 1 skill
+  - Ascalon: Have both protraction hand and book by the end of the run
+  - Lappland the Decadenza: Recruit and promote a 5 star splash caster in the squad
+  - Yu: With S3 active, proc burn on a dreadful foe
+  - Vina Victoria: While s3 is active, have 7 allies take damage at the same time
+- Medium (\$100):
+  - Saileach: Heal 2 healing chests with only saileach
+  - Angelina: With angelina s3 active, shift a dreadful foe at least 4 tiles in a single skill activation
+  - Blitz: Stun 3 flying enemies in 1 skill activation
+- Hard (\$150):
+  - Ines: Cannot be invisible after recruitment
+  - Qiu Bai: Recruit Qiu bai as the starting operator at elite 1
+  - Stainless: After recruitment, Deploy Stainless within the first 15 enemies killed of every stage
+  - Młynar: While blocking Qui'lon, Deal 25% of HP damage in 1 skill activation
+  - Texas the Omertosa: Stun 5 bind casters within a single stage
+  - Archetto: After recruitment, do not deal any damage to any spines
+  - Swire the Elegant Wit: Defy death 5 times in a single deployment
+  - Feater: Push with Feater 4 times in 2 different positions within 90seconds
+  - Rathalos S Noir Corne: Resist 5 attacks from a dreadful foe in a single deployment
+- Ultra hard (\$200):
+  - Mudrock: Deal a full hp bar of damage to a dreadful foe
+  - Blaze the Igniting Spark: Have an Enemy hit blaze and activate Talent2 3 times in a single combat without un-deploying blaze
+  - Viviana: Deal a full hp bar of damage to a dreadful foe
+  - Tachanka: Clear a face off while only deploying tachanka
+  - Nymph: While having a supporter trigger necrosis, use the skill "Crumbling heart" to deal damage to a dreadful foe on floor 5 or higher
+- Insane (\$777):
+  - Friston-3: use Friston to tank Theresis above 90% hp and friston cannot die or be undeployed until Theresis phase 2
+  - Melantha: deal a full hp bar of damage to Amiya, Furnace's Finale' 2nd Form */}
+
+### 通常ステージ
+通常ステージは異なるカテゴリに分類され、各カテゴリから最も高い金額のドルのみが獲得されます（特に指定がない限り、複数のチームメイトが同じボーナスを獲得できます）。プレイヤーが「憎悪の鉤爪」を所持している場合、各カテゴリのボーナスを複数回請求できます。
+
+#### カテゴリ1:
+- 緊急「生い茂る密林」クリア: \$25
+- 緊急「ムシカズの滝」クリア: \$35
+
+#### カテゴリ2:
+- 緊急「大規模演習」クリア: \$20
+- 緊急「機動隊」クリア: \$50
+- 緊急「火力小隊」クリア: \$30
+- 3層の任何る緊急ステージクリア: \$15
+
+#### カテゴリ3: 
+- 緊急「混沌」クリア: \$70
+- 緊急「神出鬼没」クリア: \$80
+- 緊急「論争頻発」クリア: \$100
+- 4層の任何る緊急ステージクリア: \$50
+
+#### カテゴリ4:   
+- 緊急「計画的な開墾」クリア: \$80
+- 緊急「ライン生命の警備体制」クリア: \$90
+- 緊急「サルカズの軍隊」クリア: \$100
+- 5層の任何る緊急ステージクリア: \$60
+
+#### カテゴリ5:
+- 緊急「合意を求めて」クリア: \$70
+- 緊急「聖なる渇望」クリア: \$70
+- 緊急「外道」クリア: \$120
+- 緊急「洞天福地」クリア: \$150
+
+#### カテゴリ6:
+- 「蓋然のベール」または「友に捧げる」または「斬首」クリア: \$120
+- 「敵に立ち向かう者」または「王冠のもとに」クリア: \$130
+- 「別れの歌の庭」クリア: \$150
+- 3層の任何るボスステージクリア: \$100
+
+### ボス実績
+以下の条件を探索ごとに達成してボーナス資金を獲得:
+#### ED5
+- 「拒絶は許さぬ」クリア: \$500
+- 「混乱した拒絶は許さぬ」クリア: 追加 \$50
+
+#### ED4
+- 「説法」クリア: \$400
+- 「混乱した説法」クリア: 追加 \$50
+- キロン撃破: 追加 \$250
+
+#### ED3
+- 「聖都」クリア: \$100
+- 「混乱した聖都」クリア: 追加 \$100
+- パトリオット戦闘中、任何るオペレーターも手動撤退させずにパトリオットを撃破: \$200
+
+#### ED2
+- 「謁見」クリア: \$100
+- 「アナサのカルマ」を所持してクリア: 追加 \$200
+- 分断状態でクリアし、7体の刺客全てをリーク: \$77
+
+#### ED1
+- 「緊急授業」クリア: \$50
+- 「アナサのカルマ」を所持してクリア: 追加 \$150
+- 「混乱した緊急授業」クリア: 追加 \$30
+- スキル「愚かさへの罰」で少なくとも5体のオペレーターがテレポートする: \$200
+
+### 条件付きステージ
+以下のステージをクリアし、計画を取得しなかった場合にボーナス資金を獲得:
+- 「血脈に関する議論」: \$120
+- 「時代の断層」: \$200
+- 「腐朽の考察」: \$140
+
+スパインは破壊可能ですが、ステージ後の報酬画面で任何る計画を取得するとボーナスは無効になります。
+
+ボーナス計画ステージで誤って計画を取得してしまった場合、計画を破棄すれば1回に限りボーナスを獲得できます。ボーナスステージから2回目以降に計画を取得した場合、ボーナス獲得のために計画を破棄することはできません。
+
+### 実績
+#### I個人実績:
+<div style={{ display: "flex", justifyContent: "center" }}>
+| 実績                                                                                                                                      | 報酬                            |
+|:-----------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------:|
+| 1回の探索で対決ノードを3回勝利                                                                                                            | \$120                            |
+| 遭遇「尤もらしき虚偽」で選択肢「彼らに助けを求める」を選択                                                                    | \$150                            |
+| 遭遇「失われた財宝」で選択肢「むしろ宴を開きたい」を選択                                                                    | \$100                            |
+| 遭遇「ご多幸を」で選択肢「持ち物をすべて差し出す」を選択（少なくとも20源石錐所持時）                       | 消費した源石錐1つごとに\$3、最大\$301  |
+| 5層開始時に「集会」、「溶炉」、および「構想」1つを獲得                                                                                   | \$150                            |
+| インベントリ内で一度に少なくとも100個の「萎びた芽」を所持                                                                           | \$777                            |
+| アナサのカルマ」を所持し、6層のステージをクリアし、そのステージのカデンツを撃破し、「絶望」を取得                                               | \$250 (NM) \| \$500 (EM)         |
+| 1ステージで5体のボス敵をリーク                                                                                                           | \$350                            |
+| 秘宝「ローリング先祖」を所持中にクリアした強敵ステージごと                                                            | \$100                            |
+| 秘宝「終結の実相」を所持中にクリアした強敵ステージごと                                                            | \$100                            |
+| 「理想の時代への未練」を所持中に、少なくとも4つの活性化した「手」を獲得（手は、分隊にその手の効果を受けるオペレーターがいる場合に活性化） | \$500                            |
+</div>
+
+{/* The following Achievements can be claimed once per run.
+- In the Encounter “Lost treasure” select the option “I'd rather have a feast” -  100$
+- Win 3 Face Off nodes in a single run - 120$
+- Clear a stage on floor 6 with Anasa’s Karma and kill the cadence in the stage and pick up despair:
+  - Normal floor 6 stage -  250$
+  - Emergency floor 6 stage - 500$
+- For Every dreadful foe stage cleared while you possess the relic "Rolling Ancestors" - 100$
+- For Every dreadful foe stage cleared while possessing the relic "Reality of the End" - 100$
+- Leak 5 boss enemies in a single stage - 350$
+- In the Encounter "Plausible But False" select the option "Ask them for help" - 150$
+- Upon entering floor 5 receive the Assembly Furnace and 1 plan - 150$
+- In the Encounter "Good fortune to you" select the option "Offer all of your belongings" while you have at least 20 ingots - 3$ per ingot spent up to 301$.
+- While having the lamp of wishes, acquire at least 4 active hands - 500$ (Hands are active when the squad has an operator that is affected by the hand)
+- Have At least 100 “Shrivel and Sprouts” in your inventory at one time. - 777$ */}
+
+#### チーム実績:
+<div style={{ display: "flex", justifyContent: "center" }}>
+| 実績                                                                                                              | 報酬  |
+|:-----------------------------------------------------------------------------------------------------------------------:|:------:|
+| 1ステージ内で敵を60秒間連続で睡眠状態にする                                                                          | \$100  |
+| 全チームメイト間で、終了画面までに4つの宿命の出会いの選択肢を全て所持                                            | \$1000 |
+| 難易度18でエンディング2+4+5をクリア                                                                                    | \$3000 |
+| 3人のプレイヤー間で、3つの異なる強敵ステージにおいて、同じ3体のオペレーターをボートに乗せ、そのボートを青い枠に入れる | \$333  |
+</div>
+
+{/* - Sleep an enemy for 60s straight - 100$
+- Between all teammates, have all 4 fated encounters options by the end screen. - 1000$
+- Clear ending 2+4+5 on Difficulty 18 - 3000$
+- Across 3 Players, Load 3 different operators on a single boat on 3 different dreadful foe stages, while having all 3 operators be the same across all 3 boats and have each boat enter the blue box. - 333$ */}
+
+
+### 所持品数
+全プレイヤーは、終了画面に基づく探索終了時の秘宝の数に応じてボーナスを獲得します。
+- < 40: \$400
+- 41–50: \$300
+- 51–60: \$200
+- 61+: \$100
+
+これは探索に勝利した場合にのみ請求できます。
+
+## 円ショップ
+
+### 円目標
+<div style={{ display: "flex", justifyContent: "center" }}>
+| 目標                                                      | 報酬                     |
+|:-------------------------------------------------------------:|:-------------------------:|
+| プレイヤー1と2間でエンディング1–5達成                                           | 500¥      |
+| トリプルエンディング                                                                 | 各500¥  |
+| ウルトラハードまたはインセインチャレンジ (チャレンジごとにユニーク)                        | 各100¥  |
+| 「終結の実相」を所持してエンディング5クリア (チームごとに1回)                            | 1000¥     |
+| 7層を、最後の3つの強敵が分断された精神的負荷状態でクリア (チームごとに1回) | 800¥      |
+</div>
+
+{/* - Endings 1–5 between Players 1 and 2: 500¥
+- Triple ending: 500¥ each
+- Ultra hard or Insane challenges: 100¥ each (unique)
+- Ending 5 with "Reality of the End": 1000¥ (once per team)
+- Floor 7 with last 3 Dreadful Foes under fractured mental toil: 800¥ (once per team) */}
+
+### 円ショップボーナス
+<div style={{ display: "flex", justifyContent: "center" }}>
+| ボーナス                                                                                   | コスト   | 在庫     |
+|:--------------------------------------------------------------------------------------:|:-----:|:--------:|
+| 所持品数ボーナスが常に最高報酬を与える                           | 500¥  | 1        |
+| 源石錐引出制限+10                                                             | 50¥   | 10       |
+| プレイヤー3の初期資金+\$500                                                  | 200¥  | 1        |
+| 設計図分隊の制限時間を解除                                                | 1000¥ | 1        |
+| 4層でのリセットを許可                                                                  | 1000¥ | 1        |
+| ペナルティ/制限なくオペレーターWiš'adelを招集                                  | 2000¥ | 1        |
+| 重複オペレーターペナルティを解除 (オペレーターごと)                                        | 300¥  | $\infty$ |
+| 探索準備: 初期秘宝制限を解除。最初の戦闘後に秘宝を1つ選択可能 | 1000¥ | 1        |
+</div>
+
+{/* - Collectibles count bonus (highest) — 500¥ (stock 1)
+- +10 ingot withdrawal limit — 50¥ (stock 10)
+- +\$500 to Player 3 starting allowance — 200¥ (stock 1)
+- Remove Blueprint time limit restriction — 1000¥ (stock 1)
+- Allow a Floor 4 reset — 1000¥ (stock 1)
+- Recruit Operator Wiš'adel without penalty/restriction — 2000¥ (stock 1)
+- Remove repeated-operator penalty — 300¥ per operator
+- Remove starting collectible restriction; allow a relic to be chosen after first combat — 1000¥ (stock 1)
+ */}
+
+## FAQ
+
+**Q**: プレイヤー1と2が同じ偏愛ボーナスオペレーターをドラフトした場合、ペナルティドルはどのように計算されますか？\
+**A**: 偏愛ボーナスオペレーターの基本コストは\$25であり、対応する偏愛チャレンジを達成した場合にのみ\$0になります。.
+
+ムウィナルが偏愛ボーナスオペレーターである場合のシナリオを考えます:
+1. プレイヤー1がムウィナルボーナスチャレンジを達成し、プレイヤー2がムウィナルをドラフトするがチャレンジを達成しない場合、プレイヤー2に発生するコストは\$25 x 3 = \$75
+2. プレイヤー1がムウィナルボーナスチャレンジを達成せず、プレイヤー2がチャレンジを達成する場合、プレイヤー1に発生するコストは\$25
+3. プレイヤー1と2の両方がチャレンジに失敗した場合、発生するコストは\$25 + \$75 = \$100
+4. プレイヤー1と2の両方がチャレンジを達成した場合、両者のコストは\$0。ただし、ボーナスは1回のみ請求可能 (\$150 x 1)
+
+**Q**: 円ショップのオペレーター制限ペナルティ解除はどのように機能しますか？\
+**A**: オペレーター制限ペナルティ解除報酬はプレイヤー3にのみ適用され、実質的にオペレーターのコストを基本コストに戻します。プレイヤー1と2はこの効果の影響を受けません。
+
+**Q**: トリプルエンディングとは何ですか？\
+**A**: トリプルエンディングとは、3体のエンディングボスが撃破された集成戦略の探索です。エンディングボスには5層、6層、7層の強敵ステージが含まれます。「勝利の反響」のみのクリアはエンディングボスの撃破としてカウントされません。
+
+**Q**: 「3人のプレイヤー間で、3つの異なる強敵ステージにおいて、同じ3体のオペレーターをボートに乗せ...」というチーム実績について、何がカウントされる/されないかの例はありますか？\
+**A**: 以下のシナリオを考えます:
+1. プレイヤー1が「謁見」でボートにディープカラー、メイ、ビーンストークを乗せる。プレイヤー2と3もそれぞれ「説法」と「運命の終幕」で同じオペレーターをボートに乗せる。実績は達成されたとみなされる。
+2. プレイヤー1が「謁見」と「説法」でボートにディープカラー、メイ、ビーンストークを乗せる。プレイヤー3も「運命の終幕」で同じオペレーターをボートに乗せる。実績は達成されたとみなされる。
+3. プレイヤー1が「謁見」と「説法」でボートにディープカラー、メイ、ビーンストークを乗せる。プレイヤー2と3も「説法」で同じオペレーターをボートに乗せるが、「運命の終幕」では乗せない。実績は未達成とみなされる。
+4. プレイヤー1が「謁見」でボートにディープカラー、メイ、ビーンストークを乗せる。プレイヤー2と3もそれぞれ「説法」と「運命の終幕」で同じオペレーターをボートに乗せる。しかし、「運命の終幕」でボートが青い枠に到達しない。実績は未達成とみなされる。
+
+**Q**: 初期招集時の初期6★オペレータードラフトは、初期資金のドルを消費しますか？\
+**A**: いいえ、初期オペレータードラフトの選択は、初期分隊を選択する能力にのみ影響し、初期資金には影響しません。残りの初期資金はドルに変換されます。
+
+**Q**: ドルのボーナス/ペナルティはいつ計算されますか？\
+**A**: ドルのボーナス/ペナルティは、プレイヤーの個々の探索終了時に計算されます。
+
+**Q:** アミィリストのオペレーターは、他の6★オペレーターと同じように価格が上がりますか？\
+**A:** いいえ、5★のアミィリストオペレーターは、チーム内で何人のプレイヤーが選択しても$35のままです。
+
+## 変更履歴
+**2025/11/04**
+* 円ショップ報酬のオペレーターコスト解除が、コストを0にするのではなく元のコストにリセットするように変更。
+* FAQにアミィリストからのオペレーターのコスト上昇に関する明確化を追加 -- 何度招集されてもコストは上昇しません。
+
+**2025/11/07**
+* 台湾・中国アカウントの使用制限を撤廃。
+* 使用禁止オペレーターとモジュールのリストを追加。
+* Friston-3チャレンジの文言を変更し、課題の意図を明確化。
+* 重複する偏愛ボーナスオペレーター招集時のペナルティについて、ペナルティが適用されない条件を明確化するため文言を修正。
+* 日本語版ルールセットを追加。
