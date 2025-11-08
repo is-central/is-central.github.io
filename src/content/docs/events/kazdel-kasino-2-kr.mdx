@@ -1,6 +1,6 @@
 ---
 title: Kazdel Kasino 2
-description: A team-based IS tournament.
+description: 팀 기반 IS 토너먼트.
 template: doc
 
 lang: kr
@@ -53,7 +53,7 @@ import TournamentLayout from "../../../layouts/TournamentLayout.astro";
     <h3>등록</h3>
     <p class="date-range">
       <span class="start"><LocalTime datetime={frontmatter.qualifiersStart} format="long" /></span><br>
-      <span class="to">to</span>
+      <span class="to">~</span>
       </br>
       <span class="end"><LocalTime datetime={frontmatter.qualifiersEnd} format="long" /></span>
     </p>
@@ -63,7 +63,7 @@ import TournamentLayout from "../../../layouts/TournamentLayout.astro";
     <h3>예선전</h3>
     <p class="date-range">
       <span class="start"><LocalTime datetime={frontmatter.preliminaryStart} format="long" /></span><br>
-      <span class="to">to</span>
+      <span class="to">~</span>
       </br>
       <span class="end"><LocalTime datetime={frontmatter.preliminaryEnd} format="long" /></span>
     </p>
@@ -73,7 +73,7 @@ import TournamentLayout from "../../../layouts/TournamentLayout.astro";
     <h3>토너먼트 결승전</h3>
     <p class="date-range">
       <span class="start"><LocalTime datetime={frontmatter.finalsStart} format="long" /></span><br>
-      <span class="to">to</span>
+      <span class="to">~</span>
       </br>
       <span class="end"><LocalTime datetime={frontmatter.finalsEnd} format="long" /></span>
     </p>
