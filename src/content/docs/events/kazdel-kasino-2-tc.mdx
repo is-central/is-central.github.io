@@ -1,9 +1,9 @@
 ---
 title: Kazdel Kasino 2
-description: A team-based IS tournament.
+description: 集成戰略團隊賽
 template: doc
 
-lang: en
+lang: tc
 groupId: kazdel-kasino-2
 
 qualifiersStart: "2025-11-03T08:00:00Z"
@@ -21,7 +21,7 @@ import TournamentLayout from "../../../layouts/TournamentLayout.astro";
 <div class="back-button-container">
   <a href="/" class="back-button">
     <span class="back-arrow">←</span>
-    <span class="back-text">Back to Main page</span>
+    <span class="back-text">回到主頁</span>
   </a>
 </div>
 
@@ -29,7 +29,7 @@ import TournamentLayout from "../../../layouts/TournamentLayout.astro";
 
 <div style="position: relative; width: 100%; max-width: 800px; margin: 0 auto;"><img src="/events/kazdel-kasino-2/kazdel-kasino-2-banner.png" alt="Kazdel Kasino 2 Tournament Banner" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /></div>
 
-Kazdel Kasino 2 is a team-based tournament with teams of 3 players. Players earn money by completing objectives during their runs, then convert those dollars into placement points using a summon simulator at the end. The top 8 teams proceed to Round 2; the final placement is also leaderboard-based.
+卡茲戴爾市場2是一個三人組隊團體賽。玩家在通關過程中通過達成指定目標賺取美元，在通關結束時使用抽卡模擬器將美元轉化成排名積分。首輪前八名隊伍將晉級到第二輪，最終排名同樣基於積分排行。
 
 {/*
 <TournamentScoreboard
@@ -39,41 +39,41 @@ Kazdel Kasino 2 is a team-based tournament with teams of 3 players. Players earn
 /> 
 */}
 
-## Format
+## 賽制
 
-- Team of 3 players
-- Player 3: Difficulty 18
-- Players 1 and 2 choose difficulties so that the sum across all three is 48
-- After the last player finishes their run, then immediately use the summon simulator to earn placement points
-- Leaderboard: Top 8 proceed to Round 2; final placement determined by Round 2 leaderboard
+- 三人團隊
+- 玩家3：難度18
+- 玩家1與2難度選擇，確保三人總和為48
+- 團隊內所有玩家通關后立即使用抽卡模擬器獲取排名積分
+- 排行榜：前8名晉級第二輪；最終排名由第二輪排行榜決定
 
-## Schedule
+## 日程安排
 <section class="tournament-schedule">
   <div class="round">
-    <h3>Qualifiers</h3>
+    <h3>資格賽</h3>
     <p class="date-range">
       <span class="start"><LocalTime datetime={frontmatter.qualifiersStart} format="long" /></span><br>
-      <span class="to">to</span>
+      <span class="to">到</span>
       </br>
       <span class="end"><LocalTime datetime={frontmatter.qualifiersEnd} format="long" /></span>
     </p>
   </div>
 
   <div class="round">
-    <h3>Preliminary Round</h3>
+    <h3>初賽</h3>
     <p class="date-range">
       <span class="start"><LocalTime datetime={frontmatter.preliminaryStart} format="long" /></span><br>
-      <span class="to">to</span>
+      <span class="to">到</span>
       </br>
       <span class="end"><LocalTime datetime={frontmatter.preliminaryEnd} format="long" /></span>
     </p>
   </div>
 
   <div class="round">
-    <h3>Tournament Finals</h3>
+    <h3>錦標賽決賽</h3>
     <p class="date-range">
       <span class="start"><LocalTime datetime={frontmatter.finalsStart} format="long" /></span><br>
-      <span class="to">to</span>
+      <span class="to">到</span>
       </br>
       <span class="end"><LocalTime datetime={frontmatter.finalsEnd} format="long" /></span>
     </p>
@@ -81,113 +81,113 @@ Kazdel Kasino 2 is a team-based tournament with teams of 3 players. Players earn
 </section>
 Displayed in your local timezone.
 
-## Registration Requirements
-- Players 1 and 2 must provide screenshots of clearing **Facing souls 15+** with the **Endless key** relic.
-- Player 3 must provide screenshots of clearing **Facing souls 18** with either the **Endless key** or **Anasa's Karma relic** without the **Prophet Horn relic**.
-- Players must be able to stream runs on Discord.
-- Runs may be streamed on <a href="https://twitch.tv/oyana1234" target="_blank" rel="noopener noreferrer">twitch.tv/oyana1234</a>.
-- Players must be members of the <a href="https://discord.gg/fqRBzQWVfK" target="_blank" rel="noopener noreferrer">IS Central Discord</a>.
+## 報名要求：
+- 玩家1與2需提供使用“無終之鑰”藏品通關 “直面靈魂” 等級15以上的截圖。
+- 玩家3需提供使用“無終之鑰”或“阿納薩羯磨” 藏品（不可搭配“先知長角”藏品）通關 “直面靈魂” 等級18的截圖。
+- 所有玩家須能在Discord平台直播通關過程。
+- 直播可通過<a href="https://twitch.tv/oyana1234" target="_blank" rel="noopener noreferrer">twitch.tv/oyana1234</a>進行。
+- 玩家須為<a href="https://discord.gg/fqRBzQWVfK" target="_blank" rel="noopener noreferrer">IS Central Discord</a>成員。
 
 ![Registration Requirements](/events/kazdel-kasino-2/registration-guidelines.png)
 
 **Registration:** <a href="https://forms.gle/9Q4ZTF3ghVtnpe367" target="_blank" rel="noopener noreferrer">Google registration form</a>
 
-## Rules
+## 規則
 
-### Fated Encounter
-Each team cannot select the following relics more than once per team:
-- "Talons of Hatred"
-- "Lamp of Wishes"
+### 相遇
+每隊不可重複選擇以下藏品：
+- “死仇時代的恨意”
+- “美願時代的留戀”
 
-### Wiš'adel
-Wiš'adel cannot be picked unless it's a temporary recruit after a combat or Silver Seal.
+### 維什戴爾
+維什戴爾僅可在戰鬥后臨時招募或獲得博士銀印時選用。
 
-### Balance Limit Withdrawal
-- Players 1 and 2 share 100 ingots; Player 3 has 50 initial ingots to withdraw.
-- Every ingot withdrawn past the limit deducts the player \$500 per ingot.
+### 取錢限制
+- 玩家1與2共享100源石錠；玩家3初始可提取50源石錠。
+- 超額提取每枚源石錠將扣除玩家500美元。
 
-### Run Preparation
-- Only the following floor 3 bonus buffs are allowed: Kettle, 2 Hope, 2 Plans.
-- Players can finish the first combat but cannot select any relics from the first combat.
-- Players must select an encounter as their 2nd node on the floor.
-- The 2nd node must be "Fated encounter" and players must stop at this screen.
-- If a player does not want a Fated Encounter relic, they must stop after the first combat. Rerolling the 2nd node is allowed.
+### 行動準備
+- 僅允許使用以下三層增益效果：水壺、2個希望、2個構想。
+- 玩家可完成首場戰鬥，但不得選擇該戰鬥中的任何藏品。
+- 玩家必須在該層選擇不期而遇作為該層第二個節點。
+- 第二個節點必須為“相遇”事件，玩家需在此界面停止操作。
+- 若玩家不願獲取相遇遺物，須在首場戰鬥后停止。允許重新刷新選擇第二個節點。
 
-### Reset
-- All players start with 0 available resets.
-- Emulator crashes: each player allowed 1 restart per tournament (subject to organizer review).
+### 重開規則
+- 所有玩家初始重置次數為0。
+- 模擬器閃退：每位玩家每屆賽事因模擬器閃退限重啟1次（需經主辦方審核）。
 
-### Miscellaneous
-- Players are allowed to change squads after rerolling.
-- Players are allowed to openly communicate at all times during their runs.
-- The relic “Masterless Memories” is allowed to be selected in the run
-- Players may only use the account they used to register with.
-- All bonuses and penalties will be calculated at the end of the run.
+### 其他
+- 重開后允許更換開局分隊。
+- 通關過程中允許隊員全程公開交流。
+- 允許在通關中選擇藏品“無主的回憶”。
+- 玩家僅可使用註冊時使用的賬號。
+- 所有增益與懲罰將在通關結束后統一計算。
 
-### Restrictions
-#### Banned operators (Released after Tragodia)
-* Leizi the Thunderbringer, Record Keeper, Radian
-* Hoshiguma the Breacher, Haruka, Kichisei, Matsukiri
-* Togawa Sakiko, Yahata Umiri, Wakaba Mutsumi, Misumi Uika, Yutenji Nyamu
-* Mantra, Snegurochka, Vetochki
-* SilverAsh the Reignfrost, Pramanix the Prerita, Astgenne the Lightchaser, Snow Hunter, Hadiya, Akkord
+### 幹員禁用
+#### 禁用幹員（酒神以後實裝幹員）
+* 司霆驚蟄、錄武官、電弧
+* 斬業星熊、遙、吉星、松桐
+* 豐川祥子、三角初華、若葉睦、八幡海鈴、祐天寺若麥
+* 真言、折椏、冬時
+* 凜御銀灰、聖聆初雪、溯光星源、雪獵、哈蒂婭、協律
 
-#### Banned modules (Released after Tragodia)
-* Typhon ModY
-* Goldenglow ModY
-* Gavial the Invicible ModY
-* Primal Caster Mods
-* Ch'en the Holungday ModY
-* Swire the Elegant Wit Mod$\alpha$
-* Pepe RA
-* Loopshooter Mods
-* Executor the Ex Foedere ModY
-* Eyjafjalla ModY
-* Arts Defender Mods
-* Vina Victoria ModY
+#### 禁用模塊（酒神以後實裝模組）
+* 提豐ModY
+* 澄閃ModY
+* 百鍊嘉維爾ModY
+* 本源術士模組
+* 假日威龍陳ModY
+* 琳琅詩懷雅 特限模組
+* 佩佩 特限模組
+* 迴環射手模組
+* 聖約送葬人ModY
+* 艾雅法拉 ModY
+* 馭法鐵衛 模組
+* 維娜·維多利亞ModY
 
-## Tournament Dynamic
-The tournament consists of all players completing a variety of tasks from which they gain dollars, while players 1 and 2 also earn yen.
-Player 3 can spend yen in the yen shop to buy bonuses to facilitate their run.
-After all runs are completed, the dollars accumulated are used in a gacha simulator to determine the final score.
+## 錦標賽機制
+所有玩家需完成各類任務獲取美元，其中玩家1與2可以額外獲取日元。
+玩家3可在日元商店使用日元購買增益道具以提升通關效率。
+所有通關結束后，累積的美元將用於轉蛋模擬器決定最終得分。
 
-### Dollars Currency
-Starting and throughout the run, dollars are used to buy their starting squad and operators according to their cost.
-Throughout the run, players can get more dollars to either spend into more operators or save for the gacha simulator.
+### 美元貨幣體系
+遊戲開局及通關過程中，美元用於按成本購買初始分隊及後續幹員。
+通關期間可獲取更多美元，用於購買幹員或儲存至抽卡模擬器。
 
-- Dollars are spent in: Operators, Starting squads, Final score
-- Dollars are obtained by completing: Bias bonuses, General stages, Conditional stages, Achievements, Final collectibles count
+- 美元用途：幹員、開局分隊、最終評分
+- 美元獲取途徑：幹員成就、常規關卡、條件關卡、成就、最終藏品數量
 
-### Final Scoring
-- After the 3rd player finishes their run, the Team can now spend all the accumulated Dollars on a Summon Simulator.
-- A player from the team must stream the following website <a href="https://lungmendragons.com/gachasim" target="_blank" rel="noopener noreferrer">Lungmen Dragons gacha simulator</a>
-- The team can select any banner from the simulator and can change the banner at any time during the session.
-- If reset history is clicked, the pulling will continue from that moment onwards. The VOD will be reviewed to determine the score before the reset history was clicked.
-- The summon simulator follows the same rules and rates as the in-game summoning system such as pity.
-- Teams will receive score based on the rarity of the operators recruited:
-  - For Every 6 star operator summoned = 360 pts
-  - For Every 5 star operator summoned = 120 pts
-  - For Every 3 and 4 star operator summoned = 10pts
+### 最終評分
+- 玩家3完成挑戰後，團隊可將所有美元投入抽卡模擬器。
+- 一名團隊成員需直播以下網站：<a href="https://lungmendragons.com/gachasim" target="_blank" rel="noopener noreferrer">龍門龍抽卡模擬器</a>
+- 團隊可選擇模擬器內任意卡池，並在抽取過程中隨時更換卡池。
+- 若點擊重置歷史記錄，抽取將從該時刻繼續。系統將根據重置前的錄像判定得分。
+- 抽卡模擬器遵循遊戲內抽卡系統規則及概率（包括保底機制）。
+- 隊伍得分依據抽到幹員稀有度計算：
+  - 每抽卡1名6星幹員 = 360分
+  - 每抽卡1名5星幹員 = 120分
+  - 每抽卡1名3星/4星幹員 = 10分
 
 
-### Operator Costs
+### 幹員成本
 <div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
   ![Operators](/events/kazdel-kasino-2/operators.png)
 </div>
 
 <ul style={{ paddingLeft: '2.5em' }}>
   <li>
-    6★ selector list (\$75):
+    6★選擇者列表（75美元）：
     <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Exusiai_the_New_Covenant_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Exusiai the New Covenant</span>
+        <span style={{ lineHeight: 1 }}>新約能天使</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Tragodia_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Tragodia</span>
+        <span style={{ lineHeight: 1 }}>酒神</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
@@ -197,102 +197,102 @@ Throughout the run, players can get more dollars to either spend into more opera
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Hoederer_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Hoederer</span>
+        <span style={{ lineHeight: 1 }}>赫德雷</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Rosmontis_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Rosmontis</span>
+        <span style={{ lineHeight: 1 }}>迷迭香</span>
       </li>
     </ul>
   </li>
 
   <li>
-    6★ selector list (\$50)
+    6★選擇者列表（50美元）
     <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Kal'tsit_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Kal'tsit</span>
+        <span style={{ lineHeight: 1 }}>凱爾希</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Kirin_R_Yato_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Kirin R Yato</span>
+        <span style={{ lineHeight: 1 }}>麒麟R夜刀</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Ela_Skin_1_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Ela</span>
+        <span style={{ lineHeight: 1 }}>艾拉</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Logos_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Logos</span>
+        <span style={{ lineHeight: 1 }}>邏各斯</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Narantuya_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Narantuya</span>
+        <span style={{ lineHeight: 1 }}>娜仁圖亞</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Eyjafjalla_the_Hvít_Aska_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Eyjafjalla the Hvít Aska</span>
+        <span style={{ lineHeight: 1 }}>純燼艾雅法拉</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-SilverAsh_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>SilverAsh</span>
+        <span style={{ lineHeight: 1 }}>銀灰</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Ulpianus_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Ulpianus</span>
+        <span style={{ lineHeight: 1 }}>烏爾比安</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Shu_Skin_1_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Shu</span>
+        <span style={{ lineHeight: 1 }}>黍</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Degenbrecher_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Degenbrecher</span>
+        <span style={{ lineHeight: 1 }}>鐧</span>
       </li>
     </ul>
   </li>
 
   <li>
-    All other non-bias 6★: \$35
+    其餘無幹員成就6★：35美元
   </li>
   <li>
-    The Amy list (\$35):
+    阿米婭專屬列表（35美元）：
     <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Greyy_the_Lightningbearer_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Greyy the Lightningbearer</span>
+        <span style={{ lineHeight: 1 }}>承曦格雷伊</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Surfer_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Surfer</span>
+        <span style={{ lineHeight: 1 }}>尋瀾</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Cantabile_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Cantabile</span>
+        <span style={{ lineHeight: 1 }}>曉歌</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Amiya_(Medic)_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Amiya</span>
+        <span style={{ lineHeight: 1 }}>阿米婭</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Tin_Man_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Tin Man</span>
+        <span style={{ lineHeight: 1 }}>錫人</span>
       </li>
     </ul>
   </li>
@@ -325,217 +325,217 @@ Throughout the run, players can get more dollars to either spend into more opera
   - Tin man */}
 
 
-### Penalties
-- If a 6★ operator is recruited twice within the team, the cost of the operator will be original cost x3
-- If a 6★ operator is recruited three times within the team, the cost of the operator will be original cost x6
-- Completed bias bonus do not count towards the duplicate penalty (more on this later)
+### 扣分機制
+- 若隊伍內重複招募同一6★幹員，該幹員招募費為原價×3
+- 若隊伍內重複招募同一6★幹員達三次，該幹員招募費為原價×6
+- 已完成的幹員成就不計入重複招募懲罰（詳見後續說明）
 
-### Temporary Operators
-- All temporary operators do not cost money; Temporary Bias bonus operators do not incur the -\$25 penalty (more on Bias bonus later).
+### 臨時幹員
+- 所有臨時幹員無需消耗美元；臨時成就幹員不觸發-$25懲罰（幹員成就機制詳見後續說明）。
 
-### Starting Squads
-- Players 1 and 2: \$1000 starting allowance
-- Player 3: \$500
-- Players cannot go into debt when choosing a squad
+### 開局分隊配置
+- 玩家1與2：1000美元初始資金
+- 玩家3：500美元
+- 選擇開局分隊時時不得負債
 
-#### Squad costs:
+#### 開局分隊價錢：
 <div style={{ display: "flex", justifyContent: "center" }}>
-| Squad                                                                                                                                                                                                         | Cost  |
+| 分隊名稱                                                                                                                                                                                                         | 價錢  |
 |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----:|
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Soul_Escort_Squad.png" alt="Soul Escort" />Soul Escort</span>                                                                    | $500  |
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Erudite_Squad.png" alt="Erudite" />Erudite</span>                                                                                | -$100 |
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Blueprint_Squad.png" alt="Blueprint" />Blueprint*</span>                                                                         | $650  |
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Spearhead_Squad_5.png" alt="Spearhead" />Spearhead</span>                                                                        | -$200 |
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Assault_Squad_5.png" alt="Tactical Assault Squad (Guard/VG)" />Tactical Assault Squad (Guard/VG)</span>                 | $500  |
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Fortification_Squad_5.png" alt="Tactical Fortification Squad (Def/Sup)" />Tactical Fortification Squad (Def/Sup)</span> | $300  |
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Ranged_Squad_5.png" alt="Tactical Ranged Squad (Sniper/Med)" />Tactical Ranged Squad (Sniper/Med)</span>                | $500  |
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Destruction_Squad_5.png" alt="Tactical Destruction Squad (Spec/Cast)" />Tactical Destruction Squad (Spec/Cast)</span>   | $0    |
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-First-Class_Squad_5.png" alt="First-Class" />First-Class</span>                                                                  | $250  |
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Ingots_Squad.png" alt="Ingots" />Ingots</span>                                                                                   | $250  |
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Collection_Squad.png" alt="Collection" />Collection</span>                                                                       | $250  |
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Mimic_Squad.png" alt="Mimic" />Mimic</span>                                                                                      | $100  |
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Top_Gun_Squad.png" alt="Top Gun" />Top Gun</span>                                                                                | $301  |
-| Other                                                                                                                                                                                                         | $1000 |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Soul_Escort_Squad.png" alt="Soul Escort" />靈魂護送分隊</span>                                                                    | 500美元  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Erudite_Squad.png" alt="Erudite" />博聞廣記分隊</span>                                                                                | -100美元 |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Blueprint_Squad.png" alt="Blueprint" />藍圖測繪分隊*</span>                                                                         | 650美元  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Spearhead_Squad_5.png" alt="Spearhead" />矛頭分隊 </span>                                                                        | -200美元 |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Assault_Squad_5.png" alt="Tactical Assault Squad (Guard/VG)" />突擊戰術分隊 </span>                 | 500美元  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Fortification_Squad_5.png" alt="Tactical Fortification Squad (Def/Sup)" />堡壘戰術分隊（防禦/支援）</span> | 300美元  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Ranged_Squad_5.png" alt="Tactical Ranged Squad (Sniper/Med)" />遠程戰術分隊（狙擊/醫療）</span>                | 500美元  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Destruction_Squad_5.png" alt="Tactical Destruction Squad (Spec/Cast)" />破壞戰術分隊（特種/法術）</span>   | 0美元    |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-First-Class_Squad_5.png" alt="First-Class" />高規格分隊 </span>                                                                  | 250美元  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Ingots_Squad.png" alt="Ingots" />點刺成錠分隊</span>                                                                                   | 250美元  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Collection_Squad.png" alt="Collection" />擬態學者分隊</span>                                                                       | 250美元  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Mimic_Squad.png" alt="Mimic" />異想天開分隊 </span>                                                                                      | 100美元  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Top_Gun_Squad.png" alt="Top Gun" />專業人士分隊 </span>                                                                                | 301美元  |
+| 其他                                                                                                                                                                                                          | 1000美元 |
 </div>
 
-$^*$Blueprint squad has a 120 minutes time limit, -1000pts every 30 minutes afterwards (10 minutes grace period)
+$^*$藍圖測繪分隊限時120分鐘，超時每30分鐘扣除1000分（含10分鐘寬限期）
 
-### Bias Bonuses
+### 幹員成就
 
-Each bonus can only be claimed once per team. Operators mentioned do not cost dollars if the objective is completed; otherwise -\$25 per 6★.
+每項獎勵每隊僅可領取一次。若達成目標，提及的幹員無需支付美元；否則每6★扣除25美元。
 
 <ul style={{ paddingLeft: '2.5em' }}>
   <li>
-    Easy (\$50)
+    簡單級（50美元）
     <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Carnelian_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Carnelian: Kill 5 enemies with 1 skill</span>
+        <span style={{ lineHeight: 1 }}>卡涅利安：單次技能擊殺5名敵人</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Ascalon_Skin_1_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Ascalon: Have both protraction hand and book by the end of the run</span>
+        <span style={{ lineHeight: 1 }}>阿斯卡綸：通關時同時持有久居之手與銹刃-久居</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Lappland_the_Decadenza_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Lappland the Decadenza: Recruit and promote a 5 star splash caster in the squad</span>
+        <span style={{ lineHeight: 1 }}>荒蕪拉普蘭德：招募並晉陞一名5星範圍法術師</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Yu_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Yu: With S3 active, proc burn on a dreadful foe</span>
+        <span style={{ lineHeight: 1 }}>余：激活三技能時對險路惡敵觸發灼燒</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Vina_Victoria_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Vina Victoria: While S3 is active, have 7 allies take damage at the same time</span>
+        <span style={{ lineHeight: 1 }}>維娜·維多利亞：激活三技能期間使7名我方單位同時承受傷害</span>
       </li>
     </ul>
   </li>
 
   <li>
-    Medium (\$100)
+    中等難度（100美元）
     <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Saileach_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Saileach: Heal 2 healing chests with only saileach</span>
+        <span style={{ lineHeight: 1 }}>琴柳：僅使用琴柳治療2個治療寶箱</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Angelina_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Angelina: With angelina S3 active, shift a dreadful foe at least 4 tiles in a single skill activation</span>
+        <span style={{ lineHeight: 1 }}>安潔莉娜：激活三技能時，單次技能發動使險路惡敵位移至少4格</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Blitz_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Blitz: Stun 3 flying enemies in 1 skill activation</span>
+        <span style={{ lineHeight: 1 }}>閃擊：單次技能發動眩暈3名飛行敵人</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Erato_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Erato: Have Erato stop an enemy's channeled ability by utilizing sleep</span>
+        <span style={{ lineHeight: 1 }}>埃拉托：埃拉托通過睡眠效果中斷敵人蓄力技能</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Projekt_Red_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Projekt Red: Stun at least 4 enemies on 4 different tiles in 1 deployment</span>
+        <span style={{ lineHeight: 1 }}>紅：單次部署擊暈至少4個不同格子的敵人</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/SkadiSneeze.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Skadi/Skadi the Corrupting Heart: Deploy a promoted Skadi or Skadi the Corrupting Heart on a dreadful foe stage and activate her skill</span>
+        <span style={{ lineHeight: 1 }}>斯卡蒂/濁心斯卡蒂：在險路惡敵關卡部署已進升斯卡蒂或濁心斯卡蒂並發動技能</span>
       </li>
     </ul>
   </li>
 
   <li>
-    Hard ($150)
+    困難級（150美元）
     <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Ines_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Ines: Cannot be invisible after recruitment</span>
+        <span style={{ lineHeight: 1 }}>伊內斯：招募后無法隱身</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Qiubai_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Qiubai: Recruit Qiubai as the starting operator at elite 1</span>
+        <span style={{ lineHeight: 1 }}>仇白：精英1級招募仇白作為初始開局幹員</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Stainless_Skin_2_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Stainless: After recruitment, Deploy Stainless within the first 15 enemies killed of every stage</span>
+        <span style={{ lineHeight: 1 }}>白鐵：招募后，每關前15名擊殺敵人中必須部署白鐵</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Młynar_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Młynar: While blocking Qui'lon, Deal 25% of HP damage in 1 skill activation</span>
+        <span style={{ lineHeight: 1 }}>瑪恩納：阻擋奎隆時，單次技能釋放造成25%生命值傷害</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Texas_the_Omertosa_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Texas the Omertosa: Stun 5 bind casters within a single stage</span>
+        <span style={{ lineHeight: 1 }}>緘默·德克薩斯：單關眩暈5名薩卡茲術師/薩卡茲術師組長</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Archetto_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Archetto: After recruitment, do not deal any damage to any spines</span>
+        <span style={{ lineHeight: 1 }}>空弦：招募后不能對任何年代之刺和飲泣之刺造成傷害</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Swire_the_Elegant_Wit_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Swire the Elegant Wit: Defy death 5 times in a single deployment</span>
+        <span style={{ lineHeight: 1 }}>琳琅詩懷雅：單次部署中觸發二天賦受到致命傷害5次</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-FEater_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Feater: Push with Feater 4 times in 2 different positions within 90 seconds</span>
+        <span style={{ lineHeight: 1 }}>食鐵獸：90秒內於2個不同位置使用食鐵獸推進4次</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Rathalos_S_Noir_Corne_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Rathalos S Noir Corne: Resist 5 attacks from a dreadful foe in a single deployment</span>
+        <span style={{ lineHeight: 1 }}>火龍S黑角：單次部署中抵禦5次險路惡敵的攻擊</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Fiammetta_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Fiammetta: Have Fiammetta deal at least 20,000 damage in a single instance of damage</span>
+        <span style={{ lineHeight: 1 }}>菲亞梅塔：單次傷害中使菲亞梅塔造成至少20,000傷害</span>
       </li>
     </ul>
   </li>
 
   <li>
-    Ultra hard ($200)
+    超難級（200元）
     <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Mudrock_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Mudrock: Deal a full hp bar of damage to a dreadful foe</span>
+        <span style={{ lineHeight: 1 }}>泥岩：對一名險路惡敵造成其血條百分百的傷害</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Blaze_the_Igniting_Spark_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Blaze the Igniting Spark: Have an Enemy hit blaze and activate 2nd Talent 3 times in a single combat without un-deploying blaze</span>
+        <span style={{ lineHeight: 1 }}>燭煌：敵方擊中燭煌並激活二天賦3次，且燭煌未撤離戰場</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Viviana_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Viviana: Deal a full hp bar of damage to a dreadful foe</span>
+        <span style={{ lineHeight: 1 }}>薇薇安娜：對一名險路惡敵造成其血條百分百的傷害</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Tachanka_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Tachanka: Clear a face off while only deploying Tachanka</span>
+        <span style={{ lineHeight: 1 }}>戰車：僅部署戰車時成功通關狹路相逢一次</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Nymph_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Nymph: While having a Supporter trigger necrosis, use the skill "Crumbling heart" to deal damage to a dreadful foe on floor 5 or higher</span>
+        <span style={{ lineHeight: 1 }}>妮芙：當輔助職業角色觸發凋亡損傷爆發效果時，使用技能“心防潰決”對5層及以上險路惡敵造成傷害</span>
       </li>
     </ul>
   </li>
 
   <li>
-    Insane ($777)
+    瘋狂難度（777美元）
     <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Friston-3_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Friston-3: Use Friston to block Theresis before Theresis' HP goes below 90%. Friston-3 cannot die, stop blocking Theresis or be undeployed until Theresis phase 2</span>
+        <span style={{ lineHeight: 1 }}>Friston-3：在特雷西斯，黑冠尊主血量降至90%前，用Friston -3將其阻擋。Friston -3在在特雷西斯第二階段前不可陣亡、停止阻擋或撤離</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Melantha_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Melantha: Deal a full hp bar of damage to Amiya, Furnace's Finale' 2nd Form</span>
+        <span style={{ lineHeight: 1 }}>玫蘭莎：對“阿米婭”，爐芯終曲·第二形態的造成其血條百分百的傷害</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Mizuki_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Mizuki: Within 4s after Mizuki shifts a dreadful foe, shift a dreadful foe into a hole</span>
+        <span style={{ lineHeight: 1 }}>水月：水月位移一名險路惡敵後4秒內，將險路惡敵位移至坑洞中</span>
       </li>
     </ul>
   </li>
@@ -574,96 +574,96 @@ Each bonus can only be claimed once per team. Operators mentioned do not cost do
   - Friston-3: use Friston to tank Theresis above 90% hp and friston cannot die or be undeployed until Theresis phase 2
   - Melantha: deal a full hp bar of damage to Amiya, Furnace's Finale' 2nd Form */}
 
-### General Stages
-General stages are classified into different categories, only the highest amount of dollars from each category will be obtained unless specified otherwise (multiple teammates can get the same bonuses). If a player has talons of hatred, they claim each category bonus more than once.
+### 通用關卡
+通用關卡分為不同類別，除非另有說明，僅獲取各類別最高金額（多名隊友可獲得相同獎勵）。若玩家持有憎恨之爪，可重複獲取各類別獎勵。
 
-#### Category 1:
-- Clear emergency Dense Jungle: \$25
-- Clear emergency Kaz Falls: \$35
+#### 類別1：
+- 通關緊急作戰 叢林密布：25美元
+- 通關緊急作戰 卡茲瀑布：35美元
 
-#### Category 2:
-- Clear emergency Simulated Skirmish: \$20
-- Clear emergency Motorized Squad: \$50
-- Clear emergency Firepower Squad: \$30
-- Clear any floor 3 emergency stage: \$15
+#### 類別2：
+- 通關緊急作戰 大棋一盤：20美元
+- 通關緊急作戰 機動小隊：50美元
+- 通關緊急作戰 火力小隊：30美元
+- 通關任意第3層緊急作戰關卡：15美元
 
-#### Category 3: 
-- Clear emergency Chaos: \$70
-- Clear emergency Elusive Merc: \$80
-- Clear emergency Frequent Dispute: \$100
-- Clear any floor 4 emergency: \$50
+#### 類別3：
+- 通關緊急作戰 混沌：70美元
+- 通關緊急作戰 神出鬼沒：80美元
+- 通關緊急作戰 頻繁爭端：100美元
+- 通關任意第4層緊急作戰關卡：50美元
 
-#### Category 4:   
-- Clear emergency Land Reclamation: \$80
-- Clear emergency Rhine Guardians: \$90
-- Clear emergency Regular Army: \$100
-- Clear any floor 5 emergency: \$60
+#### 第四類：
+- 通關緊急作戰：計劃耕種80美元
+- 通關緊急作戰：萊茵衛士90美元
+- 通關緊急作戰：建制100美元
+- 通關任意第5層緊急作戰關卡：60美元
 
-#### Category 5:
-- Clear emergency Quest For Consensus: \$70
-- Clear emergency Divine Desire: \$70
-- Clear emergency 'Heretics': \$120
-- Clear emergency Heavenly Paradise: \$150
+#### 第五類：
+- 通關緊急作戰：謀求共識70美元
+- 通關緊急作戰：神聖的渴望：70美元
+- 通關緊急作戰： ‘外道’：120美元
+- 通關緊急作戰： 洞天福地：150美元
 
-#### Category 6:
-- Clear Veil of Probability or Devoted Warrior or Decapitation: \$120
-- Clear Brave Souls Marching or Under The Crown: \$130
-- Clear Courtyard of Farewells: \$150
-- Clear any f3 boss stage: \$100
+#### 第六類：
+- 通關或然面紗或奉獻或斬首：120美元
+- 通關赴敵者或王冠之下：130美元
+- 通關離歌的庭院：150美元
+- 通關任意第三層險路惡敵關卡：100美元
 
-### Boss Achievements
-Complete the following conditions per run to obtain bonus money:
-#### ED5
-- Clear Fate's Finale: \$500
-- Clearing Fractured Fate's Finale: additional \$50
+### 險路惡敵成就
+每次通關滿足下列條件可獲得額外獎金：
+#### 五結局
+- 通關不容拒絕：500美元
+- 通關混亂不容拒絕：額外50美元
 
 #### ED4
-- Clear The Dharma Sermon: \$400
-- Clearing Fractured The Dharma Sermon: additional \$50
-- Kill Qui'lon: additional \$250
+- 通關授法：400美元
+- 通關混亂授法：額外50美元
+- 擊殺奎隆：額外250美元
 
 #### ED3
-- Clear Holy City: \$100
-- Clear Holy City Fractured: additional \$100
-- Kill Patriot without manually retreating any operator during the whole fight: \$200
+- 通關聖城：100美元
+- 通關混亂聖城：額外100美元
+- 全程不手動撤退任何幹員擊殺愛國者：200美元
 
 #### ED2
-- Clear Court Visit: \$100
-- Clear with Anasa's Karma: additional \$200
-- Clear while fractured and leak all 7 assassins: \$77
+- 通關朝謁：100美元
+- 擁有阿納薩羯磨通關：額外200美元
+- 混亂狀態通關且漏全部7名刺客：77美元
 
 #### ED1
-- Clear Emergency Lecture: \$50
-- Clear with Anasas Karma: additional \$150
-- Clear Fractured: additional \$30
-- Have at least 5 operators teleported with the skill Punishment of foolishness: \$200
+- 完成緊急授課：50美元
+- 擁有阿納薩羯磨通關：額外150美元
+- 混亂狀態通關：額外30美元
+- 至少5名幹員使用“痴愚懲戒”技能傳送：200美元
 
-### Conditional Stages
-Completing the following stages and not taking a plan will grant bonus money:
-- Bloodline Debate: \$120
-- Epochal Gaps: \$200
-- Sordid Surveillance: \$140
+### 條件關卡
+完成下列關卡且未獲取構想可獲額外獎金：
+- 血脈之辯：120美元
+- 年代斷層：200美元
+- 朽敗考察：140美元
 
-Spines can be destroyed but taking any plans during the reward screen after stage will nullify the bonus.
+年代之刺可被摧毀，但領取通關獎勵界面中拾取任何構想將使獎金失效。
 
-If a player picks up plans by accident on the bonus plan stages, you are allowed to drop the plan and get the bonus once. From the 2nd time onwards you pick up the plan from a bonus stage, you can no longer drop plans towards the bonus.
+若玩家在領取通關獎勵階段誤拾構想，允許丟棄構想並獲得一次獎金。自第二次起，從通關獎勵階段拾取構想將無法通過丟棄構想獲取獎金。
 
-### Achievements
-#### Individual achievements:
+### 成就系統
+#### 個人成就：
 <div style={{ display: "flex", justifyContent: "center" }}>
-| Achievement                                                                                                                                     | Reward                           |
+| 成就名稱                                                                                                                                     | 獎勵金額                           |
 |:-----------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------:|
-| Win 3 Face Off nodes in a single run                                                                                                            | \$120                            |
-| In the Encounter "Plausible But False" select the option "Ask them for help"                                                                    | \$150                            |
-| In the Encounter “Lost treasure” select the option “I'd rather have a feast”                                                                    | \$100                            |
-| In the Encounter "Good fortune to you" select the option "Offer all of your belongings" while you have at least 20 ingots                       | \$3 per ingot spent up to \$301  |
-| Upon entering floor 5 receive: Assembly, Furnace, and 1 Plan                                                                                   | \$150                            |
-| Have At least 100 “Shrivel and Sprouts” in your inventory at one time                                                                           | \$777                            |
-| Clear a stage on floor 6 with Anasa’s Karma and kill the cadence in the stage and pick up despair                                               | \$250 (NM) \| \$500 (EM)         |
-| Leak 5 boss enemies in a single stage                                                                                                           | \$350                            |
-| For Every dreadful foe stage cleared while you possess the relic "Rolling Ancestors"                                                            | \$100                            |
-| For Every dreadful foe stage cleared while possessing the relic "Reality of the End"                                                            | \$100                            |
-| While having the lamp of wishes, acquire at least 4 active hands (Hands are active when the squad has an operator that is affected by the hand) | \$500                            |
+| 單次通關贏得3個狹路相逢節點                                                                                                             | 120美元                            |
+| 在不期而遇“似是而非”中選擇“向她們求援”選項                                                                    | 150美元                            |
+| 在不期而遇“失落寶藏”中選擇“我更想飽餐一頓”選項                                                                    | 100美元                            |
+| 在不期而遇“財源廣進”時選擇“奉上所有財物”（需持有至少20塊金屬錠）                        | 每消耗1塊金屬錠獎勵$3（上限301美元）  |
+| 進入第5層時獲得：集會、熔爐及構想各一                                                                                  | 150美元                            |
+| 背包同時持有至少100個“枯木新枝”                                                                            | 777美元                            |
+| 在6層持有阿納薩羯磨通關關卡，擊殺該關卡的終曲合聲並獲得絕望                                               | 250美元 (普通難度) \| 500美元 (緊急難度)         |
+| 在單個關卡內漏一共5名首領級敵人                                                                                                           | 350美元                            |
+| 持有“滾動先祖”藏品時每通關一個險路惡敵關卡                                                            | 100美元                            |
+| 持有聖物“終結的實相”時每通關的一個險路惡敵關卡                                                             | 100美元                            |
+| 持有美願時代的留戀期間，使至少4隻手類藏品處於被激活狀態（當隊伍中有受手類藏品影響的幹員時，該手即視為活躍狀態） | 500美元                            |
 </div>
 
 {/* The following Achievements can be claimed once per run.
@@ -681,14 +681,14 @@ If a player picks up plans by accident on the bonus plan stages, you are allowed
 - While having the lamp of wishes, acquire at least 4 active hands - 500$ (Hands are active when the squad has an operator that is affected by the hand)
 - Have At least 100 “Shrivel and Sprouts” in your inventory at one time. - 777$ */}
 
-#### Team-based achievements:
+#### 團隊成就：
 <div style={{ display: "flex", justifyContent: "center" }}>
-| Achievement                                                                                                             | Reward |
+| 成就名稱                                                                                                             | 獎勵 |
 |:-----------------------------------------------------------------------------------------------------------------------:|:------:|
-| Sleep an enemy for 60s straight within a stage                                                                          | \$100  |
-| Between all teammates, have all 4 fated encounters options by the end screen                                            | \$1000 |
-| In the same run, clear endings 2+4+5 on Difficulty 18                                                                   | \$3000 |
-| Across 3 Players, select 3 different dradful foes to load the same 3 operators on a boat, letting it enter the blue box | \$333  |
+| 在關卡內連續使敵人沉睡60秒                                                                           | 100美元  |
+| 全員在結算畫面前集齊全部4種相遇選項                                            | 1000美元 |
+| 通關難度18時達成結局2+4+5                                                                    | 3000美元 |
+| 3名玩家分別選擇3個不同險路惡敵關卡，將相同3名幹員裝載至船隻上並讓其進入保護目標區域  | 333美元  |
 </div>
 
 {/* - Sleep an enemy for 60s straight - 100$
@@ -697,26 +697,26 @@ If a player picks up plans by accident on the bonus plan stages, you are allowed
 - Across 3 Players, Load 3 different operators on a single boat on 3 different dreadful foe stages, while having all 3 operators be the same across all 3 boats and have each boat enter the blue box. - 333$ */}
 
 
-### Collectibles Count
-All players will receive a bonus based on the amount of relics they have at the end of their run based on the end screen.
-- < 40: \$400
-- 41–50: \$300
-- 51–60: \$200
-- 61+: \$100
+### 收集品統計
+所有玩家將根據通關時持有的遺物數量獲得額外獎勵（以結局畫面為準）：
+- < 40件: 400美元
+- 41–50件: 300美元
+- 51–60件: 200美元
+- 61+件: 100美元
 
-This can only be claimed if the run is won.
+僅限通關成功的玩家可領取。
 
-## Yen Shop
+## 日元商店
 
-### Yen Objectives
+### 日元目標
 <div style={{ display: "flex", justifyContent: "center" }}>
-| Objective                                                     | Reward                    |
+| 目標                                                      | 獎勵                    |
 |:-------------------------------------------------------------:|:-------------------------:|
-| Endings 1–5 between Players 1 and 2                                           | 500¥      |
-| Triple ending                                                                 | 500¥ each |
-| Ultra hard or Insane challenges (unique per challenge)                        | 100¥ each |
-| Ending 5 with "Reality of the End" (once per team)                            | 1000¥     |
-| Floor 7 with last 3 Dreadful Foes under fractured mental toil (once per team) | 800¥      |
+| 玩家1與2達成結局1-5                                            | 500日元      |
+| 三重結局 各                                                                 | 各500日元 |
+| 超難/瘋狂難度挑戰（每項挑戰結算最多一次）                        | 各100日元 |
+| 達成結局5並觸發“終結的實相”（每隊僅限一次）                             | 1000日元     |
+| 到達第7層且最後3名險路惡敵關卡處於精神崩潰狀態通關 （每隊僅限一次） | 800日元      |
 </div>
 
 {/* - Endings 1–5 between Players 1 and 2: 500¥
@@ -725,18 +725,18 @@ This can only be claimed if the run is won.
 - Ending 5 with "Reality of the End": 1000¥ (once per team)
 - Floor 7 with last 3 Dreadful Foes under fractured mental toil: 800¥ (once per team) */}
 
-### Yen Shop Bonuses
+### 日元商店獎勵
 <div style={{ display: "flex", justifyContent: "center" }}>
-| Bonus                                                                                  | Cost  | Stock    |
+| 獎勵                                                                                   | 費用   | 庫存    |
 |:--------------------------------------------------------------------------------------:|:-----:|:--------:|
-| Collectibles count bonus will always give the highest reward                           | 500¥  | 1        |
-| +10 ingot withdrawal limit                                                             | 50¥   | 10       |
-| +\$500 to Player 3 starting allowance                                                  | 200¥  | 1        |
-| Remove Blueprint time limit restriction                                                | 1000¥ | 1        |
-| Allow a Floor 4 reset                                                                  | 1000¥ | 1        |
-| Recruit Operator Wiš'adel without penalty/restriction                                  | 2000¥ | 1        |
-| Remove repeated-operator penalty (per operator)                                        | 300¥  | $\infty$ |
-| In the run preparation: remove starting collectible restriction; allow a relic to be chosen after first combat | 1000¥ | 1        |
+| 收藏品計數獎勵始終給予最高回報                           | 500日元  | 1        |
+| +10源石錠提取上限                                                              | 50日元   | 10       |
+| 玩家3初始資金+500美金                                                  | 200日元  | 1        |
+| 解除藍圖時間限制                                                | 1000日元 | 1        |
+| 允許第四層重開                                                                  | 1000日元 | 1        |
+| 無懲罰/限制招募行動員維什戴爾                                   | 2000日元 | 1        |
+| R移除重複招募懲罰（每名幹員）                                        | 300日元  | $\infty$ |
+| 行動準備階段：解除初始收藏品限制；首戰後可選擇藏品  | 1000¥ | 1        |
 </div>
 
 {/* - Collectibles count bonus (highest) — 500¥ (stock 1)
@@ -749,57 +749,57 @@ This can only be claimed if the run is won.
 - Remove starting collectible restriction; allow a relic to be chosen after first combat — 1000¥ (stock 1)
  */}
 
-## FAQ
+## 常見問題解答
 
-**Q**: If Players 1 and 2 both draft the same bias bonus operator, how are the penalty dollars calculated?\
-**A**: The base cost of a bias bonus operator is \$25 and is only \$0 when the corresponding bias challenge is completed.
+**問**：若玩家1和玩家2均選取同一成就幹員，成本如何計算？\
+**答**：成就幹員的基礎成本為25美元，僅在完成對應幹員成就挑戰時成本為0。
 
-Consider the following scenarios with Młynar being the bias bonus operator:
-1. Player 1 completes the Młynar bonus challenge while player 2 drafts Młynar but does not complete the challenge; the incurred cost on player 2 is \$$25 \cdot 3$ = \$75
-2. Player 1 does not complete the Młynar bonus challenge while player 2 completes the challenge; the incurred cost on player 1 is \$25
-3. Player 1 and 2 both fail the challenge, the incurred cost is \$25 + \$75 = \$100
-4. Player 1 and 2 both complete the challenge, the incurred cost is \$0 for both players. However the bonus can only be claimed once (\$$150 \cdot 1$)
+以成就作員瑪恩納為例說明以下情況：
+1. 玩家1完成瑪恩納獎勵挑戰，玩家2選中瑪恩納但未完成挑戰；玩家2需承擔的成本為：25美元$\cdot$3 = 75美元
+2. 玩家1未完成瑪恩納獎勵挑戰而玩家2完成挑戰時，玩家1承擔 25美元成本
+3. 玩家1和2均未完成挑戰時，總成本為25美元 + 75美元 = 100美元
+4. 玩家1和2均完成挑戰時，雙方成本均為$0。但獎勵僅可領取一次（150美元$\cdot$1）
 
-**Q**: How does the operator restriction penalty removal work in the Yen shop?\
-**A**: The operator restriction penalty removal reward only applies to Player 3, effectively setting the cost of the operator back to its base cost. Players 1 and 2 are not affected by this effect.
+**問**：How does the operator restriction penalty removal work in the Yen shop?\
+**答**：The operator restriction penalty removal reward only applies to Player 3, effectively setting the cost of the operator back to its base cost. Players 1 and 2 are not affected by this effect.
 
-**Q**: What is a triple ending?\
-**A**: A triple ending is an Integrated Strategies run where three ending boss have been defeated. Ending bosses include Floor 5,6,7 Dreadful foe stages. Clearing only Victory Rewind does not count as defeating an ending boss.
+**問**：何為三重結局？\
+**答**：指在集成戰略通關中擊敗三位最終BOSS的成就。終局BOSS包含第5、6、7層的險路惡敵關卡。通關時光凱旋不計入擊敗終局BOSS。
 
-**Q**: What is the "Across 3 Players, select 3 different dradful foes to load the same 3 operators on a boat,..." team achievement? Any examples of what counts/does not count?\
-**A**: Consider the following scenarios:
-1. Player 1 loads Deepcolor, May and Beanstalk on a boat on Court Visit. Player 2 and 3 also load the same operators on Dharma Sermon and Fate's Finale respectively. The achievement is considered completed.
-2. Player 1 loads Deepcolor, May and Beanstalk on a boat on Court Visit and Dharma Sermon. Player 3 also load the same operators on Fate's Finale. The achievement is considered completed.
-3. Player 1 loads Deepcolor, May and Beanstalk on a boat on Court Visit and Dharma Sermon. Player 2 and 3 also load the same operators on Dharma Sermon but not Fate's Finale respectively. The achievement is considered incomplete.
-4. Player 1 loads Deepcolor, May and Beanstalk on a boat on Court Visit. Player 2 and 3 also load the same operators on Dharma Sermon and Fate's Finale respectively. However, the boat does not reach the blue box in Fate's Finale. The achievement is considered incomplete.
+**問**：團隊成就“3名玩家分別選擇3個不同險路惡敵關卡，將相同3名幹員...”如何達成？請舉例說明有效/無效情況。\
+**答**：參考以下場景：
+1. 玩家1在朝謁關卡將深海色、梅與豆苗裝載至同一船隻。玩家2與3分別在授法與不容拒絕關卡裝載相同幹員。此成就視為達成。
+2. 玩家1在朝謁與授法關卡將深海色、梅與豆苗裝載至同一船隻。玩家3在不容拒絕關卡裝載相同操作員。此成就視為達成。
+3. 玩家1在朝謁與授法關卡的船隻上同時裝載深海色、梅與豆苗。玩家2和3在授法關卡裝載相同幹員，但未在不容拒絕關卡裝載。此成就視為未達成。
+4. 玩家1在朝謁關卡的船隻上搭載深色、梅與豆莖。玩家2和3分別在授法與“命運終章”關卡搭載相同操作員。但船隻未能抵達不容拒絕的藍色區域。該成就視為未達成。
 
-**Q**: Does drafting initial 6★ operators during initial recruitment consume dollars in the starting allowance?\
-**A**: No, the choice of your initial operator draft does not impact your ability to choose which starting squad, only your starting allowance. The remainder of your starting allowance is converted into dollars.
+**問**：初始招募階段選取6★幹員是否消耗初始資金？\
+**答**：不會。初始幹員選擇僅影響初始小隊配置，不影響初始資金。剩餘資金將轉換為美元。
 
-**Q**: When are dollar bonuses/penalties calculated?\
-**A**: Dollar bonuses/penalties are calculated at the end of the player's individual run.
+**問**：美元獎勵/懲罰何時計算？\
+**答**：美元獎勵/懲罰在玩家個人通關結束后一併計算。
 
-**Q**: Are Amy list operators increasing in price as all other 6★ operators?\
-**A**: No, 5★ Amy list operators are still at \$35 no matter how many players in your team picks them
+**問**：阿米婭專屬列表中的幹員是否會像其他6★幹員在重複招募后漲價？\
+**答**：不會，無論團隊中有多少玩家選擇，5★阿米婭專屬列表幹員仍維持35美元價格。
 
-## Changelog
+## 變更記錄
 **2025/11/04**
-* Operator cost removal from Yen shop rewards resets its cost to its original cost instead of reducing it to 0.
-* Clarification into increased cost on operators from the Amy list added in the FAQ -- their cost does not increase regardless of being recruited multiple times.
+* 從百圓商店獎勵移除操作員的成本後，其成本將重置為原始數值，而非降為0。
+* 常見問答新增關於艾米名單操作員成本提升的說明——無論招募次數多少，其成本皆不會增加。
 
 **2025/11/07**
-* Removed TW and CN account restrictions.
-* Added an operators and modules ban list.
-* Friston-3 challenge reworded to clarify the intention of the challenge.
-* Penalties of drafting repeated bias bonus operators reworded to clarify when players don't get penalized.
-* JP and KR ruleset added.
+* 移除台灣與中國帳戶限制。
+* 新增操作員與模組禁用清單。
+* 重新表述Friston-3挑戰內容，以釐清挑戰意圖。
+* 調整重複選取偏好加成操作員的懲罰機制，明確說明免除懲罰的情形。
+* 新增日本與韓國規則集。
 
 **2025/11/09**
-* VN ruleset added.
+* VN 規則集已加入。
 
 **2025/11/10**
-* Fiammeta, Mizuki, Projekt Red and Skadi/Skalter bias bonus added.
+* 菲亞梅塔、水月、紅、斯卡蒂/濁心斯卡蒂幹員成就就已添加
 
 **2025/11/11**
-* TC and SC ruleset added.
-* Shu added to the \$50 list.
+* 添加 TC 與 SC 規則集。
+* 黍被添加到50美元清單中
