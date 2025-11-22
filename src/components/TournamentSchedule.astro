@@ -1,0 +1,153 @@
+---
+const { title = 'Schedule', dataUrl = '/events/kazdel-kasino-2/schedule.json', refreshMs = 15000 } = Astro.props;
+import LocalTime from '../components/LocalTime.astro';
+---
+
+<style>
+  .schedule {
+    margin: 1rem 0 2rem 0;
+    background: var(--sl-color-bg-nav);
+    border: 1px solid var(--sl-color-border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0,0,0,.15);
+    width: 100%;
+    display: block;
+  }
+
+  .schedule-body {
+    padding: 0 1rem 1rem;
+  }
+
+  .schedule-header {
+    padding: .875rem 1rem;
+    background: var(--sl-color-accent-low);
+    border-bottom: 1px solid var(--sl-color-border);
+  }
+
+  .schedule-title {
+    margin: 0 auto;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+  }
+
+  table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  thead th {
+    text-align: center;
+    padding: .75rem 1rem;
+    font-size: .9rem;
+    color: var(--sl-color-text-subtle);
+    border-bottom: 1px solid var(--sl-color-border);
+  }
+
+  tbody td {
+    text-align: center;
+    padding: .75rem 2rem;
+    border-bottom: 1px solid var(--sl-color-hairline);
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .time, .stream {
+    max-width: 1px;
+  }
+
+  tbody tr:hover {
+    background: var(--sl-color-gray-6);
+  }
+
+  @media (max-width: 640px) {
+    thead { display: none; }
+    table, tbody, tr, td { display: block; width: 100%; }
+    tbody tr { border-bottom: 1px solid var(--sl-color-border); }
+    tbody td {
+      display: flex;
+      justify-content: space-between;
+      padding: .5rem .75rem;
+    }
+    tbody td::before {
+      content: attr(data-label);
+      color: var(--sl-color-text-subtle);
+      font-weight: 600;
+      margin-right: .75rem;
+    }
+  }
+</style>
+
+<div class="schedule" id="schedule-container">
+  <div class="schedule-header">
+    <h3 class="schedule-title">{title}</h3>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th class="team">Team</th>
+        <th class="player">Player</th>
+        <th class="time">Local Time</th>
+        <th class="stream">Stream</th>
+      </tr>
+    </thead>
+    <tbody id="schedule-body">
+      <tr><td colspan="4" class="updated">Loading…</td></tr>
+    </tbody>
+  </table>
+
+  <div class="updated" id="schedule-updated"></div>
+</div>
+
+<script define:vars={{ dataUrl, refreshMs }}>
+  async function loadSchedule() {
+    try {
+      const res = await fetch(dataUrl + '?t=' + Date.now(), { cache: 'no-store' });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+      const json = await res.json();
+      const body = document.getElementById('schedule-body');
+      const updatedEl = document.getElementById('schedule-updated');
+
+      body.innerHTML = '';
+
+      json.matches.sort((a, b) => new Date(a.time) - new Date(b.time));
+      (json.matches || []).forEach(m => {
+        const tr = document.createElement('tr');
+
+        tr.innerHTML = `
+          <td class="team" data-label="Team">${m.team}</td>
+          <td class="player" data-label="Player">${m.player}</td>
+          <td class="time" data-label="Local Time">
+            <time data-localdate datetime="${m.time}" data-format="long"></time>
+          </td>
+          <td class="stream" data-label="Stream">${m.stream}</td>
+        `;
+
+        body.appendChild(tr);
+      });
+
+      // Local time converter
+      document.querySelectorAll('[data-localdate]').forEach(el => {
+        const date = new Date(el.getAttribute('datetime'));
+        el.textContent = date.toLocaleString(undefined, { month: 'short',   // e.g., "November"
+            day: 'numeric',  // e.g., "4"
+            hour: 'numeric',
+            minute: '2-digit', });
+      });
+
+      updatedEl.textContent = '';
+    } catch (e) {
+      document.getElementById('schedule-body').innerHTML =
+        `<tr><td colspan="4" class="updated">Failed to load schedule: ${e.message}</td></tr>`;
+    }
+  }
+
+  loadSchedule();
+  setInterval(loadSchedule, refreshMs);
+</script>
+

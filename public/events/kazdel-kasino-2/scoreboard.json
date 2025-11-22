@@ -1,7 +1,18 @@
 {
   "updatedAt": "2025-01-28T10:30:00.000Z",
   "teams": [
-    { "team": "Team Name", "players": ["Player1", "Player2", "Player3"], "points": 0 }
+    { "team": "Waifu Collectors", "players": ["MindH4cker", "Wingsvn", "Halca"], "dollars": 0, "yen": 0, "points": 0 },
+    { "team": "Team Bassassinos", "players": ["Danger_Asian", "Die Alive", "Larfa"], "dollars": 0, "yen": 0, "points": 0 },
+    { "team": "Team Name", "players": ["april", "maomao3141", ".toby030"], "dollars": 0, "yen": 0, "points": 0 },
+    { "team": "xblc", "players": ["jjfun", "lukas", "I Love Priestess"], "dollars": 0, "yen": 0, "points": 0 },
+    { "team": "Victory Rewind", "players": ["Mei", "SidereumCaelum", "polymer1281"], "dollars": 0, "yen": 0, "points": 0 },
+    { "team": "gonna run it back", "players": ["ArKNP23", "NightEdge", "Aoao"], "dollars": 0, "yen": 0, "points": 0 },
+    { "team": "TTH", "players": ["MaNa", "Dr. Maiya", "Lavinia Waiting Me"], "dollars": 0, "yen": 0, "points": 0 },
+    { "team": "Johns", "players": ["Cube", "Light", "Shileds"], "dollars": "$2470", "yen": "600¥", "points": 0 },
+    { "team": "Dairy Queen", "players": ["Alyssal", "Bait", "TsundereKermit"], "dollars": 0, "yen": 0, "points": 0 },
+    { "team": "huck2a enjoyers", "players": ["Fibrinogen", "Euthy", "Mika"], "dollars": 0, "yen": 0, "points": 0 },
+    { "team": "Keoberus", "players": ["Sciel", "drataniar", "1ab_6731"], "dollars": 0, "yen": 0, "points": 0 },
+    { "team": "IDK", "players": ["chenbean", "re_incarnation", "JohnnyAK47"], "dollars": 0, "yen": 0, "points": 0 }
   ]
 }
 
