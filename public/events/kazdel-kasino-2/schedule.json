@@ -90,6 +90,18 @@
       "player": "Danger_Asian",
       "time": "2025-11-24T00:00:00Z",
       "stream": "Twitch"
+    },
+    {
+      "team": "Team Bassassinos",
+      "player": "Die Alive",
+      "time": "2025-11-23T20:00:00Z",
+      "stream": "Discord"
+    },
+    {
+      "team": "Team Bassassinos",
+      "player": "Larfa",
+      "time": "2025-11-27T00:00:00Z",
+      "stream": "Twitch"
     }
   ]
 }

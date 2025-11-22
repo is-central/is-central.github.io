@@ -33,8 +33,7 @@ import LocalTime from '../components/LocalTime.astro';
   }
 
   table {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
   }
@@ -48,27 +47,74 @@ import LocalTime from '../components/LocalTime.astro';
   }
 
   tbody td {
-    text-align: center;
-    padding: .75rem 2rem;
+    padding: .75rem 1rem;
     border-bottom: 1px solid var(--sl-color-hairline);
     word-break: break-word;
     overflow-wrap: break-word;
   }
 
-  .time, .stream {
-    max-width: 1px;
+  .team {
+    width: 25%;
+    text-align: left;
+  }
+  .player {
+    width: 25%;
+    text-align: left;
+  }
+  .time {
+    width: 30%;
+    text-align: center;
+  }
+  .stream {
+    width: 20%;
+    text-align: center;
   }
 
   tbody tr:hover {
     background: var(--sl-color-gray-6);
   }
 
+  .updated {
+    padding: .5rem 1rem;
+    font-size: .8rem;
+    color: var(--sl-color-text-subtle);
+    text-align: center;
+  }
+
   @media (max-width: 640px) {
-    thead { display: none; }
-    table, tbody, tr, td { display: block; width: 100%; }
-    tbody tr { border-bottom: 1px solid var(--sl-color-border); }
-    tbody td { display: flex; justify-content: space-between; }
-    tbody td::before { content: attr(data-label); color: var(--sl-color-text-subtle); }
+    thead { 
+      display: none; 
+    }
+    
+    table, tbody, tr, td { 
+      display: block; 
+      width: 100%; 
+    }
+    
+    tbody tr { 
+      border-bottom: 1px solid var(--sl-color-border);
+      padding: 0.5rem 0;
+    }
+    
+    tbody td { 
+      display: flex; 
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      text-align: right;
+      border-bottom: none;
+    }
+    
+    tbody td::before { 
+      content: attr(data-label); 
+      color: var(--sl-color-text-subtle);
+      font-weight: 600;
+      text-align: left;
+    }
+
+    .time, .stream {
+      text-align: right;
+    }
   }
 </style>
 
@@ -76,22 +122,22 @@ import LocalTime from '../components/LocalTime.astro';
   <div class="schedule-header">
     <h3 class="schedule-title">{title}</h3>
   </div>
-
-  <table>
-    <thead>
-      <tr>
-        <th class="team">Team</th>
-        <th class="player">Player</th>
-        <th class="time">Local Time</th>
-        <th class="stream">Stream</th>
-      </tr>
-    </thead>
-    <tbody id="schedule-body">
-      <tr><td colspan="4" class="updated">Loading…</td></tr>
-    </tbody>
-  </table>
-
-  <div class="updated" id="schedule-updated"></div>
+  <div class="schedule-body">
+    <table>
+      <thead>
+        <tr>
+          <th class="team">Team</th>
+          <th class="player">Player</th>
+          <th class="time">Local Time</th>
+          <th class="stream">Stream</th>
+        </tr>
+      </thead>
+      <tbody id="schedule-body">
+        <tr><td colspan="4" class="updated">Loading…</td></tr>
+      </tbody>
+    </table>
+    <div class="updated" id="schedule-updated"></div>
+  </div>
 </div>
 
 <script define:vars={{ dataUrl, refreshMs }}>
@@ -111,12 +157,12 @@ import LocalTime from '../components/LocalTime.astro';
         const tr = document.createElement('tr');
 
         tr.innerHTML = `
-          <td class="team" data-label="Team">${m.team}</td>
-          <td class="player" data-label="Player">${m.player}</td>
+          <td class="team" data-label="Team">${m.team || ''}</td>
+          <td class="player" data-label="Player">${m.player || ''}</td>
           <td class="time" data-label="Local Time">
             <time data-localdate datetime="${m.time}" data-format="long"></time>
           </td>
-          <td class="stream" data-label="Stream">${m.stream}</td>
+          <td class="stream" data-label="Stream">${m.stream || ''}</td>
         `;
 
         body.appendChild(tr);
@@ -125,10 +171,12 @@ import LocalTime from '../components/LocalTime.astro';
       // Local time converter
       document.querySelectorAll('[data-localdate]').forEach(el => {
         const date = new Date(el.getAttribute('datetime'));
-        el.textContent = date.toLocaleString(undefined, { month: 'short',   // e.g., "November"
-            day: 'numeric',  // e.g., "4"
-            hour: 'numeric',
-            minute: '2-digit', });
+        el.textContent = date.toLocaleString(undefined, { 
+          month: 'short',
+          day: 'numeric',
+          hour: 'numeric',
+          minute: '2-digit'
+        });
       });
 
       updatedEl.textContent = '';
