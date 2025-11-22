@@ -15,6 +15,7 @@ finalsEnd: "2025-12-08T07:59:00Z"
 ---
 
 import TournamentScoreboard from '../../../components/TournamentScoreboard.astro';
+import TournamentSchedule from '../../../components/TournamentSchedule.astro';
 import LocalTime from '../../../components/LocalTime.astro';
 import TournamentLayout from "../../../layouts/TournamentLayout.astro";
 
@@ -31,13 +32,17 @@ import TournamentLayout from "../../../layouts/TournamentLayout.astro";
 
 卡兹戴尔市场2是一个三人组队团体赛。玩家在通关过程中通过达成指定目标赚取美元，在通关结束时使用抽卡模拟器将美元转化成排名积分。首轮前八名队伍将晋级到第二轮，最终排名同样基于积分排行。
 
-{/*
+<TournamentSchedule
+  title="Match Schedule"
+  dataUrl="/events/kazdel-kasino-2/schedule.json"
+  refreshMs={15000}
+/>
+
 <TournamentScoreboard
   title="Scoreboard"
   dataUrl="/events/kazdel-kasino-2/scoreboard.json"
   refreshMs={15000}
 /> 
-*/}
 
 ## 赛制
 
