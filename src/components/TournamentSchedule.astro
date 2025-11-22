@@ -67,17 +67,8 @@ import LocalTime from '../components/LocalTime.astro';
     thead { display: none; }
     table, tbody, tr, td { display: block; width: 100%; }
     tbody tr { border-bottom: 1px solid var(--sl-color-border); }
-    tbody td {
-      display: flex;
-      justify-content: space-between;
-      padding: .5rem .75rem;
-    }
-    tbody td::before {
-      content: attr(data-label);
-      color: var(--sl-color-text-subtle);
-      font-weight: 600;
-      margin-right: .75rem;
-    }
+    tbody td { display: flex; justify-content: space-between; }
+    tbody td::before { content: attr(data-label); color: var(--sl-color-text-subtle); }
   }
 </style>
 
