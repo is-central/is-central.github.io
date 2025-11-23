@@ -75,6 +75,12 @@
     },
     {
       "team": "Johns",
+      "player": "Cube",
+      "time": "2025-11-22T00:00:00Z",
+      "stream": "Twitch"
+    },
+    {
+      "team": "Johns",
       "player": "Shileds",
       "time": "2025-11-23T16:45:00Z",
       "stream": "Discord"
