@@ -1,0 +1,231 @@
+---
+const { title = 'Team Points', dataUrl = '/events/kazdel-kasino-2/scoreboard.json', refreshMs = 15000 } = Astro.props;
+---
+
+<style>
+  .scoreboard {
+    margin: 1rem 0 2rem 0;
+    background: var(--sl-color-bg-nav);
+    border: 1px solid var(--sl-color-border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0,0,0,.15);
+    width: 100%;
+    display: block;
+  }
+  .scoreboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .875rem 1rem;
+    background: var(--sl-color-accent-low);
+    border-bottom: 1px solid var(--sl-color-border);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  .scoreboard-header:hover {
+    background: var(--sl-color-accent);
+  }
+  .scoreboard-title {
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+  }
+  .toggle-icon {
+    transition: transform 0.3s ease;
+    font-weight: bold;
+    color: var(--sl-color-text-subtle);
+  }
+  .scoreboard-body {
+    padding: 0 1rem 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+  .scoreboard-body.open {
+    max-height: 2000px; /* Adjust based on your content */
+    padding: 0 1rem 1rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  thead th {
+    text-align: center;
+    font-size: .9rem;
+    color: var(--sl-color-text-subtle);
+    padding: .75rem 0.5rem;
+    border-bottom: 2px solid var(--sl-color-border);
+    border-right: 1px solid var(--sl-color-hairline);
+  }
+  thead th:last-child {
+    border-right: none;
+  }
+  tbody td {
+    padding: .75rem 0.5rem;
+    border-bottom: 1px solid var(--sl-color-hairline);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    border-right: 1px solid var(--sl-color-hairline-light);
+  }
+  tbody td:last-child {
+    border-right: none;
+  }
+  tbody tr:hover {
+    background: var(--sl-color-gray-6);
+  }
+  .team {
+    font-weight: 600;
+    width: 25%;
+    text-align: left;
+    color: #3b82f6;
+  }
+  .players {
+    width: 35%;
+    text-align: left;
+    color: var(--sl-color-purple);
+  }
+  .team-dollars {
+    width: 15%;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    color: var(--sl-color-green);
+  }
+  .points {
+    width: 10%;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    color: #ef4444;
+  }
+  .updated {
+    padding: .5rem 1rem;
+    font-size: .8rem;
+    color: var(--sl-color-text-subtle);
+    text-align: center;
+  }
+  @media (max-width: 640px) {
+    thead { display: none; }
+    table, tbody, tr, td { display: block; width: 100%; }
+    tbody tr { 
+      border-bottom: 1px solid var(--sl-color-border); 
+      padding: 0.75rem 0;
+      margin-bottom: 0.5rem;
+      background: var(--sl-color-bg);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    tbody td { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--sl-color-hairline-light);
+      border-right: none;
+    }
+    tbody td:last-child {
+      border-bottom: none;
+    }
+    tbody td::before { 
+      content: attr(data-label); 
+      color: var(--sl-color-text-subtle); 
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+    .team-dollars, .points { 
+      text-align: right;
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<div class="scoreboard" id="team-points-container">
+  <div class="scoreboard-header" id="team-points-header">
+    <h3 class="scoreboard-title">{title}</h3>
+    <span class="toggle-icon" id="team-points-toggle">▼</span>
+  </div>
+  <div class="scoreboard-body" id="team-points-body">
+    <table id="team-points-table">
+      <thead>
+        <tr>
+          <th class="team">Team</th>
+          <th class="players">Players</th>
+          <th class="team-dollars">Team Dollars</th>
+          <th class="points">Points</th>
+        </tr>
+      </thead>
+      <tbody id="team-points-tbody">
+        <tr><td class="updated" colspan="4">Loading…</td></tr>
+      </tbody>
+    </table>
+    <div class="updated" id="team-points-updated"></div>
+  </div>
+</div>
+
+<script define:vars={{ dataUrl, refreshMs }}>
+  const container = document.getElementById('team-points-container');
+  if (!container) return;
+  
+  const header = document.getElementById('team-points-header');
+  const body = document.getElementById('team-points-body');
+  const toggle = document.getElementById('team-points-toggle');
+  const tbody = document.getElementById('team-points-tbody');
+  const updatedEl = document.getElementById('team-points-updated');
+  
+  if (!header || !body || !toggle || !tbody || !updatedEl) return;
+
+  // Toggle functionality
+  header.addEventListener('click', () => {
+    body.classList.toggle('open');
+    toggle.textContent = body.classList.contains('open') ? '▲' : '▼';
+  });
+
+  async function loadTeamPoints() {
+    try {
+      const res = await fetch(dataUrl + '?t=' + Date.now(), { cache: 'no-store' });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      
+      const json = await res.json();
+      const rows = Array.isArray(json.teams) ? json.teams : [];
+      
+      // Sort by points (highest first)
+      rows.sort((a, b) => (b.points || 0) - (a.points || 0));
+      
+      tbody.innerHTML = '';
+      rows.forEach(team => {
+        const tr = document.createElement('tr');
+        const players = (team.players || []).join(', ');
+        
+        // Calculate team dollars from playersData
+        let teamDollars = 0;
+        if (team.playersData) {
+          team.playersData.forEach(player => {
+            if (player.dollars) {
+              const dollarValue = parseInt(player.dollars.toString().replace('$', '').replace(',', '')) || 0;
+              teamDollars += dollarValue;
+            }
+          });
+        }
+        
+        tr.innerHTML = `
+          <td class="team" data-label="Team">${team.team||''}</td>
+          <td class="players" data-label="Players">${players}</td>
+          <td class="team-dollars" data-label="Team Dollars">$${teamDollars.toLocaleString()}</td>
+          <td class="points" data-label="Points">${team.points || 0}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+      
+      const updated = json.updatedAt ? new Date(json.updatedAt) : new Date();
+      updatedEl.textContent = ``;
+    } catch (e) {
+      tbody.innerHTML = '<tr><td class="updated" colspan="4">Failed to load data: ' + e.message + '</td></tr>';
+    }
+  }
+
+  loadTeamPoints();
+  setInterval(loadTeamPoints, refreshMs);
+</script>

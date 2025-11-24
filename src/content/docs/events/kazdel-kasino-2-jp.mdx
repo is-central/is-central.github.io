@@ -14,7 +14,8 @@ finalsStart: "2025-12-01T08:00:00Z"
 finalsEnd: "2025-12-08T07:59:00Z"
 ---
 
-import TournamentScoreboard from '../../../components/TournamentScoreboard.astro';
+import IndividualPlayerScoreboard from '../../../components/IndividualPlayerScoreboard.astro';
+import TeamScoreboard from '../../../components/TeamScoreboard.astro';
 import TournamentSchedule from '../../../components/TournamentSchedule.astro';
 import LocalTime from '../../../components/LocalTime.astro';
 import TournamentLayout from "../../../layouts/TournamentLayout.astro";
@@ -32,17 +33,25 @@ import TournamentLayout from "../../../layouts/TournamentLayout.astro";
 
 カズデルカジノ2は3人1チームのチーム制トーナメントです。プレイヤーは探索中に目標を達成することで資金を獲得し、最終的に召喚シミュレーターを使用してその資金を順位ポイントに変換します。上位8チームがラウンド2に進出し、最終順位はラウンド2のリーダーボードで決定されます
 
+## 暫定スケジュール
 <TournamentSchedule
   title="Match Schedule"
   dataUrl="/events/kazdel-kasino-2/schedule.json"
   refreshMs={15000}
 />
 
-<TournamentScoreboard
-  title="Scoreboard"
+## 暫定スコアボード
+<IndividualPlayerScoreboard
+  title="Player Dollars"
   dataUrl="/events/kazdel-kasino-2/scoreboard.json"
   refreshMs={15000}
-/> 
+/>
+
+<TeamScoreboard
+  title="Team Points Ranking"
+  dataUrl="/events/kazdel-kasino-2/scoreboard.json"
+  refreshMs={15000}
+/>
 
 ## 形式
 

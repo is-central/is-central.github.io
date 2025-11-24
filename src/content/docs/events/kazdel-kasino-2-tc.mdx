@@ -14,7 +14,8 @@ finalsStart: "2025-12-01T08:00:00Z"
 finalsEnd: "2025-12-08T07:59:00Z"
 ---
 
-import TournamentScoreboard from '../../../components/TournamentScoreboard.astro';
+import IndividualPlayerScoreboard from '../../../components/IndividualPlayerScoreboard.astro';
+import TeamScoreboard from '../../../components/TeamScoreboard.astro';
 import TournamentSchedule from '../../../components/TournamentSchedule.astro';
 import LocalTime from '../../../components/LocalTime.astro';
 import TournamentLayout from "../../../layouts/TournamentLayout.astro";
@@ -32,17 +33,25 @@ import TournamentLayout from "../../../layouts/TournamentLayout.astro";
 
 卡茲戴爾市場2是一個三人組隊團體賽。玩家在通關過程中通過達成指定目標賺取美元，在通關結束時使用抽卡模擬器將美元轉化成排名積分。首輪前八名隊伍將晉級到第二輪，最終排名同樣基於積分排行。
 
+## 初步日程
 <TournamentSchedule
   title="Match Schedule"
   dataUrl="/events/kazdel-kasino-2/schedule.json"
   refreshMs={15000}
 />
 
-<TournamentScoreboard
-  title="Scoreboard"
+## 初步計分板
+<IndividualPlayerScoreboard
+  title="Player Dollars"
   dataUrl="/events/kazdel-kasino-2/scoreboard.json"
   refreshMs={15000}
-/> 
+/>
+
+<TeamScoreboard
+  title="Team Points Ranking"
+  dataUrl="/events/kazdel-kasino-2/scoreboard.json"
+  refreshMs={15000}
+/>
 
 ## 賽制
 
