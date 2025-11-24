@@ -88,6 +88,14 @@ const { title = 'Player Dollars', dataUrl = '/events/kazdel-kasino-2/scoreboard.
     font-size: 0.9rem;
     color: var(--sl-color-purple);
   }
+  .player-link {
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .player-link:hover {
+    color: var(--sl-color-accent);
+    text-decoration: underline;
+  }
   .player-dollars {
     width: 8%;
     text-align: center;
@@ -139,6 +147,9 @@ const { title = 'Player Dollars', dataUrl = '/events/kazdel-kasino-2/scoreboard.
       text-align: right;
       font-size: 1rem;
     }
+    .player-link {
+      text-align: right;
+    }
   }
 </style>
 
@@ -187,6 +198,17 @@ const { title = 'Player Dollars', dataUrl = '/events/kazdel-kasino-2/scoreboard.
     toggle.textContent = body.classList.contains('open') ? '▲' : '▼';
   });
 
+  // Function to create player link HTML
+  function createPlayerLink(player) {
+    if (!player || !player.name) return '';
+    
+    if (player.link) {
+      return `<a href="${player.link}" class="player-link" target="_blank" rel="noopener noreferrer">${player.name}</a>`;
+    } else {
+      return player.name;
+    }
+  }
+
   async function loadPlayerDollars() {
     try {
       const res = await fetch(dataUrl + '?t=' + Date.now(), { cache: 'no-store' });
@@ -205,13 +227,18 @@ const { title = 'Player Dollars', dataUrl = '/events/kazdel-kasino-2/scoreboard.
         const player2 = playersData[1] || {};
         const player3 = playersData[2] || {};
         
+        // Create player links
+        const player1Link = createPlayerLink(player1);
+        const player2Link = createPlayerLink(player2);
+        const player3Link = createPlayerLink(player3);
+        
         tr.innerHTML = `
           <td class="team" data-label="Team">${team.team||''}</td>
-          <td class="player-name" data-label="Player 1">${player1.name || ''}</td>
+          <td class="player-name" data-label="Player 1">${player1Link}</td>
           <td class="player-dollars" data-label="Player 1 Dollars">${player1.dollars || 0}</td>
-          <td class="player-name" data-label="Player 2">${player2.name || ''}</td>
+          <td class="player-name" data-label="Player 2">${player2Link}</td>
           <td class="player-dollars" data-label="Player 2 Dollars">${player2.dollars || 0}</td>
-          <td class="player-name" data-label="Player 3">${player3.name || ''}</td>
+          <td class="player-name" data-label="Player 3">${player3Link}</td>
           <td class="player-dollars" data-label="Player 3 Dollars">${player3.dollars || 0}</td>
           <td class="yen" data-label="Team Yen">${team.yen || 0}</td>
         `;

@@ -6,8 +6,8 @@
       "players": ["MindH4cker", "Wingsvn", "Halca"],
       "playersData": [
         { "name": "Halca", "dollars": "$1445" },
-        { "name": "Wingsvn", "dollars": "$0" },
-        { "name": "MindH4cker", "dollars": "$0" }
+        { "name": "Wingsvn", "dollars": "N/A" },
+        { "name": "MindH4cker", "dollars": "N/A" }
       ],
       "yen": "0¥",
       "points": 0
@@ -17,8 +17,8 @@
       "players": ["Danger_Asian", "Die Alive", "Larfa"],
       "playersData": [
         { "name": "Die Alive", "dollars": "$1070" },
-        { "name": "Danger_Asian", "dollars": "$5142" },
-        { "name": "Larfa", "dollars": "$0" }
+        { "name": "Danger_Asian", "dollars": "$5142", "link": "https://www.twitch.tv/videos/2626443980" },
+        { "name": "Larfa", "dollars": "N/A" }
       ],
       "yen": "2600¥",
       "points": 0
@@ -27,9 +27,9 @@
       "team": "Team Name",
       "players": ["april", "maomao3141", ".toby030"],
       "playersData": [
-        { "name": "april", "dollars": "$0" },
-        { "name": "maomao3141", "dollars": "$0" },
-        { "name": ".toby030", "dollars": "$0" }
+        { "name": "april", "dollars": "N/A" },
+        { "name": "maomao3141", "dollars": "N/A" },
+        { "name": ".toby030", "dollars": "N/A" }
       ],
       "yen": "0¥",
       "points": 0
@@ -39,8 +39,8 @@
       "players": ["jjfun", "lukas", "I Love Priestess"],
       "playersData": [
         { "name": "jjfun", "dollars": "$1760" },
-        { "name": "lukas", "dollars": "$0" },
-        { "name": "I Love Priestess", "dollars": "$0" }
+        { "name": "lukas", "dollars": "N/A" },
+        { "name": "I Love Priestess", "dollars": "N/A" }
       ],
       "yen": "0¥",
       "points": 0
@@ -51,18 +51,18 @@
       "playersData": [
         { "name": "SidereumCaelum", "dollars": "$4105" },
         { "name": "polymer1281", "dollars": "$3790" },
-        { "name": "Mei", "dollars": "$0" }
+        { "name": "Mei", "dollars": "N/A" }
       ],
       "yen": "2500¥",
       "points": 0
     },
     {
       "team": "gonna run it back",
-      "players": ["ArKNP23", "NightEdge", "Aoao"],
+      "players": ["NightEdge", "ArKNP23", "Aoao"],
       "playersData": [
-        { "name": "ArKNP23", "dollars": "$6016" },
-        { "name": "NightEdge", "dollars": "$0" },
-        { "name": "Aoao", "dollars": "$0" }
+        { "name": "NightEdge", "dollars": "$6016", "link": "https://www.twitch.tv/videos/2625558527" },
+        { "name": "ArKNP23", "dollars": "N/A" },
+        { "name": "Aoao", "dollars": "N/A" }
       ],
       "yen": "900¥",
       "points": 0
@@ -71,9 +71,9 @@
       "team": "TTH",
       "players": ["MaNa", "Dr. Maiya", "Lavinia Waiting Me"],
       "playersData": [
-        { "name": "MaNa", "dollars": "$0" },
-        { "name": "Dr. Maiya", "dollars": "$0" },
-        { "name": "Lavinia Waiting Me", "dollars": "$0" }
+        { "name": "MaNa", "dollars": "N/A" },
+        { "name": "Dr. Maiya", "dollars": "N/A" },
+        { "name": "Lavinia Waiting Me", "dollars": "N/A" }
       ],
       "yen": "0¥",
       "points": 0
@@ -82,9 +82,9 @@
       "team": "Johns",
       "players": ["Cube", "Light", "Shileds"],
       "playersData": [
-        { "name": "Cube", "dollars": "$2505" },
+        { "name": "Cube", "dollars": "$2505", "link": "https://www.twitch.tv/videos/2624633680" },
         { "name": "Shileds", "dollars": "$815" },
-        { "name": "Light", "dollars": "$0" }
+        { "name": "Light", "dollars": "N/A" }
       ],
       "yen": "600¥",
       "points": 0
@@ -93,9 +93,9 @@
       "team": "Dairy Queen",
       "players": ["Alyssal", "Bait", "TsundereKermit"],
       "playersData": [
-        { "name": "Alyssal", "dollars": "$0" },
-        { "name": "Bait", "dollars": "$0" },
-        { "name": "TsundereKermit", "dollars": "$0" }
+        { "name": "Alyssal", "dollars": "N/A" },
+        { "name": "Bait", "dollars": "N/A" },
+        { "name": "TsundereKermit", "dollars": "N/A" }
       ],
       "yen": "0¥",
       "points": 0
@@ -104,9 +104,9 @@
       "team": "huck2a enjoyers",
       "players": ["Fibrinogen", "Euthy", "Mika"],
       "playersData": [
-        { "name": "Fibrinogen", "dollars": "$0" },
-        { "name": "Euthy", "dollars": "$0" },
-        { "name": "Mika", "dollars": "$0" }
+        { "name": "Fibrinogen", "dollars": "N/A" },
+        { "name": "Euthy", "dollars": "N/A" },
+        { "name": "Mika", "dollars": "N/A" }
       ],
       "yen": "0¥",
       "points": 0
@@ -115,9 +115,9 @@
       "team": "Keoberus",
       "players": ["Sciel", "drataniar", "1ab"],
       "playersData": [
-        { "name": "Sciel", "dollars": "$0" },
-        { "name": "drataniar", "dollars": "$0" },
-        { "name": "1ab", "dollars": "$0" }
+        { "name": "Sciel", "dollars": "N/A" },
+        { "name": "drataniar", "dollars": "N/A" },
+        { "name": "1ab", "dollars": "N/A" }
       ],
       "yen": "0¥",
       "points": 0
