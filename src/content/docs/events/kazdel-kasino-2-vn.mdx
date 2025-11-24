@@ -14,7 +14,8 @@ finalsStart: "2025-12-01T08:00:00Z"
 finalsEnd: "2025-12-08T07:59:00Z"
 ---
 
-import TournamentScoreboard from '../../../components/TournamentScoreboard.astro';
+import IndividualPlayerScoreboard from '../../../components/IndividualPlayerScoreboard.astro';
+import TeamScoreboard from '../../../components/TeamScoreboard.astro';
 import TournamentSchedule from '../../../components/TournamentSchedule.astro';
 import LocalTime from '../../../components/LocalTime.astro';
 import TournamentLayout from "../../../layouts/TournamentLayout.astro";
@@ -32,17 +33,25 @@ import TournamentLayout from "../../../layouts/TournamentLayout.astro";
 
 Kazdel Kasino 2 là giải đấu theo đội 3 người. Người chơi sẽ kiếm tiền bằng cách hoàn thành các nhiệm vụ trong khi đánh run của mình, sau đó đổi lượng tiền đó thành điểm, sử dụng giả lập gacha. Top 8 đội điểm cao nhất sẽ tiến vào vòng 2, thứ hạng cuối cùng cũng sẽ theo cơ chế bảng xếp hạng.
 
+## Lịch trình sơ bộ
 <TournamentSchedule
   title="Match Schedule"
   dataUrl="/events/kazdel-kasino-2/schedule.json"
   refreshMs={15000}
 />
 
-<TournamentScoreboard
-  title="Scoreboard"
+## Bảng điểm sơ bộ
+<IndividualPlayerScoreboard
+  title="Player Dollars"
   dataUrl="/events/kazdel-kasino-2/scoreboard.json"
   refreshMs={15000}
-/> 
+/>
+
+<TeamScoreboard
+  title="Team Points Ranking"
+  dataUrl="/events/kazdel-kasino-2/scoreboard.json"
+  refreshMs={15000}
+/>
 
 ## Thể lệ
 

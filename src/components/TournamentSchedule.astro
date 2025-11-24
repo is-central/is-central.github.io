@@ -15,14 +15,19 @@ import LocalTime from '../components/LocalTime.astro';
     display: block;
   }
 
-  .schedule-body {
-    padding: 0 1rem 1rem;
-  }
-
   .schedule-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: .875rem 1rem;
     background: var(--sl-color-accent-low);
     border-bottom: 1px solid var(--sl-color-border);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .schedule-header:hover {
+    background: var(--sl-color-accent);
   }
 
   .schedule-title {
@@ -30,6 +35,24 @@ import LocalTime from '../components/LocalTime.astro';
     font-weight: 700;
     text-align: center;
     width: 100%;
+  }
+
+  .toggle-icon {
+    transition: transform 0.3s ease;
+    font-weight: bold;
+    color: var(--sl-color-text-subtle);
+  }
+
+  .schedule-body {
+    padding: 0 1rem 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+
+  .schedule-body.open {
+    max-height: 2000px; /* Adjust based on your content */
+    padding: 0 1rem 1rem;
   }
 
   table {
@@ -56,18 +79,22 @@ import LocalTime from '../components/LocalTime.astro';
   .team {
     width: 25%;
     text-align: left;
+    color: #3b82f6;
   }
   .player {
     width: 25%;
     text-align: left;
+    color: var(--sl-color-purple);
   }
   .time {
     width: 30%;
     text-align: center;
+    color: #1dafb9;
   }
   .stream {
     width: 20%;
     text-align: center;
+    color: #9147ff;
   }
 
   tbody tr:hover {
@@ -119,10 +146,11 @@ import LocalTime from '../components/LocalTime.astro';
 </style>
 
 <div class="schedule" id="schedule-container">
-  <div class="schedule-header">
+  <div class="schedule-header" id="schedule-header">
     <h3 class="schedule-title">{title}</h3>
+    <span class="toggle-icon" id="schedule-toggle">▼</span>
   </div>
-  <div class="schedule-body">
+  <div class="schedule-body" id="schedule-body-container">
     <table>
       <thead>
         <tr>
@@ -132,7 +160,7 @@ import LocalTime from '../components/LocalTime.astro';
           <th class="stream">Stream</th>
         </tr>
       </thead>
-      <tbody id="schedule-body">
+      <tbody id="schedule-tbody">
         <tr><td colspan="4" class="updated">Loading…</td></tr>
       </tbody>
     </table>
@@ -141,16 +169,31 @@ import LocalTime from '../components/LocalTime.astro';
 </div>
 
 <script define:vars={{ dataUrl, refreshMs }}>
+  const container = document.getElementById('schedule-container');
+  if (!container) return;
+  
+  const header = document.getElementById('schedule-header');
+  const body = document.getElementById('schedule-body-container');
+  const toggle = document.getElementById('schedule-toggle');
+  const tbody = document.getElementById('schedule-tbody');
+  const updatedEl = document.getElementById('schedule-updated');
+  
+  if (!header || !body || !toggle || !tbody || !updatedEl) return;
+
+  // Toggle functionality
+  header.addEventListener('click', () => {
+    body.classList.toggle('open');
+    toggle.textContent = body.classList.contains('open') ? '▲' : '▼';
+  });
+
   async function loadSchedule() {
     try {
       const res = await fetch(dataUrl + '?t=' + Date.now(), { cache: 'no-store' });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
       const json = await res.json();
-      const body = document.getElementById('schedule-body');
-      const updatedEl = document.getElementById('schedule-updated');
-
-      body.innerHTML = '';
+      
+      tbody.innerHTML = '';
 
       json.matches.sort((a, b) => new Date(a.time) - new Date(b.time));
       (json.matches || []).forEach(m => {
@@ -165,7 +208,7 @@ import LocalTime from '../components/LocalTime.astro';
           <td class="stream" data-label="Stream">${m.stream || ''}</td>
         `;
 
-        body.appendChild(tr);
+        tbody.appendChild(tr);
       });
 
       // Local time converter
@@ -181,12 +224,10 @@ import LocalTime from '../components/LocalTime.astro';
 
       updatedEl.textContent = '';
     } catch (e) {
-      document.getElementById('schedule-body').innerHTML =
-        `<tr><td colspan="4" class="updated">Failed to load schedule: ${e.message}</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="4" class="updated">Failed to load schedule: ${e.message}</td></tr>`;
     }
   }
 
   loadSchedule();
   setInterval(loadSchedule, refreshMs);
 </script>
-
