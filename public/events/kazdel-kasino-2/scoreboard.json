@@ -5,7 +5,7 @@
       "team": "Waifu Collectors",
       "players": ["Halca", "MindH4cker", "Wingsvn"],
       "playersData": [
-        { "name": "Halca", "dollars": "$1445" },
+        { "name": "Halca", "dollars": "$1445", "link": "https://drive.google.com/file/d/1O9CgJTmuXU5Uf-FGDko_IhJb8MZcqifg/view" },
         { "name": "Wingsvn", "dollars": "N/A" },
         { "name": "MindH4cker", "dollars": "N/A" }
       ],
@@ -16,8 +16,8 @@
       "team": "Team Bassassinos",
       "players": ["Die Alive", "Danger_Asian", "Larfa"],
       "playersData": [
-        { "name": "Die Alive", "dollars": "$1070" },
-        { "name": "Danger_Asian", "dollars": "$5142", "link": "https://www.twitch.tv/videos/2626443980" },
+        { "name": "Die Alive", "dollars": "$1070", "link": "https://youtu.be/_dDn2ScK3FI" },
+        { "name": "Danger_Asian", "dollars": "$5142", "link": "https://youtu.be/CwvrZdV_eQw" },
         { "name": "Larfa", "dollars": "N/A" }
       ],
       "yen": "2600¥",
@@ -27,7 +27,7 @@
       "team": "Team Name",
       "players": ["april", "maomao3141", "toby"],
       "playersData": [
-        { "name": "april", "dollars": "N/A" },
+        { "name": "april", "dollars": "$1005" },
         { "name": "maomao3141", "dollars": "N/A" },
         { "name": "toby", "dollars": "N/A" }
       ],
@@ -38,8 +38,8 @@
       "team": "xblc",
       "players": ["jjfun", "lukas", "I Love Priestess"],
       "playersData": [
-        { "name": "jjfun", "dollars": "$1795" },
-        { "name": "lukas", "dollars": "$470" },
+        { "name": "jjfun", "dollars": "$1795", "link": "https://drive.google.com/file/d/1MLTOb1I1q5JnDh4WH0SG0K-l2a4Tzshh/view" },
+        { "name": "lukas", "dollars": "$470", "link": "https://drive.google.com/file/d/1eHn4mfYPUhOT6OzlLWHMZfriSez_k_Tf/view" },
         { "name": "I Love Priestess", "dollars": "N/A" }
       ],
       "yen": "0¥",
@@ -82,9 +82,9 @@
       "team": "Johns",
       "players": ["Cube", "Shileds", "Light"],
       "playersData": [
-        { "name": "Cube", "dollars": "$2505", "link": "https://www.twitch.tv/videos/2624633680" },
+        { "name": "Cube", "dollars": "$2505", "link": "https://youtu.be/odycHkEwhNI" },
         { "name": "Shileds", "dollars": "$815" },
-        { "name": "Light", "dollars": "N/A" }
+        { "name": "Light", "dollars": "-$42,755" }
       ],
       "yen": "600¥",
       "points": 0
@@ -126,20 +126,20 @@
       "team": "IDK",
       "players": ["chenbean", "re_incarnation", "JohnnyAK47"],
       "playersData": [
-        { "name": "chenbean", "dollars": 0 },
-        { "name": "re_incarnation", "dollars": 0 },
-        { "name": "JohnnyAK47", "dollars": 0 }
+        { "name": "chenbean", "dollars": "$390", "link": "https://youtu.be/_5dLNtyXBGU" },
+        { "name": "re_incarnation", "dollars": "N/A" },
+        { "name": "JohnnyAK47", "dollars": "N/A" }
       ],
       "yen": "0¥",
       "points": 0
     },
     {
       "team": "where is saki-chan",
-      "players": ["lingerlight", "kokoro", "woonkill"],
+      "players": ["kokoro", "lingerlight", "woonkill"],
       "playersData": [
-        { "name": "lingerlight", "dollars": 0 },
-        { "name": "kokoro", "dollars": 0 },
-        { "name": "woonkill", "dollars": 0 }
+        { "name": "kokoro", "dollars": "N/A" },
+        { "name": "lingerlight", "dollars": "N/A" },
+        { "name": "woonkill", "dollars": "N/A" }
       ],
       "yen": "0¥",
       "points": 0
