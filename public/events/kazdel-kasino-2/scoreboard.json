@@ -18,20 +18,20 @@
       "playersData": [
         { "name": "Die Alive", "dollars": "$1070", "link": "https://youtu.be/_dDn2ScK3FI" },
         { "name": "Danger_Asian", "dollars": "$5142", "link": "https://youtu.be/CwvrZdV_eQw" },
-        { "name": "Larfa", "dollars": "N/A" }
+        { "name": "Larfa", "dollars": "$8834" }
       ],
       "yen": "2600¥",
-      "points": 0
+      "points": 39480
     },
     {
       "team": "Team Name",
       "players": ["april", "maomao3141", "toby"],
       "playersData": [
         { "name": "april", "dollars": "$1005" },
-        { "name": "maomao3141", "dollars": "N/A" },
+        { "name": "Maomao", "dollars": "$3602" },
         { "name": "toby", "dollars": "N/A" }
       ],
-      "yen": "0¥",
+      "yen": "500¥",
       "points": 0
     },
     {
@@ -61,21 +61,21 @@
       "players": ["NightEdge", "Aoao", "ArKNP23"],
       "playersData": [
         { "name": "NightEdge", "dollars": "$6016", "link": "https://www.twitch.tv/videos/2625558527" },
-        { "name": "Aoao", "dollars": "N/A" },
+        { "name": "Aoao", "dollars": "$4195" },
         { "name": "ArKNP23", "dollars": "N/A" }
       ],
-      "yen": "900¥",
+      "yen": "3400¥",
       "points": 0
     },
     {
       "team": "TTH",
-      "players": ["MaNa", "Dr. Maiya", "Lavinia Waiting Me"],
+      "players": ["Lavinia Waiting Me", "Dr. Maiya", "MaNa"],
       "playersData": [
-        { "name": "MaNa", "dollars": "N/A" },
+        { "name": "Lavinia Waiting Me", "dollars": "2170" },
         { "name": "Dr. Maiya", "dollars": "N/A" },
-        { "name": "Lavinia Waiting Me", "dollars": "N/A" }
+        { "name": "MaNa", "dollars": "N/A" }
       ],
-      "yen": "0¥",
+      "yen": "500¥",
       "points": 0
     },
     {
@@ -137,11 +137,11 @@
       "team": "where is saki-chan",
       "players": ["kokoro", "lingerlight", "woonkill"],
       "playersData": [
-        { "name": "kokoro", "dollars": "N/A" },
+        { "name": "kokoro", "dollars": "$2447" },
         { "name": "lingerlight", "dollars": "N/A" },
         { "name": "woonkill", "dollars": "N/A" }
       ],
-      "yen": "0¥",
+      "yen": "100¥",
       "points": 0
     }
   ]
