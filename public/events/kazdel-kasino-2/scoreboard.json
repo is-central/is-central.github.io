@@ -25,9 +25,9 @@
     },
     {
       "team": "Team Name",
-      "players": ["april", "maomao3141", "toby"],
+      "players": ["April", "Maomao", "toby"],
       "playersData": [
-        { "name": "april", "dollars": "$1005" },
+        { "name": "April", "dollars": "$1005" },
         { "name": "Maomao", "dollars": "$3702" },
         { "name": "toby", "dollars": "#5205" }
       ],
