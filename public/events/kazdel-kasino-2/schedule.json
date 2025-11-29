@@ -5,7 +5,7 @@
       "team": "Waifu Collectors",
       "player": "MindH4cker",
       "time": "2025-11-30T01:00:00Z",
-      "stream": "Discord"
+      "stream": "Twitch"
     },
     {
       "team": "Waifu Collectors",
@@ -160,7 +160,7 @@
     {
       "team": "where is saki-chan",
       "player": "lingerlight",
-      "time": "2025-11-28T05:00:00Z",
+      "time": "2025-11-29T01:00:00Z",
       "stream": "Discord"
     },
     {
@@ -172,7 +172,31 @@
     {
       "team": "where is saki-chan",
       "player": "woonkill",
-      "time": "2025-11-29T01:00:00Z",
+      "time": "2025-11-29T04:00:00Z",
+      "stream": "Discord"
+    },
+    {
+      "team": "Scripted Winner",
+      "player": "homoyomi",
+      "time": "2025-11-29T12:30:00Z",
+      "stream": "Discord"
+    },
+    {
+      "team": "Scripted Winner",
+      "player": "reincarnated999",
+      "time": "2025-11-29T05:00:00Z",
+      "stream": "Discord"
+    },
+    {
+      "team": "IDK",
+      "player": "re_incarnation",
+      "time": "2025-11-29T22:00:00Z",
+      "stream": "Discord"
+    },
+    {
+      "team": "IDK",
+      "player": "johnnyak47",
+      "time": "2025-11-30T15:00:00Z",
       "stream": "Discord"
     }
   ]

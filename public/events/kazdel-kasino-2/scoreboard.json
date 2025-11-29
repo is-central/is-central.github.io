@@ -3,11 +3,11 @@
   "teams": [
     {
       "team": "Waifu Collectors",
-      "players": ["Halca", "MindH4cker", "Wingsvn"],
+      "players": ["Halca", "Wingsvn", "MindH4cker"],
       "playersData": [
         { "name": "Halca", "dollars": "$1445", "link": "https://drive.google.com/file/d/1O9CgJTmuXU5Uf-FGDko_IhJb8MZcqifg/view" },
-        { "name": "Wingsvn", "dollars": "N/A" },
-        { "name": "MindH4cker", "dollars": "N/A" }
+        { "name": "MindH4cker", "dollars": "N/A" },
+        { "name": "Wingsvn", "dollars": "N/A" }
       ],
       "yen": "0¥",
       "points": 0
@@ -18,7 +18,7 @@
       "playersData": [
         { "name": "Die Alive", "dollars": "$1070", "link": "https://youtu.be/_dDn2ScK3FI" },
         { "name": "Danger_Asian", "dollars": "$5142", "link": "https://youtu.be/CwvrZdV_eQw" },
-        { "name": "Larfa", "dollars": "$8834" }
+        { "name": "Larfa", "dollars": "$8834", "link": "https://www.twitch.tv/videos/2628897383" }
       ],
       "yen": "2600¥",
       "points": 39480
@@ -27,9 +27,9 @@
       "team": "Team Name",
       "players": ["April", "Maomao", "toby"],
       "playersData": [
-        { "name": "April", "dollars": "$1005" },
+        { "name": "April", "dollars": "$1005", "link": "https://drive.google.com/file/d/1Yd8VIPgBFFEh7ogbmbnwyWmE7AZtAymy/view" },
         { "name": "Maomao", "dollars": "$3702", "link": "https://drive.google.com/file/d/16FybMGzfW0utrRofseyK5l0c5jDdcNsE/view" },
-        { "name": "toby", "dollars": "$5205" }
+        { "name": "toby", "dollars": "$5205", "link": "https://drive.google.com/file/d/1Nju2zV3pJKGfXUsonxIH8_N2POuZGFkG/view" }
       ],
       "yen": "500¥",
       "points": 27050
@@ -72,7 +72,7 @@
       "players": ["Lavinia Waiting Me", "Dr. Maiya", "MaNa"],
       "playersData": [
         { "name": "Lavinia Waiting Me", "dollars": "2170", "link": "https://drive.google.com/file/d/1V7VuI_h8PETCRRMTp8s0h8A-zRL2PZRe/view" },
-        { "name": "Dr. Maiya", "dollars": "N/A" },
+        { "name": "Dr. Maiya", "dollars": "$620" },
         { "name": "MaNa", "dollars": "N/A" }
       ],
       "yen": "500¥",
@@ -116,7 +116,7 @@
       "players": ["drataniar", "1ab", "Sciel"],
       "playersData": [
         { "name": "drataniar", "dollars": "$1590", "link": "https://drive.google.com/file/d/1c4r5qfLTU_1fHmWbZtNAXRs-iMQPgA7v/view" },
-        { "name": "1ab", "dollars": "$1160" },
+        { "name": "1ab", "dollars": "$1160", "link": "https://drive.google.com/file/d/1uWwn66rF1TNAxARhgui7nddYhEne_0TN/view" },
         { "name": "Sciel", "dollars": "N/A" }
       ],
       "yen": "100¥",
@@ -138,11 +138,11 @@
       "players": ["kokoro", "lingerlight", "woonkill"],
       "playersData": [
         { "name": "kokoro", "dollars": "$2447", "link": "https://drive.google.com/file/d/1k4GTu-0_joftc2cUStnir5kHVcvem4OV/view" },
-        { "name": "lingerlight", "dollars": "N/A" },
-        { "name": "woonkill", "dollars": "N/A" }
+        { "name": "lingerlight", "dollars": "$1330" },
+        { "name": "woonkill", "dollars": "$4495" }
       ],
       "yen": "100¥",
-      "points": 0
+      "points": 24320
     }
   ]
 }
