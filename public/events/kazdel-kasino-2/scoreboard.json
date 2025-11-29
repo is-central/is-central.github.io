@@ -71,12 +71,12 @@
       "team": "TTH",
       "players": ["Lavinia Waiting Me", "Dr. Maiya", "MaNa"],
       "playersData": [
-        { "name": "Lavinia Waiting Me", "dollars": "2170", "link": "https://drive.google.com/file/d/1V7VuI_h8PETCRRMTp8s0h8A-zRL2PZRe/view" },
-        { "name": "Dr. Maiya", "dollars": "$620" },
-        { "name": "MaNa", "dollars": "N/A" }
+        { "name": "Lavinia Waiting Me", "dollars": "2170", "link": "https://youtu.be/aavR74v4UZ4" },
+        { "name": "Dr. Maiya", "dollars": "$1210" },
+        { "name": "MaNa", "dollars": "$675", "link": "https://drive.google.com/file/d/1QEOp0JxMwulXIW7JjMTw4LUIJTN28SYK/view" }
       ],
       "yen": "500¥",
-      "points": 0
+      "points": 14180
     },
     {
       "team": "Johns",
@@ -138,11 +138,22 @@
       "players": ["kokoro", "lingerlight", "woonkill"],
       "playersData": [
         { "name": "kokoro", "dollars": "$2447", "link": "https://drive.google.com/file/d/1k4GTu-0_joftc2cUStnir5kHVcvem4OV/view" },
-        { "name": "lingerlight", "dollars": "$1330" },
+        { "name": "lingerlight", "dollars": "$1330", "link": "https://drive.google.com/file/d/1SvKxU8KvDPf2cWd-LNZdfqJp3yDZwlaW/view" },
         { "name": "woonkill", "dollars": "$4495" }
       ],
       "yen": "100¥",
       "points": 24320
+    },
+    {
+      "team": "Scripted Winner",
+      "players": ["homiyomi", "reincarnated999", "justmorbnika"],
+      "playersData": [
+        { "name": "homiyomi", "dollars": "$715", "link": "https://youtu.be/URZaZevFnUg" },
+        { "name": "reincarnated999", "dollars": "$890" },
+        { "name": "justmorbnika", "dollars": "$4680" }
+      ],
+      "yen": "0¥",
+      "points": 0
     }
   ]
 }
