@@ -6,8 +6,8 @@
       "players": ["Halca", "Wingsvn", "MindH4cker"],
       "playersData": [
         { "name": "Halca", "dollars": "$1445", "link": "https://drive.google.com/file/d/1O9CgJTmuXU5Uf-FGDko_IhJb8MZcqifg/view" },
-        { "name": "MindH4cker", "dollars": "N/A" },
-        { "name": "Wingsvn", "dollars": "N/A" }
+        { "name": "MindH4cker", "dollars": "$3362", "link": "https://www.twitch.tv/videos/2631398473" },
+        { "name": "Wingsvn", "dollars": "$785", "link": "https://youtu.be/NaNuMlLE8c4" }
       ],
       "yen": "0¥",
       "points": 0
@@ -40,10 +40,10 @@
       "playersData": [
         { "name": "jjfun", "dollars": "$1795", "link": "https://drive.google.com/file/d/1MLTOb1I1q5JnDh4WH0SG0K-l2a4Tzshh/view" },
         { "name": "lukas", "dollars": "$720", "link": "https://drive.google.com/file/d/1eHn4mfYPUhOT6OzlLWHMZfriSez_k_Tf/view" },
-        { "name": "I Love Priestess", "dollars": "N/A" }
+        { "name": "I Love Priestess", "dollars": "$110", "link": "https://drive.google.com/file/d/1yEa7D7TRmIvHycsEAMkVGvsYnYluCKis/view" }
       ],
       "yen": "0¥",
-      "points": 0
+      "points": 7250
     },
     {
       "team": "Victory Rewind",
@@ -51,7 +51,7 @@
       "playersData": [
         { "name": "SidereumCaelum", "dollars": "$4205", "link": "https://www.bilibili.com/video/BV1fkUABcEC7/?spm_id_from=333.1387.list.card_archive.click" },
         { "name": "polymer1281", "dollars": "$3790", "link": "https://drive.google.com/file/d/1QwGz4terR-CpWln7hSq5xRJZLuVtj6kZ/view" },
-        { "name": "Mei", "dollars": "N/A" }
+        { "name": "Mei", "dollars": "$1425" }
       ],
       "yen": "2500¥",
       "points": 0
@@ -62,10 +62,10 @@
       "playersData": [
         { "name": "NightEdge", "dollars": "$6016", "link": "https://www.twitch.tv/videos/2625558527" },
         { "name": "Aoao", "dollars": "$4295", "link": "https://drive.google.com/file/d/1-5gCRke_HpDajavua6GBMKlL5bO1Y3W7/view" },
-        { "name": "ArKNP23", "dollars": "N/A" }
+        { "name": "ArKNP23", "dollars": "$2977" }
       ],
       "yen": "3400¥",
-      "points": 0
+      "points": 36510
     },
     {
       "team": "TTH",
@@ -127,8 +127,8 @@
       "players": ["chenbean", "re_incarnation", "JohnnyAK47"],
       "playersData": [
         { "name": "chenbean", "dollars": "$390", "link": "https://youtu.be/_5dLNtyXBGU" },
-        { "name": "re_incarnation", "dollars": "N/A" },
-        { "name": "JohnnyAK47", "dollars": "N/A" }
+        { "name": "re_incarnation", "dollars": "$690" },
+        { "name": "JohnnyAK47", "dollars": "$170", "link": "https://youtu.be/aXtUilaJdp0" }
       ],
       "yen": "0¥",
       "points": 0
@@ -139,7 +139,7 @@
       "playersData": [
         { "name": "kokoro", "dollars": "$2447", "link": "https://drive.google.com/file/d/1k4GTu-0_joftc2cUStnir5kHVcvem4OV/view" },
         { "name": "lingerlight", "dollars": "$1330", "link": "https://drive.google.com/file/d/1SvKxU8KvDPf2cWd-LNZdfqJp3yDZwlaW/view" },
-        { "name": "woonkill", "dollars": "$4495" }
+        { "name": "woonkill", "dollars": "$4495", "link": "https://drive.google.com/file/d/1j7KIL9iKwhUd5e7HbhMa0WQo1lD2r3NA/view" }
       ],
       "yen": "100¥",
       "points": 24320
