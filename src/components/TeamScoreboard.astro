@@ -78,17 +78,17 @@ const { title = 'Team Points', dataUrl = '/events/kazdel-kasino-2/scoreboard.jso
   }
   .team {
     font-weight: 600;
-    width: 25%;
+    width: 22%;
     text-align: left;
     color: #3b82f6;
   }
   .players {
-    width: 35%;
+    width: 30%;
     text-align: left;
     color: var(--sl-color-purple);
   }
   .team-dollars {
-    width: 15%;
+    width: 13%;
     text-align: center;
     font-variant-numeric: tabular-nums;
     font-weight: 600;
@@ -100,6 +100,13 @@ const { title = 'Team Points', dataUrl = '/events/kazdel-kasino-2/scoreboard.jso
     font-variant-numeric: tabular-nums;
     font-weight: 700;
     color: #ef4444;
+  }
+  .ratio {
+    width: 10%;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    color: #8b5cf6;
   }
   .updated {
     padding: .5rem 1rem;
@@ -135,7 +142,7 @@ const { title = 'Team Points', dataUrl = '/events/kazdel-kasino-2/scoreboard.jso
       font-weight: 600;
       font-size: 0.85rem;
     }
-    .team-dollars, .points { 
+    .team-dollars, .points, .ratio { 
       text-align: right;
       font-size: 1rem;
     }
@@ -155,10 +162,11 @@ const { title = 'Team Points', dataUrl = '/events/kazdel-kasino-2/scoreboard.jso
           <th class="players">Players</th>
           <th class="team-dollars">Team Dollars</th>
           <th class="points">Points</th>
+          <th class="ratio">P/D Ratio</th>
         </tr>
       </thead>
       <tbody id="team-points-tbody">
-        <tr><td class="updated" colspan="4">Loading…</td></tr>
+        <tr><td class="updated" colspan="5">Loading…</td></tr>
       </tbody>
     </table>
     <div class="updated" id="team-points-updated"></div>
@@ -183,6 +191,14 @@ const { title = 'Team Points', dataUrl = '/events/kazdel-kasino-2/scoreboard.jso
     toggle.textContent = body.classList.contains('open') ? '▲' : '▼';
   });
 
+  // Function to calculate points-to-dollars ratio
+  function calculateRatio(points, teamDollars) {
+    if (teamDollars === 0 || points === 0) return '0.00';
+    
+    const ratio = points / teamDollars;
+    return ratio.toFixed(2);
+  }
+
   async function loadTeamPoints() {
     try {
       const res = await fetch(dataUrl + '?t=' + Date.now(), { cache: 'no-store' });
@@ -203,18 +219,24 @@ const { title = 'Team Points', dataUrl = '/events/kazdel-kasino-2/scoreboard.jso
         let teamDollars = 0;
         if (team.playersData) {
           team.playersData.forEach(player => {
-            if (player.dollars) {
-              const dollarValue = parseInt(player.dollars.toString().replace('$', '').replace(',', '')) || 0;
+            if (player.dollars && player.dollars !== 'N/A') {
+              // Handle negative values and dollar signs
+              const dollarStr = player.dollars.toString().replace('$', '').replace(',', '');
+              const dollarValue = parseFloat(dollarStr) || 0;
               teamDollars += dollarValue;
             }
           });
         }
+        
+        // Calculate points-to-dollars ratio
+        const ratio = calculateRatio(team.points || 0, teamDollars);
         
         tr.innerHTML = `
           <td class="team" data-label="Team">${team.team||''}</td>
           <td class="players" data-label="Players">${players}</td>
           <td class="team-dollars" data-label="Team Dollars">$${teamDollars.toLocaleString()}</td>
           <td class="points" data-label="Points">${team.points || 0}</td>
+          <td class="ratio" data-label="P/D Ratio">${ratio}</td>
         `;
         tbody.appendChild(tr);
       });
@@ -222,7 +244,7 @@ const { title = 'Team Points', dataUrl = '/events/kazdel-kasino-2/scoreboard.jso
       const updated = json.updatedAt ? new Date(json.updatedAt) : new Date();
       updatedEl.textContent = ``;
     } catch (e) {
-      tbody.innerHTML = '<tr><td class="updated" colspan="4">Failed to load data: ' + e.message + '</td></tr>';
+      tbody.innerHTML = '<tr><td class="updated" colspan="5">Failed to load data: ' + e.message + '</td></tr>';
     }
   }
 
