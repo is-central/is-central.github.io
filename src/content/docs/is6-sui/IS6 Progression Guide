@@ -1,0 +1,431 @@
+---
+title: IS6 Progression Guide
+description: A comprehensive guide to help readers reach Difficulty 10+ and complete every Raidian mission along the way. 
+---
+
+<div class="back-button-container">
+  <a href="/is6-sui/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">Back to IS6 Overview</span>
+  </a>
+</div>  
+
+---
+
+With the release of the 6th iteration of Integrated Strategies (IS6), **Sui's Garden of Grotesqueries**, right around the corner, it is vital to understand how to navigate the garden. This guide's primary focus is to help readers reach Difficulty 10+ and complete every Raidian mission along the way. Welcome, and enjoy your stay, tourists!
+
+---
+
+# Getting Started
+
+![[/guides/is6-sui/Pasted image 20251129153634.png]]
+
+Your absolute top priority in IS6 is to **acquire and build Raidian**. She is the welfare operator exclusive to this mode. As you progress through her unique talent tree, she provides incredible combat power and out-of-stage benefits.
+
+**How to unlock her:** Raidian is the very first reward on the IS6 Reward Track. Simply enter the mode, play a few stages, and you will unlock her naturally.
+
+- **Potentials:** You receive Raidian's potentials starting at Level 30 of the track, and every 5th level thereafter. You can max her potential immediately upon the theme's release, as the initial level cap goes up to 50.
+
+## Coin Management
+
+IS6 introduces an entirely new system: the Coinbox. You start with a coinbox that can hold up to 7 coins. At the start of a floor, 3 random coins in your coinbox will be chosen to be “tossed,” triggering their effects for the current floor.
+
+**There are 3 types of coins, classified by their color:**
+
+- **Pink:** The majority of these provide resources or utility. Some also provide minor combat buffs.
+    
+- **Blue:** Combat buffs that primarily interact with “Transcendent Realm” (Temporary TL) tiles.
+    
+- **Red:** These are also primarily combat buffs, but they tend to have a trade-off in exchange for a more potent upside (e.g., Enemy gains +25% ATK, but you gain +60% ATK). They offer very powerful combat bonuses if you can manage the downsides.
+    
+
+For a new player, a good rule of thumb is to **always pick up Pink or Blue coins** and replace coins that are useless or less significant. As for Red coins, I advise against picking them up until you understand how they work. However, here are a few powerful Red coins that generally offer a reward much greater than their risk:
+
+| **Image**                            | **Effect**                                                                                                                                             | **Explanation**                                                                                                                                                                                                                                                    |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| ![[Pasted image 20251209141038.png]] | When tossed, all allied units gain 55% Physical and Arts Dodge, and all enemies gain +25 Attack Speed.                                                 | While +25 ASPD to enemies sounds scary, the 55% Dodge you get in exchange mitigates the risk easily.                                                                                                                                                               |
+| ![[Pasted image 20251209141121.png]] | When tossed, Operators do not retreat upon being defeated for the first time; instead, they are redeployed on the same tile facing a random direction. | There is essentially no downside to tossing this coin. Redeployment means your agents might get to use their skills again. In the worst-case scenario, you can manually retreat the redeployed operators to generate DP.                                           |
+| ![[Pasted image 20251209141136.png]] | When tossed, all allied Operators’ SP costs are reduced by 40%, but their skills will activate automatically.                                          | Although this disables skill timing management, -40% SP cost is simply too good to pass up. I would only avoid this if your team consists primarily of Phalanx Casters or Liberator Guards.                                                                        |
+| ![[Pasted image 20251209141152.png]] | While inside the coinbox, unlock a vertical path for the current node. When tossed, lose 5 Originium Ingots.                                           | Easily the best coin you can get. Its effect activates by simply possessing it (no toss required). It allows unlimited vertical travel, meaning you can easily take Guidance and Bosky nodes on the same floor with a mere 3-6 ticket investment. Insanely broken. |
+| ![[Pasted image 20251209141102.png]] | When tossed, all enemy units’ Max HP is reduced by 45%, and all allied units’ Max HP is reduced by 25%.                                                | 25% is steep pressure on your operators, but a 45% Enemy Max HP reduction is far better than any relic in the game.                                                                                                                                                |
+| ![[Pasted image 20251209141112.png]] | When tossed, all enemy units gain +25% ATK, and all allied units gain +60% ATK.                                                                        | Similar to the previous coin, except the +60% ATK is a slightly worse reward for similar risk, but still worth considering.                                                                                                                                        |
+| ![[Pasted image 20251209141219.png]] | When tossed, initial deployment cost is increased by 99, but DP natural regeneration speed is reduced by 50%.                                          | This coin is viable even if it were to removes all your natural DP regen. 99 starting DP is insane and solves all your opening needs. The downside is barely noticeable except in Endings, where you will likely have a Vanguard to solve it.                      |
+
+---
+
+# Progression Milestone #1: Difficulty 2+
+
+This is perhaps the most important milestone. The prerequisite to unlocking Raidian's Elite 2 (E2) promotion is reaching and clearing Difficulty 2 (D2).
+
+Reaching and clearing D2 is often the hardest hurdle. You start with no tree upgrades and limited knowledge of stage mechanics. **Expect to fail a few times—this is normal.**
+
+At the beginning, you start with 4 available squads: Leader, Gathering, Support, and First Class. None are truly impressive at this point, but do not worry. Here is a solid strategy to help you get through the first 2 difficulties:
+
+## Shield Stacking Gathering Squad
+
+Early in your progression, I recommend selecting the **Gathering Squad**. This squad provides excellent flexibility for the early game.
+
+**Recommended Starting Lineup:**
+
+- **Tragodia** (6★)
+    
+- **Windscoot** (4★)
+    
+- **Purestream** (4★)
+    
+
+![[MuMu-20251113-121316-996.png]]
+
+- **Tragodia:** Your main carry. You will almost always use his **Skill 2**. Since the Gathering Squad provides reserved operators for blocking, Tragodia can focus purely on dealing damage with his cat rather than providing utility via Skill 3 or Skill 1. You do not need to own the operator; feel free to borrow a high-level Tragodia from a friend.
+    
+- **Windscoot:** A solid 4-star Liberator. He provides decent burst damage for early stages. His primary downside (0 block while off-skill) is **mitigated** by the reserved operators from the Gathering Squad. Additionally, he is a Yan operator, which triggers specific event mechanics.
+    
+- **Purestream:** A reliable healer with incredible range. Her **Skill 2** can keep the team alive under high pressure. Like Windscoot, her status as a Yan operator provides mechanical benefits.
+    
+
+If you don't have the 4★ operators raised, feel free to borrow them or start with Reserve Operators. They are good to have but not essential for our strategy.
+
+### The Strategy: Conserving Vouchers
+
+IS6 introduces a new mechanic: **Conserving Vouchers**.
+
+On every recruitment screen that isn't your initial squad selection, you may conserve your recruitment vouchers until you reach a _Guidance_ node. At these nodes, you can recruit or promote operators for **-2 Hope** and make these operators _Candleguests_. You can only use your Candleguests inside _Sui's Remnant Consciousness_, which is the IS6 equivalent of the "Bosky" hidden floor.
+
+![[Pasted image 20251129171317.png]]
+
+Tragodia can handle almost any Floor 1 combat with ease, so you should always aim to complete 2 combats and path towards the Emergency combat on Floor 1. Two standard combats take priority over the Emergency.
+
+![[Pasted image 20251129170812.png]]
+
+In this scenario, take the upper path because there is an Emergency combat stage on top of being a 2-combat route. If the first node had been an encounter, you would choose the bottom path to secure 2 combats.
+
+Throughout your run, here are some good 6★ operators to look for in early difficulties:
+
+![[Pasted image 20251129201908.png]]
+
+Do not worry if you don't have any of them! This portion of the guide is designed for people with Tragodia as their only available 6★.
+
+### The "Bosky" Shield Farm
+
+Throughout your run, look to enter _Bosky_ (Sui's Remnant Consciousness) 3 times: on F2, F4, and F5. Prioritize your pathing to avoid entering one node repeatedly. Reveal the entire map to eventually find this specific node (it's guaranteed to be within the 5x5 area from the center):
+
+![[Pasted image 20251129221651.png]]
+
+This specific node can be entered repeatedly, and some of its options allow you to exchange Ingots for Shields/Life Points (LP). The goal is to spend all your accumulated Ingots here for more shields—ideally **15-20 effective LP** by the end of F5 if Tragodia is your only 6★. You need less if you acquired a carry that can lane-hold before the end of F5.
+
+The boss might be a little difficult at first, but reference this video [here](https://youtu.be/RDLSsuIdT1w). It demonstrates a Tragodia single 6★ solution to the fight, assuming that you will leak every enemy from the right side. This strategy works well if you have the LP to spare. Overall, Ending 1 should be a breeze with Tragodia.
+
+**After completing Difficulty 2, you can now upgrade Raidian to Elite 2.**
+
+---
+
+# Progression Milestone #2: Difficulty 6+
+
+Difficulty 6 (D6) is the next major checkpoint. Reaching this difficulty allows you to unlock all of Raidian’s **Proficiencies**.
+
+Proficiencies are game-changers: they provide extra resources, reduce Hope costs, and fundamentally alter how Raidian functions.
+
+Unlock Requirements for Proficiencies:
+
+To max out Raidian, you must complete specific challenges at Difficulty 6 or higher:
+
+1. Clear an **Emergency Battle** with Raidian recruited.
+    
+2. Clear a run using Raidian's **Summons** to defeat the Ending 1 Boss.
+    
+3. Clear at least 2 _Disaster_ battle nodes and achieve Ending 1 (with Raidian).
+    
+4. Turn 6 operators into Candleguests and achieve Ending 2.
+    
+
+Completing these proficiencies validates Raidian's reputation as the strongest operator in IS6. Most notably, **Combat Mastery I** (unlocked by defeating the Ending 1 Boss with summons) allows Raidian’s summons to **not consume deployment slots** starting from Floor 4. This transforms her from an early-game helper into a late-game monster.
+
+To help you reach D6, here are some new strategies to consider involving the **Gathering Squad** and **Leader Squad**.
+
+### Gathering Squad Strategy
+
+After E2ing your Raidian, the **Gathering Squad** upgrade effect grants you a **Free, Max Potential, M9, Module Level 3 Temp-Recruit Raidian** in addition to your reserved operators. With that, you're ready for our next milestone.
+
+Even though this Temp-Raidian shares your current Proficiency level, her raw stats alone will carry you through the early floors effortlessly.
+
+![[Pasted image 20251113174430.png]]
+
+This also means that you get to start with another 6★ together with Raidian. **Exusiai the New Covenant**, **Tragodia**, and **Wiš'adel** are my recommended options because they cover the most scenarios.
+
+![[Pasted image 20251130105923.png]]
+
+![[Pasted image 20251130110047.png]]
+
+![[Pasted image 20251130105826.png]]
+
+I recommend **Tragodia** for Ending 1. As soon as you're ready for the Ending 2 mission, swap over to **Exusiai the New Covenant** (or a Sniper/Medic squad with Wiš'adel).
+
+_Note: It is better to E2 your Raidian first if you started with Tragodia and picked up a Supporter voucher._
+
+### Leader Squad: F1 Shop Rob Strategy
+
+On Difficulty 3 and beyond, the Leader Squad starts with the "End of Times" relic. This allows us to exploit the F1 shop.
+
+![[Pasted image 20251201211805.png]]
+
+You must have this tree node unlocked.
+
+Why does this work?
+
+IS6 has no guaranteed shop after F1, so you are essentially trading away an uncertain future shop for extreme early power. This helps you clear early Bosky fights, pass the F3 boss stat check, and play the game more freely. Note: You need to invest 50 ingots to unlock the "rob" feature first.
+
+Since we are no longer starting with Reserved Operators, select Humus as our initial guard:
+
+![[Pasted image 20251201212047.png]]
+
+**The Process:**
+
+1. Enter the F1 Shop.
+    
+2. Buy out the entire first page.
+    
+3. Use ticket to refresh the page.
+    
+4. Press the bottom left button multiple times to trigger the "Rob" fight.
+    
+    ![[Pasted image 20251202114805.png]]
+    
+5. After entering the stage, immediately exit the stage.
+    
+    ![[Pasted image 20251202114855.png]]
+    
+    ![[Pasted image 20251202114910.png]]
+    
+6. "End of Times" will trigger, bringing you back to a blank result screen. You may then proceed to take every relic in the shop for free.
+    
+    ![[Pasted image 20251202115002.png]]
+    
+
+This will not invalidate your ingots; there are plenty of other ways to spend them, such as shield stacking or downtime recreation inside Bosky. With these relics, you should dominate the first few floors, and you can restart/repeat this process until you get high-tier relics.
+
+---
+
+## Ending 2 Strategy
+
+Here comes the most difficult part: **Turn 6 operators into Candleguests and achieve Ending 2.**
+
+To do this, especially as a new player, ensure you have upgraded Raidian's _Combat Mastery_. This is done by beating Ending 1 with Raidian on D6+, which allows you to place down 5 Raidian "fishes" (summons) in the ending without taking up deployment slots.
+
+Preparation:
+
+You need an E2 Raidian and E2 Exusiai the New Covenant going into the ending. It is also preferred that you obtain at least 18 LP before entering this stage using the shield stacking method.
+
+**Execution:**
+
+1. **The Opening:** Begin by dropping your agent (Surfer or Cantabille work well) to clear the Statuegeist. The Statuegeist may spawn on the left or right, but it does not matter.
+    
+2. Positioning: Place Exusiai and Raidian in the following positions:
+    
+    ![[Pasted image 20251202205526.png]]
+    
+    Surfer will stay exactly where she is; do not retreat her. When the white bar is full, the boss will slam on top of Surfer, retreating her and putting her on a 30-second redeployment cooldown.
+    
+    ![[Pasted image 20251202210259.png]]
+    
+3. **Surviving the Stomp:** Right after the stomp, activate Exusiai's S2 to grant Raidian and herself a shield, allowing them to survive the stomp damage. You can activate her skill slightly before the stomp to be safe.
+    
+4. The Left Lane Strategy: After the stomp finishes, a Sharpedge will spawn on the left side. Here is the trick:
+    
+    Unless you are extremely confident, leave the left lane alone for the entire stage.
+    
+    This will cost you 17 LP total, but it is worth it. Prematurely killing Sharpedges often leads to worse outcomes. For a beginner, the safest solution is to stack 17+ LP and leak everything on the left.
+    
+5. Baiting Stomps: For the following stomps, try to bait the boss at this position:
+    
+    ![[Pasted image 20251202211100.png]]
+    
+    The foot's targeting algorithm is simple: it prioritizes the area with the most grouped operators. Therefore, keep your operators separated.
+    
+6. Right Lane Defense: For enemies on the right side, push them into Exu's range by placing down Raidian summons as they reach the upper half of the block:
+    
+    ![[Pasted image 20251202211609.png]]
+    
+    If you have strong relics, you can point the summon downward and use Raidian's skill to deal with enemies on the right.
+    
+7. **The Cycle:** Rinse and repeat. **Important:** Avoid hitting the boss below 50% HP until you are ready, as he will retreat every unit on the field and put them on a 40-second redeployment. If you have another set of carries, you can bait the boss on the left to avoid damaging him too early.
+    
+8. **The Finish:** After getting the enemy count to 54/55, you can safely DPS the boss. Wait out the redeployment and finish him off.
+    
+
+---
+
+# Progression Milestone #3: Clearing Difficulty 10
+
+Congratulations! You've completed the majority of the progression. Now, all that remains is to:
+
+1. Use Raidian to clear Ending 3 on Difficulty 9 and 10 (to reach Module Level 3).
+    
+2. Use the 3 Theme Squads to clear _any_ ending on Difficulty 7 or above to unlock her Mastery 3 skills.
+    
+
+_Note: Ensure you have unlocked each theme squad's upgrade node first._
+
+## S1M3: Tourist Squad
+
+![[Pasted image 20251208143424.png]]
+
+Objective: Complete a run with Raidian recruited and achieve any ending with Tourist Squad in Difficulty 7 or above.
+
+The Tourist Squad playstyle is unique. You start with 3 extra tickets (allowing for triple combat on F1 without robbing the shop), an increased Coinbox limit, and higher toss counts. You benefit significantly from playing around coins.
+
+Since any ending works, I advise going for Ending 1 using the Tragodia carry.
+
+Starters: Exusiai the New Covenant, Tragodia, Raidian, or Wiš'adel are the easiest E1 starters.
+
+During your run, pay close attention to Emergency, Guidance, and Faceoff nodes. The combat options in Guidance, the first option of Faceoff, and Emergency battles all give a juicy amount of coins to fill your box. Tourist Squad scales incredibly well into the late game due to the power ceiling of a well-built Coinbox.
+
+Tip: Find the coin exchange node in Bosky if you have high-value coins you can't utilize:
+
+![[Pasted image 20251209135533.png]]
+
+You will have a rougher start due to lower early power and the risk of rolling debuff coins, but Tragodia should handle early maps until your Coinbox is built.
+
+## S2M3: Regulator Squad
+
+![[Pasted image 20251209194030.png]]
+
+Objective: Complete a run with Raidian recruited and achieve any ending with Regulator Squad in Difficulty 7 or above.
+
+The Regulator Squad offers the highest consistency. Its effect allows you to conserve 2 more vouchers and automatically conserves a random voucher upon reaching a new floor. Because you get so many vouchers, it is easy to snowball, especially on lower difficulties.
+
+**Starters:** You can choose freely. Since 2 combats + 1 shop refresh + squad effect gives you 6 vouchers by F2, feel free to borrow a powerful carry and recruit your own on F2. Alternatively, start with **May, Gummy, and Click** to save hope for recruiting 6-stars on F2.
+
+**Pathing:** Focus on Guidance nodes to get inherent value. Make sure you have Tragodia recruited before Ending 1 to repeat the permastall strategy.
+
+## S3M3: Rites Squad
+
+![[Pasted image 20251209202622.png]]
+
+Objective: Complete a run with Raidian recruited and achieve any ending with Rites Squad in Difficulty 7 or above.
+
+Rites Squad focuses on pathing and Bosky optimization. Its effect adds a guaranteed option in Safehouses to recruit an operator from a conserved voucher, then enter Bosky with 2 Candlelights (steps). Essentially, every Safehouse becomes a "Recruit 1 + 3 Steps Bosky," which optimizes pathing significantly.
+
+**Starters:** Exusiai the New Covenant, Raidian, or Wiš'adel. Tragodia is _not_ optimal here due to limited Bosky power, but use him if he's your only option.
+
+**Strategy:** Enter Bosky at the end of F1 to utilize the +1 Candlelight effect. Accumulate vouchers and try to have your starter carry at E2 by the start of F2. Afterward, prioritize Safehouse/Bosky on every floor to juice all resources. This squad is less reliant on Guidance since you can recruit via Safehouse.
+
+**Ending:** Use Tragodia permastall for Ending 1.
+
+---
+
+## Module Level 3: D10 Ending 3
+
+Here comes the final challenge: Ending 3. You can freestyle with your preferred squad, but here are my recommendations:
+
+- **Gathering Squad** (Tragodia/Exu/Wiš'adel start)
+    
+- **Leader Squad** (F1 Shop Rob, Tragodia/Exu/Wiš'adel/Raidian start)
+    
+- **Regulator Squad** (Raidian/Tragodia or 4-star only start)
+    
+
+Ending 3 makes sense here because Ending 1 is easily solved by Tragodia, and Ending 2 requires leaking (risky on high difficulty).
+
+**Ending 3 Checklist:**
+
+- [ ] A healer with good range (e.g., Purestream or Quercus).
+    
+- [ ] 2 Carries that can lane-hold under pressure and hit aerial enemies.
+    
+- [ ] Anti-invisible utility, or enough "meat shields" to block stealth enemies.
+    
+- [ ] A tanky ground unit (e.g., E2 Gummy or Guard Amiya).
+    
+
+## Part 1: Ending 3 Prerequisite Stage
+
+Look to recruit good ground presence to complete the prerequisite stage:
+
+![[Pasted image 20251209205253.png]]
+
+This stage is annoying due to limitations against high-ground units (except Wiš'adel).
+
+![[Pasted image 20251209205457.png]]
+
+**The Mechanics:**
+
+- **Swordsmen:** Hold 3 charges of Talisman and attach them to operators directly next to them.
+    
+- **Pieces (Circular Devices):** Burn operators next to them and **permanently stun** operators surrounded only by other Pieces or map edges.
+    
+
+The Strategy:
+
+![[Pasted image 20251209213802.png]]
+
+Red crosses represent unsafe tiles (Talisman danger or Permastun danger). C3 suffers burn from 2 Pieces.
+
+**Opening:** Deploy ground operators on **E6 or C6**. Attempt to kill the Swordsman or Pieces with them to free up high-ground tiles, as there are **zero** safe high-ground tiles at the start.
+
+Recommended Openers:
+
+![[Pasted image 20251209214552.png]]
+
+- **E2 Wiš'adel:** Can deploy on F9 due to Camouflage.
+    
+- **Leizi the Thunderbringer:** Can also deploy on F6 or B6 (immune to Talisman during takeoff).
+    
+- **Ground Healers (e.g., Gummy):** Can help high-ground operators on D4 survive burn damage.
+    
+
+Once high ground is free and carries are down, the stage becomes trivial.
+
+## Part 2: The Boss Stage
+
+![[Pasted image 20251209215836.png]]
+
+The Opening (Most Dangerous Variation):
+
+![[Pasted image 20251209220106.png]]
+
+The boss actively summons Pieces after you place an ally unit. If an operator is permastunned, the boss enters a rampage. However, the boss himself is weak if you obey the rules.
+
+The Wallbreakers:
+
+Two Wallbreakers on the right threaten high ground immediately. They loop around G9/C9 until 3:15 has passed, then enter the blue boxes. You cannot wait them out (24 lives lost).
+
+Solution: Use ground operators to kill them before dropping high grounds. Liberator Guards on E10 work well as the Wallbreakers stop at checkpoints within range.
+
+Positioning:
+
+![[Pasted image 20251209222058.png]]
+
+- Each carry holds one lane.
+    
+- Healer in the middle covers both.
+    
+- Tanky ground unit (Gummy spot) blocks the boss.
+    
+
+The Dragons:
+
+![[Pasted image 20251209221247.png]]
+
+13 Dragons total. The first 4 loop, but the rest head for blue boxes. They consume the first ally they touch, takeoff, and reduce their DEF to 0.
+
+Solution: They have 110k HP / 1800 DEF on D10. Use Arts damage (Logos) or burst (Wiš'adel/Exusiai). If a Dragon gets too close to your boss-blocker, feed it a generic operator to save your blocker.
+
+The Stealth Talisman Shooters:
+
+![[Pasted image 20251209222657.png]]
+
+Around the 5-minute mark, 3 Talisman shooters spawn from the top red box—with Stealth.
+
+![[Pasted image 20251209222829.png]]
+
+Solution: Use Ines for reveal, or deploy extra carries/ground units to block and kill them immediately. If they live for an extended period of time, the run is likely over.
+
+If you solve these challenges, the boss is practically non-existent. He will be forever blocked by your central tank, unable to kill them due to low damage.
+
+---
+
+# Conclusion
+
+Congratulations! You should now have your Raidian maxed and understand the basics of IS6. Note that some strategies here (like the specific tanking methods) may become less optimal at super-high difficulties, but do not be discouraged. Discovering your own strategy is the essence of Integrated Strategies.
+
+If you haven't already, join the [IS Central Discord](https://discord.gg/fqRBzQWVfK) for more info and to chat with passionate individuals about your favorite IS theme!
