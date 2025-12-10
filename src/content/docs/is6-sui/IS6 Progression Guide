@@ -18,7 +18,7 @@ With the release of the 6th iteration of Integrated Strategies (IS6), **Sui's Ga
 
 # Getting Started
 
-![[/guides/is6-sui/Pasted image 20251129153634.png]]
+![Raidian, the IS6-exclusive operator.](/guides/is6-sui/is6-progression/raidian-splash.png)
 
 Your absolute top priority in IS6 is to **acquire and build Raidian**. She is the welfare operator exclusive to this mode. As you progress through her unique talent tree, she provides incredible combat power and out-of-stage benefits.
 
@@ -43,13 +43,13 @@ For a new player, a good rule of thumb is to **always pick up Pink or Blue coins
 
 | **Image**                            | **Effect**                                                                                                                                             | **Explanation**                                                                                                                                                                                                                                                    |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| ![[Pasted image 20251209141038.png]] | When tossed, all allied units gain 55% Physical and Arts Dodge, and all enemies gain +25 Attack Speed.                                                 | While +25 ASPD to enemies sounds scary, the 55% Dodge you get in exchange mitigates the risk easily.                                                                                                                                                               |
-| ![[Pasted image 20251209141121.png]] | When tossed, Operators do not retreat upon being defeated for the first time; instead, they are redeployed on the same tile facing a random direction. | There is essentially no downside to tossing this coin. Redeployment means your agents might get to use their skills again. In the worst-case scenario, you can manually retreat the redeployed operators to generate DP.                                           |
-| ![[Pasted image 20251209141136.png]] | When tossed, all allied Operators’ SP costs are reduced by 40%, but their skills will activate automatically.                                          | Although this disables skill timing management, -40% SP cost is simply too good to pass up. I would only avoid this if your team consists primarily of Phalanx Casters or Liberator Guards.                                                                        |
-| ![[Pasted image 20251209141152.png]] | While inside the coinbox, unlock a vertical path for the current node. When tossed, lose 5 Originium Ingots.                                           | Easily the best coin you can get. Its effect activates by simply possessing it (no toss required). It allows unlimited vertical travel, meaning you can easily take Guidance and Bosky nodes on the same floor with a mere 3-6 ticket investment. Insanely broken. |
-| ![[Pasted image 20251209141102.png]] | When tossed, all enemy units’ Max HP is reduced by 45%, and all allied units’ Max HP is reduced by 25%.                                                | 25% is steep pressure on your operators, but a 45% Enemy Max HP reduction is far better than any relic in the game.                                                                                                                                                |
-| ![[Pasted image 20251209141112.png]] | When tossed, all enemy units gain +25% ATK, and all allied units gain +60% ATK.                                                                        | Similar to the previous coin, except the +60% ATK is a slightly worse reward for similar risk, but still worth considering.                                                                                                                                        |
-| ![[Pasted image 20251209141219.png]] | When tossed, initial deployment cost is increased by 99, but DP natural regeneration speed is reduced by 50%.                                          | This coin is viable even if it were to removes all your natural DP regen. 99 starting DP is insane and solves all your opening needs. The downside is barely noticeable except in Endings, where you will likely have a Vanguard to solve it.                      |
+| !["Coin of Dodge"](/guides/is6-sui/is6-progression/coin-dodge.png) | When tossed, all allied units gain 55% Physical and Arts Dodge, and all enemies gain +25 Attack Speed.                                                 | While +25 ASPD to enemies sounds scary, the 55% Dodge you get in exchange mitigates the risk easily.                                                                                                                                                               |
+| !["Coin of Revival"](/guides/is6-sui/is6-progression/coin-revival.png) | When tossed, Operators do not retreat upon being defeated for the first time; instead, they are redeployed on the same tile facing a random direction. | There is essentially no downside to tossing this coin. Redeployment means your agents might get to use their skills again. In the worst-case scenario, you can manually retreat the redeployed operators to generate DP.                                           |
+| !["Coin of Auto-Skill"](/guides/is6-sui/is6-progression/coin-auto-skill.png) | When tossed, all allied Operators’ SP costs are reduced by 40%, but their skills will activate automatically.                                          | Although this disables skill timing management, -40% SP cost is simply too good to pass up. I would only avoid this if your team consists primarily of Phalanx Casters or Liberator Guards.                                                                        |
+| !["Coin of Vertical Path"](/guides/is6-sui/is6-progression/coin-vertical-path.png) | While inside the coinbox, unlock a vertical path for the current node. When tossed, lose 5 Originium Ingots.                                           | Easily the best coin you can get. Its effect activates by simply possessing it (no toss required). It allows unlimited vertical travel, meaning you can easily take Guidance and Bosky nodes on the same floor with a mere 3-6 ticket investment. Insanely broken. |
+| !["Coin of HP Tradeoff"](/guides/is6-sui/is6-progression/coin-hp-tradeoff.png) | When tossed, all enemy units’ Max HP is reduced by 45%, and all allied units’ Max HP is reduced by 25%.                                                | 25% is steep pressure on your operators, but a 45% Enemy Max HP reduction is far better than any relic in the game.                                                                                                                                                |
+| !["Coin of ATK Tradeoff"](/guides/is6-sui/is6-progression/coin-atk-tradeoff.png) | When tossed, all enemy units gain +25% ATK, and all allied units gain +60% ATK.                                                                        | Similar to the previous coin, except the +60% ATK is a slightly worse reward for similar risk, but still worth considering.                                                                                                                                        |
+| !["Coin of DP"](/guides/is6-sui/is6-progression/coin-dp.png) | When tossed, initial deployment cost is increased by 99, but DP natural regeneration speed is reduced by 50%.                                          | This coin is viable even if it were to removes all your natural DP regen. 99 starting DP is insane and solves all your opening needs. The downside is barely noticeable except in Endings, where you will likely have a Vanguard to solve it.                      |
 
 ---
 
@@ -74,7 +74,7 @@ Early in your progression, I recommend selecting the **Gathering Squad**. This s
 - **Purestream** (4★)
     
 
-![[MuMu-20251113-121316-996.png]]
+![Recommended starting lineup for Gathering Squad: Tragodia, Windscoot, Purestream.](/guides/is6-sui/is6-progression/gathering-squad-starters.png)
 
 - **Tragodia:** Your main carry. You will almost always use his **Skill 2**. Since the Gathering Squad provides reserved operators for blocking, Tragodia can focus purely on dealing damage with his cat rather than providing utility via Skill 3 or Skill 1. You do not need to own the operator; feel free to borrow a high-level Tragodia from a friend.
     
@@ -91,17 +91,17 @@ IS6 introduces a new mechanic: **Conserving Vouchers**.
 
 On every recruitment screen that isn't your initial squad selection, you may conserve your recruitment vouchers until you reach a _Guidance_ node. At these nodes, you can recruit or promote operators for **-2 Hope** and make these operators _Candleguests_. You can only use your Candleguests inside _Sui's Remnant Consciousness_, which is the IS6 equivalent of the "Bosky" hidden floor.
 
-![[Pasted image 20251129171317.png]]
+![Conserving a recruitment voucher.](/guides/is6-sui/is6-progression/conserve-voucher.png)
 
 Tragodia can handle almost any Floor 1 combat with ease, so you should always aim to complete 2 combats and path towards the Emergency combat on Floor 1. Two standard combats take priority over the Emergency.
 
-![[Pasted image 20251129170812.png]]
+![Example of Floor 1 pathing.](/guides/is6-sui/is6-progression/floor1-pathing.png)
 
 In this scenario, take the upper path because there is an Emergency combat stage on top of being a 2-combat route. If the first node had been an encounter, you would choose the bottom path to secure 2 combats.
 
 Throughout your run, here are some good 6★ operators to look for in early difficulties:
 
-![[Pasted image 20251129201908.png]]
+![Recommended 6-star operators for early progression.](/guides/is6-sui/is6-progression/recommended-6stars.png)
 
 Do not worry if you don't have any of them! This portion of the guide is designed for people with Tragodia as their only available 6★.
 
@@ -109,7 +109,7 @@ Do not worry if you don't have any of them! This portion of the guide is designe
 
 Throughout your run, look to enter _Bosky_ (Sui's Remnant Consciousness) 3 times: on F2, F4, and F5. Prioritize your pathing to avoid entering one node repeatedly. Reveal the entire map to eventually find this specific node (it's guaranteed to be within the 5x5 area from the center):
 
-![[Pasted image 20251129221651.png]]
+![Bosky node for exchanging Ingots for Life Points.](/guides/is6-sui/is6-progression/bosky-shield-farm-node.png)
 
 This specific node can be entered repeatedly, and some of its options allow you to exchange Ingots for Shields/Life Points (LP). The goal is to spend all your accumulated Ingots here for more shields—ideally **15-20 effective LP** by the end of F5 if Tragodia is your only 6★. You need less if you acquired a carry that can lane-hold before the end of F5.
 
@@ -148,15 +148,15 @@ After E2ing your Raidian, the **Gathering Squad** upgrade effect grants you a **
 
 Even though this Temp-Raidian shares your current Proficiency level, her raw stats alone will carry you through the early floors effortlessly.
 
-![[Pasted image 20251113174430.png]]
+![Gathering Squad upgrade providing a temporary Raidian.](/guides/is6-sui/is6-progression/gathering-squad-raidian.png)
 
 This also means that you get to start with another 6★ together with Raidian. **Exusiai the New Covenant**, **Tragodia**, and **Wiš'adel** are my recommended options because they cover the most scenarios.
 
-![[Pasted image 20251130105923.png]]
+![Exusiai the New Covenant as a starter.](/guides/is6-sui/is6-progression/starter-exusiai-nc.png)
 
-![[Pasted image 20251130110047.png]]
+![Tragodia as a starter.](/guides/is6-sui/is6-progression/starter-tragodia.png)
 
-![[Pasted image 20251130105826.png]]
+![Wiš'adel as a starter.](/guides/is6-sui/is6-progression/starter-wisadel.png)
 
 I recommend **Tragodia** for Ending 1. As soon as you're ready for the Ending 2 mission, swap over to **Exusiai the New Covenant** (or a Sniper/Medic squad with Wiš'adel).
 
@@ -166,7 +166,7 @@ _Note: It is better to E2 your Raidian first if you started with Tragodia and pi
 
 On Difficulty 3 and beyond, the Leader Squad starts with the "End of Times" relic. This allows us to exploit the F1 shop.
 
-![[Pasted image 20251201211805.png]]
+!["End of Times" relic from Leader Squad.](/guides/is6-sui/is6-progression/leader-squad-relic.png)
 
 You must have this tree node unlocked.
 
@@ -176,7 +176,7 @@ IS6 has no guaranteed shop after F1, so you are essentially trading away an unce
 
 Since we are no longer starting with Reserved Operators, select Humus as our initial guard:
 
-![[Pasted image 20251201212047.png]]
+![Humus as a starting guard.](/guides/is6-sui/is6-progression/humus-starter.png)
 
 **The Process:**
 
@@ -188,17 +188,17 @@ Since we are no longer starting with Reserved Operators, select Humus as our ini
     
 4. Press the bottom left button multiple times to trigger the "Rob" fight.
     
-    ![[Pasted image 20251202114805.png]]
+    !["Rob" button in the shop.](/guides/is6-sui/is6-progression/shop-rob-button.png)
     
 5. After entering the stage, immediately exit the stage.
     
-    ![[Pasted image 20251202114855.png]]
+    ![Entering the "Rob" combat stage.](/guides/is6-sui/is6-progression/shop-rob-combat.png)
     
-    ![[Pasted image 20251202114910.png]]
+    ![Immediately exiting the stage.](/guides/is6-sui/is6-progression/shop-rob-exit.png)
     
 6. "End of Times" will trigger, bringing you back to a blank result screen. You may then proceed to take every relic in the shop for free.
     
-    ![[Pasted image 20251202115002.png]]
+    ![Taking free relics after the rob strategy.](/guides/is6-sui/is6-progression/shop-rob-success.png)
     
 
 This will not invalidate your ingots; there are plenty of other ways to spend them, such as shield stacking or downtime recreation inside Bosky. With these relics, you should dominate the first few floors, and you can restart/repeat this process until you get high-tier relics.
@@ -221,11 +221,11 @@ You need an E2 Raidian and E2 Exusiai the New Covenant going into the ending. It
     
 2. Positioning: Place Exusiai and Raidian in the following positions:
     
-    ![[Pasted image 20251202205526.png]]
+    ![Initial operator placement for Ending 2.](/guides/is6-sui/is6-progression/ending2-initial-placement.png)
     
     Surfer will stay exactly where she is; do not retreat her. When the white bar is full, the boss will slam on top of Surfer, retreating her and putting her on a 30-second redeployment cooldown.
     
-    ![[Pasted image 20251202210259.png]]
+    ![Boss stomp mechanic in Ending 2.](/guides/is6-sui/is6-progression/ending2-boss-stomp.png)
     
 3. **Surviving the Stomp:** Right after the stomp, activate Exusiai's S2 to grant Raidian and herself a shield, allowing them to survive the stomp damage. You can activate her skill slightly before the stomp to be safe.
     
@@ -237,13 +237,13 @@ You need an E2 Raidian and E2 Exusiai the New Covenant going into the ending. It
     
 5. Baiting Stomps: For the following stomps, try to bait the boss at this position:
     
-    ![[Pasted image 20251202211100.png]]
+    ![Baiting the boss stomp.](/guides/is6-sui/is6-progression/ending2-stomp-bait.png)
     
     The foot's targeting algorithm is simple: it prioritizes the area with the most grouped operators. Therefore, keep your operators separated.
     
 6. Right Lane Defense: For enemies on the right side, push them into Exu's range by placing down Raidian summons as they reach the upper half of the block:
     
-    ![[Pasted image 20251202211609.png]]
+    ![Using Raidian's summons for right lane defense.](/guides/is6-sui/is6-progression/ending2-right-lane-defense.png)
     
     If you have strong relics, you can point the summon downward and use Raidian's skill to deal with enemies on the right.
     
@@ -267,7 +267,7 @@ _Note: Ensure you have unlocked each theme squad's upgrade node first._
 
 ## S1M3: Tourist Squad
 
-![[Pasted image 20251208143424.png]]
+![Tourist Squad upgrade node.](/guides/is6-sui/is6-progression/tourist-squad-node.png)
 
 Objective: Complete a run with Raidian recruited and achieve any ending with Tourist Squad in Difficulty 7 or above.
 
@@ -281,13 +281,13 @@ During your run, pay close attention to Emergency, Guidance, and Faceoff nodes. 
 
 Tip: Find the coin exchange node in Bosky if you have high-value coins you can't utilize:
 
-![[Pasted image 20251209135533.png]]
+![Bosky node for coin exchange.](/guides/is6-sui/is6-progression/bosky-coin-exchange.png)
 
 You will have a rougher start due to lower early power and the risk of rolling debuff coins, but Tragodia should handle early maps until your Coinbox is built.
 
 ## S2M3: Regulator Squad
 
-![[Pasted image 20251209194030.png]]
+![Regulator Squad upgrade node.](/guides/is6-sui/is6-progression/regulator-squad-node.png)
 
 Objective: Complete a run with Raidian recruited and achieve any ending with Regulator Squad in Difficulty 7 or above.
 
@@ -299,7 +299,7 @@ The Regulator Squad offers the highest consistency. Its effect allows you to con
 
 ## S3M3: Rites Squad
 
-![[Pasted image 20251209202622.png]]
+![Rites Squad upgrade node.](/guides/is6-sui/is6-progression/rites-squad-node.png)
 
 Objective: Complete a run with Raidian recruited and achieve any ending with Rites Squad in Difficulty 7 or above.
 
@@ -341,11 +341,11 @@ Ending 3 makes sense here because Ending 1 is easily solved by Tragodia, and End
 
 Look to recruit good ground presence to complete the prerequisite stage:
 
-![[Pasted image 20251209205253.png]]
+![Ending 3 prerequisite stage node.](/guides/is6-sui/is6-progression/ending3-prereq-node.png)
 
 This stage is annoying due to limitations against high-ground units (except Wiš'adel).
 
-![[Pasted image 20251209205457.png]]
+![Ending 3 prerequisite stage map layout.](/guides/is6-sui/is6-progression/ending3-prereq-layout.png)
 
 **The Mechanics:**
 
@@ -356,7 +356,7 @@ This stage is annoying due to limitations against high-ground units (except Wiš
 
 The Strategy:
 
-![[Pasted image 20251209213802.png]]
+![Safe and unsafe tiles for the prerequisite stage.](/guides/is6-sui/is6-progression/ending3-prereq-tiles.png)
 
 Red crosses represent unsafe tiles (Talisman danger or Permastun danger). C3 suffers burn from 2 Pieces.
 
@@ -364,7 +364,7 @@ Red crosses represent unsafe tiles (Talisman danger or Permastun danger). C3 suf
 
 Recommended Openers:
 
-![[Pasted image 20251209214552.png]]
+![Recommended operators for the prerequisite stage.](/guides/is6-sui/is6-progression/ending3-prereq-operators.png)
 
 - **E2 Wiš'adel:** Can deploy on F9 due to Camouflage.
     
@@ -377,11 +377,11 @@ Once high ground is free and carries are down, the stage becomes trivial.
 
 ## Part 2: The Boss Stage
 
-![[Pasted image 20251209215836.png]]
+![Ending 3 boss stage map layout.](/guides/is6-sui/is6-progression/ending3-boss-layout.png)
 
 The Opening (Most Dangerous Variation):
 
-![[Pasted image 20251209220106.png]]
+![Ending 3 boss stage opening enemy positions.](/guides/is6-sui/is6-progression/ending3-boss-opening.png)
 
 The boss actively summons Pieces after you place an ally unit. If an operator is permastunned, the boss enters a rampage. However, the boss himself is weak if you obey the rules.
 
@@ -393,7 +393,7 @@ Solution: Use ground operators to kill them before dropping high grounds. Libera
 
 Positioning:
 
-![[Pasted image 20251209222058.png]]
+![Recommended operator positioning for the Ending 3 boss.](/guides/is6-sui/is6-progression/ending3-boss-positioning.png)
 
 - Each carry holds one lane.
     
@@ -404,7 +404,7 @@ Positioning:
 
 The Dragons:
 
-![[Pasted image 20251209221247.png]]
+![Dragon enemies in Ending 3.](/guides/is6-sui/is6-progression/ending3-dragons.png)
 
 13 Dragons total. The first 4 loop, but the rest head for blue boxes. They consume the first ally they touch, takeoff, and reduce their DEF to 0.
 
@@ -412,11 +412,11 @@ Solution: They have 110k HP / 1800 DEF on D10. Use Arts damage (Logos) or burst 
 
 The Stealth Talisman Shooters:
 
-![[Pasted image 20251209222657.png]]
+![Stealth Talisman Shooter enemies in Ending 3.](/guides/is6-sui/is6-progression/ending3-stealth-enemies.png)
 
 Around the 5-minute mark, 3 Talisman shooters spawn from the top red box—with Stealth.
 
-![[Pasted image 20251209222829.png]]
+![Pathing for Stealth Talisman Shooters.](/guides/is6-sui/is6-progression/ending3-stealth-pathing.png)
 
 Solution: Use Ines for reveal, or deploy extra carries/ground units to block and kill them immediately. If they live for an extended period of time, the run is likely over.
 
