@@ -1,0 +1,84 @@
+---
+import fs from 'fs';
+import path from 'path';
+import { getCollection, getEntry } from 'astro:content';
+import { JSDOM } from 'jsdom';
+
+// Helper function to count <StrategySection> elements
+function countSections(htmlString) {
+  const dom = new JSDOM(htmlString);
+  return dom.window.document.querySelectorAll('StrategySection').length;
+}
+function getSectionTitles(htmlString){
+  const dom = new JSDOM(htmlString);
+  const sectionElements = dom.window.document.querySelectorAll('StrategySection');
+  const titles = Array.from(sectionElements).map(e => e.getAttribute("title"));
+  return titles;
+}
+
+const allDocPosts = await getCollection('is6_stage_guides');
+
+---
+
+<div>
+  <h2>Has Analysis</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Stage</th>
+        <th>Analysis Sections</th>
+        <th>Body Length</th>
+      </tr>
+    </thead>
+    <tbody>
+      {allDocPosts
+        .slice()
+        .filter(post => countSections(post.body) > 0)
+        .sort((a, b) => 
+          countSections(b.body) - countSections(a.body) ||
+          b.body.length - a.body.length
+        )
+        .map(post => (
+          <tr>
+            <td>
+              <a href={`/is6-sui/stages/${post.id}`}>
+                {post.data.title}
+              </a>
+            </td>
+            <td>
+              {getSectionTitles(post.body).sort().map(title => (
+                <p>{title}</p>
+              ))}
+            </td>
+            <td>{post.body.length}</td>
+          </tr>
+        ))}
+    </tbody>
+  </table>
+
+  <h2>No Analysis</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Stage</th>
+        <th>Body Length</th>
+      </tr>
+    </thead>
+    <tbody>
+      {allDocPosts
+        .slice()
+        .filter(post => countSections(post.body) === 0)
+        .sort((a, b) => b.body.length - a.body.length)
+        .map(post => (
+          <tr>
+            <td>
+              <a href={`/is6-sui/stages/${post.id}`}>
+                {post.data.title}
+              </a>
+            </td>
+            <td>{post.body.length}</td>
+          </tr>
+        ))}
+    </tbody>
+  </table>
+</div>
