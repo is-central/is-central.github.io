@@ -1,0 +1,58 @@
+---
+title: Low Rarity Recommendations
+description: Recommended low rarity operators (3★ and 4★) for IS6 (Sui).
+---
+
+import CharacterShowcase from '../../../components/CharacterShowcase.astro';
+
+export const roster = [
+  { role: "Vanguard", chars: ["Surfer", "Cantabile", "Myrtle", "Beanstalk", "Vigna"] },
+  { role: "Guard", chars: ["Windscoot", "Luo Xiaohei", "Humus", "Amiya (Guard)"] },
+  { role: "Sniper", chars: ["May", "Jieyun"] },
+  { role: "Defender", chars: ["Gummy", "Hung", "Bassline"] },
+  { role: "Medic", chars: ["Purestream", "Rose Salt", "Amiya (Medic)", "Perfumer", "Sussurro"] },
+  { role: "Supporter", chars: ["Roberta", "Quercus"] },
+  { role: "Caster", chars: ["Leizi"] },
+  { role: "Specialist", chars: ["Waai Fu", "Ethan", "Jaye", "Gravel"] }
+];
+
+export const featured = ["Surfer", "Cantabile", "Gummy", "Purestream", "Rose Salt", "Amiya (Medic)", "Waai Fu", "Ethan"];
+export const basePath = "/guides/is6-sui/low-rarity-recommendations/";
+
+export const descriptions = {
+  "Surfer": "**Recommended Level: E2 S1M3** <br/> Surfer provides excellent DP generation without relying on initial SP. Furthermore, she is completely unaffected by the Talisman on-deploy debuffs present in certain Hours of Sui. Her main advantage over Cantabile is her front-loaded DP generation.",
+  "Cantabile": "**Recommended Level: E2 S1M3 (S2M3)** <br/> Cantabile provides excellent DP generation without relying on initial SP. Additionally, she is unaffected by the Talisman on-deploy debuffs present in certain Hours of Sui. Her main advantage over Surfer is that her S2 functions as an ammo skill, allowing her to benefit from ammo-related relics and *Exusiai the New Covenant's* talent.",
+  "Myrtle": "**Recommended Level: E1** <br/> Myrtle provides stable DP generation via her S1. Although her power is limited by the debuffs imposed by Ending 3, as a 0 hope Vanguard she performs her role well enough and can even provide minor healing with her S2. E2 and Masteries are not required.",
+  "Beanstalk": "**Recommended Level: E1** <br/> Although having a worse DP generation than Myrtle, Beanstalk's advantage is her summon acting as a solid ground unit while she can still do damage on the high ground. She is a better starting vanguard than Myrtle, mostly the Beanstalk - Raidian - Ethan start.",
+  "Vigna": "**Recommended Level: E1** <br/> Vigna's primary advantage is her S2, which allows her to potentially destroy the Statuegeist in the F1 Shop Rob fight (RNG-dependent). This potentially prevents the 1 LP loss from leaking and yields 4 Ingots. Generally, there is no reason to draft her unless you are aiming for the greedier Vigna - Raidian - Ethan starter.",
+  "Windscoot": "**Yan Operator** <br/>**Recommended Level: E1** <br/> Windscoot is a 4-star operator who deals solid damage and, as a Yan operator, helps satisfy the requirements to unlock Wall nodes in Bosky. He is primarily used in the Gathering Squad as part of the Windscoot - Raidian - Purestream starter lineup.",
+  "Luo Xiaohei": "**Yan Operator** <br/>**Recommended Level: E1** <br/> Luo Xiaohei provides the crucial Yan status needed to unlock Wall nodes in Bosky. His major advantage over Windscoot is his consistent blocking capability (whereas Windscoot has 0 block when not using a skill). Consequently, the Luo Xiaohei - Raidian - Purestream lineup is a viable alternative starter.",
+  "Humus": "**Recommended Level: E1** <br/> Humus is another viable 4-star starter Guard. His primary advantage is his exceptional early-game power. Furthermore, as a Reaper, his true AoE attacks make him particularly effective for the F1 Shop Rob strategy when paired with Raidian. He is mainly used in the Humus - Raidian - Purestream starter lineup.",
+  "Amiya (Guard)": "**Recommended Level: E2 (S1M3) (S2M3)** <br/> Guard Amiya is a reliable ground unit available to everyone, allowing for consistent entry into the F2 Bosky fight alongside Raidian. Both her S1 and S2 are valuable depending on the specific stage requirements. Furthermore, she is durable enough to serve as the dedicated blocker for the Ending 3 boss.",
+  "May": "**Recommended Level: E1** <br/> Out of all the 4-star snipers, May is the relatively better choice due to her utility, but 4-star snipers are generally speaking drafted as a filler.",
+  "Jieyun": "**Yan Operator** <br/>**Recommended Level: E0** <br/> Jieyun is only drafted if you must unlock Wall nodes or risk losing an ending, at which point she can serve as a Yan operator from your sniper vouchers. Not great.",
+  "Gummy": "**Recommended Level: E2 S1M3** <br/> Gummy is arguably one of the best 4-star operators for IS6. Her healing capabilities provide crucial sustain against Ending 3 debuffs, and she scales incredibly well with ATK and SP regen buffs. While an E1 Gummy is serviceable, E2 is strongly recommended. She is also a prime candidate to serve as the dedicated blocker for the Ending 3 boss.",
+  "Hung": "**Yan Operator** <br/>**Recommended Level: E1** <br/> Hung is a mediocre Guardian, primarily useful as a Yan operator obtainable from Defender vouchers. All of his skills are Defensive Recovery, which can be effective when he is blocking a high volume of enemies. However, in most scenarios, he functions as a slightly inferior version of Gummy due to this limitation.",
+  "Bassline": "**Recommended Level: E2 S2M3** <br/> Bassline is an excellent Defender, particularly on lower difficulties where you can recruit 5-star Defenders for 0 Hope via Guidance nodes. He provides substantial healing and durability. On higher difficulties, his primary niche is blocking the Ending 1 boss (when supported by another healer), leveraging the massive amount of RES provided by his Module.",
+  "Purestream": "**Yan Operator <br/>Recommended Level: E2 (S1M3)(S2M3)** <br/> Purestream is an exceptional Medic who doubles as a vital Yan operator and a fantastic healer. Her large range allows her to cover all lanes in Ending 3. Use Skill 1 in Ending 2 to provide instant healing bursts between boss stomps, and Skill 2 for most other scenarios.",
+  "Rose Salt": "**Recommended Level: E2 S2M3** <br/> Rose Salt is easily one of the best operators for keeping your team alive. She is particularly valuable in Ending 2, where she can mitigate the boss's massive stomps that would otherwise wipe your team. Her only downside is the high investment required: she relies heavily on her E2, Masteries, and Module to fully come online—but she is well worth the Hope and Vouchers.",
+  "Amiya (Medic)": "**Recommended Level: E2 S2M3** <br/> Amiya excels in F2 Bosky combats on higher difficulties and forms a powerful duo with Raidian. She is highly accessible, being available from three types of vouchers (Caster, Guard, and Medic). Her Skill 2 combined with her Module allows her to sustain the team even after acquiring the second Ending 3 relic (the HP drain), providing immense value. She can also serve as a backup healer for Ending 3 using Skill 1 in case your primary healer falls.",
+  "Perfumer": "**Recommended Level: E1** <br/> While Perfumer is a lower priority pick compared to Rose Salt or Purestream, she excels at mitigating the constant HP loss in Ending 3 via her global regeneration talent. This functions similarly to Medic Amiya, providing passive, map-wide sustain that counters the HP drain mechanics effectively.",
+  "Sussurro": "**Recommended Level: E1** <br/> Sussurro is a relatively niche pick compared to the previously mentioned Medics, but she holds a unique distinction: she is arguably the only 4-starMedic capable of consistently keeping your operators alive during the F2 Guidance Fight, should you choose to not to recruit. Consequently, she remains a viable starter option for Raidian teams, particularly in the Luo Xiaohei - Raidian - Sussurro lineup.",
+  "Roberta": "**Recommended Level: E1** <br/> Roberta is a solid ground unit obtainable via a Supporter voucher. Her primary use is within the Beanstalk - Roberta - Exusiai the New Covenant starter lineup. Additionally, she finds a niche use in Ending 2, where her devices provide shields that can be crucial for keeping ground operators alive against the boss's high damage.",
+  "Quercus": "**Recommended Level: E1** <br/> Quercus is generally a lower priority pick. However, she shines in Ending 3, where she arguably serves as the best healer for the stage, provided you can survive the initial warm-up period before her Skill 1 activates. Outside of this niche, she acts as a decent flexible pick when your squad desperately needs healing but you are forced to choose from Supporter vouchers.",
+  "Leizi": "**Yan Operator** <br/>**Recommended Level: E1** <br/> Generally speaking, you should only recruit Leizi when you strictly need a Yan operator to unlock a Wall node, as Amiya should always be your priority for Caster vouchers. However, if you do recruit her for this purpose, she provides decent AoE damage at E1. She is generally not worth the investment to E2.",
+  "Waai Fu": "**Yan Operator** <br/>**Recommended Level: E2 S1M3** <br/> Waai Fu is one of the most critical units obtainable via Specialist vouchers. Her primary purpose is to inflict a -40% ATK debuff on the Ending 2 boss using Skill 1, significantly mitigating incoming damage. Furthermore, her status as a Yan operator combined with her Fast-Redeploy trait secures her a high drafting priority, especially if your squad lacks Exusiai the New Covenant.",
+  "Ethan": "**Recommended Level: E1** <br/> Ethan is indispensable in a theme full of enemies mechanics requiring high hit-counts to defeat. You can utilize his Skill 1 to rapidly strip hit-count, or his Skill 2 to provide decent crowd control. Generally speaking, you will rarely prioritize E2ing him due to the fiercely competitive nature of the Specialist class. However, he remains a top-tier E1 unit and a core component of the Beanstalk - Raidian - Ethan starter, widely considered one of the best openings for IS6.",
+  "Jaye": "**Yan Operator** <br/>**Recommended Level: E1** <br/> Jaye is a well-rounded unit who provides both Yan status and a reduced redeployment time. He is often prioritized over Gravel specifically for his ability to satisfy Yan requirements, though this comparison is frequently debated. Overall, he is a solid operator and functions well as part of the Beanstalk - Raidian - Jaye starter lineup.",
+  "Gravel": "**Recommended Level: E1 (E2)** <br/> Gravel is a Fast-Redeploy unit with a unique multi-hit attack that allows her to rapidly strip Talismans or enemies with high hit-count. Her main advantages over Jaye are her faster redeployment time and the DP refund provided by her Module at E2. However, she remains highly effective and fully usable even at E1.",
+};
+
+Below is a curated list of low-rarity operators that perform exceptionally well in Integrated Strategies 6. Click on any operator to view their specialized role and usage tips.
+
+<CharacterShowcase 
+  roster={roster} 
+  featuredChars={featured} 
+  basePath={basePath}
+  descriptions={descriptions}
+/>
