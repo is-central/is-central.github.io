@@ -1,0 +1,151 @@
+---
+title: Low Rarity Recommendations
+description: Recommended low rarity operators (4★ and 5★) for IS5 (Sarkaz).
+---
+<div class="back-button-container">
+  <a href="/is5-sarkaz/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">Back to IS5 Overview</span>
+  </a>
+</div>  
+---
+
+import CharacterShowcase from '../../../components/CharacterShowcase.astro';
+
+export const SE_roster = [
+  { role: "Vanguard", chars: ["Surfer", "Cantabile", "Myrtle", "Beanstalk"] },
+  { role: "Guard", chars: ["Quartz", "Humus", "Amiya (Guard)"] },
+  { role: "Sniper", chars: ["May", "Greyy the Lightningbearer"] },
+  { role: "Defender", chars: ["Gummy", "Ashlock"] },
+  { role: "Medic", chars: ["Amiya (Medic)", "Purestream", "Rose Salt"] },
+  { role: "Supporter", chars: ["Roberta", "Quercus"] },
+  { role: "Caster", chars: ["Amiya (Caster)", "Indigo", "Click"] },
+  { role: "Specialist", chars: ["Gravel", "Ethan", "Kafka"] }
+];
+
+export const Snp_roster = [
+  { role: "Vanguard", chars: ["Surfer", "Cantabile", "Myrtle"] },
+  { role: "Guard", chars: ["Amiya (Guard)"] },
+  { role: "Sniper", chars: ["Greyy the Lightningbearer", "Kroos the Keen Glint", "April", "May", "Meteor"] },
+  { role: "Defender", chars: ["Gummy", "Cuora"] },
+  { role: "Medic", chars: ["Amiya (Medic)", "Purestream", "Sussurro", "Silence"] },
+  { role: "Supporter", chars: ["Shamare", "Deepcolor", "Roberta"] },
+  { role: "Caster", chars: ["Indigo", "Amiya (Caster)", "Durin"] },
+  { role: "Specialist", chars: ["Gravel", "Ethan", "FEater"] }
+];
+
+export const VGG_roster = [
+  { role: "Vanguard", chars: ["Surfer", "Cantabile", "Myrtle"] },
+  { role: "Guard", chars: ["Tachanka", "Tequila"] },
+  { role: "Sniper", chars: ["May", "Greyy the Lightningbearer", "Kroos the Keen Glint"] },
+  { role: "Defender", chars: ["Gummy"] },
+  { role: "Medic", chars: ["Amiya (Medic)", "Silence", "Sussurro", "Purestream"] },
+  { role: "Supporter", chars: ["Deepcolor", "Roberta", "Shamare"] },
+  { role: "Caster", chars: ["Indigo"] },
+  { role: "Specialist", chars: ["Ethan", "Gravel", "Contrail", "FEater"] }
+];
+
+export const SE_featured = ["Surfer", "Cantabile", "Amiya (Medic)", "Ethan", "Gravel", "Greyy the Lightningbearer", "May", "Amiya (Caster)", "Gummy"];
+export const Snp_featured = ["Surfer", "Cantabile", "Gummy", "Greyy the Lightningbearer", "Kroos the Keen Glint", "Amiya (Medic)", "Ethan", "Gravel", "April", "Shamare", "Indigo", "Amiya (Caster)", "Amiya (Guard)"];
+export const VGG_featured = ["Surfer", "Cantabile", "Gummy", "Purestream", "Rose Salt", "Amiya (Medic)", "Ethan", "Gravel"];
+
+export const basePath = "/guides/general-assets/operator-icons/";
+
+export const SE_descriptions = {
+  "Surfer": "**Recommended Level: E2 S1M3** <br/> Primary source of DP",
+  "Cantabile": "**Recommended Level: E1** <br/> Surfer replacement in case she is not avaliable. A second agent can be useful for ED5, in which case E1 is enough. Only the first agent is a high priority to E2 S1M3.",
+  "Myrtle": "**Recommended Level: E1 Lvl60** <br/> Default vanguard pick when there is not enough hope avaliable to draft Surfer. Good DP source when relying more on Kafka.",
+  "Beanstalk": "**Recommended Level: E1 Lvl60** <br/> Standard starter vanguard for the squad. Her summon usually provides sufficient ground presence until a real blocker is drafted, in addition to serving as a bait for cadence when opening stages.",
+  "Quartz": "**Recommended Level: E1 Lvl60** <br/> Low priority upgrade. Decent blocker that can be drafted early when no defender vouchers have showed up. While her skills aren't that great, S2 can stun, which results useful on low damage shop robs to stall cannot after all chests have spawned.",
+  "Humus": "**Recommended Level: E1 Lvl60** <br/> Low priority upgrade. Similar to Quartz, he's just a placeholder blocker until Gummy is drafted, with the advantage of being able to self-sustain scaling with ASPD.",
+  "Amiya (Guard)": "**Recommended Level: E2** <br/> Given that Amiya should be E2 for her Medic and Caster forms, her Guard form can result useful on stages where a blocker is needed or to burst any set of enemies as in Kaz Falls. She is a very versatile operator given her ability to switch into medic/caster classes that have differenty utility.",
+  "May": "**Recommended Level: E2 S1M3 S2M3** <br/> Standard starter sniper for the squad. She scales incredibly well with ASPD and enables stall strats for Theresis. S2 stuns low-hovering enemies in Motorized Squad and Frequent Dispute.",
+  "Greyy the Lightningbearer": "**Recommended Level: E2 S1M3 Mod3** <br/> Soul escort has a very low hope economy compared to other squads, Greyy alter is a cheap and solid option to hold left side of ED4 with his slow under high ASPD relics. While his masteries aren't that great, any extra damage is always good and with the number of times he is drafted they will most likely pay off.",
+  "Gummy": "**Recommended Level: E2 S1M3** <br/> Best cheap ground presence avaliable on the most useless voucher. She has good self-sustain and can help open stages by tanking cadence. E2 often makes the difference between her simply dying and losing the run or being able to open stages and heal other operators with sufferings while also tanking cadence. The HP and sustain increase also help her tanking Amiya on ED5 more easily or baiting aggro on left side of ED4 while healing the flames that spawn next to her.",
+  "Ashlock": "**Recommended Level: E2** <br/> Low priority upgrade. Given that there are runs in which we can get spammed by defender vouchers, this makes ashlock a decent draft option when there is still need for AOE, mainly for stages like Heavenly Paradise and ED4.",
+  "Amiya (Medic)": "**Recommended Level: E2 S2M3 Mod3** <br/> Spines are the most important economy resource found in IS5. Having true damage on her kit allows her to take spines more easily than most operators on early floors given their high DEF and RES stats. Her module allows her to fully heal chests without even having to be in range just from a full S2 activation. Her S2 provides a decent amount of burst healing, self-sustain and multihitting to survive when opening stages. She is a very versatile operator given her ability to switch into caster/guard classes that have differenty utility.",
+  "Purestream": "**Recommended Level: E2 Mod3** <br/> Given that Mon3tr exists, she is a low priority pick as Mon3tr is the only medic needed. Without Mon3tr avaliable or without the hope to draft her she heavily rises in priority. At E2 she provides a decent amount of healing for ED4 and ED5 but generally not enough to sustain multiple operators in Chaos on her own.",
+  "Rose Salt": "**Recommended Level: S2M3 Mod1** <br/> Low priority upgrade. Similarly to Purestream, without Mon3tr being avaliable to be drafted, her priority rises as the 2nd medic to be drafted for ED4. Her S2 additionally provides survability against the Envy, while her module gives her the extra range to heal the flame on the opposite side she is deployed on.",
+  "Roberta": "**Recommended Level: E1 Lvl60** <br/> Low priority upgrade. Similarly to the other blockers, she is the go to when given a support voucher. Her summon can provide some utility by giving a shield to operators.",
+  "Quercus": "**Recommended Level: E2 S1M3 Mod3** <br/> Low priority upgrade. Basically Rose Salt on a support voucher, instead of Rose Salt's S2 she has her module that provides sanctuary. The only disadvantage is that she doesn't have the extra range to heal the flame on the opposite side she is deployed on at ED4.",
+  "Amiya (Caster)": "**Recommended Level: E2 S3M3 Mod2** <br/> She is a good option to take spines during catastrophes epoch compared to her medic version that falls short on damage. Her S3 being true damage also allows her to bypass high damage reductions and bloated defensive stats that Theresis and Amiya (ED5) have, being a solid DPS in these stages. She is a very versatile operator given her ability to switch into medic/guard classes that have differenty utility.",
+  "Indigo": "**Recommended Level: E1 Lvl60** <br/> Low priority upgrade. Besides a not significant amount of arts damage, she can provide some CC.",
+  "Click": "**Recommended Level: E1 Lvl60** <br/> Low priority upgrade. Worse than Indigo for CC, slightly better for damage. ",
+  "Gravel": "**Recommended Level: E2 Mod1** <br/> An FRD is essentially a must have for consistency, Gravel is the best option for this. Her main uses are on ED5 and ED2, to bounce/block balls, but it is not limited to that as she can work to block/bait enemies, reveal invisible enemies among other things. The main reason to E2 her is for her module to save DP, so while masteries aren't the main priority, S2M3 means she could survive to be retreated on certain scenarios which would result on saving DP. Lastly, Mod3 has the very niche use of reducing Mlynar's redeployment time which results useful on ED5.",
+  "Ethan": "**Recommended Level: E2 S2M3 Mod3** <br/> While his main strength is in the endings, he still has some value on other stages by stalling enemies even if the stall doesn't last long. Given that lamp runs can almost guarantee high amounts of ASPD, it is almost always guaranteed to have a reliable stalling solution on all 3 endings, even on ED2 where he isn't the stall solution for Theresis, being able to stall the devourers is of huge value. On ED4, unless a high HP blocker with high sustain is drafted, Quilon will have to be stalled and Ethan is the cheapest option for this. Lastly for ED5, he can stall the bosses on all 3 maps, as well as Amiya when there isn't enough damage to burst all of them.",
+  "Kafka": "**Recommended Level: E0 (DO NOT E1)** <br/> First of all, the reason it is better to not E1 Kafka is that her DP cost is increased by 2 DP. Her only usefulness is from S1, which regardless of its level provides a 5s sleep. After Yato, Kafka is the next operator that benefits from the squad effect the most. At pot4 her redeployment time is reduced by 2 seconds, which under the soul escort squad effect, makes it so she has a 5s redeployment time, enabling her to permasleep enemies when there is enough DP generation to sustain constantly deploying her. With that said, drafting her can often be very expensive on hope, while she can help survive low damage runs, she isn't really a must have for a successful run."
+};
+
+export const Snp_descriptions = {
+  "Surfer": "**Recommended Level: E2 S1M3** <br/> Primary source of DP",
+  "Cantabile": "**Recommended Level: E1** <br/> Surfer replacement in case she is not avaliable. A second agent can be useful for ED5, in which case E1 is enough. Only the first agent is a high priority to E2 S1M3.",
+  "Myrtle": "**Recommended Level: E1 Lvl60** <br/> Default vanguard pick when there is not enough hope avaliable to draft Surfer.",
+  "Amiya (Guard)": "**Recommended Level: E2** <br/> She's E2 by default mainly from her medic and caster forms utility. Her Guard form can help take spines while Rosmontis stalls with pillars.",
+  "Greyy the Lightningbearer": "**Recommended Level: E2 S1M3 Mod3** <br/> With Rosmontis guaranteeing rumble hand, Greyy alter ends up greatly benefting from it and turnning him from the decent operator it already was off-class to a good DPS.",
+  "Kroos the Keen Glint": "**Recommended Level: E2 S2M3 Mod3** <br/> Best anti-air operator with good utility for shop rob.",
+  "April": "**Recommended Level: E1 Lvl70** <br/> Her lowered redeployment time allows her to throw Rosmontis' pillars more often, which ultimately work as bait and the ground presence of the squad.",
+  "May": "**Recommended Level: ** <br/> Low priority upgrade. ",
+  "Meteor": "**Recommended Level: ** <br/> Low priority upgrade. ",
+  "Gummy": "**Recommended Level: E2 S1M3** <br/> She has good self-sustain and can help open stages by tanking cadence. E2 often makes the difference between her simply dying and losing the run or being able to open stages and heal other operators with sufferings while also tanking cadence. The HP and sustain increase also help her tanking Amiya on ED5 more easily or baiting aggro on left side of ED4 while healing the flames that spawn next to her.",
+  "Cuora": "**Recommended Level: E1 Lvl60** <br/> Low priority upgrade. ",
+  "Amiya (Medic)": "**Recommended Level: E2 S2M3 Mod3** <br/> Spines are the most important economy resource found in IS5. Having true damage on her kit allows her to take spines more easily than most operators on early floors given their high DEF and RES stats. Her module allows her to fully heal chests without even having to be in range just from a full S2 activation. Her S2 provides a decent amount of burst healing, self-sustain and multihitting to survive when opening stages. She is a very versatile operator given her ability to switch into caster/guard classes that have differenty utility.",
+  "Purestream": "**Recommended Level: E2 Mod3** <br/> Given that Mon3tr exists, she is a low priority pick as Mon3tr is the only medic needed. Without Mon3tr avaliable or without the hope to draft her she heavily rises in priority. At E2 she provides a decent amount of healing for ED4 and ED5 but generally not enough to sustain multiple operators in Chaos on her own.",
+  "Sussurro": "**Recommended Level: ** <br/> ",
+  "Silence": "**Recommended Level: E2 S2M3** <br/> ",
+  "Shamare": "**Recommended Level: E2 S2M3** <br/> Provides DEF shred mainly for Quilon and Amiya, in addition to reducing the ATK from the Envy and Amiya to help with survability.",
+  "Deepcolor": "**Recommended Level: E1 Lvl60** <br/> Low priority upgrade. ",
+  "Roberta": "**Recommended Level: E1 Lvl60** <br/> Low priority upgrade. ",
+  "Indigo": "**Recommended Level: E2 S2M3 Mod3** <br/> Binds the boats in Face-Off. Another operator to throw Rosmontis' pillars. ED4 2nd map binder.",
+  "Amiya (Caster)": "",
+  "Durin": "Rosmontis pillar spammer.",
+  "Gravel": "**Recommended Level: E2 Mod1** <br/> An FRD is essentially a must have for consistency, Gravel is the best option for this. Her main uses are on ED5 and ED2, to bounce/block balls, but it is not limited to that as she can work to block/bait enemies, reveal invisible enemies among other things. The main reason to E2 her is for her module to save DP, so while masteries aren't the main priority, S2M3 means she could survive to be retreated on certain scenarios which would result on saving DP.",
+  "Ethan": "**Recommended Level: E2 S2M3 Mod3** <br/> While his main strength is in the endings, he still has some value on other stages by stalling enemies even if the stall doesn't last long. Given that lamp runs can almost guarantee high amounts of ASPD, it is almost always guaranteed to have a reliable stalling solution on all 3 endings, even on ED2 where he isn't the stall solution for Theresis, being able to stall the devourers is of huge value. On ED4, unless a high HP blocker with high sustain is drafted, Quilon will have to be stalled and Ethan is the cheapest option for this. Lastly for ED5, he can stall the bosses on all 3 maps, as well as Amiya when there isn't enough damage to burst all of them.",
+  "FEater": "**Recommended Level: E1** <br/> Can significantly slow down the boats spawn rate on ED2 with just 1 push."
+};
+
+export const descriptions = {
+  "Surfer": "**Recommended Level: E2 S1M3** <br/> Primary source of DP",
+  "Cantabile": "**Recommended Level: E1** <br/> Surfer replacement in case she is not avaliable. A second agent can be useful for ED5, in which case E1 is enough. Only the first agent is a high priority to E2 S1M3.",
+  "Myrtle": "**Recommended Level: E1 Lvl60** <br/> Default vanguard pick when there is not enough hope avaliable to draft Surfer.",
+
+};
+
+Below is a curated list of low-rarity operators that perform exceptionally well in IS5 for D18 ED2+4+5 runs.
+
+**Before upgrading any operator:**
+* Make sure to click on the operator to check the recommended investment level (as some may have bigger advantages at E0)
+* Check their utility and how they fit into the squad
+* Remember that the operators selected when starting a run can be borrowed
+
+Note that when referring to *priorities* in here, it refers to upgrading the operator to said elite level, masteries, or module, this does not necessarily imply a priority to draft or promote within a run.
+
+The highlighted operators are high-priority units that you should consider upgrading first.
+
+## Soul Escort
+This squad generally plays on a really low hope economy as it doesn't have the reduced hope costs class squads have, or the frequency of hope relics from visiting multiple shops, as such, this squad generally relies on only drafting 2-3 6★ operators while complementing with lower rarity solutions.
+Compared to other squads, soul escort could arguably be the one that relies the most on low rarity operators and the one that should worry about investing on them the most.
+
+<CharacterShowcase 
+  roster={SE_roster} 
+  featuredChars={SE_featured} 
+  basePath={basePath}
+  descriptions={SE_descriptions}
+/>
+
+## Sniper Medic Squad
+While there are different variations to play this squad, this list of operators focuses on the Lamp-Rosmontis start variant. More details about this strategy can be found in the <a href="/is5-sarkaz/sniper-med-rosmontis/" target="_blank" rel="noopener noreferrer">Sniper/Medic Rosmontis Guide</a>.
+<CharacterShowcase 
+  roster={Snp_roster} 
+  featuredChars={Snp_featured} 
+  basePath={basePath}
+  descriptions={Snp_descriptions}
+/>
+
+## Guard Vanguard Squad
+
+<CharacterShowcase 
+  roster={VGG_roster} 
+  featuredChars={VGG_featured} 
+  basePath={basePath}
+  descriptions={descriptions}
+/>
