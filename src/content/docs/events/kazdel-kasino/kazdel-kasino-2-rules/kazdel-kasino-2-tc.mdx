@@ -1,9 +1,9 @@
 ---
 title: Kazdel Kasino 2
-description: 集成战略团队赛
+description: 集成戰略團隊賽
 template: doc
 
-lang: sc
+lang: tc
 groupId: kazdel-kasino-2
 
 qualifiersStart: "2025-11-03T08:00:00Z"
@@ -14,16 +14,16 @@ finalsStart: "2025-12-01T08:00:00Z"
 finalsEnd: "2025-12-08T07:59:00Z"
 ---
 
-import IndividualPlayerScoreboard from '../../../components/IndividualPlayerScoreboard.astro';
-import TeamScoreboard from '../../../components/TeamScoreboard.astro';
-import TournamentSchedule from '../../../components/TournamentSchedule.astro';
-import LocalTime from '../../../components/LocalTime.astro';
-import TournamentLayout from "../../../layouts/TournamentLayout.astro";
+import IndividualPlayerScoreboard from '../../../../../components/IndividualPlayerScoreboard.astro';
+import TeamScoreboard from '../../../../../components/TeamScoreboard.astro';
+import TournamentSchedule from '../../../../../components/TournamentSchedule.astro';
+import LocalTime from '../../../../../components/LocalTime.astro';
+import TournamentLayout from "../../../../../layouts/TournamentLayout.astro";
 
 <div class="back-button-container">
   <a href="/" class="back-button">
     <span class="back-arrow">←</span>
-    <span class="back-text">回到主页</span>
+    <span class="back-text">回到主頁</span>
   </a>
 </div>
 
@@ -31,16 +31,16 @@ import TournamentLayout from "../../../layouts/TournamentLayout.astro";
 
 <div style="position: relative; width: 100%; max-width: 800px; margin: 0 auto;"><img src="/events/kazdel-kasino-2/kazdel-kasino-2-banner.png" alt="Kazdel Kasino 2 Tournament Banner" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /></div>
 
-卡兹戴尔市场2是一个三人组队团体赛。玩家在通关过程中通过达成指定目标赚取美元，在通关结束时使用抽卡模拟器将美元转化成排名积分。首轮前八名队伍将晋级到第二轮，最终排名同样基于积分排行。
+卡茲戴爾市場2是一個三人組隊團體賽。玩家在通關過程中通過達成指定目標賺取美元，在通關結束時使用抽卡模擬器將美元轉化成排名積分。首輪前八名隊伍將晉級到第二輪，最終排名同樣基於積分排行。
 
-## 初步日程安排
+## 初步日程
 <TournamentSchedule
   title="Match Schedule"
   dataUrl="/events/kazdel-kasino-2/schedule.json"
   refreshMs={15000}
 />
 
-## 初步记分牌
+## 初步計分板
 <IndividualPlayerScoreboard
   title="Player Dollars"
   dataUrl="/events/kazdel-kasino-2/scoreboard.json"
@@ -53,18 +53,18 @@ import TournamentLayout from "../../../layouts/TournamentLayout.astro";
   refreshMs={15000}
 />
 
-## 赛制
+## 賽制
 
-- 三人团队
-- 玩家3：难度18
-- 玩家1与2难度选择，确保三人总和为48
-- 团队内所有玩家通关后立即使用抽卡模拟器获取排名积分
-- 排行榜：前8名晋级第二轮；最终排名由第二轮排行榜决定
+- 三人團隊
+- 玩家3：難度18
+- 玩家1與2難度選擇，確保三人總和為48
+- 團隊內所有玩家通關后立即使用抽卡模擬器獲取排名積分
+- 排行榜：前8名晉級第二輪；最終排名由第二輪排行榜決定
 
 ## 日程安排
 <section class="tournament-schedule">
   <div class="round">
-    <h3>资格赛</h3>
+    <h3>資格賽</h3>
     <p class="date-range">
       <span class="start"><LocalTime datetime={frontmatter.qualifiersStart} format="long" /></span><br>
       <span class="to">到</span>
@@ -74,7 +74,7 @@ import TournamentLayout from "../../../layouts/TournamentLayout.astro";
   </div>
 
   <div class="round">
-    <h3>预赛</h3>
+    <h3>初賽</h3>
     <p class="date-range">
       <span class="start"><LocalTime datetime={frontmatter.preliminaryStart} format="long" /></span><br>
       <span class="to">到</span>
@@ -84,7 +84,7 @@ import TournamentLayout from "../../../layouts/TournamentLayout.astro";
   </div>
 
   <div class="round">
-    <h3>锦标赛决赛</h3>
+    <h3>錦標賽決賽</h3>
     <p class="date-range">
       <span class="start"><LocalTime datetime={frontmatter.finalsStart} format="long" /></span><br>
       <span class="to">到</span>
@@ -95,12 +95,12 @@ import TournamentLayout from "../../../layouts/TournamentLayout.astro";
 </section>
 Displayed in your local timezone.
 
-## 报名要求：
-- 玩家1与2需提供使用“无终之钥”藏品通关 “直面灵魂” 等级15以上的截图。
-- 玩家3需提供使用“无终之钥”或“阿纳萨羯磨” 藏品（不可搭配“先知长角”藏品）通关 “直面灵魂” 等级18的截图。
-- 所有玩家须能在Discord平台直播通关过程。
-- 直播可通过<a href="https://twitch.tv/oyana1234" target="_blank" rel="noopener noreferrer">twitch.tv/oyana1234</a>进行。
-- 玩家须为<a href="https://discord.gg/fqRBzQWVfK" target="_blank" rel="noopener noreferrer">IS Central Discord</a>成员。
+## 報名要求：
+- 玩家1與2需提供使用“無終之鑰”藏品通關 “直面靈魂” 等級15以上的截圖。
+- 玩家3需提供使用“無終之鑰”或“阿納薩羯磨” 藏品（不可搭配“先知長角”藏品）通關 “直面靈魂” 等級18的截圖。
+- 所有玩家須能在Discord平台直播通關過程。
+- 直播可通過<a href="https://twitch.tv/oyana1234" target="_blank" rel="noopener noreferrer">twitch.tv/oyana1234</a>進行。
+- 玩家須為<a href="https://discord.gg/fqRBzQWVfK" target="_blank" rel="noopener noreferrer">IS Central Discord</a>成員。
 
 <div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
 ![Registration Requirements](/events/kazdel-kasino-2/registration-guidelines.png)
@@ -108,97 +108,97 @@ Displayed in your local timezone.
 
 **Registration:** <a href="https://forms.gle/9Q4ZTF3ghVtnpe367" target="_blank" rel="noopener noreferrer">Google registration form</a>
 
-## 规则
+## 規則
 
 ### 相遇
-每队不可重复选择以下藏品：
-- “死仇时代的恨意”
-- “美愿时代的留恋”
+每隊不可重複選擇以下藏品：
+- “死仇時代的恨意”
+- “美願時代的留戀”
 
-### 维什戴尔
-维什戴尔仅可在战斗后临时招募或获得博士银印时选用。
+### 維什戴爾
+維什戴爾僅可在戰鬥后臨時招募或獲得博士銀印時選用。
 
-### 取钱限制
-- 玩家1与2共享100源石锭；玩家3初始可提取50源石锭。
-- 超额提取每枚源石锭将扣除玩家500美元。
+### 取錢限制
+- 玩家1與2共享100源石錠；玩家3初始可提取50源石錠。
+- 超額提取每枚源石錠將扣除玩家500美元。
 
-### 行动准备
-- 仅允许使用以下三层增益效果：水壶、2个希望、2个构想。
-- 玩家可完成首场战斗，但不得选择该战斗中的任何藏品。
-- 玩家必须在该层选择不期而遇作为该层第二个节点。
-- 第二个节点必须为“相遇”事件，玩家需在此界面停止操作。
-- 若玩家不愿获取相遇遗物，须在首场战斗后停止。允许重新刷新选择第二个节点。
+### 行動準備
+- 僅允許使用以下三層增益效果：水壺、2個希望、2個構想。
+- 玩家可完成首場戰鬥，但不得選擇該戰鬥中的任何藏品。
+- 玩家必須在該層選擇不期而遇作為該層第二個節點。
+- 第二個節點必須為“相遇”事件，玩家需在此界面停止操作。
+- 若玩家不願獲取相遇遺物，須在首場戰鬥后停止。允許重新刷新選擇第二個節點。
 
-### 重开规则
-- 所有玩家初始重置次数为0。
-- 模拟器闪退：每位玩家每届赛事因模拟器闪退限重启1次（需经主办方审核）。
+### 重開規則
+- 所有玩家初始重置次數為0。
+- 模擬器閃退：每位玩家每屆賽事因模擬器閃退限重啟1次（需經主辦方審核）。
 
 ### 其他
-- 重开后允许更换开局分队。
-- 通关过程中允许队员全程公开交流。
-- 允许在通关中选择藏品“无主的回忆”。
-- 玩家仅可使用注册时使用的账号。
-- 所有增益与惩罚将在通关结束后统一计算。
+- 重開后允許更換開局分隊。
+- 通關過程中允許隊員全程公開交流。
+- 允許在通關中選擇藏品“無主的回憶”。
+- 玩家僅可使用註冊時使用的賬號。
+- 所有增益與懲罰將在通關結束后統一計算。
 
-### 干员禁用
-#### 禁用干员（酒神以后实装干员）
-* 司霆惊蛰、录武官、电弧
-* 斩业星熊、遥、吉星、松桐
-* 丰川祥子、三角初华、若叶睦、八幡海铃、祐天寺若麦
-* 真言、折桠、冬时
-* 凛御银灰、圣聆初雪、溯光星源、雪猎、哈蒂娅、协律
+### 幹員禁用
+#### 禁用幹員（酒神以後實裝幹員）
+* 司霆驚蟄、錄武官、電弧
+* 斬業星熊、遙、吉星、松桐
+* 豐川祥子、三角初華、若葉睦、八幡海鈴、祐天寺若麥
+* 真言、折椏、冬時
+* 凜御銀灰、聖聆初雪、溯光星源、雪獵、哈蒂婭、協律
 
-#### 禁用模块（酒神以后实装模组）
-* 提丰ModY
-* 澄闪ModY
-* 百炼嘉维尔ModY
-* 本源术士模组
-* 假日威龙陈ModY
-* 琳琅诗怀雅 特限模组
-* 佩佩 特限模组
-* 回环射手模组
-* 圣约送葬人ModY
+#### 禁用模塊（酒神以後實裝模組）
+* 提豐ModY
+* 澄閃ModY
+* 百鍊嘉維爾ModY
+* 本源術士模組
+* 假日威龍陳ModY
+* 琳琅詩懷雅 特限模組
+* 佩佩 特限模組
+* 迴環射手模組
+* 聖約送葬人ModY
 * 艾雅法拉 ModY
-* 驭法铁卫 模组
-* 维娜·维多利亚ModY
+* 馭法鐵衛 模組
+* 維娜·維多利亞ModY
 
-## 锦标赛机制
-所有玩家需完成各类任务获取美元，其中玩家1与2可以额外获取日元。
-玩家3可在日元商店使用日元购买增益道具以提升通关效率。
-所有通关结束后，累积的美元将用于转蛋模拟器决定最终得分。
+## 錦標賽機制
+所有玩家需完成各類任務獲取美元，其中玩家1與2可以額外獲取日元。
+玩家3可在日元商店使用日元購買增益道具以提升通關效率。
+所有通關結束后，累積的美元將用於轉蛋模擬器決定最終得分。
 
-### 美元货币体系
-游戏开局及通关过程中，美元用于按成本购买初始分队及后续干员。
-通关期间可获取更多美元，用于购买干员或储存至抽卡模拟器。
+### 美元貨幣體系
+遊戲開局及通關過程中，美元用於按成本購買初始分隊及後續幹員。
+通關期間可獲取更多美元，用於購買幹員或儲存至抽卡模擬器。
 
-- 美元用途：干员、开局分队、最终评分
-- 美元获取途径：干员成就、常规关卡、条件关卡、成就、最终藏品数量
+- 美元用途：幹員、開局分隊、最終評分
+- 美元獲取途徑：幹員成就、常規關卡、條件關卡、成就、最終藏品數量
 
-### 最终评分
-- 玩家3完成挑战后，团队可将所有美元投入抽卡模拟器。
-- 一名团队成员需直播以下网站：<a href="https://lungmendragons.com/gachasim" target="_blank" rel="noopener noreferrer">：龙门龙抽卡模拟器</a>
-- 团队可选择模拟器内任意卡池，并在抽取过程中随时更换卡池。
-- 若点击重置历史记录，抽取将从该时刻继续。系统将根据重置前的录像判定得分。
-- 抽卡模拟器遵循游戏内抽卡系统规则及概率（包括保底机制）。
-- 队伍得分依据抽到干员稀有度计算：
-  - 每抽卡1名6星干员 = 360分
-  - 每抽卡1名5星干员 = 120分
-  - 每抽卡1名3星/4星干员 = 10分
+### 最終評分
+- 玩家3完成挑戰後，團隊可將所有美元投入抽卡模擬器。
+- 一名團隊成員需直播以下網站：<a href="https://lungmendragons.com/gachasim" target="_blank" rel="noopener noreferrer">龍門龍抽卡模擬器</a>
+- 團隊可選擇模擬器內任意卡池，並在抽取過程中隨時更換卡池。
+- 若點擊重置歷史記錄，抽取將從該時刻繼續。系統將根據重置前的錄像判定得分。
+- 抽卡模擬器遵循遊戲內抽卡系統規則及概率（包括保底機制）。
+- 隊伍得分依據抽到幹員稀有度計算：
+  - 每抽卡1名6星幹員 = 360分
+  - 每抽卡1名5星幹員 = 120分
+  - 每抽卡1名3星/4星幹員 = 10分
 
 
-### 干员成本
+### 幹員成本
 <div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
   ![Operators](/events/kazdel-kasino-2/operators.png)
 </div>
 
 <ul style={{ paddingLeft: '2.5em' }}>
   <li>
-    6★选择者列表（75美元）：
+    6★選擇者列表（75美元）：
     <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Exusiai_the_New_Covenant_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>新约能天使</span>
+        <span style={{ lineHeight: 1 }}>新約能天使</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
@@ -224,12 +224,12 @@ Displayed in your local timezone.
   </li>
 
   <li>
-    6★选择者列表（50美元）
+    6★選擇者列表（50美元）
     <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Kal'tsit_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>凯尔希</span>
+        <span style={{ lineHeight: 1 }}>凱爾希</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
@@ -244,27 +244,27 @@ Displayed in your local timezone.
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Logos_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>逻各斯</span>
+        <span style={{ lineHeight: 1 }}>邏各斯</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Narantuya_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>娜仁图亚</span>
+        <span style={{ lineHeight: 1 }}>娜仁圖亞</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Eyjafjalla_the_Hvít_Aska_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>纯烬艾雅法拉</span>
+        <span style={{ lineHeight: 1 }}>純燼艾雅法拉</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-SilverAsh_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>银灰</span>
+        <span style={{ lineHeight: 1 }}>銀灰</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Ulpianus_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>乌尔比安</span>
+        <span style={{ lineHeight: 1 }}>烏爾比安</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
@@ -274,16 +274,16 @@ Displayed in your local timezone.
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Degenbrecher_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>锏</span>
+        <span style={{ lineHeight: 1 }}>鐧</span>
       </li>
     </ul>
   </li>
 
   <li>
-    其余无干员成就6★：35美元
+    其餘無幹員成就6★：35美元
   </li>
   <li>
-    阿米娅专属列表（35美元）：
+    阿米婭專屬列表（35美元）：
     <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
@@ -293,22 +293,22 @@ Displayed in your local timezone.
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Surfer_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>寻澜</span>
+        <span style={{ lineHeight: 1 }}>尋瀾</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Cantabile_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>晓歌</span>
+        <span style={{ lineHeight: 1 }}>曉歌</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Amiya_(Medic)_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>阿米娅</span>
+        <span style={{ lineHeight: 1 }}>阿米婭</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Tin_Man_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>锡人</span>
+        <span style={{ lineHeight: 1 }}>錫人</span>
       </li>
     </ul>
   </li>
@@ -341,227 +341,227 @@ Displayed in your local timezone.
   - Tin man */}
 
 
-### 扣分机制
-- 若队伍内重复招募同一6★干员，该干员招募费为原价×3
-- 若队伍内重复招募同一6★干员达三次，该干员招募费为原价×6
-- 已完成的干员成就不计入重复招募惩罚（详见后续说明）
+### 扣分機制
+- 若隊伍內重複招募同一6★幹員，該幹員招募費為原價×3
+- 若隊伍內重複招募同一6★幹員達三次，該幹員招募費為原價×6
+- 已完成的幹員成就不計入重複招募懲罰（詳見後續說明）
 
-### 临时干员
-- 所有临时干员无需消耗美元；临时成就干员不触发-$25惩罚（干员成就机制详见后续说明）。
+### 臨時幹員
+- 所有臨時幹員無需消耗美元；臨時成就幹員不觸發-$25懲罰（幹員成就機制詳見後續說明）。
 
-### 开局分队配置
-- 玩家1与2：1000美元初始资金
+### 開局分隊配置
+- 玩家1與2：1000美元初始資金
 - 玩家3：500美元
-- 选择开局分队时时不得负债
+- 選擇開局分隊時時不得負債
 
-#### 开局分队价钱：
+#### 開局分隊價錢：
 <div style={{ display: "flex", justifyContent: "center" }}>
-| 分队名称                                                                                                                                                                                                             | 价钱  |
+| 分隊名稱                                                                                                                                                                                                         | 價錢  |
 |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----:|
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Soul_Escort_Squad.png" alt="Soul Escort" />灵魂护送分队</span>                                                                    | 500美元  |
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Erudite_Squad.png" alt="Erudite" />博闻广记分队</span>                                                                                | -100美元 |
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Blueprint_Squad.png" alt="Blueprint" />蓝图测绘分队*</span>                                                                         | 650美元  |
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Spearhead_Squad_5.png" alt="Spearhead" />矛头分队</span>                                                                        | -200美元 |
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Assault_Squad_5.png" alt="Tactical Assault Squad (Guard/VG)" />突击战术分队</span>                 | 500美元  |
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Fortification_Squad_5.png" alt="Tactical Fortification Squad (Def/Sup)" />堡垒战术分队（防御/支援）</span> | 300美元  |
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Ranged_Squad_5.png" alt="Tactical Ranged Squad (Sniper/Med)" />远程战术分队（狙击/医疗）</span>                | 500美元  |
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Destruction_Squad_5.png" alt="Tactical Destruction Squad (Spec/Cast)" />破坏战术分队（特种/法术）</span>   | 0美元    |
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-First-Class_Squad_5.png" alt="First-Class" />高规格分队</span>                                                                  | 250美元  |
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Ingots_Squad.png" alt="Ingots" />点刺成锭分队</span>                                                                                   | 250美元  |
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Collection_Squad.png" alt="Collection" />拟态学者分队</span>                                                                       | 250美元  |
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Mimic_Squad.png" alt="Mimic" />异想天开分队</span>                                                                                      | 100美元  |
-| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Top_Gun_Squad.png" alt="Top Gun" />专业人士分队 </span>                                                                                | 301美元  |
-| 其他                                                                                                                                                                                                         | 1000美元 |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Soul_Escort_Squad.png" alt="Soul Escort" />靈魂護送分隊</span>                                                                    | 500美元  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Erudite_Squad.png" alt="Erudite" />博聞廣記分隊</span>                                                                                | -100美元 |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Blueprint_Squad.png" alt="Blueprint" />藍圖測繪分隊*</span>                                                                         | 650美元  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Spearhead_Squad_5.png" alt="Spearhead" />矛頭分隊 </span>                                                                        | -200美元 |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Assault_Squad_5.png" alt="Tactical Assault Squad (Guard/VG)" />突擊戰術分隊 </span>                 | 500美元  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Fortification_Squad_5.png" alt="Tactical Fortification Squad (Def/Sup)" />堡壘戰術分隊（防禦/支援）</span> | 300美元  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Ranged_Squad_5.png" alt="Tactical Ranged Squad (Sniper/Med)" />遠程戰術分隊（狙擊/醫療）</span>                | 500美元  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Destruction_Squad_5.png" alt="Tactical Destruction Squad (Spec/Cast)" />破壞戰術分隊（特種/法術）</span>   | 0美元    |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-First-Class_Squad_5.png" alt="First-Class" />高規格分隊 </span>                                                                  | 250美元  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Ingots_Squad.png" alt="Ingots" />點刺成錠分隊</span>                                                                                   | 250美元  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Collection_Squad.png" alt="Collection" />擬態學者分隊</span>                                                                       | 250美元  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Mimic_Squad.png" alt="Mimic" />異想天開分隊 </span>                                                                                      | 100美元  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Top_Gun_Squad.png" alt="Top Gun" />專業人士分隊 </span>                                                                                | 301美元  |
+| 其他                                                                                                                                                                                                          | 1000美元 |
 </div>
 
-$^*$蓝图测绘分队限时120分钟，超时每30分钟扣除1000分（含10分钟宽限期）
+$^*$藍圖測繪分隊限時120分鐘，超時每30分鐘扣除1000分（含10分鐘寬限期）
 
-### 干员成就
+### 幹員成就
 
-每项奖励每队仅可领取一次。若达成目标，提及的干员无需支付美元；否则每6★扣除25美元。
+每項獎勵每隊僅可領取一次。若達成目標，提及的幹員無需支付美元；否則每6★扣除25美元。
 
 <ul style={{ paddingLeft: '2.5em' }}>
   <li>
-    简单级（50美元）
+    簡單級（50美元）
     <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Carnelian_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>卡涅利安：单次技能击杀5名敌人</span>
+        <span style={{ lineHeight: 1 }}>卡涅利安：單次技能擊殺5名敵人</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Ascalon_Skin_1_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>阿斯卡纶：通关时同时持有久居之手与锈刃-久居</span>
+        <span style={{ lineHeight: 1 }}>阿斯卡綸：通關時同時持有久居之手與銹刃-久居</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Lappland_the_Decadenza_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>荒芜拉普兰德：招募并晋升一名5星范围法术师</span>
+        <span style={{ lineHeight: 1 }}>荒蕪拉普蘭德：招募並晉陞一名5星範圍法術師</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Yu_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>余：激活三技能时对险路恶敌触发灼烧</span>
+        <span style={{ lineHeight: 1 }}>余：激活三技能時對險路惡敵觸發灼燒</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Vina_Victoria_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>维娜·维多利亚：激活三技能期间使7名我方单位同时承受伤害</span>
+        <span style={{ lineHeight: 1 }}>維娜·維多利亞：激活三技能期間使7名我方單位同時承受傷害</span>
       </li>
     </ul>
   </li>
 
   <li>
-    中等难度（100美元）
+    中等難度（100美元）
     <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Saileach_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>琴柳：仅使用琴柳治疗2个治疗宝箱</span>
+        <span style={{ lineHeight: 1 }}>琴柳：僅使用琴柳治療2個治療寶箱</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Angelina_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>安洁莉娜：激活三技能时，单次技能发动使险路恶敌位移至少4格</span>
+        <span style={{ lineHeight: 1 }}>安潔莉娜：激活三技能時，單次技能發動使險路惡敵位移至少4格</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Blitz_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>闪击：单次技能发动眩晕3名飞行敌人</span>
+        <span style={{ lineHeight: 1 }}>閃擊：單次技能發動眩暈3名飛行敵人</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Erato_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>埃拉托：埃拉托通过睡眠效果中断敌人蓄力技能</span>
+        <span style={{ lineHeight: 1 }}>埃拉托：埃拉托通過睡眠效果中斷敵人蓄力技能</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Projekt_Red_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>红：单次部署击晕至少4个不同格子的敌人</span>
+        <span style={{ lineHeight: 1 }}>紅：單次部署擊暈至少4個不同格子的敵人</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/SkadiSneeze.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>斯卡蒂/浊心斯卡蒂：在险路恶敌关卡部署已进升斯卡蒂或浊心斯卡蒂并发动技能</span>
+        <span style={{ lineHeight: 1 }}>斯卡蒂/濁心斯卡蒂：在險路惡敵關卡部署已進升斯卡蒂或濁心斯卡蒂並發動技能</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Miss.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Miss Christine: 在一局被九种不同来源属性伤害击倒 （不同敌人种类算作为不同伤害来源）</span>
+        <span style={{ lineHeight: 1 }}>Miss Christine: 在一局被九種不同來源屬性傷害擊倒 （不同敵人種類算作為不同傷害來源）</span>
       </li>
     </ul>
   </li>
 
   <li>
-    困难级（150美元）
+    困難級（150美元）
     <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Ines_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>伊内斯：招募后无法隐身</span>
+        <span style={{ lineHeight: 1 }}>伊內斯：招募后無法隱身</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Qiubai_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>仇白：精英1级招募仇白作为初始开局干员</span>
+        <span style={{ lineHeight: 1 }}>仇白：精英1級招募仇白作為初始開局幹員</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Stainless_Skin_2_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>白铁：招募后，每关前15名击杀敌人中必须部署白铁</span>
+        <span style={{ lineHeight: 1 }}>白鐵：招募后，每關前15名擊殺敵人中必須部署白鐵</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Młynar_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>玛恩纳：阻挡奎隆时，单次技能释放造成25%生命值伤害</span>
+        <span style={{ lineHeight: 1 }}>瑪恩納：阻擋奎隆時，單次技能釋放造成25%生命值傷害</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Texas_the_Omertosa_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>缄默·德克萨斯：单关眩晕5名萨卡兹术师/萨卡兹术师组长</span>
+        <span style={{ lineHeight: 1 }}>緘默·德克薩斯：單關眩暈5名薩卡茲術師/薩卡茲術師組長</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Archetto_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>空弦：招募后不能对任何年代之刺和饮泣之刺造成伤害</span>
+        <span style={{ lineHeight: 1 }}>空弦：招募后不能對任何年代之刺和飲泣之刺造成傷害</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Swire_the_Elegant_Wit_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>琳琅诗怀雅：单次部署中触发二天赋受到致命伤害5次</span>
+        <span style={{ lineHeight: 1 }}>琳琅詩懷雅：單次部署中觸發二天賦受到致命傷害5次</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-FEater_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>食铁兽：90秒内于2个不同位置使用食铁兽推进4次</span>
+        <span style={{ lineHeight: 1 }}>食鐵獸：90秒內於2個不同位置使用食鐵獸推進4次</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Rathalos_S_Noir_Corne_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>火龙S黑角：单次部署中抵御5次险路恶敌的攻击</span>
+        <span style={{ lineHeight: 1 }}>火龍S黑角：單次部署中抵禦5次險路惡敵的攻擊</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Fiammetta_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>菲亚梅塔：单次伤害中使菲亚梅塔造成至少20,000伤害</span>
+        <span style={{ lineHeight: 1 }}>菲亞梅塔：單次傷害中使菲亞梅塔造成至少20,000傷害</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Quartz_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>石英：使用石英阻挡并击杀四名有恐卡兹印记的敌人以及爆出的恐卡兹</span>
+        <span style={{ lineHeight: 1 }}>石英：使用石英阻擋並擊殺四名有恐卡茲印記的敵人以及爆出的恐卡茲</span>
       </li>
     </ul>
   </li>
 
   <li>
-    超难级（200元）
+    超難級（200元）
     <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Mudrock_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>泥岩：对一名险路恶敌造成其血条百分百的伤害</span>
+        <span style={{ lineHeight: 1 }}>泥岩：對一名險路惡敵造成其血條百分百的傷害</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Blaze_the_Igniting_Spark_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>烛煌：敌方击中烛煌并激活二天赋3次，且烛煌未撤离战场</span>
+        <span style={{ lineHeight: 1 }}>燭煌：敵方擊中燭煌並激活二天賦3次，且燭煌未撤離戰場</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Viviana_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>薇薇安娜：对一名险路恶敌造成其血条百分百的伤害</span>
+        <span style={{ lineHeight: 1 }}>薇薇安娜：對一名險路惡敵造成其血條百分百的傷害</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Tachanka_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>战车：仅部署战车时成功通关狭路相逢一次</span>
+        <span style={{ lineHeight: 1 }}>戰車：僅部署戰車時成功通關狹路相逢一次</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Nymph_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>妮芙：当辅助职业角色触发凋亡损伤爆发效果时，使用技能“心防溃决”对5层及以上险路恶敌造成伤害</span>
+        <span style={{ lineHeight: 1 }}>妮芙：當輔助職業角色觸發凋亡損傷爆發效果時，使用技能“心防潰決”對5層及以上險路惡敵造成傷害</span>
       </li>
     </ul>
   </li>
 
   <li>
-    疯狂难度（777美元）
+    瘋狂難度（777美元）
     <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Friston-3_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>Friston-3：在特雷西斯，黑冠尊主血量降至90%前，用Friston -3将其阻挡。Friston -3在在特雷西斯第二阶段前不可阵亡、停止阻挡或撤离</span>
+        <span style={{ lineHeight: 1 }}>Friston-3：在特雷西斯，黑冠尊主血量降至90%前，用Friston -3將其阻擋。Friston -3在在特雷西斯第二階段前不可陣亡、停止阻擋或撤離</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Melantha_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>玫兰莎：对“阿米娅”，炉芯终曲·第二形态的造成其血条百分百的伤害</span>
+        <span style={{ lineHeight: 1 }}>玫蘭莎：對“阿米婭”，爐芯終曲·第二形態的造成其血條百分百的傷害</span>
       </li>
       <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
         <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
         <img src="/events/kazdel-kasino-2/operators/120px-Mizuki_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
-        <span style={{ lineHeight: 1 }}>水月：水月位移一名险路恶敌后4秒内，将险路恶敌位移至坑洞中</span>
+        <span style={{ lineHeight: 1 }}>水月：水月位移一名險路惡敵後4秒內，將險路惡敵位移至坑洞中</span>
       </li>
     </ul>
   </li>
@@ -600,96 +600,96 @@ $^*$蓝图测绘分队限时120分钟，超时每30分钟扣除1000分（含10�
   - Friston-3: use Friston to tank Theresis above 90% hp and friston cannot die or be undeployed until Theresis phase 2
   - Melantha: deal a full hp bar of damage to Amiya, Furnace's Finale' 2nd Form */}
 
-### 通用关卡
-通用关卡分为不同类别，除非另有说明，仅获取各类别最高金额（多名队友可获得相同奖励）。若玩家持有憎恨之爪，可重复获取各类别奖励。
+### 通用關卡
+通用關卡分為不同類別，除非另有說明，僅獲取各類別最高金額（多名隊友可獲得相同獎勵）。若玩家持有憎恨之爪，可重複獲取各類別獎勵。
 
-#### 类别1：
-- 通关紧急作战 丛林密布：25美元
-- 通关紧急作战 卡兹瀑布：35美元
+#### 類別1：
+- 通關緊急作戰 叢林密布：25美元
+- 通關緊急作戰 卡茲瀑布：35美元
 
-#### 类别2：
-- 通关紧急作战 大棋一盘：20美元
-- 通关紧急作战 机动小队：50美元
-- 通关紧急作战 火力小队：30美元
-- 通关任意第3层紧急作战关卡：15美元
+#### 類別2：
+- 通關緊急作戰 大棋一盤：20美元
+- 通關緊急作戰 機動小隊：50美元
+- 通關緊急作戰 火力小隊：30美元
+- 通關任意第3層緊急作戰關卡：15美元
 
-#### 类别3：
-- 通关紧急作战 混沌：70美元
-- 通关紧急作战 神出鬼没：80美元
-- 通关紧急作战 频繁争端：100美元
-- 通关任意第4层紧急作战关卡：50美元
+#### 類別3：
+- 通關緊急作戰 混沌：70美元
+- 通關緊急作戰 神出鬼沒：80美元
+- 通關緊急作戰 頻繁爭端：100美元
+- 通關任意第4層緊急作戰關卡：50美元
 
-#### 第四类：
-- 通关紧急作战：计划耕种80美元
-- 通关紧急作战：莱茵卫士90美元
-- 通关紧急作战：建制100美元
-- 通关任意第5层紧急作战关卡：60美元
+#### 第四類：
+- 通關緊急作戰：計劃耕種80美元
+- 通關緊急作戰：萊茵衛士90美元
+- 通關緊急作戰：建制100美元
+- 通關任意第5層緊急作戰關卡：60美元
 
-#### 第五类：
-- 通关紧急作战：谋求共识70美元
-- 通关紧急作战：神圣的渴望：70美元
-- 通关紧急作战： ‘外道’：120美元
-- 通关紧急作战： 洞天福地：150美元
+#### 第五類：
+- 通關緊急作戰：謀求共識70美元
+- 通關緊急作戰：神聖的渴望：70美元
+- 通關緊急作戰： ‘外道’：120美元
+- 通關緊急作戰： 洞天福地：150美元
 
-#### 第六类：
-- 通关或然面纱或奉献或斩首：120美元
-- 通关赴敌者或王冠之下：130美元
-- 通关离歌的庭院：150美元
-- 通关任意第三层险路恶敌关卡：100美元
+#### 第六類：
+- 通關或然面紗或奉獻或斬首：120美元
+- 通關赴敵者或王冠之下：130美元
+- 通關離歌的庭院：150美元
+- 通關任意第三層險路惡敵關卡：100美元
 
-### 险路恶敌成就
-每次通关满足下列条件可获得额外奖金：
-#### 五结局
-- 通关不容拒绝：500美元
-- 通关混乱不容拒绝：额外50美元
+### 險路惡敵成就
+每次通關滿足下列條件可獲得額外獎金：
+#### 五結局
+- 通關不容拒絕：500美元
+- 通關混亂不容拒絕：額外50美元
 
 #### ED4
-- 通关授法：400美元
-- 通关混乱授法：额外50美元
-- 击杀奎隆：额外250美元
+- 通關授法：400美元
+- 通關混亂授法：額外50美元
+- 擊殺奎隆：額外250美元
 
 #### ED3
-- 通关圣城：100美元
-- 通关混乱圣城：额外100美元
-- 全程不手动撤退任何干员击杀爱国者：200美元
+- 通關聖城：100美元
+- 通關混亂聖城：額外100美元
+- 全程不手動撤退任何幹員擊殺愛國者：200美元
 
 #### ED2
-- 通关朝谒：100美元
-- 拥有阿纳萨羯磨通关：额外200美元
-- 混乱状态通关且漏全部7名刺客：77美元
+- 通關朝謁：100美元
+- 擁有阿納薩羯磨通關：額外200美元
+- 混亂狀態通關且漏全部7名刺客：77美元
 
 #### ED1
-- 完成紧急授课：50美元
-- 拥有阿纳萨羯磨通关：额外150美元
-- 混乱状态通关：额外30美元
-- 至少5名干员使用“痴愚惩戒”技能传送：200美元
+- 完成緊急授課：50美元
+- 擁有阿納薩羯磨通關：額外150美元
+- 混亂狀態通關：額外30美元
+- 至少5名幹員使用“痴愚懲戒”技能傳送：200美元
 
-### 条件关卡
-完成下列关卡且未获取构想可获额外奖金：
-- 血脉之辩：120美元
-- 年代断层：200美元
-- 朽败考察：140美元
+### 條件關卡
+完成下列關卡且未獲取構想可獲額外獎金：
+- 血脈之辯：120美元
+- 年代斷層：200美元
+- 朽敗考察：140美元
 
-年代之刺可被摧毁，但领取通关奖励界面中拾取任何构想将使奖金失效。
+年代之刺可被摧毀，但領取通關獎勵界面中拾取任何構想將使獎金失效。
 
-若玩家在领取通关奖励阶段误拾构想，允许丢弃构想并获得一次奖金。自第二次起，从通关奖励阶段拾取构想将无法通过丢弃构想获取奖金。
+若玩家在領取通關獎勵階段誤拾構想，允許丟棄構想並獲得一次獎金。自第二次起，從通關獎勵階段拾取構想將無法通過丟棄構想獲取獎金。
 
-### 成就系统
-#### 个人成就：
+### 成就系統
+#### 個人成就：
 <div style={{ display: "flex", justifyContent: "center" }}>
-| 成就名称                                                                                                                                         | 奖励金额                           |
+| 成就名稱                                                                                                                                     | 獎勵金額                           |
 |:-----------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------:|
-| 单次通关赢得3个狭路相逢节点                                                                                                            | 120美元                            |
-| 在不期而遇“似是而非”中选择“向她们求援”选项                                                                     | 150美元                            |
-| 在不期而遇“失落宝藏”中选择“我更想饱餐一顿”选项                                                                    | 100美元                         |
-| 在不期而遇“财源广进”时选择“奉上所有财物”（需持有至少20块金属锭）                       | 每消耗1块金属锭奖励$3（上限$301）  |
-| 进入第5层时获得：集会、熔炉及构想各一                                                                                   | 150美元                            |
-| 背包同时持有至少100个“枯木新枝”                                                                               | 777美元                            |
-| 在6层持有阿纳萨羯磨通关关卡，击杀该关卡的终曲合声并获得绝望                                                | 250美元 (普通难度) \| $500美元 (紧急难度)         |
-| 在单个关卡内漏一共5名首领级敌人                                                                                                        | 350美元                            |
-| 持有“滚动先祖”藏品时每通关一个险路恶敌关卡                                                              | 100美元                            |
-| 持有圣物“终结的实相”时每通关的一个险路恶敌关卡                                                            | 100美元                            |
-| 持有美愿时代的留恋期间，使至少4只手类藏品处于被激活状态（当队伍中有受手类藏品影响的干员时，该手即视为活跃状态） | 500美元                            |
+| 單次通關贏得3個狹路相逢節點                                                                                                             | 120美元                            |
+| 在不期而遇“似是而非”中選擇“向她們求援”選項                                                                    | 150美元                            |
+| 在不期而遇“失落寶藏”中選擇“我更想飽餐一頓”選項                                                                    | 100美元                            |
+| 在不期而遇“財源廣進”時選擇“奉上所有財物”（需持有至少20塊金屬錠）                        | 每消耗1塊金屬錠獎勵$3（上限301美元）  |
+| 進入第5層時獲得：集會、熔爐及構想各一                                                                                  | 150美元                            |
+| 背包同時持有至少100個“枯木新枝”                                                                            | 777美元                            |
+| 在6層持有阿納薩羯磨通關關卡，擊殺該關卡的終曲合聲並獲得絕望                                               | 250美元 (普通難度) \| 500美元 (緊急難度)         |
+| 在單個關卡內漏一共5名首領級敵人                                                                                                           | 350美元                            |
+| 持有“滾動先祖”藏品時每通關一個險路惡敵關卡                                                            | 100美元                            |
+| 持有聖物“終結的實相”時每通關的一個險路惡敵關卡                                                             | 100美元                            |
+| 持有美願時代的留戀期間，使至少4隻手類藏品處於被激活狀態（當隊伍中有受手類藏品影響的幹員時，該手即視為活躍狀態） | 500美元                            |
 </div>
 
 {/* The following Achievements can be claimed once per run.
@@ -707,14 +707,14 @@ $^*$蓝图测绘分队限时120分钟，超时每30分钟扣除1000分（含10�
 - While having the lamp of wishes, acquire at least 4 active hands - 500$ (Hands are active when the squad has an operator that is affected by the hand)
 - Have At least 100 “Shrivel and Sprouts” in your inventory at one time. - 777$ */}
 
-#### 团队成就：
+#### 團隊成就：
 <div style={{ display: "flex", justifyContent: "center" }}>
-| 成就名称                                                                                                                 | 奖励 |
+| 成就名稱                                                                                                             | 獎勵 |
 |:-----------------------------------------------------------------------------------------------------------------------:|:------:|
-| 在关卡内连续使敌人沉睡60秒                                                                          | 100美元  |
-| 全员在结算画面前集齐全部4种相遇选项                                            | 1000美元 |
-| I通关难度18时达成结局2+4+5                                                                      | 3000美元 |
-| 3名玩家分别选择3个不同险路恶敌关卡，将相同3名干员装载至船只上并让其进入保护目标区域     | 333美元  |
+| 在關卡內連續使敵人沉睡60秒                                                                           | 100美元  |
+| 全員在結算畫面前集齊全部4種相遇選項                                            | 1000美元 |
+| 通關難度18時達成結局2+4+5                                                                    | 3000美元 |
+| 3名玩家分別選擇3個不同險路惡敵關卡，將相同3名幹員裝載至船隻上並讓其進入保護目標區域  | 333美元  |
 </div>
 
 {/* - Sleep an enemy for 60s straight - 100$
@@ -723,26 +723,26 @@ $^*$蓝图测绘分队限时120分钟，超时每30分钟扣除1000分（含10�
 - Across 3 Players, Load 3 different operators on a single boat on 3 different dreadful foe stages, while having all 3 operators be the same across all 3 boats and have each boat enter the blue box. - 333$ */}
 
 
-### 收集品统计
-所有玩家将根据通关时持有的遗物数量获得额外奖励（以结局画面为准）：
-- < 40件：400美元
-- 41–50件：300美元
-- 51–60件：200美元
-- 61+件：100美元
+### 收集品統計
+所有玩家將根據通關時持有的遺物數量獲得額外獎勵（以結局畫面為準）：
+- < 40件: 400美元
+- 41–50件: 300美元
+- 51–60件: 200美元
+- 61+件: 100美元
 
-仅限通关成功的玩家可领取。
+僅限通關成功的玩家可領取。
 
 ## 日元商店
 
-### 日元目标
+### 日元目標
 <div style={{ display: "flex", justifyContent: "center" }}>
-| 目标                                                         | 奖励                    |
+| 目標                                                      | 獎勵                    |
 |:-------------------------------------------------------------:|:-------------------------:|
-| 玩家1与2达成结局1-5                                               | 500日元      |
-| 三重结局                                                                 | 各500日元 |
-| 超难/疯狂难度挑战（每项挑战结算最多一次）                            | 各100日元 |
-| 达成结局5并触发“终结的实相”（每队仅限一次）                              | 1000日元     |
-| 到达第7层且最后3名险路恶敌关卡处于精神崩溃状态通关 （每队仅限一次）| 800日元      |
+| 玩家1與2達成結局1-5                                            | 500日元      |
+| 三重結局 各                                                                 | 各500日元 |
+| 超難/瘋狂難度挑戰（每項挑戰結算最多一次）                        | 各100日元 |
+| 達成結局5並觸發“終結的實相”（每隊僅限一次）                             | 1000日元     |
+| 到達第7層且最後3名險路惡敵關卡處於精神崩潰狀態通關 （每隊僅限一次） | 800日元      |
 </div>
 
 {/* - Endings 1–5 between Players 1 and 2: 500¥
@@ -751,18 +751,18 @@ $^*$蓝图测绘分队限时120分钟，超时每30分钟扣除1000分（含10�
 - Ending 5 with "Reality of the End": 1000¥ (once per team)
 - Floor 7 with last 3 Dreadful Foes under fractured mental toil: 800¥ (once per team) */}
 
-### 日元商店奖励
+### 日元商店獎勵
 <div style={{ display: "flex", justifyContent: "center" }}>
-| 奖励                                                                                      | 费用      | 库存    |
+| 獎勵                                                                                   | 費用   | 庫存    |
 |:--------------------------------------------------------------------------------------:|:-----:|:--------:|
-| 收藏品计数奖励始终给予最高回报                           | 500日元  | 1        |
-| +10源石锭提取上限                                                                | 50日元   | 10       |
-| 玩家3初始资金+500美金                                                    | 200日元  | 1        |
-| 解除蓝图时间限制                                              | 1000日元 | 1        |
-| 允许第四层重开                                                                   | 1000日元 | 1        |
-| 无惩罚/限制招募行动员维什戴尔                                    | 2000日元 | 1        |
-| 移除重复招募惩罚（每名干员）                                        | 300日元  | $\infty$ |
-| 行动准备阶段：解除初始收藏品限制；首战后可选择藏品     | 1000¥ | 1        |
+| 收藏品計數獎勵始終給予最高回報                           | 500日元  | 1        |
+| +10源石錠提取上限                                                              | 50日元   | 10       |
+| 玩家3初始資金+500美金                                                  | 200日元  | 1        |
+| 解除藍圖時間限制                                                | 1000日元 | 1        |
+| 允許第四層重開                                                                  | 1000日元 | 1        |
+| 無懲罰/限制招募行動員維什戴爾                                   | 2000日元 | 1        |
+| R移除重複招募懲罰（每名幹員）                                        | 300日元  | $\infty$ |
+| 行動準備階段：解除初始收藏品限制；首戰後可選擇藏品  | 1000¥ | 1        |
 </div>
 
 {/* - Collectibles count bonus (highest) — 500¥ (stock 1)
@@ -775,60 +775,60 @@ $^*$蓝图测绘分队限时120分钟，超时每30分钟扣除1000分（含10�
 - Remove starting collectible restriction; allow a relic to be chosen after first combat — 1000¥ (stock 1)
  */}
 
-## 常见问题解答
+## 常見問題解答
 
-**问**：若玩家1和玩家2均选取同一成就干员，成本如何计算？\
-**答**：成就干员的基础成本为25美元，仅在完成对应干员成就挑战时成本为0。
+**問**：若玩家1和玩家2均選取同一成就幹員，成本如何計算？\
+**答**：成就幹員的基礎成本為25美元，僅在完成對應幹員成就挑戰時成本為0。
 
-以成就作员玛恩纳为例说明以下情况：
-1. 玩家1完成玛恩纳奖励挑战，玩家2选中玛恩纳但未完成挑战；玩家2需承担的成本为：25美元$\cdot$3 = 75美元
-2. 玩家1未完成玛恩纳奖励挑战而玩家2完成挑战时，玩家1承担 25美元成本
-3. 玩家1和2均未完成挑战时，总成本为25美元 + 75美元 = 100美元
-4. 玩家1和2均完成挑战时，双方成本均为$0。但奖励仅可领取一次（150美元$\cdot$1）
+以成就作員瑪恩納為例說明以下情況：
+1. 玩家1完成瑪恩納獎勵挑戰，玩家2選中瑪恩納但未完成挑戰；玩家2需承擔的成本為：25美元$\cdot$3 = 75美元
+2. 玩家1未完成瑪恩納獎勵挑戰而玩家2完成挑戰時，玩家1承擔 25美元成本
+3. 玩家1和2均未完成挑戰時，總成本為25美元 + 75美元 = 100美元
+4. 玩家1和2均完成挑戰時，雙方成本均為$0。但獎勵僅可領取一次（150美元$\cdot$1）
 
-**问**：How does the operator restriction penalty removal work in the Yen shop?\
+**問**：How does the operator restriction penalty removal work in the Yen shop?\
 **答**：The operator restriction penalty removal reward only applies to Player 3, effectively setting the cost of the operator back to its base cost. Players 1 and 2 are not affected by this effect.
 
-**问**：何为三重结局？\
-**答**：指在集成战略通关中击败三位最终BOSS的成就。终局BOSS包含第5、6、7层的险路恶敌关卡。通关时光凯旋不计入击败终局BOSS。
+**問**：何為三重結局？\
+**答**：指在集成戰略通關中擊敗三位最終BOSS的成就。終局BOSS包含第5、6、7層的險路惡敵關卡。通關時光凱旋不計入擊敗終局BOSS。
 
-**问**：团队成就“3名玩家分别选择3个不同险路恶敌关卡，将相同3名干员...”如何达成？请举例说明有效/无效情况。\
-**答**：参考以下场景：
-1. 玩家1在朝谒关卡将深海色、梅与豆苗装载至同一船只。玩家2与3分别在授法与不容拒绝关卡装载相同干员。此成就视为达成。
-2. 玩家1在朝谒与授法关卡将深海色、梅与豆苗装载至同一船只。玩家3在不容拒绝关卡装载相同操作员。此成就视为达成。
-3. 玩家1在朝谒与授法关卡的船只上同时装载深海色、梅与豆苗。玩家2和3在授法关卡装载相同干员，但未在不容拒绝关卡装载。此成就视为未达成。
-4. 玩家1在朝谒关卡的船只上搭载深色、梅与豆茎。玩家2和3分别在授法与“命运终章”关卡搭载相同操作员。但船只未能抵达不容拒绝的蓝色区域。该成就视为未达成。
+**問**：團隊成就“3名玩家分別選擇3個不同險路惡敵關卡，將相同3名幹員...”如何達成？請舉例說明有效/無效情況。\
+**答**：參考以下場景：
+1. 玩家1在朝謁關卡將深海色、梅與豆苗裝載至同一船隻。玩家2與3分別在授法與不容拒絕關卡裝載相同幹員。此成就視為達成。
+2. 玩家1在朝謁與授法關卡將深海色、梅與豆苗裝載至同一船隻。玩家3在不容拒絕關卡裝載相同操作員。此成就視為達成。
+3. 玩家1在朝謁與授法關卡的船隻上同時裝載深海色、梅與豆苗。玩家2和3在授法關卡裝載相同幹員，但未在不容拒絕關卡裝載。此成就視為未達成。
+4. 玩家1在朝謁關卡的船隻上搭載深色、梅與豆莖。玩家2和3分別在授法與“命運終章”關卡搭載相同操作員。但船隻未能抵達不容拒絕的藍色區域。該成就視為未達成。
 
-**问**：初始招募阶段选取6★干员是否消耗初始资金？\
-**答**：不会。初始干员选择仅影响初始小队配置，不影响初始资金。剩余资金将转换为美元。
+**問**：初始招募階段選取6★幹員是否消耗初始資金？\
+**答**：不會。初始幹員選擇僅影響初始小隊配置，不影響初始資金。剩餘資金將轉換為美元。
 
-**问**：美元奖励/惩罚何时计算？\
-**答**：美元奖励/惩罚在玩家个人通关结束后一并计算。
+**問**：美元獎勵/懲罰何時計算？\
+**答**：美元獎勵/懲罰在玩家個人通關結束后一併計算。
 
-**问**：阿米娅专属列表中的干员是否会像其他6★干员在重复招募后涨价？\
-**答**：不会，无论团队中有多少玩家选择，5★阿米娅专属列表干员仍维持35美元价格。
+**問**：阿米婭專屬列表中的幹員是否會像其他6★幹員在重複招募后漲價？\
+**答**：不會，無論團隊中有多少玩家選擇，5★阿米婭專屬列表幹員仍維持35美元價格。
 
-## 变更日志
+## 變更記錄
 **2025/11/04**
-* 从日元商店奖励中移除操作员成本后，其成本将重置为原始数值，而非降为0。
-* 常见问题解答中补充说明艾米列表操作员成本增加机制——无论招募次数多少，其成本均不会累积增加。
+* 從百圓商店獎勵移除操作員的成本後，其成本將重置為原始數值，而非降為0。
+* 常見問答新增關於艾米名單操作員成本提升的說明——無論招募次數多少，其成本皆不會增加。
 
 **2025/11/07**
-* 移除了台湾和中国大陆账号的限制。
-* 新增了操作员和模块的禁用列表。
-* 重新表述了Friston-3挑战的规则，以明确挑战的意图。
-* 重新表述了重复选择偏好加成操作员的惩罚规则，以明确玩家何时不会受到惩罚。
-* 新增日本和韩国规则集。
+* 移除台灣與中國帳戶限制。
+* 新增操作員與模組禁用清單。
+* 重新表述Friston-3挑戰內容，以釐清挑戰意圖。
+* 調整重複選取偏好加成操作員的懲罰機制，明確說明免除懲罰的情形。
+* 新增日本與韓國規則集。
 
 **2025/11/09**
-* 新增VN规则集。
+* VN 規則集已加入。
 
 **2025/11/10**
-* 菲亚梅塔、水月、红、斯卡蒂/浊心斯卡蒂干员成就就已添加
+* 菲亞梅塔、水月、紅、斯卡蒂/濁心斯卡蒂幹員成就就已添加
 
 **2025/11/11**
-* 添加了TC和SC规则集。
-* 黍被添加到50美元清单中
+* 添加 TC 與 SC 規則集。
+* 黍被添加到50美元清單中
 
 **2025/11/15**
-* 克里斯汀小姐与石英偏移奖励已添加。
+* 克莉絲汀小姐與石英偏移獎勵已加入。
