@@ -242,8 +242,8 @@ aside.right-sidebar-container {
   width: 20rem;
 }
 
-.sl-markdown-content {
-  width: var(--sl-content-width);
+.sl-container {
+  margin-right: auto;
 }
 
 @media (max-width: 1151px) {
