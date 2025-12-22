@@ -10,6 +10,9 @@
   --sl-font: 'Inter', sans-serif;
   --sl-font-headings: 'Poppins', sans-serif;
 
+  /* --sl-sidebar-width: 18.75rem; */
+  --sl-content-width: 90%;
+
   /* --combat-bg: #4a0252;
   --combat-border: #2d0132;
   --combat-outline: rgba(255, 255, 255, 0.3);
@@ -234,6 +237,21 @@
     color: white !important;
 }
 
+/* --- Pages margins and TOC width --- */
+aside.right-sidebar-container {
+  width: 20rem;
+}
+
+.sl-markdown-content {
+  width: var(--sl-content-width);
+}
+
+@media (max-width: 1151px) {
+  :root {
+    --sl-content-width: 100%;
+  }
+}
+
 /* --- Guide Button Styles --- */
 .guide-button-container {
     margin: 0.75rem 0;
@@ -245,6 +263,9 @@
 }
 
 .guide-button {
+    max-inline-size: 50rem;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     align-items: center;
     gap: 1.25rem;
@@ -366,11 +387,10 @@
 /* Stage Grid Layout */
 .stage-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 140px);
+  grid-template-columns: repeat(auto-fit, 140px);
   gap: 0.75rem;
   margin: 1rem 0;
   justify-content: center;
-  /* Fix vertical alignment */
   align-items: start;
   grid-auto-rows: 60px;
 }
@@ -565,30 +585,6 @@
   box-shadow: 0 8px 24px var(--faceoff-hover-shadow), inset 0 1px 0 var(--faceoff-hover-inner-shadow);
 }
 
-
-/* Narrative Offer Grid - Centered single stage */
-.stage-2-stage-grid {
-  grid-template-columns: repeat(2, 140px);
-  justify-content: center;
-  gap: 4rem;
-  margin: 1rem 0;
-}
-
-/* Mobile responsiveness for Narrative Offer Grid */
-@media (max-width: 768px) {
-  .stage-2-stage-grid {
-    grid-template-columns: 110px;
-  }
-}
-
-@media (max-width: 480px) {
-  .stage-2-stage-grid {
-    grid-template-columns: 100px;
-  }
-}
-
-
-
 /* Narrative Offer Grid - Centered single stage */
 .narrative-offer-grid {
   grid-template-columns: repeat(2, 140px);
@@ -654,7 +650,7 @@
 /* Mobile Responsiveness for Stage Cards */
 @media (max-width: 768px) {
   .stage-grid {
-    grid-template-columns: repeat(auto-fill, 110px);
+    grid-template-columns: repeat(auto-fit, 110px);
     gap: 0.5rem;
     justify-content: center;
     grid-auto-rows: 55px;
@@ -684,7 +680,7 @@
 /* Extra small mobile devices */
 @media (max-width: 480px) {
   .stage-grid {
-    grid-template-columns: repeat(auto-fill, 100px);
+    grid-template-columns: repeat(auto-fit, 100px);
     gap: 0.4rem;
     grid-auto-rows: 50px;
   }
@@ -967,6 +963,16 @@
     gap: 1rem;
     grid-auto-rows: 70px;
   }
+
+  .stage-card.is4-f5-boss {
+    height: 70px;
+    width: 140px;
+    font-size: 12px;
+  }
+  .stage-card.is4-f5-boss .stage-name {
+    font-size: 12px;
+    max-width: 130px;
+  }
   
   .stage-card.f5-boss {
     height: 70px;
@@ -986,6 +992,16 @@
     gap: 0.75rem;
     grid-auto-rows: 60px;
   }
+
+  .stage-card.is4-f5-boss {
+    height: 60px;
+    width: 120px;
+    font-size: 11px;
+  }
+  .stage-card.is4-f5-boss .stage-name {
+    font-size: 11px;
+    max-width: 110px;
+  }
   
   .stage-card.f5-boss {
     height: 60px;
@@ -1002,11 +1018,21 @@
 /* Extra small mobile devices - stack to 1 column for very small screens */
 @media (max-width: 360px) {
   .f5-boss-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, 100px);
     gap: 0.5rem;
     grid-auto-rows: 55px;
   }
   
+  .stage-card.is4-f5-boss {
+    height: 55px;
+    width: 100px;
+    font-size: 10px;
+  }
+  .stage-card.is4-f5-boss .stage-name {
+    font-size: 10px;
+    max-width: 90px;
+  }
+
   .stage-card.f5-boss {
     height: 55px;
     width: 100px;
