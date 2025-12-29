@@ -37,7 +37,7 @@ Mon3tr is a really strong operator on this fight given her ability to provide va
 To achieve this, Mon3tr has to use S3 as the boat approaches her, timed so that she is loaded into the boat as she jumps into the ground.
 This strategy requires a very precise timing and as such, it should allow a precise and consistent way to perform this.
 
-The most common Mon3tr placement is on the tile E2, which is what is assumed in this strategy; however, the boat jump can be extended to any placement across the boat path from the analysis presented here.
+The most common Mon3tr placement is on the tile E7, which is what is assumed in this strategy; however, the boat jump can be extended to any placement across the boat path from the analysis presented here.
 
 This strategy section is divided into an analysis of the boat movement, followed by the 2 main methods to perform the boat jump, a quick overview and comparison between the advantages and disadvantages of each method and video examples.
 
@@ -61,6 +61,7 @@ From here we can see that the boat travels 1 tile as it spawns, waits 10 seconds
 After analyzing the boat movement frame by frame, over multiple runs at different movement speeds, the following is found:
 * The boat has a slowed constant starting movement speed of 0.01 tiles/s for the first 5 frames as it spawns
 * The wait time on E2 is exactly 300 frames
+  * Reaching this checkpoint doesn't reset the boat position to the exact center of the tile.
 * There is a 3 frames window for Mon3tr to be loaded into the boat, regardles of its movement speed.
     * The first frame starts as the center of the boat just reaches the edge of E7, that is exactly at 5.5 tiles from its spawn tile E1.
 
@@ -75,11 +76,11 @@ $\text{Spawn frames} = 5 + \text{CEILING}(0.95 \cdot 30/MS)$.
 The boat then stands by for $\text{Stand by frames} = 300$ frames before it continues moving at its movement speed.
 When the boat reaches this stand by checkpoint, its position isn't reset, this means that the checkpoint position could be, for example, $1.01$ at $MS=0.4$ (standard movement speed), or $1.0$ at $MS=0.38$ (protraction book at 1 stack).
 This must be considered when calculating the boat position to reach the position of 5.5 tiles.
-The distance the boat would travel to reach a given position $P$ would be:
+The number of frames the boat would travel to reach a given position $P$ would be:
 
 $\text{Travel frames} = \text{CEILING}(P \cdot 30/MS)$,
 
-$P$ is the remaining distance to travel, that is:
+in this case, $P$ is the remaining distance to travel, that is:
 
 $P=4.5 - (\text{CEILING}(0.95 \cdot 30/MS) \cdot MS/30 + (5 \cdot 0.01) - 1)$.
 
