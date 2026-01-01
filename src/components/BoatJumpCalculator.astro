@@ -62,6 +62,33 @@
         placeholder="0"
       />
       <small>Each stack: -5% MSPD (additive with itself, multiplicative with other effects)</small>
+
+      <div class="input-group">
+      <!-- <label>Ines Shadow Sentry:</label> -->
+      <label for="inesShadowSentry" class="label-with-image">
+        <img src="/guides/general-assets/operator-icons/Ines.png" alt="Example" width="25" height="25">
+        Ines Shadow Sentry:
+      </label>
+      <div class="checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="tile0" class="relic-checkbox" />
+          <!-- <img src="/guides/is5-sarkaz/images/collectibles/rogue_4_relic_legacy_178.png" alt="Example" width="25" height="25"> -->
+          <span>0</span>
+          <input type="checkbox" id="tile1" class="relic-checkbox" />
+          <span>1</span>
+          <input type="checkbox" id="tile2" class="relic-checkbox" />
+          <span>2</span>
+          <input type="checkbox" id="tile3" class="relic-checkbox" />
+          <span>3</span>
+          <input type="checkbox" id="tile4" class="relic-checkbox" />
+          <span>4</span>
+          <input type="checkbox" id="tile5" class="relic-checkbox" />
+          <span>5</span>
+        </label>
+        <small>If Ines' shadow happens to be along the boat's path, mark the tiles covered by it, 0 being where the boat spawns and 6 being Mon3tr's tile. (This assumes the shadow is present for the entire boat movement along the tile.)</small>
+        </div>
+      </div>
+
       <label for="operatorLoaded" class="label-with-image">
         <img src="/guides/is5-sarkaz/boat-jump-calculator/boat.png" alt="Example" width="25" height="25">
         <span>Operator loaded at frame x from boat spawn (-50% MSPD)</span>
@@ -378,6 +405,26 @@
     // Check selected relics
     const painfulHappinessInput = document.getElementById('painfulHappiness') as HTMLInputElement | null;
     const rollingAncestorsInput = document.getElementById('rollingAncestors') as HTMLInputElement | null;
+    function getTileModifiers(): Record<number, number> {
+      const tileInputs: Array<HTMLInputElement | null> = [
+        document.getElementById("tile0") as HTMLInputElement | null,
+        document.getElementById("tile1") as HTMLInputElement | null,
+        document.getElementById("tile2") as HTMLInputElement | null,
+        document.getElementById("tile3") as HTMLInputElement | null,
+        document.getElementById("tile4") as HTMLInputElement | null,
+        document.getElementById("tile5") as HTMLInputElement | null,
+      ];
+
+      const tileMods: Record<number, number> = {};
+
+      tileInputs.forEach((input, index) => {
+        if (input?.checked) {
+          tileMods[index] = 0.7;
+        }
+      });
+
+      return tileMods;
+    }
 
     if (painfulHappinessInput?.checked) {
       speedMultiplier *= 0.85; // -15% speed
@@ -385,34 +432,92 @@
     if (rollingAncestorsInput?.checked) {
       speedMultiplier *= 1.30; // +30% speed
     }
-    
     // Apply protraction stacks (each stack -5% speed, additive within protraction, then multiplicative)
     const protractionMultiplier = 1 - (protractionStacks * 0.05); // Additive: 2 stacks = 1 - 0.10 = 0.90
+
+    function getTileModifier(pos, tileMods) {
+      const tile = Math.floor(pos + 0.5);
+      return tileMods[tile] ?? 1.0;
+    }
+
+    function getEffectiveMS(frameNumber, operatorLoadedFrame, MS_DEBUFFS) {
+      if (operatorLoadedFrame !== null && frameNumber >= operatorLoadedFrame) {
+        return Math.max(0.2 * MS_DEBUFFS, 0.05);
+      }
+
+      return Math.max(0.4 * MS_DEBUFFS, 0.05);
+    }
+
+    function calculatePos(
+      POS,
+      checkpoint,
+      frameNumber,
+      MS_DEBUFFS,
+      tileMods,
+      operatorLoadedFrame
+    ) {
+      while (POS < checkpoint) {
+        const baseMS = getEffectiveMS(frameNumber, operatorLoadedFrame, MS_DEBUFFS);
+        const modifier = getTileModifier(POS, tileMods);
+
+        const d = Math.max((baseMS * modifier), 0.05) / 30;
+
+        POS += d;
+        frameNumber += 1;
+      }
+
+      return { POS, frameNumber };
+    }
+
+    function boatPosition(
+      MS_DEBUFFS,
+      tileMods = {},
+      operatorLoadedFrame = null
+    ) {
+      let POS = 0;
+      let frameNumber = 0;
+
+      // Initial forced movement
+      for (let i = 0; i < 5; i++) {
+        POS += 0.01;
+        frameNumber += 1;
+      }
+
+      // Phase 1
+      ({ POS, frameNumber } = calculatePos(POS, 1, frameNumber, MS_DEBUFFS, tileMods, operatorLoadedFrame));
+
+      // Wait time
+      frameNumber += 300;
+
+      // Phase 2
+      ({ POS, frameNumber } = calculatePos(POS, 5.5, frameNumber, MS_DEBUFFS, tileMods, operatorLoadedFrame));
+
+      return { POS, frameNumber };
+    }
+
     speedMultiplier *= protractionMultiplier;
     const finalMSPD = Math.max(0.4 * speedMultiplier, 0.05);
 
-    // Calculate time delta using the formula: (408.75 / MSPD) + 284.75
-    // This formula accounts for boat travel mechanics in Arknights
-    // let timeDeltaFrames = Math.ceil((408.75 / speedMultiplier) + 304.75);
-    
-    // let spawnFrames = 5 + Math.ceil(28.5 / finalMSPD);
-    // let standByFrames = 300;
-    // let travelFrames = Math.ceil((163.5 / finalMSPD) - Math.ceil(28.5 / finalMSPD));
-    
-    let timeDeltaFrames = Math.ceil(163.5 / finalMSPD) + 305;
+    const tileMods = getTileModifiers();
 
-    // If operator loaded:
-    if (operatorLoadedFrames != 0) {
-      timeDeltaFrames = (timeDeltaFrames - operatorLoadedFrames) * (Math.max(finalMSPD, 0.05)/Math.max((finalMSPD/2), 0.05)) + operatorLoadedFrames
-    }
+    const loadFrame = operatorLoadedFrames === 0 ? null : operatorLoadedFrames;
 
-    timeDeltaFrames -= 22
+    const result = boatPosition(speedMultiplier, tileMods, loadFrame);
+
+    // let timeDeltaFrames = Math.ceil(163.5 / finalMSPD) + 305;
+
+    // // If operator loaded:
+    // if (operatorLoadedFrames != 0) {
+    //   timeDeltaFrames = (timeDeltaFrames - operatorLoadedFrames) * (Math.max(finalMSPD, 0.05)/Math.max((finalMSPD/2), 0.05)) + operatorLoadedFrames
+    // }
+
+    // timeDeltaFrames -= 22
+    const timeDeltaFrames = result.frameNumber - 22
     
     const timeDelta = (timeDeltaFrames) / FPS;
     
 
     // Calculate jump timing
-    // Formula: jump_time = initial_time - time_delta + (actual_frame / FPS)
     const jumpTimeSeconds = initialTime - timeDelta + (actualFrame / FPS);
     
     // For practical use: show exact timing
