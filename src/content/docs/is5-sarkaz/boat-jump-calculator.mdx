@@ -60,3 +60,59 @@ As a visual queue you can use the boat information that appears a frame early if
 For a detailed analysis of how the boat jump works, check out the <a href="/is5-sarkaz/stages/the-dharma-sermon" target="_blank" rel="noopener noreferrer">Mon3tr boat jump</a> strategy.
 
 <BoatJumpCalculator />
+
+## Visual Reference
+
+This method consists on using a visual reference between the boat position and the ground texture to tell when Mon3tr's skill should be used.
+
+There are multiple different reference frames we can use as a visual aid to distinguish the boat position in which Mon3tr skill should be used.
+If we hover over a non-deployed operator the camera tilts to a certain angle (this is constant across all non-deployed operators), if we hover over a deployed operator the angle is different and varies with the position of the deployed operator.
+Here we use 3 different reference frames:
+* Mon3tr hover
+* Non-deployed operator hover
+* Standard camera angle
+
+**Mon3tr hover**
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Mon3tr hover reference](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/mon3tr-boat-reference-5.png)
+</div>
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Mon3tr hover reference zoom](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/mon3tr-boat-reference-7.png)
+</div>
+
+**Non-deployed operator hover**
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Non-deployed operator hover reference](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/operator-hover-frame.png)
+</div>
+Frame 1
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Non-deployed operator hover reference 1](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/jump-frame-1.png)
+</div>
+Frame 2
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Non-deployed operator hover reference 2](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/jump-frame-2.png)
+</div>
+Frame 3
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Non-deployed operator hover reference 3](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/jump-frame-3.png)
+</div>
+
+The visual reference we use is when the line on the ground tile lines up just past the line marked at the back of the boat:
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Non-deployed operator hover reference zoom](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/jump-frame-1-small.png)
+</div>
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Non-deployed operator hover reference zoom](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/jump-frame-1-small-marked.png)
+</div>
+
+**Standard camera angle**
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Standard camera angle reference](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/mon3tr-boat-reference-8.png)
+</div>
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Standard camera angle reference zoom](/guides/is5-sarkaz/stage-guides/the-dharma-sermon/strategy-mon3tr-boat-jump/mon3tr-boat-reference-9.png)
+</div>
