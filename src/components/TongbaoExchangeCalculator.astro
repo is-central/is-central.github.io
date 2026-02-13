@@ -1,0 +1,922 @@
+﻿---
+// TongbaoExchangeCalculator.astro
+---
+
+<div class="tongbao-dashboard not-content">
+    <!-- DASHBOARD HEADER -->
+    <header class="dashboard-header">
+        <div class="header-content">
+            <div class="search-wrapper">
+                <span class="search-icon">🔍</span>
+                <input
+                    type="text"
+                    id="tongbao-search"
+                    placeholder="Search..."
+                    autocomplete="off"
+                />
+            </div>
+
+            <div class="filter-chips">
+                <button class="chip active" data-filter="all">All</button>
+                <button class="chip chip-12" data-filter="12">12 Ingots</button>
+                <button class="chip chip-8" data-filter="8">8 Ingots</button>
+                <button class="chip chip-4" data-filter="4">4 Ingots</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- DASHBOARD CONTENT -->
+    <div class="dashboard-content">
+        <!-- LEFT: INPUT GRID -->
+        <div class="input-panel">
+            <!-- Prefix Sections (Flower, Risk, Bal, Other) -->
+            <section
+                id="section-flower"
+                class="prefix-section"
+                data-prefix="flower"
+            >
+                <div class="section-header header-flower">
+                    <span>Flower</span>
+                </div>
+                <div class="input-grid" id="grid-flower">
+                    <!-- JS Populated -->
+                </div>
+            </section>
+
+            <section
+                id="section-risk"
+                class="prefix-section"
+                data-prefix="risk"
+            >
+                <div class="section-header header-risk">
+                    <span>Risk</span>
+                </div>
+                <div class="input-grid" id="grid-risk">
+                    <!-- JS Populated -->
+                </div>
+            </section>
+
+            <section id="section-bal" class="prefix-section" data-prefix="bal">
+                <div class="section-header header-bal">
+                    <span>Bal</span>
+                </div>
+                <div class="input-grid" id="grid-bal">
+                    <!-- JS Populated -->
+                </div>
+            </section>
+
+            <section
+                id="section-other"
+                class="prefix-section"
+                data-prefix="other"
+            >
+                <div class="section-header header-other">
+                    <span>Other</span>
+                </div>
+                <div class="input-grid" id="grid-other">
+                    <!-- JS Populated -->
+                </div>
+            </section>
+
+            <div id="no-results" class="no-results hidden">
+                No Tongbaos found matching your search.
+            </div>
+        </div>
+
+        <!-- RIGHT: INSPECTOR (Sticky) -->
+        <aside class="inspector-panel">
+            <div class="inspector-card">
+                <!-- Welcome / Empty State -->
+                <div id="inspector-empty" class="inspector-state">
+                    <div class="empty-icon">👈</div>
+                    <h3>Select a Tongbao</h3>
+                    <p>
+                        Click any item on the left to view its exchange details.
+                    </p>
+                </div>
+
+                <!-- Active State -->
+                <div id="inspector-active" class="inspector-state hidden">
+                    <div class="inspector-header">
+                        <div class="inspector-icon-wrapper">
+                            <img id="insp-img" src="" alt="" />
+                        </div>
+                        <div class="inspector-info">
+                            <h2 id="insp-name">Name</h2>
+                            <span id="insp-badge" class="badge">Tier</span>
+                        </div>
+                    </div>
+
+                    <div class="inspector-body">
+                        <div class="body-header">
+                            <h4>Exchanges Into</h4>
+                            <span class="sub-text"
+                                >Random result from pool:</span
+                            >
+                        </div>
+
+                        <div class="result-grid" id="result-grid">
+                            <!-- JS Populated -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<style is:global>
+    :root {
+        --dash-bg: var(--sl-color-bg);
+        --panel-bg: var(--sl-color-bg-nav);
+        --border-color: var(--sl-color-gray-5);
+        --accent: #ff7043;
+
+        --c-12: #ffd700;
+        --c-8: #b0bec5;
+        --c-4: #8d6e63;
+
+        --header-flower: #ec407a;
+        --header-risk: #b71c1c;
+        --header-bal: #3949ab;
+        --header-other: #b0bec5;
+    }
+
+    .tongbao-dashboard {
+        background: var(--dash-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        overflow: hidden; /* For rounded corners */
+        min-height: 600px;
+        display: flex;
+        flex-direction: column;
+        margin: 2rem 0;
+        position: relative;
+        font-family: var(--sl-font-system);
+    }
+
+    /* --- HEADER --- */
+    .dashboard-header {
+        background: var(--panel-bg);
+        border-bottom: 1px solid var(--border-color);
+        padding: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        width: 100%;
+    }
+
+    .header-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .search-wrapper {
+        position: relative;
+        flex: 1;
+        min-width: 200px;
+        display: flex;
+        align-items: center;
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 10px;
+        opacity: 0.6;
+        pointer-events: none;
+    }
+
+    .search-wrapper input {
+        width: 100%;
+        height: 40px; /* Explicit height matching chips */
+        padding: 0 0.5rem 0 2.2rem;
+        border-radius: 6px;
+        border: 1px solid var(--sl-color-gray-4);
+        background: var(--sl-color-bg);
+        color: var(--sl-color-text);
+        font-size: 0.9rem;
+    }
+
+    .search-wrapper input:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 2px rgba(255, 112, 67, 0.2);
+    }
+
+    .filter-chips {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .chip {
+        height: 40px; /* Explicit height matching search */
+        padding: 0 1rem;
+        border-radius: 20px; /* Classic chip pill shape */
+        border: 1px solid var(--border-color);
+        background: var(--sl-color-bg);
+        color: var(--sl-color-text);
+        cursor: pointer;
+        font-size: 0.85rem;
+        transition: all 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+    }
+
+    .chip:hover {
+        background: var(--sl-color-gray-6);
+    }
+
+    .chip.active {
+        background: var(--accent);
+        color: white;
+        border-color: var(--accent);
+        font-weight: 600;
+    }
+
+    /* --- LAYOUT --- */
+    .dashboard-content {
+        display: flex;
+        align-items: flex-start; /* Important for sticky */
+        padding: 1.5rem;
+        gap: 2rem;
+        flex: 1;
+    }
+
+    @media (max-width: 850px) {
+        .dashboard-content {
+            flex-direction: column;
+            padding: 1rem;
+            gap: 1rem;
+        }
+        .inspector-panel {
+            width: 100%;
+            position: static;
+            margin-top: 1rem;
+            order: 2;
+        }
+    }
+
+    /* --- LEFT: INPUT GRID --- */
+    .input-panel {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .prefix-section {
+        margin-bottom: 2.5rem;
+    }
+
+    .section-header {
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--border-color);
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .header-flower {
+        color: var(--header-flower);
+        border-color: var(--header-flower);
+    }
+    .header-risk {
+        color: var(--header-risk);
+        border-color: var(--header-risk);
+    }
+    .header-bal {
+        color: var(--header-bal);
+        border-color: var(--header-bal);
+    }
+    .header-other {
+        color: var(--header-other);
+        border-color: var(--header-other);
+    }
+
+    .input-grid {
+        display: grid;
+        /* Adjusted for labeled items */
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        gap: 1rem;
+        /* KEY ALIGNMENT FIX: Start from top */
+        align-items: start;
+    }
+
+    .input-item {
+        border-radius: 8px;
+        background: var(--sl-color-gray-6);
+        border: 1px solid transparent;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* KEY ALIGNMENT FIX: Start content from top */
+        justify-content: flex-start;
+        padding: 0.5rem;
+        transition: all 0.2s;
+        height: 100%;
+        min-height: 110px; /* Ensure visual consistency */
+    }
+
+    .input-item:hover {
+        transform: translateY(-2px);
+        background: var(--sl-color-gray-5);
+        border-color: var(--sl-color-gray-4);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .input-item.active {
+        border-color: var(--accent);
+        background: rgba(255, 112, 67, 0.1);
+        box-shadow: 0 0 0 1px var(--accent);
+    }
+
+    /* Tier indicators (borders) */
+    .input-item[data-tier="12"] {
+        border-left: 3px solid var(--c-12);
+    }
+    .input-item[data-tier="8"] {
+        border-left: 3px solid var(--c-8);
+    }
+    .input-item[data-tier="4"] {
+        border-left: 3px solid var(--c-4);
+    }
+
+    /* Fixed Height Image Container */
+    .input-img-wrapper {
+        width: 60px;
+        height: 60px; /* Fixed height! */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .input-img-wrapper img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    .input-name {
+        font-size: 0.75rem;
+        line-height: 1.25;
+        text-align: center;
+        color: var(--sl-color-text);
+        word-wrap: break-word;
+        width: 100%;
+    }
+
+    /* --- RIGHT: INSPECTOR --- */
+    .inspector-panel {
+        width: 320px;
+        flex-shrink: 0;
+        position: sticky;
+        top: 5rem;
+    }
+
+    .inspector-card {
+        background: var(--panel-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 1.5rem;
+        min-height: 400px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .inspector-state {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .inspector-state.hidden {
+        display: none;
+    }
+
+    /* Empty State */
+    #inspector-empty {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--sl-color-gray-3);
+        opacity: 0.7;
+        padding: 2rem 0;
+    }
+    .empty-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Active State */
+    .inspector-header {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .inspector-icon-wrapper {
+        width: 70px;
+        height: 70px;
+        background: var(--sl-color-bg);
+        border-radius: 12px;
+        padding: 6px;
+        border: 1px solid var(--border-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    .inspector-icon-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .inspector-info {
+        flex: 1;
+        min-width: 0; /* Text wrap fix */
+    }
+
+    .inspector-info h2 {
+        margin: 0 0 0.5rem;
+        font-size: 1.25rem;
+        line-height: 1.2;
+        word-wrap: break-word;
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    .badge-12 {
+        background: var(--c-12);
+        color: #000;
+    }
+    .badge-8 {
+        background: var(--c-8);
+        color: #000;
+    }
+    .badge-4 {
+        background: var(--c-4);
+        color: #fff;
+    }
+
+    .body-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 1rem;
+    }
+    .body-header h4 {
+        margin: 0;
+        font-size: 1rem;
+    }
+    .sub-text {
+        font-size: 0.8rem;
+        color: var(--sl-color-gray-3);
+    }
+
+    /* RESULT GRID - ALIGNMENT FIX */
+    .result-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        gap: 1rem;
+        /* KEY: Align items to the start (top) of the row */
+        align-items: start;
+    }
+
+    .result-item {
+        background: var(--sl-color-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 0.5rem;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.2s;
+        /* Ensure content stacks vertically */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .result-item:hover {
+        transform: translateY(-3px);
+        border-color: var(--accent);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .result-img-container {
+        height: 50px; /* Fixed height for image area */
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .result-img-container img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    .result-name {
+        font-size: 0.75rem;
+        line-height: 1.25;
+        color: var(--sl-color-text);
+        width: 100%;
+        word-wrap: break-word;
+    }
+
+    .inspector-footer {
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--border-color);
+        color: var(--sl-color-gray-3);
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    .no-results {
+        padding: 2rem;
+        text-align: center;
+        color: var(--sl-color-gray-3);
+        grid-column: 1 / -1;
+    }
+    .tongbao-dashboard .hidden {
+        display: none !important;
+    }
+</style>
+
+<script is:inline>
+    // --- Data ---
+    var ASSET_PATH = "/guides/is6-sui/tongbao-exchange/";
+
+    var tier4Items = [
+        "Dayan Tongbao",
+        "Risk-West Stones",
+        "Risk-Eastern Gap",
+        "Risk-Northern Sting",
+        "Bal-Soil to Metal",
+        "Bal-Water to Wood",
+        "Bal-Metal to Water",
+        "Flower - Fire to Soil",
+        "Bal-Wood to Fire",
+        "Bal-Cold",
+        "Bal-Gale",
+        "Bal-Rain",
+        "Bal-Thunder",
+        "Bal-Drought",
+        "Bal-Rainbow",
+        "Bal-Rime",
+        "Bal-Frost",
+        "Flower-Long Road",
+        "Flower-Martial Fight",
+        "Flower-Trades",
+        "Risk-Study",
+        "Bal-Testee",
+        "Bal-Prevention",
+    ];
+
+    var tier8Items = [
+        "Risk-Bloodshed",
+        "Risk-A Good Match",
+        "Risk-Getaway",
+        "Risk-Law and Ritual",
+        "Risk-Spring Rivers",
+        "Risk-Constant Change",
+        "Risk-Shennong Watch",
+        "Risk-Dream of Curio",
+        "Risk-Falling Word",
+        "Risk-Biding Time",
+        "Risk-Painter's Realm",
+        "Risk-Wild Passion",
+        "Bal-Good Harvest",
+        "Bal-Frontier Moon",
+        "Bal-Steel and Soil",
+        "Risk-Taming Megamus",
+        "Risk-Gift of Accord",
+        "Risk-Hidden Gambit",
+        "Risk-Unmoved Mounts",
+        "Risk-Enlightenment",
+        "Bal-A People United",
+        "Bal-A Body Honed",
+        "Flower-Heavy Duties",
+    ];
+
+    var tier12Items = [
+        "Risk-They Who Endure",
+        "Flower-Unity's Might",
+        "Bal-Rogue Token",
+        "Flower-Cocoon Worth",
+        "Flower-The Bulwark",
+        "Flower-Stove Alight",
+        "Flower-Duck Coin",
+        "Bal-Dawn of YAN",
+        "Flower-The Ascent",
+        "Flower-Odd Merchant",
+        "Risk-Lei Fa's Purge",
+        "Risk-Toll For Roads",
+    ];
+
+    // Output Logic
+    var inputOnly = [
+        "Risk-Enlightenment",
+        "Bal-Rogue Token",
+        "Flower-The Ascent",
+    ];
+    var bridgeItems = {
+        from12to4: ["Flower-Martial Fight", "Flower-Trades"],
+        from12to8: ["Risk-Hidden Gambit"],
+        from8to4: [
+            "Flower-Long Road",
+            "Risk-Study",
+            "Bal-Testee",
+            "Bal-Prevention",
+        ],
+        from8to12: ["Flower-The Bulwark"],
+    };
+    var specialMappings = {
+        "Risk-Unmoved Mounts": ["Bal-To Move Mounts"],
+        "Risk-Enlightenment": ["Bal-Trailblazer"],
+        "Bal-A Body Honed": ["Flower-Mindfulness", "Flower-Unclouded"],
+        "Bal-A People United": ["Flower-Ideas Carried"],
+    };
+
+    // --- Logic ---
+
+    function getImagePath(name) {
+        return ASSET_PATH + name + ".webp";
+    }
+
+    function getTier(name) {
+        if (tier12Items.indexOf(name) !== -1) return 12;
+        if (tier8Items.indexOf(name) !== -1) return 8;
+        if (tier4Items.indexOf(name) !== -1) return 4;
+        if (
+            [
+                "Bal-To Move Mounts",
+                "Bal-Trailblazer",
+                "Flower-Mindfulness",
+                "Flower-Unclouded",
+                "Flower-Ideas Carried",
+            ].indexOf(name) !== -1
+        )
+            return 8;
+        return 4;
+    }
+
+    function getPrefix(name) {
+        if (name.indexOf("Flower") === 0) return "flower";
+        if (name.indexOf("Risk") === 0) return "risk";
+        if (name.indexOf("Bal") === 0) return "bal";
+        return "other";
+    }
+
+    function getExchangeResults(inputName) {
+        if (specialMappings[inputName]) return specialMappings[inputName];
+
+        var tier = getTier(inputName);
+        var pool = [];
+
+        var getBase = function (list) {
+            return list.filter(function (i) {
+                return inputOnly.indexOf(i) === -1;
+            });
+        };
+
+        if (tier === 12) {
+            pool = getBase(tier12Items);
+            pool = pool.concat(bridgeItems.from12to4);
+            pool = pool.concat(bridgeItems.from12to8);
+        } else if (tier === 8) {
+            pool = getBase(tier8Items);
+            pool = pool.concat(bridgeItems.from8to4);
+            pool = pool.concat(bridgeItems.from8to12);
+        } else {
+            pool = getBase(tier4Items);
+        }
+
+        pool = pool.filter(function (i) {
+            return i !== inputName;
+        });
+        // deduplicate and sort
+        var unique = [];
+        pool.forEach(function (item) {
+            if (unique.indexOf(item) === -1) unique.push(item);
+        });
+        return unique.sort();
+    }
+
+    // --- UI Rendering ---
+
+    var currentFilter = "all";
+    var currentSearch = "";
+
+    function initDashboard() {
+        renderInputGrids();
+        initInteractions();
+    }
+
+    function renderInputGrids() {
+        var allItems = tier12Items.concat(tier8Items).concat(tier4Items);
+        var grouped = { flower: [], risk: [], bal: [], other: [] };
+
+        allItems.forEach(function (name) {
+            grouped[getPrefix(name)].push(name);
+        });
+
+        ["flower", "risk", "bal", "other"].forEach(function (prefix) {
+            var container = document.getElementById("grid-" + prefix);
+            if (!container) return;
+            container.innerHTML = "";
+            grouped[prefix]
+                .sort(function (a, b) {
+                    var tierA = getTier(a);
+                    var tierB = getTier(b);
+                    if (tierA !== tierB) return tierB - tierA;
+                    return a.localeCompare(b);
+                })
+                .forEach(function (name) {
+                    var tier = getTier(name);
+                    var el = document.createElement("div");
+                    el.className = "input-item";
+                    el.setAttribute("data-name", name);
+                    el.setAttribute("data-tier", String(tier));
+                    el.setAttribute("data-prefix", prefix);
+
+                    el.innerHTML =
+                        '<div class="input-img-wrapper">' +
+                        '<img src="' +
+                        getImagePath(name) +
+                        '" alt="' +
+                        name +
+                        '" loading="lazy">' +
+                        "</div>" +
+                        '<div class="input-name">' +
+                        name +
+                        "</div>";
+
+                    el.addEventListener("click", function () {
+                        selectItem(name, el);
+                    });
+                    container.appendChild(el);
+                });
+        });
+    }
+
+    function selectItem(name, sourceEl) {
+        var allItems = document.querySelectorAll(".input-item");
+        for (var i = 0; i < allItems.length; i++) {
+            allItems[i].classList.remove("active");
+        }
+
+        if (!sourceEl) {
+            sourceEl = document.querySelector(
+                '.input-item[data-name="' + name + '"]',
+            );
+        }
+
+        if (sourceEl) {
+            sourceEl.classList.add("active");
+        }
+
+        var emptyState = document.getElementById("inspector-empty");
+        var activeState = document.getElementById("inspector-active");
+
+        if (emptyState) emptyState.classList.add("hidden");
+        if (activeState) activeState.classList.remove("hidden");
+
+        var tier = getTier(name);
+        var imgI = document.getElementById("insp-img");
+        var nameI = document.getElementById("insp-name");
+        var badgeI = document.getElementById("insp-badge");
+
+        if (imgI) imgI.src = getImagePath(name);
+        if (nameI) nameI.textContent = name;
+        if (badgeI) {
+            badgeI.textContent = tier + " Ingots";
+            badgeI.className = "badge badge-" + tier;
+        }
+
+        var results = getExchangeResults(name);
+        renderResults(results);
+    }
+
+    function renderResults(items) {
+        var grid = document.getElementById("result-grid");
+        if (!grid) return;
+
+        grid.innerHTML = "";
+        items.forEach(function (name) {
+            var el = document.createElement("div");
+            el.className = "result-item";
+
+            el.innerHTML =
+                '<div class="result-img-container">' +
+                '<img src="' +
+                getImagePath(name) +
+                '" alt="' +
+                name +
+                '">' +
+                "</div>" +
+                '<div class="result-name">' +
+                name +
+                "</div>";
+
+            el.addEventListener("click", function () {
+                selectItem(name, null);
+            });
+            grid.appendChild(el);
+        });
+    }
+
+    function applyFilters() {
+        var sections = document.querySelectorAll(".prefix-section");
+        var totalVisible = 0;
+
+        for (var s = 0; s < sections.length; s++) {
+            var section = sections[s];
+            var items = section.querySelectorAll(".input-item");
+            var sectionVisible = 0;
+
+            for (var j = 0; j < items.length; j++) {
+                var item = items[j];
+                var name = (item.getAttribute("data-name") || "").toLowerCase();
+                var tier = item.getAttribute("data-tier") || "";
+
+                var matchesTier =
+                    currentFilter === "all" || currentFilter === tier;
+                var matchesSearch = name.indexOf(currentSearch) !== -1;
+
+                if (matchesTier && matchesSearch) {
+                    item.classList.remove("hidden");
+                    sectionVisible++;
+                    totalVisible++;
+                } else {
+                    item.classList.add("hidden");
+                }
+            }
+
+            if (sectionVisible > 0) {
+                section.classList.remove("hidden");
+            } else {
+                section.classList.add("hidden");
+            }
+        }
+
+        var noRes = document.getElementById("no-results");
+        if (noRes) {
+            if (totalVisible > 0) {
+                noRes.classList.add("hidden");
+            } else {
+                noRes.classList.remove("hidden");
+            }
+        }
+    }
+
+    function initInteractions() {
+        var sInput = document.getElementById("tongbao-search");
+        if (sInput) {
+            sInput.addEventListener("input", function (e) {
+                currentSearch = e.target.value.toLowerCase();
+                applyFilters();
+            });
+        }
+
+        var chips = document.querySelectorAll(".chip");
+        for (var i = 0; i < chips.length; i++) {
+            chips[i].addEventListener("click", function () {
+                for (var j = 0; j < chips.length; j++) {
+                    chips[j].classList.remove("active");
+                }
+                this.classList.add("active");
+                currentFilter = this.getAttribute("data-filter") || "all";
+                applyFilters();
+            });
+        }
+    }
+
+    // Run when DOM is ready
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initDashboard);
+    } else {
+        initDashboard();
+    }
+</script>
