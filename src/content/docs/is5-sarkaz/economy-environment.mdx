@@ -1,5 +1,5 @@
 ---
-title: Economy Environment
+title: IS5 General Information
 description: Stages rewards, Voucher environment, and more.
 ---
 <div class="back-button-container">
@@ -106,7 +106,9 @@ Rogue Trader nodes have a total of 10 slots (9 in F1). F1 shops contain:
 * 4-6 Collectibles (Small chance of exhanging collectible slots for a 2nd/3rd support kit)
 
 Notes:
-* Class squads trade a relic slot for a voucher slot in F1
+* In F1, class squads trade a relic slot for a voucher guaranteed to be in-class
+* Vouchers can't be duplicated (i.e. it is not possible to have 2 sniper vouchers, but sniper and temp sniper or sniper/medic is)
+* In F1, non-class squads can't get pre-promoted vouchers
 * F2+ shops gain an additional slot (collectible slot for class squad and voucher slot for non class squads)
 * F2+ shops are not guaranteed to have support kits, this slot is replaced by another collectible
 
@@ -120,6 +122,16 @@ F2+ shop example (non-class squad):
   ![F2 shop example](/guides/is5-sarkaz/economy-environment/f2-shop.png)
 </div>
 
+Out of 342 trials of F1 sniper/medic shops, including before and after refreshing, the following rates were found for in-class vouchers per page:
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+| Medic | Temp Medic | Sniper | Temp Sniper | Sniper/Medic | Sniper/Medic Promo |
+|:-----:|:----------:|:------:|:-----------:|:------------:|:------------------:|
+| 36.14% | 12.04%    | 42.47% | 11.14%      | 17.47%       | 5.72%              |
+</div>
+
+This results in:
+* 60.23% chance of obtaining any sniper voucher in 1 page
+* 84.18% chance of obtaining any sniper voucher in 2 pages
 
 ## False to Truth
 Red boxes represent the tier of Lingerer combined, i.e. 1+1, 2+2, 3+3, while the last one represents the Eureka pool.
@@ -129,6 +141,15 @@ Red boxes represent the tier of Lingerer combined, i.e. 1+1, 2+2, 3+3, while the
 
 
 ## Node Generation
+When refreshing a node, what type of node it is in the first place, can impact the refreshing chances, as each node can be weighted differently.
+Next we have a table that presents how nodes are weighted throughout different floors and given all Fated Encounter relics.
+
+In order to interpret how to read the next table, understanding how the game rolls for a node refresh is important.
+Suppose the following example: we are in F1, we have Talons of Hatred and we are about to refresh an encounter; the game then follows the next set of rules:
+* Given Talons of Hatred and F1, we have the pool of weighted options: Emergency: 64.85%, Regular combat: 19.53%, and Encounter: 15.62%
+* A first roll happens between any of these 3 options (Emergency, Regular combat, Encounter), each with its assigned weight.
+* A second roll happens, excluding the node rolled in the previous step, that is, if we rolled an Encounter, this second node can only be either an Emergency or a Regular combat.
+* The game then checks what type of node the original node is (in this case it is an Encounter). If the first roll resulted in an Encounter, the final refresh results in the second node rolled, otherwise it stays as the first node rolled in the first step.
 
 <div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
   ![Node refreshing rates](/guides/is5-sarkaz/economy-environment/Odds_of_Refreshing_Node_1.png)
