@@ -436,9 +436,21 @@
     const protractionMultiplier = 1 - (protractionStacks * 0.05); // Additive: 2 stacks = 1 - 0.10 = 0.90
 
     function getTileModifier(pos, tileMods) {
-      const tile = Math.floor(pos + 0.5);
-      return tileMods[tile] ?? 1.0;
+    const tileNumber = Math.floor(pos + 0.5);
+
+    for (const tile in tileMods) {
+      const tileNum = Number(tile);
+      const lowerLimit = -0.5 + tileNum - 0.125;
+      const upperLimit = -0.5 + tileNum + 1.125;
+
+      if (lowerLimit <= pos && pos < upperLimit) {
+        return tileMods[tile] ?? 1.0;
+      }
     }
+
+    return tileMods[tileNumber] ?? 1.0;
+  }
+
 
     function getEffectiveMS(frameNumber, operatorLoadedFrame, MS_DEBUFFS) {
       if (operatorLoadedFrame !== null && frameNumber >= operatorLoadedFrame) {
