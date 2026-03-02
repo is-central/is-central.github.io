@@ -4,6 +4,7 @@ description: Calculate precise timing for boat jumps in the Qui'lon boss fight.
 ---
 
 import BoatJumpCalculator from '../../../components/BoatJumpCalculator.astro';
+import StrategySection from '/src/components/StrategySection.astro';
 
 <div class="back-button-container">
   <a href="/is5-sarkaz/overview/" class="back-button">
@@ -12,6 +13,7 @@ import BoatJumpCalculator from '../../../components/BoatJumpCalculator.astro';
   </a>
 </div>
 
+<StrategySection title="How to use instructions" author="" defaultOpen={false}>
 ## Boat Jump Calculator
 
 This calculator helps you determine the precise timing for boat jumps during the Qui'lon boss fight. It automates the calculation steps after you've noted down the initial timer value.
@@ -58,6 +60,7 @@ As a visual queue you can use the boat information that appears a frame early if
 10. **After reaching the jump frame**, simply use Mon3tr's skill. There is a 3 frames window to use the skill.
 
 For a detailed analysis of how the boat jump works, check out the <a href="/is5-sarkaz/stages/the-dharma-sermon" target="_blank" rel="noopener noreferrer">Mon3tr boat jump</a> strategy.
+</StrategySection>
 
 <BoatJumpCalculator />
 
