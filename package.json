@@ -10,8 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.35.2",
-    "astro": "^5.16.5",
+    "@astrojs/starlight": "^0.37.6",
+    "astro": "^5.17.2",
     "jsdom": "^26.1.0",
     "marked": "^17.0.2",
     "rehype-katex": "^7.0.1",
