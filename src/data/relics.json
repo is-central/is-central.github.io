@@ -6,29 +6,33 @@
     "versions": {
       "IS2": {
         "name": "Old Fan",
+        "idx": 224,
         "cost": 16,
-        "effect": { "type": "unconditional", "label": "Unconditional" },
+        "effect": { "type": "external", "label": "External" },
         "sources": ["Wish Node"],
         "description": "All Operators gain +10% ATK for every different type of Operator in the squad."
       },
       "IS3": {
         "name": "Old Fan",
+        "idx": 101,
         "cost": 16,
-        "effect": { "type": "unconditional", "label": "Unconditional" },
+        "effect": { "type": "external", "label": "External" },
         "sources": [],
         "description": "All Operators gain +10% ATK for every different type of Operator in the squad."
       },
       "IS4": {
         "name": "Old Fan",
+        "idx": 112,
         "cost": 16,
-        "effect": { "type": "unconditional", "label": "Unconditional" },
+        "effect": { "type": "external", "label": "External" },
         "sources": ["Boss pool"],
         "description": "All Operators gain +10% ATK for every different type of Operator in the squad."
       },
       "IS5": {
         "name": "Old Fan",
+        "idx": 119,
         "cost": 16,
-        "effect": { "type": "unconditional", "label": "Unconditional" },
+        "effect": { "type": "external", "label": "External" },
         "sources": ["Boss pool", "Rogue Trader - Rare Collectibles", "False to Truth - Eureka"],
         "description": "All Operators gain +10% ATK for every different type of Operator in the squad."
       }
@@ -41,6 +45,7 @@
     "versions": {
       "IS2": {
         "name": "Golden Chalice",
+        "idx": 167,
         "cost": 16,
         "effect": null,
         "sources": [],
@@ -55,6 +60,7 @@
       },
       "IS5": {
         "name": "Golden Chalice",
+        "idx": 192,
         "cost": 16,
         "effect": null,
         "sources": ["Rogue Trader - Rare Collectibles", "False to Truth - Eureka", "Lamp of Wishes - 150 Ingots"],
@@ -76,6 +82,7 @@
     "versions": {
       "IS2": {
         "name": "'Civilight Eterna'",
+        "idx": 171,
         "cost": 16,
         "effect": null,
         "sources": [],
@@ -97,6 +104,7 @@
       },
       "IS5": {
         "name": "'Civilight Eterna'",
+        "idx": 266,
         "cost": 16,
         "effect": null,
         "sources": ["Rogue Trader", "False to Truth - 3+3"],
@@ -118,30 +126,32 @@
     "versions": {
       "IS2": {
         "name": "Hot Water Kettle",
+        "idx": 1,
         "cost": null,
         "effect": null,
-        "sources": [],
+        "sources": ["F3 buff"],
         "description": "Immediately gain +2 Life Points and +1 Hope.\nIf the game runs out of collectibles to give you, it starts giving you Hot Water Kettles."
       },
       "IS3": {
         "name": "Hot Water Kettle",
         "cost": null,
         "effect": null,
-        "sources": [],
+        "sources": ["F3 buff"],
         "description": "Immediately gain +1 Max Life Point and +1 Hope.\nIf the game runs out of collectibles to give you, it starts giving you Hot Water Kettles."
       },
       "IS4": {
         "name": "Hot Water Kettle",
         "cost": null,
         "effect": null,
-        "sources": [],
+        "sources": ["F3 buff"],
         "description": "Immediately gain +1 Max Life Point and +1 Hope.\nIf the game runs out of collectibles to give you, it starts giving you Hot Water Kettles."
       },
       "IS5": {
         "name": "Hot Water Kettle",
+        "idx": 35,
         "cost": null,
         "effect": null,
-        "sources": [],
+        "sources": ["F3 buff"],
         "description": "Immediately gain +1 Max Life Point and +1 Hope.\nIf the game runs out of collectibles to give you, it starts giving you Hot Water Kettles."
       }
     }
@@ -153,6 +163,7 @@
     "versions": {
       "IS2": {
         "name": "Support Replenishment Station",
+        "idx": 0.1,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -174,7 +185,8 @@
       },
       "IS5": {
         "name": "Support Replenishment Station",
-        "cost": null,
+        "idx": 241,
+        "cost": 8,
         "effect": null,
         "sources": [],
         "description": "Bring a Portable Supply Station along to each battle.\nThe SP regeneration effect works on a lot of non-operator allied units with SP bars."
@@ -188,6 +200,7 @@
     "versions": {
       "IS2": {
         "name": "Support Landmine Set",
+        "idx": 0.2,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -209,7 +222,8 @@
       },
       "IS5": {
         "name": "Support Landmine Set",
-        "cost": null,
+        "idx": 242,
+        "cost": 8,
         "effect": null,
         "sources": [],
         "description": "Bring 3 Interference Mines along to each battle.\nThe mines take 25 seconds to arm. The mine explosion radius is 0.55 tiles.\nThe description states that the explosion deals 2000 True damage, but without any other damage amplification effects it actually does 3000, since the +50% damage taken effect is applied first."
@@ -223,6 +237,7 @@
     "versions": {
       "IS2": {
         "name": "Support Mr. Boom",
+        "idx": 0.3,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -244,7 +259,8 @@
       },
       "IS5": {
         "name": "Support Mr. Boom",
-        "cost": null,
+        "idx": 243,
+        "cost": 8,
         "effect": null,
         "sources": [],
         "description": "Bring a Mr. Boom along to each battle.\nThe stun bomb can hit aerial units. The stun bomb takes 1.5 seconds to detonate."
@@ -258,6 +274,7 @@
     "versions": {
       "IS2": {
         "name": "Support Escape Crane",
+        "idx": 0.4,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -279,7 +296,8 @@
       },
       "IS5": {
         "name": "Support Escape Crane",
-        "cost": null,
+        "idx": 244,
+        "cost": 8,
         "effect": null,
         "sources": [],
         "description": "Bring a Snowsant's Safe Escape Crane along to each battle.\nThe crane reduces the operator's redeployment time by 80%. Unusually, this is multiplicative with other redeployment reduction effects.\nUsing the escape crane on an operator will automatically grant you the DP you'd get for retreating the operator.\nThe escape crane effect triggers 1 second after it is placed.\nUsing the escape crane in IS5 Ending 1 lets you evade getting the operator put into one of Fremont's coffins."
@@ -289,15 +307,8 @@
   {
     "id": "support-riot-pile",
     "image": "rogue_4_active_tool_5.png",
-    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "themes": ["IS3", "IS4", "IS5"],
     "versions": {
-      "IS2": {
-        "name": "Support Riot Pile",
-        "cost": null,
-        "effect": null,
-        "sources": [],
-        "description": "Bring 2 Riot Piles along to each battle.\nThe roadblock has 4 block, 3000 HP and 100 def (before modifiers), and is immune to stun/freeze/sleep. Unlike roadblocks, it doesn't actually reroute enemies, it just acts like a blocker."
-      },
       "IS3": {
         "name": "Support Riot Pile",
         "cost": null,
@@ -314,7 +325,8 @@
       },
       "IS5": {
         "name": "Support Riot Pile",
-        "cost": null,
+        "idx": 245,
+        "cost": 8,
         "effect": null,
         "sources": [],
         "description": "Bring 2 Riot Piles along to each battle.\nThe roadblock has 4 block, 3000 HP and 100 def (before modifiers), and is immune to stun/freeze/sleep. Unlike roadblocks, it doesn't actually reroute enemies, it just acts like a blocker."
@@ -342,6 +354,7 @@
     "versions": {
       "IS2": {
         "name": "Support Gas Tanks",
+        "idx": 0.6,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -356,6 +369,7 @@
     "versions": {
       "IS2": {
         "name": "Support Fog Machine",
+        "idx": 0.5,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -377,7 +391,8 @@
       },
       "IS5": {
         "name": "Support Fog Machine",
-        "cost": null,
+        "idx": 246,
+        "cost": 8,
         "effect": null,
         "sources": [],
         "description": "Bring a Broken Fog Machine along to each battle.\nIt takes 5 seconds to arm and reduces movement speed by 60%."
@@ -389,10 +404,10 @@
     "image": "rogue_4_relic_legacy_45.png",
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
-      "IS2": { "name": "Blunt Claws - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Vanguard Operator without consuming Hope." },
-      "IS3": { "name": "Blunt Claws - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Vanguard Operator without consuming Hope." },
-      "IS4": { "name": "Blunt Claws - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Vanguard Operator without consuming Hope." },
-      "IS5": { "name": "Blunt Claws - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Vanguard Operator without consuming Hope." }
+      "IS2": { "name": "Blunt Claws - Training", "idx": 17, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Vanguard Operator without consuming Hope." },
+      "IS3": { "name": "Blunt Claws - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Vanguard Operator without consuming Hope." },
+      "IS4": { "name": "Blunt Claws - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Vanguard Operator without consuming Hope." },
+      "IS5": { "name": "Blunt Claws - Training", "idx": 40, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Vanguard Operator without consuming Hope." }
     }
   },
   {
@@ -400,10 +415,10 @@
     "image": "rogue_4_relic_legacy_46.png",
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
-      "IS2": { "name": "Bend Spears - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Guard Operator without consuming Hope." },
-      "IS3": { "name": "Bend Spears - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Guard Operator without consuming Hope." },
-      "IS4": { "name": "Bend Spears - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Guard Operator without consuming Hope." },
-      "IS5": { "name": "Bend Spears - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Guard Operator without consuming Hope." }
+      "IS2": { "name": "Bend Spears - Training", "idx": 18, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Guard Operator without consuming Hope." },
+      "IS3": { "name": "Bend Spears - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Guard Operator without consuming Hope." },
+      "IS4": { "name": "Bend Spears - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Guard Operator without consuming Hope." },
+      "IS5": { "name": "Bend Spears - Training", "idx": 41, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Guard Operator without consuming Hope." }
     }
   },
   {
@@ -411,10 +426,10 @@
     "image": "rogue_4_relic_legacy_47.png",
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
-      "IS2": { "name": "Iron Guard - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Defender Operator without consuming Hope." },
-      "IS3": { "name": "Iron Guard - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Defender Operator without consuming Hope." },
-      "IS4": { "name": "Iron Guard - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Defender Operator without consuming Hope." },
-      "IS5": { "name": "Iron Guard - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Defender Operator without consuming Hope." }
+      "IS2": { "name": "Iron Guard - Training", "idx": 19, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Defender Operator without consuming Hope." },
+      "IS3": { "name": "Iron Guard - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Defender Operator without consuming Hope." },
+      "IS4": { "name": "Iron Guard - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Defender Operator without consuming Hope." },
+      "IS5": { "name": "Iron Guard - Training", "idx": 42, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Defender Operator without consuming Hope." }
     }
   },
   {
@@ -422,10 +437,10 @@
     "image": "rogue_4_relic_legacy_48.png",
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
-      "IS2": { "name": "Fatal Bolts - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Sniper Operator without consuming Hope." },
-      "IS3": { "name": "Fatal Bolts - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Sniper Operator without consuming Hope." },
-      "IS4": { "name": "Fatal Bolts - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Sniper Operator without consuming Hope." },
-      "IS5": { "name": "Fatal Bolts - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Sniper Operator without consuming Hope." }
+      "IS2": { "name": "Fatal Bolts - Training", "idx": 20, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Sniper Operator without consuming Hope." },
+      "IS3": { "name": "Fatal Bolts - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Sniper Operator without consuming Hope." },
+      "IS4": { "name": "Fatal Bolts - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Sniper Operator without consuming Hope." },
+      "IS5": { "name": "Fatal Bolts - Training", "idx": 43, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Sniper Operator without consuming Hope." }
     }
   },
   {
@@ -433,10 +448,10 @@
     "image": "rogue_4_relic_legacy_49.png",
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
-      "IS2": { "name": "Broken Wand - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Caster Operator without consuming Hope." },
-      "IS3": { "name": "Broken Wand - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Caster Operator without consuming Hope." },
-      "IS4": { "name": "Broken Wand - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Caster Operator without consuming Hope." },
-      "IS5": { "name": "Broken Wand - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Caster Operator without consuming Hope." }
+      "IS2": { "name": "Broken Wand - Training", "idx": 21, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Caster Operator without consuming Hope." },
+      "IS3": { "name": "Broken Wand - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Caster Operator without consuming Hope." },
+      "IS4": { "name": "Broken Wand - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Caster Operator without consuming Hope." },
+      "IS5": { "name": "Broken Wand - Training", "idx": 44, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Caster Operator without consuming Hope." }
     }
   },
   {
@@ -444,10 +459,10 @@
     "image": "rogue_4_relic_legacy_50.png",
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
-      "IS2": { "name": "Stalwart Aid - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Supporter Operator without consuming Hope." },
-      "IS3": { "name": "Stalwart Aid - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Supporter Operator without consuming Hope." },
-      "IS4": { "name": "Stalwart Aid - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Supporter Operator without consuming Hope." },
-      "IS5": { "name": "Stalwart Aid - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Supporter Operator without consuming Hope." }
+      "IS2": { "name": "Stalwart Aid - Training", "idx": 22, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Supporter Operator without consuming Hope." },
+      "IS3": { "name": "Stalwart Aid - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Supporter Operator without consuming Hope." },
+      "IS4": { "name": "Stalwart Aid - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Supporter Operator without consuming Hope." },
+      "IS5": { "name": "Stalwart Aid - Training", "idx": 45, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Supporter Operator without consuming Hope." }
     }
   },
   {
@@ -455,10 +470,10 @@
     "image": "rogue_4_relic_legacy_51.png",
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
-      "IS2": { "name": "Healer's Path - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Medic Operator without consuming Hope." },
-      "IS3": { "name": "Healer's Path - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Medic Operator without consuming Hope." },
-      "IS4": { "name": "Healer's Path - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Medic Operator without consuming Hope." },
-      "IS5": { "name": "Healer's Path - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Medic Operator without consuming Hope." }
+      "IS2": { "name": "Healer's Path - Training", "idx": 23, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Medic Operator without consuming Hope." },
+      "IS3": { "name": "Healer's Path - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Medic Operator without consuming Hope." },
+      "IS4": { "name": "Healer's Path - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Medic Operator without consuming Hope." },
+      "IS5": { "name": "Healer's Path - Training", "idx": 46, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Medic Operator without consuming Hope." }
     }
   },
   {
@@ -466,10 +481,10 @@
     "image": "rogue_4_relic_legacy_52.png",
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
-      "IS2": { "name": "Rusted Blade - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Specialist Operator without consuming Hope." },
-      "IS3": { "name": "Rusted Blade - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Specialist Operator without consuming Hope." },
-      "IS4": { "name": "Rusted Blade - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Specialist Operator without consuming Hope." },
-      "IS5": { "name": "Rusted Blade - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Specialist Operator without consuming Hope." }
+      "IS2": { "name": "Rusted Blade - Training", "idx": 24, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Specialist Operator without consuming Hope." },
+      "IS3": { "name": "Rusted Blade - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Specialist Operator without consuming Hope." },
+      "IS4": { "name": "Rusted Blade - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Specialist Operator without consuming Hope." },
+      "IS5": { "name": "Rusted Blade - Training", "idx": 47, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Specialist Operator without consuming Hope." }
     }
   },
   {
@@ -479,6 +494,7 @@
     "versions": {
       "IS2": {
         "name": "Blunt Claws - Inspiration",
+        "idx": 96,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -493,6 +509,7 @@
     "versions": {
       "IS2": {
         "name": "Bend Spears - Army of One",
+        "idx": 101,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -514,6 +531,7 @@
     "versions": {
       "IS2": {
         "name": "Bend Spears - Bloodbath",
+        "idx": 100,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -535,6 +553,7 @@
       },
       "IS5": {
         "name": "Bend Spears - Bloodbath",
+        "idx": 150,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -549,6 +568,7 @@
     "versions": {
       "IS2": {
         "name": "Iron Guard - Impenetrable",
+        "idx": 107,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -570,6 +590,7 @@
       },
       "IS5": {
         "name": "Iron Guard - Impenetrable",
+        "idx": 155,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -584,6 +605,7 @@
     "versions": {
       "IS2": {
         "name": "Stalwart Aid - Counter-Arts",
+        "idx": 122,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -605,6 +627,7 @@
       },
       "IS5": {
         "name": "Stalwart Aid - Counter-Arts",
+        "idx": 167,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -633,6 +656,7 @@
       },
       "IS5": {
         "name": "Stalwart Aid - Assistance",
+        "idx": 166,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -647,6 +671,7 @@
     "versions": {
       "IS2": {
         "name": "Rusted Blade - No Man's Land",
+        "idx": 131,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -668,6 +693,7 @@
       },
       "IS5": {
         "name": "Rusted Blade - No Man's Land",
+        "idx": 174,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -682,6 +708,7 @@
     "versions": {
       "IS2": {
         "name": "Rusted Blade - Overwhelm",
+        "idx": 132,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -717,6 +744,7 @@
     "versions": {
       "IS2": {
         "name": "Rusted Iron Hammer",
+        "idx": 35,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -738,6 +766,7 @@
       },
       "IS5": {
         "name": "Rusted Iron Hammer",
+        "idx": 188,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -752,6 +781,7 @@
     "versions": {
       "IS2": {
         "name": "Proof of Friendship",
+        "idx": 199,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -829,6 +859,7 @@
       },
       "IS5": {
         "name": "Knight Lance Pro",
+        "idx": 200,
         "cost": null,
         "effect": null,
         "sources": ["False to Truth - 1+1", "Combats/Animals", "Wish Node"],
@@ -850,6 +881,7 @@
       },
       "IS5": {
         "name": "Cannot's Mark",
+        "idx": 194,
         "cost": null,
         "effect": null,
         "sources": ["False to Truth - 1+1", "Combats/Animals", "Wish Node"],
@@ -864,6 +896,7 @@
     "versions": {
       "IS2": {
         "name": "Regional Action Plan",
+        "idx": 25,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -881,7 +914,7 @@
         "cost": null,
         "effect": null,
         "sources": [],
-        "description": "4-star Operators cost -2 Hope to recruit.\nThe Tundra and Polar variants of Secret HR Letter have a 50% chance of making one 4-star pre-promoted on each voucher."
+        "description": "4-star Operators cost -2 Hope to recruit.\nThe Tundra (D6+) and Polar (D9+) variants of Secret HR Letter have a 50% chance of making one 4-star pre-promoted on each voucher."
       }
     }
   },
@@ -892,6 +925,7 @@
     "versions": {
       "IS2": {
         "name": "Comprehensive Operation File",
+        "idx": 26,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -909,7 +943,7 @@
         "cost": null,
         "effect": null,
         "sources": [],
-        "description": "5-star Operators cost -2 Hope to recruit.\nThe alterform variants additionally give some hope, and the Tundra and Polar variants of Secret HR Letter have a 50% chance of making one 5-star pre-promoted on each voucher."
+        "description": "5-star Operators cost -2 Hope to recruit.\nThe alterform variants (D3+) additionally give some hope, and the Tundra (D6+) and Polar (D6+) variants of Secret HR Letter have a 50% chance of making one 5-star pre-promoted on each voucher."
       }
     }
   },
@@ -920,6 +954,7 @@
     "versions": {
       "IS2": {
         "name": "Secret HR Letter",
+        "idx": 27,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -937,10 +972,11 @@
         "cost": null,
         "effect": null,
         "sources": [],
-        "description": "6-star Operators cost -2 Hope to recruit.\nThe alterform variants additionally give some hope, and the Tundra and Polar variants have a 50% chance of making one 6-star pre-promoted on each voucher."
+        "description": "6-star Operators cost -2 Hope to recruit.\nThe alterform variants (D3+) additionally give some hope, and the Tundra (D6+) and Polar (D9+) variants have a 50% chance of making one 6-star pre-promoted on each voucher."
       },
       "IS5": {
         "name": "Secret HR Letter",
+        "idx": 203,
         "cost": null,
         "effect": null,
         "sources": ["Encounter: Decisions in Despair (F3-F6"],
@@ -972,7 +1008,7 @@
         "cost": null,
         "effect": null,
         "sources": [],
-        "description": "Battles have a chance to drop an extra 1 Foldartal.\nThe chance of getting an additional foldartal drop from Slytooth is 15%."
+        "description": "The chance of getting an additional foldartal drop from Slytooth is 15%.\nThis is independent of the 40%/80% chance of foldartal drop you get from clearing a normal/emergency combat."
       }
     }
   },
@@ -1004,6 +1040,7 @@
       },
       "IS5": {
         "name": "Ancient Tree Fruit",
+        "idx": 196,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -1018,6 +1055,7 @@
     "versions": {
       "IS5": {
         "name": "Herr Hraaselsuher",
+        "idx": 221,
         "cost": 8,
         "effect": null,
         "sources": ["Rogue Trader", "False to Truth - 1+1", "Combats/Animals", "Wish Nodes", "Collection Squad"],
@@ -1032,6 +1070,7 @@
     "versions": {
       "IS5": {
         "name": "'Song to Make A Tenacious Mind'",
+        "idx": 222,
         "cost": 12,
         "effect": null,
         "sources": ["Rogue Trader", "False to Truth - 3+3", "Combats/Animals", "Wish Nodes"],
@@ -1046,10 +1085,11 @@
     "versions": {
       "IS5": {
         "name": "Anchor For Five Seconds Ago",
+        "idx": 223,
         "cost": 12,
         "effect": null,
         "sources": ["Rogue Trader", "False to Truth - 2+2", "Combats/Animals", "Wish Nodes"],
-        "description": "Gain 1 extra Inspirer after the battle if you used an Inspirer as the battle started.\nWorks on every stage that gives a reward, including face-offs."
+        "description": "Gain 1 extra Inspirer after the battle if you used an Inspirer as the battle started.\nWorks on every stage that gives a reward, including face-offs.\nThe Inspirer pool includes: Mercenary, Civil War, Envenom, Invasion, Reclaim, Slumber, Demolition, Machine, Words, Lost, Catastrophe, Witchcraft, Grand Wish, Assembly, Industry, Rise and Fall, Torment, Flames, Excavate, Wall, Furnace, Oathbreak, March, Relocation."
       }
     }
   },
@@ -1060,6 +1100,7 @@
     "versions": {
       "IS5": {
         "name": "Nameless Totem",
+        "idx": 55,
         "cost": 12,
         "effect": null,
         "sources": ["Rogue Trader"],
@@ -1074,6 +1115,7 @@
     "versions": {
       "IS5": {
         "name": "Burdenherd Bell",
+        "idx": 230,
         "cost": null,
         "effect": null,
         "sources": ["Encounter: Burdenbeast Traveler (F2-F4)"],
@@ -1088,6 +1130,7 @@
     "versions": {
       "IS5": {
         "name": "Masterless Memories",
+        "idx": 220,
         "cost": null,
         "effect": null,
         "sources": ["Combats"],
@@ -1102,7 +1145,8 @@
     "versions": {
       "IS5": {
         "name": "Scales of Avarice",
-        "cost": null,
+        "idx": 225,
+        "cost": 8,
         "effect": null,
         "sources": ["Rogue Trader", "False to Truth - 1+1", "Combats/Animals", "Wish Nodes", "Ingots Squad"],
         "description": "Gain +3 Originium Ingots for each non-combat node entered when Total Mental Toil exceeds 20.\nIngots are received when stepping into the node."
@@ -1116,6 +1160,7 @@
     "versions": {
       "IS5": {
         "name": "Eye of Fortune",
+        "idx": 295,
         "cost": null,
         "effect": null,
         "sources": ["False to Truth - 1+1", "Combats/Animals", "Wish Nodes"],
@@ -1130,6 +1175,7 @@
     "versions": {
       "IS5": {
         "name": "Baby Djall",
+        "idx": 294,
         "cost": 8,
         "effect": null,
         "sources": ["Rogue Trader", "Combats/Animals", "Wish Nodes"],
@@ -1144,6 +1190,7 @@
     "versions": {
       "IS5": {
         "name": "Hibernating Kin",
+        "idx": 26,
         "cost": 16,
         "effect": null,
         "sources": ["Rogue Trader", "False to Truth - 3+3", "Combats/Animals", "Wish Nodes"],
@@ -1158,6 +1205,7 @@
     "versions": {
       "IS5": {
         "name": "Rhoder's Gate",
+        "idx": 290,
         "cost": null,
         "effect": null,
         "sources": ["Encounter: Plausible But False (F1-F4)"],
@@ -1170,10 +1218,10 @@
     "image": "rogue_4_relic_legacy_86.png",
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
-      "IS2": { "name": "Live Rose", "cost": null, "effect": null, "sources": [], "description": "All allied units have +20% healing effectiveness." },
-      "IS3": { "name": "Live Rose", "cost": null, "effect": null, "sources": [], "description": "All allied units have +20% healing effectiveness." },
-      "IS4": { "name": "Live Rose", "cost": null, "effect": null, "sources": [], "description": "All allied units have +20% healing effectiveness." },
-      "IS5": { "name": "Live Rose", "cost": 8, "effect": null, "sources": [], "description": "All allied units have +20% healing effectiveness." }
+      "IS2": { "name": "Live Rose", "idx": 73, "cost": null, "effect": null, "sources": [], "description": "All allied units have +20% healing effectiveness.\n'Friendly units restore +X% HP' effects do improve the output of regeneration effects like the Bard trait." },
+      "IS3": { "name": "Live Rose", "cost": null, "effect": null, "sources": [], "description": "All allied units have +20% healing effectiveness.\n'Friendly units restore +X% HP' effects do improve the output of regeneration effects like the Bard trait." },
+      "IS4": { "name": "Live Rose", "cost": null, "effect": null, "sources": [], "description": "All allied units have +20% healing effectiveness.\n'Friendly units restore +X% HP' effects do improve the output of regeneration effects like the Bard trait." },
+      "IS5": { "name": "Live Rose", "idx": 94, "cost": 8, "effect": null, "sources": [], "description": "All allied units have +20% healing effectiveness.\n'Friendly units restore +X% HP' effects do improve the output of regeneration effects like the Bard trait." }
     }
   },
   {
@@ -1181,10 +1229,10 @@
     "image": "rogue_4_relic_legacy_87.png",
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
-      "IS2": { "name": "White Flower Crown", "cost": null, "effect": null, "sources": [], "description": "All allied units have +30% healing effectiveness." },
-      "IS3": { "name": "White Flower Crown", "cost": null, "effect": null, "sources": [], "description": "All allied units have +30% healing effectiveness." },
-      "IS4": { "name": "White Flower Crown", "cost": null, "effect": null, "sources": [], "description": "All allied units have +30% healing effectiveness." },
-      "IS5": { "name": "White Flower Crown", "cost": 12, "effect": null, "sources": [], "description": "All allied units have +30% healing effectiveness." }
+      "IS2": { "name": "White Flower Crown", "idx": 74, "cost": null, "effect": null, "sources": [], "description": "All allied units have +30% healing effectiveness.\n'Friendly units restore +X% HP' effects do improve the output of regeneration effects like the Bard trait." },
+      "IS3": { "name": "White Flower Crown", "cost": null, "effect": null, "sources": [], "description": "All allied units have +30% healing effectiveness.\n'Friendly units restore +X% HP' effects do improve the output of regeneration effects like the Bard trait." },
+      "IS4": { "name": "White Flower Crown", "cost": null, "effect": null, "sources": [], "description": "All allied units have +30% healing effectiveness.\n'Friendly units restore +X% HP' effects do improve the output of regeneration effects like the Bard trait." },
+      "IS5": { "name": "White Flower Crown", "idx": 95, "cost": 12, "effect": null, "sources": [], "description": "All allied units have +30% healing effectiveness.\n'Friendly units restore +X% HP' effects do improve the output of regeneration effects like the Bard trait." }
     }
   },
   {
@@ -1192,9 +1240,9 @@
     "image": "rogue_4_relic_legacy_190.png",
     "themes": ["IS2", "IS3", "IS5"],
     "versions": {
-      "IS2": { "name": "Surging Feast", "cost": null, "effect": null, "sources": [], "description": "All allied units receive +30% healing effectiveness and take -30% Elemental Injury." },
-      "IS3": { "name": "Surging Feast", "cost": null, "effect": null, "sources": [], "description": "All allied units receive +30% healing effectiveness and take -30% Elemental Injury." },
-      "IS5": { "name": "Surging Feast", "cost": null, "effect": null, "sources": [], "description": "All allied units receive +30% healing effectiveness and take -30% Elemental Injury." }
+      "IS2": { "name": "Surging Feast", "idx": 213.5, "cost": null, "effect": null, "sources": [], "description": "All allied units receive +30% healing effectiveness and take -30% Elemental Injury.\n'Friendly units restore +X% HP' effects do improve the output of regeneration effects like the Bard trait." },
+      "IS3": { "name": "Surging Feast", "cost": null, "effect": null, "sources": [], "description": "All allied units receive +30% healing effectiveness and take -30% Elemental Injury.\n'Friendly units restore +X% HP' effects do improve the output of regeneration effects like the Bard trait." },
+      "IS5": { "name": "Surging Feast", "idx": 289, "cost": null, "effect": null, "sources": [], "description": "All allied units receive +30% healing effectiveness and take -30% Elemental Injury.\n'Friendly units restore +X% HP' effects do improve the output of regeneration effects like the Bard trait." }
     }
   },
   {
@@ -1202,7 +1250,7 @@
     "image": "rogue_1_relic_n03.png",
     "themes": ["IS2"],
     "versions": {
-      "IS2": { "name": "Today's Menu", "cost": null, "effect": null, "sources": [], "description": "All allied units have +40% healing effectiveness." }
+      "IS2": { "name": "Today's Menu", "idx": 216, "cost": null, "effect": null, "sources": [], "description": "All allied units have +40% healing effectiveness.\n'Friendly units restore +X% HP' effects do improve the output of regeneration effects like the Bard trait." }
     }
   },
   {
@@ -1210,10 +1258,10 @@
     "image": "rogue_4_relic_legacy_128.png",
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
-      "IS2": { "name": "Ancient Gaulish Silver Coin", "cost": null, "effect": null, "sources": [], "description": "All Operators start with +6 SP." },
+      "IS2": { "name": "Ancient Gaulish Silver Coin", "idx": 149, "cost": null, "effect": null, "sources": [], "description": "All Operators start with +6 SP." },
       "IS3": { "name": "Ancient Gaulish Silver Coin", "cost": null, "effect": null, "sources": [], "description": "All Operators start with +6 SP." },
       "IS4": { "name": "Ancient Gaulish Silver Coin", "cost": null, "effect": null, "sources": [], "description": "All Operators start with +6 SP." },
-      "IS5": { "name": "Ancient Gaulish Silver Coin", "cost": 8, "effect": null, "sources": ["Rogue Trader", "False to Truth - 2+2", "Combats/Animals", "Wish Nodes"], "description": "All Operators start with +6 SP." }
+      "IS5": { "name": "Ancient Gaulish Silver Coin", "idx": 105, "cost": 8, "effect": null, "sources": ["Rogue Trader", "False to Truth - 2+2", "Combats/Animals", "Wish Nodes"], "description": "All Operators start with +6 SP." }
     }
   },
   {
@@ -1221,10 +1269,10 @@
     "image": "rogue_4_relic_legacy_129.png",
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
-      "IS2": { "name": "Bank of Gaul Check", "cost": null, "effect": null, "sources": [], "description": "All Operators start with +12 SP." },
+      "IS2": { "name": "Bank of Gaul Check", "idx": 151, "cost": null, "effect": null, "sources": [], "description": "All Operators start with +12 SP." },
       "IS3": { "name": "Bank of Gaul Check", "cost": null, "effect": null, "sources": [], "description": "All Operators start with +12 SP." },
       "IS4": { "name": "Bank of Gaul Check", "cost": null, "effect": null, "sources": [], "description": "All Operators start with +12 SP." },
-      "IS5": { "name": "Bank of Gaul Check", "cost": 12, "effect": null, "sources": ["Rogue Trader", "False to Truth - 3+3", "Combats/Animals", "Wish Nodes"], "description": "All Operators start with +12 SP." }
+      "IS5": { "name": "Bank of Gaul Check", "idx": 106, "cost": 12, "effect": null, "sources": ["Rogue Trader", "False to Truth - 3+3", "Combats/Animals", "Wish Nodes"], "description": "All Operators start with +12 SP." }
     }
   },
   {
@@ -1232,10 +1280,10 @@
     "image": "rogue_4_relic_legacy_130.png",
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
-      "IS2": { "name": "'Second Economic Reform Act'", "cost": null, "effect": null, "sources": [], "description": "All Operators start with +18 SP." },
+      "IS2": { "name": "'Second Economic Reform Act'", "idx": 152, "cost": null, "effect": null, "sources": [], "description": "All Operators start with +18 SP." },
       "IS3": { "name": "'Second Economic Reform Act'", "cost": null, "effect": null, "sources": [], "description": "All Operators start with +18 SP." },
       "IS4": { "name": "'Second Economic Reform Act'", "cost": null, "effect": null, "sources": [], "description": "All Operators start with +18 SP." },
-      "IS5": { "name": "'Second Economic Reform Act'", "cost": 16, "effect": null, "sources": ["Rogue Trader - Rare Collectibles", "False to Truth - Eureka", "Combats/Animals", "Wish Nodes"], "description": "All Operators start with +18 SP." }
+      "IS5": { "name": "'Second Economic Reform Act'", "idx": 107, "cost": 16, "effect": null, "sources": ["Rogue Trader - Rare Collectibles", "False to Truth - Eureka", "Combats/Animals", "Wish Nodes"], "description": "All Operators start with +18 SP." }
     }
   },
   {
@@ -1243,7 +1291,7 @@
     "image": "rogue_1_relic_q11.png",
     "themes": ["IS2"],
     "versions": {
-      "IS2": { "name": "\u00c9lys\u00e9e Purse", "cost": 8, "effect": null, "sources": [], "description": "All Operators start with +8 SP." }
+      "IS2": { "name": "\u00c9lys\u00e9e Purse", "idx": 150, "cost": 8, "effect": null, "sources": [], "description": "All Operators start with +8 SP." }
     }
   },
   {
@@ -1251,10 +1299,10 @@
     "image": "rogue_4_relic_legacy_131.png",
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
-      "IS2": { "name": "Vanilla Soda", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.2/s." },
+      "IS2": { "name": "Vanilla Soda", "idx": 153, "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.2/s." },
       "IS3": { "name": "Vanilla Soda", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.2/s." },
       "IS4": { "name": "Vanilla Soda", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.2/s." },
-      "IS5": { "name": "Vanilla Soda", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.2/s." }
+      "IS5": { "name": "Vanilla Soda", "idx": 108, "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.2/s." }
     }
   },
   {
@@ -1262,10 +1310,10 @@
     "image": "rogue_4_relic_legacy_132.png",
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
-      "IS2": { "name": "Fowlbeast Liver Plate", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.35/s." },
+      "IS2": { "name": "Fowlbeast Liver Plate", "idx": 155, "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.35/s." },
       "IS3": { "name": "Fowlbeast Liver Plate", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.35/s." },
       "IS4": { "name": "Fowlbeast Liver Plate", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.35/s." },
-      "IS5": { "name": "Fowlbeast Liver Plate", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.35/s." }
+      "IS5": { "name": "Fowlbeast Liver Plate", "idx": 109, "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.35/s." }
     }
   },
   {
@@ -1273,10 +1321,10 @@
     "image": "rogue_4_relic_legacy_133.png",
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
-      "IS2": { "name": "Dreaming Essence", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.5/s." },
+      "IS2": { "name": "Dreaming Essence", "idx": 156, "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.5/s." },
       "IS3": { "name": "Dreaming Essence", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.5/s." },
       "IS4": { "name": "Dreaming Essence", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.5/s." },
-      "IS5": { "name": "Dreaming Essence", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.5/s." }
+      "IS5": { "name": "Dreaming Essence", "idx": 110, "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.5/s." }
     }
   },
   {
@@ -1284,7 +1332,7 @@
     "image": "rogue_1_relic_q15.png",
     "themes": ["IS2"],
     "versions": {
-      "IS2": { "name": "Ball Juice", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.25/s." }
+      "IS2": { "name": "Ball Juice", "idx": 154, "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.25/s." }
     }
   },
   {
@@ -1292,10 +1340,10 @@
     "image": "rogue_4_relic_legacy_139.png",
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
-      "IS2": { "name": "Victory Horn", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 100%." },
+      "IS2": { "name": "Victory Horn", "idx": 219, "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 100%." },
       "IS3": { "name": "Victory Horn", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 100%." },
       "IS4": { "name": "Victory Horn", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 100%." },
-      "IS5": { "name": "Victory Horn", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 100%." }
+      "IS5": { "name": "Victory Horn", "idx": 116, "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 100%." }
     }
   },
   {
@@ -1303,10 +1351,10 @@
     "image": "rogue_4_relic_legacy_140.png",
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
-      "IS2": { "name": "Flash Camera", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 110%." },
+      "IS2": { "name": "Flash Camera", "idx": 220, "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 110%." },
       "IS3": { "name": "Flash Camera", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 110%." },
       "IS4": { "name": "Flash Camera", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 110%." },
-      "IS5": { "name": "Flash Camera", "cost": 12, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 110%." }
+      "IS5": { "name": "Flash Camera", "idx": 117, "cost": 12, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 110%." }
     }
   },
   {
@@ -1314,10 +1362,10 @@
     "image": "rogue_4_relic_legacy_141.png",
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
-      "IS2": { "name": "Therapy Tape", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 150%." },
+      "IS2": { "name": "Therapy Tape", "idx": 221, "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 150%." },
       "IS3": { "name": "Therapy Tape", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 150%." },
       "IS4": { "name": "Therapy Tape", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 150%." },
-      "IS5": { "name": "Therapy Tape", "cost": 16, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 150%." }
+      "IS5": { "name": "Therapy Tape", "idx": 118, "cost": 16, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 150%." }
     }
   },
   {
@@ -1325,10 +1373,10 @@
     "image": "rogue_4_relic_legacy_150.png",
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
-      "IS2": { "name": "King's New Lance", "cost": null, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is 1, all allied units have +50 ASPD." },
-      "IS3": { "name": "King's New Lance", "cost": null, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is 1, all allied units have +50 ASPD." },
-      "IS4": { "name": "King's New Lance", "cost": null, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is 1, all allied units have +50 ASPD." },
-      "IS5": { "name": "King's New Lance", "cost": null, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is 1, all allied units have +50 ASPD." }
+      "IS2": { "name": "King's New Lance", "idx": 213.1, "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is 1, all allied units have +50 ASPD." },
+      "IS3": { "name": "King's New Lance", "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is 1, all allied units have +50 ASPD." },
+      "IS4": { "name": "King's New Lance", "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is 1, all allied units have +50 ASPD." },
+      "IS5": { "name": "King's New Lance", "idx": 207, "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is 1, all allied units have +50 ASPD." }
     }
   },
   {
@@ -1336,8 +1384,8 @@
     "image": "rogue_3_relic_legacy_169.png",
     "themes": ["IS3", "IS4"],
     "versions": {
-      "IS3": { "name": "King's Staff", "cost": null, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is at 1, all Operators recover an additional 1 SP every 2 seconds." },
-      "IS4": { "name": "King's Staff", "cost": null, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is at 1, all Operators recover an additional 1 SP every 2 seconds." }
+      "IS3": { "name": "King's Staff", "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is at 1, all Operators recover an additional 1 SP every 2 seconds." },
+      "IS4": { "name": "King's Staff", "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is at 1, all Operators recover an additional 1 SP every 2 seconds." }
     }
   },
   {
@@ -1345,7 +1393,7 @@
     "image": "rogue_4_relic_fight_8.png",
     "themes": ["IS5"],
     "versions": {
-      "IS5": { "name": "King's Legacy", "cost": 8, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is at 1, all Operators recover an additional 1 SP and 3% of Max HP every 2 seconds." }
+      "IS5": { "name": "King's Legacy", "idx": 209, "cost": 8, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is at 1, all Operators recover an additional 1 SP and 3% of Max HP every 2 seconds." }
     }
   },
   {
@@ -1353,8 +1401,8 @@
     "image": "rogue_3_relic_legacy_168.png",
     "themes": ["IS3", "IS4"],
     "versions": {
-      "IS3": { "name": "King's Buckler", "cost": null, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is at 1, all Operators have +2 Block." },
-      "IS4": { "name": "King's Buckler", "cost": null, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is at 1, all Operators have +2 Block." }
+      "IS3": { "name": "King's Buckler", "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is at 1, all Operators have +2 Block." },
+      "IS4": { "name": "King's Buckler", "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is at 1, all Operators have +2 Block." }
     }
   },
   {
@@ -1365,21 +1413,22 @@
       "IS3": {
         "name": "King's Crown",
         "cost": null,
-        "effect": { "type": "conditional", "label": "Conditional" },
+        "effect": { "type": "internal", "label": "Internal" },
         "sources": [],
         "description": "When Life Point is at 1, all allied units have +50% ATK, increased to +150% ATK if you have collected 3 or more King's Collectibles.\nThe +ATK% provided by King's Crown is additive with talent/skill +ATK% and multiplicative with external modifiers."
       },
       "IS4": {
         "name": "King's Crown",
         "cost": null,
-        "effect": { "type": "conditional", "label": "Conditional" },
+        "effect": { "type": "internal", "label": "Internal" },
         "sources": [],
         "description": "When Life Point is at 1, all allied units have +50% ATK, increased to +150% ATK if you have collected 3 or more King's Collectibles.\nThe +ATK% provided by King's Crown is additive with talent/skill +ATK% and multiplicative with external modifiers."
       },
       "IS5": {
         "name": "King's Crown",
+        "idx": 193,
         "cost": null,
-        "effect": { "type": "conditional", "label": "Conditional" },
+        "effect": { "type": "internal", "label": "Internal" },
         "sources": [],
         "description": "When Life Point is at 1, all allied units have +50% ATK, increased to +150% ATK if you have collected 3 or more King's Collectibles.\nThe +ATK% provided by King's Crown is additive with talent/skill +ATK% and multiplicative with external modifiers."
       }
@@ -1392,6 +1441,7 @@
     "versions": {
       "IS5": {
         "name": "Visage of Crowned Fates",
+        "idx": 291,
         "cost": 16,
         "effect": null,
         "sources": [],
@@ -1404,7 +1454,7 @@
     "image": "rogue_4_relic_fight_14.png",
     "themes": ["IS5"],
     "versions": {
-      "IS5": { "name": "Sarkaz King's Regal Rest", "cost": 8, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "All Operators gain +20% DEF and +10 RES at full Life Points." }
+      "IS5": { "name": "Sarkaz King's Regal Rest", "idx": 214, "cost": 8, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "All Operators gain +20% DEF and +10 RES at full Life Points." }
     }
   },
   {
@@ -1412,7 +1462,7 @@
     "image": "rogue_4_relic_fight_15.png",
     "themes": ["IS5"],
     "versions": {
-      "IS5": { "name": "Sarkaz King's Torn Banner", "cost": 12, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "All Operators gain +30 ASPD at full Life Points." }
+      "IS5": { "name": "Sarkaz King's Torn Banner", "idx": 215, "cost": 12, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "All Operators gain +30 ASPD at full Life Points." }
     }
   },
   {
@@ -1422,8 +1472,9 @@
     "versions": {
       "IS5": {
         "name": "King of Sarkaz's Vessel",
+        "idx": 292,
         "cost": 16,
-        "effect": { "type": "conditional", "label": "Conditional" },
+        "effect": { "type": "internal", "label": "Internal" },
         "sources": [],
         "description": "All Operators gain +80% Max HP when Life Points are full, increased to 200% if you have collected 3 or more King of Sarkaz's Collectibles."
       }
@@ -1436,6 +1487,7 @@
     "versions": {
       "IS2": {
         "name": "Hand of Choker",
+        "idx": 134,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -1471,6 +1523,7 @@
     "versions": {
       "IS5": {
         "name": "Hand of Fireworks",
+        "idx": 284,
         "cost": 16,
         "effect": null,
         "sources": [],
@@ -1485,6 +1538,7 @@
     "versions": {
       "IS2": {
         "name": "'Eventide Terror'",
+        "idx": 213.6,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -1499,6 +1553,7 @@
     "versions": {
       "IS2": {
         "name": "'Excessiveness'",
+        "idx": 213.7,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -1527,6 +1582,7 @@
       },
       "IS5": {
         "name": "Little Gran Faro",
+        "idx": 267,
         "cost": 12,
         "effect": null,
         "sources": ["Rogue Trader", "False to Truth - 2+2"],
@@ -1555,6 +1611,7 @@
       },
       "IS5": {
         "name": "'Memories of The Shard'",
+        "idx": 268,
         "cost": 16,
         "effect": null,
         "sources": ["Rogue Trader"],
@@ -1576,6 +1633,7 @@
       },
       "IS5": {
         "name": "Rainbow Jar",
+        "idx": 259,
         "cost": 12,
         "effect": null,
         "sources": ["Rogue Trader", "False to Truth - 2+2"],
@@ -1590,6 +1648,7 @@
     "versions": {
       "IS2": {
         "name": "Bladedance",
+        "idx": 202,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -1611,6 +1670,7 @@
       },
       "IS5": {
         "name": "Chitinous Ripper",
+        "idx": 132,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -1632,6 +1692,7 @@
       },
       "IS5": {
         "name": "Survivor Contract",
+        "idx": 219,
         "cost": null,
         "effect": null,
         "sources": ["Mimic Squad"],
@@ -1660,8 +1721,9 @@
     "versions": {
       "IS5": {
         "name": "Mercenary's Accessory",
+        "idx": 205,
         "cost": 16,
-        "effect": { "type": "unconditional", "label": "Unconditional" },
+        "effect": { "type": "external", "label": "External" },
         "sources": [],
         "description": "Grants a random Operator +5% ATK, DEF, and Max HP, plus an additional +5% after each perfectly cleared battle (Stacks up to 10 times).\nAutomatically gains 1 out of the 10 stacks when obtained and caps at 10 stacks."
       }
@@ -1674,8 +1736,9 @@
     "versions": {
       "IS5": {
         "name": "Fearless Blade",
+        "idx": 264,
         "cost": null,
-        "effect": { "type": "conditional", "label": "Conditional" },
+        "effect": { "type": "internal", "label": "Internal" },
         "sources": [],
         "description": "When the battle begins, the Operator with the highest DP Cost gains +50% ATK and DEF."
       }
@@ -1688,8 +1751,9 @@
     "versions": {
       "IS5": {
         "name": "Blood Tax Mystery",
+        "idx": 233,
         "cost": null,
-        "effect": { "type": "unconditional", "label": "Unconditional" },
+        "effect": { "type": "external", "label": "External" },
         "sources": ["Bizarre Fragment"],
         "description": "All allied and enemy units have -35% Max HP; only active in Bizarre Fragments.\nExternal modifier."
       }
@@ -1702,6 +1766,7 @@
     "versions": {
       "IS5": {
         "name": "Crystal Mystery",
+        "idx": 234,
         "cost": null,
         "effect": null,
         "sources": ["Bizarre Fragment"],
@@ -1716,6 +1781,7 @@
     "versions": {
       "IS5": {
         "name": "Suspicion Mystery",
+        "idx": 235,
         "cost": null,
         "effect": null,
         "sources": ["Bizarre Fragment"],
@@ -1730,6 +1796,7 @@
     "versions": {
       "IS5": {
         "name": "Fabrication Mystery",
+        "idx": 236,
         "cost": null,
         "effect": null,
         "sources": ["Bizarre Fragment"],
@@ -1744,6 +1811,7 @@
     "versions": {
       "IS5": {
         "name": "Foresight Mystery",
+        "idx": 237,
         "cost": null,
         "effect": null,
         "sources": ["Bizarre Fragment"],
@@ -1758,6 +1826,7 @@
     "versions": {
       "IS5": {
         "name": "Sigil Mystery",
+        "idx": 238,
         "cost": null,
         "effect": null,
         "sources": ["Bizarre Fragment"],
@@ -1772,8 +1841,9 @@
     "versions": {
       "IS5": {
         "name": "Tranquil Mystery",
+        "idx": 239,
         "cost": null,
-        "effect": { "type": "unconditional", "label": "Unconditional" },
+        "effect": { "type": "external", "label": "External" },
         "sources": ["Bizarre Fragment"],
         "description": "All allied and enemy units have -25% ATK; only active in Bizarre Fragments.\nExternal modifier."
       }
@@ -1786,6 +1856,7 @@
     "versions": {
       "IS5": {
         "name": "Silk Bond Mystery",
+        "idx": 240,
         "cost": null,
         "effect": null,
         "sources": ["Bizarre Fragment"],
@@ -1798,7 +1869,7 @@
     "image": "rogue_4_relic_book_6.png",
     "themes": ["IS5"],
     "versions": {
-      "IS5": { "name": "Judgement: Guard", "cost": 8, "effect": { "type": "unconditional", "label": "Unconditional" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Guard Operators gain +20% ATK and +20 ASPD.\nExternal modifier, stacks additively with other Judgement relics." }
+      "IS5": { "name": "Judgement: Guard", "idx": 276, "cost": 8, "effect": { "type": "external", "label": "External" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Guard Operators gain +20% ATK and +20 ASPD.\nExternal modifier, stacks additively with other Judgement relics." }
     }
   },
   {
@@ -1806,7 +1877,7 @@
     "image": "rogue_4_relic_book_7.png",
     "themes": ["IS5"],
     "versions": {
-      "IS5": { "name": "Judgement: Vanguard", "cost": 8, "effect": { "type": "unconditional", "label": "Unconditional" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Vanguard Operators gain +20% ATK and +30% Max HP.\nExternal modifier, stacks additively with other Judgement relics." }
+      "IS5": { "name": "Judgement: Vanguard", "idx": 277, "cost": 8, "effect": { "type": "external", "label": "External" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Vanguard Operators gain +20% ATK and +30% Max HP.\nExternal modifier, stacks additively with other Judgement relics." }
     }
   },
   {
@@ -1814,7 +1885,7 @@
     "image": "rogue_4_relic_book_8.png",
     "themes": ["IS5"],
     "versions": {
-      "IS5": { "name": "Judgement: Defender", "cost": 8, "effect": { "type": "unconditional", "label": "Unconditional" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Defender Operators gain +20% DEF and +30% Max HP.\nExternal modifier, stacks additively with other Judgement relics." }
+      "IS5": { "name": "Judgement: Defender", "idx": 278, "cost": 8, "effect": { "type": "external", "label": "External" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Defender Operators gain +20% DEF and +30% Max HP.\nExternal modifier, stacks additively with other Judgement relics." }
     }
   },
   {
@@ -1822,7 +1893,7 @@
     "image": "rogue_4_relic_book_9.png",
     "themes": ["IS5"],
     "versions": {
-      "IS5": { "name": "Judgement: Sniper", "cost": 8, "effect": { "type": "unconditional", "label": "Unconditional" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Sniper Operators gain +20% ATK and +20 ASPD.\nExternal modifier, stacks additively with other Judgement relics." }
+      "IS5": { "name": "Judgement: Sniper", "idx": 279, "cost": 8, "effect": { "type": "external", "label": "External" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Sniper Operators gain +20% ATK and +20 ASPD.\nExternal modifier, stacks additively with other Judgement relics." }
     }
   },
   {
@@ -1830,7 +1901,7 @@
     "image": "rogue_4_relic_book_10.png",
     "themes": ["IS5"],
     "versions": {
-      "IS5": { "name": "Judgement: Specialist", "cost": 8, "effect": { "type": "unconditional", "label": "Unconditional" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Specialist Operators gain +20% ATK and +30% Max HP.\nExternal modifier, stacks additively with other Judgement relics." }
+      "IS5": { "name": "Judgement: Specialist", "idx": 280, "cost": 8, "effect": { "type": "external", "label": "External" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Specialist Operators gain +20% ATK and +30% Max HP.\nExternal modifier, stacks additively with other Judgement relics." }
     }
   },
   {
@@ -1838,7 +1909,7 @@
     "image": "rogue_4_relic_book_11.png",
     "themes": ["IS5"],
     "versions": {
-      "IS5": { "name": "Judgement: Medic", "cost": 8, "effect": { "type": "unconditional", "label": "Unconditional" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Medic Operators gain +50% ATK.\nExternal modifier, stacks additively with other Judgement relics." }
+      "IS5": { "name": "Judgement: Medic", "idx": 281, "cost": 8, "effect": { "type": "external", "label": "External" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Medic Operators gain +50% ATK.\nExternal modifier, stacks additively with other Judgement relics." }
     }
   },
   {
@@ -1846,7 +1917,7 @@
     "image": "rogue_4_relic_book_12.png",
     "themes": ["IS5"],
     "versions": {
-      "IS5": { "name": "Judgement: Caster", "cost": 8, "effect": { "type": "unconditional", "label": "Unconditional" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Caster Operators gain +20% ATK and +20 ASPD.\nExternal modifier, stacks additively with other Judgement relics." }
+      "IS5": { "name": "Judgement: Caster", "idx": 282, "cost": 8, "effect": { "type": "external", "label": "External" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Caster Operators gain +20% ATK and +20 ASPD.\nExternal modifier, stacks additively with other Judgement relics." }
     }
   },
   {
@@ -1854,7 +1925,7 @@
     "image": "rogue_4_relic_book_13.png",
     "themes": ["IS5"],
     "versions": {
-      "IS5": { "name": "Judgement: Supporter", "cost": 8, "effect": { "type": "unconditional", "label": "Unconditional" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Supporter Operators gain +50% ATK.\nExternal modifier, stacks additively with other Judgement relics." }
+      "IS5": { "name": "Judgement: Supporter", "idx": 283, "cost": 8, "effect": { "type": "external", "label": "External" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Supporter Operators gain +50% ATK.\nExternal modifier, stacks additively with other Judgement relics." }
     }
   },
   {
@@ -1864,6 +1935,7 @@
     "versions": {
       "IS2": {
         "name": "'Flowers of Quinde'",
+        "idx": 205,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -1878,6 +1950,7 @@
     "versions": {
       "IS2": {
         "name": "'Numbness and Obscenity'",
+        "idx": 206,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -1892,6 +1965,7 @@
     "versions": {
       "IS2": {
         "name": "'Brokenblade'",
+        "idx": 197,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -1920,6 +1994,7 @@
     "versions": {
       "IS2": {
         "name": "'Whiteflower'",
+        "idx": 203,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -1948,6 +2023,7 @@
     "versions": {
       "IS2": {
         "name": "'Focus'",
+        "idx": 229,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2032,6 +2108,7 @@
       },
       "IS5": {
         "name": "'Glory Pack'",
+        "idx": 258,
         "cost": 12,
         "effect": null,
         "sources": ["Rogue Trader", "False to Truth - 3+3"],
@@ -2109,6 +2186,7 @@
       },
       "IS5": {
         "name": "Rusted Blade - Protraction",
+        "idx": 178,
         "cost": 12,
         "effect": null,
         "sources": ["Rogue Trader", "False to Truth - 2+2"],
@@ -2180,14 +2258,15 @@
       "IS4": {
         "name": "Roundstone Altar",
         "cost": null,
-        "effect": { "type": "unconditional", "label": "Unconditional" },
+        "effect": { "type": "external", "label": "External" },
         "sources": [],
         "description": "There is a chance after battle to permanently increase all allied units' ATK and DEF by 5% (Can stack up to 10 times).\nThere is a 30% chance of gaining a stack after each combat."
       },
       "IS5": {
         "name": "Roundstone Altar",
+        "idx": 195,
         "cost": 8,
-        "effect": { "type": "unconditional", "label": "Unconditional" },
+        "effect": { "type": "external", "label": "External" },
         "sources": ["Rogue Trader", "False to Truth - 1+1"],
         "description": "There is a chance after battle to permanently increase all allied units' ATK and DEF by 5% (Can stack up to 10 times).\nThere is a 30% chance of gaining a stack after each combat."
       }
@@ -2207,6 +2286,7 @@
       },
       "IS5": {
         "name": "Living Woodplate",
+        "idx": 129,
         "cost": 12,
         "effect": null,
         "sources": ["Rogue Trader", "False to Truth - 2+2"],
@@ -2256,6 +2336,7 @@
       },
       "IS5": {
         "name": "Medicine Sticks",
+        "idx": 133,
         "cost": 8,
         "effect": null,
         "sources": ["Rogue Trader", "False to Truth - 2+2"],
@@ -2277,8 +2358,9 @@
       },
       "IS5": {
         "name": "Empty Fowlbeast",
+        "idx": 128,
         "cost": 16,
-        "effect": { "type": "conditional", "label": "Conditional" },
+        "effect": { "type": "internal", "label": "Internal" },
         "sources": ["Rogue Trader", "False to Truth - Eureka"],
         "description": "Summons have +30% HP, +30% ATK, and when on the field, grant +60% ATK to their summoners.\nApplies to a surprisingly large number of things beyond ordinary summons, including trapmaster mines, Ulpian's S3 return point, Wis'adel's shadows, Ebenholz's S2 goats, and more."
       }
@@ -2292,14 +2374,15 @@
       "IS4": {
         "name": "Lakebed Aegis",
         "cost": null,
-        "effect": { "type": "conditional", "label": "Conditional" },
+        "effect": { "type": "internal", "label": "Internal" },
         "sources": [],
         "description": "Shield +1; all allied units gain Max HP +60% if you have any Shield at the start of a battle.\nUnusually, this is implemented as an internal buff, meaning the +60% HP is multiplicative with most other +HP% collectibles.\nThe effect is granted as long as you had at least 1 shield when the operation starts."
       },
       "IS5": {
         "name": "Lakebed Aegis",
+        "idx": 127,
         "cost": 12,
-        "effect": { "type": "conditional", "label": "Conditional" },
+        "effect": { "type": "internal", "label": "Internal" },
         "sources": ["Rogue Trader", "False to Truth - 2+2"],
         "description": "Shield +1; all allied units gain Max HP +60% if you have any Shield at the start of a battle.\nUnusually, this is implemented as an internal buff, meaning the +60% HP is multiplicative with most other +HP% collectibles.\nThe effect is granted as long as you had at least 1 shield when the operation starts."
       }
@@ -2312,8 +2395,9 @@
     "versions": {
       "IS5": {
         "name": "Children of the Walls",
+        "idx": 206,
         "cost": 8,
-        "effect": { "type": "conditional", "label": "Conditional" },
+        "effect": { "type": "internal", "label": "Internal" },
         "sources": ["Rogue Trader", "False to Truth - 1+1"],
         "description": "Operators deployed on the 8 tiles surrounding the Objective Point gain +2 Block and +50% Max HP.\nThe +50% Max HP is an internal modifier."
       }
@@ -2326,6 +2410,7 @@
     "versions": {
       "IS2": {
         "name": "'Unleashings'",
+        "idx": 161,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2347,7 +2432,8 @@
       },
       "IS5": {
         "name": "'Blossom'",
-        "cost": null,
+        "idx": 288,
+        "cost": 16,
         "effect": null,
         "sources": [],
         "description": "All Operators recover 1 SP every time they take damage or Elemental Injury.\nThe effect triggers when they lose life — attacks, self-induced HP loss, Poison Mist, environmental hazards, etc."
@@ -2361,6 +2447,7 @@
     "versions": {
       "IS2": {
         "name": "Scout's Scope",
+        "idx": 227,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2382,6 +2469,7 @@
       },
       "IS5": {
         "name": "Scout's Scope",
+        "idx": 120,
         "cost": 16,
         "effect": null,
         "sources": ["Rogue Trader", "False to Truth - Eureka"],
@@ -2396,6 +2484,7 @@
     "versions": {
       "IS5": {
         "name": "Dawn of Literature",
+        "idx": 141,
         "cost": 16,
         "effect": null,
         "sources": ["Rogue Trader", "False to Truth - Eureka"],
@@ -2410,8 +2499,9 @@
     "versions": {
       "IS5": {
         "name": "'Bridge of Knowledge'",
+        "idx": 204,
         "cost": 12,
-        "effect": { "type": "unconditional", "label": "Unconditional" },
+        "effect": { "type": "external", "label": "External" },
         "sources": ["Rogue Trader", "False to Truth - 2+2"],
         "description": "Every Inspirer used grants all allied units +5% HP (Stacks up to 10 times).\nJust using the inspirer is enough for a stack, you don't need to bring it into a combat."
       }
@@ -2424,6 +2514,7 @@
     "versions": {
       "IS5": {
         "name": "Cursed Counterbeast",
+        "idx": 287,
         "cost": 12,
         "effect": null,
         "sources": ["Rogue Trader", "False to Truth - 3+3"],
@@ -2438,6 +2529,7 @@
     "versions": {
       "IS5": {
         "name": "Doodle of Hope",
+        "idx": 228,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2452,6 +2544,7 @@
     "versions": {
       "IS5": {
         "name": "Talons of Hatred",
+        "idx": 229,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2466,6 +2559,7 @@
     "versions": {
       "IS5": {
         "name": "Lamp of Wishes",
+        "idx": 231,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2480,6 +2574,7 @@
     "versions": {
       "IS2": {
         "name": "'Beauty and Ugliness in the Age of Terra'",
+        "idx": 207,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2494,6 +2589,7 @@
     "versions": {
       "IS2": {
         "name": "'End of Times'",
+        "idx": 174,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2543,6 +2639,7 @@
     "versions": {
       "IS5": {
         "name": "Arch Glyph",
+        "idx": 265,
         "cost": 16,
         "effect": null,
         "sources": ["Rogue Trader", "False to Truth - Eureka"],
@@ -2564,6 +2661,7 @@
       },
       "IS5": {
         "name": "HR Bronze Seal",
+        "idx": 269,
         "cost": null,
         "effect": null,
         "sources": ["Rogue Trader"],
@@ -2585,6 +2683,7 @@
       },
       "IS5": {
         "name": "Doctor Silver Seal",
+        "idx": 270,
         "cost": 16,
         "effect": null,
         "sources": ["Rogue Trader"],
@@ -2599,6 +2698,7 @@
     "versions": {
       "IS2": {
         "name": "Victoria Crown",
+        "idx": 179,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2613,6 +2713,7 @@
     "versions": {
       "IS2": {
         "name": "Half-Refined Diamond",
+        "idx": 185,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2669,6 +2770,7 @@
     "versions": {
       "IS5": {
         "name": "Gul'dul's Silence",
+        "idx": 271,
         "cost": null,
         "effect": null,
         "sources": ["D17+ F3"],
@@ -2677,12 +2779,13 @@
     }
   },
   {
-    "id": "balorsas-arrogance",
+    "id": "balorsacas-arrogance",
     "image": "rogue_4_relic_curse_3.png",
     "themes": ["IS5"],
     "versions": {
       "IS5": {
-        "name": "Balor'sa a's Arrogance",
+        "name": "Balor'sa\u010Da's Arrogance",
+        "idx": 273,
         "cost": null,
         "effect": null,
         "sources": ["D17+ F3"],
@@ -2697,6 +2800,7 @@
     "versions": {
       "IS5": {
         "name": "Yliš's Ravings",
+        "idx": 274,
         "cost": null,
         "effect": null,
         "sources": ["D17+ F3"],
@@ -2711,8 +2815,9 @@
     "versions": {
       "IS5": {
         "name": "Shard of the Untold Kings",
+        "idx": 275,
         "cost": null,
-        "effect": { "type": "conditional", "label": "Conditional" },
+        "effect": { "type": "internal", "label": "Internal" },
         "sources": ["D17+ F3"],
         "description": "Loadbearing Operators have -30% ATK.\nThe ATK reduction counts as an internal debuff instead of an external modifier."
       }
@@ -2837,6 +2942,7 @@
     "versions": {
       "IS5": {
         "name": "Ten Rings",
+        "idx": 249,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2851,6 +2957,7 @@
     "versions": {
       "IS5": {
         "name": "Prophet Horn",
+        "idx": 248,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2865,6 +2972,7 @@
     "versions": {
       "IS5": {
         "name": "Petal",
+        "idx": 251,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2879,10 +2987,335 @@
     "versions": {
       "IS5": {
         "name": "Anasa's Karma",
+        "idx": 252,
         "cost": null,
         "effect": null,
         "sources": [],
         "description": "Leader and Elite enemies have +50% max HP; Dreadful Foes in Border of Truth will be more difficult; leads expedition in a different direction.\nAlso converts Emergency Lecture, Court Visit, Cognitive Correction and The Court of Souls to emergency versions with additional enemy stat buffs and Padmasana of Rebirth."
+      }
+    }
+  },
+  {
+    "id": "featured-canned-meat",
+    "image": "rogue_4_relic_legacy_9.png",
+    "themes": ["IS4", "IS5"],
+    "versions": {
+      "IS4": {
+        "name": "Featured Canned Meat",
+        "idx": 19,
+        "cost": 8,
+        "effect": null,
+        "sources": ["Rogue Trader"],
+        "description": "Squad Size Limit +1, all friendly units recover 3 HP per second."
+      },
+      "IS5": {
+        "name": "Featured Canned Meat",
+        "idx": 1,
+        "cost": 8,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - 2+2"],
+        "description": "Squad Size Limit +1, all allied units recover 3, 5, 8, 10 HP per second for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
+      }
+    }
+  },
+  {
+    "id": "seaweed-salad",
+    "image": "rogue_4_relic_legacy_10.png",
+    "themes": ["IS4", "IS5"],
+    "versions": {
+      "IS4": {
+        "name": "Seaweed Salad",
+        "idx": 20,
+        "cost": 8,
+        "effect": null,
+        "sources": ["Rogue Trader"],
+        "description": "Squad Size Limit +1, all friendly units gain +1 ASPD."
+      },
+      "IS5": {
+        "name": "Seaweed Salad",
+        "idx": 2,
+        "cost": 8,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - 2+2"],
+        "description": "Squad Size Limit +1, all allied units gain 1, 3, 5, 7 ASPD for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
+      }
+    }
+  },
+  {
+    "id": "orange-storm",
+    "image": "rogue_4_relic_legacy_11.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Orange Storm",
+        "idx": 3,
+        "cost": 8,
+        "effect": {"type": "external", "label": "External"},
+        "sources": ["Rogue Trader", "False to Truth - 2+2"],
+        "description": "Squad Size Limit +1, all allied units gain 1%, 3%, 5%, 7% ATK for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
+      }
+    }
+  },
+  {
+    "id": "coffee-plains-coffee-candy",
+    "image": "rogue_4_relic_legacy_12.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Coffee Plains Coffee Candy",
+        "idx": 4,
+        "cost": 12,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - 3+3"],
+        "description": "Squad Size Limit +2, all allied units gain 2, 4, 6, 8 ASPD for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
+      }
+    }
+  },
+  {
+    "id": "screaming-cherry",
+    "image": "rogue_4_relic_legacy_13.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Screaming Cherry",
+        "idx": 5,
+        "cost": 12,
+        "effect": {"type": "external", "label": "External"},
+        "sources": ["Rogue Trader", "False to Truth - 3+3"],
+        "description": "Squad Size Limit +2, all allied units gain 2%, 4%, 6%, 8% ATK for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
+      }
+    }
+  },
+  {
+    "id": "pitts-assorted-fruits",
+    "image": "rogue_4_relic_legacy_14.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Pitt's Assorted Fruits",
+        "idx": 6,
+        "cost": 16,
+        "effect": {"type": "external", "label": "External"},
+        "sources": ["Rogue Trader - Rare Collectibles", "False to Truth - Eureka"],
+        "description": "Squad Size Limit +3, all allied units gain 3%, 4%, 5%, 7% ATK, DEF, and HP for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
+      }
+    }
+  },
+  {
+    "id": "topographical-map",
+    "image": "rogue_4_relic_legacy_15.png",
+    "themes": ["IS4", "IS5"],
+    "versions": {
+      "IS4": {
+        "name": "Topographical Map",
+        "idx": 1,
+        "cost": 8,
+        "effect": {"type": "external", "label": "External"},
+        "sources": ["Rogue Trader"],
+        "description": "+1 Deployment Limit, all friendly units gain 4%, 5%, 6%, 6% and +0.5% per allied unit on the field% DEF for Braving Nature 0-2, 3-5, 6-8, 9-15 respectively."
+      },
+      "IS5": {
+        "name": "Topographical Map",
+        "idx": 7,
+        "cost": 8,
+        "effect": {"type": "external", "label": "External"},
+        "sources": ["Rogue Trader", "False to Truth - 1+1"],
+        "description": "Deployment Limit +1, all allied units gain 4%, 5%, 6%, 8% DEF for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
+      }
+    }
+  },
+  {
+    "id": "conch-of-divine-whispers",
+    "image": "rogue_4_relic_legacy_16.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Conch of Divine Whispers",
+        "idx": 8,
+        "cost": 8,
+        "effect": {"type": "external", "label": "External"},
+        "sources": ["Rogue Trader", "False to Truth - 1+1"],
+        "description": "Deployment Limit +1, all allied units gain 4%, 5%, 6%, 8% HP for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
+      }
+    }
+  },
+  {
+    "id": "night-whispers-in-the-forest",
+    "image": "rogue_4_relic_legacy_17.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Night-Whispers in the Forest",
+        "idx": 9,
+        "cost": 12,
+        "effect": {"type": "external", "label": "External"},
+        "sources": ["Rogue Trader", "False to Truth - 2+2"],
+        "description": "Deployment Limit +2, all allied units gain 6%, 7%, 8%, 10% DEF for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
+      }
+    }
+  },
+  {
+    "id": "church-alms-meal-voucher",
+    "image": "rogue_4_relic_legacy_18.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Church Alms Meal Voucher",
+        "idx": 10,
+        "cost": 12,
+        "effect": {"type": "external", "label": "External"},
+        "sources": ["Rogue Trader", "False to Truth - 2+2"],
+        "description": "Deployment Limit +2, all allied units gain 6%, 7%, 8%, 10% HP for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
+      }
+    }
+  },
+  {
+    "id": "pried-open-toolbox",
+    "image": "rogue_4_relic_legacy_34.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Pried Open Toolbox",
+        "idx": 11,
+        "cost": null,
+        "effect": null,
+        "sources": ["False to Truth - 2+2"],
+        "description": "Hope +4, immediately add 0, 3, 4, 5 Originium Ingots for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
+      }
+    }
+  },
+  {
+    "id": "antiquated-sheet-music",
+    "image": "rogue_4_relic_legacy_35.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Antiquated Sheet Music",
+        "idx": 12,
+        "cost": 8,
+        "effect": null,
+        "sources": ["Rogue Trader"],
+        "description": "Hope +4, All allied units gain 0, 4, 5, 6 ASPD for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
+      }
+    }
+  },
+  {
+    "id": "letter-of-termination-contract",
+    "image": "rogue_4_relic_legacy_36.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Letter of Termination Contract",
+        "idx": 13,
+        "cost": 8,
+        "effect": {"type": "external", "label": "External"},
+        "sources": ["Rogue Trader"],
+        "description": "Hope +4, All allied units gain 0, 3%, 5%, 7% ATK for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
+      }
+    }
+  },
+  {
+    "id": "universal-key",
+    "image": "rogue_4_relic_legacy_37.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Universal Key",
+        "idx": 14,
+        "cost": 12,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - 3+3"],
+        "description": "Hope +6, 6, 7, 7 and Toil Limit +0, 1, 1, 2 for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
+      }
+    }
+  },
+  {
+    "id": "banshees-kiss",
+    "image": "rogue_4_relic_legacy_38.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Banshee's Kiss",
+        "idx": 15,
+        "cost": 16,
+        "effect": null,
+        "sources": ["Rogue Trader - Rare Collectibles", "False to Truth - Eureka", "Boss pool", "Wish Nodes"],
+        "description": "Hope +8, 9, 10, 12 for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
+      }
+    }
+  },
+  {
+    "id": "antique-coins",
+    "image": "rogue_4_relic_legacy_39.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Antique Coins",
+        "idx": 16,
+        "cost": null,
+        "effect": null,
+        "sources": ["False to Truth - 2+2"],
+        "description": "Immediately add +10, 10, 11, 12 Originium Ingots and +0, 1, 1, 1 Hope for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
+      }
+    }
+  },
+  {
+    "id": "actors-jewelry-box",
+    "image": "rogue_4_relic_legacy_40.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Actor's Jewelry Box",
+        "idx": 17,
+        "cost": null,
+        "effect": null,
+        "sources": ["False to Truth - 3+3"],
+        "description": "Immediately add +18, 18, 19, 20 Originium Ingots and Toil Limit +0, 1, 1, 1 for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
+      }
+    }
+  },
+  {
+    "id": "flawless-jadestone",
+    "image": "rogue_4_relic_legacy_41.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Flawless Jadestone",
+        "idx": 18,
+        "cost": null,
+        "effect": null,
+        "sources": ["False to Truth - Eureka", "Boss pool", "Wish Nodes"],
+        "description": "Immediately add 25, 26, 28, 30 Originium Ingots for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
+      }
+    }
+  },
+  {
+    "id": "game-room-admin-access-card",
+    "image": "rogue_4_relic_legacy_42.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Game Room Admin Access Card",
+        "idx": 19,
+        "cost": 8,
+        "effect": null,
+        "sources": ["Rogue Trader"],
+        "description": "Immediately Promote an Operator and add 0, 1, 2, 3 Originium Ingots for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
+      }
+    }
+  },
+  {
+    "id": "miss-christine-petting-ticket",
+    "image": "rogue_4_relic_legacy_43.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Miss.Christine Petting Ticket",
+        "idx": 20,
+        "cost": 12,
+        "effect": null,
+        "sources": ["Rogue Trader"],
+        "description": "Immediately Promote 2 Operators and gain +0, 1, 2, 3 Shields for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
       }
     }
   }

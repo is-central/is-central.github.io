@@ -79,8 +79,8 @@ const ASSET_PATH = "/guides/general-knowledge/relics/";
     --c-cost-8:           #b0bec5;
     --c-cost-12:          #7a9e7e;
     --c-cost-16:          #c8962a;
-    --c-unconditional:    #6a8fc4;
-    --c-conditional:      #c47a6a;
+    --c-external:    #6a8fc4;
+    --c-internal:      #c47a6a;
 
     --radius:    6px;
     --radius-lg: 10px;
@@ -401,14 +401,14 @@ const ASSET_PATH = "/guides/general-knowledge/relics/";
     color: var(--c-cost-16);
     border: 1px solid rgba(200, 150, 42, 0.3);
   }
-  .relic-dashboard .badge-unconditional {
+  .relic-dashboard .badge-external {
     background: rgba(106, 143, 196, 0.12);
-    color: var(--c-unconditional);
+    color: var(--c-external);
     border: 1px solid rgba(106, 143, 196, 0.25);
   }
-  .relic-dashboard .badge-conditional {
+  .relic-dashboard .badge-internal {
     background: rgba(196, 122, 106, 0.12);
-    color: var(--c-conditional);
+    color: var(--c-internal);
     border: 1px solid rgba(196, 122, 106, 0.25);
   }
 
@@ -618,11 +618,25 @@ const ASSET_PATH = "/guides/general-knowledge/relics/";
     var noRes = document.getElementById("no-results");
     var query = state.search.toLowerCase();
 
-    // Determine the theme context for naming: use the active filter if it's
-    // a specific theme, otherwise null (falls back to first theme).
     var nameTheme = (state.filter !== "all") ? state.filter : null;
 
     var sorted = relics.slice().sort(function (a, b) {
+      // When filtering by theme, sort by idx of that theme version first,
+      // then fall back to alphabetical for entries without idx.
+      if (nameTheme) {
+        var vA = a.versions[nameTheme];
+        var vB = b.versions[nameTheme];
+        var idxA = (vA && vA.idx != null) ? vA.idx : null;
+        var idxB = (vB && vB.idx != null) ? vB.idx : null;
+
+        // Both have idx: sort numerically
+        if (idxA !== null && idxB !== null) return idxA - idxB;
+        // Only a has idx: a comes first
+        if (idxA !== null) return -1;
+        // Only b has idx: b comes first
+        if (idxB !== null) return 1;
+      }
+      // No theme filter, or neither has idx: alphabetical by display name
       return getDisplayName(a, nameTheme).localeCompare(getDisplayName(b, nameTheme));
     });
 
