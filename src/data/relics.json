@@ -1,0 +1,2889 @@
+[
+  {
+    "id": "old-fan",
+    "image": "rogue_4_relic_legacy_142.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": {
+        "name": "Old Fan",
+        "cost": 16,
+        "effect": { "type": "unconditional", "label": "Unconditional" },
+        "sources": ["Wish Node"],
+        "description": "All Operators gain +10% ATK for every different type of Operator in the squad."
+      },
+      "IS3": {
+        "name": "Old Fan",
+        "cost": 16,
+        "effect": { "type": "unconditional", "label": "Unconditional" },
+        "sources": [],
+        "description": "All Operators gain +10% ATK for every different type of Operator in the squad."
+      },
+      "IS4": {
+        "name": "Old Fan",
+        "cost": 16,
+        "effect": { "type": "unconditional", "label": "Unconditional" },
+        "sources": ["Boss pool"],
+        "description": "All Operators gain +10% ATK for every different type of Operator in the squad."
+      },
+      "IS5": {
+        "name": "Old Fan",
+        "cost": 16,
+        "effect": { "type": "unconditional", "label": "Unconditional" },
+        "sources": ["Boss pool", "Rogue Trader - Rare Collectibles", "False to Truth - Eureka"],
+        "description": "All Operators gain +10% ATK for every different type of Operator in the squad."
+      }
+    }
+  },
+  {
+    "id": "golden-chalice",
+    "image": "rogue_4_relic_legacy_146.png",
+    "themes": ["IS2", "IS4", "IS5", "IS6"],
+    "versions": {
+      "IS2": {
+        "name": "Golden Chalice",
+        "cost": 16,
+        "effect": null,
+        "sources": [],
+        "description": "For each 5 Originium Ingots in possession, all friendly units have +7 ASPD."
+      },
+      "IS4": {
+        "name": "Golden Chalice",
+        "cost": 16,
+        "effect": null,
+        "sources": ["Rogue Trader"],
+        "description": "For each 5 Originium Ingots in possession, all friendly units have +7 ASPD."
+      },
+      "IS5": {
+        "name": "Golden Chalice",
+        "cost": 16,
+        "effect": null,
+        "sources": ["Rogue Trader - Rare Collectibles", "False to Truth - Eureka", "Lamp of Wishes - 150 Ingots"],
+        "description": "For each 5 Originium Ingots in possession, all friendly units have +7 ASPD."
+      },
+      "IS6": {
+        "name": "Golden Chalice",
+        "cost": 16,
+        "effect": null,
+        "sources": [],
+        "description": "For each 5 Originium Ingots in possession, all friendly units have +7 ASPD."
+      }
+    }
+  },
+  {
+    "id": "civilight-eterna",
+    "image": "rogue_4_relic_legacy_149.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5", "IS6"],
+    "versions": {
+      "IS2": {
+        "name": "'Civilight Eterna'",
+        "cost": 16,
+        "effect": null,
+        "sources": [],
+        "description": "All enemies take +150% True damage.\nMost enemy self-damage effects and most environmental effects (survivalist, Originium altars etc.) that can damage enemies are implemented as true damage, which Civilight Eterna will amplify. For example, Enraged Possessed Soldiers take 350 true damage/second by default, and Civilight Eterna will amplify that to 825/second. For the “Chalice of Regret” enemy, which absorbs 95% of the damage taken by enemies in its range, and transfers it to itself as true damage, its damage transferred to itself is amplified by Civilight Eterna.\nFor true damage effects that are capable of hitting both enemy and allied units, Civilight Eterna will only amplify the damage if it affects an enemy."
+      },
+      "IS3": {
+        "name": "'Civilight Eterna'",
+        "cost": 16,
+        "effect": null,
+        "sources": [],
+        "description": "All enemies take +150% True damage.\nMost enemy self-damage effects and most environmental effects (survivalist, Originium altars etc.) that can damage enemies are implemented as true damage, which Civilight Eterna will amplify. For example, Enraged Possessed Soldiers take 350 true damage/second by default, and Civilight Eterna will amplify that to 825/second. For the “Chalice of Regret” enemy, which absorbs 95% of the damage taken by enemies in its range, and transfers it to itself as true damage, its damage transferred to itself is amplified by Civilight Eterna.\nFor true damage effects that are capable of hitting both enemy and allied units, Civilight Eterna will only amplify the damage if it affects an enemy."
+      },
+      "IS4": {
+        "name": "'Civilight Eterna'",
+        "cost": 16,
+        "effect": null,
+        "sources": [],
+        "description": "All enemies take +150% True damage.\nMost enemy self-damage effects and most environmental effects (survivalist, Originium altars etc.) that can damage enemies are implemented as true damage, which Civilight Eterna will amplify. For example, Enraged Possessed Soldiers take 350 true damage/second by default, and Civilight Eterna will amplify that to 825/second. For the “Chalice of Regret” enemy, which absorbs 95% of the damage taken by enemies in its range, and transfers it to itself as true damage, its damage transferred to itself is amplified by Civilight Eterna.\nFor true damage effects that are capable of hitting both enemy and allied units, Civilight Eterna will only amplify the damage if it affects an enemy."
+      },
+      "IS5": {
+        "name": "'Civilight Eterna'",
+        "cost": 16,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - 3+3"],
+        "description": "All enemies take +150% True damage.\nMost enemy self-damage effects and most environmental effects (survivalist, Originium altars etc.) that can damage enemies are implemented as true damage, which Civilight Eterna will amplify. For example, Enraged Possessed Soldiers take 350 true damage/second by default, and Civilight Eterna will amplify that to 825/second. For the “Chalice of Regret” enemy, which absorbs 95% of the damage taken by enemies in its range, and transfers it to itself as true damage, its damage transferred to itself is amplified by Civilight Eterna.\nFor true damage effects that are capable of hitting both enemy and allied units, Civilight Eterna will only amplify the damage if it affects an enemy."
+      },
+      "IS6": {
+        "name": "'Civilight Eterna'",
+        "cost": 16,
+        "effect": null,
+        "sources": [],
+        "description": "All enemies take +150% True damage.\nMost enemy self-damage effects and most environmental effects (survivalist, Originium altars etc.) that can damage enemies are implemented as true damage, which Civilight Eterna will amplify. For example, Enraged Possessed Soldiers take 350 true damage/second by default, and Civilight Eterna will amplify that to 825/second. For the “Chalice of Regret” enemy, which absorbs 95% of the damage taken by enemies in its range, and transfers it to itself as true damage, its damage transferred to itself is amplified by Civilight Eterna.\nFor true damage effects that are capable of hitting both enemy and allied units, Civilight Eterna will only amplify the damage if it affects an enemy."
+      }
+    }
+  },
+  {
+    "id": "hot-water-kettle",
+    "image": "rogue_4_relic_legacy_29.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": {
+        "name": "Hot Water Kettle",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Immediately gain +2 Life Points and +1 Hope.\nIf the game runs out of collectibles to give you, it starts giving you Hot Water Kettles."
+      },
+      "IS3": {
+        "name": "Hot Water Kettle",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Immediately gain +1 Max Life Point and +1 Hope.\nIf the game runs out of collectibles to give you, it starts giving you Hot Water Kettles."
+      },
+      "IS4": {
+        "name": "Hot Water Kettle",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Immediately gain +1 Max Life Point and +1 Hope.\nIf the game runs out of collectibles to give you, it starts giving you Hot Water Kettles."
+      },
+      "IS5": {
+        "name": "Hot Water Kettle",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Immediately gain +1 Max Life Point and +1 Hope.\nIf the game runs out of collectibles to give you, it starts giving you Hot Water Kettles."
+      }
+    }
+  },
+  {
+    "id": "support-replenishment-station",
+    "image": "rogue_4_active_tool_1.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": {
+        "name": "Support Replenishment Station",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring a Portable Supply Station along to each battle.\nThe SP regeneration effect works on a lot of non-operator allied units with SP bars."
+      },
+      "IS3": {
+        "name": "Support Replenishment Station",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring a Portable Supply Station along to each battle.\nThe SP regeneration effect works on a lot of non-operator allied units with SP bars."
+      },
+      "IS4": {
+        "name": "Support Replenishment Station",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring a Portable Supply Station along to each battle.\nThe SP regeneration effect works on a lot of non-operator allied units with SP bars."
+      },
+      "IS5": {
+        "name": "Support Replenishment Station",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring a Portable Supply Station along to each battle.\nThe SP regeneration effect works on a lot of non-operator allied units with SP bars."
+      }
+    }
+  },
+  {
+    "id": "support-landmine-set",
+    "image": "rogue_4_active_tool_2.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": {
+        "name": "Support Landmine Set",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring 3 Interference Mines along to each battle.\nThe mines take 25 seconds to arm. The mine explosion radius is 0.55 tiles.\nThe description states that the explosion deals 2000 True damage, but without any other damage amplification effects it actually does 3000, since the +50% damage taken effect is applied first."
+      },
+      "IS3": {
+        "name": "Support Landmine Set",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring 3 Interference Mines along to each battle.\nThe mines take 25 seconds to arm. The mine explosion radius is 0.55 tiles.\nThe description states that the explosion deals 2000 True damage, but without any other damage amplification effects it actually does 3000, since the +50% damage taken effect is applied first."
+      },
+      "IS4": {
+        "name": "Support Landmine Set",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring 3 Interference Mines along to each battle.\nThe mines take 25 seconds to arm. The mine explosion radius is 0.55 tiles.\nThe description states that the explosion deals 2000 True damage, but without any other damage amplification effects it actually does 3000, since the +50% damage taken effect is applied first."
+      },
+      "IS5": {
+        "name": "Support Landmine Set",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring 3 Interference Mines along to each battle.\nThe mines take 25 seconds to arm. The mine explosion radius is 0.55 tiles.\nThe description states that the explosion deals 2000 True damage, but without any other damage amplification effects it actually does 3000, since the +50% damage taken effect is applied first."
+      }
+    }
+  },
+  {
+    "id": "support-mr-boom",
+    "image": "rogue_4_active_tool_3.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": {
+        "name": "Support Mr. Boom",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring a Mr. Boom along to each battle.\nThe stun bomb can hit aerial units. The stun bomb takes 1.5 seconds to detonate."
+      },
+      "IS3": {
+        "name": "Support Mr. Boom",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring a Mr. Boom along to each battle.\nThe stun bomb can hit aerial units. The stun bomb takes 1.5 seconds to detonate."
+      },
+      "IS4": {
+        "name": "Support Mr. Boom",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring a Mr. Boom along to each battle.\nThe stun bomb can hit aerial units. The stun bomb takes 1.5 seconds to detonate."
+      },
+      "IS5": {
+        "name": "Support Mr. Boom",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring a Mr. Boom along to each battle.\nThe stun bomb can hit aerial units. The stun bomb takes 1.5 seconds to detonate."
+      }
+    }
+  },
+  {
+    "id": "support-escape-crane",
+    "image": "rogue_4_active_tool_4.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": {
+        "name": "Support Escape Crane",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring a Snowsant's Safe Escape Crane along to each battle.\nThe crane reduces the operator's redeployment time by 80%. Unusually, this is multiplicative with other redeployment reduction effects.\nUsing the escape crane on an operator will automatically grant you the DP you'd get for retreating the operator.\nThe escape crane effect triggers 1 second after it is placed."
+      },
+      "IS3": {
+        "name": "Support Escape Crane",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring a Snowsant's Safe Escape Crane along to each battle.\nThe crane reduces the operator's redeployment time by 80%. Unusually, this is multiplicative with other redeployment reduction effects.\nUsing the escape crane on an operator will automatically grant you the DP you'd get for retreating the operator.\nThe escape crane effect triggers 1 second after it is placed."
+      },
+      "IS4": {
+        "name": "Support Escape Crane",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring a Snowsant's Safe Escape Crane along to each battle.\nThe crane reduces the operator's redeployment time by 80%. Unusually, this is multiplicative with other redeployment reduction effects.\nUsing the escape crane on an operator will automatically grant you the DP you'd get for retreating the operator.\nThe escape crane effect triggers 1 second after it is placed."
+      },
+      "IS5": {
+        "name": "Support Escape Crane",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring a Snowsant's Safe Escape Crane along to each battle.\nThe crane reduces the operator's redeployment time by 80%. Unusually, this is multiplicative with other redeployment reduction effects.\nUsing the escape crane on an operator will automatically grant you the DP you'd get for retreating the operator.\nThe escape crane effect triggers 1 second after it is placed.\nUsing the escape crane in IS5 Ending 1 lets you evade getting the operator put into one of Fremont's coffins."
+      }
+    }
+  },
+  {
+    "id": "support-riot-pile",
+    "image": "rogue_4_active_tool_5.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": {
+        "name": "Support Riot Pile",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring 2 Riot Piles along to each battle.\nThe roadblock has 4 block, 3000 HP and 100 def (before modifiers), and is immune to stun/freeze/sleep. Unlike roadblocks, it doesn't actually reroute enemies, it just acts like a blocker."
+      },
+      "IS3": {
+        "name": "Support Riot Pile",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring 2 Riot Piles along to each battle.\nThe roadblock has 4 block, 3000 HP and 100 def (before modifiers), and is immune to stun/freeze/sleep. Unlike roadblocks, it doesn't actually reroute enemies, it just acts like a blocker."
+      },
+      "IS4": {
+        "name": "Support Riot Pile",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring 2 Riot Piles along to each battle.\nThe roadblock has 4 block, 3000 HP and 100 def (before modifiers), and is immune to stun/freeze/sleep. Unlike roadblocks, it doesn't actually reroute enemies, it just acts like a blocker."
+      },
+      "IS5": {
+        "name": "Support Riot Pile",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring 2 Riot Piles along to each battle.\nThe roadblock has 4 block, 3000 HP and 100 def (before modifiers), and is immune to stun/freeze/sleep. Unlike roadblocks, it doesn't actually reroute enemies, it just acts like a blocker."
+      }
+    }
+  },
+  {
+    "id": "support-first-aid-kit",
+    "image": "rogue_2_active_tool_6.png",
+    "themes": ["IS3"],
+    "versions": {
+      "IS3": {
+        "name": "Support First Aid Kit",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring 3 First-aid Kits to each battle.\nThe healing effect triggers 1 second after deployment."
+      }
+    }
+  },
+  {
+    "id": "support-gas-tanks",
+    "image": "rogue_1_active_tool_6.png",
+    "themes": ["IS2"],
+    "versions": {
+      "IS2": {
+        "name": "Support Gas Tanks",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring 2 Gas Tanks P. along to each battle.\nThe push has a force of 3. The push triggers 1.5 seconds after deployment."
+      }
+    }
+  },
+  {
+    "id": "support-fog-machine",
+    "image": "rogue_4_active_tool_6.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": {
+        "name": "Support Fog Machine",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring a Broken Fog Machine along to each battle.\nIt takes 5 seconds to arm and reduces movement speed by 60%."
+      },
+      "IS3": {
+        "name": "Support Fog Machine",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring a Broken Fog Machine along to each battle.\nIt takes 5 seconds to arm and reduces movement speed by 60%."
+      },
+      "IS4": {
+        "name": "Support Fog Machine",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring a Broken Fog Machine along to each battle.\nIt takes 5 seconds to arm and reduces movement speed by 60%."
+      },
+      "IS5": {
+        "name": "Support Fog Machine",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Bring a Broken Fog Machine along to each battle.\nIt takes 5 seconds to arm and reduces movement speed by 60%."
+      }
+    }
+  },
+  {
+    "id": "blunt-claws-training",
+    "image": "rogue_4_relic_legacy_45.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": { "name": "Blunt Claws - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Vanguard Operator without consuming Hope." },
+      "IS3": { "name": "Blunt Claws - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Vanguard Operator without consuming Hope." },
+      "IS4": { "name": "Blunt Claws - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Vanguard Operator without consuming Hope." },
+      "IS5": { "name": "Blunt Claws - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Vanguard Operator without consuming Hope." }
+    }
+  },
+  {
+    "id": "bend-spears-training",
+    "image": "rogue_4_relic_legacy_46.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": { "name": "Bend Spears - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Guard Operator without consuming Hope." },
+      "IS3": { "name": "Bend Spears - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Guard Operator without consuming Hope." },
+      "IS4": { "name": "Bend Spears - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Guard Operator without consuming Hope." },
+      "IS5": { "name": "Bend Spears - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Guard Operator without consuming Hope." }
+    }
+  },
+  {
+    "id": "iron-guard-training",
+    "image": "rogue_4_relic_legacy_47.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": { "name": "Iron Guard - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Defender Operator without consuming Hope." },
+      "IS3": { "name": "Iron Guard - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Defender Operator without consuming Hope." },
+      "IS4": { "name": "Iron Guard - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Defender Operator without consuming Hope." },
+      "IS5": { "name": "Iron Guard - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Defender Operator without consuming Hope." }
+    }
+  },
+  {
+    "id": "fatal-bolts-training",
+    "image": "rogue_4_relic_legacy_48.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": { "name": "Fatal Bolts - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Sniper Operator without consuming Hope." },
+      "IS3": { "name": "Fatal Bolts - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Sniper Operator without consuming Hope." },
+      "IS4": { "name": "Fatal Bolts - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Sniper Operator without consuming Hope." },
+      "IS5": { "name": "Fatal Bolts - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Sniper Operator without consuming Hope." }
+    }
+  },
+  {
+    "id": "broken-wand-training",
+    "image": "rogue_4_relic_legacy_49.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": { "name": "Broken Wand - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Caster Operator without consuming Hope." },
+      "IS3": { "name": "Broken Wand - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Caster Operator without consuming Hope." },
+      "IS4": { "name": "Broken Wand - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Caster Operator without consuming Hope." },
+      "IS5": { "name": "Broken Wand - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Caster Operator without consuming Hope." }
+    }
+  },
+  {
+    "id": "stalwart-aid-training",
+    "image": "rogue_4_relic_legacy_50.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": { "name": "Stalwart Aid - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Supporter Operator without consuming Hope." },
+      "IS3": { "name": "Stalwart Aid - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Supporter Operator without consuming Hope." },
+      "IS4": { "name": "Stalwart Aid - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Supporter Operator without consuming Hope." },
+      "IS5": { "name": "Stalwart Aid - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Supporter Operator without consuming Hope." }
+    }
+  },
+  {
+    "id": "healers-path-training",
+    "image": "rogue_4_relic_legacy_51.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": { "name": "Healer's Path - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Medic Operator without consuming Hope." },
+      "IS3": { "name": "Healer's Path - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Medic Operator without consuming Hope." },
+      "IS4": { "name": "Healer's Path - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Medic Operator without consuming Hope." },
+      "IS5": { "name": "Healer's Path - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Medic Operator without consuming Hope." }
+    }
+  },
+  {
+    "id": "rusted-blade-training",
+    "image": "rogue_4_relic_legacy_52.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": { "name": "Rusted Blade - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Specialist Operator without consuming Hope." },
+      "IS3": { "name": "Rusted Blade - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Specialist Operator without consuming Hope." },
+      "IS4": { "name": "Rusted Blade - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Specialist Operator without consuming Hope." },
+      "IS5": { "name": "Rusted Blade - Training", "cost": 8, "effect": null, "sources": [], "description": "Immediately promotes a Specialist Operator without consuming Hope." }
+    }
+  },
+  {
+    "id": "blunt-claws-inspiration",
+    "image": "rogue_1_relic_p04.png",
+    "themes": ["IS2"],
+    "versions": {
+      "IS2": {
+        "name": "Blunt Claws - Inspiration",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "The Redeployment Time of Vanguard Operators is reduced by -50%.\nThe way -redeployment time% effects are calculated is that % reductions are applied first, then flat reductions, which generally disproportionately benefits units with in-built flat redeployment time effects.\n-Redeployment time% effects are additive with each other."
+      }
+    }
+  },
+  {
+    "id": "bend-spears-army-of-one",
+    "image": "rogue_1_relic_p09.png",
+    "themes": ["IS2", "IS3"],
+    "versions": {
+      "IS2": {
+        "name": "Bend Spears - Army of One",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Guard Operators have +1 Block.\nThis does not cause liberators to have 1 block while off-skill, since the liberator trait that makes them have 0 block off-skill overwrites this collectible's effect."
+      },
+      "IS3": {
+        "name": "Bend Spears - Army of One",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Guard Operators have +1 Block.\nThis does not cause liberators to have 1 block while off-skill, since the liberator trait that makes them have 0 block off-skill overwrites this collectible's effect."
+      }
+    }
+  },
+  {
+    "id": "bend-spears-bloodbath",
+    "image": "rogue_1_relic_p08.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": {
+        "name": "Bend Spears - Bloodbath",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Guard Operators restore 2 SP after each attack.\nThe description states 2 SP is restored after each attack, but it actually triggers on any instance of damage."
+      },
+      "IS3": {
+        "name": "Bend Spears - Bloodbath",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Guard Operators restore 2 SP after each attack.\nThe description states 2 SP is restored after each attack, but it actually triggers on any instance of damage."
+      },
+      "IS4": {
+        "name": "Bend Spears - Bloodbath",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Guard Operators restore 2 SP after each attack.\nThe description states 2 SP is restored after each attack, but it actually triggers on any instance of damage."
+      },
+      "IS5": {
+        "name": "Bend Spears - Bloodbath",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Guard Operators restore 2 SP after each attack.\nThe description states 2 SP is restored after each attack, but it actually triggers on any instance of damage."
+      }
+    }
+  },
+  {
+    "id": "iron-guard-impenetrable",
+    "image": "rogue_3_relic_legacy_112.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": {
+        "name": "Iron Guard - Impenetrable",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Defender Operators restore 2 SP after being attacked.\nThis effect gets triggered by basically any source that causes a loss of HP."
+      },
+      "IS3": {
+        "name": "Iron Guard - Impenetrable",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Defender Operators restore 2 SP after being attacked.\nThis effect gets triggered by basically any source that causes a loss of HP."
+      },
+      "IS4": {
+        "name": "Iron Guard - Impenetrable",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Defender Operators restore 2 SP after being attacked.\nThis effect gets triggered by basically any source that causes a loss of HP."
+      },
+      "IS5": {
+        "name": "Iron Guard - Impenetrable",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Defender Operators restore 2 SP after being attacked.\nThis effect gets triggered by basically any source that causes a loss of HP."
+      }
+    }
+  },
+  {
+    "id": "stalwart-aid-counter-arts",
+    "image": "rogue_3_relic_legacy_124.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": {
+        "name": "Stalwart Aid - Counter-Arts",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Enemies within the attack range of Supporter Operators have -20% DEF and -20% RES.\nThe -DEF/-RES effects of this collectible stack if an enemy is in the range of multiple supporters. -20% RES constitutes a multiplicative reduction to RES, not an additive one."
+      },
+      "IS3": {
+        "name": "Stalwart Aid - Counter-Arts",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Enemies within the attack range of Supporter Operators have -20% DEF and -20% RES.\nThe -DEF/-RES effects of this collectible stack if an enemy is in the range of multiple supporters. -20% RES constitutes a multiplicative reduction to RES, not an additive one."
+      },
+      "IS4": {
+        "name": "Stalwart Aid - Counter-Arts",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Enemies within the attack range of Supporter Operators have -20% DEF and -20% RES.\nThe -DEF/-RES effects of this collectible stack if an enemy is in the range of multiple supporters. -20% RES constitutes a multiplicative reduction to RES, not an additive one."
+      },
+      "IS5": {
+        "name": "Stalwart Aid - Counter-Arts",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Enemies within the attack range of Supporter Operators have -20% DEF and -20% RES.\nThe -DEF/-RES effects of this collectible stack if an enemy is in the range of multiple supporters. -20% RES constitutes a multiplicative reduction to RES, not an additive one."
+      }
+    }
+  },
+  {
+    "id": "stalwart-aid-assistance",
+    "image": "rogue_4_relic_legacy_119.png",
+    "themes": ["IS3", "IS4", "IS5"],
+    "versions": {
+      "IS3": {
+        "name": "Stalwart Aid - Assistance",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Allied units within the attack range of Supporter Operators gain +20% ATK.\nThis effect stacks if a unit is in the range of multiple supporters. This effect is an internal buff."
+      },
+      "IS4": {
+        "name": "Stalwart Aid - Assistance",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Allied units within the attack range of Supporter Operators gain +20% ATK.\nThis effect stacks if a unit is in the range of multiple supporters. This effect is an internal buff."
+      },
+      "IS5": {
+        "name": "Stalwart Aid - Assistance",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Allied units within the attack range of Supporter Operators gain +20% ATK.\nThis effect stacks if a unit is in the range of multiple supporters. This effect is an internal buff."
+      }
+    }
+  },
+  {
+    "id": "rusted-blade-no-mans-land",
+    "image": "rogue_4_relic_legacy_127.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": {
+        "name": "Rusted Blade - No Man's Land",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "The Redeployment Time of Specialist Operators -35%.\nThis effect only affects Specialist operators, it won't affect summons.\n-Redeployment time% effects are additive with each other."
+      },
+      "IS3": {
+        "name": "Rusted Blade - No Man's Land",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "The Redeployment Time of Specialist Operators -35%.\nThis effect only affects Specialist operators, it won't affect summons.\n-Redeployment time% effects are additive with each other."
+      },
+      "IS4": {
+        "name": "Rusted Blade - No Man's Land",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "The Redeployment Time of Specialist Operators -35%.\nThis effect only affects Specialist operators, it won't affect summons.\n-Redeployment time% effects are additive with each other."
+      },
+      "IS5": {
+        "name": "Rusted Blade - No Man's Land",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "The Redeployment Time of Specialist Operators -35%.\nThis effect only affects Specialist operators, it won't affect summons.\n-Redeployment time% effects are additive with each other."
+      }
+    }
+  },
+  {
+    "id": "rusted-blade-overwhelm",
+    "image": "rogue_2_relic_fight_80.png",
+    "themes": ["IS2", "IS3"],
+    "versions": {
+      "IS2": {
+        "name": "Rusted Blade - Overwhelm",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Specialist Operators have +2 shift strength.\nThis effect only affects Specialist operators."
+      },
+      "IS3": {
+        "name": "Rusted Blade - Overwhelm",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Specialist Operators have +2 shift strength.\nThis effect only affects Specialist operators."
+      }
+    }
+  },
+  {
+    "id": "rusted-blade-spearhead-sharpening",
+    "image": "rogue_3_relic_book_2.png",
+    "themes": ["IS4"],
+    "versions": {
+      "IS4": {
+        "name": "Rusted Blade - Spearhead Sharpening",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Specialist Operators have +40% ATK and +2 shift strength.\nThis effect only affects Specialist operators."
+      }
+    }
+  },
+  {
+    "id": "rusted-iron-hammer",
+    "image": "rogue_4_relic_legacy_53.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": {
+        "name": "Rusted Iron Hammer",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Rogue Trader charges -50% Originium Ingots for their goods.\nThe -50% discount stacks multiplicatively with any other shop discount effects. Non-integer shop prices are rounded up."
+      },
+      "IS3": {
+        "name": "Rusted Iron Hammer",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Rogue Trader charges -50% Originium Ingots for their goods.\nThe -50% discount stacks multiplicatively with any other shop discount effects. Non-integer shop prices are rounded up."
+      },
+      "IS4": {
+        "name": "Rusted Iron Hammer",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Rogue Trader charges -50% Originium Ingots for their goods.\nThe -50% discount stacks multiplicatively with any other shop discount effects. Non-integer shop prices are rounded up."
+      },
+      "IS5": {
+        "name": "Rusted Iron Hammer",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Rogue Trader charges -50% Originium Ingots for their goods.\nThe -50% discount stacks multiplicatively with any other shop discount effects. Non-integer shop prices are rounded up."
+      }
+    }
+  },
+  {
+    "id": "proof-of-friendship",
+    "image": "rogue_1_relic_m07.png",
+    "themes": ["IS2"],
+    "versions": {
+      "IS2": {
+        "name": "Proof of Friendship",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "+30% Originium Ingot drops from battle.\nHaving this collectible unlocks an option in the \"An Eye for an Eye\" encounter in which you gain 20 ingots."
+      }
+    }
+  },
+  {
+    "id": "portable-scriptures",
+    "image": "rogue_2_relic_grace_60.png",
+    "themes": ["IS3"],
+    "versions": {
+      "IS3": {
+        "name": "Portable Scriptures",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "+2 Die Rolls.\nHaving this collectible forces you into the combat \"Reality\" in the encounter Heart of a Fool. Either this item or Nightsun Grass is required to obtain the Heart of a Fool encounter."
+      }
+    }
+  },
+  {
+    "id": "nightsun-grass",
+    "image": "rogue_2_relic_grace_81.png",
+    "themes": ["IS3"],
+    "versions": {
+      "IS3": {
+        "name": "Nightsun Grass",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "+5 Light.\nHaving this collectible allows you to choose between 30 ingots and a collectible in the Heart of a Fool encounter, and prevents you from doing the combat \"Reality.\"\nEither this item or Portable Scriptures is required to obtain the Heart of a Fool encounter."
+      }
+    }
+  },
+  {
+    "id": "wordless-coral",
+    "image": "rogue_2_relic_grace_71.png",
+    "themes": ["IS3"],
+    "versions": {
+      "IS3": {
+        "name": "Wordless Coral",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Recover 5 Light for every die roll.\nThis effect triggers even if the dice roll didn't cost you a dice, such as the dice roll at each wish fulfilled node."
+      }
+    }
+  },
+  {
+    "id": "pathfinder-fin",
+    "image": "rogue_2_relic_grace_68.png",
+    "themes": ["IS3"],
+    "versions": {
+      "IS3": {
+        "name": "Pathfinder Fin",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "+30 Light.\nThis collectible is only obtainable by rolling a 7 or higher when refreshing a shop."
+      }
+    }
+  },
+  {
+    "id": "knight-lance-pro",
+    "image": "rogue_4_relic_legacy_166.png",
+    "themes": ["IS4", "IS5"],
+    "versions": {
+      "IS4": {
+        "name": "Knight Lance Pro",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Treasure Chests on the battlefield will drop more Originium Ingots.\nSpecifically, this grants +1 ingot from normal chests, +5 ingots to spiked chests, and +15 ingots to Testaceous Vinecreeps."
+      },
+      "IS5": {
+        "name": "Knight Lance Pro",
+        "cost": null,
+        "effect": null,
+        "sources": ["False to Truth - 1+1", "Combats/Animals", "Wish Node"],
+        "description": "Treasure Chests on the battlefield will drop more Originium Ingots.\nSpecifically, this grants +1 ingot from normal chests, +5 ingots to Dying Fowlbeasts, and +15 ingots to Idle Exquisicarts.\nKilling all Contraption chests spawned by Cannot in Property Dispute/Narrative Offer nets you +90 ingots with Knight Lance Pro."
+      }
+    }
+  },
+  {
+    "id": "cannots-mark",
+    "image": "rogue_4_relic_legacy_157.png",
+    "themes": ["IS4", "IS5"],
+    "versions": {
+      "IS4": {
+        "name": "Cannot's Mark",
+        "cost": null,
+        "effect": null,
+        "sources": ["Rogue Trader"],
+        "description": "Gain 1 Hope whenever you buy an item at the Rogue Trader or make an exchange at Lost and Found.\nThis grants you hope on the free \"purchases\" you can make while robbing Cannot's shop.\nThis relic only appears in the shop in IS4."
+      },
+      "IS5": {
+        "name": "Cannot's Mark",
+        "cost": null,
+        "effect": null,
+        "sources": ["False to Truth - 1+1", "Combats/Animals", "Wish Node"],
+        "description": "Gain 1 Hope whenever you buy an item at the Rogue Trader or make an exchange at Lost and Found.\nThis grants you hope on the free \"purchases\" you can make while robbing Cannot's shop."
+      }
+    }
+  },
+  {
+    "id": "regional-action-plan",
+    "image": "rogue_3_relic_legacy_54.png",
+    "themes": ["IS2", "IS3", "IS4"],
+    "versions": {
+      "IS2": {
+        "name": "Regional Action Plan",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "4-star Operators cost -2 Hope to recruit."
+      },
+      "IS3": {
+        "name": "Regional Action Plan",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "4-star Operators cost -2 Hope to recruit."
+      },
+      "IS4": {
+        "name": "Regional Action Plan",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "4-star Operators cost -2 Hope to recruit.\nThe Tundra and Polar variants of Secret HR Letter have a 50% chance of making one 4-star pre-promoted on each voucher."
+      }
+    }
+  },
+  {
+    "id": "comprehensive-operation-file",
+    "image": "rogue_3_relic_legacy_55.png",
+    "themes": ["IS2", "IS3", "IS4"],
+    "versions": {
+      "IS2": {
+        "name": "Comprehensive Operation File",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "5-star Operators cost -2 Hope to recruit."
+      },
+      "IS3": {
+        "name": "Comprehensive Operation File",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "5-star Operators cost -2 Hope to recruit."
+      },
+      "IS4": {
+        "name": "Comprehensive Operation File",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "5-star Operators cost -2 Hope to recruit.\nThe alterform variants additionally give some hope, and the Tundra and Polar variants of Secret HR Letter have a 50% chance of making one 5-star pre-promoted on each voucher."
+      }
+    }
+  },
+  {
+    "id": "secret-hr-letter",
+    "image": "rogue_3_relic_legacy_56.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": {
+        "name": "Secret HR Letter",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "6-star Operators cost -2 Hope to recruit."
+      },
+      "IS3": {
+        "name": "Secret HR Letter",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "6-star Operators cost -2 Hope to recruit."
+      },
+      "IS4": {
+        "name": "Secret HR Letter",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "6-star Operators cost -2 Hope to recruit.\nThe alterform variants additionally give some hope, and the Tundra and Polar variants have a 50% chance of making one 6-star pre-promoted on each voucher."
+      },
+      "IS5": {
+        "name": "Secret HR Letter",
+        "cost": null,
+        "effect": null,
+        "sources": ["Encounter: Decisions in Despair (F3-F6"],
+        "description": "6-star Operators cost -2 Hope to recruit.\nSecret HR Letter makes it so there is a 20% chance that all 6-stars on a voucher are pre-promoted."
+      }
+    }
+  },
+  {
+    "id": "guiding-vinedoll",
+    "image": "rogue_3_relic_explore_3.png",
+    "themes": ["IS4"],
+    "versions": {
+      "IS4": {
+        "name": "Guiding Vinedoll",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Anti-Interference Index has a chance to not decrease when traveling through a vertical path.\nThis effect has a 30% chance of triggering."
+      }
+    }
+  },
+  {
+    "id": "slytooth-forest-destroyer",
+    "image": "rogue_3_relic_explore_5.png",
+    "themes": ["IS4"],
+    "versions": {
+      "IS4": {
+        "name": "Slytooth, Forest Destroyer",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Battles have a chance to drop an extra 1 Foldartal.\nThe chance of getting an additional foldartal drop from Slytooth is 15%."
+      }
+    }
+  },
+  {
+    "id": "blindness",
+    "image": "rogue_3_relic_res_10.png",
+    "themes": ["IS4"],
+    "versions": {
+      "IS4": {
+        "name": "'Blindness'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "When Anti-Interference Index is at 0 to 1, moving horizontally or vertically will randomly grant you Objective Shield, Originium Ingot, Hope, Anti-Interference Index, or Foldartal.\n25% chance of getting 1 shield, 25% chance of getting 1 ingot, 25% chance of getting 1 hope, 15% chance of getting 1 index, 10% chance of getting 1 foldartal."
+      }
+    }
+  },
+  {
+    "id": "ancient-tree-fruit",
+    "image": "rogue_3_relic_fight_14.png",
+    "themes": ["IS4", "IS5"],
+    "versions": {
+      "IS4": {
+        "name": "Ancient Tree Fruit",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Immediately obtain 3 random trinkets.\nThis gives you random common tier collectibles specifically."
+      },
+      "IS5": {
+        "name": "Ancient Tree Fruit",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Immediately obtain 3 random trinkets.\nThis gives you random common tier collectibles specifically."
+      }
+    }
+  },
+  {
+    "id": "herr-hraaselsuher",
+    "image": "rogue_4_relic_res_3.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Herr Hraaselsuher",
+        "cost": 8,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - 1+1", "Combats/Animals", "Wish Nodes", "Collection Squad"],
+        "description": "Toil Limit +2 and chance to gain 1 Plan after combat.\nYou have a 50% chance of getting a plan drop at the end of each combat."
+      }
+    }
+  },
+  {
+    "id": "song-to-make-a-tenacious-mind",
+    "image": "rogue_4_relic_res_6.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "'Song to Make A Tenacious Mind'",
+        "cost": 12,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - 3+3", "Combats/Animals", "Wish Nodes"],
+        "description": "Every Inspirer used grants +1 Shield.\nJust using the inspirer is enough to receive a shield, you don't need to bring it into a combat."
+      }
+    }
+  },
+  {
+    "id": "anchor-for-five-seconds-ago",
+    "image": "rogue_4_relic_res_7.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Anchor For Five Seconds Ago",
+        "cost": 12,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - 2+2", "Combats/Animals", "Wish Nodes"],
+        "description": "Gain 1 extra Inspirer after the battle if you used an Inspirer as the battle started.\nWorks on every stage that gives a reward, including face-offs."
+      }
+    }
+  },
+  {
+    "id": "nameless-totem",
+    "image": "rogue_4_relic_res_9.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Nameless Totem",
+        "cost": 12,
+        "effect": null,
+        "sources": ["Rogue Trader"],
+        "description": "Obtain 3 different Thoughts.\nSpecifically gives 1 plan, 1 random inspirer, and 1 random lingerer."
+      }
+    }
+  },
+  {
+    "id": "burdenherd-bell",
+    "image": "rogue_4_relic_explore_5.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Burdenherd Bell",
+        "cost": null,
+        "effect": null,
+        "sources": ["Encounter: Burdenbeast Traveler (F2-F4)"],
+        "description": "Burdenbeast Traveler joins your squad; gains an additional choice when loot drops from a Wish Fulfilled node.\nThe Burdenbeast Traveler provides 2 DP per 5 seconds. You lose this collectible if the Burdenbeast Traveler is defeated.\nSafely escorting the Burdenbeast Traveler to F5 causes them to leave and grant you 1 Plan, 1 Assembly, and 1 Furnace."
+      }
+    }
+  },
+  {
+    "id": "masterless-memories",
+    "image": "rogue_4_relic_res_2.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Masterless Memories",
+        "cost": null,
+        "effect": null,
+        "sources": ["Combats"],
+        "description": "Immediately obtain 5 Thoughts at most left behind from your last adventure.\nYou can only receive this if you made it to at least F4 in the previous run and then died. You cannot get the Pure-White Petals and Wordless Deed thoughts from Masterless Memories."
+      }
+    }
+  },
+  {
+    "id": "scales-of-avarice",
+    "image": "rogue_4_relic_res_14.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Scales of Avarice",
+        "cost": null,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - 1+1", "Combats/Animals", "Wish Nodes", "Ingots Squad"],
+        "description": "Gain +3 Originium Ingots for each non-combat node entered when Total Mental Toil exceeds 20.\nIngots are received when stepping into the node."
+      }
+    }
+  },
+  {
+    "id": "eye-of-fortune",
+    "image": "rogue_4_relic_explore_10.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Eye of Fortune",
+        "cost": null,
+        "effect": null,
+        "sources": ["False to Truth - 1+1", "Combats/Animals", "Wish Nodes"],
+        "description": "Originium Ingots +5, Operators dispatched in Scout nodes will return with 5 extra Ingots.\nIngots will still be obtained from operators scouted before this relic was obtained that have not returned yet. Works with Witchcraft."
+      }
+    }
+  },
+  {
+    "id": "baby-djall",
+    "image": "rogue_4_relic_explore_9.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Baby Djall",
+        "cost": 8,
+        "effect": null,
+        "sources": ["Rogue Trader", "Combats/Animals", "Wish Nodes"],
+        "description": "+3 Hope, obtain an extra +8 Hope when this Collectible is exchanged in Lost and Found.\nA relic is obtained in addition to the 8 Hope."
+      }
+    }
+  },
+  {
+    "id": "hibernating-kin",
+    "image": "rogue_4_relic_explore_4.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Hibernating Kin",
+        "cost": 16,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - 3+3", "Combats/Animals", "Wish Nodes"],
+        "description": "Hope +5, obtain an extra Collectible when this Collectible is exchanged in Lost and Found.\nWhen traded, the 2 relics obtained are from the boss collectibles pool."
+      }
+    }
+  },
+  {
+    "id": "rhoders-gate",
+    "image": "rogue_4_relic_explore_8.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Rhoder's Gate",
+        "cost": null,
+        "effect": null,
+        "sources": ["Encounter: Plausible But False (F1-F4)"],
+        "description": "Immediately recruit multiple Reserve Operators; at the end of each combat, the last deployed Operator will be sent to a Scout node.\nThe operator selected to be scouted is the last operator deployed, regardless of whether they were retreated afterward."
+      }
+    }
+  },
+  {
+    "id": "live-rose",
+    "image": "rogue_4_relic_legacy_86.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": { "name": "Live Rose", "cost": null, "effect": null, "sources": [], "description": "All allied units have +20% healing effectiveness." },
+      "IS3": { "name": "Live Rose", "cost": null, "effect": null, "sources": [], "description": "All allied units have +20% healing effectiveness." },
+      "IS4": { "name": "Live Rose", "cost": null, "effect": null, "sources": [], "description": "All allied units have +20% healing effectiveness." },
+      "IS5": { "name": "Live Rose", "cost": 8, "effect": null, "sources": [], "description": "All allied units have +20% healing effectiveness." }
+    }
+  },
+  {
+    "id": "white-flower-crown",
+    "image": "rogue_4_relic_legacy_87.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": { "name": "White Flower Crown", "cost": null, "effect": null, "sources": [], "description": "All allied units have +30% healing effectiveness." },
+      "IS3": { "name": "White Flower Crown", "cost": null, "effect": null, "sources": [], "description": "All allied units have +30% healing effectiveness." },
+      "IS4": { "name": "White Flower Crown", "cost": null, "effect": null, "sources": [], "description": "All allied units have +30% healing effectiveness." },
+      "IS5": { "name": "White Flower Crown", "cost": 12, "effect": null, "sources": [], "description": "All allied units have +30% healing effectiveness." }
+    }
+  },
+  {
+    "id": "surging-feast",
+    "image": "rogue_4_relic_legacy_190.png",
+    "themes": ["IS2", "IS3", "IS5"],
+    "versions": {
+      "IS2": { "name": "Surging Feast", "cost": null, "effect": null, "sources": [], "description": "All allied units receive +30% healing effectiveness and take -30% Elemental Injury." },
+      "IS3": { "name": "Surging Feast", "cost": null, "effect": null, "sources": [], "description": "All allied units receive +30% healing effectiveness and take -30% Elemental Injury." },
+      "IS5": { "name": "Surging Feast", "cost": null, "effect": null, "sources": [], "description": "All allied units receive +30% healing effectiveness and take -30% Elemental Injury." }
+    }
+  },
+  {
+    "id": "todays-menu",
+    "image": "rogue_1_relic_n03.png",
+    "themes": ["IS2"],
+    "versions": {
+      "IS2": { "name": "Today's Menu", "cost": null, "effect": null, "sources": [], "description": "All allied units have +40% healing effectiveness." }
+    }
+  },
+  {
+    "id": "ancient-gaulish-silver-coin",
+    "image": "rogue_4_relic_legacy_128.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": { "name": "Ancient Gaulish Silver Coin", "cost": null, "effect": null, "sources": [], "description": "All Operators start with +6 SP." },
+      "IS3": { "name": "Ancient Gaulish Silver Coin", "cost": null, "effect": null, "sources": [], "description": "All Operators start with +6 SP." },
+      "IS4": { "name": "Ancient Gaulish Silver Coin", "cost": null, "effect": null, "sources": [], "description": "All Operators start with +6 SP." },
+      "IS5": { "name": "Ancient Gaulish Silver Coin", "cost": 8, "effect": null, "sources": ["Rogue Trader", "False to Truth - 2+2", "Combats/Animals", "Wish Nodes"], "description": "All Operators start with +6 SP." }
+    }
+  },
+  {
+    "id": "bank-of-gaul-check",
+    "image": "rogue_4_relic_legacy_129.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": { "name": "Bank of Gaul Check", "cost": null, "effect": null, "sources": [], "description": "All Operators start with +12 SP." },
+      "IS3": { "name": "Bank of Gaul Check", "cost": null, "effect": null, "sources": [], "description": "All Operators start with +12 SP." },
+      "IS4": { "name": "Bank of Gaul Check", "cost": null, "effect": null, "sources": [], "description": "All Operators start with +12 SP." },
+      "IS5": { "name": "Bank of Gaul Check", "cost": 12, "effect": null, "sources": ["Rogue Trader", "False to Truth - 3+3", "Combats/Animals", "Wish Nodes"], "description": "All Operators start with +12 SP." }
+    }
+  },
+  {
+    "id": "second-economic-reform-act",
+    "image": "rogue_4_relic_legacy_130.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": { "name": "'Second Economic Reform Act'", "cost": null, "effect": null, "sources": [], "description": "All Operators start with +18 SP." },
+      "IS3": { "name": "'Second Economic Reform Act'", "cost": null, "effect": null, "sources": [], "description": "All Operators start with +18 SP." },
+      "IS4": { "name": "'Second Economic Reform Act'", "cost": null, "effect": null, "sources": [], "description": "All Operators start with +18 SP." },
+      "IS5": { "name": "'Second Economic Reform Act'", "cost": 16, "effect": null, "sources": ["Rogue Trader - Rare Collectibles", "False to Truth - Eureka", "Combats/Animals", "Wish Nodes"], "description": "All Operators start with +18 SP." }
+    }
+  },
+  {
+    "id": "elysee-purse",
+    "image": "rogue_1_relic_q11.png",
+    "themes": ["IS2"],
+    "versions": {
+      "IS2": { "name": "\u00c9lys\u00e9e Purse", "cost": 8, "effect": null, "sources": [], "description": "All Operators start with +8 SP." }
+    }
+  },
+  {
+    "id": "vanilla-soda",
+    "image": "rogue_4_relic_legacy_131.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": { "name": "Vanilla Soda", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.2/s." },
+      "IS3": { "name": "Vanilla Soda", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.2/s." },
+      "IS4": { "name": "Vanilla Soda", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.2/s." },
+      "IS5": { "name": "Vanilla Soda", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.2/s." }
+    }
+  },
+  {
+    "id": "fowlbeast-liver-plate",
+    "image": "rogue_4_relic_legacy_132.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": { "name": "Fowlbeast Liver Plate", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.35/s." },
+      "IS3": { "name": "Fowlbeast Liver Plate", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.35/s." },
+      "IS4": { "name": "Fowlbeast Liver Plate", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.35/s." },
+      "IS5": { "name": "Fowlbeast Liver Plate", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.35/s." }
+    }
+  },
+  {
+    "id": "dreaming-essence",
+    "image": "rogue_4_relic_legacy_133.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": { "name": "Dreaming Essence", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.5/s." },
+      "IS3": { "name": "Dreaming Essence", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.5/s." },
+      "IS4": { "name": "Dreaming Essence", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.5/s." },
+      "IS5": { "name": "Dreaming Essence", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.5/s." }
+    }
+  },
+  {
+    "id": "ball-juice",
+    "image": "rogue_1_relic_q15.png",
+    "themes": ["IS2"],
+    "versions": {
+      "IS2": { "name": "Ball Juice", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.25/s." }
+    }
+  },
+  {
+    "id": "victory-horn",
+    "image": "rogue_4_relic_legacy_139.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": { "name": "Victory Horn", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 100%." },
+      "IS3": { "name": "Victory Horn", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 100%." },
+      "IS4": { "name": "Victory Horn", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 100%." },
+      "IS5": { "name": "Victory Horn", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 100%." }
+    }
+  },
+  {
+    "id": "flash-camera",
+    "image": "rogue_4_relic_legacy_140.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": { "name": "Flash Camera", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 110%." },
+      "IS3": { "name": "Flash Camera", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 110%." },
+      "IS4": { "name": "Flash Camera", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 110%." },
+      "IS5": { "name": "Flash Camera", "cost": 12, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 110%." }
+    }
+  },
+  {
+    "id": "therapy-tape",
+    "image": "rogue_4_relic_legacy_141.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": { "name": "Therapy Tape", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 150%." },
+      "IS3": { "name": "Therapy Tape", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 150%." },
+      "IS4": { "name": "Therapy Tape", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 150%." },
+      "IS5": { "name": "Therapy Tape", "cost": 16, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 150%." }
+    }
+  },
+  {
+    "id": "kings-new-lance",
+    "image": "rogue_4_relic_legacy_150.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": { "name": "King's New Lance", "cost": null, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is 1, all allied units have +50 ASPD." },
+      "IS3": { "name": "King's New Lance", "cost": null, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is 1, all allied units have +50 ASPD." },
+      "IS4": { "name": "King's New Lance", "cost": null, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is 1, all allied units have +50 ASPD." },
+      "IS5": { "name": "King's New Lance", "cost": null, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is 1, all allied units have +50 ASPD." }
+    }
+  },
+  {
+    "id": "kings-staff",
+    "image": "rogue_3_relic_legacy_169.png",
+    "themes": ["IS3", "IS4"],
+    "versions": {
+      "IS3": { "name": "King's Staff", "cost": null, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is at 1, all Operators recover an additional 1 SP every 2 seconds." },
+      "IS4": { "name": "King's Staff", "cost": null, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is at 1, all Operators recover an additional 1 SP every 2 seconds." }
+    }
+  },
+  {
+    "id": "kings-legacy",
+    "image": "rogue_4_relic_fight_8.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": { "name": "King's Legacy", "cost": 8, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is at 1, all Operators recover an additional 1 SP and 3% of Max HP every 2 seconds." }
+    }
+  },
+  {
+    "id": "kings-buckler",
+    "image": "rogue_3_relic_legacy_168.png",
+    "themes": ["IS3", "IS4"],
+    "versions": {
+      "IS3": { "name": "King's Buckler", "cost": null, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is at 1, all Operators have +2 Block." },
+      "IS4": { "name": "King's Buckler", "cost": null, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is at 1, all Operators have +2 Block." }
+    }
+  },
+  {
+    "id": "kings-crown",
+    "image": "rogue_4_relic_legacy_154.png",
+    "themes": ["IS3", "IS4", "IS5"],
+    "versions": {
+      "IS3": {
+        "name": "King's Crown",
+        "cost": null,
+        "effect": { "type": "conditional", "label": "Conditional" },
+        "sources": [],
+        "description": "When Life Point is at 1, all allied units have +50% ATK, increased to +150% ATK if you have collected 3 or more King's Collectibles.\nThe +ATK% provided by King's Crown is additive with talent/skill +ATK% and multiplicative with external modifiers."
+      },
+      "IS4": {
+        "name": "King's Crown",
+        "cost": null,
+        "effect": { "type": "conditional", "label": "Conditional" },
+        "sources": [],
+        "description": "When Life Point is at 1, all allied units have +50% ATK, increased to +150% ATK if you have collected 3 or more King's Collectibles.\nThe +ATK% provided by King's Crown is additive with talent/skill +ATK% and multiplicative with external modifiers."
+      },
+      "IS5": {
+        "name": "King's Crown",
+        "cost": null,
+        "effect": { "type": "conditional", "label": "Conditional" },
+        "sources": [],
+        "description": "When Life Point is at 1, all allied units have +50% ATK, increased to +150% ATK if you have collected 3 or more King's Collectibles.\nThe +ATK% provided by King's Crown is additive with talent/skill +ATK% and multiplicative with external modifiers."
+      }
+    }
+  },
+  {
+    "id": "visage-of-crowned-fates",
+    "image": "rogue_4_relic_fight_27.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Visage of Crowned Fates",
+        "cost": 16,
+        "effect": null,
+        "sources": [],
+        "description": "Shield +3; converts all remaining max Life Points into an equivalent amount of Shield before reducing max Life Points to 1.\nWhile not officially a King of Sarkaz relic, it is practically a requirement to make them viable. In IS5, the last point of Max Life gained from command level is at command level 6; if you take Visage before command level 6, leveling up will ruin its synergy with King's and King of Sarkaz's sets."
+      }
+    }
+  },
+  {
+    "id": "sarkaz-kings-regal-rest",
+    "image": "rogue_4_relic_fight_14.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": { "name": "Sarkaz King's Regal Rest", "cost": 8, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "All Operators gain +20% DEF and +10 RES at full Life Points." }
+    }
+  },
+  {
+    "id": "sarkaz-kings-torn-banner",
+    "image": "rogue_4_relic_fight_15.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": { "name": "Sarkaz King's Torn Banner", "cost": 12, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "All Operators gain +30 ASPD at full Life Points." }
+    }
+  },
+  {
+    "id": "king-of-sarkazs-vessel",
+    "image": "rogue_4_relic_fight_28.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "King of Sarkaz's Vessel",
+        "cost": 16,
+        "effect": { "type": "conditional", "label": "Conditional" },
+        "sources": [],
+        "description": "All Operators gain +80% Max HP when Life Points are full, increased to 200% if you have collected 3 or more King of Sarkaz's Collectibles."
+      }
+    }
+  },
+  {
+    "id": "hand-of-choker",
+    "image": "rogue_2_relic_fight_82.png",
+    "themes": ["IS2", "IS3"],
+    "versions": {
+      "IS2": {
+        "name": "Hand of Choker",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Heavyshooter, Deadeye, and Besieger Operators' attacks will defeat all non-Boss enemy units at 30% or less HP.\nIf a shot's damage brings an enemy's HP below the insta-kill threshold, the enemy will be insta-killed by that shot."
+      },
+      "IS3": {
+        "name": "Hand of Choker",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Heavyshooter, Deadeye, and Besieger Operators' attacks will instantly defeat enemies below 20% HP.\nIf a shot's damage brings an enemy's HP below the insta-kill threshold, the enemy will be insta-killed by that shot."
+      }
+    }
+  },
+  {
+    "id": "hand-of-outburst",
+    "image": "rogue_3_relic_hand_3.png",
+    "themes": ["IS4"],
+    "versions": {
+      "IS4": {
+        "name": "Hand of Outburst",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Heavyshooter, Deadeye, and Besieger Operators deal increasing damage to enemies as the target's HP decreases, up to a maximum of 50%, and instantly defeat enemies below 20% HP.\nIf a shot's damage brings an enemy's HP below the insta-kill threshold, the enemy will be insta-killed by that shot."
+      }
+    }
+  },
+  {
+    "id": "hand-of-fireworks",
+    "image": "rogue_4_relic_hand_7.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Hand of Fireworks",
+        "cost": 16,
+        "effect": null,
+        "sources": [],
+        "description": "Marksman, Loopshooter, and Sentry Protector Operators have a 25% chance on each attack to shoot an extra projectile, dealing 200% ATK as AoE Physical Damage.\nThe AOE range of the extra projectile has an approximate radius of 0.5 tiles."
+      }
+    }
+  },
+  {
+    "id": "eventide-terror",
+    "image": "rogue_1_relic_sp06.png",
+    "themes": ["IS2"],
+    "versions": {
+      "IS2": {
+        "name": "'Eventide Terror'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Deals Stun on all enemy units for 5 seconds every time an enemy unit enters the Protection Objective.\nTriggers on any leak, including enemies that don't subtract life points."
+      }
+    }
+  },
+  {
+    "id": "excessiveness",
+    "image": "rogue_1_relic_sp07.png",
+    "themes": ["IS2"],
+    "versions": {
+      "IS2": {
+        "name": "'Excessiveness'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Deals 3000 True Damage on all enemy units every time an enemy unit enters the Protection Objective.\nTriggers on any leak, including enemies that don't subtract life points."
+      }
+    }
+  },
+  {
+    "id": "little-gran-faro",
+    "image": "rogue_4_relic_legacy_152.png",
+    "themes": ["IS3", "IS4", "IS5"],
+    "versions": {
+      "IS3": {
+        "name": "Little Gran Faro",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Deals Stun on all enemy units for 5 seconds every time an enemy unit enters the Protection Objective.\nTriggers on any leak, including enemies that don't subtract life points."
+      },
+      "IS4": {
+        "name": "Little Gran Faro",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Deals Stun on all enemy units for 5 seconds every time an enemy unit enters the Protection Objective.\nTriggers on any leak, including enemies that don't subtract life points."
+      },
+      "IS5": {
+        "name": "Little Gran Faro",
+        "cost": 12,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - 2+2"],
+        "description": "Deals Stun on all enemy units for 5 seconds every time an enemy unit enters the Protection Objective.\nTriggers on any leak, including enemies that don't subtract life points."
+      }
+    }
+  },
+  {
+    "id": "memories-of-the-shard",
+    "image": "rogue_4_relic_legacy_153.png",
+    "themes": ["IS3", "IS4", "IS5"],
+    "versions": {
+      "IS3": {
+        "name": "'Memories of The Shard'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Deals 3000 True Damage on all enemy units every time an enemy unit enters the Protection Objective.\nTriggers on any leak, including enemies that don't subtract life points."
+      },
+      "IS4": {
+        "name": "'Memories of The Shard'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Deals 3000 True Damage on all enemy units every time an enemy unit enters the Protection Objective.\nTriggers on any leak, including enemies that don't subtract life points."
+      },
+      "IS5": {
+        "name": "'Memories of The Shard'",
+        "cost": 16,
+        "effect": null,
+        "sources": ["Rogue Trader"],
+        "description": "Deals 3000 True Damage on all enemy units every time an enemy unit enters the Protection Objective.\nTriggers on any leak, including enemies that don't subtract life points."
+      }
+    }
+  },
+  {
+    "id": "rainbow-jar",
+    "image": "rogue_4_relic_legacy_188.png",
+    "themes": ["IS4", "IS5"],
+    "versions": {
+      "IS4": {
+        "name": "Rainbow Jar",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Whenever an enemy enters the Objective Point, immediately selects a random Operator waiting to be re-deployable, and reduces their Redeployment Time by half."
+      },
+      "IS5": {
+        "name": "Rainbow Jar",
+        "cost": 12,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - 2+2"],
+        "description": "Whenever an enemy enters the Objective Point, the Redeployment Time of a random Operator waiting to be re-deployed is reduced to 0."
+      }
+    }
+  },
+  {
+    "id": "bladedance",
+    "image": "rogue_1_relic_m10.png",
+    "themes": ["IS2"],
+    "versions": {
+      "IS2": {
+        "name": "Bladedance",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "When the battle begins, a random Operator will have +100% ATK and +100% Max HP within the operation.\nStats provided are external modifiers."
+      }
+    }
+  },
+  {
+    "id": "chitinous-ripper",
+    "image": "rogue_4_relic_legacy_171.png",
+    "themes": ["IS3", "IS5"],
+    "versions": {
+      "IS3": {
+        "name": "Chitinous Ripper",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "When a battle begins, a random Operator will have +100% ATK and +100% HP for that battle.\nStats provided are external modifiers."
+      },
+      "IS5": {
+        "name": "Chitinous Ripper",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "When a battle begins, a random Operator will have +100% ATK and +100% HP for that battle.\nStats provided are external modifiers."
+      }
+    }
+  },
+  {
+    "id": "survivor-contract",
+    "image": "rogue_4_relic_fight_23.png",
+    "themes": ["IS3", "IS5"],
+    "versions": {
+      "IS3": {
+        "name": "Survivor Contract",
+        "cost": null,
+        "effect": null,
+        "sources": ["Mind over Matter Squad"],
+        "description": "At the start of battle, a random Operator gains +20% ATK and DEF, plus an additional +20% at the end of each battle."
+      },
+      "IS5": {
+        "name": "Survivor Contract",
+        "cost": null,
+        "effect": null,
+        "sources": ["Mimic Squad"],
+        "description": "At the start of battle, a random Operator gains +20% ATK and DEF, plus an additional +20% at the end of each battle."
+      }
+    }
+  },
+  {
+    "id": "frozen-whetstone",
+    "image": "rogue_3_relic_fight_8.png",
+    "themes": ["IS4"],
+    "versions": {
+      "IS4": {
+        "name": "Frozen Whetstone",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "When a battle begins, the Max HP, ATK, DEF, RES, Block Count, Starting SP, and DP Cost of a random Operator is doubled."
+      }
+    }
+  },
+  {
+    "id": "mercenarys-accessory",
+    "image": "rogue_4_relic_fight_4.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Mercenary's Accessory",
+        "cost": 16,
+        "effect": { "type": "unconditional", "label": "Unconditional" },
+        "sources": [],
+        "description": "Grants a random Operator +5% ATK, DEF, and Max HP, plus an additional +5% after each perfectly cleared battle (Stacks up to 10 times).\nAutomatically gains 1 out of the 10 stacks when obtained and caps at 10 stacks."
+      }
+    }
+  },
+  {
+    "id": "fearless-blade",
+    "image": "rogue_4_relic_fight_20.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Fearless Blade",
+        "cost": null,
+        "effect": { "type": "conditional", "label": "Conditional" },
+        "sources": [],
+        "description": "When the battle begins, the Operator with the highest DP Cost gains +50% ATK and DEF."
+      }
+    }
+  },
+  {
+    "id": "blood-tax-mystery",
+    "image": "rogue_4_relic_encounter_1.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Blood Tax Mystery",
+        "cost": null,
+        "effect": { "type": "unconditional", "label": "Unconditional" },
+        "sources": ["Bizarre Fragment"],
+        "description": "All allied and enemy units have -35% Max HP; only active in Bizarre Fragments.\nExternal modifier."
+      }
+    }
+  },
+  {
+    "id": "crystal-mystery",
+    "image": "rogue_4_relic_encounter_2.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Crystal Mystery",
+        "cost": null,
+        "effect": null,
+        "sources": ["Bizarre Fragment"],
+        "description": "All low ground Operators have +600 DEF but are Frozen for 15 seconds after deployment; only active in Bizarre Fragments."
+      }
+    }
+  },
+  {
+    "id": "suspicion-mystery",
+    "image": "rogue_4_relic_encounter_3.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Suspicion Mystery",
+        "cost": null,
+        "effect": null,
+        "sources": ["Bizarre Fragment"],
+        "description": "Earn double the Originium Ingots post battle, but also lose double the Life Points; only active in Bizarre Fragments."
+      }
+    }
+  },
+  {
+    "id": "fabrication-mystery",
+    "image": "rogue_4_relic_encounter_4.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Fabrication Mystery",
+        "cost": null,
+        "effect": null,
+        "sources": ["Bizarre Fragment"],
+        "description": "Starting DP +50, but natural DP regeneration rate is reduced by 50%; only active in Bizarre Fragments."
+      }
+    }
+  },
+  {
+    "id": "foresight-mystery",
+    "image": "rogue_4_relic_encounter_5.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Foresight Mystery",
+        "cost": null,
+        "effect": null,
+        "sources": ["Bizarre Fragment"],
+        "description": "Gain +20% Command EXP from battles, extra enemies will appear in battle; only active in Bizarre Fragments.\nNote: the +20% Command EXP effect works on every stage outside Bizarre Fragments as well."
+      }
+    }
+  },
+  {
+    "id": "sigil-mystery",
+    "image": "rogue_4_relic_encounter_6.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Sigil Mystery",
+        "cost": null,
+        "effect": null,
+        "sources": ["Bizarre Fragment"],
+        "description": "All Operators gain +30 Starting SP, but natural SP recovery rate is reduced by 50%; only active in Bizarre Fragments."
+      }
+    }
+  },
+  {
+    "id": "tranquil-mystery",
+    "image": "rogue_4_relic_encounter_7.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Tranquil Mystery",
+        "cost": null,
+        "effect": { "type": "unconditional", "label": "Unconditional" },
+        "sources": ["Bizarre Fragment"],
+        "description": "All allied and enemy units have -25% ATK; only active in Bizarre Fragments.\nExternal modifier."
+      }
+    }
+  },
+  {
+    "id": "silk-bond-mystery",
+    "image": "rogue_4_relic_encounter_8.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Silk Bond Mystery",
+        "cost": null,
+        "effect": null,
+        "sources": ["Bizarre Fragment"],
+        "description": "Operators take continuous damage if other Operators are within the 8 surrounding tiles; otherwise, gain +50 ASPD; only active in Bizarre Fragments.\nOperators within range of each other lose 150 HP/s."
+      }
+    }
+  },
+  {
+    "id": "judgement-guard",
+    "image": "rogue_4_relic_book_6.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": { "name": "Judgement: Guard", "cost": 8, "effect": { "type": "unconditional", "label": "Unconditional" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Guard Operators gain +20% ATK and +20 ASPD.\nExternal modifier, stacks additively with other Judgement relics." }
+    }
+  },
+  {
+    "id": "judgement-vanguard",
+    "image": "rogue_4_relic_book_7.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": { "name": "Judgement: Vanguard", "cost": 8, "effect": { "type": "unconditional", "label": "Unconditional" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Vanguard Operators gain +20% ATK and +30% Max HP.\nExternal modifier, stacks additively with other Judgement relics." }
+    }
+  },
+  {
+    "id": "judgement-defender",
+    "image": "rogue_4_relic_book_8.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": { "name": "Judgement: Defender", "cost": 8, "effect": { "type": "unconditional", "label": "Unconditional" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Defender Operators gain +20% DEF and +30% Max HP.\nExternal modifier, stacks additively with other Judgement relics." }
+    }
+  },
+  {
+    "id": "judgement-sniper",
+    "image": "rogue_4_relic_book_9.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": { "name": "Judgement: Sniper", "cost": 8, "effect": { "type": "unconditional", "label": "Unconditional" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Sniper Operators gain +20% ATK and +20 ASPD.\nExternal modifier, stacks additively with other Judgement relics." }
+    }
+  },
+  {
+    "id": "judgement-specialist",
+    "image": "rogue_4_relic_book_10.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": { "name": "Judgement: Specialist", "cost": 8, "effect": { "type": "unconditional", "label": "Unconditional" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Specialist Operators gain +20% ATK and +30% Max HP.\nExternal modifier, stacks additively with other Judgement relics." }
+    }
+  },
+  {
+    "id": "judgement-medic",
+    "image": "rogue_4_relic_book_11.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": { "name": "Judgement: Medic", "cost": 8, "effect": { "type": "unconditional", "label": "Unconditional" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Medic Operators gain +50% ATK.\nExternal modifier, stacks additively with other Judgement relics." }
+    }
+  },
+  {
+    "id": "judgement-caster",
+    "image": "rogue_4_relic_book_12.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": { "name": "Judgement: Caster", "cost": 8, "effect": { "type": "unconditional", "label": "Unconditional" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Caster Operators gain +20% ATK and +20 ASPD.\nExternal modifier, stacks additively with other Judgement relics." }
+    }
+  },
+  {
+    "id": "judgement-supporter",
+    "image": "rogue_4_relic_book_13.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": { "name": "Judgement: Supporter", "cost": 8, "effect": { "type": "unconditional", "label": "Unconditional" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Supporter Operators gain +50% ATK.\nExternal modifier, stacks additively with other Judgement relics." }
+    }
+  },
+  {
+    "id": "flowers-of-quinde",
+    "image": "rogue_1_relic_m13.png",
+    "themes": ["IS2"],
+    "versions": {
+      "IS2": {
+        "name": "'Flowers of Quinde'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "All friendly units recover 10 HP every second.\nThe \"Art Connoisseur\" encounter can only show up when you have at least one of 'Flowers of Quinde' or 'Numbness and Obscenity'.\nHaving both will allow you to obtain 'Beauty and Ugliness in the Age of Terra'."
+      }
+    }
+  },
+  {
+    "id": "numbness-and-obscenity",
+    "image": "rogue_1_relic_m14.png",
+    "themes": ["IS2"],
+    "versions": {
+      "IS2": {
+        "name": "'Numbness and Obscenity'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "All friendly units have +5 RES.\nThe \"Art Connoisseur\" encounter can only show up when you have at least one of 'Flowers of Quinde' or 'Numbness and Obscenity'.\nHaving both will allow you to obtain 'Beauty and Ugliness in the Age of Terra'."
+      }
+    }
+  },
+  {
+    "id": "brokenblade",
+    "image": "rogue_1_relic_m05.png",
+    "themes": ["IS2"],
+    "versions": {
+      "IS2": {
+        "name": "'Brokenblade'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "All Operators have -30% Max HP, but have -50% Redeployment Time.\nThe way -redeployment time% effects are calculated is that % reductions are applied first, then flat reductions."
+      }
+    }
+  },
+  {
+    "id": "wavebreaker",
+    "image": "rogue_2_relic_fight_41.png",
+    "themes": ["IS3"],
+    "versions": {
+      "IS3": {
+        "name": "'Wavebreaker'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "All Operators have -25% HP, but have -50% Redeployment Time.\nThe way -redeployment time% effects are calculated is that % reductions are applied first, then flat reductions."
+      }
+    }
+  },
+  {
+    "id": "whiteflower",
+    "image": "rogue_1_relic_m11.png",
+    "themes": ["IS2"],
+    "versions": {
+      "IS2": {
+        "name": "'Whiteflower'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "When the battle begins, randomize all allied operators' Deployment Cost.\nThe effect that shuffles DP costs can return an operator's own DP cost to itself."
+      }
+    }
+  },
+  {
+    "id": "vivaparous-lily",
+    "image": "rogue_2_relic_fight_45.png",
+    "themes": ["IS3"],
+    "versions": {
+      "IS3": {
+        "name": "Vivaparous Lily",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "When a battle begins, reduces the DP Cost of all Operators by 3, then scrambles their DP Cost.\nThe effect that shuffles DP costs can return an operator's own DP cost to itself."
+      }
+    }
+  },
+  {
+    "id": "focus",
+    "image": "rogue_1_relic_n16.png",
+    "themes": ["IS2"],
+    "versions": {
+      "IS2": {
+        "name": "'Focus'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Whenever you deploy a unit, deal 3000 Arts damage to a random enemy and the area around it.\nThe definition of \"friendly unit\" is very broad and encompasses the vast majority of deployables."
+      }
+    }
+  },
+  {
+    "id": "suis-wrath",
+    "image": "rogue_3_relic_legacy_157.png",
+    "themes": ["IS3", "IS4"],
+    "versions": {
+      "IS3": {
+        "name": "'Sui's Wrath'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Whenever you deploy a unit, deal 3000 Arts damage to a random enemy and the area around it.\nThe definition of \"friendly unit\" is very broad and encompasses the vast majority of deployables."
+      },
+      "IS4": {
+        "name": "'Sui's Wrath'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Whenever you deploy a unit, deal 3000 Arts damage to a random enemy and the area around it.\nThe definition of \"friendly unit\" is very broad and encompasses the vast majority of deployables."
+      }
+    }
+  },
+  {
+    "id": "derivative-terminal-supercharged-mod",
+    "image": "rogue_2_relic_fight_149.png",
+    "themes": ["IS3"],
+    "versions": {
+      "IS3": {
+        "name": "Derivative Terminal - Supercharged Mod",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Summons have +30% HP, +30% ATK, and +30 ASPD.\nThis applies to many deployable units that you might not initially think of as summons, for example Pozyomka's typewriter."
+      }
+    }
+  },
+  {
+    "id": "distant-homes-guide",
+    "image": "rogue_2_relic_fight_127.png",
+    "themes": ["IS3"],
+    "versions": {
+      "IS3": {
+        "name": "Distant Home's Guide",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Designates one deployable tile at the beginning of battle; friendly units deployed on that tile will recover 1 SP and 3% Max HP per second.\nThis collectible can choose some tiles that are not actually deployable on."
+      }
+    }
+  },
+  {
+    "id": "abandoned-banner",
+    "image": "rogue_2_relic_fight_128.png",
+    "themes": ["IS3"],
+    "versions": {
+      "IS3": {
+        "name": "Abandoned Banner",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Designates one deployable tile at the beginning of battle; friendly units deployed on that tile have +50% ATK and +50 ASPD.\nThis collectible can choose some tiles that are not actually deployable on."
+      }
+    }
+  },
+  {
+    "id": "glory-pack",
+    "image": "rogue_2_relic_fight_147.png",
+    "themes": ["IS3", "IS5"],
+    "versions": {
+      "IS3": {
+        "name": "'Glory Pack'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "When an Operator is defeated, it will Stun all enemies in the four adjacent tiles for 6 seconds.\nContrary to the description, the effect triggers whenever an operator or a summon dies, and enemies are stunned in a 1.25 tile radius centered on the unit."
+      },
+      "IS5": {
+        "name": "'Glory Pack'",
+        "cost": 12,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - 3+3"],
+        "description": "When an Operator is defeated, it will Stun all enemies in the four adjacent tiles for 6 seconds.\nContrary to the description, the effect triggers whenever an operator or a summon dies, and enemies are stunned in a 1.25 tile radius centered on the unit."
+      }
+    }
+  },
+  {
+    "id": "palmtop-pavilion",
+    "image": "rogue_3_relic_fight_27.png",
+    "themes": ["IS4"],
+    "versions": {
+      "IS4": {
+        "name": "Palmtop Pavilion",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "All Operators gain +1 Block, and an additional +1 Block after being deployed for more than 60 seconds.\nWith the exception of Liberator Guards, this will turn 0 block units into 1 block units, which is generally undesirable."
+      }
+    }
+  },
+  {
+    "id": "northwind-construct",
+    "image": "rogue_3_relic_fight_31.png",
+    "themes": ["IS4"],
+    "versions": {
+      "IS4": {
+        "name": "Northwind Construct",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "[Machine] and [Arts Creations] enemies will be immediately Frozen with their first attack for 15 seconds.\nThis will generally screw you over in Manmade Carnival more than it helps. Be careful about picking this collectible."
+      }
+    }
+  },
+  {
+    "id": "paradigm-apparatus",
+    "image": "rogue_3_relic_fight_33.png",
+    "themes": ["IS4"],
+    "versions": {
+      "IS4": {
+        "name": "Paradigm Apparatus",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "All enemies have ASPD -30 when on tiles affected by Dominion.\nCapable of desyncing the Liberator cycle on 4th ending. Consider skipping if going for 4th ending."
+      }
+    }
+  },
+  {
+    "id": "cloud-moving-totem",
+    "image": "rogue_3_relic_fight_26.png",
+    "themes": ["IS4"],
+    "versions": {
+      "IS4": {
+        "name": "Cloud-Moving Totem",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "All enemies have -15% Movement Speed, and the Weightless effect further drops their Weight Level by 2.\nCapable of desyncing the Liberator cycle on 4th ending. Consider skipping if going for 4th ending."
+      }
+    }
+  },
+  {
+    "id": "rusted-blade-disturbance",
+    "image": "rogue_3_relic_book_10.png",
+    "themes": ["IS4", "IS5"],
+    "versions": {
+      "IS4": {
+        "name": "Rusted Blade - Disturbance",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "For every Specialist Operator on the field, all enemies have -5% Movement Speed (stacks up to 8 times).\nCapable of desyncing the Liberator cycle on 4th ending. Consider skipping if going for 4th ending."
+      },
+      "IS5": {
+        "name": "Rusted Blade - Protraction",
+        "cost": 12,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - 2+2"],
+        "description": "For every Specialist Operator on the field, all enemies have -5% Movement Speed (stacks up to 8 times).\nAffects boat jump timing."
+      }
+    }
+  },
+  {
+    "id": "celestial-dust",
+    "image": "rogue_3_relic_fight_3.png",
+    "themes": ["IS4"],
+    "versions": {
+      "IS4": {
+        "name": "Celestial Dust",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Ranged Operators Levitate all enemies within attack range for 2 seconds when a skill is manually activated.\nThe levitate is applied before the skill, which can cause complications with certain operators."
+      }
+    }
+  },
+  {
+    "id": "ring-of-thorns",
+    "image": "rogue_3_relic_fight_5.png",
+    "themes": ["IS4"],
+    "versions": {
+      "IS4": {
+        "name": "Ring of Thorns",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "When Melee Operators are healed, they and Operators in the adjacent 4 tiles will recover 1 SP.\nThe SP gain affects not just operators, but all friendly units including summons and devices.\nAny healing effect that produces green healing numbers will trigger this."
+      }
+    }
+  },
+  {
+    "id": "clairvoyants-reveal",
+    "image": "rogue_3_relic_fight_9.png",
+    "themes": ["IS4"],
+    "versions": {
+      "IS4": {
+        "name": "Clairvoyant's Reveal",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "The DP Cost and Redeployment Time of all Operators is randomly changed.\nEach operator gets their DP cost and redeployment time set randomly to somewhere within the range of [40% of its base value, 120% of its base value]."
+      }
+    }
+  },
+  {
+    "id": "scarred-amber",
+    "image": "rogue_3_relic_res_12.png",
+    "themes": ["IS4"],
+    "versions": {
+      "IS4": {
+        "name": "Scarred Amber",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Uncaps Anti-Interference Index Limit, and every surplus index point will grant all allied units HP +8% and ATK +8%."
+      }
+    }
+  },
+  {
+    "id": "roundstone-altar",
+    "image": "rogue_3_relic_fight_22.png",
+    "themes": ["IS4", "IS5"],
+    "versions": {
+      "IS4": {
+        "name": "Roundstone Altar",
+        "cost": null,
+        "effect": { "type": "unconditional", "label": "Unconditional" },
+        "sources": [],
+        "description": "There is a chance after battle to permanently increase all allied units' ATK and DEF by 5% (Can stack up to 10 times).\nThere is a 30% chance of gaining a stack after each combat."
+      },
+      "IS5": {
+        "name": "Roundstone Altar",
+        "cost": 8,
+        "effect": { "type": "unconditional", "label": "Unconditional" },
+        "sources": ["Rogue Trader", "False to Truth - 1+1"],
+        "description": "There is a chance after battle to permanently increase all allied units' ATK and DEF by 5% (Can stack up to 10 times).\nThere is a 30% chance of gaining a stack after each combat."
+      }
+    }
+  },
+  {
+    "id": "living-woodplate",
+    "image": "rogue_4_relic_legacy_167.png",
+    "themes": ["IS4", "IS5"],
+    "versions": {
+      "IS4": {
+        "name": "Living Woodplate",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "All allied melee units gain a Barrier equal to 50% of their Max HP on deployment.\nThe barrier can mitigate the 30%/60% of HP loss caused by the injury/crisis trigger collapsal paradigms.\nThe 50% shield is based off the HP of the operator after external buffs are applied but before internal buffs."
+      },
+      "IS5": {
+        "name": "Living Woodplate",
+        "cost": 12,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - 2+2"],
+        "description": "All allied melee units gain a Barrier equal to 50% of their Max HP on deployment.\nThe barrier can mitigate the 30%/60% of HP loss caused by the injury/crisis trigger collapsal paradigms.\nThe 50% shield is based off the HP of the operator after external buffs are applied but before internal buffs."
+      }
+    }
+  },
+  {
+    "id": "fincatchers-shawl",
+    "image": "rogue_2_relic_fight_132.png",
+    "themes": ["IS3"],
+    "versions": {
+      "IS3": {
+        "name": "Fincatcher's Shawl",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Ranged Operators gain Camouflage.\nThis provides camouflage, not invisibility — units can still take damage from most AoE effects.\nThis applies to units tagged as \"ranged\" in the in-game tag system."
+      }
+    }
+  },
+  {
+    "id": "finshell-shield",
+    "image": "rogue_3_relic_fight_13.png",
+    "themes": ["IS4"],
+    "versions": {
+      "IS4": {
+        "name": "Finshell Shield",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "All allied ranged units gain 3 layers of Shield on deployment.\n1 shield can mitigate the 30%/60% HP loss caused by the injury/crisis trigger collapsal paradigms."
+      }
+    }
+  },
+  {
+    "id": "medicine-sticks",
+    "image": "rogue_4_relic_legacy_172.png",
+    "themes": ["IS3", "IS5"],
+    "versions": {
+      "IS3": {
+        "name": "Medicine Sticks",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "All allied units gain 2 layers of Shield when deployed.\nDespite the description specifying operators, this grants shields to non-operator units that can take damage too, like summons or devices."
+      },
+      "IS5": {
+        "name": "Medicine Sticks",
+        "cost": 8,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - 2+2"],
+        "description": "All allied units gain 2 layers of Shield when deployed.\nDespite the description specifying operators, this grants shields to non-operator units that can take damage too, like summons or devices."
+      }
+    }
+  },
+  {
+    "id": "empty-fowlbeast",
+    "image": "rogue_4_relic_legacy_160.png",
+    "themes": ["IS4", "IS5"],
+    "versions": {
+      "IS4": {
+        "name": "Empty Fowlbeast",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Summons have +30% HP, +30% ATK, and when on the field, grant +60% ATK to their summoners.\nApplies to a surprisingly large number of things beyond ordinary summons, including trapmaster mines, Ulpian's S3 return point, Wis'adel's shadows, Ebenholz's S2 goats, and more."
+      },
+      "IS5": {
+        "name": "Empty Fowlbeast",
+        "cost": 16,
+        "effect": { "type": "conditional", "label": "Conditional" },
+        "sources": ["Rogue Trader", "False to Truth - Eureka"],
+        "description": "Summons have +30% HP, +30% ATK, and when on the field, grant +60% ATK to their summoners.\nApplies to a surprisingly large number of things beyond ordinary summons, including trapmaster mines, Ulpian's S3 return point, Wis'adel's shadows, Ebenholz's S2 goats, and more."
+      }
+    }
+  },
+  {
+    "id": "lakebed-aegis",
+    "image": "rogue_4_relic_legacy_158.png",
+    "themes": ["IS4", "IS5"],
+    "versions": {
+      "IS4": {
+        "name": "Lakebed Aegis",
+        "cost": null,
+        "effect": { "type": "conditional", "label": "Conditional" },
+        "sources": [],
+        "description": "Shield +1; all allied units gain Max HP +60% if you have any Shield at the start of a battle.\nUnusually, this is implemented as an internal buff, meaning the +60% HP is multiplicative with most other +HP% collectibles.\nThe effect is granted as long as you had at least 1 shield when the operation starts."
+      },
+      "IS5": {
+        "name": "Lakebed Aegis",
+        "cost": 12,
+        "effect": { "type": "conditional", "label": "Conditional" },
+        "sources": ["Rogue Trader", "False to Truth - 2+2"],
+        "description": "Shield +1; all allied units gain Max HP +60% if you have any Shield at the start of a battle.\nUnusually, this is implemented as an internal buff, meaning the +60% HP is multiplicative with most other +HP% collectibles.\nThe effect is granted as long as you had at least 1 shield when the operation starts."
+      }
+    }
+  },
+  {
+    "id": "children-of-the-walls",
+    "image": "rogue_4_relic_fight_6.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Children of the Walls",
+        "cost": 8,
+        "effect": { "type": "conditional", "label": "Conditional" },
+        "sources": ["Rogue Trader", "False to Truth - 1+1"],
+        "description": "Operators deployed on the 8 tiles surrounding the Objective Point gain +2 Block and +50% Max HP.\nThe +50% Max HP is an internal modifier."
+      }
+    }
+  },
+  {
+    "id": "unleashings-blossom",
+    "image": "rogue_4_relic_legacy_189.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": {
+        "name": "'Unleashings'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "All Operators recover 1 SP every time they take damage or Elemental Injury.\nThe effect triggers when they lose life — attacks, self-induced HP loss, Poison Mist, environmental hazards, etc."
+      },
+      "IS3": {
+        "name": "'Unleashings'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "All Operators recover 1 SP every time they take damage or Elemental Injury.\nThe effect triggers when they lose life — attacks, self-induced HP loss, Poison Mist, environmental hazards, etc."
+      },
+      "IS4": {
+        "name": "'Blossom'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "All Operators recover 1 SP every time they take damage or Elemental Injury.\nThe effect triggers when they lose life — attacks, self-induced HP loss, Poison Mist, environmental hazards, etc."
+      },
+      "IS5": {
+        "name": "'Blossom'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "All Operators recover 1 SP every time they take damage or Elemental Injury.\nThe effect triggers when they lose life — attacks, self-induced HP loss, Poison Mist, environmental hazards, etc."
+      }
+    }
+  },
+  {
+    "id": "scouts-scope",
+    "image": "rogue_4_relic_legacy_144.png",
+    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "versions": {
+      "IS2": {
+        "name": "Scout's Scope",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Enemies take increased damage from allied units as range increases (max 100%).\nThe damage amplification is approximately: 20% * (distance - 1), scaling from 1 tile to 6 tiles.\nThe damage amplification is a final modifier, not an ATK% multiplier, so it does not help penetrate defense."
+      },
+      "IS3": {
+        "name": "Scout's Scope",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Enemies take increased damage from allied units as range increases (max 100%).\nThe description in IS3 incorrectly claims it maxes out at 50%, but it maxes out at 100% like every other IS.\nThe damage amplification is a final modifier, not an ATK% multiplier, so it does not help penetrate defense."
+      },
+      "IS4": {
+        "name": "Scout's Scope",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Enemies take increased damage from allied units as range increases (max 100%).\nThe damage amplification is approximately: 20% * (distance - 1), scaling from 1 tile to 6 tiles.\nThe damage amplification is a final modifier, not an ATK% multiplier, so it does not help penetrate defense."
+      },
+      "IS5": {
+        "name": "Scout's Scope",
+        "cost": 16,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - Eureka"],
+        "description": "Enemies take increased damage from allied units as range increases (max 100%).\nThe damage amplification is approximately: 20% * (distance - 1), scaling from 1 tile to 6 tiles.\nThe damage amplification is a final modifier, not an ATK% multiplier, so it does not help penetrate defense."
+      }
+    }
+  },
+  {
+    "id": "dawn-of-literature",
+    "image": "rogue_4_relic_fight_3.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Dawn of Literature",
+        "cost": 16,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - Eureka"],
+        "description": "Deals 50% more physical and Arts damage to [Sarkaz] enemies.\nThe damage amplification effect is multiplicative with other damage amplification effects."
+      }
+    }
+  },
+  {
+    "id": "bridge-of-knowledge",
+    "image": "rogue_4_relic_fight_1.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "'Bridge of Knowledge'",
+        "cost": 12,
+        "effect": { "type": "unconditional", "label": "Unconditional" },
+        "sources": ["Rogue Trader", "False to Truth - 2+2"],
+        "description": "Every Inspirer used grants all allied units +5% HP (Stacks up to 10 times).\nJust using the inspirer is enough for a stack, you don't need to bring it into a combat."
+      }
+    }
+  },
+  {
+    "id": "cursed-counterbeast",
+    "image": "rogue_4_relic_fight_26.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Cursed Counterbeast",
+        "cost": 12,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - 3+3"],
+        "description": "All Operators gain +5 ASPD; consumes 1 Inspirer after each battle to grant an additional 5 ASPD (stacks up to 10 times).\nConsumes Inspirers only while under 10 stacks. Prioritizes consuming inspirers by: lowest rarity > highest toil > first obtained."
+      }
+    }
+  },
+  {
+    "id": "doodle-of-hope",
+    "image": "rogue_4_relic_explore_2.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Doodle of Hope",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Hope +3; Emergency Ops will no longer appear when refreshing nodes; triggers wondrous effects in Encounter nodes.\nUnlocks special options in many encounters. Exchanging Doodle of Hope at a Lost and Found node gives you Talons of Hatred."
+      }
+    }
+  },
+  {
+    "id": "talons-of-hatred",
+    "image": "rogue_4_relic_explore_3.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Talons of Hatred",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "All allied units and enemies have +20% ATK; Emergency Ops will appear more often when refreshing nodes; triggers wondrous effects in Encounter nodes.\nUnlocks options to do Emergency versions of specific combats in encounters. Exchanging Talons at a Lost and Found node gives you Doodle of Hope."
+      }
+    }
+  },
+  {
+    "id": "lamp-of-wishes",
+    "image": "rogue_4_relic_explore_6.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Lamp of Wishes",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Originium Ingots +10, Wish Fulfilled will appear more often when refreshing nodes; triggers wondrous effects in Wish Fulfilled.\nLamp of Wishes has about a 50% chance of rerolling a node into a Wish Fulfilled.\nIn wish nodes an extra option appears, guaranteeing a specific relic based on a priority list starting with Hand relics, then Books, then Golden Chalice (>=150 ingots), Coin Operated Toy (>=80 ingots), King's Relics (at 1 LP), and Sarkaz King's relics."
+      }
+    }
+  },
+  {
+    "id": "beauty-and-ugliness-in-the-age-of-terra",
+    "image": "rogue_1_relic_m15.png",
+    "themes": ["IS2"],
+    "versions": {
+      "IS2": {
+        "name": "'Beauty and Ugliness in the Age of Terra'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "For one time only during any battle prior to the final battle of the area, gain 10 Life Points and continue onto the next step instead of concluding the exploration upon mission failure.\nWhen triggered, your current life total is preserved and you regain 10 life points. Best to trigger it by immediately quitting out to preserve your life total."
+      }
+    }
+  },
+  {
+    "id": "end-of-times",
+    "image": "rogue_1_relic_q35.png",
+    "themes": ["IS2", "IS3", "IS4", "IS6"],
+    "versions": {
+      "IS2": {
+        "name": "'End of Times'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "descriptionHtml": "For one time only during any battle prior to the final battle of the area, gain 1 Life Point and continue onto the next step instead of concluding the exploration upon mission failure.\nWhen triggering the End of Times effect, your current life total is preserved, your run loss is averted, and you regain one life point. You do not receive the rewards that you would get if you win the fight (voucher, ingots etc.). If you lost by running out of lives, this means you will have 1 life point again. In contrast, if you have 10/12 life points on an IS3 run, and you use End of Times to instantly quit out on a non-boss stage, you will then have 11/12 life points. If you know you are going to trigger End of Times on a stage, it is best to trigger it by immediately quitting out (or doing so right before you leak your first enemy), in order to preserve your life total.\nEnd of Times will fail to trigger if you lose on a combat that is the last node of each floor, even if it isn’t the F3/F5/F6/F7 boss combat. This is only relevant in IS4 if you use a foldartal to reroll the f1 shop or f2/f4 wish fulfilled node into a combat, and is not relevant in either IS2 or IS3.\n<a href=\"https://www.bilibili.com/video/BV1Kz4y147qu/\" target=\"_blank\" rel=\"noopener noreferrer\">Having End of Times and quitting out of a store rob combat will put you back in the store with all the items now free.</a>"
+    },
+      "IS3": {
+        "name": "'End of Times'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "descriptionHtml": "For one time only during any battle prior to the final battle of the area, gain 1 Life Point and continue onto the next step instead of concluding the exploration upon mission failure.\nWhen triggering the End of Times effect, your current life total is preserved, your run loss is averted, and you regain one life point. You do not receive the rewards that you would get if you win the fight (voucher, ingots etc.). If you lost by running out of lives, this means you will have 1 life point again. In contrast, if you have 10/12 life points on an IS3 run, and you use End of Times to instantly quit out on a non-boss stage, you will then have 11/12 life points. If you know you are going to trigger End of Times on a stage, it is best to trigger it by immediately quitting out (or doing so right before you leak your first enemy), in order to preserve your life total.\nEnd of Times will fail to trigger if you lose on a combat that is the last node of each floor, even if it isn’t the F3/F5/F6/F7 boss combat. This is only relevant in IS4 if you use a foldartal to reroll the f1 shop or f2/f4 wish fulfilled node into a combat, and is not relevant in either IS2 or IS3.\n<a href=\"https://www.bilibili.com/video/BV1Kz4y147qu/\" target=\"_blank\" rel=\"noopener noreferrer\">Having End of Times and quitting out of a store rob combat will put you back in the store with all the items now free.</a>"
+      },
+      "IS4": {
+        "name": "'End of Times'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "descriptionHtml": "For one time only during any battle prior to the final battle of the area, gain 1 Life Point and continue onto the next step instead of concluding the exploration upon mission failure.\nWhen triggering the End of Times effect, your current life total is preserved, your run loss is averted, and you regain one life point. You do not receive the rewards that you would get if you win the fight (voucher, ingots etc.). If you lost by running out of lives, this means you will have 1 life point again. In contrast, if you have 10/12 life points on an IS3 run, and you use End of Times to instantly quit out on a non-boss stage, you will then have 11/12 life points. If you know you are going to trigger End of Times on a stage, it is best to trigger it by immediately quitting out (or doing so right before you leak your first enemy), in order to preserve your life total.\nEnd of Times will fail to trigger if you lose on a combat that is the last node of each floor, even if it isn’t the F3/F5/F6/F7 boss combat. This is only relevant in IS4 if you use a foldartal to reroll the f1 shop or f2/f4 wish fulfilled node into a combat, and is not relevant in either IS2 or IS3.\n<a href=\"https://www.bilibili.com/video/BV1Kz4y147qu/\" target=\"_blank\" rel=\"noopener noreferrer\">Having End of Times and quitting out of a store rob combat will put you back in the store with all the items now free.</a>"
+      },
+      "IS6": {
+        "name": "'End of Times'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "descriptionHtml": "For one time only during any battle prior to the final battle of the area, gain 1 Life Point and continue onto the next step instead of concluding the exploration upon mission failure.\nWhen triggering the End of Times effect, your current life total is preserved, your run loss is averted, and you regain one life point. You do not receive the rewards that you would get if you win the fight (voucher, ingots etc.). If you lost by running out of lives, this means you will have 1 life point again. In contrast, if you have 10/12 life points on an IS3 run, and you use End of Times to instantly quit out on a non-boss stage, you will then have 11/12 life points. If you know you are going to trigger End of Times on a stage, it is best to trigger it by immediately quitting out (or doing so right before you leak your first enemy), in order to preserve your life total.\nEnd of Times will fail to trigger if you lose on a combat that is the last node of each floor, even if it isn’t the F3/F5/F6/F7 boss combat. This is only relevant in IS4 if you use a foldartal to reroll the f1 shop or f2/f4 wish fulfilled node into a combat, and is not relevant in either IS2 or IS3.\n<a href=\"https://www.bilibili.com/video/BV1Kz4y147qu/\" target=\"_blank\" rel=\"noopener noreferrer\">Having End of Times and quitting out of a store rob combat will put you back in the store with all the items now free.</a>"
+      }
+    }
+  },
+  {
+    "id": "fosterer-genotype",
+    "image": "rogue_2_relic_fight_159.png",
+    "themes": ["IS3"],
+    "versions": {
+      "IS3": {
+        "name": "Fosterer Genotype",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "An Operator with Rejection will assimilate 2 nearby normal Operators. When assimilation is complete, the Operator with Rejection temporarily gains [Evolution]: Rejection has no effect, gains 35% Sanctuary, attacks ignore 35% RES and DEF.\nThe effects of assimilation last for the stage it is triggered on only, it does not persist between different stages.\nOperators that have assimilated a rejection cannot further spread the rejection. The effects of assimilation persist through retreats and redeploys; once an operator has assimilated a rejection in a given stage, there is no way to get rid of that rejection within that stage.\nIf you want to evolve an operator (say Mlynar) with a (natural) rejection, the two assimilated operators do not have to be in the 8 surrounding tiles of Mlynar at the same time, they can be placed within the vicinity of Mlynar sequentially, and Mlynar will become evolved after the 2nd operator has assimilated his rejection. Mlynar’s evolution progress will also be saved between deployments. If Mlynar assimilates 1 operator, then is retreated, then redeployed, then assimilates another operator, he will become evolved.\nAt D17, when rejections become combined rejections, the method of calculating operator redeployment times changes. At D15 and below, 2-star Yato with Metastatic Aberration has a redeployment time of (65 seconds*50%)-30 seconds = 2 seconds (rounded down), but with Metastatic Aberration in the form of a combined rejection, she has a (65-30)*50% = 17.5 seconds (unusually not rounded here) redeployment time. This applies to both natural rejections, and rejections obtained through assimilation. At specifically D16, for some reason, Metastatic Aberration (regardless of whether it is natural or assimilated) provides a -50% redeployment reduction still, but does not reduce operator stats.\nOperators that gain Neurodegeneration from assimilating it will be frozen for the 15 seconds after they’ve gained the rejection, even if they’ve been deployed for longer than that.\nA single operator can count towards assimilating the rejections of multiple operators, by deploying them on a tile where they are within the 8 surrounding tiles of both operators."
+    }
+    }
+  },
+  {
+    "id": "arch-glyph",
+    "image": "rogue_4_relic_explore_1.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Arch Glyph",
+        "cost": 16,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - Eureka"],
+        "descriptionHtml": "For one time only, if you would fail any battle other than the final battle of the area or a Leader battle and are currently not in a Bizarre Fragment, you will enter a special Bizarre Fragment.\nWhen triggering the Arch Glyph effect, your current life total is preserved, your run loss is averted, and you regain one life point. You do not receive the rewards that you would get if you win the fight (voucher, ingots etc.). If you lost by running out of lives, this means you will have 1 life point again. In contrast, if you have 10/12 life points on an IS5 run, and you use Arch Glyph to instantly quit out on a non-boss stage, you will then have 11/12 life points. If you know you are going to trigger Arch Glyph on a stage, it is best to trigger it by immediately quitting out (or doing so right before you leak your first enemy), in order to preserve your life total.\nArch Glyph will not save your run if you lose on a combat that is the last node of each floor, even if it isn't a boss combat. In IS5 this is only relevant if you reroll the F1 shop into a combat and lose to it, or on the last node of a Bizarre Fragment.\nArch Glyph will trigger if you quit out while in a Face-Off node despite the fact that quitting out in a Face-Off node doesn't actually lose you the run.\nAs long as you are in a non-boss/non-last node combat, the 'save your run' effect of Arch Glyph will always trigger, while the 'enter a Bizarre Fragment' effect will only trigger if you aren't already in a Bizarre Fragment. If you trigger Arch Glyph while already in a Bizarre Fragment on a node that isn't its last node, Arch Glyph will save your run, but not put you into another Bizarre Fragment. (If you lose on a combat that is the last node of a Bizarre Fragment, it will not save your run at all).\nIf Arch Glyph is triggered while still inside a node (such as through robbing a store), the subsequent effects of that node will be resolved (for instance, you would be able to loot the shop) before you are brought to the Bizarre Fragment. (Like usual, you will not be able to receive the standard clear rewards for that combat.)\nIf you use the Witchcraft thought to summon a portal, kill the portal, have the portal take away an operator, then quit out before the stage ends (even if the portal is the last enemy, you'll always have at least a few frames to quit out before the stage ends) <a href=\"https://www.bilibili.com/video/BV184421Z7XG/\" target=\"_blank\" rel=\"noopener noreferrer\">the operator taken by the portal will immediately return in the Arch Glyph Bizarre Fragment.</a> On the other hand, killing the Window summoned by Grand Wish, then popping Arch Glyph will not put you in the Epoch of Prosperity. Any damage dealt to the to the Finale Cadence (or killing it) will not properly be carried over if you end the stage by popping Arch Glyph.\nThe Bizarre Fragment Arch Glyph brings you into always has the following layout. The encounter will always be the encounter 'Warm and Cozy,' at which you have the option to restore all your life points, or immediately leave:\n<div class=\"relic-img-center\"><img src=\"/guides/general-knowledge/relics/images/arch-glyph-diagram.png\" alt=\"diagram\" /></div>\nThe IS5 5th ending collectible 'Reality of the End' brings you to a special Bizarre Fragment that inevitably ends with the run's loss if you fail any stage. If you have both Arch Glyph and 'Reality of the End,' the one that you obtained first is the one that triggers first. This means that if you obtained Arch Glyph after already obtaining 'Reality of the End,' Arch Glyph cannot save you."
+      }
+    }
+  },
+  {
+    "id": "hr-bronze-seal",
+    "image": "rogue_4_relic_legacy_184.png",
+    "themes": ["IS3", "IS5"],
+    "versions": {
+      "IS3": {
+        "name": "HR Bronze Seal",
+        "cost": 8,
+        "effect": null,
+        "sources": [],
+        "description": "Recruit a random 5-star Operator that is automatically Promoted.\nYou can reject the free operator offered to you."
+      },
+      "IS5": {
+        "name": "HR Bronze Seal",
+        "cost": null,
+        "effect": null,
+        "sources": ["Rogue Trader"],
+        "description": "Recruit a random 5-star Operator that is automatically Promoted.\nYou can reject the free operator offered to you."
+      }
+    }
+  },
+  {
+    "id": "doctor-silver-seal",
+    "image": "rogue_4_relic_legacy_185.png",
+    "themes": ["IS3", "IS5"],
+    "versions": {
+      "IS3": {
+        "name": "Doctor Silver Seal",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Recruit a random 6-star Operator that is automatically Promoted.\nYou can reject the free operator offered to you."
+      },
+      "IS5": {
+        "name": "Doctor Silver Seal",
+        "cost": 16,
+        "effect": null,
+        "sources": ["Rogue Trader"],
+        "description": "Recruit a random 6-star Operator that is automatically Promoted.\nYou can reject the free operator offered to you."
+      }
+    }
+  },
+  {
+    "id": "victoria-crown",
+    "image": "rogue_1_relic_c02.png",
+    "themes": ["IS2"],
+    "versions": {
+      "IS2": {
+        "name": "Victoria Crown",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "All enemy units have +30% ATK, DEF, and Max HP; Boss units gain an additional +15% ATK, +15% DEF, and +30% Max HP.\nThe stat modifier effects that apply to all enemies and those that apply to bosses are multiplicative with each other."
+      }
+    }
+  },
+  {
+    "id": "half-refined-diamond",
+    "image": "rogue_1_relic_c05.png",
+    "themes": ["IS2"],
+    "versions": {
+      "IS2": {
+        "name": "Half-Refined Diamond",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "All enemy units have +25% ATK, DEF, and Max HP; Gain -50% Command EXP from battles."
+      }
+    }
+  },
+  {
+    "id": "endless-life",
+    "image": "rogue_2_relic_curse_4.png",
+    "themes": ["IS3"],
+    "versions": {
+      "IS3": {
+        "name": "'Endless Life'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Afflicts a random Operator with a Rejection at the start of each new floor.\nThis grants a rejection on the floor you receive it."
+      }
+    }
+  },
+  {
+    "id": "wrankwood-safety-suit",
+    "image": "rogue_2_relic_fight_142.png",
+    "themes": ["IS3"],
+    "versions": {
+      "IS3": {
+        "name": "Wrankwood Safety Suit",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "For each Cursed Curio you have, all allied units gain DEF +25%, RES +10.\nCursed Curios include both collectibles from F3 at D2 and above, and ending-related collectibles with negative effects (except Hesitation)."
+      }
+    }
+  },
+  {
+    "id": "flashing-swords",
+    "image": "rogue_2_relic_fight_143.png",
+    "themes": ["IS3"],
+    "versions": {
+      "IS3": {
+        "name": "'Flashing Swords'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "For each Cursed Curio you have, all allied units gain ASPD +35.\nCursed Curios include both collectibles from F3 at D2 and above, and ending-related collectibles with negative effects (except Hesitation)."
+      }
+    }
+  },
+  {
+    "id": "gulduls-silence",
+    "image": "rogue_4_relic_curse_1.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Gul'dul's Silence",
+        "cost": null,
+        "effect": null,
+        "sources": ["D17+ F3"],
+        "description": "All enemies gain +3000 DEF, but lose 100 DEF upon taking damage (Stacks up to 30 times).\nApplied additively after EM buffs but before any external DEF multipliers."
+      }
+    }
+  },
+  {
+    "id": "balorsas-arrogance",
+    "image": "rogue_4_relic_curse_3.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Balor'sa a's Arrogance",
+        "cost": null,
+        "effect": null,
+        "sources": ["D17+ F3"],
+        "description": "Elite and Leader enemies gain +20% HP, DEF, and ATK.\nMultiplicative with other enemy external multipliers."
+      }
+    }
+  },
+  {
+    "id": "yliss-ravings",
+    "image": "rogue_4_relic_curse_4.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Yliš's Ravings",
+        "cost": null,
+        "effect": null,
+        "sources": ["D17+ F3"],
+        "description": "All Operators start with -20 SP.\nThe sum of all positive and negative SP on deployment effects is calculated before the result is applied to the operator."
+      }
+    }
+  },
+  {
+    "id": "shard-of-the-untold-kings",
+    "image": "rogue_4_relic_curse_5.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Shard of the Untold Kings",
+        "cost": null,
+        "effect": { "type": "conditional", "label": "Conditional" },
+        "sources": ["D17+ F3"],
+        "description": "Loadbearing Operators have -30% ATK.\nThe ATK reduction counts as an internal debuff instead of an external modifier."
+      }
+    }
+  },
+  {
+    "id": "caerula-animus",
+    "image": "rogue_2_relic_curse_8.png",
+    "themes": ["IS3"],
+    "versions": {
+      "IS3": {
+        "name": "Caerula Animus",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "-50 Light; when obtained, immediately afflicts a random Operator with a Rejection, and leads the exploration toward a different ending.\nYou need at least 20 light to be able to get the encounter that gives you this."
+      }
+    }
+  },
+  {
+    "id": "last-refrain",
+    "image": "rogue_2_relic_grace_87.png",
+    "themes": ["IS3"],
+    "versions": {
+      "IS3": {
+        "name": "'Last Refrain'",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "When obtained, randomly gain 2 Revelations.\nThe encounter for this collectible can only appear if you are on the path to 3rd Ending (i.e. you have the Caerula Animus)."
+      }
+    }
+  },
+  {
+    "id": "routeweave-net",
+    "image": "rogue_3_relic_boss_2b.png",
+    "themes": ["IS4"],
+    "versions": {
+      "IS4": {
+        "name": "Routeweave Net",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Additional enemies appear in battle; leads expedition in a different direction."
+      }
+    }
+  },
+  {
+    "id": "horizon-invitation",
+    "image": "rogue_3_relic_boss_4a.png",
+    "themes": ["IS4"],
+    "versions": {
+      "IS4": {
+        "name": "Horizon Invitation",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Leads expedition in a different direction.\nObtaining this collectible gives a very high (but not 100%) chance that the next encounter will be the \"Chance\" encounter, where you can fight for Dimensional Fluid for 4th Ending."
+      }
+    }
+  },
+  {
+    "id": "dimensional-fluid",
+    "image": "rogue_3_relic_boss_4b.png",
+    "themes": ["IS4"],
+    "versions": {
+      "IS4": {
+        "name": "Dimensional Fluid",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Leads expedition in a different direction.\nAfter completing an ending fight, forces you onto the floor \"Dust of Eternity\" where you fight the 4th ending boss. To do 3rd and 4th Ending in a single run, you need to take Dimensional Fluid specifically on F6 Clairvoyant Carcass."
+      }
+    }
+  },
+  {
+    "id": "ammas-affection",
+    "image": "rogue_3_relic_explore_6.png",
+    "themes": ["IS4"],
+    "versions": {
+      "IS4": {
+        "name": "Amma's Affection",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "All allied units gain +1% HP, ATK, and DEF; occasionally something wonderful will happen.\nUnlocks special exchange options in several encounters, including trading it for 2 collectibles, 15 hope, or to skip a 4th ending requirement."
+      }
+    }
+  },
+  {
+    "id": "fragment-of-space",
+    "image": "rogue_3_relic_curse_2.png",
+    "themes": ["IS4"],
+    "versions": {
+      "IS4": {
+        "name": "Fragment of Space",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "-4 Squad Size Limit.\n+squad size collectibles only grant the effect on pickup. Taking Fragment of Space after overshooting the 13 squad size hard cap will still bring you down to 9."
+      }
+    }
+  },
+  {
+    "id": "profound-scorchmarks",
+    "image": "rogue_3_relic_curse_3.png",
+    "themes": ["IS4"],
+    "versions": {
+      "IS4": {
+        "name": "Profound Scorchmarks",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "-12 Max Life Point.\nDeliberately taking this is a reasonably good way of activating King's collectibles in IS4."
+      }
+    }
+  },
+  {
+    "id": "ten-rings",
+    "image": "rogue_4_relic_final_3.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Ten Rings",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Shadows of the Lord -50% Max HP.\nThe encounter for this collectible is only obtainable if you have the Pledge of Babel."
+      }
+    }
+  },
+  {
+    "id": "prophet-horn",
+    "image": "rogue_4_relic_final_2.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Prophet Horn",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Nodes will turn into Prophecy when refreshed; not active in Bizarre Fragments.\nThe Prophet Horn reroll only works once."
+      }
+    }
+  },
+  {
+    "id": "petal",
+    "image": "rogue_4_relic_final_5.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Petal",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "-50% Command EXP and Originium Ingots from battles; triggers wondrous effects in Face-Off.\nAfter obtaining this, Face-Offs will have an option to expend 2 plans for the boats fight, available unlimited times until completed."
+      }
+    }
+  },
+  {
+    "id": "anasas-karma",
+    "image": "rogue_4_relic_final_6.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Anasa's Karma",
+        "cost": null,
+        "effect": null,
+        "sources": [],
+        "description": "Leader and Elite enemies have +50% max HP; Dreadful Foes in Border of Truth will be more difficult; leads expedition in a different direction.\nAlso converts Emergency Lecture, Court Visit, Cognitive Correction and The Court of Souls to emergency versions with additional enemy stat buffs and Padmasana of Rebirth."
+      }
+    }
+  }
+]
