@@ -53,6 +53,7 @@
       },
       "IS4": {
         "name": "Golden Chalice",
+        "idx": 194,
         "cost": 16,
         "effect": null,
         "sources": ["Rogue Trader"],
@@ -90,6 +91,7 @@
       },
       "IS3": {
         "name": "'Civilight Eterna'",
+        "idx": 227,
         "cost": 16,
         "effect": null,
         "sources": [],
@@ -97,6 +99,7 @@
       },
       "IS4": {
         "name": "'Civilight Eterna'",
+        "idx": 230,
         "cost": 16,
         "effect": null,
         "sources": [],
@@ -134,6 +137,7 @@
       },
       "IS3": {
         "name": "Hot Water Kettle",
+        "idx": 17,
         "cost": null,
         "effect": null,
         "sources": ["F3 buff"],
@@ -141,6 +145,7 @@
       },
       "IS4": {
         "name": "Hot Water Kettle",
+        "idx": 33,
         "cost": null,
         "effect": null,
         "sources": ["F3 buff"],
@@ -171,6 +176,7 @@
       },
       "IS3": {
         "name": "Support Replenishment Station",
+        "idx": 209,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -178,6 +184,7 @@
       },
       "IS4": {
         "name": "Support Replenishment Station",
+        "idx": 214,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -208,6 +215,7 @@
       },
       "IS3": {
         "name": "Support Landmine Set",
+        "idx": 210,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -215,6 +223,7 @@
       },
       "IS4": {
         "name": "Support Landmine Set",
+        "idx": 215,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -245,6 +254,7 @@
       },
       "IS3": {
         "name": "Support Mr. Boom",
+        "idx": 211,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -252,6 +262,7 @@
       },
       "IS4": {
         "name": "Support Mr. Boom",
+        "idx": 216,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -282,6 +293,7 @@
       },
       "IS3": {
         "name": "Support Escape Crane",
+        "idx": 212,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -289,6 +301,7 @@
       },
       "IS4": {
         "name": "Support Escape Crane",
+        "idx": 217,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -311,6 +324,7 @@
     "versions": {
       "IS3": {
         "name": "Support Riot Pile",
+        "idx": 213,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -318,6 +332,7 @@
       },
       "IS4": {
         "name": "Support Riot Pile",
+        "idx": 218,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -340,6 +355,7 @@
     "versions": {
       "IS3": {
         "name": "Support First Aid Kit",
+        "idx": 214,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -365,7 +381,7 @@
   {
     "id": "support-fog-machine",
     "image": "rogue_4_active_tool_6.png",
-    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "themes": ["IS2", "IS4", "IS5"],
     "versions": {
       "IS2": {
         "name": "Support Fog Machine",
@@ -375,15 +391,9 @@
         "sources": [],
         "description": "Bring a Broken Fog Machine along to each battle.\nIt takes 5 seconds to arm and reduces movement speed by 60%."
       },
-      "IS3": {
-        "name": "Support Fog Machine",
-        "cost": null,
-        "effect": null,
-        "sources": [],
-        "description": "Bring a Broken Fog Machine along to each battle.\nIt takes 5 seconds to arm and reduces movement speed by 60%."
-      },
       "IS4": {
         "name": "Support Fog Machine",
+        "idx": 219,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -405,8 +415,8 @@
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
       "IS2": { "name": "Blunt Claws - Training", "idx": 17, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Vanguard Operator without consuming Hope." },
-      "IS3": { "name": "Blunt Claws - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Vanguard Operator without consuming Hope." },
-      "IS4": { "name": "Blunt Claws - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Vanguard Operator without consuming Hope." },
+      "IS3": { "name": "Blunt Claws - Training", "idx": 33, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Vanguard Operator without consuming Hope." },
+      "IS4": { "name": "Blunt Claws - Training", "idx": 40, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Vanguard Operator without consuming Hope." },
       "IS5": { "name": "Blunt Claws - Training", "idx": 40, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Vanguard Operator without consuming Hope." }
     }
   },
@@ -416,8 +426,8 @@
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
       "IS2": { "name": "Bend Spears - Training", "idx": 18, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Guard Operator without consuming Hope." },
-      "IS3": { "name": "Bend Spears - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Guard Operator without consuming Hope." },
-      "IS4": { "name": "Bend Spears - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Guard Operator without consuming Hope." },
+      "IS3": { "name": "Bend Spears - Training", "idx": 34, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Guard Operator without consuming Hope." },
+      "IS4": { "name": "Bend Spears - Training", "idx": 41, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Guard Operator without consuming Hope." },
       "IS5": { "name": "Bend Spears - Training", "idx": 41, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Guard Operator without consuming Hope." }
     }
   },
@@ -427,8 +437,8 @@
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
       "IS2": { "name": "Iron Guard - Training", "idx": 19, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Defender Operator without consuming Hope." },
-      "IS3": { "name": "Iron Guard - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Defender Operator without consuming Hope." },
-      "IS4": { "name": "Iron Guard - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Defender Operator without consuming Hope." },
+      "IS3": { "name": "Iron Guard - Training", "idx": 35, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Defender Operator without consuming Hope." },
+      "IS4": { "name": "Iron Guard - Training", "idx": 42, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Defender Operator without consuming Hope." },
       "IS5": { "name": "Iron Guard - Training", "idx": 42, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Defender Operator without consuming Hope." }
     }
   },
@@ -438,8 +448,8 @@
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
       "IS2": { "name": "Fatal Bolts - Training", "idx": 20, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Sniper Operator without consuming Hope." },
-      "IS3": { "name": "Fatal Bolts - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Sniper Operator without consuming Hope." },
-      "IS4": { "name": "Fatal Bolts - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Sniper Operator without consuming Hope." },
+      "IS3": { "name": "Fatal Bolts - Training", "idx": 36, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Sniper Operator without consuming Hope." },
+      "IS4": { "name": "Fatal Bolts - Training", "idx": 43, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Sniper Operator without consuming Hope." },
       "IS5": { "name": "Fatal Bolts - Training", "idx": 43, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Sniper Operator without consuming Hope." }
     }
   },
@@ -449,8 +459,8 @@
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
       "IS2": { "name": "Broken Wand - Training", "idx": 21, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Caster Operator without consuming Hope." },
-      "IS3": { "name": "Broken Wand - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Caster Operator without consuming Hope." },
-      "IS4": { "name": "Broken Wand - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Caster Operator without consuming Hope." },
+      "IS3": { "name": "Broken Wand - Training", "idx": 37, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Caster Operator without consuming Hope." },
+      "IS4": { "name": "Broken Wand - Training", "idx": 44, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Caster Operator without consuming Hope." },
       "IS5": { "name": "Broken Wand - Training", "idx": 44, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Caster Operator without consuming Hope." }
     }
   },
@@ -460,8 +470,8 @@
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
       "IS2": { "name": "Stalwart Aid - Training", "idx": 22, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Supporter Operator without consuming Hope." },
-      "IS3": { "name": "Stalwart Aid - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Supporter Operator without consuming Hope." },
-      "IS4": { "name": "Stalwart Aid - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Supporter Operator without consuming Hope." },
+      "IS3": { "name": "Stalwart Aid - Training", "idx": 38, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Supporter Operator without consuming Hope." },
+      "IS4": { "name": "Stalwart Aid - Training", "idx": 45, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Supporter Operator without consuming Hope." },
       "IS5": { "name": "Stalwart Aid - Training", "idx": 45, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Supporter Operator without consuming Hope." }
     }
   },
@@ -471,8 +481,8 @@
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
       "IS2": { "name": "Healer's Path - Training", "idx": 23, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Medic Operator without consuming Hope." },
-      "IS3": { "name": "Healer's Path - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Medic Operator without consuming Hope." },
-      "IS4": { "name": "Healer's Path - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Medic Operator without consuming Hope." },
+      "IS3": { "name": "Healer's Path - Training", "idx": 39, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Medic Operator without consuming Hope." },
+      "IS4": { "name": "Healer's Path - Training", "idx": 46, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Medic Operator without consuming Hope." },
       "IS5": { "name": "Healer's Path - Training", "idx": 46, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Medic Operator without consuming Hope." }
     }
   },
@@ -482,8 +492,8 @@
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
       "IS2": { "name": "Rusted Blade - Training", "idx": 24, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Specialist Operator without consuming Hope." },
-      "IS3": { "name": "Rusted Blade - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Specialist Operator without consuming Hope." },
-      "IS4": { "name": "Rusted Blade - Training", "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Specialist Operator without consuming Hope." },
+      "IS3": { "name": "Rusted Blade - Training", "idx": 40, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Specialist Operator without consuming Hope." },
+      "IS4": { "name": "Rusted Blade - Training", "idx": 47, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Specialist Operator without consuming Hope." },
       "IS5": { "name": "Rusted Blade - Training", "idx": 47, "cost": 8, "effect": null, "sources": ["Rogue Trader"], "description": "Immediately promotes a Specialist Operator without consuming Hope." }
     }
   },
@@ -517,6 +527,7 @@
       },
       "IS3": {
         "name": "Bend Spears - Army of One",
+        "idx": 140,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -539,6 +550,7 @@
       },
       "IS3": {
         "name": "Bend Spears - Bloodbath",
+        "idx": 139,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -546,6 +558,7 @@
       },
       "IS4": {
         "name": "Bend Spears - Bloodbath",
+        "idx": 151,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -576,6 +589,7 @@
       },
       "IS3": {
         "name": "Iron Guard - Impenetrable",
+        "idx": 145,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -583,6 +597,7 @@
       },
       "IS4": {
         "name": "Iron Guard - Impenetrable",
+        "idx": 155,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -613,6 +628,7 @@
       },
       "IS3": {
         "name": "Stalwart Aid - Counter-Arts",
+        "idx": 158,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -620,6 +636,7 @@
       },
       "IS4": {
         "name": "Stalwart Aid - Counter-Arts",
+        "idx": 168,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -642,6 +659,7 @@
     "versions": {
       "IS3": {
         "name": "Stalwart Aid - Assistance",
+        "idx": 157,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -649,6 +667,7 @@
       },
       "IS4": {
         "name": "Stalwart Aid - Assistance",
+        "idx": 167,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -679,6 +698,7 @@
       },
       "IS3": {
         "name": "Rusted Blade - No Man's Land",
+        "idx": 166,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -686,6 +706,7 @@
       },
       "IS4": {
         "name": "Rusted Blade - No Man's Land",
+        "idx": 175,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -730,6 +751,7 @@
     "versions": {
       "IS4": {
         "name": "Rusted Blade - Spearhead Sharpening",
+        "idx": 176,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -752,6 +774,7 @@
       },
       "IS3": {
         "name": "Rusted Iron Hammer",
+        "idx": 188,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -759,6 +782,7 @@
       },
       "IS4": {
         "name": "Rusted Iron Hammer",
+        "idx": 189,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -796,6 +820,7 @@
     "versions": {
       "IS3": {
         "name": "Portable Scriptures",
+        "idx": 195,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -810,6 +835,7 @@
     "versions": {
       "IS3": {
         "name": "Nightsun Grass",
+        "idx": 205,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -824,6 +850,7 @@
     "versions": {
       "IS3": {
         "name": "Wordless Coral",
+        "idx": 246,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -838,6 +865,7 @@
     "versions": {
       "IS3": {
         "name": "Pathfinder Fin",
+        "idx": 32,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -852,6 +880,7 @@
     "versions": {
       "IS4": {
         "name": "Knight Lance Pro",
+        "idx": 196,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -874,6 +903,7 @@
     "versions": {
       "IS4": {
         "name": "Cannot's Mark",
+        "idx": 210,
         "cost": null,
         "effect": null,
         "sources": ["Rogue Trader"],
@@ -911,6 +941,7 @@
       },
       "IS4": {
         "name": "Regional Action Plan",
+        "idx": 15,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -940,6 +971,7 @@
       },
       "IS4": {
         "name": "Comprehensive Operation File",
+        "idx": 16,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -969,6 +1001,7 @@
       },
       "IS4": {
         "name": "Secret HR Letter",
+        "idx": 17,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -991,6 +1024,7 @@
     "versions": {
       "IS4": {
         "name": "Guiding Vinedoll",
+        "idx": 211,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -1005,6 +1039,7 @@
     "versions": {
       "IS4": {
         "name": "Slytooth, Forest Destroyer",
+        "idx": 213,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -1019,6 +1054,7 @@
     "versions": {
       "IS4": {
         "name": "'Blindness'",
+        "idx": 234,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -1033,6 +1069,7 @@
     "versions": {
       "IS4": {
         "name": "Ancient Tree Fruit",
+        "idx": 205,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -1220,7 +1257,7 @@
     "versions": {
       "IS2": { "name": "Live Rose", "idx": 73, "cost": null, "effect": null, "sources": [], "description": "All allied units have +20% healing effectiveness.\n'Friendly units restore +X% HP' effects do improve the output of regeneration effects like the Bard trait." },
       "IS3": { "name": "Live Rose", "cost": null, "effect": null, "sources": [], "description": "All allied units have +20% healing effectiveness.\n'Friendly units restore +X% HP' effects do improve the output of regeneration effects like the Bard trait." },
-      "IS4": { "name": "Live Rose", "cost": null, "effect": null, "sources": [], "description": "All allied units have +20% healing effectiveness.\n'Friendly units restore +X% HP' effects do improve the output of regeneration effects like the Bard trait." },
+      "IS4": { "name": "Live Rose", "idx": 87, "cost": null, "effect": null, "sources": [], "description": "All allied units have +20% healing effectiveness.\n'Friendly units restore +X% HP' effects do improve the output of regeneration effects like the Bard trait." },
       "IS5": { "name": "Live Rose", "idx": 94, "cost": 8, "effect": null, "sources": [], "description": "All allied units have +20% healing effectiveness.\n'Friendly units restore +X% HP' effects do improve the output of regeneration effects like the Bard trait." }
     }
   },
@@ -1231,7 +1268,7 @@
     "versions": {
       "IS2": { "name": "White Flower Crown", "idx": 74, "cost": null, "effect": null, "sources": [], "description": "All allied units have +30% healing effectiveness.\n'Friendly units restore +X% HP' effects do improve the output of regeneration effects like the Bard trait." },
       "IS3": { "name": "White Flower Crown", "cost": null, "effect": null, "sources": [], "description": "All allied units have +30% healing effectiveness.\n'Friendly units restore +X% HP' effects do improve the output of regeneration effects like the Bard trait." },
-      "IS4": { "name": "White Flower Crown", "cost": null, "effect": null, "sources": [], "description": "All allied units have +30% healing effectiveness.\n'Friendly units restore +X% HP' effects do improve the output of regeneration effects like the Bard trait." },
+      "IS4": { "name": "White Flower Crown", "idx": 88, "cost": null, "effect": null, "sources": [], "description": "All allied units have +30% healing effectiveness.\n'Friendly units restore +X% HP' effects do improve the output of regeneration effects like the Bard trait." },
       "IS5": { "name": "White Flower Crown", "idx": 95, "cost": 12, "effect": null, "sources": [], "description": "All allied units have +30% healing effectiveness.\n'Friendly units restore +X% HP' effects do improve the output of regeneration effects like the Bard trait." }
     }
   },
@@ -1260,7 +1297,7 @@
     "versions": {
       "IS2": { "name": "Ancient Gaulish Silver Coin", "idx": 149, "cost": null, "effect": null, "sources": [], "description": "All Operators start with +6 SP." },
       "IS3": { "name": "Ancient Gaulish Silver Coin", "cost": null, "effect": null, "sources": [], "description": "All Operators start with +6 SP." },
-      "IS4": { "name": "Ancient Gaulish Silver Coin", "cost": null, "effect": null, "sources": [], "description": "All Operators start with +6 SP." },
+      "IS4": { "name": "Ancient Gaulish Silver Coin", "idx": 98, "cost": null, "effect": null, "sources": [], "description": "All Operators start with +6 SP." },
       "IS5": { "name": "Ancient Gaulish Silver Coin", "idx": 105, "cost": 8, "effect": null, "sources": ["Rogue Trader", "False to Truth - 2+2", "Combats/Animals", "Wish Nodes"], "description": "All Operators start with +6 SP." }
     }
   },
@@ -1271,7 +1308,7 @@
     "versions": {
       "IS2": { "name": "Bank of Gaul Check", "idx": 151, "cost": null, "effect": null, "sources": [], "description": "All Operators start with +12 SP." },
       "IS3": { "name": "Bank of Gaul Check", "cost": null, "effect": null, "sources": [], "description": "All Operators start with +12 SP." },
-      "IS4": { "name": "Bank of Gaul Check", "cost": null, "effect": null, "sources": [], "description": "All Operators start with +12 SP." },
+      "IS4": { "name": "Bank of Gaul Check", "idx": 99, "cost": null, "effect": null, "sources": [], "description": "All Operators start with +12 SP." },
       "IS5": { "name": "Bank of Gaul Check", "idx": 106, "cost": 12, "effect": null, "sources": ["Rogue Trader", "False to Truth - 3+3", "Combats/Animals", "Wish Nodes"], "description": "All Operators start with +12 SP." }
     }
   },
@@ -1282,7 +1319,7 @@
     "versions": {
       "IS2": { "name": "'Second Economic Reform Act'", "idx": 152, "cost": null, "effect": null, "sources": [], "description": "All Operators start with +18 SP." },
       "IS3": { "name": "'Second Economic Reform Act'", "cost": null, "effect": null, "sources": [], "description": "All Operators start with +18 SP." },
-      "IS4": { "name": "'Second Economic Reform Act'", "cost": null, "effect": null, "sources": [], "description": "All Operators start with +18 SP." },
+      "IS4": { "name": "'Second Economic Reform Act'", "idx": 100, "cost": null, "effect": null, "sources": [], "description": "All Operators start with +18 SP." },
       "IS5": { "name": "'Second Economic Reform Act'", "idx": 107, "cost": 16, "effect": null, "sources": ["Rogue Trader - Rare Collectibles", "False to Truth - Eureka", "Combats/Animals", "Wish Nodes"], "description": "All Operators start with +18 SP." }
     }
   },
@@ -1301,7 +1338,7 @@
     "versions": {
       "IS2": { "name": "Vanilla Soda", "idx": 153, "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.2/s." },
       "IS3": { "name": "Vanilla Soda", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.2/s." },
-      "IS4": { "name": "Vanilla Soda", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.2/s." },
+      "IS4": { "name": "Vanilla Soda", "idx": 101, "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.2/s." },
       "IS5": { "name": "Vanilla Soda", "idx": 108, "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.2/s." }
     }
   },
@@ -1312,7 +1349,7 @@
     "versions": {
       "IS2": { "name": "Fowlbeast Liver Plate", "idx": 155, "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.35/s." },
       "IS3": { "name": "Fowlbeast Liver Plate", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.35/s." },
-      "IS4": { "name": "Fowlbeast Liver Plate", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.35/s." },
+      "IS4": { "name": "Fowlbeast Liver Plate", "idx": 102, "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.35/s." },
       "IS5": { "name": "Fowlbeast Liver Plate", "idx": 109, "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.35/s." }
     }
   },
@@ -1323,7 +1360,7 @@
     "versions": {
       "IS2": { "name": "Dreaming Essence", "idx": 156, "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.5/s." },
       "IS3": { "name": "Dreaming Essence", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.5/s." },
-      "IS4": { "name": "Dreaming Essence", "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.5/s." },
+      "IS4": { "name": "Dreaming Essence", "idx": 103, "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.5/s." },
       "IS5": { "name": "Dreaming Essence", "idx": 110, "cost": null, "effect": null, "sources": [], "description": "Increases the SP regen rate of Auto Recovery skills by +0.5/s." }
     }
   },
@@ -1342,7 +1379,7 @@
     "versions": {
       "IS2": { "name": "Victory Horn", "idx": 219, "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 100%." },
       "IS3": { "name": "Victory Horn", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 100%." },
-      "IS4": { "name": "Victory Horn", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 100%." },
+      "IS4": { "name": "Victory Horn", "idx": 109, "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 100%." },
       "IS5": { "name": "Victory Horn", "idx": 116, "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 100%." }
     }
   },
@@ -1353,7 +1390,7 @@
     "versions": {
       "IS2": { "name": "Flash Camera", "idx": 220, "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 110%." },
       "IS3": { "name": "Flash Camera", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 110%." },
-      "IS4": { "name": "Flash Camera", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 110%." },
+      "IS4": { "name": "Flash Camera", "idx": 110, "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 110%." },
       "IS5": { "name": "Flash Camera", "idx": 117, "cost": 12, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 110%." }
     }
   },
@@ -1364,7 +1401,7 @@
     "versions": {
       "IS2": { "name": "Therapy Tape", "idx": 221, "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 150%." },
       "IS3": { "name": "Therapy Tape", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 150%." },
-      "IS4": { "name": "Therapy Tape", "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 150%." },
+      "IS4": { "name": "Therapy Tape", "idx": 111, "cost": null, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 150%." },
       "IS5": { "name": "Therapy Tape", "idx": 118, "cost": 16, "effect": null, "sources": [], "description": "Duration of single instance status effects such as stun, cold or freeze is increased by 150%." }
     }
   },
@@ -1375,7 +1412,7 @@
     "versions": {
       "IS2": { "name": "King's New Lance", "idx": 213.1, "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is 1, all allied units have +50 ASPD." },
       "IS3": { "name": "King's New Lance", "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is 1, all allied units have +50 ASPD." },
-      "IS4": { "name": "King's New Lance", "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is 1, all allied units have +50 ASPD." },
+      "IS4": { "name": "King's New Lance", "idx": 118, "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is 1, all allied units have +50 ASPD." },
       "IS5": { "name": "King's New Lance", "idx": 207, "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is 1, all allied units have +50 ASPD." }
     }
   },
@@ -1385,7 +1422,7 @@
     "themes": ["IS3", "IS4"],
     "versions": {
       "IS3": { "name": "King's Staff", "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is at 1, all Operators recover an additional 1 SP every 2 seconds." },
-      "IS4": { "name": "King's Staff", "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is at 1, all Operators recover an additional 1 SP every 2 seconds." }
+      "IS4": { "name": "King's Staff", "idx": 121, "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is at 1, all Operators recover an additional 1 SP every 2 seconds." }
     }
   },
   {
@@ -1402,7 +1439,7 @@
     "themes": ["IS3", "IS4"],
     "versions": {
       "IS3": { "name": "King's Buckler", "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is at 1, all Operators have +2 Block." },
-      "IS4": { "name": "King's Buckler", "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is at 1, all Operators have +2 Block." }
+      "IS4": { "name": "King's Buckler", "idx": 120, "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is at 1, all Operators have +2 Block." }
     }
   },
   {
@@ -1419,6 +1456,7 @@
       },
       "IS4": {
         "name": "King's Crown",
+        "idx": 122,
         "cost": null,
         "effect": { "type": "internal", "label": "Internal" },
         "sources": [],
@@ -1509,6 +1547,7 @@
     "versions": {
       "IS4": {
         "name": "Hand of Outburst",
+        "idx": 185,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -1575,6 +1614,7 @@
       },
       "IS4": {
         "name": "Little Gran Faro",
+        "idx": 232,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -1604,6 +1644,7 @@
       },
       "IS4": {
         "name": "'Memories of The Shard'",
+        "idx": 233,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -1626,6 +1667,7 @@
     "versions": {
       "IS4": {
         "name": "Rainbow Jar",
+        "idx": 208,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -1707,6 +1749,7 @@
     "versions": {
       "IS4": {
         "name": "Frozen Whetstone",
+        "idx": 131,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2045,6 +2088,7 @@
       },
       "IS4": {
         "name": "'Sui's Wrath'",
+        "idx": 229,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2123,6 +2167,7 @@
     "versions": {
       "IS4": {
         "name": "Palmtop Pavilion",
+        "idx": 255,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2137,6 +2182,7 @@
     "versions": {
       "IS4": {
         "name": "Northwind Construct",
+        "idx": 259,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2151,6 +2197,7 @@
     "versions": {
       "IS4": {
         "name": "Paradigm Apparatus",
+        "idx": 261,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2165,6 +2212,7 @@
     "versions": {
       "IS4": {
         "name": "Cloud-Moving Totem",
+        "idx": 144,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2179,6 +2227,7 @@
     "versions": {
       "IS4": {
         "name": "Rusted Blade - Disturbance",
+        "idx": 254,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2201,6 +2250,7 @@
     "versions": {
       "IS4": {
         "name": "Celestial Dust",
+        "idx": 126,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2215,6 +2265,7 @@
     "versions": {
       "IS4": {
         "name": "Ring of Thorns",
+        "idx": 128,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2229,6 +2280,7 @@
     "versions": {
       "IS4": {
         "name": "Clairvoyant's Reveal",
+        "idx": 132,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2243,6 +2295,7 @@
     "versions": {
       "IS4": {
         "name": "Scarred Amber",
+        "idx": 235,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2257,6 +2310,7 @@
     "versions": {
       "IS4": {
         "name": "Roundstone Altar",
+        "idx": 207,
         "cost": null,
         "effect": { "type": "external", "label": "External" },
         "sources": [],
@@ -2279,6 +2333,7 @@
     "versions": {
       "IS4": {
         "name": "Living Woodplate",
+        "idx": 134,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2315,6 +2370,7 @@
     "versions": {
       "IS4": {
         "name": "Finshell Shield",
+        "idx": 135,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2351,6 +2407,7 @@
     "versions": {
       "IS4": {
         "name": "Empty Fowlbeast",
+        "idx": 138,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2373,6 +2430,7 @@
     "versions": {
       "IS4": {
         "name": "Lakebed Aegis",
+        "idx": 141,
         "cost": null,
         "effect": { "type": "internal", "label": "Internal" },
         "sources": [],
@@ -2425,6 +2483,7 @@
       },
       "IS4": {
         "name": "'Blossom'",
+        "idx": 243,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2462,6 +2521,7 @@
       },
       "IS4": {
         "name": "Scout's Scope",
+        "idx": 114,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2604,6 +2664,7 @@
       },
       "IS4": {
         "name": "'End of Times'",
+        "idx": 231,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2858,6 +2919,7 @@
     "versions": {
       "IS4": {
         "name": "Routeweave Net",
+        "idx": 228,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2872,6 +2934,7 @@
     "versions": {
       "IS4": {
         "name": "Horizon Invitation",
+        "idx": 237,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2886,6 +2949,7 @@
     "versions": {
       "IS4": {
         "name": "Dimensional Fluid",
+        "idx": 238,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2900,8 +2964,9 @@
     "versions": {
       "IS4": {
         "name": "Amma's Affection",
+        "idx": 236,
         "cost": null,
-        "effect": null,
+        "effect": { "type": "external", "label": "External" },
         "sources": [],
         "description": "All allied units gain +1% HP, ATK, and DEF; occasionally something wonderful will happen.\nUnlocks special exchange options in several encounters, including trading it for 2 collectibles, 15 hope, or to skip a 4th ending requirement."
       }
@@ -2914,6 +2979,7 @@
     "versions": {
       "IS4": {
         "name": "Fragment of Space",
+        "idx": 240,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2928,6 +2994,7 @@
     "versions": {
       "IS4": {
         "name": "Profound Scorchmarks",
+        "idx": 241,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2998,12 +3065,20 @@
   {
     "id": "featured-canned-meat",
     "image": "rogue_4_relic_legacy_9.png",
-    "themes": ["IS4", "IS5"],
+    "themes": ["IS3", "IS4", "IS5"],
     "versions": {
+      "IS3": {
+        "name": "Featured Canned Meat",
+        "idx": 1,
+        "cost": null,
+        "effect": null,
+        "sources": ["Rogue Trader"],
+        "description": "Squad Size Limit +1, all friendly units recover 3 HP per second."
+      },
       "IS4": {
         "name": "Featured Canned Meat",
         "idx": 19,
-        "cost": 8,
+        "cost": null,
         "effect": null,
         "sources": ["Rogue Trader"],
         "description": "Squad Size Limit +1, all friendly units recover 3 HP per second."
@@ -3026,7 +3101,7 @@
       "IS4": {
         "name": "Seaweed Salad",
         "idx": 20,
-        "cost": 8,
+        "cost": null,
         "effect": null,
         "sources": ["Rogue Trader"],
         "description": "Squad Size Limit +1, all friendly units gain +1 ASPD."
@@ -3109,10 +3184,10 @@
       "IS4": {
         "name": "Topographical Map",
         "idx": 1,
-        "cost": 8,
+        "cost": null,
         "effect": {"type": "external", "label": "External"},
         "sources": ["Rogue Trader"],
-        "description": "+1 Deployment Limit, all friendly units gain 4%, 5%, 6%, 6% and +0.5% per allied unit on the field% DEF for Braving Nature 0-2, 3-5, 6-8, 9-15 respectively."
+        "description": "+1 Deployment Limit, all friendly units gain 4%, 5%, 6%, 6% and +0.5% DEF per allied unit on the field for Braving Nature 0-2, 3-5, 6-8, 9-15 respectively."
       },
       "IS5": {
         "name": "Topographical Map",
@@ -3127,8 +3202,16 @@
   {
     "id": "conch-of-divine-whispers",
     "image": "rogue_4_relic_legacy_16.png",
-    "themes": ["IS5"],
+    "themes": ["IS4", "IS5"],
     "versions": {
+      "IS4": {
+        "name": "Conch of Divine Whispers",
+        "idx": 2,
+        "cost": null,
+        "effect": {"type": "external", "label": "External"},
+        "sources": ["Rogue Trader"],
+        "description": "+1 Deployment Limit, all friendly units gain 4%, 5%, 6%, 6% and +0.5% HP per allied unit on the field for Braving Nature 0-2, 3-5, 6-8, 9-15 respectively."
+      },
       "IS5": {
         "name": "Conch of Divine Whispers",
         "idx": 8,
@@ -3142,8 +3225,16 @@
   {
     "id": "night-whispers-in-the-forest",
     "image": "rogue_4_relic_legacy_17.png",
-    "themes": ["IS5"],
+    "themes": ["IS4", "IS5"],
     "versions": {
+      "IS4": {
+        "name": "Night-Whispers in the Forest",
+        "idx": 3,
+        "cost": null,
+        "effect": {"type": "external", "label": "External"},
+        "sources": ["Rogue Trader"],
+        "description": "+2 Deployment Limit, all friendly units gain 6%, 7%, 8%, 8% and +0.5% DEF per allied unit on the field for Braving Nature 0-2, 3-5, 6-8, 9-15 respectively."
+      },
       "IS5": {
         "name": "Night-Whispers in the Forest",
         "idx": 9,
@@ -3157,8 +3248,16 @@
   {
     "id": "church-alms-meal-voucher",
     "image": "rogue_4_relic_legacy_18.png",
-    "themes": ["IS5"],
+    "themes": ["IS4", "IS5"],
     "versions": {
+      "IS4": {
+        "name": "Church Alms Meal Voucher",
+        "idx": 4,
+        "cost": null,
+        "effect": {"type": "external", "label": "External"},
+        "sources": ["Rogue Trader"],
+        "description": "+2 Deployment Limit, all friendly units gain 6%, 7%, 8%, 8% and +0.5% HP per allied unit on the field for Braving Nature 0-2, 3-5, 6-8, 9-15 respectively."
+      },
       "IS5": {
         "name": "Church Alms Meal Voucher",
         "idx": 10,
