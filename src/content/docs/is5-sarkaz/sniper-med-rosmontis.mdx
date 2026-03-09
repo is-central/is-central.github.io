@@ -2,7 +2,6 @@
 title: Sniper/Medic Rosmontis Guide
 description: A comprehensive guide to the Sniper/Medic Rosmontis strategy in IS5 DLC2, covering drafting, strategy, and boss fights.
 ---
-
 <div class="back-button-container">
   <a href="/is5-sarkaz/overview/" class="back-button">
     <span class="back-arrow">←</span>
@@ -43,11 +42,12 @@ Her most important and high-skill-ceiling trait comes from her talent, which all
 
 If an enemy is in range of the caster or sniper on a tile where a pillar can be deployed, the pillar will spawn on that enemy. If there are multiple enemies, then the one which is the closest to the blue box is prioritized.
 
-If no enemies are in range of a deployable tile for the pillar, the game follows Wisadel revenant spawning logic:
+If no enemies are in range of a deployable tile for the pillar, the game follows the following spawn logic:
+1. The closest tile in operator range based on [Manhattan Distance](https://en.wikipedia.org/wiki/Taxicab_geometry).
+2. If there are multiple tiles in range that are the same distance, take the bottommost one.
+3. If there are still multiple tiles in range that are the same distance, take the leftmost one.
 
-![logic](/guides/is5-sarkaz/sniper-med-rosmontis/logic.png)
-
-_(Credit to DragonGJY for making this graphic)_
+![logic](/guides/is5-sarkaz/sniper-med-rosmontis/ros-pillar.png)
 
 The pillars have several important properties that make them critical to double flinger gameplay:
 
