@@ -13,17 +13,18 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'IS Central',
+      lastUpdated: true,
       logo: {
         src: '/src/assets/logo.svg',
       },
       social: [
-		{
-			icon: 'discord',
-			label: 'Discord',
-			href: 'https://discord.gg/fqRBzQWVfK',
-		},
-	  ],
-	  customCss: ['/src/styles/custom.css'],
+        {
+          icon: 'discord',
+          label: 'Discord',
+          href: 'https://discord.gg/fqRBzQWVfK',
+        },
+      ],
+      customCss: ['/src/styles/custom.css'],
       pagination: false,
       sidebar: [
         {
