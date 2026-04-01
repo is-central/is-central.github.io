@@ -10,7 +10,7 @@
     },
     {
       "name": "Flower-Unity's Might",
-      "ingot_cost": "12",
+      "ingot_cost": "non-buyable",
       "output_tiers": ["12"],
       "eligible_tiers": ["12"],
       "special_output": null,
@@ -26,7 +26,7 @@
     },
     {
       "name": "Flower-Cocoon Worth",
-      "ingot_cost": "12",
+      "ingot_cost": "non-buyable",
       "output_tiers": ["12"],
       "eligible_tiers": ["12"],
       "special_output": null,
@@ -230,7 +230,7 @@
       "output_tiers": ["8"],
       "eligible_tiers": ["8"],
       "special_output": null,
-      "description": ""
+      "description": "+30 Ingots when added to Coffer. On each toss, -10 Ingots"
     },
     {
       "name": "Risk-Hidden Gambit",
@@ -238,7 +238,7 @@
       "output_tiers": ["8"],
       "eligible_tiers": ["12", "8"],
       "special_output": null,
-      "description": "+30 Ingots when added to Coffer. On each toss, -10 Ingots"
+      "description": "When in Coffer, +30% Command EXP after battles; on toss, enemies +30% Movement Speed, +30% ATK (Turns into Dayan Tongbao after)"
     },
     {
       "name": "Risk-Unmoved Mounts",
@@ -250,7 +250,7 @@
     },
     {
       "name": "Risk-Enlightenment",
-      "ingot_cost": "8",
+      "ingot_cost": "non-buyable",
       "output_tiers": ["8"],
       "eligible_tiers": [],
       "special_output": ["Bal-Trailblazer"],
@@ -322,7 +322,7 @@
     },
     {
       "name": "Bal-Soil to Metal",
-      "ingot_cost": "non-buyable",
+      "ingot_cost": "4",
       "output_tiers": ["4"],
       "eligible_tiers": ["4"],
       "special_output": null,
@@ -330,7 +330,7 @@
     },
     {
       "name": "Bal-Water to Wood",
-      "ingot_cost": "non-buyable",
+      "ingot_cost": "4",
       "output_tiers": ["4"],
       "eligible_tiers": ["4"],
       "special_output": null,
@@ -338,7 +338,7 @@
     },
     {
       "name": "Bal-Metal to Water",
-      "ingot_cost": "non-buyable",
+      "ingot_cost": "4",
       "output_tiers": ["4"],
       "eligible_tiers": ["4"],
       "special_output": null,
@@ -346,7 +346,7 @@
     },
     {
       "name": "Flower - Fire to Soil",
-      "ingot_cost": "non-buyable",
+      "ingot_cost": "4",
       "output_tiers": ["4"],
       "eligible_tiers": ["4"],
       "special_output": null,
@@ -354,7 +354,7 @@
     },
     {
       "name": "Bal-Wood to Fire",
-      "ingot_cost": "non-buyable",
+      "ingot_cost": "4",
       "output_tiers": ["4"],
       "eligible_tiers": ["4"],
       "special_output": null,
