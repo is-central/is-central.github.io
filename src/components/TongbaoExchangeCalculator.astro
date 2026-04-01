@@ -18,9 +18,10 @@
 
             <div class="filter-chips">
                 <button class="chip active" data-filter="all">All</button>
-                <button class="chip chip-12" data-filter="12">12 Ingots</button>
-                <button class="chip chip-8" data-filter="8">8 Ingots</button>
-                <button class="chip chip-4" data-filter="4">4 Ingots</button>
+                <button class="chip chip-12" data-filter="12">12 Tier</button>
+                <button class="chip chip-8" data-filter="8">8 Tier</button>
+                <button class="chip chip-4" data-filter="4">4 Tier</button>
+                <button class="chip chip-nb" data-filter="non-exchangeable">Non‑exchangeable</button>
             </div>
         </div>
     </header>
@@ -29,53 +30,24 @@
     <div class="dashboard-content">
         <!-- LEFT: INPUT GRID -->
         <div class="input-panel">
-            <!-- Prefix Sections (Flower, Risk, Bal, Other) -->
-            <section
-                id="section-flower"
-                class="prefix-section"
-                data-prefix="flower"
-            >
-                <div class="section-header header-flower">
-                    <span>Flower</span>
-                </div>
-                <div class="input-grid" id="grid-flower">
-                    <!-- JS Populated -->
-                </div>
+            <section id="section-flower" class="prefix-section" data-prefix="flower">
+                <div class="section-header header-flower"><span>Flower</span></div>
+                <div class="input-grid" id="grid-flower"></div>
             </section>
 
-            <section
-                id="section-risk"
-                class="prefix-section"
-                data-prefix="risk"
-            >
-                <div class="section-header header-risk">
-                    <span>Risk</span>
-                </div>
-                <div class="input-grid" id="grid-risk">
-                    <!-- JS Populated -->
-                </div>
+            <section id="section-risk" class="prefix-section" data-prefix="risk">
+                <div class="section-header header-risk"><span>Risk</span></div>
+                <div class="input-grid" id="grid-risk"></div>
             </section>
 
             <section id="section-bal" class="prefix-section" data-prefix="bal">
-                <div class="section-header header-bal">
-                    <span>Bal</span>
-                </div>
-                <div class="input-grid" id="grid-bal">
-                    <!-- JS Populated -->
-                </div>
+                <div class="section-header header-bal"><span>Bal</span></div>
+                <div class="input-grid" id="grid-bal"></div>
             </section>
 
-            <section
-                id="section-other"
-                class="prefix-section"
-                data-prefix="other"
-            >
-                <div class="section-header header-other">
-                    <span>Other</span>
-                </div>
-                <div class="input-grid" id="grid-other">
-                    <!-- JS Populated -->
-                </div>
+            <section id="section-other" class="prefix-section" data-prefix="other">
+                <div class="section-header header-other"><span>Other</span></div>
+                <div class="input-grid" id="grid-other"></div>
             </section>
 
             <div id="no-results" class="no-results hidden">
@@ -86,13 +58,11 @@
         <!-- RIGHT: INSPECTOR (Sticky) -->
         <aside class="inspector-panel">
             <div class="inspector-card">
-                <!-- Welcome / Empty State -->
+                <!-- Empty State -->
                 <div id="inspector-empty" class="inspector-state">
                     <div class="empty-icon">👈</div>
                     <h3>Select a Tongbao</h3>
-                    <p>
-                        Click any item on the left to view its exchange details.
-                    </p>
+                    <p>Click any item on the left to view its exchange details.</p>
                 </div>
 
                 <!-- Active State -->
@@ -107,17 +77,15 @@
                         </div>
                     </div>
 
+                    <p id="insp-description" class="inspector-description"></p>
+
                     <div class="inspector-body">
                         <div class="body-header">
                             <h4>Exchanges Into</h4>
-                            <span class="sub-text"
-                                >Random result from pool:</span
-                            >
+                            <span id="insp-pool-label" class="sub-text">Random result from pool:</span>
                         </div>
 
-                        <div class="result-grid" id="result-grid">
-                            <!-- JS Populated -->
-                        </div>
+                        <div class="result-grid" id="result-grid"></div>
                     </div>
                 </div>
             </div>
@@ -135,6 +103,7 @@
         --c-12: #ffd700;
         --c-8: #b0bec5;
         --c-4: #8d6e63;
+        --c-nb: #7e57c2;
 
         --header-flower: #ec407a;
         --header-risk: #b71c1c;
@@ -146,7 +115,7 @@
         background: var(--dash-bg);
         border: 1px solid var(--border-color);
         border-radius: 12px;
-        overflow: hidden; /* For rounded corners */
+        overflow: hidden;
         min-height: 600px;
         display: flex;
         flex-direction: column;
@@ -155,7 +124,6 @@
         font-family: var(--sl-font-system);
     }
 
-    /* --- HEADER --- */
     .dashboard-header {
         background: var(--panel-bg);
         border-bottom: 1px solid var(--border-color);
@@ -191,7 +159,7 @@
 
     .search-wrapper input {
         width: 100%;
-        height: 40px; /* Explicit height matching chips */
+        height: 40px;
         padding: 0 0.5rem 0 2.2rem;
         border-radius: 6px;
         border: 1px solid var(--sl-color-gray-4);
@@ -210,12 +178,13 @@
         display: flex;
         gap: 0.5rem;
         align-items: center;
+        flex-wrap: wrap;
     }
 
     .chip {
-        height: 40px; /* Explicit height matching search */
+        height: 40px;
         padding: 0 1rem;
-        border-radius: 20px; /* Classic chip pill shape */
+        border-radius: 20px;
         border: 1px solid var(--border-color);
         background: var(--sl-color-bg);
         color: var(--sl-color-text);
@@ -239,10 +208,14 @@
         font-weight: 600;
     }
 
-    /* --- LAYOUT --- */
+    .chip-12.active { background: var(--c-12); border-color: var(--c-12); color: #000; }
+    .chip-8.active  { background: var(--c-8);  border-color: var(--c-8);  color: #000; }
+    .chip-4.active  { background: var(--c-4);  border-color: var(--c-4);  color: #fff; }
+    .chip-nb.active { background: var(--c-nb); border-color: var(--c-nb); color: #fff; }
+
     .dashboard-content {
         display: flex;
-        align-items: flex-start; /* Important for sticky */
+        align-items: flex-start;
         padding: 1.5rem;
         gap: 2rem;
         flex: 1;
@@ -262,7 +235,6 @@
         }
     }
 
-    /* --- LEFT: INPUT GRID --- */
     .input-panel {
         flex: 1;
         min-width: 0;
@@ -283,29 +255,15 @@
         align-items: center;
     }
 
-    .header-flower {
-        color: var(--header-flower);
-        border-color: var(--header-flower);
-    }
-    .header-risk {
-        color: var(--header-risk);
-        border-color: var(--header-risk);
-    }
-    .header-bal {
-        color: var(--header-bal);
-        border-color: var(--header-bal);
-    }
-    .header-other {
-        color: var(--header-other);
-        border-color: var(--header-other);
-    }
+    .header-flower { color: var(--header-flower); border-color: var(--header-flower); }
+    .header-risk   { color: var(--header-risk);   border-color: var(--header-risk);   }
+    .header-bal    { color: var(--header-bal);     border-color: var(--header-bal);    }
+    .header-other  { color: var(--header-other);   border-color: var(--header-other);  }
 
     .input-grid {
         display: grid;
-        /* Adjusted for labeled items */
         grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
         gap: 1rem;
-        /* KEY ALIGNMENT FIX: Start from top */
         align-items: start;
     }
 
@@ -317,12 +275,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        /* KEY ALIGNMENT FIX: Start content from top */
         justify-content: flex-start;
         padding: 0.5rem;
         transition: all 0.2s;
         height: 100%;
-        min-height: 110px; /* Ensure visual consistency */
+        min-height: 110px;
     }
 
     .input-item:hover {
@@ -338,21 +295,15 @@
         box-shadow: 0 0 0 1px var(--accent);
     }
 
-    /* Tier indicators (borders) */
-    .input-item[data-tier="12"] {
-        border-left: 3px solid var(--c-12);
-    }
-    .input-item[data-tier="8"] {
-        border-left: 3px solid var(--c-8);
-    }
-    .input-item[data-tier="4"] {
-        border-left: 3px solid var(--c-4);
-    }
+    /* Left border based on output category */
+    .input-item[data-output-category="12"]           { border-left: 3px solid var(--c-12); }
+    .input-item[data-output-category="8"]            { border-left: 3px solid var(--c-8);  }
+    .input-item[data-output-category="4"]            { border-left: 3px solid var(--c-4);  }
+    .input-item[data-output-category="non-exchangeable"]  { border-left: 3px solid var(--c-nb); }
 
-    /* Fixed Height Image Container */
     .input-img-wrapper {
         width: 60px;
-        height: 60px; /* Fixed height! */
+        height: 60px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -374,7 +325,6 @@
         width: 100%;
     }
 
-    /* --- RIGHT: INSPECTOR --- */
     .inspector-panel {
         width: 320px;
         flex-shrink: 0;
@@ -401,7 +351,6 @@
         display: none;
     }
 
-    /* Empty State */
     #inspector-empty {
         align-items: center;
         justify-content: center;
@@ -415,14 +364,13 @@
         margin-bottom: 1rem;
     }
 
-    /* Active State */
     .inspector-header {
         display: flex;
         gap: 1rem;
         align-items: flex-start;
         border-bottom: 1px solid var(--border-color);
-        padding-bottom: 1.5rem;
-        margin-bottom: 1.5rem;
+        padding-bottom: 1.25rem;
+        margin-bottom: 1rem;
     }
 
     .inspector-icon-wrapper {
@@ -445,12 +393,11 @@
 
     .inspector-info {
         flex: 1;
-        min-width: 0; /* Text wrap fix */
+        min-width: 0;
     }
-
     .inspector-info h2 {
         margin: 0 0 0.5rem;
-        font-size: 1.25rem;
+        font-size: 1.1rem;
         line-height: 1.2;
         word-wrap: break-word;
     }
@@ -463,17 +410,23 @@
         font-weight: 700;
         text-transform: uppercase;
     }
-    .badge-12 {
-        background: var(--c-12);
-        color: #000;
+    .badge-12           { background: var(--c-12); color: #000; }
+    .badge-8            { background: var(--c-8);  color: #000; }
+    .badge-4            { background: var(--c-4);  color: #fff; }
+    .badge-non-buyable  { background: var(--c-nb); color: #fff; }
+
+    .inspector-description {
+        font-size: 0.85rem;
+        color: var(--sl-color-gray-3);
+        line-height: 1.5;
+        margin: 0 0 1.25rem;
+        padding-bottom: 1.25rem;
+        border-bottom: 1px solid var(--border-color);
+        font-style: italic;
+        min-height: 1.5em;
     }
-    .badge-8 {
-        background: var(--c-8);
-        color: #000;
-    }
-    .badge-4 {
-        background: var(--c-4);
-        color: #fff;
+    .inspector-description:empty {
+        display: none;
     }
 
     .body-header {
@@ -491,12 +444,10 @@
         color: var(--sl-color-gray-3);
     }
 
-    /* RESULT GRID - ALIGNMENT FIX */
     .result-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
         gap: 1rem;
-        /* KEY: Align items to the start (top) of the row */
         align-items: start;
     }
 
@@ -508,7 +459,6 @@
         text-align: center;
         cursor: pointer;
         transition: all 0.2s;
-        /* Ensure content stacks vertically */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -522,7 +472,7 @@
     }
 
     .result-img-container {
-        height: 50px; /* Fixed height for image area */
+        height: 50px;
         width: 100%;
         display: flex;
         align-items: center;
@@ -544,13 +494,13 @@
         word-wrap: break-word;
     }
 
-    .inspector-footer {
-        margin-top: 2rem;
-        padding-top: 1rem;
-        border-top: 1px solid var(--border-color);
+    .result-empty {
         color: var(--sl-color-gray-3);
-        font-size: 0.8rem;
+        font-size: 0.85rem;
+        font-style: italic;
+        grid-column: 1 / -1;
         text-align: center;
+        padding: 1rem 0;
     }
 
     .no-results {
@@ -564,176 +514,75 @@
     }
 </style>
 
-<script is:inline>
-    // --- Data ---
-    var ASSET_PATH = "/guides/is6-sui/tongbao-exchange/";
+<script>
+    import TONGBAO_DATA from '../content/docs/is6-sui/overview/Tongbaos.json';
 
-    var tier4Items = [
-        "Dayan Tongbao",
-        "Risk-West Stones",
-        "Risk-Eastern Gap",
-        "Risk-Northern Sting",
-        "Risk-Southern Mounts",
-        "Bal-Soil to Metal",
-        "Bal-Water to Wood",
-        "Bal-Metal to Water",
-        "Flower - Fire to Soil",
-        "Bal-Wood to Fire",
-        "Bal-Cold",
-        "Bal-Gale",
-        "Bal-Rain",
-        "Bal-Thunder",
-        "Bal-Drought",
-        "Bal-Rainbow",
-        "Bal-Rime",
-        "Bal-Frost",
-        "Flower-Long Road",
-        "Flower-Martial Fight",
-        "Flower-Trades",
-        "Risk-Study",
-        "Bal-Testee",
-        "Bal-Prevention",
-    ];
+    const ASSET_PATH = "/guides/is6-sui/tongbao-exchange/";
 
-    var tier8Items = [
-        "Risk-Bloodshed",
-        "Risk-A Good Match",
-        "Risk-Getaway",
-        "Risk-Law and Ritual",
-        "Risk-Spring Rivers",
-        "Risk-Constant Change",
-        "Risk-Shennong Watch",
-        "Risk-Dream of Curio",
-        "Risk-Falling Word",
-        "Risk-Biding Time",
-        "Risk-Painter's Realm",
-        "Risk-Wild Passion",
-        "Bal-Good Harvest",
-        "Bal-Frontier Moon",
-        "Bal-Steel and Soil",
-        "Risk-Taming Megamus",
-        "Risk-Gift of Accord",
-        "Risk-Hidden Gambit",
-        "Risk-Unmoved Mounts",
-        "Risk-Enlightenment",
-        "Bal-A People United",
-        "Bal-A Body Honed",
-        "Flower-Heavy Duties",
-    ];
-
-    var tier12Items = [
-        "Risk-They Who Endure",
-        "Flower-Unity's Might",
-        "Bal-Rogue Token",
-        "Flower-Cocoon Worth",
-        "Flower-The Bulwark",
-        "Flower-Stove Alight",
-        "Flower-Duck Coin",
-        "Bal-Dawn of YAN",
-        "Flower-The Ascent",
-        "Flower-Odd Merchant",
-        "Risk-Lei Fa's Purge",
-        "Risk-Toll For Roads",
-    ];
-
-    // Output Logic
-    var inputOnly = [
-        "Risk-Enlightenment",
-        "Bal-Rogue Token",
-        "Flower-The Ascent",
-        "Risk-Eastern Gap",
-        "Risk-West Stones",
-        "Risk-Northern Sting",
-        "Risk-Southern Mounts",
-        "Dayan Tongbao",
-    ];
-    var bridgeItems = {
-        from12to4: ["Flower-Martial Fight", "Flower-Trades"],
-        from12to8: ["Risk-Hidden Gambit"],
-        from8to4: [
-            "Flower-Long Road",
-            "Risk-Study",
-            "Bal-Testee",
-            "Bal-Prevention",
-        ],
-        from8to12: ["Flower-The Bulwark"],
-    };
-    var specialMappings = {
-        "Risk-Unmoved Mounts": ["Bal-To Move Mounts"],
-        "Risk-Enlightenment": ["Bal-Trailblazer"],
-        "Bal-A Body Honed": ["Flower-Mindfulness", "Flower-Unclouded"],
-        "Bal-A People United": ["Flower-Ideas Carried"],
-    };
-
-    // --- Logic ---
-
-    function getImagePath(name) {
-        return ASSET_PATH + name + ".webp";
+    // Helper: set image source with fallback to .png if .webp fails
+    function setImageWithFallback(img, name) {
+        img.src = `${ASSET_PATH}${name}.webp`;
+        img.onerror = () => {
+            img.src = `${ASSET_PATH}${name}.png`;
+            img.onerror = null; // prevent infinite loop if both fail
+        };
     }
 
-    function getTier(name) {
-        if (tier12Items.indexOf(name) !== -1) return 12;
-        if (tier8Items.indexOf(name) !== -1) return 8;
-        if (tier4Items.indexOf(name) !== -1) return 4;
-        if (
-            [
-                "Bal-To Move Mounts",
-                "Bal-Trailblazer",
-                "Flower-Mindfulness",
-                "Flower-Unclouded",
-                "Flower-Ideas Carried",
-            ].indexOf(name) !== -1
-        )
-            return 8;
-        return 4;
-    }
-
-    function getPrefix(name) {
-        if (name.indexOf("Flower") === 0) return "flower";
-        if (name.indexOf("Risk") === 0) return "risk";
-        if (name.indexOf("Bal") === 0) return "bal";
+    function getPrefix(name: string): string {
+        if (name.startsWith("Flower")) return "flower";
+        if (name.startsWith("Risk"))   return "risk";
+        if (name.startsWith("Bal"))    return "bal";
         return "other";
     }
 
-    function getExchangeResults(inputName) {
-        if (specialMappings[inputName]) return specialMappings[inputName];
-
-        var tier = getTier(inputName);
-        var pool = [];
-
-        var getBase = function (list) {
-            return list.filter(function (i) {
-                return inputOnly.indexOf(i) === -1;
-            });
-        };
-
-        if (tier === 12) {
-            pool = getBase(tier12Items);
-            pool = pool.concat(bridgeItems.from12to4);
-            pool = pool.concat(bridgeItems.from12to8);
-        } else if (tier === 8) {
-            pool = getBase(tier8Items);
-            pool = pool.concat(bridgeItems.from8to4);
-            pool = pool.concat(bridgeItems.from8to12);
-        } else {
-            pool = getBase(tier4Items);
-        }
-
-        pool = pool.filter(function (i) {
-            return i !== inputName;
-        });
-        // deduplicate and sort
-        var unique = [];
-        pool.forEach(function (item) {
-            if (unique.indexOf(item) === -1) unique.push(item);
-        });
-        return unique.sort();
+    function getTongbao(name: string) {
+        return TONGBAO_DATA.tongbaos.find(t => t.name === name) ?? null;
     }
 
-    // --- UI Rendering ---
+    // Determine output category for filtering & coloring
+    function getOutputCategory(tongbao) {
+        const tiers = tongbao.output_tiers || [];
+        if (tiers.includes("12")) return "12";
+        if (tiers.includes("8")) return "8";
+        if (tiers.includes("4")) return "4";
+        return "non-exchangeable";
+    }
 
-    var currentFilter = "all";
-    var currentSearch = "";
+    // --- Exchange logic ---
+    function getExchangeResults(inputName: string): string[] {
+        const input = getTongbao(inputName);
+        if (!input) return [];
+
+        if (input.special_output && input.special_output.length > 0) {
+            return input.special_output;
+        }
+
+        const outputTiers = input.output_tiers;
+        if (!outputTiers || outputTiers.length === 0) return [];
+
+        const candidates = new Set<string>();
+
+        for (const tier of outputTiers) {
+            if (tier === "none") continue;
+
+            TONGBAO_DATA.tongbaos.forEach(t => {
+                if (t.name === inputName) return;
+                const eligible = t.eligible_tiers || [];
+                if (eligible.includes(tier)) {
+                    candidates.add(t.name);
+                }
+            });
+        }
+
+        return [...candidates].sort();
+    }
+
+    // --- UI State ---
+
+    let currentFilter = "all";
+    let currentSearch = "";
+
+    // --- Rendering ---
 
     function initDashboard() {
         renderInputGrids();
@@ -741,185 +590,194 @@
     }
 
     function renderInputGrids() {
-        var allItems = tier12Items.concat(tier8Items).concat(tier4Items);
-        var grouped = { flower: [], risk: [], bal: [], other: [] };
+        const grouped: Record<string, typeof TONGBAO_DATA.tongbaos> = {
+            flower: [], risk: [], bal: [], other: []
+        };
 
-        allItems.forEach(function (name) {
-            grouped[getPrefix(name)].push(name);
+        TONGBAO_DATA.tongbaos.forEach(tongbao => {
+            const prefix = getPrefix(tongbao.name);
+            grouped[prefix].push(tongbao);
         });
 
-        ["flower", "risk", "bal", "other"].forEach(function (prefix) {
-            var container = document.getElementById("grid-" + prefix);
+        // Order for output categories
+        const categoryOrder: Record<string, number> = {
+            "12": 0,
+            "8": 1,
+            "4": 2,
+            "non-exchangeable": 3
+        };
+
+        (["flower", "risk", "bal", "other"] as const).forEach(prefix => {
+            const container = document.getElementById(`grid-${prefix}`);
             if (!container) return;
             container.innerHTML = "";
+
             grouped[prefix]
-                .sort(function (a, b) {
-                    var tierA = getTier(a);
-                    var tierB = getTier(b);
-                    if (tierA !== tierB) return tierB - tierA;
-                    return a.localeCompare(b);
+                .sort((a, b) => {
+                    const catA = getOutputCategory(a);
+                    const catB = getOutputCategory(b);
+                    const orderA = categoryOrder[catA] ?? 3;
+                    const orderB = categoryOrder[catB] ?? 3;
+                    if (orderA !== orderB) return orderA - orderB;
+                    return a.name.localeCompare(b.name);
                 })
-                .forEach(function (name) {
-                    var tier = getTier(name);
-                    var el = document.createElement("div");
+                .forEach(tongbao => {
+                    const el = document.createElement("div");
                     el.className = "input-item";
-                    el.setAttribute("data-name", name);
-                    el.setAttribute("data-tier", String(tier));
+                    el.setAttribute("data-name", tongbao.name);
+                    // Store ingot cost for badge & sorting, but not for filter/color
+                    el.setAttribute("data-ingot-cost", tongbao.ingot_cost);
+                    // Store output category for filtering and border color
+                    const category = getOutputCategory(tongbao);
+                    el.setAttribute("data-output-category", category);
                     el.setAttribute("data-prefix", prefix);
 
-                    el.innerHTML =
-                        '<div class="input-img-wrapper">' +
-                        '<img src="' +
-                        getImagePath(name) +
-                        '" alt="' +
-                        name +
-                        '" loading="lazy">' +
-                        "</div>" +
-                        '<div class="input-name">' +
-                        name +
-                        "</div>";
+                    // Create image element with fallback
+                    const imgWrapper = document.createElement("div");
+                    imgWrapper.className = "input-img-wrapper";
+                    const img = document.createElement("img");
+                    setImageWithFallback(img, tongbao.name);
+                    img.alt = tongbao.name;
+                    img.loading = "lazy";
+                    imgWrapper.appendChild(img);
 
-                    el.addEventListener("click", function () {
-                        selectItem(name, el);
-                    });
+                    const nameDiv = document.createElement("div");
+                    nameDiv.className = "input-name";
+                    nameDiv.textContent = tongbao.name;
+
+                    el.appendChild(imgWrapper);
+                    el.appendChild(nameDiv);
+
+                    el.addEventListener("click", () => selectItem(tongbao.name, el));
                     container.appendChild(el);
                 });
         });
     }
 
-    function selectItem(name, sourceEl) {
-        var allItems = document.querySelectorAll(".input-item");
-        for (var i = 0; i < allItems.length; i++) {
-            allItems[i].classList.remove("active");
-        }
+    function selectItem(name: string, sourceEl: HTMLElement | null) {
+        document.querySelectorAll(".input-item").forEach(el => el.classList.remove("active"));
 
         if (!sourceEl) {
-            sourceEl = document.querySelector(
-                '.input-item[data-name="' + name + '"]',
-            );
+            sourceEl = document.querySelector(`.input-item[data-name="${name}"]`);
+        }
+        sourceEl?.classList.add("active");
+
+        const tongbao = getTongbao(name);
+        if (!tongbao) return;
+
+        document.getElementById("inspector-empty")?.classList.add("hidden");
+        document.getElementById("inspector-active")?.classList.remove("hidden");
+
+        // Header
+        const imgEl = document.getElementById("insp-img") as HTMLImageElement | null;
+        const nameEl = document.getElementById("insp-name");
+        const badgeEl = document.getElementById("insp-badge");
+        const descEl = document.getElementById("insp-description");
+        const poolLabelEl = document.getElementById("insp-pool-label");
+
+        if (imgEl) setImageWithFallback(imgEl, name);
+        if (nameEl) nameEl.textContent = name;
+
+        if (badgeEl) {
+            const ic = tongbao.ingot_cost;
+            badgeEl.textContent = ic === "non-buyable" ? "Non-buyable" : `${ic} Ingots`;
+            badgeEl.className = `badge badge-${ic}`;
         }
 
-        if (sourceEl) {
-            sourceEl.classList.add("active");
+        if (descEl) descEl.textContent = tongbao.description || "";
+
+        const isSpecial = Boolean(tongbao.special_output && tongbao.special_output.length > 0);
+        if (poolLabelEl) {
+            poolLabelEl.textContent = isSpecial
+                ? "Fixed exchange result:"
+                : "Random result from pool:";
         }
 
-        var emptyState = document.getElementById("inspector-empty");
-        var activeState = document.getElementById("inspector-active");
-
-        if (emptyState) emptyState.classList.add("hidden");
-        if (activeState) activeState.classList.remove("hidden");
-
-        var tier = getTier(name);
-        var imgI = document.getElementById("insp-img");
-        var nameI = document.getElementById("insp-name");
-        var badgeI = document.getElementById("insp-badge");
-
-        if (imgI) imgI.src = getImagePath(name);
-        if (nameI) nameI.textContent = name;
-        if (badgeI) {
-            badgeI.textContent = tier + " Ingots";
-            badgeI.className = "badge badge-" + tier;
-        }
-
-        var results = getExchangeResults(name);
-        renderResults(results);
+        renderResults(getExchangeResults(name));
     }
 
-    function renderResults(items) {
-        var grid = document.getElementById("result-grid");
+    function renderResults(items: string[]) {
+        const grid = document.getElementById("result-grid");
         if (!grid) return;
-
         grid.innerHTML = "";
-        items.forEach(function (name) {
-            var el = document.createElement("div");
+
+        if (items.length === 0) {
+            grid.innerHTML = '<p class="result-empty">This item cannot be exchanged.</p>';
+            return;
+        }
+
+        items.forEach(name => {
+            const el = document.createElement("div");
             el.className = "result-item";
 
-            el.innerHTML =
-                '<div class="result-img-container">' +
-                '<img src="' +
-                getImagePath(name) +
-                '" alt="' +
-                name +
-                '">' +
-                "</div>" +
-                '<div class="result-name">' +
-                name +
-                "</div>";
+            const imgContainer = document.createElement("div");
+            imgContainer.className = "result-img-container";
+            const img = document.createElement("img");
+            setImageWithFallback(img, name);
+            img.alt = name;
+            imgContainer.appendChild(img);
 
-            el.addEventListener("click", function () {
-                selectItem(name, null);
-            });
+            const nameDiv = document.createElement("div");
+            nameDiv.className = "result-name";
+            nameDiv.textContent = name;
+
+            el.appendChild(imgContainer);
+            el.appendChild(nameDiv);
+
+            el.addEventListener("click", () => selectItem(name, null));
             grid.appendChild(el);
         });
     }
 
     function applyFilters() {
-        var sections = document.querySelectorAll(".prefix-section");
-        var totalVisible = 0;
+        const sections = document.querySelectorAll(".prefix-section");
+        let totalVisible = 0;
 
-        for (var s = 0; s < sections.length; s++) {
-            var section = sections[s];
-            var items = section.querySelectorAll(".input-item");
-            var sectionVisible = 0;
+        sections.forEach(section => {
+            const items = section.querySelectorAll(".input-item");
+            let sectionVisible = 0;
 
-            for (var j = 0; j < items.length; j++) {
-                var item = items[j];
-                var name = (item.getAttribute("data-name") || "").toLowerCase();
-                var tier = item.getAttribute("data-tier") || "";
+            items.forEach(item => {
+                const name = (item.getAttribute("data-name") || "").toLowerCase();
+                const outputCategory = item.getAttribute("data-output-category") || "";
 
-                var matchesTier =
-                    currentFilter === "all" || currentFilter === tier;
-                var matchesSearch = name.indexOf(currentSearch) !== -1;
+                const matchesFilter = currentFilter === "all" || currentFilter === outputCategory;
+                const matchesSearch = name.includes(currentSearch);
 
-                if (matchesTier && matchesSearch) {
+                if (matchesFilter && matchesSearch) {
                     item.classList.remove("hidden");
                     sectionVisible++;
                     totalVisible++;
                 } else {
                     item.classList.add("hidden");
                 }
-            }
+            });
 
-            if (sectionVisible > 0) {
-                section.classList.remove("hidden");
-            } else {
-                section.classList.add("hidden");
-            }
-        }
+            section.classList.toggle("hidden", sectionVisible === 0);
+        });
 
-        var noRes = document.getElementById("no-results");
-        if (noRes) {
-            if (totalVisible > 0) {
-                noRes.classList.add("hidden");
-            } else {
-                noRes.classList.remove("hidden");
-            }
-        }
+        const noRes = document.getElementById("no-results");
+        noRes?.classList.toggle("hidden", totalVisible > 0);
     }
 
     function initInteractions() {
-        var sInput = document.getElementById("tongbao-search");
-        if (sInput) {
-            sInput.addEventListener("input", function (e) {
-                currentSearch = e.target.value.toLowerCase();
-                applyFilters();
-            });
-        }
+        const searchInput = document.getElementById("tongbao-search") as HTMLInputElement | null;
+        searchInput?.addEventListener("input", e => {
+            currentSearch = (e.target as HTMLInputElement).value.toLowerCase();
+            applyFilters();
+        });
 
-        var chips = document.querySelectorAll(".chip");
-        for (var i = 0; i < chips.length; i++) {
-            chips[i].addEventListener("click", function () {
-                for (var j = 0; j < chips.length; j++) {
-                    chips[j].classList.remove("active");
-                }
-                this.classList.add("active");
-                currentFilter = this.getAttribute("data-filter") || "all";
+        const chips = document.querySelectorAll(".chip");
+        chips.forEach(chip => {
+            chip.addEventListener("click", () => {
+                chips.forEach(c => c.classList.remove("active"));
+                chip.classList.add("active");
+                currentFilter = chip.getAttribute("data-filter") || "all";
                 applyFilters();
             });
-        }
+        });
     }
 
-    // Run when DOM is ready
     if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", initDashboard);
     } else {

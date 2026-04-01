@@ -1,0 +1,812 @@
+{
+  "tongbaos": [
+    {
+      "name": "Risk-They Who Endure",
+      "ingot_cost": "12",
+      "output_tiers": ["12"],
+      "eligible_tiers": ["12"],
+      "special_output": null,
+      "description": "On toss, Operators do not retreat when defeated for the first time, but redeployed in a random direction"
+    },
+    {
+      "name": "Flower-Unity's Might",
+      "ingot_cost": "non-buyable",
+      "output_tiers": ["12"],
+      "eligible_tiers": ["12"],
+      "special_output": null,
+      "description": "Obtain a unique Tactical Prop"
+    },
+    {
+      "name": "Bal-Rogue Token",
+      "ingot_cost": "non-buyable",
+      "output_tiers": ["12"],
+      "eligible_tiers": [],
+      "special_output": null,
+      "description": "+10 Ingots when added to the Coffer. Rogue Traders have additional rarer wares and a discount to their warers' price while tossed"
+    },
+    {
+      "name": "Flower-Cocoon Worth",
+      "ingot_cost": "non-buyable",
+      "output_tiers": ["12"],
+      "eligible_tiers": ["12"],
+      "special_output": null,
+      "description": "On toss, +1 Ingot for every 4 Ingots owned"
+    },
+    {
+      "name": "Flower-The Bulwark",
+      "ingot_cost": "12",
+      "output_tiers": ["12"],
+      "eligible_tiers": ["12", "8"],
+      "special_output": null,
+      "description": "On toss, all allies +5% Max HP for every Objective Shield"
+    },
+    {
+      "name": "Flower-Stove Alight",
+      "ingot_cost": "12",
+      "output_tiers": ["12"],
+      "eligible_tiers": ["12"],
+      "special_output": null,
+      "description": "On toss, all allies +3 ASPD for every 2 Ingots owned"
+    },
+    {
+      "name": "Flower-Duck Coin",
+      "ingot_cost": "12",
+      "output_tiers": ["12"],
+      "eligible_tiers": ["12"],
+      "special_output": null,
+      "description": "On toss, a stronger Duck Lord, Gopnik, Crying Thief, or Fatty spawns in the next Combat or Emergency Ops (Turns into Dayan Tongbao after)"
+    },
+    {
+      "name": "Bal-Dawn of YAN",
+      "ingot_cost": "12",
+      "output_tiers": ["12"],
+      "eligible_tiers": ["12"],
+      "special_output": null,
+      "description": "On toss, +4 Coupons when in Garden of Grotesqueries, or +2 Candles when in Sui's Remnant Consciousness (Turns into Dayan Tongbao after)"
+    },
+    {
+      "name": "Flower-The Ascent",
+      "ingot_cost": "non-buyable",
+      "output_tiers": ["12"],
+      "eligible_tiers": [],
+      "special_output": null,
+      "description": "On toss, post-battle Recruitment Voucher will turn into a 6-Star Random Promotion Temporary Rec. Voucher (Turns into Dayan Tongbao after)"
+    },
+    {
+      "name": "Flower-Odd Merchant",
+      "ingot_cost": "12",
+      "output_tiers": ["12"],
+      "eligible_tiers": ["12"],
+      "special_output": null,
+      "description": "+4 Coupons when added to Coffer. On toss, +1 Hope when buying items or swapping Collectibles in Lost and Found (Turns into Dayan Tongbao after)"
+    },
+    {
+      "name": "Risk-Lei Fa's Purge",
+      "ingot_cost": "12",
+      "output_tiers": ["12"],
+      "eligible_tiers": ["12"],
+      "special_output": null,
+      "description": "On toss, lightning strikes a random Vagary Tile with an Operator on it 9 times, hitting the Operator and surrounding enemies. If Operator does not fall, becomes Candleguest after"
+    },
+    {
+      "name": "Risk-Toll For Roads",
+      "ingot_cost": "12",
+      "output_tiers": ["12"],
+      "eligible_tiers": ["12"],
+      "special_output": null,
+      "description": "When in Coin Coffer, can travel vertically on current node. On toss, -5 Ingots"
+    },
+    {
+      "name": "Risk-Bloodshed",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": "On toss, all enemies -45% Max HP, but allies -25% Max HP"
+    },
+    {
+      "name": "Risk-A Good Match",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": "On toss, all enemies +25% ATK, but allies +60% ATK"
+    },
+    {
+      "name": "Risk-Getaway",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": "On toss, all allies +55% Physical and Arts Dodge, but enemies +25 ASPD"
+    },
+    {
+      "name": "Risk-Law and Ritual",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": "On toss, all allies -65% Redeployment time, but -2 Deployment Limit"
+    },
+    {
+      "name": "Risk-Spring Rivers",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": "On toss, all enemies +50% Max HP, but take Arts damage equal to 5% HP per second when blocked"
+    },
+    {
+      "name": "Risk-Constant Change",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": "On toss, all enemies +35% or -70% Movement Speed every 5s"
+    },
+    {
+      "name": "Risk-Shennong Watch",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": "On toss, all Operators +2 SP when they deal damage, but SP recovery -1/s"
+    },
+    {
+      "name": "Risk-Dream of Curio",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": "On toss, all allies -40% SP Cost, but skills activate automatically"
+    },
+    {
+      "name": "Risk-Falling Word",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": "On toss, +99 Starting DP, but -50% natural DP regen rate"
+    },
+    {
+      "name": "Risk-Biding Time",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": "On toss, +10 DP when defeating an enemy, but -50% natural DP regen rate"
+    },
+    {
+      "name": "Risk-Painter's Realm",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": "On toss, all allies -20 ASPD when in Garden of Grotesqueries; but +60 ASPD when in Sui's Remnant Consciousness"
+    },
+    {
+      "name": "Risk-Wild Passion",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": "On toss, all Operators +20 SP or -10 SP every 10s"
+    },
+    {
+      "name": "Bal-Good Harvest",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": "+2 Max Life Points when adaded to Coffer. On toss, have more options in Safe House"
+    },
+    {
+      "name": "Bal-Frontier Moon",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": "On toss, +1 Objective Shield. After every battle +1 Objective Shield, -1 Life Point"
+    },
+    {
+      "name": "Bal-Steel and Soil",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": "On toss, +3 Ingots, +1 Hope after each non-combat node"
+    },
+    {
+      "name": "Risk-Taming Megamus",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": "On toss, Statugeists gain increased Max HP, but drop extra Coupons on death"
+    },
+    {
+      "name": "Risk-Gift of Accord",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": "+30 Ingots when added to Coffer. On each toss, -10 Ingots"
+    },
+    {
+      "name": "Risk-Hidden Gambit",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["12", "8"],
+      "special_output": null,
+      "description": "When in Coffer, +30% Command EXP after battles; on toss, enemies +30% Movement Speed, +30% ATK (Turns into Dayan Tongbao after)"
+    },
+    {
+      "name": "Risk-Unmoved Mounts",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": ["Bal-To Move Mounts"],
+      "description": "On toss, all enemies +2000 DEF, but -100 DEF on taking damage (Stacks up to 25 times); can be upgraded in Plan"
+    },
+    {
+      "name": "Risk-Enlightenment",
+      "ingot_cost": "non-buyable",
+      "output_tiers": ["8"],
+      "eligible_tiers": [],
+      "special_output": ["Bal-Trailblazer"],
+      "description": "On toss, HP, ATK Initial SP, and DP Cost of a random Operator +100% every battle; can be upgraded in Plan"
+    },
+    {
+      "name": "Bal-A People United",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": ["Flower-Ideas Carried"],
+      "description": "On toss and when in effect, can refresh 1 node when in Garden of Grotesqueries; can be upgraded in Plan"
+    },
+    {
+      "name": "Bal-A Body Honed",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": ["Flower-Mindfulness", "Flower-Unclouded"],
+      "description": "On toss, 1 extra Life Point drops after battle; can be upgraded in Plan"
+    },
+    {
+      "name": "Flower-Heavy Duties",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": "On toss, when gaining Ingots, Objective Shield, or Hope outside of raising your Command Level, +1 more (Turns into Dayan Tongbao after)"
+    },
+    {
+      "name": "Dayan Tongbao",
+      "ingot_cost": "non-buyable",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": "Normal and blank, nothing to it"
+    },
+    {
+      "name": "Risk-West Stones",
+      "ingot_cost": "non-buyable",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": "On toss, Elite and boss enemies +10% ATK and Max HP; extra +20% to each in Dreadful Foe and Sui's Remnant Consciousness"
+    },
+    {
+      "name": "Risk-Eastern Gap",
+      "ingot_cost": "non-buyable",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": "On toss, Elite and boss enemies gain +10 RES; extra +20 in Dreadful Foe and Sui's Remnant Consciousness"
+    },
+    {
+      "name": "Risk-Northern Sting",
+      "ingot_cost": "non-buyable",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": "On toss, Elite and boss enemies +10% Movement Speed; extra +20% in Dreadful Foe and Sui's Remnant Consciousness"
+    },
+    {
+      "name": "Risk-Southern Mounts",
+      "ingot_cost": "non-buyable",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": "On toss, Elite and boss enemies +15% DEF; extra +35% in Dreadful Foe and Sui's Remnant Consciousness"
+    },
+    {
+      "name": "Bal-Soil to Metal",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": "On toss, +4 Ingots (Turns into Dayan Tongbao after)"
+    },
+    {
+      "name": "Bal-Water to Wood",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": "On toss, +2 Objective Shield (Turns into Dayan Tongbao after)"
+    },
+    {
+      "name": "Bal-Metal to Water",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": "On toss, +1 Hope (Turns into Dayan Tongbao after)"
+    },
+    {
+      "name": "Flower - Fire to Soil",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": "On toss, +1 Max Life Point (Turns into Dayan Tongbao after)"
+    },
+    {
+      "name": "Bal-Wood to Fire",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": "On toss, all enemies -30% Max HP (Turns into Dayan Tongbao after)"
+    },
+    {
+      "name": "Bal-Cold",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": "On toss, Operators deployed on rightmost Vagary Tiles +60% ATK"
+    },
+    {
+      "name": "Bal-Gale",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": "On toss, Operators deployed on rightmost Vagary Tiles +60 ASPD"
+    },
+    {
+      "name": "Bal-Rain",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": "On toss, Operators deployed on rightmost Vagary Tiles +100% HP"
+    },
+    {
+      "name": "Bal-Thunder",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": "On toss, Operators deployed on rightmost Vagary Tiles +100% DEF"
+    },
+    {
+      "name": "Bal-Drought",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": "On toss, Operators deployed on leftmost Vagary Tiles +100% DEF"
+    },
+    {
+      "name": "Bal-Rainbow",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": "On toss, Operators deployed on leftmost Vagary Tiles +60 ASPD"
+    },
+    {
+      "name": "Bal-Rime",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": "On toss, Operators deployed on leftmost Vagary Tiles +100% HP"
+    },
+    {
+      "name": "Bal-Frost",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": "On toss, Operators deployed on leftmost Vagary Tiles +60% ATK"
+    },
+    {
+      "name": "Flower-Long Road",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["8", "4"],
+      "special_output": null,
+      "description": "On toss, Operators deployed on leftmost and rightmost Vagary Tiles +30% ATK and +30 ASPD"
+    },
+    {
+      "name": "Flower-Martial Fight",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["12", "4"],
+      "special_output": null,
+      "description": "On toss, all allies +20% ATK. Extra +20% ATK on each successive toss (Stacks up to 2 times)"
+    },
+    {
+      "name": "Flower-Trades",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["12", "4"],
+      "special_output": null,
+      "description": "On toss, all allies +25% HP. Extra +25% HP on each successive toss (Stacks up to 3 times)"
+    },
+    {
+      "name": "Risk-Study",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["8", "4"],
+      "special_output": null,
+      "description": "On toss, all allies +200 DEF but Frozen for 5s on deployment. Extra +100 DEF on each successive toss"
+    },
+    {
+      "name": "Bal-Testee",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["8", "4"],
+      "special_output": null,
+      "description": "On toss, all allies +80 ASPD. -20 ASPD buff on each successive toss, until 0"
+    },
+    {
+      "name": "Bal-Prevention",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["8", "4"],
+      "special_output": null,
+      "description": "On toss, all allies +4 layers of Shield when deployed. -1 layer of Shield on each successive toss, until 0"
+    },
+    {
+      "name": "Bal-To Move Mounts",
+      "ingot_cost": "non-buyable",
+      "output_tiers": ["8"],
+      "eligible_tiers": [],
+      "special_output": null,
+      "description": "On toss, all enemies +2000 DEF, but -150 DEF on taking damage (Stacks up to 25 times)"
+    },
+    {
+      "name": "Bal-Trailblazer",
+      "ingot_cost": "non-buyable",
+      "output_tiers": ["8"],
+      "eligible_tiers": [],
+      "special_output": null,
+      "description": "On toss, HP, ATK Initial SP, and DP Cost of 2 random Operators +100% every battle"
+    },
+    {
+      "name": "Flower-Mindfulness",
+      "ingot_cost": "non-buyable",
+      "output_tiers": ["8"],
+      "eligible_tiers": [],
+      "special_output": null,
+      "description": "+2 Max Life Points when tossed. +2 Life Points after each battle"
+    },
+    {
+      "name": "Flower-Unclouded",
+      "ingot_cost": "non-buyable",
+      "output_tiers": ["8"],
+      "eligible_tiers": [],
+      "special_output": null,
+      "description": "On toss, 1 extra Life Point drops after battle. +1 Max Life Point after each non-combat node"
+    },
+    {
+      "name": "Flower-Ideas Carried",
+      "ingot_cost": "non-buyable",
+      "output_tiers": ["8"],
+      "eligible_tiers": [],
+      "special_output": null,
+      "description": "On toss, a random node become 'explored' in Sui's Remnant Consciousness; can refresh 2 nodes when in effect in Garden of Grotesqueries"
+    },
+    {
+      "name": "Flower-The Way In",
+      "ingot_cost": "12",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["12", "8"],
+      "special_output": null,
+      "description": "On toss in Garden of Grotesqueries, can refresh nodes to Wander into Wonderland with entry to Shifei Border, once only"
+    },
+    {
+      "name": "Bal-Tactile Token",
+      "ingot_cost": "12",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["12", "8"],
+      "special_output": null,
+      "description": "When tossed in Garden of Grotesqueries, can refresh nodes to Rogue Trader, once only"
+    },
+    {
+      "name": "Flower-Step by Step",
+      "ingot_cost": "12",
+      "output_tiers": ["12"],
+      "eligible_tiers": ["12"],
+      "special_output": null,
+      "description": "When in Coffer, +2 Ingots when you pass a node (Turns into Dayan Tongbao after)"
+    },
+    {
+      "name": "Bal-Debts Unending",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": "+6 Max Life Points when added to Coffer; On toss, -1 Max Life Point when passing non-combat nodes (min 1)"
+    },
+    {
+      "name": "Flower-Garden Trip",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": "When in Coffer, Operators return from Scout nodes with more Coupons; On toss in Garden of Grotesqueries, can refresh nodes to Scout nodes, once only"
+    },
+    {
+      "name": "Risk-Myriad Aspects",
+      "ingot_cost": "12",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": "On toss, all Operators' ATK is shuffled at the start of battle"
+    },
+    {
+      "name": "Risk-Firestarter",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": "On toss, all allies gain +30% ATK and +30% Redeployment Time"
+    },
+    {
+      "name": "Bal-Quick Steps",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": "On toss, Operators on Vagary Tiles -30% Redeployment Time when defeated or retreated"
+    },
+    {
+      "name": "Bal-Land Shift",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": "On toss, Operators on Vagary Tiles refund 100% DP when retreated"
+    },
+    {
+      "name": "Bal-Heavy Armor",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": "On toss, all allies +50% DEF and HP, but +5 DP Cost"
+    },
+    {
+      "name": "Bal-捕风",
+      "ingot_cost": "4",
+      "output_tiers": [],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Flower-烽火台",
+      "ingot_cost": "8",
+      "output_tiers": [],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Risk-勾吴盛景",
+      "ingot_cost": "12",
+      "output_tiers": [],
+      "eligible_tiers": ["12"],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Bal-贵有衡",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Flower-分久必合",
+      "ingot_cost": "12",
+      "output_tiers": ["12"],
+      "eligible_tiers": ["12"],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Bal-溯外道",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Bal-溯正道",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Flower-右迁",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Flower-录武官",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Risk-柳伥作",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Risk-左秉烛",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Risk-药食",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Risk-孤芳自赏",
+      "ingot_cost": "12",
+      "output_tiers": ["12"],
+      "eligible_tiers": [],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Risk-天命难违",
+      "ingot_cost": "12",
+      "output_tiers": ["12"],
+      "eligible_tiers": [],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Risk-争商机",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Risk-诸灾有迹",
+      "ingot_cost": "12",
+      "output_tiers": ["12"],
+      "eligible_tiers": [],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Flower-得见繁花",
+      "ingot_cost": "12",
+      "output_tiers": ["12"],
+      "eligible_tiers": [],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Risk-兴水利",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Risk-南武盛景",
+      "ingot_cost": "12",
+      "output_tiers": ["12"],
+      "eligible_tiers": [],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Flower-百灶盛景",
+      "ingot_cost": "12",
+      "output_tiers": ["12"],
+      "eligible_tiers": ["12"],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Flower-龙门盛景",
+      "ingot_cost": "12",
+      "output_tiers": ["12"],
+      "eligible_tiers": ["12"],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Flower-大荒盛景",
+      "ingot_cost": "12",
+      "output_tiers": ["12"],
+      "eligible_tiers": ["12"],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Flower-麟天师",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Flower-备用梁",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Bal-钱盒底板",
+      "ingot_cost": "12",
+      "output_tiers": [],
+      "eligible_tiers": ["12"],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Flower-锦囊秒购",
+      "ingot_cost": "12",
+      "output_tiers": ["12"],
+      "eligible_tiers": ["12"],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Risk-见灵光",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": ""
+    }
+  ]
+}
