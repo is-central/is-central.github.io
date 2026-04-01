@@ -1,0 +1,37 @@
+---
+title: Events
+description: "Information about events hosted across regions."
+tableOfContents: false
+---
+
+import LanguageSwitcher from '../../../../components/LanguageSwitcher.astro';
+import EventCard from '../../../../components/Events/EventCard.astro';
+import EventList from '../../../../components/Events/EventList.astro';
+
+<LanguageSwitcher />
+
+Welcome to IS Central Events page! Here you'll find a list of events and tournaments hosted by us.
+
+## Tournaments
+
+<EventList label="Ongoing">
+  <EventCard
+    name="IS-C April Tournament"
+    banner="new-event.png"
+    themes="IS6"
+    startDate="2026-04-15"
+    href="/events/en/isc-april-tournament/overview"
+  />
+</EventList>
+
+<EventList label="Past Events">
+  <EventCard
+    name="Kazdel Kasino 2"
+    banner="kazdel-kasino-2-banner.png"
+    themes="IS5"
+    startDate="2025-11-21"
+    endDate="2025-12-07"
+    href="/events/en/kazdel-kasino-2/kazdel-kasino-2"
+  />
+</EventList>
+

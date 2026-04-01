@@ -1,0 +1,28 @@
+---
+// Optional label prop for section headings
+const { label } = Astro.props;
+---
+
+{label && <p class="event-list-label">{label}</p>}
+<div class="event-list">
+  <slot />
+</div>
+
+<style>
+  .event-list-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sl-color-gray-3);
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+  }
+
+  .event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+</style>

@@ -1,26 +1,48 @@
 ---
-import { translations } from "../i18n/translations.js";
+import { buildTranslationsMap } from "../i18n/translations.js";
 
-const { currentLang, groupId } = Astro.props;
-const availableLangs = Object.keys(translations[groupId] || {});
+const LABELS = {
+  en: "English",
+  vn: "Vietnamese",
+  jp: "日本語",
+  kr: "한국어",
+  tw: "繁體中文",
+  cn: "简体中文",
+};
 
-function getLabel(code) {
-  const labels = { en: "English", vn: "Vietnamese", jp: "日本語", kr: "한국어", tc:"繁體中文", sc:"简体中文" };
-  return labels[code] || code.toUpperCase();
-}
+// Derive lang + slug from the current URL — no props needed
+const pathname = Astro.url.pathname;
+const eventsMatch = pathname.match(/^\/events\/([^/]+)\/(.+?)\/?$/);
+
+const currentLang = eventsMatch?.[1] ?? "en";
+const currentSlug = eventsMatch?.[2];
+
+// Look up which languages actually have this page
+const map = buildTranslationsMap();
+const available = currentSlug ? (map[currentSlug] ?? {}) : {};
+
+// Always include EN as fallback; filter out langs with no translation
+const LANG_ORDER = ["en", "vn", "jp", "kr", "tw", "cn"];
+const enUrl = available["en"];
+
+const options = LANG_ORDER
+  .filter(lang => available[lang] || lang === "en") // show lang only if page exists (en always shown)
+  .map(lang => ({
+    lang,
+    label: LABELS[lang] ?? lang.toUpperCase(),
+    url: available[lang] ?? enUrl, // fall back to EN url if no translation
+    current: lang === currentLang,
+  }));
 ---
 
-{availableLangs.length > 1 && (
+{options.length > 1 && (
   <select
     onchange="if (this.value) window.location.href = this.value;"
     class="rounded-md border px-2 py-1 bg-white text-gray-700 cursor-pointer"
   >
-    {availableLangs.map(lang => (
-      <option
-        value={translations[groupId][lang]}
-        selected={lang === currentLang}
-      >
-        {getLabel(lang)}
+    {options.map(({ label, url, current }) => (
+      <option value={url} selected={current}>
+        {label}
       </option>
     ))}
   </select>

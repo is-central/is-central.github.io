@@ -1,0 +1,38 @@
+{
+  "title": "Main Event",
+  "mode": "team",
+  "entries": [
+    {
+      "team": "Penguin Mafia",
+      "score": 18200,
+      "video": "https://youtu.be/example-team1",
+      "players": [
+        { "name": "Aceship", "score": 9800, "video": "https://youtu.be/example-p1" },
+        { "name": "Hellagur", "score": 8400 }
+      ]
+    },
+    {
+      "team": "Croque Monsieur",
+      "score": 17500,
+      "players": [
+        { "name": "Mudrock", "score": 9200, "video": "https://youtu.be/example-p3" },
+        { "name": "Gnosis", "score": 8300 }
+      ]
+    },
+    {
+      "team": "Solo Enjoyers",
+      "score": 15000,
+      "players": [
+        { "name": "Blaze", "score": 15000 }
+      ]
+    },
+    {
+      "team": "No VOD",
+      "score": 12000,
+      "players": [
+        { "name": "Surtr", "score": 6500 },
+        { "name": "Eyjafjalla", "score": 5500 }
+      ]
+    }
+  ]
+}

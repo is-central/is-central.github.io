@@ -1,0 +1,48 @@
+---
+title: Kazdel Kasino 2
+description: "Information about events hosted across regions."
+tableOfContents: false
+---
+
+import LanguageSwitcher from '../../../../../components/LanguageSwitcher.astro';
+
+<div class="back-button-container">
+  <a href="/events/en/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">Back to Events page</span>
+  </a>
+</div>
+
+import PhaseTimeline from '../../../../../components/Events/PhaseTimeline.astro';
+
+export const phases = [
+  {
+    name: "Qualifiers",
+    startDate: "2025-11-03",
+    endDate: "2025-11-19",
+    links: [
+      { label: "Rules", href: "/events/en/kazdel-kasino-2/kazdel-kasino-2" },
+      { label: "Scoreboard", href: "/events/en/kazdel-kasino-2/qualifiers-scores" },
+    ],
+  },
+  {
+    name: "Preliminary Round",
+    startDate: "2025-11-21",
+    endDate: "2025-11-30",
+    links: [
+      { label: "Rules", href: "/events/en/kazdel-kasino-2/kazdel-kasino-2" },
+    ],
+  },
+  {
+    name: "Finals",
+    startDate: "2025-12-01",
+    endDate: "2025-12-07",
+    links: [
+      { label: "Rules", href: "/events/en/kazdel-kasino-2/kazdel-kasino-2" },
+    ],
+  },
+];
+
+<div style="position: relative; width: 100%; max-width: 800px; margin: 0 auto;"><img src="/events/kazdel-kasino-2/kazdel-kasino-2-banner.png" alt="Kazdel Kasino 2 Tournament Banner" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /></div>
+
+<PhaseTimeline phases={phases} />

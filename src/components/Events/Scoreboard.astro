@@ -1,0 +1,317 @@
+---
+const { data } = Astro.props;
+
+const isTeam = data.mode === "team";
+
+function sortByScore(entries) {
+  return [...entries].sort((a, b) => {
+    if (a.score == null && b.score == null) return 0;
+    if (a.score == null) return 1;
+    if (b.score == null) return -1;
+    return b.score - a.score;
+  });
+}
+
+function assignRanks(entries) {
+  let rank = 1;
+  return entries.map((entry, i, arr) => {
+    if (i > 0 && entry.score !== arr[i - 1].score) rank = i + 1;
+    return { ...entry, rank };
+  });
+}
+
+const sorted = sortByScore(data.entries ?? []);
+const ranked = assignRanks(sorted).map((entry) =>
+  isTeam && entry.players
+    ? { ...entry, players: sortByScore(entry.players) }
+    : entry
+);
+
+function fmtScore(score) {
+  return score?.toLocaleString("en") ?? "—";
+}
+---
+
+<div class="scoreboard">
+  {data.title && <div class="sb-title">{data.title}</div>}
+
+  {/* Column headers */}
+  <div class="sb-header">
+    <span class="sb-header-rank" />
+    <span class="sb-header-player">Player</span>
+    <span class="sb-header-score">Score</span>
+  </div>
+
+  {isTeam ? (
+    <div class="sb-table">
+      {ranked.map((entry) => (
+        <div class="sb-team-block">
+
+          {/* Team row */}
+          <div class="sb-team-row">
+            <span class="sb-rank">#{entry.rank}</span>
+            <span class="sb-team-name">
+              {entry.team}
+              {entry.video && (
+                <a href={entry.video} target="_blank" rel="noopener noreferrer" class="sb-vod-link">
+                  <span class="vod-icon">▶</span> VOD
+                </a>
+              )}
+            </span>
+            <span class="sb-score">{fmtScore(entry.score)}</span>
+          </div>
+
+          {/* Player rows */}
+          {entry.players?.map((player, pi) => (
+            <div class:list={["sb-player-row", { "sb-player-first": pi === 0 }]}>
+              <span class="sb-rank sb-rank-empty" />
+              <span class="sb-player-name">
+                {player.name}
+                {player.video && (
+                  <a href={player.video} target="_blank" rel="noopener noreferrer" class="sb-vod-link">
+                    <span class="vod-icon">▶</span> VOD
+                  </a>
+                )}
+              </span>
+              <span class="sb-player-score">{fmtScore(player.score)}</span>
+            </div>
+          ))}
+
+        </div>
+      ))}
+    </div>
+  ) : (
+    <div class="sb-table">
+      {ranked.map((entry) => (
+        <div class="sb-row">
+          <span class="sb-rank">#{entry.rank}</span>
+          <span class="sb-name">
+            {entry.name}
+            {entry.video && (
+              <a href={entry.video} target="_blank" rel="noopener noreferrer" class="sb-vod-link">
+                <span class="vod-icon">▶</span> VOD
+              </a>
+            )}
+          </span>
+          <span class="sb-score">{fmtScore(entry.score)}</span>
+        </div>
+      ))}
+    </div>
+  )}
+</div>
+
+<style>
+  .scoreboard {
+    margin: 1rem 0;
+    border: 1px solid color-mix(in srgb, var(--sl-color-gray-5) 60%, transparent);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  /* ── Title ── */
+  .sb-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--sl-color-gray-3);
+    padding: 0.55rem 1rem;
+    background: color-mix(in srgb, var(--sl-color-gray-6) 30%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--sl-color-gray-5) 60%, transparent);
+  }
+
+  /* ── Column headers ── */
+  .sb-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.3rem 1rem;
+    background: color-mix(in srgb, var(--sl-color-gray-6) 20%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--sl-color-gray-5) 70%, transparent);
+  }
+
+  .sb-header-rank {
+    flex-shrink: 0;
+    width: 2rem;
+  }
+
+  .sb-header-player {
+    flex: 1;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--sl-color-gray-3);
+  }
+
+  .sb-header-score {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--sl-color-gray-3);
+    min-width: 4.5rem;
+    text-align: center;
+  }
+
+  /* ── Table ── */
+  .sb-table {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Individual rows ── */
+  .sb-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.55rem 1rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--sl-color-gray-6) 40%, transparent);
+    transition: background 0.15s;
+  }
+
+  .sb-row:last-child {
+    border-bottom: none;
+  }
+
+  .sb-row:hover {
+    background: color-mix(in srgb, var(--sl-color-gray-6) 25%, transparent);
+  }
+
+  /* ── Team blocks ── */
+  .sb-team-block {
+    border-bottom: 2px solid color-mix(in srgb, var(--sl-color-gray-5) 50%, transparent);
+  }
+
+  .sb-team-block:last-child {
+    border-bottom: none;
+  }
+
+  /* Team header row */
+  .sb-team-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 1rem;
+    background: color-mix(in srgb, var(--sl-color-gray-5) 18%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--sl-color-gray-5) 40%, transparent);
+    transition: background 0.15s;
+  }
+
+  .sb-team-row:hover {
+    background: color-mix(in srgb, var(--sl-color-gray-5) 28%, transparent);
+  }
+
+  /* Player rows within a team */
+  .sb-player-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.4rem 1rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--sl-color-gray-6) 35%, transparent);
+    transition: background 0.15s;
+  }
+
+  .sb-player-row:last-child {
+    border-bottom: none;
+  }
+
+  .sb-player-row:hover {
+    background: color-mix(in srgb, var(--sl-color-gray-6) 20%, transparent);
+  }
+
+  /* ── Rank ── */
+  .sb-rank {
+    flex-shrink: 0;
+    width: 2rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--sl-color-gray-3);
+    text-align: center;
+  }
+
+  .sb-rank-empty {
+    visibility: hidden;
+  }
+
+  /* ── Names ── */
+  .sb-name,
+  .sb-team-name {
+    flex: 1;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--sl-color-white);
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .sb-player-name {
+    flex: 1;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--sl-color-gray-2);
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-width: 0;
+    padding-left: 0.5rem;
+  }
+
+  /* ── Scores ── */
+  .sb-score {
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--sl-color-gray-2);
+    font-variant-numeric: tabular-nums;
+    background: color-mix(in srgb, var(--sl-color-gray-6) 40%, transparent);
+    border: 1px solid color-mix(in srgb, var(--sl-color-gray-5) 50%, transparent);
+    padding: 0.15rem 0.55rem;
+    border-radius: 5px;
+    min-width: 4.5rem;
+    text-align: center;
+  }
+
+  .sb-player-score {
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--sl-color-gray-3);
+    font-variant-numeric: tabular-nums;
+    min-width: 4.5rem;
+    text-align: center;
+  }
+
+  /* ── VOD button ── */
+  .sb-vod-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    background: color-mix(in srgb, var(--sl-color-gray-5) 40%, transparent);
+    border: 1px solid color-mix(in srgb, var(--sl-color-gray-5) 60%, transparent);
+    color: var(--sl-color-gray-2);
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .sb-vod-link:hover {
+    background: color-mix(in srgb, var(--sl-color-gray-4) 40%, transparent);
+    color: var(--sl-color-white);
+  }
+
+  .vod-icon {
+    font-size: 0.55rem;
+    line-height: 1;
+  }
+</style>
