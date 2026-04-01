@@ -5,11 +5,9 @@ tableOfContents: false
 ---
 
 import TongbaoExchangeCalculator from '../../../../components/TongbaoExchangeCalculator.astro';
+import StrategySection from '/src/components/StrategySection.astro';
 
-<TongbaoExchangeCalculator />
-
-<br/>
-
+<StrategySection title="How to use instructions" author="" defaultOpen={false}>
 ## How to Use
 Select a Tongbao from the lists above to see its potential exchange results.
 - **Top Row**: 12 Ingot / 4 LP Items
@@ -17,3 +15,10 @@ Select a Tongbao from the lists above to see its potential exchange results.
 - **Bottom Row**: 4 Ingot / 2 LP Items
 
 Most exchanges stay within the same tier, but specific items can trigger upgrades or downgrades.
+
+</StrategySection>
+
+<TongbaoExchangeCalculator />
+
+<br/>
+
