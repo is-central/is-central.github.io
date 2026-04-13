@@ -1,10 +1,21 @@
-export const translations = {
-  "kazdel-kasino-2": {
-    en: "/events/kazdel-kasino/kazdel-kasino-2-rules/kazdel-kasino-2",
-    vn: "/events/kazdel-kasino/kazdel-kasino-2-rules/kazdel-kasino-2-vn",
-    jp: "/events/kazdel-kasino/kazdel-kasino-2-rules/kazdel-kasino-2-jp",
-    kr: "/events/kazdel-kasino/kazdel-kasino-2-rules/kazdel-kasino-2-kr",
-    tc: "/events/kazdel-kasino/kazdel-kasino-2-rules/kazdel-kasino-2-tc",
-    sc: "/events/kazdel-kasino/kazdel-kasino-2-rules/kazdel-kasino-2-sc"
+// Scans all .mdx files under /events/ and builds the map automatically
+const allPages = import.meta.glob('/src/content/docs/events/**/*.mdx');
+
+export function buildTranslationsMap() {
+  const map = {};
+
+  for (const path of Object.keys(allPages)) {
+    // Matches: /src/content/docs/events/en/some/nested/page.mdx
+    const match = path.match(/\/src\/content\/docs\/events\/([^/]+)\/(.+)\.mdx$/);
+    if (!match) continue;
+
+    const lang = match[1];
+    const slug = match[2];
+    const url = `/events/${lang}/${slug}`;
+
+    if (!map[slug]) map[slug] = {};
+    map[slug][lang] = url;
   }
-};
+
+  return map;
+}

@@ -1,0 +1,79 @@
+---
+import EventCard from "./EventCards.astro";
+
+const { events } = Astro.props;
+
+const now = new Date();
+
+function getStatus(startDate, endDate) {
+  const start = new Date(startDate);
+  const end = endDate ? new Date(endDate) : null;
+  if (now < start) return "upcoming";
+  if (!end || now <= end) return "live";
+  return "ended";
+}
+
+const upcoming  = events.filter(e => getStatus(e.startDate, e.endDate) === "upcoming");
+const live      = events.filter(e => getStatus(e.startDate, e.endDate) === "live");
+const ended     = events.filter(e => getStatus(e.startDate, e.endDate) === "ended");
+
+// Upcoming: soonest first; live/ended: most recent start first
+upcoming.sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
+live.sort((a, b) => new Date(b.startDate) - new Date(a.startDate));
+ended.sort((a, b) => new Date(b.startDate) - new Date(a.startDate));
+
+const SECTIONS = [
+  { label: "Ongoing Events",   events: live },
+  { label: "Upcoming Events",  events: upcoming },
+  { label: "Concluded Events", events: ended },
+];
+---
+
+<div class="event-index">
+  {SECTIONS.filter(s => s.events.length > 0).map(section => (
+    <div class="event-section">
+      <p class="section-label">{section.label}</p>
+      <div class="event-list">
+        {section.events.map(event => (
+          <EventCard
+            name={event.name}
+            icon={event.icon}
+            banner={event.banner}
+            themes={event.themes}
+            startDate={event.startDate}
+            endDate={event.endDate}
+            href={event.href}
+          />
+        ))}
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .event-index {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .event-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sl-color-gray-3);
+    margin: 0 0 0.5rem 0;
+  }
+
+  .event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+</style>

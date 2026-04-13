@@ -1,0 +1,216 @@
+---
+const { data } = Astro.props;
+const isTeam = data.mode === "team";
+
+function sortByScore(entries) {
+  return [...entries].sort((a, b) => {
+    if (a.score == null && b.score == null) return 0;
+    if (a.score == null) return 1;
+    if (b.score == null) return -1;
+    return b.score - a.score;
+  });
+}
+
+function assignRanks(entries) {
+  let rank = 1;
+  return entries.map((entry, i, arr) => {
+    if (i > 0 && entry.score !== arr[i - 1].score) rank = i + 1;
+    return { ...entry, rank };
+  });
+}
+
+const ranked = assignRanks(sortByScore(data.entries ?? [])).map((e) =>
+  isTeam && e.players ? { ...e, players: sortByScore(e.players) } : e
+);
+
+const fmt = (n) => n?.toLocaleString("en") ?? "—";
+
+const TEAM_ACCENTS = ["#60a5fa", "#f472b6", "#34d399", "#fb923c", "#a78bfa", "#facc15"];
+---
+
+<div class="sb">
+  {data.title && <div class="sb-caption">{data.title}</div>}
+
+  {isTeam ? (
+    <div class="team-list">
+      {ranked.map((entry, ti) => {
+        const accent = TEAM_ACCENTS[ti % TEAM_ACCENTS.length];
+        return (
+          <div class="team-card" style={`--accent: ${accent}`}>
+            <div class="team-header">
+              <span class="team-rank">#{entry.rank}</span>
+              <span class="team-name">
+                {entry.team}
+                {entry.videos?.map((v) => (
+                  <a href={v.href} target="_blank" rel="noopener noreferrer" class="vod">▶ {v.label}</a>
+                ))}
+              </span>
+              {entry.score != null && (
+                <span class="team-score">{fmt(entry.score)}</span>
+              )}
+            </div>
+            {entry.players?.length > 0 && (
+              <div class="players">
+                {entry.players.map((p) => (
+                  <div class="player-row">
+                    <span class="p-name">
+                      {p.name}
+                      {p.videos?.map((v) => (
+                        <a href={v.href} target="_blank" rel="noopener noreferrer" class="vod vod-sm">▶ {v.label}</a>
+                      ))}
+                    </span>
+                    <span class="p-score">{fmt(p.score)}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  ) : (
+    <div class="indiv-list">
+      <div class="indiv-head">
+        <span class="ch-rank" />
+        <span class="ch-name">Player</span>
+        <span class="ch-score">Score</span>
+      </div>
+      {ranked.map((entry) => (
+        <div class="entry-row">
+          <span class="e-rank">#{entry.rank}</span>
+          <span class="e-name">
+            {entry.name}
+            {entry.videos?.map((v) => (
+              <a href={v.href} target="_blank" rel="noopener noreferrer" class="vod">▶ {v.label}</a>
+            ))}
+          </span>
+          <span class="e-score">{fmt(entry.score)}</span>
+        </div>
+      ))}
+    </div>
+  )}
+</div>
+
+<style>
+  .sb * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .sb {
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+
+  .sb-caption {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sl-color-gray-3);
+    margin-bottom: 0.5rem;
+  }
+
+  /* ── Individual list ── */
+  .indiv-list {
+    border: 1px solid color-mix(in srgb, var(--sl-color-gray-4) 35%, transparent);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .indiv-head {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.4rem 0.75rem;
+    background: var(--sl-color-gray-6);
+    border-bottom: 1px solid color-mix(in srgb, var(--sl-color-gray-4) 45%, transparent);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sl-color-gray-2);
+  }
+
+  .ch-rank { flex-shrink: 0; width: 2.2rem; }
+  .ch-name { flex: 1; }
+  .ch-score { flex-shrink: 0; width: 5rem; text-align: right; }
+
+  .entry-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0.75rem;
+    margin: 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--sl-color-gray-5) 40%, transparent);
+    transition: background 0.12s;
+  }
+  .entry-row:last-child { border-bottom: none; }
+  .entry-row:hover { background: color-mix(in srgb, var(--sl-color-gray-5) 25%, transparent); }
+
+  .e-rank { flex-shrink: 0; width: 2.2rem; text-align: center; font-size: 0.75rem; font-weight: 700; color: var(--sl-color-gray-3); }
+  .e-name { flex: 1; font-weight: 600; color: var(--sl-color-white); display: flex; align-items: center; flex-wrap: wrap; gap: 0.35rem; }
+  .e-score { flex-shrink: 0; width: 5rem; text-align: right; font-weight: 700; color: var(--sl-color-white); font-variant-numeric: tabular-nums; }
+
+  /* ── Team cards ── */
+  .team-list { display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .team-card {
+    border-radius: 7px;
+    border: 1px solid color-mix(in srgb, var(--sl-color-gray-4) 30%, transparent);
+    border-left: 3px solid var(--accent);
+    overflow: hidden;
+    background: color-mix(in srgb, var(--sl-color-bg) 95%, transparent);
+  }
+
+  .team-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 0.9rem;
+    background: color-mix(in srgb, var(--sl-color-gray-5) 25%, var(--sl-color-bg));
+    transition: background 0.12s;
+  }
+  .team-header:hover { background: color-mix(in srgb, var(--sl-color-gray-5) 38%, var(--sl-color-bg)); }
+
+  .team-rank { flex-shrink: 0; width: 2.2rem; text-align: center; font-size: 0.75rem; font-weight: 700; color: var(--sl-color-gray-3); }
+  .team-name { flex: 1; font-weight: 700; color: var(--sl-color-white); font-size: 0.9rem; display: flex; align-items: center; flex-wrap: wrap; gap: 0.35rem; }
+  .team-score { flex-shrink: 0; font-weight: 700; color: var(--sl-color-white); font-variant-numeric: tabular-nums; }
+
+  /* Players */
+  .players { border-top: 1px solid color-mix(in srgb, var(--sl-color-gray-5) 40%, transparent); }
+
+  .player-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.4rem 0.9rem 0.4rem 3.15rem;
+    margin: 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--sl-color-gray-6) 50%, transparent);
+    transition: background 0.12s;
+  }
+  .player-row:last-child { border-bottom: none; }
+  .player-row:hover { background: color-mix(in srgb, var(--sl-color-gray-6) 30%, transparent); }
+
+  .p-name { flex: 1; font-size: 0.82rem; color: var(--sl-color-gray-2); display: flex; align-items: center; flex-wrap: wrap; gap: 0.35rem; }
+  .p-score { flex-shrink: 0; font-size: 0.8rem; color: var(--sl-color-gray-3); font-variant-numeric: tabular-nums; }
+
+  /* ── VOD buttons ── */
+  .vod {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 0.12rem 0.45rem;
+    border-radius: 4px;
+    background: color-mix(in srgb, var(--sl-color-gray-4) 25%, transparent);
+    border: 1px solid color-mix(in srgb, var(--sl-color-gray-4) 50%, transparent);
+    color: var(--sl-color-gray-2);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.12s, color 0.12s;
+  }
+  .vod:hover { background: color-mix(in srgb, var(--sl-color-gray-3) 30%, transparent); color: var(--sl-color-white); }
+  .vod-sm { font-size: 0.58rem; padding: 0.1rem 0.35rem; }
+</style>

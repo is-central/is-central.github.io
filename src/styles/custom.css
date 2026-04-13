@@ -180,7 +180,7 @@
 /* Define unique hover effects for each banner */
 .card-grid .card:nth-child(5):hover {
     transform: scale(1.03); /* Slightly enlarges the banner */
-    box-shadow: 0 0 25px rgba(183, 28, 28, 0.9); /* Red glow for IS2 Phantom */
+    box-shadow: 0 0 25px rgba(251, 192, 45, 0.9); /* Yellow glow for IS2 Phantom */
 }
 
 .card-grid .card:nth-child(4):hover {
@@ -195,7 +195,7 @@
 
 .card-grid .card:nth-child(2):hover {
     transform: scale(1.03); /* Slightly enlarges the banner */
-    box-shadow: 0 0 25px rgba(251, 192, 45, 0.9); /* Yellow glow for IS5 Sarkaz */
+    box-shadow: 0 0 25px rgba(183, 28, 28, 0.9); /* Red glow for IS5 Sarkaz */
 }
 
 .card-grid .card:nth-child(1):hover {
@@ -212,8 +212,8 @@
 
 /* --- Custom Banner Icon Colors --- */
 .card-grid .card:nth-child(1) .icon {
-    background-color: #B71C1C !important;
-    border-color: #B71C1C !important;
+    background-color: #FBC02D !important;
+    border-color: #FBC02D !important;
     color: white !important;
 }
 .card-grid .card:nth-child(2) .icon {
@@ -227,8 +227,8 @@
     color: white !important;
 }
 .card-grid .card:nth-child(4) .icon {
-    background-color: #FBC02D !important;
-    border-color: #FBC02D !important;
+    background-color: #B71C1C !important;
+    border-color: #B71C1C !important;
     color: black !important;
 }
 .card-grid .card:nth-child(5) .icon {

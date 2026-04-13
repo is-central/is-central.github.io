@@ -1,0 +1,297 @@
+---
+const { name, icon, banner, themes, startDate, endDate, href } = Astro.props;
+
+// ── Date formatting + status ──────────────────────────────────
+const now = new Date();
+const start = new Date(startDate);
+const end = endDate ? new Date(endDate) : null;
+
+// Status: upcoming if not started yet, live if started and not ended, ended otherwise
+const status = now < start ? "upcoming" : (!end || now <= end) ? "live" : "ended";
+
+function formatDate(startStr, endStr) {
+  const fmt = (d, compact = false) =>
+    compact
+      ? d.toLocaleString("en", { month: "short", year: "numeric" })
+      : `${d.getDate()} ${d.toLocaleString("en", { month: "short" })} ${d.getFullYear()}`;
+
+  const s = new Date(startStr);
+  if (!endStr) return fmt(s);
+
+  const e = new Date(endStr);
+  const monthsSinceEnd = (now.getTime() - e.getTime()) / (1000 * 60 * 60 * 24 * 30);
+
+  if (monthsSinceEnd > 1) {
+    const sc = fmt(s, true);
+    const ec = fmt(e, true);
+    return sc === ec ? sc : `${sc} – ${ec}`;
+  }
+  return `${fmt(s)} – ${fmt(e)}`;
+}
+
+// ── IS theme colorization ────────────────────────────────────
+const IS_COLORS = {
+  IS2: "#FBC02D",
+  IS3: "#3949AB",
+  IS4: "#64B5F6",
+  IS5: "#B71C1C",
+  IS6: "#EC407A",
+};
+
+function parseThemes(themesStr) {
+  if (!themesStr) return [];
+  return themesStr.split(",").map(t => {
+    const label = t.trim();
+    const color = IS_COLORS[label] ?? null;
+    return { label, color };
+  });
+}
+
+const dateLabel = formatDate(startDate, endDate);
+const iconPath = icon ? `/events/icons/${icon}` : null;
+const bannerPath = banner ? `/events/banners/${banner}` : null;
+const parsedThemes = parseThemes(themes);
+---
+
+<a href={href} class:list={["event-card", { "has-banner": !!bannerPath }]}>
+  {bannerPath && (
+    <div
+      class="banner-bg"
+      style={`background-image: url('${bannerPath}');`}
+    />
+  )}
+
+  <div class="card-accent" />
+
+  {!bannerPath && (
+    <div class="card-icon">
+      {iconPath
+        ? <img src={iconPath} alt={name} loading="lazy" decoding="async" />
+        : <div class="icon-placeholder" />
+      }
+    </div>
+  )}
+
+  <div class="card-body">
+    <span class="card-name">{name}</span>
+    <span class="card-themes">
+      {parsedThemes.map(({ label, color }, i) => (
+        <>
+          {i > 0 && <span class="theme-sep">, </span>}
+          <span class="theme-tag" style={color ? `color: ${color}` : ""}>{label}</span>
+        </>
+      ))}
+    </span>
+  </div>
+
+  <div class="card-meta">
+    <span class="card-date">{dateLabel}</span>
+    {status === "live" && <span class="status-badge badge-live">LIVE</span>}
+    {status === "upcoming" && <span class="status-badge badge-upcoming">UPCOMING</span>}
+  </div>
+
+  <div class="card-arrow">→</div>
+</a>
+
+<style>
+  .event-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.85rem 1rem 0.85rem 0.85rem;
+    background: color-mix(in srgb, var(--sl-color-bg) 80%, transparent);
+    border: 1px solid color-mix(in srgb, var(--sl-color-gray-5) 60%, transparent);
+    border-radius: 6px;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.2s, border-color 0.2s, border-left-width 0.15s, transform 0.15s;
+  }
+
+  .event-card:hover {
+    background: color-mix(in srgb, var(--sl-color-accent) 8%, var(--sl-color-bg));
+    border-color: color-mix(in srgb, var(--sl-color-accent) 50%, transparent);
+    border-left-color: #000;
+    transform: translateX(3px);
+  }
+
+  .event-card:not(.has-banner):hover {
+    border-left-color: color-mix(in srgb, var(--sl-color-accent) 50%, transparent);
+  }
+
+  /* ── Banner variant ── */
+  .event-card.has-banner {
+    min-height: 72px;
+    border-color: color-mix(in srgb, var(--sl-color-gray-5) 40%, transparent);
+    border-left: 3px solid #000;
+  }
+
+  .event-card.has-banner:hover {
+    background: transparent;
+  }
+
+  .banner-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center top;
+    filter: brightness(0.4) saturate(0.8);
+    transition: filter 0.3s;
+    z-index: 0;
+  }
+
+  /* Gradient overlay — always dark, ignores light/dark theme */
+  .event-card.has-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(8, 8, 8, 0.78) 0%,
+      rgba(8, 8, 8, 0.35) 55%,
+      transparent 75%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .event-card.has-banner:hover .banner-bg {
+    filter: brightness(0.52) saturate(1);
+  }
+
+  /* All content above the banner layers */
+  .card-icon,
+  .card-body,
+  .card-meta,
+  .card-arrow {
+    position: relative;
+    z-index: 2;
+  }
+
+  .card-accent {
+    display: none;
+  }
+
+  /* ── Icon ── */
+  .card-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: color-mix(in srgb, var(--sl-color-gray-6) 40%, transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .icon-placeholder {
+    width: 100%;
+    height: 100%;
+    background: color-mix(in srgb, var(--sl-color-accent) 15%, transparent);
+  }
+
+  /* ── Body ── */
+  .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 0;
+  }
+
+  .card-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--sl-color-white);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .has-banner .card-name {
+    color: #f0f0f0;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+  }
+
+  .card-themes {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  .theme-tag {
+    /* color is set inline per-tag; fallback to accent */
+    color: var(--sl-color-accent);
+  }
+
+  .theme-sep {
+    color: var(--sl-color-gray-4);
+  }
+
+  .has-banner .card-themes {
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+  }
+
+  /* ── Meta ── */
+  .card-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+    flex-shrink: 0;
+  }
+
+  .card-date {
+    font-size: 0.75rem;
+    color: var(--sl-color-gray-3);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .has-banner .card-date {
+    color: #c0c0c0;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  }
+
+  .status-badge {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.1rem 0.35rem;
+    border-radius: 3px;
+  }
+
+  .badge-live {
+    color: #4ade80;
+    background: color-mix(in srgb, #4ade80 12%, transparent);
+    border: 1px solid color-mix(in srgb, #4ade80 40%, transparent);
+  }
+
+  .badge-upcoming {
+    color: #60a5fa;
+    background: color-mix(in srgb, #60a5fa 12%, transparent);
+    border: 1px solid color-mix(in srgb, #60a5fa 40%, transparent);
+  }
+
+  /* ── Arrow ── */
+  .card-arrow {
+    color: var(--sl-color-gray-4);
+    font-size: 1rem;
+    margin-right: 0.25rem;
+    transition: color 0.2s, transform 0.2s;
+  }
+
+  .event-card:hover .card-arrow {
+    color: var(--sl-color-accent);
+    transform: translateX(3px);
+  }
+</style>

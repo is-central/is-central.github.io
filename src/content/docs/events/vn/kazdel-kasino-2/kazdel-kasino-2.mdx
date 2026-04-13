@@ -1,0 +1,831 @@
+---
+title: Kazdel Kasino 2
+description: Giải đấu IS theo đội.
+template: doc
+
+qualifiersStart: "2025-11-03T08:00:00Z"
+qualifiersEnd: "2025-11-20T07:59:00Z"
+preliminaryStart: "2025-11-21T08:00:00Z"
+preliminaryEnd: "2025-12-01T07:59:00Z"
+finalsStart: "2025-12-01T08:00:00Z"
+finalsEnd: "2025-12-08T07:59:00Z"
+---
+
+import IndividualPlayerScoreboard from '../../../../../components/IndividualPlayerScoreboard.astro';
+import TeamScoreboard from '../../../../../components/TeamScoreboard.astro';
+import TournamentSchedule from '../../../../../components/TournamentSchedule.astro';
+import LocalTime from '../../../../../components/LocalTime.astro';
+import TournamentLayout from "../../../../../layouts/TournamentLayout.astro";
+
+<div class="back-button-container">
+  <a href="/events/en/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">Back to Events page</span>
+  </a>
+</div>
+
+<TournamentLayout frontmatter={frontmatter} />
+
+<div style="position: relative; width: 100%; max-width: 800px; margin: 0 auto;"><img src="/events/kazdel-kasino-2/kazdel-kasino-2-banner.png" alt="Kazdel Kasino 2 Tournament Banner" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /></div>
+
+Kazdel Kasino 2 là giải đấu theo đội 3 người. Người chơi sẽ kiếm tiền bằng cách hoàn thành các nhiệm vụ trong khi đánh run của mình, sau đó đổi lượng tiền đó thành điểm, sử dụng giả lập gacha. Top 8 đội điểm cao nhất sẽ tiến vào vòng 2, thứ hạng cuối cùng cũng sẽ theo cơ chế bảng xếp hạng.
+
+## Lịch trình sơ bộ
+<TournamentSchedule
+  title="Match Schedule"
+  dataUrl="/events/kazdel-kasino-2/schedule.json"
+  refreshMs={15000}
+/>
+
+## Bảng điểm sơ bộ
+<IndividualPlayerScoreboard
+  title="Player Dollars"
+  dataUrl="/events/kazdel-kasino-2/scoreboard.json"
+  refreshMs={15000}
+/>
+
+<TeamScoreboard
+  title="Team Points Ranking"
+  dataUrl="/events/kazdel-kasino-2/scoreboard.json"
+  refreshMs={15000}
+/>
+
+## Thể lệ
+
+- Mỗi đội gồm 3 người.
+- Người chơi thứ 3 chơi ở A18.
+- Hai người chơi còn lại lựa chọn độ khó sao cho tổng độ khó của cả 3 người là 48.
+- Sau khi người chơi thứ 3 hoàn thành run của mình sẽ ngay lập tức sử dụng giả lập gacha để xác định điểm của team.
+- Bảng xếp hạng: Top 8 đi vào vòng 2, xếp hạng cuối cùng dựa trên bảng xếp hạng ở vòng 2.
+
+## Lịch thi đấu
+<section class="tournament-schedule">
+  <div class="round">
+    <h3>Qualifiers</h3>
+    <p class="date-range">
+      <span class="start"><LocalTime datetime={frontmatter.qualifiersStart} format="long" /></span><br>
+      <span class="to">to</span>
+      </br>
+      <span class="end"><LocalTime datetime={frontmatter.qualifiersEnd} format="long" /></span>
+    </p>
+  </div>
+
+  <div class="round">
+    <h3>Preliminary Round</h3>
+    <p class="date-range">
+      <span class="start"><LocalTime datetime={frontmatter.preliminaryStart} format="long" /></span><br>
+      <span class="to">to</span>
+      </br>
+      <span class="end"><LocalTime datetime={frontmatter.preliminaryEnd} format="long" /></span>
+    </p>
+  </div>
+
+  <div class="round">
+    <h3>Tournament Finals</h3>
+    <p class="date-range">
+      <span class="start"><LocalTime datetime={frontmatter.finalsStart} format="long" /></span><br>
+      <span class="to">to</span>
+      </br>
+      <span class="end"><LocalTime datetime={frontmatter.finalsEnd} format="long" /></span>
+    </p>
+  </div>
+</section>
+Hiển thị theo múi giờ địa phương của bạn.
+
+## Thể lệ đăng ký
+- Người chơi 1 và 2 phải dùng ảnh chụp màn hình clear **A15+** với relic **Endless Key** (ED5).
+- Người chơi 3 phải dùng ảnh chụp màn hình clear **A18** với relic **Endless Key** (ED5) hoặc **Anasa’s Karma** (ED4) mà không có relic **Prophet Horn** (ED3).
+- Tất cả đều phải có thể stream run trên Discord.
+- Run của người chơi có thể được stream trên Twitch của oyana: <a href="https://twitch.tv/oyana1234" target="_blank" rel="noopener noreferrer">twitch.tv/oyana1234</a>.
+- Người chơi phải tham gia server <a href="https://discord.gg/fqRBzQWVfK" target="_blank" rel="noopener noreferrer">IS Central Discord</a>.
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+![Registration Requirements](/events/kazdel-kasino-2/registration-guidelines.png)
+</div>
+
+**Registration:** <a href="https://forms.gle/9Q4ZTF3ghVtnpe367" target="_blank" rel="noopener noreferrer">Google registration form</a>
+
+## Luật thi đấu
+
+### Fated Encounter
+Mỗi đội không được phép sử dụng những relic sau quá 1 lần:
+- "Talons of Hatred"
+- "Lamp of Wishes"
+
+### Wiš'adel
+Người chơi không được phép lấy Wiš'adel, ngoại trừ trường hợp là temporary recruit từ combat và Silver Seal.
+
+### Giới hạn rút ingot
+- Người chơi 1 và 2 có giới hạn chung là 100, người chơi 3 có giới hạn riêng là 50.
+- Mỗi ingot vượt quá giới hạn rút sẽ trừ \$500/ingot.
+
+### Chuẩn bị run
+- Người chơi chỉ được phép sử dụng những buff F3 sau: Kettle, 2 Plans, 2 Hope.
+- Người chơi được phép clear combat node đầu tiên, nhưng không được phép lấy relic từ combat node đó.
+- Người chơi phải đi vào encounter node là node thứ 2 ở F1.
+- Node thứ 2 đó phải là Fated Encounter và người chơi phải dừng lại ngay lập tức.
+- Nếu người chơi không muốn relic Fated Encounter, thì người chơi đó phải dừng ở ngay sau combat node đầu tiên. Được phép reroll node thứ 2.
+
+### Reset
+- Tất cả đều bắt đầu mà không được cho phép reset.
+- Về vấn đề crash emulator: Mỗi người chơi được phép reset 1 lần xuyên suốt giải đấu (người tổ chức có quyền quyết định cho phép reset hay không).
+
+### Các vấn đề khác
+- Người chơi được phép thay đổi squad sau khi reset.
+- Người chơi được phép thoải mái trao đổi, giao tiếp xuyên suốt run của mình.
+- Người chơi được phép lấy relic Masterless Memories.
+- Người chơi chỉ được phép sử dụng account mà mình dùng để đăng ký vào giải đấu.
+- Tất cả điểm bonus, penalty sẽ được tính ở cuối run.
+
+### Restrictions
+#### Operators bị cấm sử dụng (Ra mắt sau Tragodia)
+* Leizi the Thunderbringer, Record Keeper, Radian
+* Hoshiguma the Breacher, Haruka, Kichisei, Matsukiri
+* Togawa Sakiko, Yahata Umiri, Wakaba Mutsumi, Misumi Uika, Yutenji Nyamu
+* Mantra, Snegurochka, Vetochki
+* SilverAsh the Reignfrost, Pramanix the Prerita, Astgenne the Lightchaser, Snow Hunter, Hadiya, Akkord
+
+#### Modules bị cấm sử dụng (Ra mắt sau Tragodia)
+* Typhon ModY
+* Goldenglow ModY
+* Gavial the Invicible ModY
+* Primal Caster Mods
+* Ch'en the Holungday ModY
+* Swire the Elegant Wit Mod$\alpha$
+* Pepe RA
+* Loopshooter Mods
+* Executor the Ex Foedere ModY
+* Eyjafjalla ModY
+* Arts Defender Mods
+* Vina Victoria ModY
+
+## Thể thức của giải đấu
+Giải đấu yêu cầu người chơi hoàn thành các nhiệm vụ để kiếm đồng Dollar, người chơi 1 và 2 có thể kiếm thêm đồng Yên.
+Người chơi 3 có thể sử dụng đồng Yên trong shop Yên để mua những quyền lợi để hỗ trợ cho run của mình.
+Sau khi cả 3 run đã hoàn thành, toàn bộ số đồng Dollar mà đội có sẽ được sử dụng trong giả lập gacha để tính điểm.
+
+### Đồng Dollar
+Khi bắt đầu run và xuyên suốt run, đồng Dollar được sử dụng để mua squad và các operators tương ứng với giá của họ.
+Xuyên suốt run của mình, người chơi có thể kiếm thêm đồng Dollar để hoặc mua thêm operator, hoặc giữ lại để sử dụng trong giả lập gacha.
+
+- Đồng Dollar được sử dụng để mua operators, mua squad và dùng để quyết định điểm của team.
+- Đồng Dollar có thể được kiếm từ Bias Bonuses, General stages, Conditional stages, Achievements, Final Collectibles count.
+
+### Điểm
+- Sau khi người chơi 3 hoàn thành run của mình, đội của họ sẽ sử dụng toàn bộ số đồng Dollar của mình trong giả lập gacha.
+- 1 trong 3 người chơi của đội phải stream <a href="https://lungmendragons.com/gachasim" target="_blank" rel="noopener noreferrer">Lungmen Dragons gacha simulator</a>
+- Có thể chọn bất kỳ banner nào và có thể thay đổi banner bất kỳ lúc nào trong quá trình roll trong giả lập gacha.
+- Nếu chọn ‘Reset history’, thì điểm sẽ được tính từ lúc đó trở đi. Sẽ có VOD để kiểm tra.
+- Giả lập gacha tuân theo quy luật và tỉ lệ của hệ thống gacha in-game.
+- Điểm được tính toán dựa trên rarity của những operator roll được:
+  - Mỗi operator 6 sao roll được: 360 điểm.
+  - Mỗi operator 5 sao roll được: 120 điểm.
+  - Mỗi operator 3 hoặc 4 sao roll được: 10 điểm.
+
+
+### Giá của các operator
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Operators](/events/kazdel-kasino-2/operators.png)
+</div>
+
+<ul style={{ paddingLeft: '2.5em' }}>
+  <li>
+    Các operator 6★ sau có giá (\$75):
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Exusiai_the_New_Covenant_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Exusiai the New Covenant</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Tragodia_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Tragodia</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Mon3tr_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Mon3tr</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Hoederer_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Hoederer</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Rosmontis_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Rosmontis</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    Các operator 6★ sau có giá (\$50)
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Kal'tsit_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Kal'tsit</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Kirin_R_Yato_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Kirin R Yato</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Ela_Skin_1_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Ela</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Logos_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Logos</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Narantuya_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Narantuya</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Eyjafjalla_the_Hvít_Aska_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Eyjafjalla the Hvít Aska</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-SilverAsh_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>SilverAsh</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Ulpianus_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Ulpianus</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Shu_Skin_1_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Shu</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Degenbrecher_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Degenbrecher</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    Tất cả các operator 6★ non-bias còn lại có giá: \$35
+  </li>
+  <li>
+    Các operator 5★ sau có giá (\$35):
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Greyy_the_Lightningbearer_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Greyy the Lightningbearer</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Surfer_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Surfer</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Cantabile_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Cantabile</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Amiya_(Medic)_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Amiya</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Tin_Man_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Tin Man</span>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+{/* 
+- 6★ selector list (\$75):
+  - Exusiai the New Covenant
+  - Tragodia
+  - Mon3tr
+  - Hoederer
+  - Rosmontis
+- 6★ selector list (\$50):
+  - Kal'tsit
+  - Kirin R Yato
+  - Ela
+  - Logos
+  - Narantuya
+  - Eyjafjalla the Hvít Aska
+  - SilverAsh
+  - Ulpianus
+  - Mizuki
+  - Degenbrecher
+- All other non-bias 6★: \$35
+- The Amy list (\$35)
+  - Greyy alter
+  - Surfer
+  - Cantabile
+  - Amiya
+  - Tin man */}
+
+
+### Penalties
+- Nếu 1 operator 6★ được lấy bởi 2 người chơi, thì giá của operator đó sẽ gấp 3 lần.
+- Nếu 1 operator 6★ được lấy bởi cả 3 người chơi, thì giá của operator đó sẽ gấp 6 lần.
+- Nếu hoàn thành được bias bonus của 1 operator, thì 2 điều trên sẽ không được áp dụng.
+
+### Temporary Operators
+- Toàn bộ các temporary operators sẽ hoàn toàn miễn phí, và không bị tính phí \$25 nếu operator đó có liên quan đến bias bonus.
+
+### Starting Squads
+- Người chơi 1 và 2 được phép chi tiêu tổng cộng \$1000 để mua squad của mình.
+- Người chơi 3 được phép chi tiêu \$500 để mua squad của mình.
+- Người chơi không được phép chi tiêu quá lượng tiền mình được cho phép sử dụng.
+
+#### Giá cả các squad:
+<div style={{ display: "flex", justifyContent: "center" }}>
+| Squad                                                                                                                                                                                                         | Giá tiền  |
+|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----:|
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Soul_Escort_Squad.png" alt="Soul Escort" />Soul Escort</span>                                                                    | $500  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Erudite_Squad.png" alt="Erudite" />Erudite</span>                                                                                | -$100 |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Blueprint_Squad.png" alt="Blueprint" />Blueprint*</span>                                                                         | $650  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Spearhead_Squad_5.png" alt="Spearhead" />Spearhead</span>                                                                        | -$200 |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Assault_Squad_5.png" alt="Tactical Assault Squad (Guard/VG)" />Tactical Assault Squad (Guard/VG)</span>                 | $500  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Fortification_Squad_5.png" alt="Tactical Fortification Squad (Def/Sup)" />Tactical Fortification Squad (Def/Sup)</span> | $300  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Ranged_Squad_5.png" alt="Tactical Ranged Squad (Sniper/Med)" />Tactical Ranged Squad (Sniper/Med)</span>                | $500  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Destruction_Squad_5.png" alt="Tactical Destruction Squad (Spec/Cast)" />Tactical Destruction Squad (Spec/Cast)</span>   | $0    |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-First-Class_Squad_5.png" alt="First-Class" />First-Class</span>                                                                  | $250  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Ingots_Squad.png" alt="Ingots" />Ingots</span>                                                                                   | $250  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Collection_Squad.png" alt="Collection" />Collection</span>                                                                       | $250  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Mimic_Squad.png" alt="Mimic" />Mimic</span>                                                                                      | $100  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Top_Gun_Squad.png" alt="Top Gun" />Top Gun</span>                                                                                | $301  |
+| Other                                                                                                                                                                                                         | $1000 |
+</div>
+
+$^*$Blueprint Squad sẽ có giới hạn thời gian là 120 phút, trừ 1000 điểm cho mỗi 30 phút quá giờ (cho quá 10 phút mà không bị trừ điểm).
+
+### Bias Bonuses
+
+Mỗi bonus chỉ được tính 1 lần cho mỗi đội. Những operator liên quan đến Bias Bonuses sẽ không tính tiền nếu hoàn thành được nhiệm vụ tương ứng, còn không sẽ bị tính là \$25 cho mỗi operator 6★.
+
+<ul style={{ paddingLeft: '2.5em' }}>
+  <li>
+    Dễ (\$50)
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Carnelian_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Carnelian: giết 5 kẻ địch bất kỳ trong 1 lần bật skill.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Ascalon_Skin_1_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Ascalon: có cả relic Hand of Protraction và Rusted Blade - Protraction khi kết thúc run.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Lappland_the_Decadenza_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Lappland the Decadenza: Lấy và e2 một operator 5 sao thuộc nhánh Splash Caster.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Yu_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Yu: Trong thời gian hiệu lực của s3, kích hiệu ứng Burn lên một kẻ địch Dreadful Foe.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Vina_Victoria_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Vina Victoria: Trong thời gian hiệu lực của s3, khiến 7 đồng minh (allies) phải chịu sát thương.</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    Trung bình (\$100)
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Saileach_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Saileach: Chỉ sử dụng Saileach để hồi máu cho 2 con chim.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Angelina_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Angelina: Trong 1 thời gian hiệu lực của s3, đẩy/kéo (shift) một kẻ địch Dreadful Foe ít nhất 4 ô.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Blitz_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Blitz: Làm choáng (stun) 3 kẻ địch trên không (flying enemies) trong 1 lần bật skill.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Erato_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Erato: Dùng Erato để ngắt một channeled skill của kẻ địch bằng cách dùng hiệu ứng Sleep.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Projekt_Red_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Projekt Red: làm choáng (stun) 4 kẻ địch đang ở 4 ô khác nhau trong 1 lần deployment.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/SkadiSneeze.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Skadi/Skadi the Corrupting Heart: Deploy Skadi hoặc Skadi the Corrupting Heart (đã promote) trong 1 màn Dreadful Foe và kích hoạt skill của họ.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Miss.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Miss.Christine: Bị hạ gục bởi ít nhất 9 loại sát thương khác nhau xuyên suốt run (mỗi loại kẻ địch (enemy type) được tính là 1 loại sát thương). </span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    Khó ($150)
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Ines_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Ines: Không được phép tàng hình (invisible) sau khi lấy.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Qiubai_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Qiubai: Lấy qiubai e1 để bắt đầu run của mình.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Stainless_Skin_2_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Stainless: Sau khi lấy, phải đặt (deploy) Stainless trong vòng 15 killcount đầu tiên của mọi stage.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Młynar_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Młynar: Khi đang dùng Mlynar để chặn (block) Qui'lon, gây 25% HP của Quilon trong 1 lần bật skill.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Texas_the_Omertosa_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Texas the Omertosa: Làm choáng (stun) 5 kẻ địch ‘bind caster’ trong 1 stage.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Archetto_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Archetto: Sau khi lấy, Archetto không được phép gây sát thương lên spine.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Swire_the_Elegant_Wit_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Swire the Elegant Wit: ‘Từ chối Tử thần’ 5 lần trong 1 lần deployment.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-FEater_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Feater: Dùng FEater đẩy 4 lần ở 2 vị trí khác nhau trong 90 giây.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Rathalos_S_Noir_Corne_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Rathalos S Noir Corne: Kháng(Resist) 5 đòn đánh từ kẻ địch Dreadful Foe trong 1 lần deployment.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Fiammetta_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Fiammetta: Dùng Fiammetta gây 20,000 sát thương trong 1 lần gây sát thương.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Quartz_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Quartz: Dùng Quartz để chặn (block) và giết 4 kẻ địch có mác dreadkaz và dreadkaz từ kẻ địch đó.</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    Siêu khó ($200)
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Mudrock_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Mudrock: Gây 100%HP lên 1 kẻ địch Dreadful Foe.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Blaze_the_Igniting_Spark_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Blaze the Igniting Spark: Cho 1 kẻ địch đánh Blaze the Igniting Spark và kích hoạt Talent 2 3 lần trong 1 combat node mà không phải rút Blaze the Igniting Spark.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Viviana_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Viviana: Gây 100%HP lên 1 kẻ địch Dreadful Foe.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Tachanka_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Tachanka: Thắng 1 màn Face-off khi chỉ sử dụng Tachanka.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Nymph_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Nymph: Khi có 1 Supporter kích hoạt hiệu ứng Necrosis, sử dụng s3 để gây sát thương lên 1 kẻ địch Dreadful Foe ở f5 trở lên.</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    WTF ($777)
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Friston-3_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Friston-3: Sử dụng Friston-3 để chặn (block) Theresis, trước khi Theresis chỉ còn dưới 90%HP, Friston-3 không được phép chết, ngưng chặn (block) Theresis hay phải rút lại cho đến khi Theresis vào phase 2.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Melantha_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Melantha: Gây 100%HP lên Amiya, Furnace’s Finale phase 2.</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Mizuki_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Mizuki: trong vòng 4 giây sau khi Mizuki kéo 1 boss Dreadful Foe, đẩy/kéo (shift) 1 boss Dreadful Foe vào hố.</span>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+
+{/* 
+- Easy (\$50):
+  - Carnelian: Kill 5 enemies with 1 skill
+  - Ascalon: Have both protraction hand and book by the end of the run
+  - Lappland the Decadenza: Recruit and promote a 5 star splash caster in the squad
+  - Yu: With S3 active, proc burn on a dreadful foe
+  - Vina Victoria: While s3 is active, have 7 allies take damage at the same time
+- Medium (\$100):
+  - Saileach: Heal 2 healing chests with only saileach
+  - Angelina: With angelina s3 active, shift a dreadful foe at least 4 tiles in a single skill activation
+  - Blitz: Stun 3 flying enemies in 1 skill activation
+- Hard (\$150):
+  - Ines: Cannot be invisible after recruitment
+  - Qiu Bai: Recruit Qiu bai as the starting operator at elite 1
+  - Stainless: After recruitment, Deploy Stainless within the first 15 enemies killed of every stage
+  - Młynar: While blocking Qui'lon, Deal 25% of HP damage in 1 skill activation
+  - Texas the Omertosa: Stun 5 bind casters within a single stage
+  - Archetto: After recruitment, do not deal any damage to any spines
+  - Swire the Elegant Wit: Defy death 5 times in a single deployment
+  - Feater: Push with Feater 4 times in 2 different positions within 90seconds
+  - Rathalos S Noir Corne: Resist 5 attacks from a dreadful foe in a single deployment
+- Ultra hard (\$200):
+  - Mudrock: Deal a full hp bar of damage to a dreadful foe
+  - Blaze the Igniting Spark: Have an Enemy hit blaze and activate Talent2 3 times in a single combat without un-deploying blaze
+  - Viviana: Deal a full hp bar of damage to a dreadful foe
+  - Tachanka: Clear a face off while only deploying tachanka
+  - Nymph: While having a supporter trigger necrosis, use the skill "Crumbling heart" to deal damage to a dreadful foe on floor 5 or higher
+- Insane (\$777):
+  - Friston-3: use Friston to tank Theresis above 90% hp and friston cannot die or be undeployed until Theresis phase 2
+  - Melantha: deal a full hp bar of damage to Amiya, Furnace's Finale' 2nd Form */}
+
+### General Stages
+Các màn sẽ được chia vào các nhóm, chỉ có thể lượng Dollar cao nhất ở mỗi nhóm mới được nhận (trừ trường hợp ngoại lệ), mỗi bonus có thể được nhận bởi nhiều người chơi cùng lúc. Nếu người chơi dùng Talons of Hatred, người chơi đó có thể nhận nhiều hơn 1 bonus từ 1 nhóm.
+
+#### Nhóm 1:
+- Clear Dense Jungle EM: \$25
+- Clear Kaz Falls EM: \$35
+
+#### Nhóm 2:
+- Clear Simulated Skirmish EM: \$20
+- Clear Motorized Squad EM: \$50
+- Clear Firepower Squad EM: \$30
+- Clear 1 EM f3 bất kỳ: \$15
+
+#### Nhóm 3: 
+- Clear Chaos EM: \$70
+- Clear Elusive Merc EM: \$80
+- Clear Frequent Dispute EM: \$100
+- Clear 1 EM f4 bất kỳ: \$50
+
+#### Nhóm 4:   
+- Clear Land Reclamation EM: \$80
+- Clear Rhine Guardians EM: \$90
+- Clear Regular Army EM: \$100
+- Clear 1 EM f5 bất kỳ: \$60
+
+#### Nhóm 5:
+- Clear Quest For Consensus EM: \$70
+- Clear Divine Desire EM: \$70
+- Clear 'Heretics' EM: \$120
+- Clear Heavenly Paradise EM: \$150
+
+#### Nhóm 6:
+- Clear Veil of Probability/Devoted Warrior/Decapitation: \$120
+- Clear Brave Souls Marching/Under the Crown: \$130
+- Clear Courtyard of Farewells: \$150
+- Clear một màn boss f3 bất kỳ: \$100
+
+### Boss Achievements
+Hoàn thành các điều kiện sau đây cho mỗi lần chạy để nhận thưởng Dollars:
+#### ED5
+- Clear Fate's Finale: \$500
+- Fractured Mind: thêm \$50
+
+#### ED4
+- Clear The Dharma Sermon: \$400
+- Fractured Mind: thêm \$50
+- Giết Qui'lon: thêm \$250
+
+#### ED3
+- Clear Holy City: \$100
+- Fractured Mind: thêm \$100
+- Giết Patriot mà không CHỦ ĐỘNG rút bất kỳ operator nào xuyên suốt màn đánh: \$200
+
+#### ED2
+- Clear Court Visit: \$100
+- Có Anasa's Karma: thêm \$200
+- Fractured Mind và leak cả 7 con ASSASSINO: \$77
+
+#### ED1
+- Clear Emergency Lecture: \$50
+- Có Anasas Karma: thêm \$150
+- Fractured Mind: thêm \$30
+- Có ít nhất 5 operator bị dịch chuyển (teleported) bởi skill của Fremont: \$200
+
+### Conditional Stages
+Clear những màn sau mà không lấy bất cứ 1 plan nào sẽ được thưởng thêm tiền Dollar:
+- Bloodline Debate: \$120
+- Epochal Gaps: \$200
+- Sordid Surveillance: \$140
+
+Có thể diệt spine, nhưng nếu lấy bất cứ 1 plan nào sau khi đánh xong sẽ không được nhận thưởng.
+
+Nếu người chơi vô tình lấy plan, người chơi đó có thể trực tiếp vứt bỏ lượng plan đã vô tình lấy và vẫn được nhận thưởng (chỉ được áp dụng 1 lần). Từ lần thứ 2 trở đi sẽ không còn hiệu lực nữa.
+
+### Thành tựu
+#### Thành tựu cá nhân:
+<div style={{ display: "flex", justifyContent: "center" }}>
+| Thành tựu                                                                                                                                     | Tiền thưởng                           |
+|:-----------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------:|
+| Thắng 3 Face-off trong 1 run                                                                                                            | \$120                            |
+| Trong Encounter ‘Plausible but False (encounter Rhoder’s Gate), chọn ‘Ask them for help’ (cho temporary operator 6 sao)                                                                    | \$150                            |
+| Trong Encounter ‘Lost Treasure’ (encounter King’s Relics), chọn ‘I’d rather have a feast’ (Hồi 5LP)                                                                    | \$100                            |
+| Trong Encounter ‘Good Fortune To You’, chọn ‘Offer all of your belongings’ khi có ít nhất 20 ingots                       | \$3/ingot Lên đến \$301  |
+| Khi lên f5, nhận: Assembly, Furnace, 1 Plan                                                                                   | \$150                            |
+| Có ít nhất 100 Shrivels and Sprouts (lá) ở một lúc nào đó                                                                           | \$777                            |
+| Clear 1 màn combat ở f6 khi có Anasa’s Karma và giết cadence, lấy Despair                                               | \$250 (NM) \| \$500 (EM)         |
+| Leak 5 con boss trong 1 màn combat                                                                                                           | \$350                            |
+| Clear những màn Dreadful Foe khi có relic Rolling Ancestor                                                            | \$100/màn                            |
+| Clear những màn Dreadful Foe khi có relic Reality of the End (trứng 3)                                                            | \$100/màn                            |
+| Khi có Lamp of Wishes, có ít nhất 4 hand mà có operator sử dụng được | \$500                            |
+</div>
+
+{/* The following Achievements can be claimed once per run.
+- In the Encounter “Lost treasure” select the option “I'd rather have a feast” -  100$
+- Win 3 Face Off nodes in a single run - 120$
+- Clear a stage on floor 6 with Anasa’s Karma and kill the cadence in the stage and pick up despair:
+  - Normal floor 6 stage -  250$
+  - Emergency floor 6 stage - 500$
+- For Every dreadful foe stage cleared while you possess the relic "Rolling Ancestors" - 100$
+- For Every dreadful foe stage cleared while possessing the relic "Reality of the End" - 100$
+- Leak 5 boss enemies in a single stage - 350$
+- In the Encounter "Plausible But False" select the option "Ask them for help" - 150$
+- Upon entering floor 5 receive the Assembly Furnace and 1 plan - 150$
+- In the Encounter "Good fortune to you" select the option "Offer all of your belongings" while you have at least 20 ingots - 3$ per ingot spent up to 301$.
+- While having the lamp of wishes, acquire at least 4 active hands - 500$ (Hands are active when the squad has an operator that is affected by the hand)
+- Have At least 100 “Shrivel and Sprouts” in your inventory at one time. - 777$ */}
+
+#### Thành tựu theo toàn đội:
+<div style={{ display: "flex", justifyContent: "center" }}>
+| Thành tựu                                                                                                             | Tiền thưởng |
+|:-----------------------------------------------------------------------------------------------------------------------:|:------:|
+| Gây hiệu ứng Sleep lên 1 kẻ địch trong vòng 60 giây liên tiếp trong 1 stage                                                                          | \$100  |
+| Có cả 4 lựa chọn Fated Encounter tổng cộng từ cả 3 người chơi                                            | \$1000 |
+| Clear 245 A18                                                                                    | \$3000 |
+| Khi xét trên 3 người chơi, phải cùng đưa 3 operator giống hệt nhau lên thuyền ở 3 màn Dreadful Foe khác nhau | \$333  |
+</div>
+
+{/* - Sleep an enemy for 60s straight - 100$
+- Between all teammates, have all 4 fated encounters options by the end screen. - 1000$
+- Clear ending 2+4+5 on Difficulty 18 - 3000$
+- Across 3 Players, Load 3 different operators on a single boat on 3 different dreadful foe stages, while having all 3 operators be the same across all 3 boats and have each boat enter the blue box. - 333$ */}
+
+
+### Lượng Collectible
+Người chơi sẽ được thưởng tiền Dollar dựa trên lượng relic mình có ở cuối run
+- < 40: \$400
+- 41–50: \$300
+- 51–60: \$200
+- 61+: \$100
+
+Người chơi chỉ được thưởng khi thắng run của mình.
+
+## Shop Yên
+
+### Mục tiêu
+<div style={{ display: "flex", justifyContent: "center" }}>
+| Mục tiêu                                                     | Tiền thưởng                    |
+|:-------------------------------------------------------------:|:-------------------------:|
+| Clear ED1-5 bởi người chơi 1 và 2                                           | 500¥      |
+| Triple ending                                                                 | 500¥/lần |
+| Hoàn thành thử thách ‘Siêu Khó’ hoặc ‘WTF’                        | 100¥/lần |
+| Clear ED5 với Reality of the End (trứng 3) (chỉ áp dụng 1 lần mỗi đội)                            | 1000¥     |
+| Đến F7 với cả 3 màn Dreadful Foe trước đó đều clear ở Fractured Mind (chỉ áp dụng 1 lần mỗi đội) | 800¥      |
+</div>
+
+{/* - Endings 1–5 between Players 1 and 2: 500¥
+- Triple ending: 500¥ each
+- Ultra hard or Insane challenges: 100¥ each (unique)
+- Ending 5 with "Reality of the End": 1000¥ (once per team)
+- Floor 7 with last 3 Dreadful Foes under fractured mental toil: 800¥ (once per team) */}
+
+### Quyền lợi từ Shop Yên
+<div style={{ display: "flex", justifyContent: "center" }}>
+| Quyền lợi                                                                                  | Giá tiền  | Số lượng    |
+|:--------------------------------------------------------------------------------------:|:-----:|:--------:|
+| Bonus từ lượng relic ở cuối run sẽ luôn cho số tiền lớn nhất                           | 500¥  | 1        |
+| +10 ingot cho giới hạn rút ingot                                                             | 50¥   | 10       |
+| +\$500 cho người chơi 3 để chọn squad                                                  | 200¥  | 1        |
+| Loại bỏ giới hạn thời gian cho Blueprint Squad                                                | 1000¥ | 1        |
+| Cho phép reset ở F4                                                                  | 1000¥ | 1        |
+| Lấy Wiš'adel mà không bị tính tiền hay hạn chế nà                                  | 2000¥ | 1        |
+| Loại bỏ tiền phạt do lặp operator                                        | 300¥/operator  | $\infty$ |
+| Trong quá trình chuẩn bị run: loại bỏ hạn chế về relic khởi đầu, cho phép lấy relic từ combat đầu tiên | 1000¥ | 1        |
+</div>
+
+{/* - Collectibles count bonus (highest) — 500¥ (stock 1)
+- +10 ingot withdrawal limit — 50¥ (stock 10)
+- +\$500 to Player 3 starting allowance — 200¥ (stock 1)
+- Remove Blueprint time limit restriction — 1000¥ (stock 1)
+- Allow a Floor 4 reset — 1000¥ (stock 1)
+- Recruit Operator Wiš'adel without penalty/restriction — 2000¥ (stock 1)
+- Remove repeated-operator penalty — 300¥ per operator
+- Remove starting collectible restriction; allow a relic to be chosen after first combat — 1000¥ (stock 1)
+ */}
+
+## FAQ
+
+**Q**: Nếu người chơi 1 và 2 cùng lấy 1 operator liên quan đến bias bonus, thì giá tiền của operator đó được tính như thế nào?\
+**A**: Giá tiền mặc định của 1 operator liên quan đến bias bonus là \$25, và là \$0 nếu người chơi hoàn thành bias bonus tương ứng.
+
+Ví dụ đối với operator Mlynar (có liên quan đến bias bonus):
+1. Người chơi 1 hoàn thành bias bonus của Mlynar, trong khi người chơi lấy Mlynar mà không hoàn thành bias bonus tương ứng, thì giá tiền của Mlynar đối với người chơi 2 là \$25 x 3 = \$75
+2. Người chơi 1 lấy Mlynar mà không hoàn thành bias bonus tương ứng, trong khi người chơi 2 hoàn thành bias bonus đó, thì giá của Mlynar đối với người chơi 1 là \$25
+3. Cả người chơi 1 và 2 đều lấy Mlynar mà không hoàn thành bias bonus tương ứng, thì giá của Mlynar là \$25 + \$75 = \$100
+4. Cả người chơi 1 và 2 đều hoàn thành bias bonus của Mlynar, giá tiền của Mlynar sẽ là \$0, nhưng tiền thưởng chỉ được nhận 1 lần (\$150 x 1)
+
+**Q**: Quyền lợi ‘Loại bỏ tiền phạt do lặp operator’ trong Shop Yên được áp dụng như thế nào?\
+**A**: Quyền lợi này chỉ có thể được áp dụng với người chơi 3, đưa giá của operator về giá tiền mặc định. Điều này không được áp dụng với người chơi 1 và 2.
+
+**Q**: Triple Ending là gì?\
+**A**: Triple Ending là một run IS đánh thắng 3 màn ending bossfight. Ending bossfight bao gồm các màn Dreadful Foe ở f5, f6, f7. Clear ‘Victory Rewind’ không tính là clear một màn ending bossfight.
+
+**Q**: Thành tựu ‘Khi xét trên 3 người chơi, phải cùng đưa 3 operator giống hệt nhau lên thuyền ở 3 màn Dreadful Foe khác nhau’ nghĩa là gì? Ví dụ?\
+**A**: Xét các tình huống sau:
+1. Người chơi 1 đưa Deepcolor, May và Beanstalk lên 1 thuyền ở màn Court Visit. Người chơi 2 và 3 làm tương tự lần lượt ở The Dharma’s Sermon và Fate’s Finale. Thành tựu sẽ được tính là được hoàn thành.
+2. Người chơi 1 đưa Deepcolor, May và Beanstalk lên 1 thuyền ở màn Court Visit và The Dharma’s Sermon. Người chơi 3 làm tương tự ở Fate’s Finale. Thành tựu sẽ được tính là được hoàn thành.
+3. Người chơi 1 đưa Deepcolor, May và Beanstalk lên 1 thuyền ở màn Court Visit và The Dharma’s Sermon. Người chơi 2 và 3 làm tương tự ở The Dharma’s Sermon nhưng không ở Fate’s Finale. Thành tựu sẽ được tính là không hoàn thành.
+4. Người chơi 1 đưa Deepcolor, May và Beanstalk lên 1 thuyền ở màn Court Visit. Người chơi 2 và 3 làm tương tự lần lượt ở The Dharma’s Sermon và Fate’s Finale. Tuy nhiên, thuyền đó ở Fate’s Finale lại không đến được Blue Box. Thành tựu sẽ được tính là không hoàn thành.
+
+**Q**: Việc lấy operator 6★ để bắt đầu run (starting operators) tiêu đồng Dollar trong lượng tiền được cho để mua squad không?\
+**A**: Không, việc lấy operator 6★ để bắt đầu run (starting operators) không liên quan đến việc chọn squad, chỉ lượng tiền được cho trước mới có ảnh hưởng đến việc chọn squad. Phần còn dư từ lượng tiền cho trước cũng sẽ tính vào lượng tiền Dollar của đội.
+
+**Q**: Tiền thưởng/phạt sẽ được tính toán vào lúc nào?\
+**A**: Tiền thưởng/phạt sẽ được tính toán ở cuối của mỗi run của từng người chơi.
+
+**Q**: Các operator 5★ có tính tiền có bị tăng giá như các operator 6★ không?\
+**A**: Không, giá của các operator 5★ này sẽ luôn là \$35, bất kể việc bao nhiêu người chơi lấy operator đó.
+
+## Changelog
+**2025/11/04**
+* Việc loại bỏ chi phí của nhà điều hành khỏi phần thưởng của cửa hàng Yen sẽ đặt lại chi phí của nó về mức ban đầu thay vì giảm xuống 0.
+* Giải thích về việc tăng chi phí của các nhà điều hành trong danh sách Amy được thêm vào FAQ -- chi phí của họ không tăng dù được tuyển dụng nhiều lần.
+
+**2025/11/07**
+* Bỏ giới hạn tài khoản TW và CN.
+* Thêm danh sách cấm các nhà điều hành và mô-đun.
+* Cập nhật lại nội dung thách thức Friston-3 để làm rõ mục đích của thách thức.
+* Cập nhật lại hình phạt đối với việc sử dụng lặp lại các nhà điều hành có lợi thế để làm rõ trường hợp người chơi không bị phạt.
+* Thêm bộ quy tắc cho JP và KR.
+
+**2025/11/09**
+* Bộ quy tắc VN đã được thêm vào.
+
+**2025/11/10**
+* Fiammeta, Mizuki, Projekt Red và Skadi/Skalter đã được thêm bonus thiên vị.
+
+**2025/11/11**
+* Bộ quy tắc TC và SC đã được thêm vào.
+* Shu đã được thêm vào danh sách \$50.
+
+**2025/11/15**
+* Thêm phần thưởng thiên vị cho Miss.Christine và Quartz.

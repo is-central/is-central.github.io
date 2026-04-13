@@ -1,0 +1,19 @@
+---
+title: Kazdel Kasino 2 Preliminary Schedule
+description: "Kazdel Kasino 2 Preliminary Schedule."
+tableOfContents: false
+---
+
+import LanguageSwitcher from '../../../../../components/LanguageSwitcher.astro';
+
+<div class="back-button-container">
+  <a href="/events/en/kazdel-kasino-2/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">Back to Tournament page</span>
+  </a>
+</div>
+
+import TournamentSchedule from '../../../../../components/Events/Schedule.astro';
+import scheduleData from '../../_data/kazdel-kasino-2/preliminary_schedule.json';
+
+<TournamentSchedule title="Schedule" entries={scheduleData} />

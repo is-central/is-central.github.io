@@ -1,0 +1,831 @@
+---
+title: Kazdel Kasino 2
+description: 팀 기반 IS 토너먼트.
+template: doc
+
+qualifiersStart: "2025-11-03T08:00:00Z"
+qualifiersEnd: "2025-11-20T07:59:00Z"
+preliminaryStart: "2025-11-21T08:00:00Z"
+preliminaryEnd: "2025-12-01T07:59:00Z"
+finalsStart: "2025-12-01T08:00:00Z"
+finalsEnd: "2025-12-08T07:59:00Z"
+---
+
+import IndividualPlayerScoreboard from '../../../../../components/IndividualPlayerScoreboard.astro';
+import TeamScoreboard from '../../../../../components/TeamScoreboard.astro';
+import TournamentSchedule from '../../../../../components/TournamentSchedule.astro';
+import LocalTime from '../../../../../components/LocalTime.astro';
+import TournamentLayout from "../../../../../layouts/TournamentLayout.astro";
+
+<div class="back-button-container">
+  <a href="/events/en/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">메인 페이지로 돌아가기</span>
+  </a>
+</div>
+
+<TournamentLayout frontmatter={frontmatter} />
+
+<div style="position: relative; width: 100%; max-width: 800px; margin: 0 auto;"><img src="/events/kazdel-kasino-2/kazdel-kasino-2-banner.png" alt="Kazdel Kasino 2 Tournament Banner" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /></div>
+
+카즈델 카지노 2는 3명의 플레이어들로 구성된 팀 형식의 토너먼트입니다. 플레이어들은 플레이 중에 미션을 수행하여 돈을 벌 수 있고, 그리고 마지막에 벌어들인 돈을 모집 시뮬레이터에 사용하여 순위 점수에 반영합니다. 상위 8팀은 2라운드로 진출하며, 최종 순위 또한 리더보드로 결정됩니다.
+
+## 예비 일정
+<TournamentSchedule
+  title="Match Schedule"
+  dataUrl="/events/kazdel-kasino-2/schedule.json"
+  refreshMs={15000}
+/>
+
+## 예선 점수판
+<IndividualPlayerScoreboard
+  title="Player Dollars"
+  dataUrl="/events/kazdel-kasino-2/scoreboard.json"
+  refreshMs={15000}
+/>
+
+<TeamScoreboard
+  title="Team Points Ranking"
+  dataUrl="/events/kazdel-kasino-2/scoreboard.json"
+  refreshMs={15000}
+/>
+
+## 대회 포맷
+
+- 하나의 팀은 3명의 플레이어로 구성됩니다.(3인 1팀)
+- 플레이어 3: 18승천 고정
+- 플레이어 1과 2는 플레이어 3을 포함한 3명의 플레이어들의 난이도를 합해서 48이 되도록 난이도를 선택합니다.
+- 마지막 플레이어가 플레이를 끝낸 후, 즉시 가챠 시뮬레이터를 사용해 순위 점수를 받습니다.
+- 리더보드: 상위 8팀은 2라운드에 진출합니다. 최종 순위는 2라운드의 리더보드에 의해 결정됩니다.
+
+## 일정
+<section class="tournament-schedule">
+  <div class="round">
+    <h3>등록</h3>
+    <p class="date-range">
+      <span class="start"><LocalTime datetime={frontmatter.qualifiersStart} format="long" /></span><br>
+      <span class="to">~</span>
+      </br>
+      <span class="end"><LocalTime datetime={frontmatter.qualifiersEnd} format="long" /></span>
+    </p>
+  </div>
+
+  <div class="round">
+    <h3>예선전</h3>
+    <p class="date-range">
+      <span class="start"><LocalTime datetime={frontmatter.preliminaryStart} format="long" /></span><br>
+      <span class="to">~</span>
+      </br>
+      <span class="end"><LocalTime datetime={frontmatter.preliminaryEnd} format="long" /></span>
+    </p>
+  </div>
+
+  <div class="round">
+    <h3>토너먼트 결승전</h3>
+    <p class="date-range">
+      <span class="start"><LocalTime datetime={frontmatter.finalsStart} format="long" /></span><br>
+      <span class="to">~</span>
+      </br>
+      <span class="end"><LocalTime datetime={frontmatter.finalsEnd} format="long" /></span>
+    </p>
+  </div>
+</section>
+현지 시간대로 표시됩니다.
+
+## 참여 조건
+- 플레이어 1과 2는 15승천 이상에서 영겁의 열쇠 소장품을 포함한 스크린샷을 제출해야 합니다.
+- 플레이어 3은 영혼 직면 18에서 영겁의 열쇠(마왕 아미야 루트) 또는 아나사의 카르마(콜람 루트) 소장품을 보유하며, 선지자의 뿔(총기사 루트)을 보유하지 않은 스크린샷을 제출해야 합니다.
+- 플레이어는 디스코드를 통해 화면을 송출할 수 있어야합니다.
+- 플레이는 <a href="https://twitch.tv/oyana1234" target="_blank" rel="noopener noreferrer">twitch.tv/oyana1234</a>에 스트리밍 될 수 있습니다.
+- 플레이어는 <a href="https://discord.gg/fqRBzQWVfK" target="_blank" rel="noopener noreferrer">IS Central Discord</a>의 멤버여야합니다.
+- 주의: 예선 참가 스크린샷은 2025년 11월 3일부터 11월 19일 안에 진행된 플레이여야 합니다.
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+![Registration Requirements](/events/kazdel-kasino-2/registration-guidelines.png)
+</div>
+
+**등록:** <a href="https://forms.gle/9Q4ZTF3ghVtnpe367" target="_blank" rel="noopener noreferrer">Google등록 양식</a>
+
+## 규칙
+
+### 우연한 만남
+각 팀은 다음 소장품을 팀 별로 1회를 초과하여 선택할 수 없습니다:
+- 원한 시대의 증오
+- 소원 시대의 미련
+
+### 위셔델
+위셔델은 전투 후 임시모집이나 박사의 은인장을 제외하고 모집할 수 없습니다.
+
+### 인출 제한
+- 플레이어 1과 2는 100개의 각뿔을 공유합니다; 플레이어 3은 50개의 각뿔을 인출할 수 있습니다.
+- 제한을 초과하는 모든 각뿔은 각뿔당 \$500를 차감합니다.
+
+### 사전 준비
+- 3층 달성 시작 보너스는 주전자, 2희망, 2구상만 허용됩니다.
+- 플레이어는 첫 전투를 마무리할 수 있으나 첫 전투에 드랍된 그 어느 소장품도 집을 수 없습니다.
+- 플레이어는 2번째 노드로 반드시 우연한 만남을 선택해야합니다.
+- 2번째 노드는 반드시 “만남”(시대 유물) 노드여야하며, 플레이어는 무조건 이 시점에 플레이를 멈춘 상태로 대기합니다.
+- 만일 플레이어가 시대 유물을 원하지 않을시, 첫 전투 이후에 멈춘 상태로 대기합니다. 이 경우에만 2번째 노드를 새로고침 하는 것이 허용됩니다.
+
+### 리셋
+- 모든 플레이어는 기본적으로 0회의 리셋이 가능합니다.
+- 에뮬레이터 튕김: 각각의 플레이어는 토너먼트 별로 1회의 재시작이 가능합니다.(주최자의 판단에 의거하여)
+
+### 그 외 규칙
+- 플레이어들은 재시작 이후 분대 변경이 가능합니다.
+- 플레이어들은 플레이 중 소통이 가능합니다.
+- 소장품 “주인 없는 기억”은 플레이 중에 집는 것이 허용됩니다.
+- 플레이어는 참가 신청 시 등록한 계정만 사용 가능합니다.
+- 모든 보너스와 페널티는 플레이가 끝날때 계산됩니다.
+
+### 금지 사항
+#### 오퍼레이터 밴 (트라고디아 이후로 출시된 오퍼레이터)
+* 레이즈 더 썬더브링어, 녹무관, 라이디언
+* 호시구마 더 브리쳐, 하루카, 키치세이, 마츠키리
+* 토가와 사키코, 야하타 우미리, 와카바 무츠미, 미스미 우이카, 유텐지 냐무
+* 만트라, 스네구로치카, 베토치키
+* 실버애쉬 더 레인프로스트, 프라마닉스 더 프레리타, 아스트젠 더 라이트체이서, 스노우 헌터, 하디야, 아코드
+
+#### 금지 모듈 (트라고디아 이후로 출시된 모듈)
+* 티폰 Y
+* 골든글로우 Y
+* 가비알 디 인빈서블 Y
+* 프라이멀 캐스터 모듈
+* 첸 더 홀룽데이 Y
+* 스와이어 디 엘리건트 위트 $\alpha$
+* 페페 RA
+* 루프슈터 모듈
+* 이그제큐터 디 엑스 포에데레 Y
+* 에이야퍄들라 Y
+* 아츠 디펜더 모듈
+* 비나 빅토리아 Y
+
+## 토너먼트 다이나믹
+토너먼트는 플레이어들이 다양한 임무를 수행하면서 달러$를 벌 수 있고, 플레이어 1과 2는 엔￥도 벌 수 있습니다.
+플레이어 3은 엔화를 소비하여 플레이 보너스를 획득할 수 있습니다.
+모든 플레이가 끝난 후, 달러는 모집 시뮬레이터에 사용되어 최종 점수를 결정합니다.
+
+### 달러 사용
+플레이 시작과 도중에 달러는 시작 분대와 오퍼레이터를 그에 해당하는 비용을 지불하여 사용할 수 있습니다.
+플레이 도중에, 플레이어는 벌어들인 달러를 오퍼레이터의 추가적인 모집을 위해 사용하거나 모집 시뮬레이터를 위해 아낄 수 있습니다.
+
+- 달러는 오퍼레이터 모집, 시작 분대, 최종 점수에 소비됩니다.
+- 달러는 보너스, 일반 스테이지, 조건부 스테이지, 업적, 최종 소장품 수로 획득할 수 있습니다.
+
+### 최종 점수
+- 3번째 플레이어의 플레이가 끝난 후, 팀은 모든 달러를 모집 시뮬레이터에 사용할 수 있습니다.
+- 팀의 플레이어는 다음 웹사이트를 스트리밍 해야합니다: <a href="https://lungmendragons.com/gachasim" target="_blank" rel="noopener noreferrer">용문 드래곤즈 가챠 시뮬레이터</a>
+- 팀은 시뮬레이터에 있는 모든 배너를 선택할 수 있으며, 도중에 자유롭게 배너를 변경할 수 있습니다.
+- 만약 기록 삭제를 클릭했을 경우, 기록 삭제를 클릭하기 전에 VOD가 점수를 집계한 후 모집을 계속할 수 있습니다.
+- 모집 시뮬레이터는 명일방주 게임 내 모집과 동일한 시스템을 사용합니다.
+- 팀은 모집된 오퍼레이터의 희귀도에 따라 점수를 받습니다.
+  - 모든 6성 오퍼레이터 = 360pts
+  - 모든 5성 오퍼레이터 = 120pts
+  - 모든 3성과 4성 오퍼레이터 = 10pts
+
+
+### 오퍼레이터 비용
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![오퍼레이터](/events/kazdel-kasino-2/operators.png)
+</div>
+
+<ul style={{ paddingLeft: '2.5em' }}>
+  <li>
+    6성 오퍼레이터 리스트 (\$75):
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Exusiai_the_New_Covenant_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>엑시아 더 뉴 커버넌트</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Tragodia_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>트라고디아</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Mon3tr_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Mon3tr</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Hoederer_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>외드레르</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Rosmontis_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>로즈몬티스</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    6성 오퍼레이터 리스트 (\$50)
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Kal'tsit_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>켈시</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Kirin_R_Yato_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>키린 R 야토</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Ela_Skin_1_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Ela</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Logos_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>로고스</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Narantuya_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>나란투야</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Eyjafjalla_the_Hvít_Aska_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>에이야퍄들라 더 크비트 아스카</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-SilverAsh_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>실버애쉬</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Ulpianus_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>울피아누스</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Shu_Skin_1_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>슈</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Degenbrecher_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>데겐블레허</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    그 외 모든 6성 오퍼레이터: \$35
+  </li>
+  <li>
+    5성 오퍼레이터 리스트 (\$35):
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Greyy_the_Lightningbearer_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>그레이 더 라이트닝베어러</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Surfer_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>서퍼</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Cantabile_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>칸타빌레</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Amiya_(Medic)_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>아미야</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Tin_Man_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>틴 맨</span>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+{/* 
+- 6★ selector list (\$75):
+  - Exusiai the New Covenant
+  - Tragodia
+  - Mon3tr
+  - Hoederer
+  - Rosmontis
+- 6★ selector list (\$50):
+  - Kal'tsit
+  - Kirin R Yato
+  - Ela
+  - Logos
+  - Narantuya
+  - Eyjafjalla the Hvít Aska
+  - SilverAsh
+  - Ulpianus
+  - Mizuki
+  - Degenbrecher
+- All other non-bias 6★: \$35
+- The Amy list (\$35)
+  - Greyy alter
+  - Surfer
+  - Cantabile
+  - Amiya
+  - Tin man */}
+
+
+### 페널티
+- 만약 동일 6성 오퍼레이터가 팀 내에 2번 모집되었다면, 그 오퍼레이터의 비용은 원래의 3배가 됩니다.
+- 만약 동일 6성 오퍼레이터가 팀 내에 3번 모집되었다면, 그 오퍼레이터의 비용은 원래의 6배가 됩니다.
+- 완료된 보너스는 다회 모집 페널티에 해당하지 않습니다.(후술)
+
+### 임시 모집 오퍼레이터
+- 모든 임시 모집 오퍼레이터들은 돈을 소모하지 않습니다; 임시 모집 오퍼레이터는 -\$25 페널티를 부과하지 않습니다 (보너스 설명에서 후술술)
+
+### 시작 분대
+- 플레이어 1과 2는 \$1000을 보유하고 시작합니다.
+- 플레이어 3은 \$500을 보유하고 시작합니다.
+- 선수들은 시작분대를 선택할 때 보유한 달러가 음수가 될 수 없습니다.
+
+#### 분대 비용
+<div style={{ display: "flex", justifyContent: "center" }}>
+| 분대                                                                                                                                                                                                             | 비용  |
+|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----:|
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Soul_Escort_Squad.png" alt="" />영혼 호송 분대</span>                                                                    | $500  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Erudite_Squad.png" alt="" />박학다식 분대</span>                                                                                | -$100 |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Blueprint_Squad.png" alt="" />도면 제작 분대*</span>                                                                         | $650  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Spearhead_Squad_5.png" alt="" />예봉 분대</span>                                                                        | -$200 |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Assault_Squad_5.png" alt="" />강습 전술 분대</span>                 | $500  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Fortification_Squad_5.png" alt="" />방어 전술 분대</span> | $300  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Ranged_Squad_5.png" alt="" />원거리 전술 분대</span>                | $500  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Tactical_Destruction_Squad_5.png" alt="" />파괴 전술 분대</span>   | $0    |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-First-Class_Squad_5.png" alt="" />고급화 분대</span>                                                                  | $250  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Ingots_Squad.png" alt="" />연금술 분대</span>                                                                                   | $250  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Collection_Squad.png" alt="" />의태학자 분대</span>                                                                       | $250  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Mimic_Squad.png" alt="" />기상천외 분대</span>                                                                                      | $100  |
+| <span className="squad-inline"><img src="/events/kazdel-kasino-2/squads/60px-Top_Gun_Squad.png" alt="" />전문가 분대</span>                                                                                | $301  |
+| 그 외                                                                                                                                                                                                             | $1000 |
+</div>
+
+$^*$도면 제작 분대는 120분의 시간제한이 있으며, 30분이 초과될때마다 -1000pts가 됩니다. (10분의 유예시간이 지급됩니다)
+
+### 보너스
+
+각각의 보너스는 팀 별로 1회만 수령 가능합니다. 오퍼레이터들은 각 임무가 수행되면 달러를 소모하지 않습니다; 그렇지 않을시 6성 오퍼레이터당 -\$25.
+
+<ul style={{ paddingLeft: '2.5em' }}>
+  <li>
+    쉬움 (\$50)
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Carnelian_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>카넬리안: 1스킬로 5명 이상의 적을 잡으세요</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Ascalon_Skin_1_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>아스카론: 플레이가 끝난 시점에 영주의 손과 러스트 블레이드-영주를 보유하세요</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Lappland_the_Decadenza_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>라플란드 더 데카덴차: 분대 내의 5성 스플래쉬 캐스터를 모집 및 승급하세요</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Yu_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>위: 3스킬이 활성화된 상태로, 보스전의 보스 적에게 소각피해를 입히세요</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Vina_Victoria_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>비나 빅토리아: 3스킬이 활성화 된 상태로, 아군 유닛 7명이 동시에 피해를 받게 하세요</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    보통 (\$100)
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Saileach_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>사일라흐: 2개의 상처받은 파울비스트를 사일라흐만을 이용하여 회복시키세요</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Angelina_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>안젤리나: 안젤리나의 3스킬이 활성화된 상태에서, 1번의 스킬이 발동되는 동안 보스 적을 적어도 4칸 이동시키세요</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Blitz_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>블리츠: 한 번의 스킬 사용으로 공중 적 셋을 기절시키세요</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Erato_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>에라토: 에라토의 수면 재능을 활용하여 적의 채널링 스킬을 끊으세요</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Projekt_Red_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>레드: 1회의 배치로 서로다른 4개 타일에 있는 적 4명을 기절시키세요</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/SkadiSneeze.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>스카디/스카디 더 커럽팅 하트: 보스전에서 2정예 스카디/스카디 더 커럽팅 하트를 배치하고 스킬을 발동하세요</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Miss.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Ms. Christine: 플레이 중 서로 다른 9개 이상의 피해 종류로부터(피해의 근원 기준) 피해를 입고 퇴각당하세요</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    어려움 ($150)
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Ines_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>이네스: 모집 이후로 은신 상태가 될 수 없습니다</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Qiubai_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>치우바이: 스타트 3명 모집에서 1정예 치우바이를 모집하세요</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Stainless_Skin_2_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>스테인리스: 스테인리스를 모집한 이후, 15명의 적이 죽기 전에 스테인리스를 배치하세요</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Młynar_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>무에나: 콜람을 저지하면서, 한 번의 스킬로 25% 이상의 대미지를 주세요</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Texas_the_Omertosa_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>텍사스 디 오메르토사: 5명의 살카즈 속박 캐스터를 하나의 스테이지에서 기절시키세요</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Archetto_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>아르케토: 모집 이후, 모든 종류의 가시에 어떠한 대미지도 주지 마세요</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Swire_the_Elegant_Wit_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>스와이어 디 엘리건트 위트: 한 번의 배치에 5번의 부활을 트리거하세요</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-FEater_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>에프이터: 에프이터로 90초 내로 2개의 다른 위치에서 4회 적을 밀치세요</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Rathalos_S_Noir_Corne_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>레우스 S 느와르 코르네: 한 번의 배치로 5번의 보스 적의 공격에 저항하세요</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Fiammetta_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>피아메타: 피아메타가 단일 공격으로 최소 20000의 피해를 입히세요</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Quartz_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>쿼츠: 쿼츠가 드레드카즈 표식을 보유한 적과 드레드카즈를 동시에 4명 저지하고 처치하세요</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    매우 어려움 ($200)
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Mudrock_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>머드락: 5층 이상의 보스전에서 머드락만으로 보스에게 보스 체력 100%만큼의 피해를 가하세요</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Blaze_the_Igniting_Spark_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>블레이즈 디 이그나이팅 스파크: 한 번의 전투에서, 이격 블레이즈의 퇴각 없이 적의 공격을 받아서 2재능을 3번 활성화시키세요</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Viviana_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>비비아나: 5층 이상의 보스전에서 비비아나만으로 보스에게 보스 체력 100%만큼의 피해를 가하세요</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Tachanka_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Tachanka: 외나무다리 전투를 타찬카만 배치하여 승리하세요</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Nymph_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>님프: 서포터로 쇠약 피해를 활성화시킨 상태에서, 5층 이상에서 3스킬을 사용하여 보스전의 보스에게 대미지를 주세요</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    광기 ($777)
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Friston-3_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Friston-3: 프리스턴으로 테레시스의 체력이 90% 미만으로 떨어지기 전에 저지하세요(프리스턴은 테레시스가 2페이즈로 진입하기 전에 죽거나, 저지를 중단하거나, 퇴각할 수 없습니다)</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Melantha_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>멜란사: 마왕 아미야의 3번째 스테이지에서 마왕 아미야가 2번째 형태일때 멜란사만으로 마왕 아미야의 모든 체력을 깎으세요</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/kazdel-kasino-2/operators/120px-Mizuki_icon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>미즈키: 미즈키가 5층 이상의 보스전에서 보스를 강제이동시킨 후 4초 이내에 보스를 구덩이에 넣으세요</span>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+
+{/* 
+- Easy (\$50):
+  - Carnelian: Kill 5 enemies with 1 skill
+  - Ascalon: Have both protraction hand and book by the end of the run
+  - Lappland the Decadenza: Recruit and promote a 5 star splash caster in the squad
+  - Yu: With S3 active, proc burn on a dreadful foe
+  - Vina Victoria: While s3 is active, have 7 allies take damage at the same time
+- Medium (\$100):
+  - Saileach: Heal 2 healing chests with only saileach
+  - Angelina: With angelina s3 active, shift a dreadful foe at least 4 tiles in a single skill activation
+  - Blitz: Stun 3 flying enemies in 1 skill activation
+- Hard (\$150):
+  - Ines: Cannot be invisible after recruitment
+  - Qiu Bai: Recruit Qiu bai as the starting operator at elite 1
+  - Stainless: After recruitment, Deploy Stainless within the first 15 enemies killed of every stage
+  - Młynar: While blocking Qui'lon, Deal 25% of HP damage in 1 skill activation
+  - Texas the Omertosa: Stun 5 bind casters within a single stage
+  - Archetto: After recruitment, do not deal any damage to any spines
+  - Swire the Elegant Wit: Defy death 5 times in a single deployment
+  - Feater: Push with Feater 4 times in 2 different positions within 90seconds
+  - Rathalos S Noir Corne: Resist 5 attacks from a dreadful foe in a single deployment
+- Ultra hard (\$200):
+  - Mudrock: Deal a full hp bar of damage to a dreadful foe
+  - Blaze the Igniting Spark: Have an Enemy hit blaze and activate Talent2 3 times in a single combat without un-deploying blaze
+  - Viviana: Deal a full hp bar of damage to a dreadful foe
+  - Tachanka: Clear a face off while only deploying tachanka
+  - Nymph: While having a supporter trigger necrosis, use the skill "Crumbling heart" to deal damage to a dreadful foe on floor 5 or higher
+- Insane (\$777):
+  - Friston-3: use Friston to tank Theresis above 90% hp and friston cannot die or be undeployed until Theresis phase 2
+  - Melantha: deal a full hp bar of damage to Amiya, Furnace's Finale' 2nd Form */}
+
+### 전투 스테이지
+전투 스테이지들은 카테고리 별로 분류되어 있으며, 카테고리 별로 가장 높은 수익을 얻는 것만 카테고리 별로 집계됩니다(플레이어 각각 별도입니다). 만약 플레이어가 원한 시대의 증오 유물을 보유한 경우, 플레이어는 각 카테고리 보너스를 1회씩 더 획득할 수 있습니다.
+
+#### 카테고리 1:
+- 긴급 울창한 정글 클리어: \$25
+- 긴급 카즈 폭포 클리어: \$35
+
+#### 카테고리 2:
+- 긴급 대결훈련 클리어: \$20
+- 긴급 기동대 클리어: \$50
+- 긴급 화력소대 클리어: \$30
+- 3층 긴급 스테이지 클리어: \$15
+
+#### 카테고리 3: 
+- 긴급 혼돈 클리어: \$70
+- 긴급 신출귀몰 클리어: \$80
+- 긴급 분쟁빈발 클리어: \$100
+- 4층 긴급 스테이지 클리어: \$50
+
+#### 카테고리 4:   
+- 긴급 개간 계획 클리어: \$80
+- 긴급 라인 랩 가드 클리어: \$90
+- 긴급 건제 클리어: \$100
+- 5층 긴급 스테이지 클리어: \$60
+
+#### 카테고리 5:
+- 긴급 공감대 모색 클리어: \$70
+- 긴급 신성한 갈구 클리어: \$70
+- 긴급 ‘외도’ 클리어: \$120
+- 긴급 동천복지 클리어: \$150
+
+#### 카테고리 6:
+- 혹연의 베일 or 봉헌 or 참수 클리어: \$120
+- 대적자 or 왕관 아래 클리어: \$130
+- 이별노래의 정원 클리어: \$150
+- 그 외 3층 보스전 클리어: \$100
+
+### 보스 토벌
+다음 조건을 달성하여 달러를 추가로 더 벌어들이세요:
+#### 엔딩 5
+- 마왕 아미야 스테이지 클리어: \$500
+- 사고 혼란 상태로 마왕 아미야 스테이지 클리어: 추가 \$50
+
+#### 엔딩 4
+- 콜람 스테이지 클리어: \$400
+- 사고 혼란 상태로 콜람 스테이지 클리어: 추가 \$50
+- 콜람 처치: 추가 \$250
+
+#### 엔딩 3
+- 총기사 스테이지 클리어: \$100
+- 사고 혼란 상태로 총기사 스테이지 클리어: 추가 \$100
+- 수동 퇴각 없이 전투하면서, 총기사 패트리어트를 잡을 경우: \$200
+
+#### 엔딩 2
+- 테레테레 클리어: \$100
+- 아나샤의 카르마를 보유한 상태로 클리어: 추가 \$200
+- 사고 혼란 상태로 7명의 바벨 암살자를 방어포인트에 보내고 클리어: \$77
+
+#### 엔딩 1
+- 프레몬트 클리어: \$50
+- 아나샤의 카르마를 보유한 상태로 클리어: 추가 \$150
+- 사고 혼란 상태로 프레몬트 스테이지 클리어: 추가 \$30
+- 프레몬트 페이즈 전환 시 강제로 텔레포트 된 오퍼레이터가 적어도 다섯이 되게 하기: \$200
+
+### 조건부 스테이지
+다음 스테이지를 클리어하고 구상을 획득하지 않을시 돈을 보너스로 얻습니다:
+- 혈통 논쟁: \$120
+- 시대의 단층: \$200
+- 부패에 대한 고찰: \$140
+
+가시는 파괴 가능하나 스테이지 클리어 후 하나의 구상이라도 집을시 보너스를 무효로 만듭니다.
+
+만약 플레이어가 실수로 보너스 스테이지에서 구상을 집었을시, 1회에 한해 구상을 즉시 폐기하고 보너스를 받는 것이 허용됩니다. 2번째부터는 구상을 집었을시, 구상을 폐기해도 보너스를 획득할 수 없습니다.
+
+### 업적
+#### 개인 업적:
+<div style={{ display: "flex", justifyContent: "center" }}>
+| 업적                                                                                                                                         | 보상                           |
+|:-----------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------:|
+| 한 번의 플레이 도중 외나무다리에서 3번 승리하세요                                                                                                            | \$120                            |
+| 우연한 만남 중 ‘시시이비(로도스의 문)’ 인카운터에서 ‘그녀들에게 도움을 요청한다’를 선택하세요                                                                    | \$150                            |
+| 우연한 만남 중 ‘잃어버린 보물(국왕셋)’ 인카운터에서 ‘그보다 배부터 채워야겠어’를 선택하세요                                                                    | \$100                            |
+| 우연한 만남 중 ‘부자되는 법(부처상)’ 인카운터에서 ‘모든 재물을 바친다’를 선택하세요                       | 소모한 각뿔당 \$3 (최대 \$301)  |
+| 영감 중 ‘집회’, ‘용광로’ 및 구상 1개를 소지한 상태로 5층에 진입하세요                                                                                   | \$150                            |
+| 플레이 도중 100개 이상의 ‘고목 심지’ 염원을 소지하세요                                                                           | \$777                            |
+| 6층에서 ‘아나사의 카르마’ 유물을 보유한 채로, 전투에서 ‘종곡의 합창’을 처치한 뒤 영감 ‘절망’을 획득하세요                                               | \$250 (일반) \| \$500 (긴급)         |
+| 하나의 스테이지에서 5명의 보스 적을 방어포인트로 보내세요                                                                                                           | \$350                            |
+| ‘굴러다니는 선조’ 유물을 보유한 채로 클리어하는 모든 보스전마다                                                            | \$100                            |
+| ‘종결의 실상’ 유물을 보유한 채로 클리어하는 모든 보스전마다                                                            | \$100                            |
+| 소원 시대의 미련 유물을 보유한 채로, 최소 4개의 활성화된 손유물을 보유하세요(최소 1명의 모집한 오퍼가 각 손유물을 트리거해야 합니다) | \$500                            |
+</div>
+
+{/* The following Achievements can be claimed once per run.
+- In the Encounter “Lost treasure” select the option “I'd rather have a feast” -  100$
+- Win 3 Face Off nodes in a single run - 120$
+- Clear a stage on floor 6 with Anasa’s Karma and kill the cadence in the stage and pick up despair:
+  - Normal floor 6 stage -  250$
+  - Emergency floor 6 stage - 500$
+- For Every dreadful foe stage cleared while you possess the relic "Rolling Ancestors" - 100$
+- For Every dreadful foe stage cleared while possessing the relic "Reality of the End" - 100$
+- Leak 5 boss enemies in a single stage - 350$
+- In the Encounter "Plausible But False" select the option "Ask them for help" - 150$
+- Upon entering floor 5 receive the Assembly Furnace and 1 plan - 150$
+- In the Encounter "Good fortune to you" select the option "Offer all of your belongings" while you have at least 20 ingots - 3$ per ingot spent up to 301$.
+- While having the lamp of wishes, acquire at least 4 active hands - 500$ (Hands are active when the squad has an operator that is affected by the hand)
+- Have At least 100 “Shrivel and Sprouts” in your inventory at one time. - 777$ */}
+
+#### 팀 기반 업적:
+<div style={{ display: "flex", justifyContent: "center" }}>
+| 업적                                                                                                                 | 보상 |
+|:-----------------------------------------------------------------------------------------------------------------------:|:------:|
+| 임의의 적 1명을 하나의 스테이지에서 60초간 수면 상태로 만들기                                                                          | \$100  |
+| 모든 팀원이 ‘만남’ 이벤트의 선택지 4개를 가져가기                                            | \$1000 |
+| 난이도 18에서 엔딩 2+4+5 클리어                                                                                    | \$3000 |
+| 3명의 플레이어가 합쳐서 각자 다른 보스전에서, 3명의 같은 오퍼레이터를 나룻배에 태운 뒤에 방어포인트로 보내기 | \$333  |
+</div>
+
+{/* - Sleep an enemy for 60s straight - 100$
+- Between all teammates, have all 4 fated encounters options by the end screen. - 1000$
+- Clear ending 2+4+5 on Difficulty 18 - 3000$
+- Across 3 Players, Load 3 different operators on a single boat on 3 different dreadful foe stages, while having all 3 operators be the same across all 3 boats and have each boat enter the blue box. - 333$ */}
+
+
+### 유물 획득 수
+모든 플레이어들은 자신의 플레이가 끝난 뒤, 획득한 유물 수에 맞게 추가 보너스를 획득할 수 있습니다.
+- < 40: \$400
+- 41–50: \$300
+- 51–60: \$200
+- 61+: \$100
+
+단, 클리어에 성공한 플레이에서만 계산됩니다.
+
+## 엔 상점 관련
+
+### 엔 과제
+<div style={{ display: "flex", justifyContent: "center" }}>
+| 과제                                                         | 보상                    |
+|:-------------------------------------------------------------:|:-------------------------:|
+| 플레이어 1과 2가 합쳐서 엔딩 1~5의 모든 보스 클리어(예시: 135+245)                                           | 500¥      |
+| 임의의 트리플 엔딩 달성                                                                 | 각 500¥ |
+| 매우 어려움 / 지옥 난이도 미션 클리어(개별 도전)                        | 각 100¥ |
+| ‘종결의 실상’ 유물을 보유한 채로 엔딩 5 클리어(팀당 1회)                            | 1000¥     |
+| 마왕 아미야 3번 구역에서 풀려나지 않은 3명의 보스와 함께 7층 클리어(팀당 1회) | 800¥      |
+</div>
+
+{/* - Endings 1–5 between Players 1 and 2: 500¥
+- Triple ending: 500¥ each
+- Ultra hard or Insane challenges: 100¥ each (unique)
+- Ending 5 with "Reality of the End": 1000¥ (once per team)
+- Floor 7 with last 3 Dreadful Foes under fractured mental toil: 800¥ (once per team) */}
+
+### 엔 상점 보너스
+<div style={{ display: "flex", justifyContent: "center" }}>
+| 보너스                                                                                      | 비용      | 재고    |
+|:--------------------------------------------------------------------------------------:|:-----:|:--------:|
+| 클리어 후 유물 수 보너스가 항상 최대 포인트를 획득                           | 500¥  | 1        |
+| 각뿔 인출 한도 +10                                                             | 50¥   | 10       |
+| 플레이어 3 시작 자금 +\$500                                                  | 200¥  | 1        |
+| 도면 제작 분대의 시간 제한 해제                                                | 1000¥ | 1        |
+| 4층 리셋 1회 허용                                                                  | 1000¥ | 1        |
+| 위셔델 오퍼레이터 페널티/제한 없이 채용                                  | 2000¥ | 1        |
+| 중복 오퍼레이터 페널티 해제 (오퍼레이터당)                                        | 300¥  | $\infty$ |
+| 대회 준비 단계: 시작 유물 제한 해제; 첫 전투 후 드랍된 유물 선택 가능 | 1000¥ | 1        |
+</div>
+
+{/* - Collectibles count bonus (highest) — 500¥ (stock 1)
+- +10 ingot withdrawal limit — 50¥ (stock 10)
+- +\$500 to Player 3 starting allowance — 200¥ (stock 1)
+- Remove Blueprint time limit restriction — 1000¥ (stock 1)
+- Allow a Floor 4 reset — 1000¥ (stock 1)
+- Recruit Operator Wiš'adel without penalty/restriction — 2000¥ (stock 1)
+- Remove repeated-operator penalty — 300¥ per operator
+- Remove starting collectible restriction; allow a relic to be chosen after first combat — 1000¥ (stock 1)
+ */}
+
+## FAQ
+
+**Q**: 플레이어 1과 2가 동일한 미션 보너스 오퍼레이터를 드래프트할 경우, 페널티 달러는 어떻게 계산되나요?\
+**A**: 미션 보너스 오퍼레이터의 기본 비용은 \$25이며, 해당 편향 도전 과제를 완료했을 때만 \$0입니다.
+
+무에나를 미션 보너스 오퍼레이터로 한 다음 시나리오를 고려해 보세요:
+1. 플레이어 1이 무에나 보너스 도전을 완료하고 플레이어 2가 무에나를 선택했지만 미션을 완료하지 않은 경우; 플레이어 2에게 부과되는 비용은 \$$25 \cdot 3$ = \$75
+2. 플레이어 1이 무에나 보너스 도전 과제를 완료하지 못한 반면 플레이어 2가 완료한 경우, 플레이어 1에게 부과되는 비용은 \$25
+3. 플레이어 1과 2 모두 도전 과제에 실패한 경우, 부과되는 비용은 \$25 + \$75 = \$100
+4. 플레이어 1과 2 모두 도전 과제를 완료한 경우, 양 플레이어 모두에게 부과되는 비용은 \$0입니다. 단, 보너스는 한 번만 청구 가능합니다 (\$$150 \cdot 1$)
+
+**Q**: 엔 상점에서 오퍼레이터 중복 페널티 제거는 어떻게 적용되나요?\
+**A**: 오퍼레이터 제한 페널티 제거 보상은 플레이어 3에게만 적용되며, 해당 오퍼레이터의 비용을 기본 비용으로 되돌립니다. 플레이어 1과 2는 이 효과의 영향을 받지 않습니다.
+
+**Q**: 트리플 엔딩이란 무엇인가요?\
+**A**: 트리플 엔딩은 통합 전략(Integrated Strategies)에서 세 명의 엔딩 보스를 모두 처치한 경우를 말합니다. 엔딩 보스에는 5,6,7층의 보스전 스테이지가 포함됩니다. 보스만 잡는 것은 엔딩 보스 격파로 인정되지 않습니다.
+
+**Q**: “3명의 플레이어가 합쳐서 서로 다른 보스전 3종류를 선택하여 동일한 3명의 오퍼레이터를 나룻배에 탑승시킨다…” 팀 업적은 무엇인가요? 인정되는/되지 않는 예시가 있나요?\
+**A**: 다음 시나리오를 고려해 보세요:
+1. 플레이어 1은 ‘알현’에서 나룻배에 딥컬러, 메이, 빈스토크를 탑승시킵니다. 플레이어 2와 3도 각각 ‘법도 전수’와 ‘거절 불허’에서 동일한 오퍼레이터를 탑승시킵니다. 이로써 업적이 완료된 것으로 간주됩니다.
+2. 플레이어 1이 ‘알현’과 ‘법도 전수’에서 나룻배에 딥컬러, 메이, 빈스토크를 탑승시킵니다. 플레이어 3도 ‘거절 불허’에서 동일한 오퍼레이터를 탑승시킵니다. 이 경우 업적이 완료된 것으로 간주됩니다.
+3. 플레이어 1이 ‘알현’과 ‘법도 전수’에서 나룻배에 딥컬러, 메이, 빈스토크를 탑승시킵니다. 플레이어 2와 3도 각각 ‘법도 전수’에는 동일한 오퍼레이터를 탑승시키지만 ‘거절 불허’에는 탑승시키지 않습니다. 이 경우 업적이 완료되지 않은 것으로 간주됩니다.
+4. 플레이어 1이 ‘알현’에서 나룻배에 딥컬러, 메이, 빈스탁을 탑승시킵니다. 플레이어 2와 3도 각각 ‘법도 전수’와 ‘거절 불허’에서 동일한 오퍼레이터를 탑승시킵니다. 그러나 나룻배가 ‘거절 불허’의 방어포인트에 도달하지 못합니다. 이 경우 업적은 미완료로 간주됩니다.
+
+**Q**: 초기 모집 시 6★ 오퍼레이터를 초기 스타팅으로 모집하면 시작 시 지급되는 달러가 소모되나요?\
+**A**: 아니요, 초기 오퍼레이터 선택은 시작 분대 선택에 영향을 주지 않으며 시작 자금에만 영향을 줍니다. 남은 시작 자금은 달러로 전환됩니다.
+
+**Q**: 달러 보너스/페널티는 언제 계산되나요?\
+**A**: 달러 보너스/페널티는 플레이어 개별 플레이 종료 시 계산됩니다.
+
+**Q**: 5성 리스트 오퍼레이터도 다른 모든 6★ 오퍼레이터처럼 중복 가격이 상승하나요?\
+**A**: 아니요, 5★ 리스트 오퍼레이터는 팀 내 선택 인원과 무관하게 여전히 \$35입니다.
+
+## 업데이트 로그
+**2025/11/04**
+* 엔 상점 교환 상품 중 ‘오퍼레이터 중복 비용 제거’ 선택 시, 비용이 0으로 감소하지 않고 원래의 비용으로 재설정됩니다.
+* FAQ에 5성 리스트 오퍼레이터 비용 증가 관련 설명 추가 - 2회 이상 다중 모집 시에도 가격이 오르지 않습니다.
+
+**2025/11/07**
+* TW 및 CN 계정 제한을 제거했습니다.
+* 오퍼레이터 및 모듈 금지 목록을 추가했습니다.
+* Friston-3 도전 과제의 의도를 명확히 하기 위해 설명을 개선했습니다.
+* 중복 선택 및 보너스 오퍼레이터 선택 시의 페널티를 명확히 하기 위해 설명을 개선했습니다.
+* JP, KR 규칙 번역본을 추가했습니다.
+
+**2025/11/09**
+* VN 규칙 번역본을 추가했습니다.
+
+**2025/11/10**
+* 피아메타, 미즈키, 레드, 스카디/스카디 더 커럽팅 하트 보너스 미션을 추가했습니다. 
+
+**2025/11/11**
+* TC, SC 규칙 번역본을 추가했습니다.
+* 오퍼레이터 슈가 \$50 리스트에 추가되었습니다.
+
+**2025/11/15**
+* 크리스틴 양과 쿼츠 편향 보너스 추가됨.

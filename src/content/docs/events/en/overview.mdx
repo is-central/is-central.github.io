@@ -1,0 +1,36 @@
+---
+title: Events
+description: "Information about Integrated Strategies events."
+tableOfContents: false
+---
+
+import LanguageSwitcher from '../../../../components/LanguageSwitcher.astro';
+import EventIndex from '../../../../components/Events/EventIndex.astro';
+
+<LanguageSwitcher />
+
+Welcome to IS Central Events page! Here you'll find a list of events and tournaments hosted by us.
+
+## Tournaments
+
+export const events = [
+  {
+    name: "IS-C April Tournament",
+    banner: "is6-dlc1-banner.png",
+    themes: "IS6",
+    startDate: "2026-04-16T00:00:00Z",
+    endDate: "2026-05-15T23:59:00Z",
+    href: "/events/en/isc-april-2026-tournament/overview"
+  },
+  {
+    name: "Kazdel Kasino 2",
+    banner: "kazdel-kasino-2-banner.png",
+    themes: "IS5",
+    startDate: "2025-11-03T08:00:00Z",
+    endDate: "2025-12-08T07:59:00Z",
+    href: "/events/en/kazdel-kasino-2/overview"
+  },
+];
+
+<EventIndex events={events} />
+
