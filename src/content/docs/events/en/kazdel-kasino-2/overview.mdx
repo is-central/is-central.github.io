@@ -18,31 +18,34 @@ import PhaseTimeline from '../../../../../components/Events/PhaseTimeline.astro'
 export const phases = [
   {
     name: "Qualifiers",
-    startDate: "2025-11-03",
-    endDate: "2025-11-19",
+    startDate: "2025-11-03T08:00:00Z",
+    endDate: "2025-11-20T07:59:00Z",
     links: [
-      { label: "Rules", href: "/events/en/kazdel-kasino-2/kazdel-kasino-2" },
-      { label: "Scoreboard", href: "/events/en/kazdel-kasino-2/qualifiers-scores" },
+      { label: "Registration", href: "/events/en/kazdel-kasino-2/registration"},
     ],
   },
   {
     name: "Preliminary Round",
-    startDate: "2025-11-21",
-    endDate: "2025-11-30",
+    startDate: "2025-11-21T08:00:00Z",
+    endDate: "2025-12-01T07:59:00Z",
     links: [
       { label: "Rules", href: "/events/en/kazdel-kasino-2/kazdel-kasino-2" },
+      { label: "Schedule", href: "/events/en/kazdel-kasino-2/preliminary-schedule" },
+      { label: "Scoreboard", href: "/events/en/kazdel-kasino-2/preliminary-scoreboard" },
     ],
   },
   {
     name: "Finals",
-    startDate: "2025-12-01",
-    endDate: "2025-12-07",
+    startDate: "2025-12-01T08:00:00Z",
+    endDate: "2025-12-08T07:59:00Z",
     links: [
       { label: "Rules", href: "/events/en/kazdel-kasino-2/kazdel-kasino-2" },
+      // { label: "Schedule", href: "/events/en/kazdel-kasino-2/finals-schedule" },
+      { label: "Scoreboard", href: "/events/en/kazdel-kasino-2/finals-scoreboard" },
     ],
   },
 ];
 
-<div style="position: relative; width: 100%; max-width: 800px; margin: 0 auto;"><img src="/events/kazdel-kasino-2/kazdel-kasino-2-banner.png" alt="Kazdel Kasino 2 Tournament Banner" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /></div>
+<div style="position: relative; width: 100%; max-width: 800px; margin: 0 auto;"><img src="/events/banners/kazdel-kasino-2-banner.png" alt="Kazdel Kasino 2 Tournament Banner" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /></div>
 
 <PhaseTimeline phases={phases} />

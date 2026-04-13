@@ -1,0 +1,28 @@
+[
+  {
+    "player": "Player 1",
+    "time": "2025-12-03T14:00:00Z",
+    "duration": 120,
+    "platform": "twitch",
+    "link": "https://twitch.tv/user_name"
+  },
+  {
+    "player": "Player 2",
+    "time": "2026-12-03T16:00:00Z",
+    "duration": 90,
+    "platform": "youtube",
+    "link": "https://youtube.com/@user_name"
+  },
+  {
+    "player": "Player 3",
+    "time": "2025-12-04T10:00:00Z",
+    "platform": "discord"
+  },
+  {
+    "player": "Player 4",
+    "time": "2025-12-04T13:00:00Z",
+    "duration": 60,
+    "platform": "twitch",
+    "link": "https://twitch.tv/user_name"
+  }
+]

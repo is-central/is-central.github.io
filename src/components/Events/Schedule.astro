@@ -1,0 +1,379 @@
+---
+const { entries, title } = Astro.props;
+
+const PLATFORMS = {
+  discord: {
+    color: "#5865F2",
+    label: "Discord",
+    icon: `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>`,
+  },
+  twitch: {
+    color: "#9146FF",
+    label: "Twitch",
+    icon: `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>`,
+  },
+  youtube: {
+    color: "#FF0000",
+    label: "YouTube",
+    icon: `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>`,
+  },
+  bilibili: {
+    color: "#00A1D6",
+    label: "Bilibili",
+    icon: `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.387-.947.258-.257.573-.386.946-.386zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373z"/></svg>`,
+  },
+};
+
+const sorted = [...entries].sort((a, b) => new Date(a.time).getTime() - new Date(b.time).getTime());
+const hasTeams = sorted.some((e) => e.team);
+
+const UTC_OFFSETS = [
+  { label: "UTC−12", value: -720 }, { label: "UTC−11", value: -660 },
+  { label: "UTC−10", value: -600 }, { label: "UTC−9", value: -540 },
+  { label: "UTC−8", value: -480 },  { label: "UTC−7", value: -420 },
+  { label: "UTC−6", value: -360 },  { label: "UTC−5", value: -300 },
+  { label: "UTC−4", value: -240 },  { label: "UTC−3", value: -180 },
+  { label: "UTC−2", value: -120 },  { label: "UTC−1", value: -60 },
+  { label: "UTC+0", value: 0 },
+  { label: "UTC+1", value: 60 },    { label: "UTC+2", value: 120 },
+  { label: "UTC+3", value: 180 },   { label: "UTC+4", value: 240 },
+  { label: "UTC+5", value: 300 },   { label: "UTC+5:30", value: 330 },
+  { label: "UTC+6", value: 360 },   { label: "UTC+7", value: 420 },
+  { label: "UTC+8", value: 480 },   { label: "UTC+9", value: 540 },
+  { label: "UTC+10", value: 600 },  { label: "UTC+11", value: 660 },
+  { label: "UTC+12", value: 720 },
+];
+
+function getStatus(isoTime, durationMinutes = 60) {
+  const now = new Date();
+  const start = new Date(isoTime);
+  const end = new Date(start.getTime() + durationMinutes * 60000);
+  if (now < start) return "upcoming";
+  if (now <= end) return "live";
+  return "done";
+}
+
+function formatUTC(isoTime) {
+  const d = new Date(isoTime);
+  return d.toLocaleString("en", {
+    month: "short", day: "numeric",
+    hour: "2-digit", minute: "2-digit",
+    timeZone: "UTC", hour12: false,
+  });
+}
+---
+
+<div class="schedule-wrap">
+  <div class="tz-controls">
+    <span class="tz-label">Time zone</span>
+    <div class="tz-options">
+      <button class="tz-btn active" data-tz="local">Local</button>
+      <button class="tz-btn" data-tz="utc">UTC</button>
+      <button class="tz-btn" data-tz="custom">Custom</button>
+    </div>
+    <select class="tz-select" style="display:none">
+      {UTC_OFFSETS.map((o) => (
+        <option value={o.value}>{o.label}</option>
+      ))}
+    </select>
+  </div>
+
+  <div class="schedule">
+    <div class="schedule-head">
+      {hasTeams && <span class="col-team">Team</span>}
+      <span class="col-player">Player</span>
+      <span class="col-time" id="time-col-label">Time</span>
+      <span class="col-platform">Stream</span>
+      <span class="col-status">Status</span>
+    </div>
+
+    <div class="schedule-body">
+      {sorted.map((entry) => {
+        const status = getStatus(entry.time, entry.duration);
+        const platform = entry.platform ? PLATFORMS[entry.platform.toLowerCase()] : null;
+        return (
+          <div class:list={["schedule-row", { "row-live": status === "live", "row-done": status === "done" }]}>
+
+            {hasTeams && (
+              <span class="col-team team-name">{entry.team ?? "—"}</span>
+            )}
+
+            <span class="col-player">
+              <span class="player-name">{entry.player}</span>
+            </span>
+
+            <span class="col-time time-cell" data-iso={entry.time}>
+              {formatUTC(entry.time)}
+            </span>
+
+            <span class="col-platform">
+              {platform ? (
+                entry.link ? (
+                  <a href={entry.link} target="_blank" rel="noopener noreferrer"
+                    class="platform-link" style={`--platform-color: ${platform.color}`}
+                    title={`Watch on ${platform.label}`}>
+                    <span class="platform-icon" set:html={platform.icon} />
+                    <span class="platform-label">{platform.label}</span>
+                  </a>
+                ) : (
+                  <span class="platform-static" style={`--platform-color: ${platform.color}`}>
+                    <span class="platform-icon" set:html={platform.icon} />
+                    <span class="platform-label">{platform.label}</span>
+                  </span>
+                )
+              ) : (
+                <span class="no-platform">—</span>
+              )}
+            </span>
+
+            <span class="col-status">
+              {status === "live"     && <span class="badge badge-live">Live</span>}
+              {status === "upcoming" && <span class="badge badge-upcoming">Upcoming</span>}
+              {status === "done"     && <span class="badge badge-done">Done</span>}
+            </span>
+
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</div>
+
+<script>
+  function fmtDate(d) {
+    const month = d.toLocaleString("en", { month: "short" });
+    const day   = String(d.getDate()).padStart(2, "0");
+    const hh    = String(d.getHours()).padStart(2, "0");
+    const mm    = String(d.getMinutes()).padStart(2, "0");
+    return `${month} ${day}, ${hh}:${mm}`;
+  }
+
+  function fmtOffset(d, offsetMins) {
+    const shifted = new Date(d.getTime() + offsetMins * 60000);
+    return fmtDate(new Date(shifted.toISOString().replace("Z", "")));
+  }
+
+  function updateTimes(mode, customOffset) {
+    const label = document.getElementById("time-col-label");
+    document.querySelectorAll(".time-cell").forEach((el) => {
+      const iso = el.getAttribute("data-iso");
+      if (!iso) return;
+      const d = new Date(iso);
+
+      if (mode === "utc") {
+        el.textContent = fmtOffset(d, 0);
+        if (label) label.textContent = "Time (UTC)";
+      } else if (mode === "local") {
+        el.textContent = fmtDate(d);
+        const localOffset = -new Date().getTimezoneOffset();
+        const sign = localOffset >= 0 ? "+" : "−";
+        const h = Math.floor(Math.abs(localOffset) / 60);
+        const m = Math.abs(localOffset) % 60;
+        if (label) label.textContent = `Time (UTC${sign}${h}${m ? `:${String(m).padStart(2,"0")}` : ""})`;
+      } else if (mode === "custom") {
+        el.textContent = fmtOffset(d, customOffset);
+        const sign = customOffset >= 0 ? "+" : "−";
+        const h = Math.floor(Math.abs(customOffset) / 60);
+        const m = Math.abs(customOffset) % 60;
+        if (label) label.textContent = `Time (UTC${sign}${h}${m ? `:${String(m).padStart(2,"0")}` : ""})`;
+      }
+    });
+  }
+
+  const btns   = document.querySelectorAll(".schedule-wrap .tz-btn");
+  const select = document.querySelector(".schedule-wrap .tz-select");
+  let mode = "local";
+  let customOffset = 0;
+
+  if (select) {
+    const local = -new Date().getTimezoneOffset();
+    let best = 0, bestDiff = Infinity;
+    select.querySelectorAll("option").forEach((opt, i) => {
+      const diff = Math.abs(Number(opt.value) - local);
+      if (diff < bestDiff) { bestDiff = diff; best = i; }
+    });
+    select.selectedIndex = best;
+    customOffset = Number(select.value);
+  }
+
+  btns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      mode = btn.dataset.tz;
+      if (select) select.style.display = mode === "custom" ? "inline-block" : "none";
+      if (mode === "custom") customOffset = Number(select.value);
+      updateTimes(mode, customOffset);
+    });
+  });
+
+  if (select) {
+    select.addEventListener("change", () => {
+      customOffset = Number(select.value);
+      updateTimes("custom", customOffset);
+    });
+  }
+
+  // Initial render — local by default
+  updateTimes("local", 0);
+</script>
+
+<style>
+  .schedule-wrap * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .tz-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tz-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--sl-color-gray-3);
+  }
+
+  .tz-options {
+    display: flex;
+    border: 1px solid color-mix(in srgb, var(--sl-color-gray-4) 40%, transparent);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .tz-btn {
+    background: none;
+    border: none;
+    border-right: 1px solid color-mix(in srgb, var(--sl-color-gray-4) 40%, transparent);
+    padding: 0.25rem 0.65rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--sl-color-gray-3);
+    cursor: pointer;
+    transition: background 0.12s, color 0.12s;
+  }
+
+  .tz-btn:last-child { border-right: none; }
+  .tz-btn:hover { background: color-mix(in srgb, var(--sl-color-gray-5) 30%, transparent); color: var(--sl-color-gray-2); }
+  .tz-btn.active { background: var(--sl-color-gray-6); color: var(--sl-color-white); }
+
+  .tz-select {
+    font-size: 0.72rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 5px;
+    border: 1px solid color-mix(in srgb, var(--sl-color-gray-4) 40%, transparent);
+    background: var(--sl-color-gray-6);
+    color: var(--sl-color-white);
+    cursor: pointer;
+  }
+
+  .schedule {
+    font-size: 0.875rem;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--sl-color-gray-4) 35%, transparent);
+  }
+
+  .schedule-head {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    background: var(--sl-color-gray-6);
+    border-bottom: 1px solid color-mix(in srgb, var(--sl-color-gray-4) 40%, transparent);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sl-color-gray-2);
+  }
+
+  .col-team     { flex: 1.2; min-width: 0; }
+  .col-player   { flex: 1.4; min-width: 0; display: flex; align-items: center; gap: 0.4rem; }
+  .col-time     { flex: 1.6; min-width: 0; font-variant-numeric: tabular-nums; font-size: 0.8rem; }
+  .col-platform { flex: 1; min-width: 0; }
+  .col-status   { flex: 0 0 5.5rem; text-align: right; }
+
+  .schedule-body { display: flex; flex-direction: column; }
+
+  .schedule-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    margin: 0;
+    line-height: 1;
+    border-bottom: 1px solid color-mix(in srgb, var(--sl-color-gray-4) 20%, transparent);
+    transition: background 0.12s;
+  }
+  .schedule-row:last-child { border-bottom: none; }
+  .schedule-row:hover { background: color-mix(in srgb, var(--sl-color-gray-5) 20%, transparent); }
+
+  .row-live {
+    background: color-mix(in srgb, #4ade80 4%, var(--sl-color-bg));
+    border-left: 3px solid #4ade80;
+    padding-left: calc(1rem - 3px);
+  }
+
+  .row-done { opacity: 0.55; }
+
+  .team-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--sl-color-gray-2);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .player-name {
+    font-weight: 600;
+    color: var(--sl-color-white);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .platform-link,
+  .platform-static {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.18rem 0.5rem;
+    border-radius: 5px;
+    background: color-mix(in srgb, var(--platform-color) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--platform-color) 35%, transparent);
+    color: var(--platform-color);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.12s;
+  }
+
+  .platform-link:hover { background: color-mix(in srgb, var(--platform-color) 22%, transparent); }
+
+  .platform-icon { display: inline-flex; align-items: center; width: 13px; height: 13px; flex-shrink: 0; }
+  .platform-icon svg { width: 100%; height: 100%; }
+
+  .no-platform { color: var(--sl-color-gray-4); font-size: 0.8rem; }
+
+  .badge {
+    display: inline-block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  .badge-live     { color: #4ade80; background: color-mix(in srgb, #4ade80 12%, transparent); border: 1px solid color-mix(in srgb, #4ade80 40%, transparent); }
+  .badge-upcoming { color: #60a5fa; background: color-mix(in srgb, #60a5fa 12%, transparent); border: 1px solid color-mix(in srgb, #60a5fa 35%, transparent); }
+  .badge-done     { color: var(--sl-color-gray-3); background: color-mix(in srgb, var(--sl-color-gray-5) 30%, transparent); border: 1px solid color-mix(in srgb, var(--sl-color-gray-5) 50%, transparent); }
+</style>

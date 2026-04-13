@@ -1,8 +1,0 @@
-{
-  "title": "Main Event",
-  "entries": [
-    { "name": "Aceship", "score": 9800, "video": "https://youtu.be/example1" },
-    { "name": "Mudrock", "score": 9200 },
-    { "name": "Blaze", "score": 8750, "video": "https://youtu.be/example3" }
-  ]
-}

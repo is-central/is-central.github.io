@@ -1,0 +1,23 @@
+{
+  "title": "Main Event",
+  "entries": [
+    {
+      "name": "Player 1",
+      "score": 9800,
+      "videos": [
+        { "label": "Run 1", "href": "https://youtu.be/example1a" },
+        { "label": "Run 2", "href": "https://youtu.be/example1b" }
+      ]
+    },
+    { "name": "Player 2", "score": 9200 },
+    {
+      "name": "Player 3",
+      "score": 9200,
+      "videos": [
+        { "label": "VOD", "href": "https://youtu.be/example3" }
+      ]
+    },
+    { "name": "Player 4", "score": 8300 },
+    { "name": "Player 5", "score": 7900 }
+  ]
+}

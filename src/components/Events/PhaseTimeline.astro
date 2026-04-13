@@ -1,6 +1,10 @@
 ---
 const { phases } = Astro.props;
 
+function hasTime(dateStr) {
+  return dateStr && dateStr.includes("T");
+}
+
 function getStatus(startStr, endStr) {
   const now = new Date();
   const start = new Date(startStr);
@@ -10,51 +14,239 @@ function getStatus(startStr, endStr) {
   return now <= end ? "live" : "done";
 }
 
-function formatRange(startStr, endStr) {
-  const fmt = (d) =>
-    `${d.getDate()} ${d.toLocaleString("en", { month: "short" })} ${d.getFullYear()}`;
-  if (!endStr) return fmt(new Date(startStr));
-  return `${fmt(new Date(startStr))} – ${fmt(new Date(endStr))}`;
+function formatUTC(dateStr, includeTime) {
+  const d = new Date(dateStr);
+  const day   = d.getUTCDate();
+  const month = d.toLocaleString("en", { month: "short", timeZone: "UTC" });
+  const year  = d.getUTCFullYear();
+  if (!includeTime) return `${day} ${month} ${year}`;
+  const hh = String(d.getUTCHours()).padStart(2, "0");
+  const mm = String(d.getUTCMinutes()).padStart(2, "0");
+  return `${day} ${month} ${year}, ${hh}:${mm}`;
 }
 
+function formatRange(startStr, endStr, includeTime) {
+  const s = formatUTC(startStr, includeTime);
+  if (!endStr) return s;
+  const e = formatUTC(endStr, includeTime);
+  return `${s} – ${e}`;
+}
+
+const anyHasTime = phases.some((p) => hasTime(p.startDate) || hasTime(p.endDate));
+
 const STATUS_LABEL = { done: "Concluded", live: "Live", upcoming: "Upcoming" };
+
+const UTC_OFFSETS = [
+  { label: "UTC−12", value: -720 }, { label: "UTC−11", value: -660 },
+  { label: "UTC−10", value: -600 }, { label: "UTC−9",  value: -540 },
+  { label: "UTC−8",  value: -480 }, { label: "UTC−7",  value: -420 },
+  { label: "UTC−6",  value: -360 }, { label: "UTC−5",  value: -300 },
+  { label: "UTC−4",  value: -240 }, { label: "UTC−3",  value: -180 },
+  { label: "UTC−2",  value: -120 }, { label: "UTC−1",  value: -60  },
+  { label: "UTC+0",  value: 0    },
+  { label: "UTC+1",  value: 60   }, { label: "UTC+2",  value: 120  },
+  { label: "UTC+3",  value: 180  }, { label: "UTC+4",  value: 240  },
+  { label: "UTC+5",  value: 300  }, { label: "UTC+5:30", value: 330 },
+  { label: "UTC+6",  value: 360  }, { label: "UTC+7",  value: 420  },
+  { label: "UTC+8",  value: 480  }, { label: "UTC+9",  value: 540  },
+  { label: "UTC+10", value: 600  }, { label: "UTC+11", value: 660  },
+  { label: "UTC+12", value: 720  },
+];
 ---
 
-<div class="phase-timeline">
-  {phases.map((phase, i) => {
-    const status = getStatus(phase.startDate, phase.endDate);
-    const dateLabel = formatRange(phase.startDate, phase.endDate);
-    const isLast = i === phases.length - 1;
-    return (
-      <div class="phase-step">
-        <div class="step-rail">
-          <div class:list={["step-dot", `dot-${status}`]} />
-          {!isLast && <div class="step-line" />}
-        </div>
-        <div class:list={["step-body", { "step-upcoming": status === "upcoming" }]}>
-          <div class="step-header">
-            <span class="step-name">{phase.name}</span>
-            <span class:list={["step-badge", `badge-${status}`]}>{STATUS_LABEL[status]}</span>
-          </div>
-          <span class="step-date">{dateLabel}</span>
-          {phase.links?.length > 0 && (
-            <div class="step-links">
-              {phase.links.map((link) => (
-                <a href={link.href} class="step-link">{link.label}</a>
-              ))}
-            </div>
-          )}
-        </div>
+<div class="phase-wrap">
+  {anyHasTime && (
+    <div class="tz-controls">
+      <span class="tz-label">Time zone</span>
+      <div class="tz-options">
+        <button class="tz-btn active" data-tz="local">Local</button>
+        <button class="tz-btn" data-tz="utc">UTC</button>
+        <button class="tz-btn" data-tz="custom">Custom</button>
       </div>
-    );
-  })}
+      <select class="tz-select" style="display:none">
+        {UTC_OFFSETS.map((o) => (
+          <option value={o.value}>{o.label}</option>
+        ))}
+      </select>
+    </div>
+  )}
+
+  <div class="phase-timeline">
+    {phases.map((phase, i) => {
+      const status = getStatus(phase.startDate, phase.endDate);
+      const phaseHasTime = hasTime(phase.startDate) || hasTime(phase.endDate);
+      const dateLabel = formatRange(phase.startDate, phase.endDate, phaseHasTime);
+      const isLast = i === phases.length - 1;
+      return (
+        <div class="phase-step">
+          <div class="step-rail">
+            <div class:list={["step-dot", `dot-${status}`]} />
+            {!isLast && <div class="step-line" />}
+          </div>
+          <div class:list={["step-body", { "step-upcoming": status === "upcoming" }]}>
+            <div class="step-header">
+              <span class="step-name">{phase.name}</span>
+              <span class:list={["step-badge", `badge-${status}`]}>{STATUS_LABEL[status]}</span>
+            </div>
+            <span
+              class="step-date"
+              data-start={phase.startDate}
+              data-end={phase.endDate ?? ""}
+              data-has-time={phaseHasTime ? "1" : "0"}
+            >
+              {dateLabel}
+            </span>
+            {phase.links?.length > 0 && (
+              <div class="step-links">
+                {phase.links.map((link) => (
+                  <a href={link.href} class="step-link">{link.label}</a>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    })}
+  </div>
 </div>
 
+<script>
+  function fmtDate(d, includeTime) {
+    const day   = d.getDate();
+    const month = d.toLocaleString("en", { month: "short" });
+    const year  = d.getFullYear();
+    if (!includeTime) return `${day} ${month} ${year}`;
+    const hh = String(d.getHours()).padStart(2, "0");
+    const mm = String(d.getMinutes()).padStart(2, "0");
+    return `${day} ${month} ${year}, ${hh}:${mm}`;
+  }
+
+  function fmtOffset(isoStr, offsetMins, includeTime) {
+    const d = new Date(new Date(isoStr).getTime() + offsetMins * 60000);
+    const shifted = new Date(d.toISOString().slice(0, -1));
+    return fmtDate(shifted, includeTime);
+  }
+
+  function updateDates(mode, customOffset) {
+    document.querySelectorAll(".step-date[data-start]").forEach((el) => {
+      const start   = el.getAttribute("data-start");
+      const end     = el.getAttribute("data-end");
+      const hasTime = el.getAttribute("data-has-time") === "1";
+      if (!hasTime) return;
+
+      let fmtStart, fmtEnd;
+
+      if (mode === "utc") {
+        fmtStart = fmtOffset(start, 0, true);
+        fmtEnd   = end ? fmtOffset(end, 0, true) : null;
+      } else if (mode === "local") {
+        fmtStart = fmtDate(new Date(start), true);
+        fmtEnd   = end ? fmtDate(new Date(end), true) : null;
+      } else {
+        fmtStart = fmtOffset(start, customOffset, true);
+        fmtEnd   = end ? fmtOffset(end, customOffset, true) : null;
+      }
+
+      el.textContent = fmtEnd ? `${fmtStart} – ${fmtEnd}` : fmtStart;
+    });
+  }
+
+  const btns   = document.querySelectorAll(".phase-wrap .tz-btn");
+  const select = document.querySelector(".phase-wrap .tz-select");
+  let mode = "local";
+  let customOffset = 0;
+
+  if (select) {
+    const local = -new Date().getTimezoneOffset();
+    let best = 0, bestDiff = Infinity;
+    select.querySelectorAll("option").forEach((opt, i) => {
+      const diff = Math.abs(Number(opt.value) - local);
+      if (diff < bestDiff) { bestDiff = diff; best = i; }
+    });
+    select.selectedIndex = best;
+    customOffset = Number(select.value);
+  }
+
+  btns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      mode = btn.dataset.tz;
+      if (select) select.style.display = mode === "custom" ? "inline-block" : "none";
+      if (mode === "custom") customOffset = Number(select.value);
+      updateDates(mode, customOffset);
+    });
+  });
+
+  if (select) {
+    select.addEventListener("change", () => {
+      customOffset = Number(select.value);
+      updateDates("custom", customOffset);
+    });
+  }
+
+  // Initial render — local by default
+  updateDates("local", 0);
+</script>
+
 <style>
+  .phase-wrap * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .tz-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .tz-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--sl-color-gray-3);
+  }
+
+  .tz-options {
+    display: flex;
+    border: 1px solid color-mix(in srgb, var(--sl-color-gray-4) 40%, transparent);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .tz-btn {
+    background: none;
+    border: none;
+    border-right: 1px solid color-mix(in srgb, var(--sl-color-gray-4) 40%, transparent);
+    padding: 0.25rem 0.65rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--sl-color-gray-3);
+    cursor: pointer;
+    transition: background 0.12s, color 0.12s;
+  }
+
+  .tz-btn:last-child { border-right: none; }
+  .tz-btn:hover { background: color-mix(in srgb, var(--sl-color-gray-5) 30%, transparent); color: var(--sl-color-gray-2); }
+  .tz-btn.active { background: var(--sl-color-gray-6); color: var(--sl-color-white); }
+
+  .tz-select {
+    font-size: 0.72rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 5px;
+    border: 1px solid color-mix(in srgb, var(--sl-color-gray-4) 40%, transparent);
+    background: var(--sl-color-gray-6);
+    color: var(--sl-color-white);
+    cursor: pointer;
+  }
+
   .phase-timeline {
     display: flex;
     flex-direction: column;
-    margin: 1rem 0;
   }
 
   .phase-step {
@@ -63,7 +255,6 @@ const STATUS_LABEL = { done: "Concluded", live: "Live", upcoming: "Upcoming" };
     align-items: stretch;
   }
 
-  /* ── Rail ── */
   .step-rail {
     display: flex;
     flex-direction: column;
@@ -84,21 +275,9 @@ const STATUS_LABEL = { done: "Concluded", live: "Live", upcoming: "Upcoming" };
     z-index: 1;
   }
 
-  .dot-done {
-    background: var(--sl-color-gray-4);
-    border-color: var(--sl-color-gray-4);
-  }
-
-  .dot-live {
-    background: #4ade80;
-    border-color: #4ade80;
-    box-shadow: 0 0 0 3px color-mix(in srgb, #4ade80 20%, transparent);
-  }
-
-  .dot-upcoming {
-    background: var(--sl-color-bg);
-    border-color: color-mix(in srgb, var(--sl-color-gray-5) 60%, transparent);
-  }
+  .dot-done     { background: var(--sl-color-gray-4); border-color: var(--sl-color-gray-4); }
+  .dot-live     { background: #4ade80; border-color: #4ade80; box-shadow: 0 0 0 3px color-mix(in srgb, #4ade80 20%, transparent); }
+  .dot-upcoming { background: var(--sl-color-bg); border-color: color-mix(in srgb, var(--sl-color-gray-5) 60%, transparent); }
 
   .step-line {
     flex: 1;
@@ -108,7 +287,6 @@ const STATUS_LABEL = { done: "Concluded", live: "Live", upcoming: "Upcoming" };
     min-height: 12px;
   }
 
-  /* ── Body ── */
   .step-body {
     flex: 1;
     padding: 0 0 1.2rem;
@@ -118,9 +296,7 @@ const STATUS_LABEL = { done: "Concluded", live: "Live", upcoming: "Upcoming" };
     gap: 0.25rem;
   }
 
-  .step-upcoming {
-    opacity: 0.6;
-  }
+  .step-upcoming { opacity: 0.6; }
 
   .step-header {
     display: flex;
@@ -144,20 +320,9 @@ const STATUS_LABEL = { done: "Concluded", live: "Live", upcoming: "Upcoming" };
     flex-shrink: 0;
   }
 
-  .badge-done {
-    background: color-mix(in srgb, var(--sl-color-gray-5) 40%, transparent);
-    color: var(--sl-color-gray-3);
-  }
-
-  .badge-live {
-    background: color-mix(in srgb, #4ade80 15%, transparent);
-    color: #16a34a;
-  }
-
-  .badge-upcoming {
-    background: color-mix(in srgb, var(--sl-color-gray-5) 30%, transparent);
-    color: var(--sl-color-gray-3);
-  }
+  .badge-done     { background: color-mix(in srgb, var(--sl-color-gray-5) 40%, transparent); color: var(--sl-color-gray-3); }
+  .badge-live     { background: color-mix(in srgb, #4ade80 15%, transparent); color: #16a34a; }
+  .badge-upcoming { background: color-mix(in srgb, var(--sl-color-gray-5) 30%, transparent); color: var(--sl-color-gray-3); }
 
   .step-date {
     font-size: 0.72rem;
