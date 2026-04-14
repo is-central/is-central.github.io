@@ -1,5 +1,26 @@
 ---
-const { phases } = Astro.props;
+const { phases, themes } = Astro.props;
+
+const IS_COLORS = {
+  IS2: "#FBC02D",
+  IS3: "#3949AB",
+  IS4: "#64B5F6",
+  IS5: "#B71C1C",
+  IS6: "#EC407A",
+};
+
+// Normalise themes to an array of hex colors
+const themeList = (() => {
+  if (!themes) return [];
+  const arr = Array.isArray(themes) ? themes : [themes];
+  return arr.map(t => IS_COLORS[t.trim()] ?? null).filter(Boolean);
+})();
+
+// Assign a color to each phase — cycles if fewer themes than phases
+function phaseColor(index) {
+  if (themeList.length === 0) return null;
+  return themeList[index % themeList.length];
+}
 
 function hasTime(dateStr) {
   return dateStr && dateStr.includes("T");
@@ -77,16 +98,17 @@ const UTC_OFFSETS = [
       const phaseHasTime = hasTime(phase.startDate) || hasTime(phase.endDate);
       const dateLabel = formatRange(phase.startDate, phase.endDate, phaseHasTime);
       const isLast = i === phases.length - 1;
+      const color = phaseColor(i);
       return (
-        <div class="phase-step">
+        <div class="phase-step" style={color ? `--phase-color: ${color}` : ""}>
           <div class="step-rail">
-            <div class:list={["step-dot", `dot-${status}`]} />
-            {!isLast && <div class="step-line" />}
+            <div class:list={["step-dot", `dot-${status}`, { "dot-themed": !!color }]} />
+            {!isLast && <div class:list={["step-line", { "line-themed": !!color }]} />}
           </div>
           <div class:list={["step-body", { "step-upcoming": status === "upcoming" }]}>
             <div class="step-header">
               <span class="step-name">{phase.name}</span>
-              <span class:list={["step-badge", `badge-${status}`]}>{STATUS_LABEL[status]}</span>
+              <span class:list={["step-badge", `badge-${status}`, { "badge-themed": !!color }]}>{STATUS_LABEL[status]}</span>
             </div>
             <span
               class="step-date"
@@ -99,7 +121,7 @@ const UTC_OFFSETS = [
             {phase.links?.length > 0 && (
               <div class="step-links">
                 {phase.links.map((link) => (
-                  <a href={link.href} class="step-link">{link.label}</a>
+                  <a href={link.href} class:list={["step-link", { "link-themed": !!color }]}>{link.label}</a>
                 ))}
               </div>
             )}
@@ -279,6 +301,11 @@ const UTC_OFFSETS = [
   .dot-live     { background: #4ade80; border-color: #4ade80; box-shadow: 0 0 0 3px color-mix(in srgb, #4ade80 20%, transparent); }
   .dot-upcoming { background: var(--sl-color-bg); border-color: color-mix(in srgb, var(--sl-color-gray-5) 60%, transparent); }
 
+  /* Themed dot overrides */
+  .dot-themed.dot-done     { background: color-mix(in srgb, var(--phase-color) 60%, var(--sl-color-gray-4)); border-color: color-mix(in srgb, var(--phase-color) 60%, var(--sl-color-gray-4)); }
+  .dot-themed.dot-live     { background: var(--phase-color); border-color: var(--phase-color); box-shadow: 0 0 0 3px color-mix(in srgb, var(--phase-color) 20%, transparent); }
+  .dot-themed.dot-upcoming { border-color: color-mix(in srgb, var(--phase-color) 40%, transparent); }
+
   .step-line {
     flex: 1;
     width: 1px;
@@ -286,6 +313,8 @@ const UTC_OFFSETS = [
     margin: 4px 0;
     min-height: 12px;
   }
+
+  .line-themed { background: color-mix(in srgb, var(--phase-color) 30%, transparent); }
 
   .step-body {
     flex: 1;
@@ -324,6 +353,11 @@ const UTC_OFFSETS = [
   .badge-live     { background: color-mix(in srgb, #4ade80 15%, transparent); color: #16a34a; }
   .badge-upcoming { background: color-mix(in srgb, var(--sl-color-gray-5) 30%, transparent); color: var(--sl-color-gray-3); }
 
+  /* Themed badge overrides */
+  .badge-themed.badge-done     { background: color-mix(in srgb, var(--phase-color) 12%, transparent); color: color-mix(in srgb, var(--phase-color) 80%, var(--sl-color-gray-3)); border: 1px solid color-mix(in srgb, var(--phase-color) 25%, transparent); }
+  .badge-themed.badge-live     { background: color-mix(in srgb, var(--phase-color) 15%, transparent); color: var(--phase-color); border: 1px solid color-mix(in srgb, var(--phase-color) 40%, transparent); }
+  .badge-themed.badge-upcoming { background: color-mix(in srgb, var(--phase-color) 8%, transparent); color: color-mix(in srgb, var(--phase-color) 60%, var(--sl-color-gray-3)); border: 1px solid color-mix(in srgb, var(--phase-color) 20%, transparent); }
+
   .step-date {
     font-size: 0.72rem;
     color: var(--sl-color-gray-3);
@@ -333,23 +367,38 @@ const UTC_OFFSETS = [
   .step-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.35rem;
-    margin-top: 0.15rem;
+    gap: 0.4rem;
+    margin-top: 0.25rem;
   }
 
   .step-link {
-    font-size: 0.72rem;
-    padding: 0.2rem 0.55rem;
-    border: 1px solid color-mix(in srgb, var(--sl-color-gray-5) 60%, transparent);
-    border-radius: 5px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.3rem 0.75rem;
+    border: 1px solid color-mix(in srgb, var(--sl-color-gray-4) 50%, transparent);
+    border-radius: 6px;
     color: var(--sl-color-gray-2);
+    background: color-mix(in srgb, var(--sl-color-gray-6) 60%, transparent);
     text-decoration: none;
-    transition: background 0.15s, border-color 0.15s;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
   }
 
   .step-link:hover {
-    background: color-mix(in srgb, var(--sl-color-accent) 10%, transparent);
-    border-color: color-mix(in srgb, var(--sl-color-accent) 40%, transparent);
+    background: color-mix(in srgb, var(--sl-color-accent) 12%, transparent);
+    border-color: color-mix(in srgb, var(--sl-color-accent) 45%, transparent);
     color: var(--sl-color-accent);
+  }
+
+  /* Themed link buttons */
+  .link-themed {
+    border-color: color-mix(in srgb, var(--phase-color) 40%, transparent);
+    color: color-mix(in srgb, var(--phase-color) 90%, var(--sl-color-gray-2));
+    background: color-mix(in srgb, var(--phase-color) 8%, transparent);
+  }
+
+  .link-themed:hover {
+    background: color-mix(in srgb, var(--phase-color) 18%, transparent);
+    border-color: color-mix(in srgb, var(--phase-color) 65%, transparent);
+    color: var(--phase-color);
   }
 </style>
