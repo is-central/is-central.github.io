@@ -1,0 +1,19 @@
+---
+title: IS-C April 2026 Tournament D10 Scoreboard
+description: "IS-C April 2026 Tournament D10 Scoreboard."
+tableOfContents: false
+---
+
+import LanguageSwitcher from '../../../../../components/LanguageSwitcher.astro';
+
+<div class="back-button-container">
+  <a href="/events/en/isc-april-2026-tournament/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">Back to Tournament page</span>
+  </a>
+</div>
+
+import Scoreboard from '../../../../../components/Events/Scoreboard.astro';
+import MainEventIndividualD10 from '../../_data/isc-april-2026-tournament/main_event_d10_scoreboard_individual.json';
+
+<Scoreboard data={MainEventIndividualD10} />

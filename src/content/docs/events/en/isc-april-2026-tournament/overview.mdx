@@ -24,11 +24,12 @@ export const phases = [
       { label: "Registration", href: "/events/en/isc-april-2026-tournament/registration" },
       { label: "Rules", href: "/events/en/isc-april-2026-tournament/rules" },
       { label: "Schedule", href: "/events/en/isc-april-2026-tournament/schedule" },
-      { label: "Scoreboard", href: "/events/en/isc-april-2026-tournament/scoreboard" },
+      { label: "Scoreboard (d15)", href: "/events/en/isc-april-2026-tournament/scoreboard-d15" },
+      { label: "Scoreboard (d10)", href: "/events/en/isc-april-2026-tournament/scoreboard-d10" },
     ],
   },
 ];
 
 <div style="position: relative; width: 100%; max-width: 800px; margin: 0 auto;"><img src="/events/banners/is6-dlc1-banner.png" alt="Kazdel Kasino 2 Tournament Banner" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /></div>
 
-<PhaseTimeline phases={phases} />
+<PhaseTimeline phases={phases} themes={["IS6"]} />
