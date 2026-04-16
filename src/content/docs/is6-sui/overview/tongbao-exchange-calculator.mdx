@@ -1,11 +1,19 @@
 ---
-title: Tongbao Exchange Calculator
-description: Interactive calculator for Tongbao exchanges in IS6.
+title: Tongbao Calculator
+description: Interactive calculator for Tongbaos in IS6.
 tableOfContents: false
 ---
 
 import TongbaoExchangeCalculator from '../../../../components/TongbaoExchangeCalculator.astro';
+import TongbaoTossCalculator from '../../../../components/TongbaoTossCalculator.astro';
 import StrategySection from '/src/components/StrategySection.astro';
+
+<div class="back-button-container">
+  <a href="/is6-sui/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">Back to IS6 Overview</span>
+  </a>
+</div> 
 
 <StrategySection title="How to use instructions" author="" defaultOpen={false}>
 ## How to Use
@@ -17,6 +25,11 @@ Select a Tongbao from the lists to see the potential exchange results.
 Most exchanges stay within the same tier, but specific items can trigger upgrades or downgrades.
 
 </StrategySection>
+
+<StrategySection title="Tongbao Toss Calculator" author="" defaultOpen={true}>
+<TongbaoTossCalculator />
+</StrategySection>
+
 
 <TongbaoExchangeCalculator />
 
