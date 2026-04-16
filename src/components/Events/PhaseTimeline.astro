@@ -93,13 +93,13 @@ const UTC_OFFSETS = [
           style={color ? `--phase-color: ${color}` : ""}
         >
           <div class="step-rail">
-            <div class:list={["step-dot", { "dot-themed": !!color }]} />
-            {!isLast && <div class:list={["step-line", { "line-themed": !!color }]} />}
+            <div class:list={["step-dot"]} />
+            {!isLast && <div class:list={["step-line"]} />}
           </div>
           <div class="step-body">
             <div class="step-header">
               <span class="step-name">{phase.name}</span>
-              <span class:list={["step-badge", { "badge-themed": !!color }]} data-badge>—</span>
+              <span class:list={["step-badge"]} data-badge>—</span>
             </div>
             <span
               class="step-date"
