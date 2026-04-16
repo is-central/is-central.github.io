@@ -14,7 +14,7 @@
       "output_tiers": ["12"],
       "eligible_tiers": ["12"],
       "special_output": null,
-      "description": "Obtain a unique Tactical Prop"
+      "description": "On toss, obtain a unique Tactical Prop every battle"
     },
     {
       "name": "Bal-Rogue Token",
