@@ -1,5 +1,5 @@
 ---
-const { entries, title } = Astro.props;
+const { entries, notesHeader } = Astro.props;
 
 const PLATFORMS = {
   discord: {
@@ -24,8 +24,9 @@ const PLATFORMS = {
   },
 };
 
-const sorted = [...entries].sort((a, b) => new Date(a.time).getTime() - new Date(b.time).getTime());
-const hasTeams = sorted.some((e) => e.team);
+// Sorting is done client-side — just pass entries as-is
+const hasTeams = entries.some((e) => e.team);
+const hasNotes = !!notesHeader;
 
 function formatUTC(isoTime) {
   const d = new Date(isoTime);
@@ -73,13 +74,15 @@ const UTC_OFFSETS = [
     <div class="schedule-head">
       {hasTeams && <span class="col-team">Team</span>}
       <span class="col-player">Player</span>
+      {hasNotes && <span class="col-notes">{notesHeader}</span>}
       <span class="col-time" id="time-col-label">Time</span>
+      <span class="col-countdown">Countdown</span>
       <span class="col-platform">Stream</span>
       <span class="col-status">Status</span>
     </div>
 
-    <div class="schedule-body">
-      {sorted.map((entry) => {
+    <div class="schedule-body" id="schedule-body">
+      {entries.map((entry) => {
         const platform = entry.platform ? PLATFORMS[entry.platform.toLowerCase()] : null;
         return (
           <div
@@ -95,8 +98,18 @@ const UTC_OFFSETS = [
               <span class="player-name">{entry.player}</span>
             </span>
 
+            {hasNotes && (
+              <span class="col-notes notes-cell">
+                {entry.notes ?? ""}
+              </span>
+            )}
+
             <span class="col-time time-cell" data-iso={entry.time}>
               {formatUTC(entry.time)}
+            </span>
+
+            <span class="col-countdown countdown-cell" data-iso={entry.time} data-duration={entry.duration ?? 60}>
+              —
             </span>
 
             <span class="col-platform">
@@ -130,7 +143,6 @@ const UTC_OFFSETS = [
 </div>
 
 <script>
-  // ── Status computation (client-side) ──────────────────────────────────────
   function getStatus(isoTime, durationMinutes) {
     const now   = new Date();
     const start = new Date(isoTime);
@@ -140,12 +152,71 @@ const UTC_OFFSETS = [
     return "done";
   }
 
+  // ── Relative time label ───────────────────────────────────────────────────
+  function relativeLabel(isoTime, durationMinutes, status) {
+    if (status === "done") return "";
+
+    const now   = new Date();
+    const start = new Date(isoTime);
+
+    if (status === "upcoming") {
+      const diffMs  = start - now;
+      const diffMin = Math.floor(diffMs / 60000);
+      const diffH   = Math.floor(diffMin / 60);
+      const diffD   = Math.floor(diffH / 24);
+      if (diffD >= 1)  return `in ${diffD}d ${diffH % 24}h`;
+      if (diffH >= 1)  return `in ${diffH}h ${diffMin % 60}m`;
+      return `in ${diffMin}m`;
+    }
+
+    if (status === "live") {
+      const diffMs  = now - start;
+      const diffMin = Math.floor(diffMs / 60000);
+      const diffH   = Math.floor(diffMin / 60);
+      if (diffH >= 1) return `started ${diffH}h ${diffMin % 60}m ago`;
+      return `started ${diffMin}m ago`;
+    }
+
+    return "";
+  }
+
+  // ── Sort rows: live first, then upcoming (soonest→latest), then done (latest→oldest) ──
+  function sortRows() {
+    const body = document.getElementById("schedule-body");
+    if (!body) return;
+
+    const rows = Array.from(body.querySelectorAll(".schedule-row[data-iso]"));
+
+    rows.sort((a, b) => {
+      const isoA = a.getAttribute("data-iso");
+      const durA = Number(a.getAttribute("data-duration")) || 60;
+      const isoB = b.getAttribute("data-iso");
+      const durB = Number(b.getAttribute("data-duration")) || 60;
+
+      const sA = getStatus(isoA, durA);
+      const sB = getStatus(isoB, durB);
+
+      const order = { live: 0, upcoming: 1, done: 2 };
+      if (order[sA] !== order[sB]) return order[sA] - order[sB];
+
+      const tA = new Date(isoA).getTime();
+      const tB = new Date(isoB).getTime();
+
+      // Upcoming: soonest first; done: most recent first
+      if (sA === "upcoming") return tA - tB;
+      return tB - tA;
+    });
+
+    rows.forEach(row => body.appendChild(row));
+  }
+
   function applyStatuses() {
     document.querySelectorAll(".schedule-row[data-iso]").forEach((row) => {
       const iso      = row.getAttribute("data-iso");
       const duration = Number(row.getAttribute("data-duration")) || 60;
       const status   = getStatus(iso, duration);
       const badge    = row.querySelector("[data-status-badge]");
+      const countdown = row.querySelector(".countdown-cell");
 
       row.classList.remove("row-live", "row-done");
       if (status === "live") row.classList.add("row-live");
@@ -156,9 +227,15 @@ const UTC_OFFSETS = [
         badge.classList.add(`badge-${status}`);
         badge.textContent = status === "live" ? "Live" : status === "upcoming" ? "Upcoming" : "Done";
       }
+
+      if (countdown) {
+        const label = relativeLabel(iso, duration, status);
+        countdown.textContent = label;
+      }
     });
   }
 
+  sortRows();
   applyStatuses();
 
   // ── Timezone handling ─────────────────────────────────────────────────────
@@ -314,11 +391,13 @@ const UTC_OFFSETS = [
     color: var(--sl-color-gray-2);
   }
 
-  .col-team     { flex: 1.2; min-width: 0; }
-  .col-player   { flex: 1.4; min-width: 0; display: flex; align-items: center; gap: 0.4rem; }
-  .col-time     { flex: 1.6; min-width: 0; font-variant-numeric: tabular-nums; font-size: 0.8rem; }
-  .col-platform { flex: 1; min-width: 0; }
-  .col-status   { flex: 0 0 5.5rem; text-align: right; }
+  .col-team      { flex: 1.2; min-width: 0; font-variant-numeric: tabular-nums; font-size: 0.8rem; }
+  .col-player    { flex: 1.4; min-width: 0; display: flex; align-items: center; gap: 0.4rem; font-variant-numeric: tabular-nums; font-size: 0.8rem; }
+  .col-notes     { flex: 1.4; min-width: 0; font-variant-numeric: tabular-nums; font-size: 0.8rem; }
+  .col-time      { flex: 1.6; min-width: 0; font-variant-numeric: tabular-nums; font-size: 0.8rem; }
+  .col-countdown { flex: 1.2; min-width: 0; font-size: 0.8rem; font-variant-numeric: tabular-nums; }
+  .col-platform  { flex: 1; min-width: 0; font-variant-numeric: tabular-nums; font-size: 0.8rem; }
+  .col-status    { flex: 0 0 5.5rem; text-align: right; font-variant-numeric: tabular-nums; font-size: 0.8rem; }
 
   .schedule-body { display: flex; flex-direction: column; }
 
@@ -359,6 +438,23 @@ const UTC_OFFSETS = [
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
+  .notes-cell {
+    font-size: 0.78rem;
+    color: var(--sl-color-gray-3);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .countdown-cell {
+    font-size: 0.75rem;
+    color: var(--sl-color-gray-3);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .row-live .countdown-cell { color: color-mix(in srgb, #4ade80 70%, var(--sl-color-gray-3)); }
 
   .platform-link,
   .platform-static {
