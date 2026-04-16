@@ -27,6 +27,15 @@ const PLATFORMS = {
 const sorted = [...entries].sort((a, b) => new Date(a.time).getTime() - new Date(b.time).getTime());
 const hasTeams = sorted.some((e) => e.team);
 
+function formatUTC(isoTime) {
+  const d = new Date(isoTime);
+  return d.toLocaleString("en", {
+    month: "short", day: "numeric",
+    hour: "2-digit", minute: "2-digit",
+    timeZone: "UTC", hour12: false,
+  });
+}
+
 const UTC_OFFSETS = [
   { label: "UTC−12", value: -720 }, { label: "UTC−11", value: -660 },
   { label: "UTC−10", value: -600 }, { label: "UTC−9", value: -540 },
@@ -43,24 +52,6 @@ const UTC_OFFSETS = [
   { label: "UTC+10", value: 600 },  { label: "UTC+11", value: 660 },
   { label: "UTC+12", value: 720 },
 ];
-
-function getStatus(isoTime, durationMinutes = 60) {
-  const now = new Date();
-  const start = new Date(isoTime);
-  const end = new Date(start.getTime() + durationMinutes * 60000);
-  if (now < start) return "upcoming";
-  if (now <= end) return "live";
-  return "done";
-}
-
-function formatUTC(isoTime) {
-  const d = new Date(isoTime);
-  return d.toLocaleString("en", {
-    month: "short", day: "numeric",
-    hour: "2-digit", minute: "2-digit",
-    timeZone: "UTC", hour12: false,
-  });
-}
 ---
 
 <div class="schedule-wrap">
@@ -89,11 +80,13 @@ function formatUTC(isoTime) {
 
     <div class="schedule-body">
       {sorted.map((entry) => {
-        const status = getStatus(entry.time, entry.duration);
         const platform = entry.platform ? PLATFORMS[entry.platform.toLowerCase()] : null;
         return (
-          <div class:list={["schedule-row", { "row-live": status === "live", "row-done": status === "done" }]}>
-
+          <div
+            class="schedule-row"
+            data-iso={entry.time}
+            data-duration={entry.duration ?? 60}
+          >
             {hasTeams && (
               <span class="col-team team-name">{entry.team ?? "—"}</span>
             )}
@@ -127,11 +120,8 @@ function formatUTC(isoTime) {
             </span>
 
             <span class="col-status">
-              {status === "live"     && <span class="badge badge-live">Live</span>}
-              {status === "upcoming" && <span class="badge badge-upcoming">Upcoming</span>}
-              {status === "done"     && <span class="badge badge-done">Done</span>}
+              <span class="badge" data-status-badge>—</span>
             </span>
-
           </div>
         );
       })}
@@ -140,6 +130,38 @@ function formatUTC(isoTime) {
 </div>
 
 <script>
+  // ── Status computation (client-side) ──────────────────────────────────────
+  function getStatus(isoTime, durationMinutes) {
+    const now   = new Date();
+    const start = new Date(isoTime);
+    const end   = new Date(start.getTime() + durationMinutes * 60000);
+    if (now < start) return "upcoming";
+    if (now <= end)  return "live";
+    return "done";
+  }
+
+  function applyStatuses() {
+    document.querySelectorAll(".schedule-row[data-iso]").forEach((row) => {
+      const iso      = row.getAttribute("data-iso");
+      const duration = Number(row.getAttribute("data-duration")) || 60;
+      const status   = getStatus(iso, duration);
+      const badge    = row.querySelector("[data-status-badge]");
+
+      row.classList.remove("row-live", "row-done");
+      if (status === "live") row.classList.add("row-live");
+      if (status === "done") row.classList.add("row-done");
+
+      if (badge) {
+        badge.classList.remove("badge-live", "badge-upcoming", "badge-done");
+        badge.classList.add(`badge-${status}`);
+        badge.textContent = status === "live" ? "Live" : status === "upcoming" ? "Upcoming" : "Done";
+      }
+    });
+  }
+
+  applyStatuses();
+
+  // ── Timezone handling ─────────────────────────────────────────────────────
   function fmtDate(d) {
     const month = d.toLocaleString("en", { month: "short" });
     const day   = String(d.getDate()).padStart(2, "0");
@@ -159,7 +181,6 @@ function formatUTC(isoTime) {
       const iso = el.getAttribute("data-iso");
       if (!iso) return;
       const d = new Date(iso);
-
       if (mode === "utc") {
         el.textContent = fmtOffset(d, 0);
         if (label) label.textContent = "Time (UTC)";
@@ -170,7 +191,7 @@ function formatUTC(isoTime) {
         const h = Math.floor(Math.abs(localOffset) / 60);
         const m = Math.abs(localOffset) % 60;
         if (label) label.textContent = `Time (UTC${sign}${h}${m ? `:${String(m).padStart(2,"0")}` : ""})`;
-      } else if (mode === "custom") {
+      } else {
         el.textContent = fmtOffset(d, customOffset);
         const sign = customOffset >= 0 ? "+" : "−";
         const h = Math.floor(Math.abs(customOffset) / 60);
@@ -214,7 +235,6 @@ function formatUTC(isoTime) {
     });
   }
 
-  // Initial render — local by default
   updateTimes("local", 0);
 </script>
 

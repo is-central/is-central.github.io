@@ -2,55 +2,103 @@
 import EventCard from "./EventCards.astro";
 
 const { events } = Astro.props;
-
-const now = new Date();
-
-function getStatus(startDate, endDate) {
-  const start = new Date(startDate);
-  const end = endDate ? new Date(endDate) : null;
-  if (now < start) return "upcoming";
-  if (!end || now <= end) return "live";
-  return "ended";
-}
-
-const upcoming  = events.filter(e => getStatus(e.startDate, e.endDate) === "upcoming");
-const live      = events.filter(e => getStatus(e.startDate, e.endDate) === "live");
-const ended     = events.filter(e => getStatus(e.startDate, e.endDate) === "ended");
-
-// Upcoming: soonest first; live/ended: most recent start first
-upcoming.sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
-live.sort((a, b) => new Date(b.startDate) - new Date(a.startDate));
-ended.sort((a, b) => new Date(b.startDate) - new Date(a.startDate));
-
-const SECTIONS = [
-  { label: "Ongoing Events",   events: live },
-  { label: "Upcoming Events",  events: upcoming },
-  { label: "Concluded Events", events: ended },
-];
 ---
 
-<div class="event-index">
-  {SECTIONS.filter(s => s.events.length > 0).map(section => (
-    <div class="event-section">
-      <p class="section-label">{section.label}</p>
-      <div class="event-list">
-        {section.events.map(event => (
-          <EventCard
-            name={event.name}
-            icon={event.icon}
-            banner={event.banner}
-            themes={event.themes}
-            startDate={event.startDate}
-            endDate={event.endDate}
-            href={event.href}
-          />
-        ))}
-      </div>
+<div class="event-index" id="event-index">
+  {events.map((event) => (
+    <div
+      class="event-item"
+      data-start={event.startDate}
+      data-end={event.endDate ?? ""}
+    >
+      <EventCard
+        name={event.name}
+        icon={event.icon}
+        banner={event.banner}
+        themes={event.themes}
+        startDate={event.startDate}
+        endDate={event.endDate}
+        href={event.href}
+      />
     </div>
   ))}
 </div>
 
-<style>
+<script>
+  function getStatus(startDate, endDate) {
+    const now = new Date();
+    const start = new Date(startDate);
+    const end = endDate ? new Date(endDate) : null;
+
+    if (now < start) return "upcoming";
+    if (!end || now <= end) return "live";
+    return "ended";
+  }
+
+  function sortAndGroup() {
+    const container = document.getElementById("event-index");
+    const items = Array.from(container.querySelectorAll(".event-item"));
+
+    const groups = {
+      live: [],
+      upcoming: [],
+      ended: []
+    };
+
+    items.forEach((el) => {
+      const start = el.dataset.start;
+      const end = el.dataset.end;
+
+      const status = getStatus(start, end);
+      el.dataset.status = status;
+
+      groups[status].push({
+        el,
+        start: new Date(start).getTime()
+      });
+    });
+
+    // Sorting
+    groups.upcoming.sort((a, b) => a.start - b.start);
+    groups.live.sort((a, b) => b.start - a.start);
+    groups.ended.sort((a, b) => b.start - a.start);
+
+    // Clear container
+    container.innerHTML = "";
+
+    function renderSection(label, list) {
+      if (!list.length) return;
+
+      const section = document.createElement("div");
+      section.className = "event-section";
+
+      const title = document.createElement("p");
+      title.className = "section-label";
+      title.textContent = label;
+
+      const listWrap = document.createElement("div");
+      listWrap.className = "event-list";
+
+      list.forEach(item => listWrap.appendChild(item.el));
+
+      section.appendChild(title);
+      section.appendChild(listWrap);
+      container.appendChild(section);
+    }
+
+    renderSection("Ongoing Events", groups.live);
+    renderSection("Upcoming Events", groups.upcoming);
+    renderSection("Concluded Events", groups.ended);
+  }
+
+  // Initial run
+  sortAndGroup();
+
+  // 🔁 Re-run every minute (adjust if needed)
+  setInterval(sortAndGroup, 60000);
+</script>
+
+<style is:global>
   .event-index {
     display: flex;
     flex-direction: column;
