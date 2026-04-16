@@ -38,7 +38,14 @@ An example of this is Flower-Martial Fight, this tongbao is of tier 4 (this mean
 * *Destired tongbaos to toss:* Select the minimum amount of tongbaos needed to be tossed.
 * When tossing, the Sticker relic allows you to have a second chance of tossing every tongbao that failed to be tossed, each with 15% chance. Each tongbao successfully tossed on the second round does not occupy space out of the amount of tongbaos that can be tossed (this is 3 on default squads).
 * When tossing, the Link flair allows you to have a second chance of tossing said tongbao if it failed to be tossed, with 30% chance. If the tongbao is successfully tossed on the second round, it does not occupy space out of the amount of tongbaos that can be tossed (this is 3 on default squads).
-  * Sticker and Link secondary rolls are tossed indepdendently from each other, stacking as $p=p_\ell + (1-p_\ell) \cdot p_s$.
+  * Sticker and Link are considered as separate tosses, with the probability of tossing a tongbao under both effects stacking as $p=p_\ell + (1-p_\ell) \cdot p_s$, given that the initial toss missed.
+
+Given the initial conditions stated, the results present:
+* Probability of tossing an exact amount of tongbaos.
+* Probability of tossing at least certain amount of tongbaos.
+* Expected number of tosses to toss at least a certain amount of tongbaos.
+* If Sticker/Link effects are active, the final probability of tossing (regardless of whether it was in the initial or secondary toss) is considered in the previous results.
+  * With an additional probability presented below of tossing any amount of them in the secondary toss, resulting on an extra amount of tongbaos tossed.
 
 The Sticker relic and Link flair will be avaliable in DLC2.
 
