@@ -292,7 +292,7 @@
       "name": "Risk-West Stones",
       "ingot_cost": "non-buyable",
       "output_tiers": ["4"],
-      "eligible_tiers": ["4"],
+      "eligible_tiers": [],
       "special_output": null,
       "description": "On toss, Elite and boss enemies +10% ATK and Max HP; extra +20% to each in Dreadful Foe and Sui's Remnant Consciousness"
     },
@@ -300,7 +300,7 @@
       "name": "Risk-Eastern Gap",
       "ingot_cost": "non-buyable",
       "output_tiers": ["4"],
-      "eligible_tiers": ["4"],
+      "eligible_tiers": [],
       "special_output": null,
       "description": "On toss, Elite and boss enemies gain +10 RES; extra +20 in Dreadful Foe and Sui's Remnant Consciousness"
     },
@@ -308,7 +308,7 @@
       "name": "Risk-Northern Sting",
       "ingot_cost": "non-buyable",
       "output_tiers": ["4"],
-      "eligible_tiers": ["4"],
+      "eligible_tiers": [],
       "special_output": null,
       "description": "On toss, Elite and boss enemies +10% Movement Speed; extra +20% in Dreadful Foe and Sui's Remnant Consciousness"
     },
@@ -316,7 +316,7 @@
       "name": "Risk-Southern Mounts",
       "ingot_cost": "non-buyable",
       "output_tiers": ["4"],
-      "eligible_tiers": ["4"],
+      "eligible_tiers": [],
       "special_output": null,
       "description": "On toss, Elite and boss enemies +15% DEF; extra +35% in Dreadful Foe and Sui's Remnant Consciousness"
     },
