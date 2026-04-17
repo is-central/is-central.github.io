@@ -22,7 +22,7 @@
       "output_tiers": ["12"],
       "eligible_tiers": [],
       "special_output": null,
-      "description": "+10 Ingots when added to the Coffer. Rogue Traders have additional rarer wares and a discount to their warers' price while tossed"
+      "description": "+10 Ingots when added to the Coffer. On toss, rare and discounted items appear more often in Rogue Trader or Trade"
     },
     {
       "name": "Flower-Cocoon Worth",
