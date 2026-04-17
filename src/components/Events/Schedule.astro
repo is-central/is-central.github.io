@@ -70,6 +70,7 @@ const UTC_OFFSETS = [
     </select>
   </div>
 
+  <div class="schedule-scroll">
   <div class="schedule">
     <div class="schedule-head">
       {hasTeams && <span class="col-team">Team</span>}
@@ -139,6 +140,7 @@ const UTC_OFFSETS = [
         );
       })}
     </div>
+  </div>
   </div>
 </div>
 
@@ -370,11 +372,17 @@ const UTC_OFFSETS = [
     cursor: pointer;
   }
 
+  .schedule-scroll {
+    overflow-x: auto;
+  }
+
   .schedule {
     font-size: 0.875rem;
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid color-mix(in srgb, var(--sl-color-gray-4) 35%, transparent);
+    min-width: max-content;
+    width: 100%;
   }
 
   .schedule-head {
@@ -391,13 +399,13 @@ const UTC_OFFSETS = [
     color: var(--sl-color-gray-2);
   }
 
-  .col-team      { flex: 1.2; min-width: 0; font-variant-numeric: tabular-nums; font-size: 0.8rem; }
-  .col-player    { flex: 1.4; min-width: 0; display: flex; align-items: center; gap: 0.4rem; font-variant-numeric: tabular-nums; font-size: 0.8rem; }
-  .col-notes     { flex: 1.4; min-width: 0; font-variant-numeric: tabular-nums; font-size: 0.8rem; }
-  .col-time      { flex: 1.6; min-width: 0; font-variant-numeric: tabular-nums; font-size: 0.8rem; }
-  .col-countdown { flex: 1.2; min-width: 0; font-size: 0.8rem; font-variant-numeric: tabular-nums; }
-  .col-platform  { flex: 1; min-width: 0; font-variant-numeric: tabular-nums; font-size: 0.8rem; }
-  .col-status    { flex: 0 0 5.5rem; text-align: right; font-variant-numeric: tabular-nums; font-size: 0.8rem; }
+  .col-team      { flex: 1.2; min-width: 1rem; font-variant-numeric: tabular-nums; font-size: 0.8rem; white-space: nowrap; }
+  .col-player    { flex: 1.4; min-width: 1rem; font-variant-numeric: tabular-nums; font-size: 0.8rem; display: flex; align-items: center; gap: 0.4rem; }
+  .col-notes     { flex: 1.4; min-width: 1rem; font-variant-numeric: tabular-nums; font-size: 0.8rem; text-align: center; }
+  .col-time      { flex: 1.6; min-width: 1rem; font-variant-numeric: tabular-nums; font-size: 0.8rem; text-align: center; white-space: nowrap; }
+  .col-countdown { flex: 1.2; min-width: 6rem; font-variant-numeric: tabular-nums; font-size: 0.8rem; white-space: nowrap; }
+  .col-platform  { flex: 1; min-width: 3rem; font-variant-numeric: tabular-nums; font-size: 0.8rem; text-align: center; }
+  .col-status    { flex: 0 0 5.5rem; text-align: right; font-variant-numeric: tabular-nums; font-size: 0.8rem; text-align: center; white-space: nowrap; }
 
   .schedule-body { display: flex; flex-direction: column; }
 
