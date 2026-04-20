@@ -1,0 +1,836 @@
+﻿---
+import relics from "../data/relics.json";
+
+const ASSET_PATH = "/guides/general-knowledge/relics/";
+---
+
+<div class="relic-dashboard not-content">
+
+  <!-- SEARCH + FILTERS -->
+  <div class="search-filter-bar">
+    <div class="search-bar">
+      <span class="search-icon">⌕</span>
+      <input
+        type="text"
+        id="relic-search"
+        placeholder="Search relics…"
+        autocomplete="off"
+      />
+    </div>
+    <div class="filter-chips" id="filter-chips">
+      <!-- JS Populated -->
+    </div>
+  </div>
+
+  <!-- INSPECTOR (hidden until a relic is selected) -->
+  <div id="relic-inspector" class="relic-inspector">
+    <div class="inspector-card">
+
+      <!-- Top: image + name + theme pips -->
+      <div class="insp-top">
+        <div class="insp-image-wrap">
+          <img id="insp-img" src="" alt="" />
+          <div id="insp-img-fallback" class="img-placeholder"></div>
+        </div>
+        <div class="insp-title-block">
+          <div id="insp-name" class="insp-name"></div>
+          <div class="insp-themes">
+            <span class="insp-themes-label">Themes</span>
+            <div id="insp-theme-pips" class="insp-theme-pips"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Body: tabs + content -->
+      <div class="insp-body" id="insp-body">
+        <div class="insp-tabs" id="insp-tabs"></div>
+        <div class="insp-content">
+          <div class="insp-meta" id="insp-meta"></div>
+          <div class="insp-sources" id="insp-sources"></div>
+          <div id="insp-description" class="insp-description"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- INDEX GRID -->
+  <div class="index-section">
+    <div class="relic-grid" id="relic-grid"></div>
+    <div id="no-results" class="no-results">No relics found matching your search.</div>
+  </div>
+
+</div>
+
+<style is:global>
+  .relic-dashboard {
+    --accent:            #c8962a;
+    --accent-dim:        rgba(200, 150, 42, 0.15);
+    --accent-glow:       rgba(200, 150, 42, 0.08);
+    --c-border:          var(--sl-color-gray-5);
+    --c-border-light:    var(--sl-color-gray-4);
+    --c-bg-card:         var(--sl-color-bg-nav);
+    --c-bg-card-hover:   var(--sl-color-gray-6);
+    --c-bg-panel:        var(--sl-color-bg-nav);
+    --c-text:            var(--sl-color-text);
+    --c-text-dim:        var(--sl-color-gray-2);
+    --c-text-muted:      var(--sl-color-gray-3);
+
+    --c-cost-8:           #b0bec5;
+    --c-cost-12:          #7a9e7e;
+    --c-cost-16:          #c8962a;
+    --c-external:    #6a8fc4;
+    --c-internal:      #c47a6a;
+
+    --radius:    6px;
+    --radius-lg: 10px;
+    --transition: 0.18s ease;
+
+    font-family: var(--sl-font-system);
+    color: var(--c-text);
+    margin: 2rem 0;
+  }
+
+  /* ── SEARCH + FILTERS ────────────────────────────── */
+  .relic-dashboard .search-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .relic-dashboard .search-bar {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .relic-dashboard .search-icon {
+    position: absolute;
+    left: 0.9rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--c-text-muted);
+    font-size: 1rem;
+    pointer-events: none;
+  }
+
+  .relic-dashboard .search-bar input {
+    width: 100%;
+    height: 44px;
+    background: var(--c-bg-card);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    color: var(--c-text);
+    font-family: var(--sl-font-system);
+    font-size: 0.95rem;
+    padding: 0 1rem 0 2.6rem;
+    outline: none;
+    transition: border-color var(--transition), box-shadow var(--transition);
+  }
+
+  .relic-dashboard .search-bar input::placeholder {
+    color: var(--c-text-muted);
+  }
+
+  .relic-dashboard .search-bar input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-dim);
+  }
+
+  /* Filter chips */
+  .relic-dashboard .filter-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: center;
+  }
+
+  .relic-dashboard .chip {
+    height: 44px;
+    padding: 0 1rem;
+    border-radius: 20px;
+    border: 1px solid var(--c-border);
+    background: var(--c-bg-card);
+    color: var(--c-text-dim);
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-family: var(--sl-font-system);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: all var(--transition);
+    white-space: nowrap;
+  }
+
+  .relic-dashboard .chip:hover {
+    background: var(--c-bg-card-hover);
+    color: var(--c-text);
+    border-color: var(--c-border-light);
+  }
+
+  .relic-dashboard .chip.active {
+    background: var(--accent-dim);
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* ── INSPECTOR ───────────────────────────────────── */
+  .relic-dashboard .relic-inspector {
+    display: none;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .relic-dashboard .relic-inspector.visible {
+    display: block;
+  }
+
+  .relic-dashboard .relic-img-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem 0;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .relic-dashboard .relic-img-center img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+  }
+
+  .relic-dashboard .insp-description a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .relic-dashboard .insp-description a:hover {
+    opacity: 0.8;
+  }
+
+  .relic-dashboard .inspector-card {
+    background: var(--c-bg-panel);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    overflow: visible;
+  }
+
+  /* Top strip */
+  .relic-dashboard .insp-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem 1rem;
+    border-bottom: 1px solid var(--c-border);
+  }
+
+  .relic-dashboard .insp-image-wrap {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    background: var(--sl-color-bg);
+    border: 1px solid var(--c-border-light);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .relic-dashboard .insp-image-wrap > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .relic-dashboard .insp-image-wrap img.hidden,
+  .relic-dashboard .img-placeholder.hidden {
+    display: none;
+  }
+
+  .relic-dashboard .img-placeholder {
+    font-size: 2.2rem;
+    line-height: 1;
+    opacity: 0.5;
+  }
+
+  .relic-dashboard .insp-title-block {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .relic-dashboard .insp-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--c-text);
+    line-height: 1.2;
+    margin-bottom: 0.45rem;
+  }
+
+  .relic-dashboard .insp-themes {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .relic-dashboard .insp-themes-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--c-text-muted);
+  }
+
+  .relic-dashboard .insp-theme-pips {
+    display: flex;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+  }
+
+  .relic-dashboard .theme-pip {
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    padding: 1px 7px;
+    border-radius: 3px;
+    background: var(--sl-color-bg);
+    border: 1px solid var(--c-border-light);
+    color: var(--c-text-dim);
+  }
+
+  /* Body */
+  .relic-dashboard .insp-body {
+    display: flex;
+    align-items: stretch;
+    min-height: 160px;
+  }
+
+  /* Vertical tabs */
+  .relic-dashboard .insp-tabs {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    gap: 4px;
+    margin-left: -1px;
+  }
+
+  .relic-dashboard .insp-tabs.hidden {
+    display: none;
+  }
+
+  .relic-dashboard .tab-btn {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.5rem 0.6rem;
+    background: var(--sl-color-bg);
+    border: 1px solid var(--c-border);
+    border-right: none;
+    border-radius: var(--radius) 0 0 var(--radius);
+    color: var(--c-text-muted);
+    cursor: pointer;
+    white-space: nowrap;
+    transform: translateX(-8px);
+    transition: all var(--transition);
+    position: relative;
+    z-index: 2;
+    font-family: var(--sl-font-system);
+  }
+
+  .relic-dashboard .tab-btn:hover {
+    background: var(--c-bg-card-hover);
+    color: var(--c-text);
+    transform: translateX(-12px);
+  }
+
+  .relic-dashboard .tab-btn.active {
+    background: var(--c-bg-panel);
+    color: var(--accent);
+    border-color: var(--accent);
+    border-right: none;
+    transform: translateX(-14px);
+  }
+
+  /* Content */
+  .relic-dashboard .insp-content {
+    flex: 1;
+    padding: 1.25rem 1.5rem;
+    min-width: 0;
+    border-left: 1px solid var(--c-border);
+  }
+
+  .relic-dashboard .insp-body.no-tabs .insp-content {
+    border-left: none;
+  }
+
+  /* Meta badges */
+  .relic-dashboard .insp-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.85rem;
+  }
+
+  .relic-dashboard .badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 10px;
+    border-radius: 3px;
+  }
+
+  .relic-dashboard .badge-cost-8 {
+    background: rgba(176, 190, 197, 0.12);
+    color: var(--c-cost-8);
+    border: 1px solid rgba(176, 190, 197, 0.3);
+  }
+  .relic-dashboard .badge-cost-12 {
+    background: rgba(122, 158, 126, 0.15);
+    color: var(--c-cost-12);
+    border: 1px solid rgba(122, 158, 126, 0.3);
+  }
+  .relic-dashboard .badge-cost-16 {
+    background: rgba(200, 150, 42, 0.15);
+    color: var(--c-cost-16);
+    border: 1px solid rgba(200, 150, 42, 0.3);
+  }
+  .relic-dashboard .badge-external {
+    background: rgba(106, 143, 196, 0.12);
+    color: var(--c-external);
+    border: 1px solid rgba(106, 143, 196, 0.25);
+  }
+  .relic-dashboard .badge-internal {
+    background: rgba(196, 122, 106, 0.12);
+    color: var(--c-internal);
+    border: 1px solid rgba(196, 122, 106, 0.25);
+  }
+
+  /* Sources */
+  .relic-dashboard .insp-sources {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.85rem;
+  }
+
+  .relic-dashboard .sources-label {
+    font-size: 0.73rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--c-text-muted);
+    flex-shrink: 0;
+  }
+
+  .relic-dashboard .source-tag {
+    font-size: 0.8rem;
+    color: var(--c-text-dim);
+    background: var(--sl-color-bg);
+    border: 1px solid var(--c-border);
+    border-radius: 3px;
+    padding: 1px 8px;
+  }
+
+  /* Description */
+  .relic-dashboard .insp-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--c-text);
+    border-top: 1px solid var(--c-border);
+    padding-top: 0.85rem;
+  }
+
+  .relic-dashboard .insp-description p {
+    margin-bottom: 0.6em;
+  }
+  .relic-dashboard .insp-description p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ── INDEX ───────────────────────────────────────── */
+  .relic-dashboard .index-section {
+    margin-top: 1.25rem;
+  }
+
+  .relic-dashboard .relic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .relic-dashboard .relic-card {
+    background: var(--c-bg-card);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    padding: 0.6rem 0.5rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.45rem;
+    transition: all var(--transition);
+    user-select: none;
+  }
+
+  .relic-dashboard .relic-card:hover {
+    background: var(--c-bg-card-hover);
+    border-color: var(--c-border-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .relic-dashboard .relic-card.active {
+    border-color: var(--accent);
+    background: var(--accent-glow);
+    box-shadow: 0 0 0 1px var(--accent);
+  }
+
+  .relic-dashboard .relic-card-img {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .relic-dashboard .relic-card-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .relic-dashboard .relic-card-name {
+    font-size: 0.7rem;
+    line-height: 1.3;
+    text-align: center;
+    color: var(--c-text-dim);
+    word-break: break-word;
+  }
+
+  .relic-dashboard .no-results {
+    display: none;
+    padding: 2rem;
+    text-align: center;
+    color: var(--c-text-muted);
+    font-size: 0.95rem;
+  }
+
+  .relic-dashboard .no-results.visible {
+    display: block;
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────────── */
+  @media (max-width: 600px) {
+    .relic-dashboard .search-filter-bar {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .relic-dashboard .filter-chips {
+      justify-content: flex-start;
+    }
+    .relic-dashboard .insp-top {
+      padding: 1rem;
+    }
+    .relic-dashboard .insp-content {
+      padding: 1rem;
+    }
+    .relic-dashboard .tab-btn {
+      font-size: 0.62rem;
+      padding: 0.4rem 0.5rem;
+    }
+  }
+</style>
+
+<script is:inline define:vars={{ relics, ASSET_PATH }}>
+  var state = {
+    selectedId: null,
+    activeTheme: null,
+    search: "",
+    filter: "all"
+  };
+
+  // Returns the display name for a relic, using the active filter theme if
+  // available, otherwise falling back to the first theme.
+  function getDisplayName(relic, theme) {
+    var t = (theme && relic.versions[theme]) ? theme : relic.themes[0];
+    return relic.versions[t].name;
+  }
+
+  // Returns all unique names across every version of a relic (lowercased).
+  function getAllNames(relic) {
+    var names = [];
+    relic.themes.forEach(function (t) {
+      var n = relic.versions[t].name.toLowerCase();
+      if (names.indexOf(n) === -1) names.push(n);
+    });
+    return names;
+  }
+
+  // ── BUILD THEME CHIPS ────────────────────────────────────────────────────
+  function initChips() {
+    var seen = {};
+    var themes = [];
+    relics.forEach(function (relic) {
+      relic.themes.forEach(function (t) {
+        if (!seen[t]) { seen[t] = true; themes.push(t); }
+      });
+    });
+    themes.sort();
+
+    var container = document.getElementById("filter-chips");
+    container.innerHTML = "";
+
+    var allChip = document.createElement("button");
+    allChip.className = "chip active";
+    allChip.setAttribute("data-filter", "all");
+    allChip.textContent = "All";
+    container.appendChild(allChip);
+
+    themes.forEach(function (theme) {
+      var chip = document.createElement("button");
+      chip.className = "chip";
+      chip.setAttribute("data-filter", theme);
+      chip.textContent = theme;
+      container.appendChild(chip);
+    });
+
+    container.addEventListener("click", function (e) {
+      var btn = e.target.closest(".chip");
+      if (!btn) return;
+      var chips = container.querySelectorAll(".chip");
+      chips.forEach(function (c) { c.classList.remove("active"); });
+      btn.classList.add("active");
+      state.filter = btn.getAttribute("data-filter");
+      renderGrid();
+    });
+  }
+
+  // ── RENDER GRID ──────────────────────────────────────────────────────────
+  function renderGrid() {
+    var grid = document.getElementById("relic-grid");
+    var noRes = document.getElementById("no-results");
+    var query = state.search.toLowerCase();
+
+    var nameTheme = (state.filter !== "all") ? state.filter : null;
+
+    var sorted = relics.slice().sort(function (a, b) {
+      // When filtering by theme, sort by idx of that theme version first,
+      // then fall back to alphabetical for entries without idx.
+      if (nameTheme) {
+        var vA = a.versions[nameTheme];
+        var vB = b.versions[nameTheme];
+        var idxA = (vA && vA.idx != null) ? vA.idx : null;
+        var idxB = (vB && vB.idx != null) ? vB.idx : null;
+
+        // Both have idx: sort numerically
+        if (idxA !== null && idxB !== null) return idxA - idxB;
+        // Only a has idx: a comes first
+        if (idxA !== null) return -1;
+        // Only b has idx: b comes first
+        if (idxB !== null) return 1;
+      }
+      // No theme filter, or neither has idx: alphabetical by display name
+      return getDisplayName(a, nameTheme).localeCompare(getDisplayName(b, nameTheme));
+    });
+
+    grid.innerHTML = "";
+    var visible = 0;
+
+    sorted.forEach(function (relic) {
+      // Theme filter
+      if (state.filter !== "all" && relic.themes.indexOf(state.filter) === -1) return;
+
+      // Search: match against any version name
+      if (query) {
+        var names = getAllNames(relic);
+        var matched = names.some(function (n) { return n.indexOf(query) !== -1; });
+        if (!matched) return;
+      }
+
+      visible++;
+
+      var displayName = getDisplayName(relic, nameTheme);
+
+      var card = document.createElement("div");
+      card.className =
+        "relic-card" + (state.selectedId === relic.id ? " active" : "");
+      card.setAttribute("data-id", relic.id);
+
+      card.innerHTML =
+        '<div class="relic-card-img">' +
+        '<img src="' + ASSET_PATH + relic.image + '" alt="' + displayName + '" loading="lazy" />' +
+        "</div>" +
+        '<div class="relic-card-name">' + displayName + "</div>";
+
+      card.addEventListener("click", function () {
+        selectRelic(relic.id, nameTheme);
+      });
+
+      grid.appendChild(card);
+    });
+
+    if (visible === 0) {
+      noRes.classList.add("visible");
+    } else {
+      noRes.classList.remove("visible");
+    }
+  }
+
+  // ── SELECT RELIC ─────────────────────────────────────────────────────────
+  function selectRelic(id, preferTheme) {
+    var relic = null;
+    for (var i = 0; i < relics.length; i++) {
+      if (relics[i].id === id) { relic = relics[i]; break; }
+    }
+    if (!relic) return;
+
+    // Keep the current tab if re-selecting the same relic, otherwise use the
+    // preferred theme (from the active filter) or fall back to the first theme.
+    var keepTheme =
+      state.selectedId === id &&
+      state.activeTheme &&
+      relic.themes.indexOf(state.activeTheme) !== -1;
+
+    state.selectedId = id;
+    if (!keepTheme) {
+      state.activeTheme =
+        (preferTheme && relic.versions[preferTheme])
+          ? preferTheme
+          : relic.themes[0];
+    }
+
+    renderInspector(relic);
+    renderGrid();
+  }
+
+  // ── RENDER INSPECTOR ─────────────────────────────────────────────────────
+  function renderInspector(relic) {
+    var inspector = document.getElementById("relic-inspector");
+    inspector.classList.add("visible");
+
+    var img = document.getElementById("insp-img");
+    var fallback = document.getElementById("insp-img-fallback");
+    if (relic.image) {
+      img.src = ASSET_PATH + relic.image;
+      img.alt = getDisplayName(relic, state.activeTheme);
+      img.classList.remove("hidden");
+      fallback.classList.add("hidden");
+    } else {
+      img.classList.add("hidden");
+      fallback.classList.remove("hidden");
+    }
+
+    var v = relic.versions[state.activeTheme];
+
+    document.getElementById("insp-name").textContent = v.name;
+
+    var pips = document.getElementById("insp-theme-pips");
+    pips.innerHTML = "";
+    relic.themes.forEach(function (t) {
+      var pip = document.createElement("span");
+      pip.className = "theme-pip";
+      pip.textContent = t;
+      pips.appendChild(pip);
+    });
+
+    var tabsEl = document.getElementById("insp-tabs");
+    var bodyEl = document.getElementById("insp-body");
+
+    if (relic.themes.length > 1) {
+      tabsEl.classList.remove("hidden");
+      bodyEl.classList.remove("no-tabs");
+      tabsEl.innerHTML = "";
+      relic.themes.forEach(function (theme) {
+        var btn = document.createElement("button");
+        btn.className =
+          "tab-btn" + (theme === state.activeTheme ? " active" : "");
+        btn.textContent = theme;
+        btn.addEventListener("click", function () {
+          state.activeTheme = theme;
+          renderInspector(relic);
+        });
+        tabsEl.appendChild(btn);
+      });
+    } else {
+      tabsEl.classList.add("hidden");
+      bodyEl.classList.add("no-tabs");
+    }
+
+    renderVersionContent(v);
+  }
+
+  function renderVersionContent(v) {
+    var meta = document.getElementById("insp-meta");
+    meta.innerHTML = "";
+
+    if (v.cost !== null && v.cost !== undefined && [8, 12, 16].indexOf(v.cost) !== -1) {
+      var rBadge = document.createElement("span");
+      rBadge.className = "badge badge-cost-" + v.cost;
+      rBadge.textContent = v.cost + " Ingots";
+      meta.appendChild(rBadge);
+    }
+
+    if (v.effect) {
+      var eBadge = document.createElement("span");
+      eBadge.className = "badge badge-" + v.effect.type;
+      eBadge.textContent = v.effect.label;
+      meta.appendChild(eBadge);
+    }
+
+    var srcEl = document.getElementById("insp-sources");
+    srcEl.innerHTML = '<span class="sources-label">Sources</span>';
+    v.sources.forEach(function (s) {
+      var tag = document.createElement("span");
+      tag.className = "source-tag";
+      tag.textContent = s;
+      srcEl.appendChild(tag);
+    });
+
+    var descEl = document.getElementById("insp-description");
+    descEl.innerHTML = "";
+
+    var raw = v.descriptionHtml || null;
+    if (raw) {
+      raw.split("\n").forEach(function (chunk) {
+        chunk = chunk.trim();
+        if (!chunk) return;
+        // Block-level HTML (divs, imgs at root) inserted directly
+        if (/^<(div|img|figure)/i.test(chunk)) {
+          var wrapper = document.createElement("div");
+          wrapper.innerHTML = chunk;
+          descEl.appendChild(wrapper);
+        } else {
+          var p = document.createElement("p");
+          p.innerHTML = chunk; // allows inline <a> tags
+          descEl.appendChild(p);
+        }
+      });
+    } else {
+      v.description.split("\n").forEach(function (line) {
+        if (line.trim() === "") return;
+        var p = document.createElement("p");
+        p.textContent = line;
+        descEl.appendChild(p);
+      });
+    }
+  }
+
+  // ── SEARCH ───────────────────────────────────────────────────────────────
+  document
+    .getElementById("relic-search")
+    .addEventListener("input", function (e) {
+      state.search = e.target.value;
+      renderGrid();
+    });
+
+  // ── INIT ─────────────────────────────────────────────────────────────────
+  initChips();
+  renderGrid();
+</script>
