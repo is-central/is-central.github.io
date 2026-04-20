@@ -1,22 +1,83 @@
 ---
-title: Tongbao Exchange Calculator
-description: Interactive calculator for Tongbao exchanges in IS6.
+title: Tongbao Calculator
+description: Interactive calculator for Tongbaos in IS6.
 tableOfContents: false
 ---
 
 import TongbaoExchangeCalculator from '../../../../components/TongbaoExchangeCalculator.astro';
+import TongbaoTossCalculator from '../../../../components/TongbaoTossCalculator.astro';
 import StrategySection from '/src/components/StrategySection.astro';
 
-<StrategySection title="How to use instructions" author="" defaultOpen={false}>
-## How to Use
-Select a Tongbao from the lists to see the potential exchange results.
-- **Top Row**: 12 Ingot / 4 LP Items
-- **Middle Row**: 8 Ingot / 3 LP Items
-- **Bottom Row**: 4 Ingot / 2 LP Items
+<div class="back-button-container">
+  <a href="/is6-sui/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">Back to IS6 Overview</span>
+  </a>
+</div> 
 
-Most exchanges stay within the same tier, but specific items can trigger upgrades or downgrades.
+<StrategySection title="How to use instructions" author="" defaultOpen={false}>
+## Tongbao Exchange Calculator
+This calculator shows the potential outputs of all tongbaos that can be exchanged through the Plan node, simply select the tongbao desired to be traded.
+Tongbaos are classified in 3 tiers:
+* Tier 12
+* Tier 8
+* Tier 4
+
+This is in reference to their ingot costs, but it is imporant to note that this is not always consistent, tongbaos like The Way In and Tactile Token pertain to Tier 8 while their ingots cost are 12.
+
+Certain tongbaos work as "bridges" between tiers, being able to be obtained from tongbaos of multiple tiers outside of their own tier, resulting in "upgrades" or "downgrades" of tiers.
+An example of this is Flower-Martial Fight, this tongbao is of tier 4 (this means that when exchanged it will output tongbaos of tier 4) but can be obtained from both tier 12 and 4, while Flower-The Bulwark is a tier 12 tongbao (when exchanged it outputs tongbaos of tier 12) that can be obtained from both tier 12 and 8, allowing you to upgrade from tier 8 to 12.
+
+
+## Tongbao Toss Calculator
+* Select either a predetermined or custom coffer size (this is 10 for default squads).
+  * Mechanics like _ that allow you to freeze tongbaos from being retossed, would be simulated as having a smaller coffer size.
+* Select the number of tongbaos that are tossed simultaneously (this is 3 for default squads).
+  * Tongbaos like _ which cannot be tossed, would be simulated as having a lower amount of tongbaos to be tossed.
+* *Desired tongbaos in coffer:* Select the number of tongbaos available in the coffer, this is the pool of tongbaos that are desired to be tossed.
+* *Destired tongbaos to toss:* Select the minimum amount of tongbaos needed to be tossed.
+* When tossing, the Sticker relic allows you to have a second chance of tossing every tongbao that failed to be tossed, each with 15% chance. Each tongbao successfully tossed on the second round does not occupy space out of the amount of tongbaos that can be tossed (this is 3 on default squads).
+* When tossing, the Link flair allows you to have a second chance of tossing said tongbao if it failed to be tossed, with 30% chance. If the tongbao is successfully tossed on the second round, it does not occupy space out of the amount of tongbaos that can be tossed (this is 3 on default squads).
+  * Sticker and Link are considered as separate tosses, with the probability of tossing a tongbao under both effects stacking as $p=p_\ell + (1-p_\ell) \cdot p_s$, given that the initial toss missed.
+
+Given the initial conditions stated, the results present:
+* Probability of tossing an exact amount of tongbaos.
+* Probability of tossing at least certain amount of tongbaos.
+* Expected number of tosses to toss at least a certain amount of tongbaos.
+* If Sticker/Link effects are active, the final probability of tossing (regardless of whether it was in the initial or secondary toss) is considered in the previous results.
+  * With an additional probability presented below of tossing any amount of them in the secondary toss, resulting on an extra amount of tongbaos tossed.
+
+The Sticker relic and Link flair will be avaliable in DLC2.
+
+**Usage example**\
+Consider the example in which we are playing Tourist Squad in DLC1 and we want to Ling loop, with the following coffer:
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Tourist Coffer](/guides/is6-sui/tongbao-toss/coffer.png)
+</div>
+From here we then have:
+* Coffer size = 12
+* Tongbaos tossed = 5
+
+Ling Leisure has the following toss checks:
+* Toss 1 balance tongbao
+* Toss 2 risk tongbaos
+
+Given that we have 5 balance and 7 risk tongbaos, for the balance toss check we would have:
+* Desired tongbaos in coffer: 5
+* Desired tongbaos to toss: 1
+
+While for the risk check we would have:
+* Desired tongbaos in coffer: 7
+* Desired tongbaos to toss: 2
+
+This results in 97.35% chance of tossing at least 1 balance tongbao and 95.45% chance of tossing at least 2 risk coins.
 
 </StrategySection>
+
+<StrategySection title="Tongbao Toss Calculator" author="" defaultOpen={true}>
+<TongbaoTossCalculator />
+</StrategySection>
+
 
 <TongbaoExchangeCalculator />
 

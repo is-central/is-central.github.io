@@ -1,0 +1,495 @@
+---
+// TongbaoCalculator.astro
+// Self-contained interactive probability calculator.
+// No props required — all state is managed client-side.
+---
+
+<section class="tongbao-calc" aria-label="Tongbao toss probability calculator">
+
+  <div class="preset-row">
+    <button class="pb on" data-p="default">Default</button>
+    <button class="pb" data-p="tourist1">Tourist (DLC1)</button>
+    <button class="pb" data-p="tourist2">Tourist (DLC2)</button>
+    <button class="pb" data-p="custom">Custom</button>
+  </div>
+
+  <div class="grid-2">
+    <div class="field">
+      <label for="iN">Coffer size</label>
+      <input type="number" id="iN" min="1" max="100" value="10" />
+    </div>
+    <div class="field">
+      <label for="in">Tongbaos tossed</label>
+      <input type="number" id="in" min="1" max="100" value="3" />
+    </div>
+    <div class="field">
+      <label for="iM">Desired tongbaos in coffer</label>
+      <input type="number" id="iM" min="1" max="50" value="2" />
+    </div>
+    <div class="field">
+      <label for="ik">Desired tongbaos to toss</label>
+      <input type="number" id="ik" min="1" max="50" value="2" />
+    </div>
+  </div>
+
+  <hr class="divider" />
+  <p class="section-label">Additional effects</p>
+
+  <div class="mech-row">
+    <input type="checkbox" id="sticker" />
+    <img class="mech-icon" src="/guides/is6-sui/tongbao-toss/sticker-relic.png" alt="Sticker" />
+    <label for="sticker">Sticker</label>
+    <span class="hint">— untossed tongbaos get a 15% secondary toss roll</span>
+  </div>
+
+  <div class="mech-row link-row">
+    <div class="field link-field">
+      <div class="link-label-wrapper">
+        <img class="mech-icon" src="/guides/is6-sui/tongbao-toss/link-flair.png" alt="Link" />
+        <label for="iL">Link tongbaos</label>
+      </div>
+      <input type="number" id="iL" min="0" value="0" />
+    </div>
+    <span class="hint link-hint">of <span id="Lof">2</span> desired — each gets a 30% secondary toss roll if missed</span>
+  </div>
+
+  <p id="warn" class="warn" hidden></p>
+
+  <hr class="divider" />
+  <p class="section-label">Results</p>
+  <div class="metrics">
+    <div class="metric">
+      <p class="metric-label" id="lblExact">Exactly — tossed</p>
+      <p class="metric-value" id="rExact">—</p>
+    </div>
+    <div class="metric">
+      <p class="metric-label" id="lblAtleast">At least — tossed</p>
+      <p class="metric-value" id="rAtleast">—</p>
+    </div>
+    <div class="metric">
+      <p class="metric-label">Expected tosses</p>
+      <p class="metric-value" id="rExp">—</p>
+    </div>
+  </div>
+
+  <div id="mechMetrics" style="display:none;">
+    <hr class="divider" />
+    <!-- <p class="section-label">Secondary toss distribution</p> -->
+    <p class="hint" style="margin: -6px 0 12px 0;">Additional desired tongbaos tossed if missed in the initial draw, via Link / Sticker</p>
+    <div id="secDist"></div>
+  </div>
+
+</section>
+
+<style is:global>
+  :root {
+    --bg-card: color-mix(in srgb, var(--sl-color-bg-secondary) 92%, black 8%);
+    --bg-card-strong: color-mix(in srgb, var(--sl-color-bg-secondary) 85%, black 15%);
+
+    --input-bg: color-mix(in srgb, var(--sl-color-bg) 96%, black 4%);
+    --input-bg-focus: var(--sl-color-bg);
+
+    --border: color-mix(in srgb, var(--sl-color-hairline) 70%, var(--sl-color-text) 30%);
+    --border-strong: var(--sl-color-border);
+
+    --btn-bg-active: var(--bg-card-strong);
+    --btn-bg-hover: color-mix(in srgb, var(--sl-color-bg-secondary) 88%, black 12%);
+  }
+
+  .tongbao-calc {
+    font-family: system-ui, sans-serif;
+    max-width: 640px;
+  }
+
+  .preset-row {
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 1.4rem;
+  }
+
+  .pb {
+    height: 30px;
+    padding: 0 14px;
+    font-size: 12px;
+    line-height: 1;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    transition: background .1s, color .1s;
+  }
+
+  .pb:hover {
+    background: var(--btn-bg-hover);
+    border-color: var(--border-strong);
+    color: var(--text-primary);
+  }
+
+  .pb.on {
+    background: var(--btn-bg-active);
+    color: var(--text-primary);
+    border-color: var(--border-strong);
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: .8rem;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 0;
+  }
+
+  .field label {
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .field input {
+    height: 34px;
+    padding: 0 8px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    background: var(--input-bg);
+    color: var(--text-primary);
+  }
+
+  .field input:hover {
+    border-color: var(--border-strong);
+  }
+
+  .field input:focus {
+    outline: 2px solid #378ADD;
+    border-color: transparent;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--divider);
+    margin: 1.1rem 0;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin: 0 0 9px;
+  }
+
+  .hint {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  .mech-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .link-row {
+    align-items: flex-start;
+  }
+
+  .mech-row label {
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    margin: 0;
+    color: var(--text-primary);
+  }
+
+  .mech-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .link-field {
+    width: 140px;
+    flex-shrink: 0;
+  }
+
+  .link-label-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  .link-label-wrapper label {
+    margin: 0;
+  }
+
+  .link-hint {
+    align-self: center;
+    padding-top: 22px;
+  }
+
+  .warn {
+    font-size: 12px;
+    color: #c0392b;
+    padding: 4px 0;
+    margin: 4px 0 0;
+  }
+
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .sec-metrics {
+    display: grid;
+    gap: 10px;
+  }
+
+  .metric {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 0;
+  }
+
+  .metric-label {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin: 0 0 4px;
+    line-height: 1.4;
+  }
+
+  .metric-value {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 0;
+  }
+</style>
+
+<script>
+  const PRESETS: Record<string, { N: number; n: number }> = {
+    default:  { N: 10, n: 3 },
+    tourist1: { N: 12, n: 5 },
+    tourist2: { N: 12, n: 6 },
+  };
+
+  document.querySelectorAll<HTMLButtonElement>('.pb').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const p = btn.dataset.p!;
+      document.querySelectorAll('.pb').forEach((b) => b.classList.remove('on'));
+      btn.classList.add('on');
+      if (PRESETS[p]) {
+        (document.getElementById('iN') as HTMLInputElement).value = String(PRESETS[p].N);
+        (document.getElementById('in') as HTMLInputElement).value = String(PRESETS[p].n);
+      }
+      compute();
+    });
+  });
+
+  ['iN', 'in'].forEach((id) => {
+    document.getElementById(id)!.addEventListener('input', () => {
+      document.querySelectorAll('.pb').forEach((b) => b.classList.remove('on'));
+      document.querySelector('[data-p="custom"]')!.classList.add('on');
+      compute();
+    });
+  });
+
+  ['iM', 'ik', 'iL', 'sticker'].forEach((id) => {
+    const el = document.getElementById(id)!;
+    el.addEventListener('input', compute);
+    el.addEventListener('change', compute);
+  });
+
+  // --- Math ---
+
+  function comb(n: number, k: number): number {
+    if (k < 0 || k > n) return 0;
+    if (k === 0 || k === n) return 1;
+    k = Math.min(k, n - k);
+    let c = 1;
+    for (let i = 0; i < k; i++) c = (c * (n - i)) / (i + 1);
+    return c;
+  }
+
+  /** Poisson-Binomial PMF via direct convolution. */
+  function pbPMF(probs: number[]): number[] {
+    let dp = [1.0];
+    for (const p of probs) {
+      const nd = new Array(dp.length + 1).fill(0);
+      for (let i = 0; i < dp.length; i++) {
+        nd[i]     += dp[i] * (1 - p);
+        nd[i + 1] += dp[i] * p;
+      }
+      dp = nd;
+    }
+    return dp;
+  }
+
+  /**
+   * Full PMF: P(T = t) where T = initial draw + secondary tosses.
+   */
+  function calcPMF(N: number, n: number, M: number, L: number, sticker: boolean): number[] {
+    const pl = sticker ? 0.30 + 0.70 * 0.15 : 0.30;
+    const pn = sticker ? 0.15 : 0.0;
+    const tw = comb(N, n);
+    const pmf = new Array(M + 1).fill(0);
+
+    for (let j = 0; j <= Math.min(n, M); j++) {
+      if (n - j > N - M) continue;
+      const pj = (comb(M, j) * comb(N - M, n - j)) / tw;
+      if (pj <= 0) continue;
+
+      const lmin = Math.max(0, j - (M - L));
+      const lmax = Math.min(j, L);
+
+      for (let ld = lmin; ld <= lmax; ld++) {
+        const denom = comb(M, j);
+        const pld = denom === 0 ? 0 : (comb(L, ld) * comb(M - L, j - ld)) / denom;
+        if (pld <= 0) continue;
+
+        const lm = L - ld;           // Link tongbaos that missed initial draw
+        const nm = M - j - lm;       // Non-Link desired that missed initial draw
+        const probs = [...Array(lm).fill(pl), ...Array(nm).fill(pn)];
+        const sec = pbPMF(probs);
+
+        for (let s = 0; s < sec.length; s++) {
+          if (j + s <= M) pmf[j + s] += pj * pld * sec[s];
+        }
+      }
+    }
+    return pmf;
+  }
+
+  /**
+   * Secondary-only PMF: P(S = s) where S = number of extra tongbaos tossed
+   * after the initial draw, via Link / Sticker secondary rolls.
+   * Marginalizes over all possible initial draw outcomes.
+   */
+  function calcSecondaryPMF(N: number, n: number, M: number, L: number, sticker: boolean): number[] {
+    const pl = sticker ? 0.30 + 0.70 * 0.15 : 0.30;
+    const pn = sticker ? 0.15 : 0.0;
+    const tw = comb(N, n);
+    const secPmf = new Array(M + 1).fill(0);
+
+    for (let j = 0; j <= Math.min(n, M); j++) {
+      if (n - j > N - M) continue;
+      const pj = (comb(M, j) * comb(N - M, n - j)) / tw;
+      if (pj <= 0) continue;
+
+      const lmin = Math.max(0, j - (M - L));
+      const lmax = Math.min(j, L);
+
+      for (let ld = lmin; ld <= lmax; ld++) {
+        const denom = comb(M, j);
+        const pld = denom === 0 ? 0 : (comb(L, ld) * comb(M - L, j - ld)) / denom;
+        if (pld <= 0) continue;
+
+        const lm = L - ld;
+        const nm = M - j - lm;
+        const probs = [...Array(lm).fill(pl), ...Array(nm).fill(pn)];
+        const sec = pbPMF(probs);
+
+        // s = number of secondary tosses (independent of initial draw j)
+        for (let s = 0; s < sec.length; s++) {
+          secPmf[s] += pj * pld * sec[s];
+        }
+      }
+    }
+    return secPmf;
+  }
+
+  function evalPMF(pmf: number[], k: number, M: number) {
+    const pe = k <= M ? pmf[k] : 0;
+    let pa = 0;
+    for (let t = k; t <= M; t++) pa += pmf[t];
+    return { pe, pa, et: pa > 0 ? 1 / pa : Infinity };
+  }
+
+  // --- Main ---
+
+  function compute() {
+    const N = +(document.getElementById('iN') as HTMLInputElement).value;
+    const n = +(document.getElementById('in') as HTMLInputElement).value;
+    const M = +(document.getElementById('iM') as HTMLInputElement).value;
+    const k = +(document.getElementById('ik') as HTMLInputElement).value;
+    const rawL = +(document.getElementById('iL') as HTMLInputElement).value || 0;
+    const L = Math.min(rawL, M);
+    const sticker = (document.getElementById('sticker') as HTMLInputElement).checked;
+
+    (document.getElementById('Lof') as HTMLSpanElement).textContent = String(M);
+    (document.getElementById('iL') as HTMLInputElement).max = String(M);
+
+    const warnEl = document.getElementById('warn') as HTMLParagraphElement;
+    const setWarn = (msg: string) => { warnEl.textContent = msg; warnEl.hidden = false; };
+
+    if (!N || !n || !M || !k || isNaN(N) || isNaN(n) || isNaN(M) || isNaN(k)) {
+      setWarn('Enter valid positive values.'); return;
+    }
+    if (n > N) { setWarn('Tongbaos tossed cannot exceed coffer size.'); return; }
+    if (M > N) { setWarn('Desired tongbaos in coffer cannot exceed coffer size.'); return; }
+    if (k > M) { setWarn('Desired tongbaos to toss cannot exceed desired tongbaos in coffer.'); return; }
+    warnEl.hidden = true;
+
+    const pmf = calcPMF(N, n, M, L, sticker);
+    const { pe, pa, et } = evalPMF(pmf, k, M);
+
+    (document.getElementById('lblExact') as HTMLElement).textContent   = `Exactly ${k} tossed`;
+    (document.getElementById('lblAtleast') as HTMLElement).textContent = `At least ${k} tossed`;
+    (document.getElementById('rExact') as HTMLElement).textContent     = (pe * 100).toFixed(2) + '%';
+    (document.getElementById('rAtleast') as HTMLElement).textContent   = (pa * 100).toFixed(2) + '%';
+    (document.getElementById('rExp') as HTMLElement).textContent       = isFinite(et) ? et.toFixed(1) : '∞';
+
+    const hasL  = L > 0;
+    const hasSt = sticker;
+    const mechEl = document.getElementById('mechMetrics') as HTMLElement;
+
+    if (!hasL && !hasSt) { mechEl.style.display = 'none'; return; }
+    mechEl.style.display = 'block';
+
+    // Secondary distribution
+    const secPmf = calcSecondaryPMF(N, n, M, L, sticker);
+
+    // Trim trailing near-zero entries (keep at least 1)
+    let maxS = secPmf.length - 1;
+    while (maxS > 0 && secPmf[maxS] < 0.0001) maxS--;
+
+    // Determine columns: up to 4 per row looks clean
+    const count = maxS + 1;
+    const cols = Math.min(count, 4);
+
+    const cards = Array.from({ length: maxS + 1 }, (_, s) => {
+      const pct = (secPmf[s] * 100).toFixed(2) + '%';
+      const lbl = s === 0
+        ? 'No extra tossed'
+        : s === 1
+          ? '1 extra tossed'
+          : `${s} extra tossed`;
+      return `<div class="metric">
+        <p class="metric-label">${lbl}</p>
+        <p class="metric-value">${pct}</p>
+      </div>`;
+    }).join('');
+
+    (document.getElementById('secDist') as HTMLElement).innerHTML =
+      `<div class="sec-metrics" style="grid-template-columns: repeat(${cols}, minmax(0, 1fr));">${cards}</div>`;
+  }
+
+  compute();
+</script>
