@@ -181,5 +181,23 @@
     "notes": "d15",
     "time": "2026-04-29T13:00:00Z",
     "duration": 120
+  },
+  {
+    "player": "uraharacrimson",
+    "notes": "d10",
+    "time": "2026-05-01T08:00:00Z",
+    "duration": 120
+  },
+  {
+    "player": "uraharacrimson",
+    "notes": "d10",
+    "time": "2026-05-02T08:00:00Z",
+    "duration": 120
+  },
+  {
+    "player": "uraharacrimson",
+    "notes": "d10",
+    "time": "2026-05-03T08:00:00Z",
+    "duration": 120
   }
 ]
