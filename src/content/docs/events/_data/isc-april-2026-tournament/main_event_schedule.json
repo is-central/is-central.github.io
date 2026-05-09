@@ -199,5 +199,23 @@
     "notes": "d10",
     "time": "2026-05-03T08:00:00Z",
     "duration": 120
+  },
+  {
+    "player": "zhowder",
+    "notes": "d15",
+    "time": "2026-05-04T11:00:00Z",
+    "duration": 120
+  },
+  {
+    "player": "zhowder",
+    "notes": "d15",
+    "time": "2026-05-08T12:00:00Z",
+    "duration": 120
+  },
+  {
+    "player": "zhowder",
+    "notes": "d15",
+    "time": "2026-05-10T12:00:00Z",
+    "duration": 120
   }
 ]
