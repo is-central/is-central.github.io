@@ -3417,5 +3417,125 @@
         "description": "Immediately Promote 2 Operators and gain +0, 1, 2, 3 Shields for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
       }
     }
+  },
+  {
+    "id": "red-bow-tie",
+    "image": "rogue_4_relic_legacy_21.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Red Bow Tie",
+        "idx": 21,
+        "cost": 8,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - 1+1"],
+        "description": "Hope +2, Deployment Limit +1."
+      }
+    }
+  },
+  {
+    "id": "solo-music-box",
+    "image": "rogue_4_relic_legacy_22.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Solo Music Box",
+        "idx": 22,
+        "cost": 12,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - 3+3"],
+        "description": "Hope +4, Deployment Limit +1."
+      }
+    }
+  },
+  {
+    "id": "supreme-ring",
+    "image": "rogue_4_relic_legacy_173.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Supreme Ring",
+        "idx": 23,
+        "cost": 16,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - 3+3"],
+        "description": "+50% Originium Ingot drops from battle.\nThe resulting amount of ingots is rounded down."
+      }
+    }
+  },
+  {
+    "id": "lucky-coin",
+    "image": "rogue_4_relic_legacy_176.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Lucky Coin",
+        "idx": 24,
+        "cost": 12,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - 2+2"],
+        "description": "Gain +2 Originium Ingots upon entering a non-combat node."
+      }
+    }
+  },
+  {
+    "id": "leithanian-medal-of-honor",
+    "image": "rogue_4_relic_legacy_183.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Leithanian Medal of Honor",
+        "idx": 25,
+        "cost": null,
+        "effect": null,
+        "sources": ["False to Truth - 2+2"],
+        "description": "Gain +30% Command EXP from battles."
+      }
+    }
+  },
+  {
+    "id": "extra-pungent-coffee-beans",
+    "image": "rogue_4_relic_legacy_19.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Extra-Pungent Coffee Beans",
+        "idx": 27,
+        "cost": 12,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - 3+3"],
+        "description": "Squad Size Limit +1, Deployment Limit +1, Shield +1."
+      }
+    }
+  },
+  {
+    "id": "blue-silk-scarf",
+    "image": "rogue_4_relic_legacy_20.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Blue Silk Scarf",
+        "idx": 28,
+        "cost": 8,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - 2+2"],
+        "description": "Hope +2, Squad Size Limit +1."
+      }
+    }
+  },
+  {
+    "id": "originium-iris",
+    "image": "rogue_4_relic_legacy_23.png",
+    "themes": ["IS5"],
+    "versions": {
+      "IS5": {
+        "name": "Originium Iris",
+        "idx": 29,
+        "cost": 16,
+        "effect": null,
+        "sources": ["Rogue Trader", "False to Truth - Eureka"],
+        "description": "Hope +6, Squad Size Limit +2."
+      }
+    }
   }
 ]
