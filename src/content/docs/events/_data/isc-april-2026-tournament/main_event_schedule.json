@@ -39,19 +39,19 @@
     "duration": 120
   },
   {
-    "player": "whatshouldeveryonecallyou4375",
+    "player": "Amelie",
     "notes": "d15",
     "time": "2026-04-16T12:00:00Z",
     "duration": 120
   },
   {
-    "player": "whatshouldeveryonecallyou4375",
+    "player": "Amelie",
     "notes": "d15",
     "time": "2026-04-17T12:00:00Z",
     "duration": 120
   },
   {
-    "player": "whatshouldeveryonecallyou4375",
+    "player": "Amelie",
     "notes": "d15",
     "time": "2026-04-18T12:00:00Z",
     "duration": 120
@@ -81,19 +81,19 @@
     "duration": 120
   },
   {
-    "player": "johnnyak47",
+    "player": "JohnnyAK47",
     "notes": "d15",
     "time": "2026-04-24T16:00:00Z",
     "duration": 120
   },
   {
-    "player": "johnnyak47",
+    "player": "JohnnyAK47",
     "notes": "d15",
     "time": "2026-04-25T16:00:00Z",
     "duration": 120
   },
   {
-    "player": "johnnyak47",
+    "player": "JohnnyAK47",
     "notes": "d15",
     "time": "2026-04-26T16:00:00Z",
     "duration": 120
@@ -141,19 +141,19 @@
     "duration": 120
   },
   {
-    "player": "ak_mm12",
+    "player": "mm12",
     "notes": "d10",
     "time": "2026-04-24T13:00:00Z",
     "duration": 120
   },
   {
-    "player": "ak_mm12",
+    "player": "mm12",
     "notes": "d10",
     "time": "2026-04-25T13:30:00Z",
     "duration": 120
   },
   {
-    "player": "ak_mm12",
+    "player": "mm12",
     "notes": "d10",
     "time": "2026-04-26T13:00:00Z",
     "duration": 120
@@ -177,7 +177,7 @@
     "duration": 120
   },
   {
-    "player": "lukas05125",
+    "player": "lukas",
     "notes": "d15",
     "time": "2026-04-29T13:00:00Z",
     "duration": 120
@@ -201,21 +201,39 @@
     "duration": 120
   },
   {
-    "player": "zhowder",
+    "player": "Zhowder",
     "notes": "d15",
     "time": "2026-05-04T11:00:00Z",
     "duration": 120
   },
   {
-    "player": "zhowder",
+    "player": "Zhowder",
     "notes": "d15",
     "time": "2026-05-08T12:00:00Z",
     "duration": 120
   },
   {
-    "player": "zhowder",
+    "player": "Zhowder",
     "notes": "d15",
     "time": "2026-05-10T12:00:00Z",
+    "duration": 120
+  },
+  {
+    "player": "Halca",
+    "notes": "d15",
+    "time": "2026-05-11T12:00:00Z",
+    "duration": 120
+  },
+  {
+    "player": "Halca",
+    "notes": "d15",
+    "time": "2026-05-11T16:00:00Z",
+    "duration": 120
+  },
+  {
+    "player": "Halca",
+    "notes": "d15",
+    "time": "2026-05-12T08:00:00Z",
     "duration": 120
   }
 ]
