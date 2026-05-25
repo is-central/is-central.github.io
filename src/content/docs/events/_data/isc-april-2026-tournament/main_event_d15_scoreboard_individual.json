@@ -2,7 +2,79 @@
   "title": "Main Event (d15)",
   "entries": [
     {
-      
+      "name": "Bait",
+      "score": 3465,
+      "videos": [
+        { "label": "Run 1 (3465)", "href": "https://youtu.be/PYgfdRUYivM" }
+      ]
+    },
+    {
+      "name": "Dr.Maiya",
+      "score": 2942,
+      "videos": [
+        { "label": "Run 1 (2049)", "href": "https://www.youtube.com/watch?v=m5xCJJpB5Yc" },
+        { "label": "Run 2 (1187)", "href": "https://www.youtube.com/watch?v=j2Tua-pxnrk" },
+        { "label": "Run 3 (2942)", "href": "https://youtu.be/2MwffQfeOi4?si=Yzf2Ycp_TrOjdSNr" }
+      ]
+    },
+    {
+      "name": "MaNa",
+      "score": 2875,
+      "videos": [
+        { "label": "Run 1 (2159)", "href": "https://www.youtube.com/watch?v=Qaq0cKkgK54" },
+        { "label": "Run 2 (1218)", "href": "https://www.youtube.com/watch?v=ZyN47ijCAgo" },
+        { "label": "Run 3 (2875)", "href": "https://www.youtube.com/watch?v=oi8OvqsKUDg" }
+      ]
+    },
+    {
+      "name": "Danger_Asian",
+      "score": 4075,
+      "videos": [
+        { "label": "Run 1 (3914)", "href": "https://www.youtube.com/watch?v=VZJg5LNGSvk" },
+        { "label": "Run 2 (4075)", "href": "https://www.youtube.com/watch?v=fOB1XF8E-y8" },
+        { "label": "Run 3 (3634)", "href": "https://www.youtube.com/watch?v=Cfrt_WWIZCc" }
+      ]
+    },
+    {
+      "name": "Amelie",
+      "score": 1731,
+      "videos": [
+        { "label": "Run 1 (1731)", "href": "https://www.youtube.com/watch?v=IGM5qe2CpRc" },
+        { "label": "Run 3 (1419)", "href": "https://www.youtube.com/watch?v=4-mnQgct0HY" }
+      ]
+    },
+    {
+      "name": "JohnnyAK47",
+      "score": 4272,
+      "videos": [
+        { "label": "Run 1 (2378)", "href": "https://www.youtube.com/watch?v=BhdVvuNIkCY" },
+        { "label": "Run 2 (3522)", "href": "https://www.youtube.com/watch?v=KkSNWohm-dk" },
+        { "label": "Run 3 (4272)", "href": "https://www.youtube.com/watch?v=RSv7vmfMxoA" }
+      ]
+    },
+    {
+      "name": "lukas",
+      "score": 6637,
+      "videos": [
+        { "label": "Run 1 (6637)", "href": "https://youtu.be/rFLJxwM_Qoo" }
+      ]
+    },
+    {
+      "name": "Zhowder",
+      "score": 6146,
+      "videos": [
+        { "label": "Run 1 (5487)", "href": "https://www.youtube.com/watch?v=EhQ-oRIkU3Y" },
+        { "label": "Run 2 (6146)", "href": "https://www.youtube.com/watch?v=dmBq_cBxAOM" },
+        { "label": "Run 3 (3967)", "href": "https://youtu.be/PfXnvhIeJIw" }
+      ]
+    },
+    {
+      "name": "Halca",
+      "score": 4418,
+      "videos": [
+        { "label": "Run 1 (4418)", "href": "https://www.youtube.com/watch?v=d_iggZZdmGY" },
+        { "label": "Run 2 (3390)", "href": "https://www.youtube.com/watch?v=XM_vuTv35wA" }
+      ]
     }
   ]
 }

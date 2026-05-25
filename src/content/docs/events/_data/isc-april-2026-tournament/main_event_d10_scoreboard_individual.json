@@ -2,7 +2,29 @@
   "title": "Main Event (d10)",
   "entries": [
     {
-      
+      "name": "Mouse",
+      "score": 5865,
+      "videos": [
+        { "label": "Run 1 (5865)", "href": "https://www.youtube.com/watch?v=8SRD6ne7Xf0" },
+        { "label": "Run 2 (2909)", "href": "https://www.youtube.com/watch?v=hANbGH4wrNs" },
+        { "label": "Run 3 (4951)", "href": "https://www.youtube.com/watch?v=ArXOSrME2sI" }
+      ]
+    },
+    {
+      "name": "mm12",
+      "score": 4443,
+      "videos": [
+        { "label": "Run 1 (2401)", "href": "https://www.youtube.com/watch?v=Ii9F1NjX4oE" },
+        { "label": "Run 2 (3270)", "href": "https://www.youtube.com/watch?v=rhkByEzTlks" },
+        { "label": "Run 3 (4443)", "href": "https://www.youtube.com/watch?v=P0OlFIk3IF8" }
+      ]
+    },
+    {
+      "name": "__767__",
+      "score": 2866,
+      "videos": [
+        { "label": "Run 1 (2866)", "href": "https://youtu.be/MD9ymPtQ00A" }
+      ]
     }
   ]
 }
