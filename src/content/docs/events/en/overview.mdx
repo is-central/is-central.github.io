@@ -9,11 +9,19 @@ import EventIndex from '../../../../components/Events/EventIndex.astro';
 
 <LanguageSwitcher />
 
-Welcome to IS Central Events page! Here you'll find a list of events and tournaments hosted by us.
+Welcome to the IS Central Events page! Here you'll find a list of events and tournaments hosted by us.
 
 ## Tournaments
 
 export const events = [
+  {
+    name: "Evil Amiya Challenge",
+    banner: "evil-amiya-challenge-banner.png",
+    themes: "IS5",
+    startDate: "2026-06-16T00:00:00Z",
+    endDate: "2026-06-15T23:59:00Z",
+    href: "/events/en/evil-amiya-challenge/overview"
+  },
   {
     name: "IS-C April 2026 Monthly Cup",
     banner: "is6-dlc1-banner.png",

@@ -1,0 +1,22 @@
+---
+title: Evil Amiya Challenge Scoreboard
+description: "Evil Amiya Challenge Scoreboard."
+tableOfContents: false
+---
+
+import LanguageSwitcher from '../../../../../components/LanguageSwitcher.astro';
+
+<div class="back-button-container">
+  <a href="/events/en/evil-amiya-challenge/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">Back to Tournament page</span>
+  </a>
+</div>
+
+import Scoreboard from '../../../../../components/Events/Scoreboard.astro';
+import MainEventIndividualT3 from '../../_data/evil-amiya-challenge/main_event_scoreboard_t3_individual.json';
+import MainEventIndividualT1 from '../../_data/evil-amiya-challenge/main_event_scoreboard_t1_individual.json';
+
+<Scoreboard data={MainEventIndividualT3} />
+
+<Scoreboard data={MainEventIndividualT1} />
