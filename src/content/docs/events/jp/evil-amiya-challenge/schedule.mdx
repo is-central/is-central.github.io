@@ -1,0 +1,21 @@
+---
+title: 試練「永劫なる存続」スケジュール
+description: "試練「永劫なる存続」スケジュール."
+tableOfContents: false
+---
+
+import LanguageSwitcher from '../../../../../components/LanguageSwitcher.astro';
+
+<div class="back-button-container">
+  <a href="/events/jp/evil-amiya-challenge/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">トーナメントページに戻る</span>
+  </a>
+</div>
+
+<LanguageSwitcher />
+
+import TournamentSchedule from '../../../../../components/Events/Schedule.astro';
+import scheduleData from '../../_data/evil-amiya-challenge/main_event_schedule.json';
+
+<TournamentSchedule title="Schedule" entries={scheduleData} notesHeader="Category" />
