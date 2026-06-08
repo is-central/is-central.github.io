@@ -11,7 +11,7 @@ export function buildTranslationsMap() {
 
     const lang = match[1];
     const slug = match[2];
-    const url = `/events/${lang}/${slug}`;
+    const url = `/events/${lang}/${slug}`.replace(/\/$/, "");
 
     if (!map[slug]) map[slug] = {};
     map[slug][lang] = url;

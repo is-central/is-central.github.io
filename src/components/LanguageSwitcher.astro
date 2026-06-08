@@ -11,7 +11,7 @@ const LABELS = {
 };
 
 // Derive lang + slug from the current URL — no props needed
-const pathname = Astro.url.pathname;
+const pathname = Astro.url.pathname.replace(/\/$/, "");
 const eventsMatch = pathname.match(/^\/events\/([^/]+)\/(.+?)\/?$/);
 
 const currentLang = eventsMatch?.[1] ?? "en";
