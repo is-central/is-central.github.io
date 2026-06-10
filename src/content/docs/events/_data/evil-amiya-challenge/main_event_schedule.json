@@ -7,13 +7,6 @@
     "platform": "discord"
   },
   {
-    "player": "isac",
-    "notes": "Framework of the End (T1 Egg)",
-    "time": "2026-06-20T17:00:00Z",
-    "duration": 120,
-    "platform": "discord"
-  },
-  {
     "player": "MarsiuMouse",
     "notes": "Framework of the End (T1 Egg)",
     "time": "2026-07-11T02:00:00Z",
@@ -22,7 +15,7 @@
   },
   {
     "player": "Penguin",
-    "notes": "Reality of the End (T3 Egg)",
+    "notes": "Framework of the End (T1 Egg)",
     "time": "2026-06-18T02:00:00Z",
     "duration": 120
   },
@@ -32,5 +25,62 @@
     "time": "2026-06-17T19:00:00Z",
     "duration": 120,
     "platform": "discord"
+  },
+  {
+    "player": "Popcorn",
+    "notes": "Framework of the End (T1 Egg)",
+    "time": "2026-06-16T01:00:00Z",
+    "duration": 120,
+    "platform": "discord"
+  },
+  {
+    "player": "MindH4cker",
+    "notes": "Reality of the End (T3 Egg)",
+    "time": "2026-06-18T07:00:00Z",
+    "duration": 120
+  },
+  {
+    "player": "Lynar",
+    "notes": "Reality of the End (T3 Egg)",
+    "time": "2026-06-17T14:00:00Z",
+    "duration": 120,
+    "platform": "discord"
+  },
+  {
+    "player": "ひなぶ",
+    "notes": "Framework of the End (T1 Egg)",
+    "time": "2026-06-16T12:00:00Z",
+    "duration": 120,
+    "platform": "discord"
+  },
+  {
+    "player": "Fie",
+    "notes": "Framework of the End (T1 Egg)",
+    "time": "2026-06-21T12:00:00Z",
+    "duration": 120
+  },
+  {
+    "player": "Noid",
+    "notes": "Reality of the End (T3 Egg)",
+    "time": "2026-07-07T11:00:00Z",
+    "duration": 120
+  },
+  {
+    "player": "히누",
+    "notes": "Reality of the End (T3 Egg)",
+    "time": "2026-06-10T07:00:00Z",
+    "duration": 120
+  },
+  {
+    "player": "Brod",
+    "notes": "Framework of the End (T1 Egg)",
+    "time": "2026-06-14T14:45:00Z",
+    "duration": 120
+  },
+  {
+    "player": "RinmirinAndLamp",
+    "notes": "Reality of the End (T3 Egg)",
+    "time": "2026-06-25T21:00:00Z",
+    "duration": 120
   }
 ]
