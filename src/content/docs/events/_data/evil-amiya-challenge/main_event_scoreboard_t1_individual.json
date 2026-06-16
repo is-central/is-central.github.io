@@ -2,7 +2,11 @@
   "title": "Framework of the End (T1 Egg)",
   "entries": [
     {
-      
+      "name": "ghu",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://youtu.be/1qLxdFN3R3I" }
+      ]
     }
   ]
 }
