@@ -29,7 +29,7 @@
   {
     "player": "Popcorn",
     "notes": "Framework of the End (T1 Egg)",
-    "time": "2026-06-16T01:00:00Z",
+    "time": "2026-06-29T00:00:00Z",
     "duration": 120,
     "platform": "discord"
   },
@@ -122,6 +122,24 @@
     "player": "ArkNP23",
     "notes": "Reality of the End (T3 Egg)",
     "time": "2026-06-16T18:00:00Z",
+    "duration": 120
+  },
+  {
+    "player": "KoriKurimu",
+    "notes": "Reality of the End (T3 Egg)",
+    "time": "2026-06-17T07:00:00Z",
+    "duration": 120
+  },
+  {
+    "player": "Sato",
+    "notes": "Reality of the End (T3 Egg)",
+    "time": "2026-06-27T20:00:00Z",
+    "duration": 120
+  },
+  {
+    "player": "黒",
+    "notes": "Reality of the End (T3 Egg)",
+    "time": "2026-06-17T06:00:00Z",
     "duration": 120
   }
 ]
