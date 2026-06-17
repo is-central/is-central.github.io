@@ -7,6 +7,13 @@
       "videos": [
         { "label": "VOD", "href": "https://youtu.be/1qLxdFN3R3I" }
       ]
+    },
+    {
+      "name": "ひなぶ",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://www.youtube.com/live/gWNExaaGkuI?si=rM0crksY1rg5j8NX" }
+      ]
     }
   ]
 }
