@@ -2,7 +2,25 @@
   "title": "Reality of the End (T3 Egg)",
   "entries": [
     {
-      
+      "name": "ArkNP23",
+      "score": 1,
+      "videos": [
+        { "label": "VOD", "href": "https://youtu.be/gbTJLwy6H0w" }
+      ]
+    },
+    {
+      "name": "woonkill",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://youtu.be/lFFi8EHIc1E" }
+      ]
+    },
+    {
+      "name": "Meteao",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://www.youtube.com/watch?v=SjEabQiqrJY" }
+      ]
     }
   ]
 }
