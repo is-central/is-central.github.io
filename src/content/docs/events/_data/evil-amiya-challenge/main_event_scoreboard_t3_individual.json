@@ -21,6 +21,27 @@
       "videos": [
         { "label": "VOD", "href": "https://www.youtube.com/watch?v=SjEabQiqrJY" }
       ]
+    },
+    {
+      "name": "黒",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://youtu.be/6YtUERIQxbE" }
+      ]
+    },
+    {
+      "name": "KoriKurimu",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://youtu.be/ucPh3OzREWI" }
+      ]
+    },
+    {
+      "name": "Lynar",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://youtu.be/RvPWNeCBRu8" }
+      ]
     }
   ]
 }
