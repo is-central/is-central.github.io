@@ -58,7 +58,9 @@
     "player": "Fie",
     "notes": "Framework of the End (T1 Egg)",
     "time": "2026-06-21T12:00:00Z",
-    "duration": 120
+    "duration": 120,
+    "platform": "youtube",
+    "link": "https://www.youtube.com/live/9vXEgxe1sOo?si=G4ujM_hIN8DQP5Oo"
   },
   {
     "player": "Noid",
@@ -189,5 +191,11 @@
     "duration": 120,
     "platform": "youtube",
     "link": "https://www.youtube.com/live/osY-42ZlBl8?si=EUlYyRmhqRsquXas"
+  },
+  {
+    "player": "johnnyak47",
+    "notes": "Reality of the End (T3 Egg)",
+    "time": "2026-06-20T12:00:00Z",
+    "duration": 120
   }
 ]
