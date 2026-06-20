@@ -42,6 +42,48 @@
       "videos": [
         { "label": "VOD", "href": "https://youtu.be/RvPWNeCBRu8" }
       ]
+    },
+    {
+      "name": "yukaribel",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://youtu.be/whJCm7O_ylI" }
+      ]
+    },
+    {
+      "name": "CelerYi",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://b23.tv/BIPx19j" }
+      ]
+    },
+    {
+      "name": "MindH4cker",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://youtu.be/pKqSyIZopAU" }
+      ]
+    },
+    {
+      "name": "Noed",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://www.youtube.com/watch?v=HiU1X6vvDaA" }
+      ]
+    },
+    {
+      "name": "Jlcm",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://www.youtube.com/watch?v=-2UY_L3m_T4" }
+      ]
+    },
+    {
+      "name": "Glukhar",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://www.youtube.com/live/osY-42ZlBl8?si=YlV1PYcWTY926ebe" }
+      ]
     }
   ]
 }
