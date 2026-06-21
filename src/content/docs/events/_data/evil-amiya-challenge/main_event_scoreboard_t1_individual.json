@@ -14,6 +14,28 @@
       "videos": [
         { "label": "VOD", "href": "https://www.youtube.com/live/gWNExaaGkuI?si=rM0crksY1rg5j8NX" }
       ]
+    },
+    {
+      "name": "scyphonic",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://youtu.be/iSWq18E1pqQ" }
+      ]
+    },
+    {
+      "name": "Maiya",
+      "score": 0,
+      "videos": [
+        { "label": "VOD (part 1)", "href": "https://youtu.be/hwoLkshGs5Y" },
+        { "label": "VOD (part 2)", "href": "https://youtu.be/ImBi98gjBsI" }
+      ]
+    },
+    {
+      "name": "Fie",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://www.youtube.com/live/9vXEgxe1sOo" }
+      ]
     }
   ]
 }

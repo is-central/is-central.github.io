@@ -199,15 +199,27 @@
     "duration": 120
   },
   {
-    "player": "Kydacon",
+    "player": "Maiya",
     "notes": "Framework of the End (T1 Egg)",
-    "time": "2026-06-21T08:30:00Z",
+    "time": "2026-06-21T10:05:00Z",
     "duration": 120
   },
   {
     "player": "pedked",
     "notes": "Framework of the End (T1 Egg)",
     "time": "2026-07-05T20:00:00Z",
+    "duration": 120
+  },
+  {
+    "player": "みっつ",
+    "notes": "Framework of the End (T1 Egg)",
+    "time": "2026-07-05T09:00:00Z",
+    "duration": 120
+  },
+  {
+    "player": "Azen",
+    "notes": "Reality of the End (T3 Egg)",
+    "time": "2026-06-27T03:00:00Z",
     "duration": 120
   }
 ]

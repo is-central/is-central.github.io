@@ -84,6 +84,21 @@
       "videos": [
         { "label": "VOD", "href": "https://www.youtube.com/live/osY-42ZlBl8?si=YlV1PYcWTY926ebe" }
       ]
+    },
+    {
+      "name": "johnnyak47",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://youtu.be/7bqraEJGDYk" }
+      ]
+    },
+    {
+      "name": "Bungbungbung",
+      "score": 0,
+      "videos": [
+        { "label": "VOD (part 1)", "href": "https://youtu.be/2OKPDfDpNjA" },
+        { "label": "VOD (part 2)", "href": "https://www.youtube.com/watch?v=JzEnP0iHffg" }
+      ]
     }
   ]
 }
