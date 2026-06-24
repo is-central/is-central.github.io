@@ -212,14 +212,20 @@
   },
   {
     "player": "みっつ",
-    "notes": "Framework of the End (T1 Egg)",
+    "notes": "Reality of the End (T3 Egg)",
     "time": "2026-07-05T09:00:00Z",
     "duration": 120
   },
   {
     "player": "Azen",
     "notes": "Reality of the End (T3 Egg)",
-    "time": "2026-06-27T03:00:00Z",
+    "time": "2026-06-26T03:00:00Z",
+    "duration": 120
+  },
+  {
+    "player": "enku",
+    "notes": "Reality of the End (T3 Egg)",
+    "time": "2026-06-27T13:00:00Z",
     "duration": 120
   }
 ]
