@@ -83,7 +83,7 @@
   {
     "player": "RinmirinAndLamp",
     "notes": "Reality of the End (T3 Egg)",
-    "time": "2026-06-25T21:00:00Z",
+    "time": "2026-06-30T21:07:00Z",
     "duration": 120
   },
   {
@@ -219,13 +219,38 @@
   {
     "player": "Azen",
     "notes": "Reality of the End (T3 Egg)",
-    "time": "2026-06-26T03:00:00Z",
+    "time": "2026-06-26T05:00:00Z",
     "duration": 120
   },
   {
     "player": "enku",
     "notes": "Reality of the End (T3 Egg)",
     "time": "2026-06-27T13:00:00Z",
+    "duration": 120
+  },
+  {
+    "player": "Danger_Asian",
+    "notes": "Reality of the End (T3 Egg)",
+    "time": "2026-06-26T00:00:00Z",
+    "duration": 120
+  },
+  {
+    "player": "karpechan",
+    "notes": "Reality of the End (T3 Egg)",
+    "time": "2026-06-27T01:52:00Z",
+    "duration": 120,
+    "platform": "discord"
+  },
+  {
+    "player": "oyana",
+    "notes": "Reality of the End (T3 Egg)",
+    "time": "2026-06-27T20:00:00Z",
+    "duration": 120
+  },
+  {
+    "player": "glacialroses",
+    "notes": "Reality of the End (T3 Egg)",
+    "time": "2026-07-14T14:00:00Z",
     "duration": 120
   }
 ]

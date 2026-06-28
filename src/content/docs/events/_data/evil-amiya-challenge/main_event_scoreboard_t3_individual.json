@@ -99,6 +99,56 @@
         { "label": "VOD (part 1)", "href": "https://youtu.be/2OKPDfDpNjA" },
         { "label": "VOD (part 2)", "href": "https://www.youtube.com/watch?v=JzEnP0iHffg" }
       ]
+    },
+    {
+      "name": "Azen",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://youtu.be/ulh8iELYs0U" }
+      ]
+    },
+    {
+      "name": "karpechan",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://www.youtube.com/watch?v=xkFqjuUuko0" }
+      ]
+    },
+    {
+      "name": "competitive highroller",
+      "score": 1,
+      "videos": [
+        { "label": "VOD (part 1)", "href": "https://www.youtube.com/watch?v=KEfJ5SwRsuY" },
+        { "label": "VOD (part 2)", "href": "https://youtu.be/dn4ls-6cdnc" }
+      ]
+    },
+    {
+      "name": "Danger_Asian",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://youtu.be/nHDQj0f0gTY" }
+      ]
+    },
+    {
+      "name": "enku",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://youtu.be/FO9dSXDQb7c?si=cf5zF4uA0-okNExD" }
+      ]
+    },
+    {
+      "name": "oyana",
+      "score": 1,
+      "videos": [
+        { "label": "VOD", "href": "https://youtu.be/S45Q3QdSuQE" }
+      ]
+    },
+    {
+      "name": "Sato",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://www.youtube.com/watch?v=Q5qP9dJxzuQ" }
+      ]
     }
   ]
 }
