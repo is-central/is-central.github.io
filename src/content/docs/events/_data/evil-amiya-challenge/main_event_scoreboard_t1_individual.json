@@ -36,6 +36,13 @@
       "videos": [
         { "label": "VOD", "href": "https://www.youtube.com/live/9vXEgxe1sOo" }
       ]
+    },
+    {
+      "name": "LuckyDice",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://youtu.be/v8f38VPqI3I" }
+      ]
     }
   ]
 }
