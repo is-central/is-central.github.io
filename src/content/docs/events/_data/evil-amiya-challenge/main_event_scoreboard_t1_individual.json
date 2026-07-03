@@ -43,6 +43,20 @@
       "videos": [
         { "label": "VOD", "href": "https://youtu.be/v8f38VPqI3I" }
       ]
+    },
+    {
+      "name": "Popcorn",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://youtu.be/wPEoXKJFXc4" }
+      ]
+    },
+    {
+      "name": "りんど",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://youtube.com/live/mOjhUTlFKzk" }
+      ]
     }
   ]
 }

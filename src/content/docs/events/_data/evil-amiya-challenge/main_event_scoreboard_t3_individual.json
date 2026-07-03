@@ -149,6 +149,13 @@
       "videos": [
         { "label": "VOD", "href": "https://www.youtube.com/watch?v=Q5qP9dJxzuQ" }
       ]
+    },
+    {
+      "name": "RinmirinAndLamp",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://youtu.be/kCe2-LdyPc8?si=V_NhaS83vppKKa_L" }
+      ]
     }
   ]
 }
