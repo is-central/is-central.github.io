@@ -260,5 +260,26 @@
     "duration": 120,
     "platform": "youtube",
     "link": "https://www.youtube.com/channel/UC7zaKdUO6S23_eQb3PTYJ6Q"
+  },
+  {
+    "player": "larfa",
+    "notes": "Reality of the End (T3 Egg)",
+    "time": "2026-07-05T19:00:00Z",
+    "duration": 120,
+    "platform": "discord"
+  },
+  {
+    "player": "Aizeroth",
+    "notes": "Framework of the End (T1 Egg)",
+    "time": "2026-07-03T14:30:00Z",
+    "duration": 120,
+    "platform": "discord"
+  },
+  {
+    "player": "sweet_bitter1701",
+    "notes": "Reality of the End (T3 Egg)",
+    "time": "2026-07-03T17:00:00Z",
+    "duration": 120,
+    "platform": "discord"
   }
 ]
