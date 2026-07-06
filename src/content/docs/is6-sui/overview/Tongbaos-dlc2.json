@@ -593,23 +593,23 @@
       "description": "On toss, all allies +50% DEF and HP, but +5 DP Cost"
     },
     {
-      "name": "Bal-捕风",
+      "name": "Bal-Catching Wind",
       "ingot_cost": "4",
       "output_tiers": [],
       "eligible_tiers": ["4"],
       "special_output": null,
-      "description": ""
+      "description": "On toss, Operators +40 ASPD when deployed facing left"
     },
     {
-      "name": "Flower-烽火台",
+      "name": "Flower-Beacon Tower",
       "ingot_cost": "8",
       "output_tiers": [],
       "eligible_tiers": ["8"],
       "special_output": null,
-      "description": ""
+      "description": "Cannot be tossed. Gain 4 Life Points, 4 Hope, and 4 Coupons when this leaves the Coffer"
     },
     {
-      "name": "Risk-勾吴盛景",
+      "name": "Risk-Kou-wu Glory",
       "ingot_cost": "12",
       "output_tiers": [],
       "eligible_tiers": ["12"],
@@ -617,7 +617,7 @@
       "description": ""
     },
     {
-      "name": "Bal-贵有衡",
+      "name": "Bal-The Middle Way",
       "ingot_cost": "8",
       "output_tiers": ["8"],
       "eligible_tiers": ["8"],
@@ -625,15 +625,23 @@
       "description": ""
     },
     {
-      "name": "Flower-分久必合",
+      "name": "Flower-Rejoin as One",
       "ingot_cost": "12",
       "output_tiers": ["12"],
       "eligible_tiers": ["12"],
       "special_output": null,
-      "description": ""
+      "description": "On toss, gives last deployed Operator +50% ATK, +50 ASPD, +50% HP, +10 Starting SP"
     },
     {
-      "name": "Bal-溯外道",
+      "name": "Bal-Crooked Path",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": "On toss, all allies +80 ASPD, but the ASPD buff -10 whenever you exchange Tongbao, until 0 buff"
+    },
+    {
+      "name": "Bal-True Path",
       "ingot_cost": "8",
       "output_tiers": ["8"],
       "eligible_tiers": ["8"],
@@ -641,47 +649,7 @@
       "description": ""
     },
     {
-      "name": "Bal-溯正道",
-      "ingot_cost": "8",
-      "output_tiers": ["8"],
-      "eligible_tiers": ["8"],
-      "special_output": null,
-      "description": ""
-    },
-    {
-      "name": "Flower-右迁",
-      "ingot_cost": "4",
-      "output_tiers": ["4"],
-      "eligible_tiers": ["4"],
-      "special_output": null,
-      "description": ""
-    },
-    {
-      "name": "Flower-录武官",
-      "ingot_cost": "8",
-      "output_tiers": ["8"],
-      "eligible_tiers": ["8"],
-      "special_output": null,
-      "description": ""
-    },
-    {
-      "name": "Risk-柳伥作",
-      "ingot_cost": "8",
-      "output_tiers": ["8"],
-      "eligible_tiers": ["8"],
-      "special_output": null,
-      "description": ""
-    },
-    {
-      "name": "Risk-左秉烛",
-      "ingot_cost": "8",
-      "output_tiers": ["8"],
-      "eligible_tiers": ["8"],
-      "special_output": null,
-      "description": ""
-    },
-    {
-      "name": "Risk-药食",
+      "name": "Flower-Promotion",
       "ingot_cost": "4",
       "output_tiers": ["4"],
       "eligible_tiers": ["4"],
@@ -689,23 +657,7 @@
       "description": ""
     },
     {
-      "name": "Risk-孤芳自赏",
-      "ingot_cost": "12",
-      "output_tiers": ["12"],
-      "eligible_tiers": [],
-      "special_output": null,
-      "description": ""
-    },
-    {
-      "name": "Risk-天命难违",
-      "ingot_cost": "12",
-      "output_tiers": ["12"],
-      "eligible_tiers": [],
-      "special_output": null,
-      "description": ""
-    },
-    {
-      "name": "Risk-争商机",
+      "name": "Flower-Record Keeper",
       "ingot_cost": "8",
       "output_tiers": ["8"],
       "eligible_tiers": ["8"],
@@ -713,23 +665,7 @@
       "description": ""
     },
     {
-      "name": "Risk-诸灾有迹",
-      "ingot_cost": "12",
-      "output_tiers": ["12"],
-      "eligible_tiers": [],
-      "special_output": null,
-      "description": ""
-    },
-    {
-      "name": "Flower-得见繁花",
-      "ingot_cost": "12",
-      "output_tiers": ["12"],
-      "eligible_tiers": [],
-      "special_output": null,
-      "description": ""
-    },
-    {
-      "name": "Risk-兴水利",
+      "name": "Risk-Liu'er",
       "ingot_cost": "8",
       "output_tiers": ["8"],
       "eligible_tiers": ["8"],
@@ -737,7 +673,23 @@
       "description": ""
     },
     {
-      "name": "Risk-南武盛景",
+      "name": "Risk-Zuo Le",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Risk-Food and Remedy",
+      "ingot_cost": "4",
+      "output_tiers": ["4"],
+      "eligible_tiers": ["4"],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Risk-Lone Aegis",
       "ingot_cost": "12",
       "output_tiers": ["12"],
       "eligible_tiers": [],
@@ -745,7 +697,71 @@
       "description": ""
     },
     {
-      "name": "Flower-百灶盛景",
+      "name": "Risk-Fate's Decree",
+      "ingot_cost": "12",
+      "output_tiers": ["12"],
+      "eligible_tiers": [],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Risk-Vying Ventures",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Risk-Omens of Woe",
+      "ingot_cost": "12",
+      "output_tiers": ["12"],
+      "eligible_tiers": [],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Flower-Full Bloom",
+      "ingot_cost": "12",
+      "output_tiers": ["12"],
+      "eligible_tiers": [],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Risk-Waterworks",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
+      "special_output": null,
+      "description": ""
+    },
+    {
+      "name": "Risk-Nanwu Glory",
+      "ingot_cost": "12",
+      "output_tiers": ["12"],
+      "eligible_tiers": [],
+      "special_output": null,
+      "description": "On toss, enemies +20% ATK. When lost, gain a collectible for each combat node passed while carrying it (max 5)"
+    },
+    {
+      "name": "Flower-Baizao Glory",
+      "ingot_cost": "12",
+      "output_tiers": ["12"],
+      "eligible_tiers": ["12"],
+      "special_output": null,
+      "description": "On toss, +1 Hope. When lost, gain a Collectible for each non-combat node passed while carrying it (max 5)"
+    },
+    {
+      "name": "Flower-Lungmen Glory",
+      "ingot_cost": "12",
+      "output_tiers": ["12"],
+      "eligible_tiers": ["12"],
+      "special_output": null,
+      "description": "On toss, +8 Ingots; when lost, lose up to 60 Ingots and gain a Collectible for every 12 Ingots lost this way"
+    },
+    {
+      "name": "Flower-Dahuang Glory",
       "ingot_cost": "12",
       "output_tiers": ["12"],
       "eligible_tiers": ["12"],
@@ -753,23 +769,15 @@
       "description": ""
     },
     {
-      "name": "Flower-龙门盛景",
-      "ingot_cost": "12",
-      "output_tiers": ["12"],
-      "eligible_tiers": ["12"],
+      "name": "Flower-Tianshi Lin",
+      "ingot_cost": "8",
+      "output_tiers": ["8"],
+      "eligible_tiers": ["8"],
       "special_output": null,
-      "description": ""
+      "description": "On toss, +2 Life Points, and gain 1 Temporary Life Point each battle"
     },
     {
-      "name": "Flower-大荒盛景",
-      "ingot_cost": "12",
-      "output_tiers": ["12"],
-      "eligible_tiers": ["12"],
-      "special_output": null,
-      "description": ""
-    },
-    {
-      "name": "Flower-麟天师",
+      "name": "Flower-Liang's Supply",
       "ingot_cost": "8",
       "output_tiers": ["8"],
       "eligible_tiers": ["8"],
@@ -777,15 +785,7 @@
       "description": ""
     },
     {
-      "name": "Flower-备用梁",
-      "ingot_cost": "8",
-      "output_tiers": ["8"],
-      "eligible_tiers": ["8"],
-      "special_output": null,
-      "description": ""
-    },
-    {
-      "name": "Bal-钱盒底板",
+      "name": "Bal-Coin Tray",
       "ingot_cost": "12",
       "output_tiers": [],
       "eligible_tiers": ["12"],
@@ -793,7 +793,7 @@
       "description": ""
     },
     {
-      "name": "Flower-锦囊秒购",
+      "name": "Flower-Lucky Pouch",
       "ingot_cost": "12",
       "output_tiers": ["12"],
       "eligible_tiers": ["12"],
@@ -801,7 +801,7 @@
       "description": ""
     },
     {
-      "name": "Risk-见灵光",
+      "name": "Risk-Inspiration",
       "ingot_cost": "8",
       "output_tiers": ["8"],
       "eligible_tiers": ["8"],
