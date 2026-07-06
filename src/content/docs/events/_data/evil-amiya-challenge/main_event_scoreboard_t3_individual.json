@@ -156,6 +156,55 @@
       "videos": [
         { "label": "VOD", "href": "https://youtu.be/kCe2-LdyPc8?si=V_NhaS83vppKKa_L" }
       ]
+    },
+    {
+      "name": "sweet_bitter1701",
+      "score": 1,
+      "videos": [
+        { "label": "VOD", "href": "https://youtube.com/live/fBWRkKF_twc?feature=share" }
+      ]
+    },
+    {
+      "name": "lukas",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://youtu.be/PdBa2w1TL40?is=CQZ-lcNTHbiF5nuw" }
+      ]
+    },
+    {
+      "name": "みっつ",
+      "score": 1,
+      "videos": [
+        { "label": "VOD", "href": "https://youtube.com/live/UNLNf0XOZYE?feature=share" }
+      ]
+    },
+    {
+      "name": "Bait",
+      "score": 1,
+      "videos": [
+        { "label": "VOD", "href": "https://www.youtube.com/live/Ar1GbFj5RcQ?si=HZYmjMH-AKmQH4Ve" }
+      ]
+    },
+    {
+      "name": "pknine",
+      "score": 1,
+      "videos": [
+        { "label": "VOD", "href": "https://www.twitch.tv/videos/2812933739" }
+      ]
+    },
+    {
+      "name": "Die Alive",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://youtu.be/UXtzlqCVMLY" }
+      ]
+    },
+    {
+      "name": "Zan7",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://youtu.be/2Aa7zzo4l08" }
+      ]
     }
   ]
 }
