@@ -798,7 +798,7 @@
       "output_tiers": ["12"],
       "eligible_tiers": ["12"],
       "special_output": null,
-      "description": ""
+      "description": "On toss, consumes up to 999 Life Points. Get a Collectible for every 2 Life Points lost. Becomes Dayan Tongbao on returning to Coffer"
     },
     {
       "name": "Risk-Inspiration",
