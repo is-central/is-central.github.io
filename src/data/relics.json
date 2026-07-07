@@ -8,7 +8,7 @@
         "name": "Old Fan",
         "idx": 224,
         "cost": 16,
-        "effect": { "type": "external", "label": "External" },
+        "effect": { "type": "unconditional", "label": "Unconditional" },
         "sources": ["Wish Node"],
         "description": "All Operators gain +10% ATK for every different type of Operator in the squad."
       },
@@ -16,7 +16,7 @@
         "name": "Old Fan",
         "idx": 101,
         "cost": 16,
-        "effect": { "type": "external", "label": "External" },
+        "effect": { "type": "unconditional", "label": "Unconditional" },
         "sources": [],
         "description": "All Operators gain +10% ATK for every different type of Operator in the squad."
       },
@@ -24,7 +24,7 @@
         "name": "Old Fan",
         "idx": 112,
         "cost": 16,
-        "effect": { "type": "external", "label": "External" },
+        "effect": { "type": "unconditional", "label": "Unconditional" },
         "sources": ["Boss pool"],
         "description": "All Operators gain +10% ATK for every different type of Operator in the squad."
       },
@@ -32,7 +32,7 @@
         "name": "Old Fan",
         "idx": 119,
         "cost": 16,
-        "effect": { "type": "external", "label": "External" },
+        "effect": { "type": "unconditional", "label": "Unconditional" },
         "sources": ["Boss pool", "Rogue Trader - Rare Collectibles", "False to Truth - Eureka"],
         "description": "All Operators gain +10% ATK for every different type of Operator in the squad."
       }
@@ -69,6 +69,7 @@
       },
       "IS6": {
         "name": "Golden Chalice",
+        "idx": 170,
         "cost": 16,
         "effect": null,
         "sources": [],
@@ -115,6 +116,7 @@
       },
       "IS6": {
         "name": "'Civilight Eterna'",
+        "idx": 223,
         "cost": 16,
         "effect": null,
         "sources": [],
@@ -661,25 +663,25 @@
         "name": "Stalwart Aid - Assistance",
         "idx": 157,
         "cost": null,
-        "effect": {"type": "internal", "label": "Internal"},
+        "effect": {"type": "conditional", "label": "Conditional"},
         "sources": [],
-        "description": "Allied units within the attack range of Supporter Operators gain +20% ATK.\nThis effect stacks if a unit is in the range of multiple supporters. This effect is an internal buff."
+        "description": "Allied units within the attack range of Supporter Operators gain +20% ATK.\nThis effect stacks if a unit is in the range of multiple supporters. This effect is an conditional buff."
       },
       "IS4": {
         "name": "Stalwart Aid - Assistance",
         "idx": 167,
         "cost": null,
-        "effect": {"type": "internal", "label": "Internal"},
+        "effect": {"type": "conditional", "label": "Conditional"},
         "sources": [],
-        "description": "Allied units within the attack range of Supporter Operators gain +20% ATK.\nThis effect stacks if a unit is in the range of multiple supporters. This effect is an internal buff."
+        "description": "Allied units within the attack range of Supporter Operators gain +20% ATK.\nThis effect stacks if a unit is in the range of multiple supporters. This effect is an conditional buff."
       },
       "IS5": {
         "name": "Stalwart Aid - Assistance",
         "idx": 166,
         "cost": null,
-        "effect": {"type": "internal", "label": "Internal"},
+        "effect": {"type": "conditional", "label": "Conditional"},
         "sources": [],
-        "description": "Allied units within the attack range of Supporter Operators gain +20% ATK.\nThis effect stacks if a unit is in the range of multiple supporters. This effect is an internal buff."
+        "description": "Allied units within the attack range of Supporter Operators gain +20% ATK.\nThis effect stacks if a unit is in the range of multiple supporters. This effect is an conditional buff."
       }
     }
   },
@@ -1410,10 +1412,10 @@
     "image": "rogue_4_relic_legacy_150.png",
     "themes": ["IS2", "IS3", "IS4", "IS5"],
     "versions": {
-      "IS2": { "name": "King's New Lance", "idx": 213.1, "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is 1, all allied units have +50 ASPD." },
-      "IS3": { "name": "King's New Lance", "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is 1, all allied units have +50 ASPD." },
-      "IS4": { "name": "King's New Lance", "idx": 118, "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is 1, all allied units have +50 ASPD." },
-      "IS5": { "name": "King's New Lance", "idx": 207, "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is 1, all allied units have +50 ASPD." }
+      "IS2": { "name": "King's New Lance", "idx": 213.1, "cost": null, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is 1, all allied units have +50 ASPD." },
+      "IS3": { "name": "King's New Lance", "cost": null, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is 1, all allied units have +50 ASPD." },
+      "IS4": { "name": "King's New Lance", "idx": 118, "cost": null, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is 1, all allied units have +50 ASPD." },
+      "IS5": { "name": "King's New Lance", "idx": 207, "cost": null, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is 1, all allied units have +50 ASPD." }
     }
   },
   {
@@ -1421,8 +1423,8 @@
     "image": "rogue_3_relic_legacy_169.png",
     "themes": ["IS3", "IS4"],
     "versions": {
-      "IS3": { "name": "King's Staff", "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is at 1, all Operators recover an additional 1 SP every 2 seconds." },
-      "IS4": { "name": "King's Staff", "idx": 121, "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is at 1, all Operators recover an additional 1 SP every 2 seconds." }
+      "IS3": { "name": "King's Staff", "cost": null, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is at 1, all Operators recover an additional 1 SP every 2 seconds." },
+      "IS4": { "name": "King's Staff", "idx": 121, "cost": null, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is at 1, all Operators recover an additional 1 SP every 2 seconds." }
     }
   },
   {
@@ -1430,7 +1432,7 @@
     "image": "rogue_4_relic_fight_8.png",
     "themes": ["IS5"],
     "versions": {
-      "IS5": { "name": "King's Legacy", "idx": 209, "cost": 8, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is at 1, all Operators recover an additional 1 SP and 3% of Max HP every 2 seconds." }
+      "IS5": { "name": "King's Legacy", "idx": 209, "cost": 8, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is at 1, all Operators recover an additional 1 SP and 3% of Max HP every 2 seconds." }
     }
   },
   {
@@ -1438,8 +1440,8 @@
     "image": "rogue_3_relic_legacy_168.png",
     "themes": ["IS3", "IS4"],
     "versions": {
-      "IS3": { "name": "King's Buckler", "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is at 1, all Operators have +2 Block." },
-      "IS4": { "name": "King's Buckler", "idx": 120, "cost": null, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "When Life Point is at 1, all Operators have +2 Block." }
+      "IS3": { "name": "King's Buckler", "cost": null, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is at 1, all Operators have +2 Block." },
+      "IS4": { "name": "King's Buckler", "idx": 120, "cost": null, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "When Life Point is at 1, all Operators have +2 Block." }
     }
   },
   {
@@ -1450,25 +1452,25 @@
       "IS3": {
         "name": "King's Crown",
         "cost": null,
-        "effect": { "type": "internal", "label": "Internal" },
+        "effect": { "type": "conditional", "label": "Conditional" },
         "sources": [],
-        "description": "When Life Point is at 1, all allied units have +50% ATK, increased to +150% ATK if you have collected 3 or more King's Collectibles.\nThe +ATK% provided by King's Crown is additive with talent/skill +ATK% and multiplicative with external modifiers."
+        "description": "When Life Point is at 1, all allied units have +50% ATK, increased to +150% ATK if you have collected 3 or more King's Collectibles.\nThe +ATK% provided by King's Crown is additive with talent/skill +ATK% and multiplicative with unconditional modifiers."
       },
       "IS4": {
         "name": "King's Crown",
         "idx": 122,
         "cost": null,
-        "effect": { "type": "internal", "label": "Internal" },
+        "effect": { "type": "conditional", "label": "Conditional" },
         "sources": [],
-        "description": "When Life Point is at 1, all allied units have +50% ATK, increased to +150% ATK if you have collected 3 or more King's Collectibles.\nThe +ATK% provided by King's Crown is additive with talent/skill +ATK% and multiplicative with external modifiers."
+        "description": "When Life Point is at 1, all allied units have +50% ATK, increased to +150% ATK if you have collected 3 or more King's Collectibles.\nThe +ATK% provided by King's Crown is additive with talent/skill +ATK% and multiplicative with unconditional modifiers."
       },
       "IS5": {
         "name": "King's Crown",
         "idx": 193,
         "cost": null,
-        "effect": { "type": "internal", "label": "Internal" },
+        "effect": { "type": "conditional", "label": "Conditional" },
         "sources": [],
-        "description": "When Life Point is at 1, all allied units have +50% ATK, increased to +150% ATK if you have collected 3 or more King's Collectibles.\nThe +ATK% provided by King's Crown is additive with talent/skill +ATK% and multiplicative with external modifiers."
+        "description": "When Life Point is at 1, all allied units have +50% ATK, increased to +150% ATK if you have collected 3 or more King's Collectibles.\nThe +ATK% provided by King's Crown is additive with talent/skill +ATK% and multiplicative with unconditional modifiers."
       }
     }
   },
@@ -1492,7 +1494,7 @@
     "image": "rogue_4_relic_fight_14.png",
     "themes": ["IS5"],
     "versions": {
-      "IS5": { "name": "Sarkaz King's Regal Rest", "idx": 214, "cost": 8, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "All Operators gain +20% DEF and +10 RES at full Life Points." }
+      "IS5": { "name": "Sarkaz King's Regal Rest", "idx": 214, "cost": 8, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "All Operators gain +20% DEF and +10 RES at full Life Points." }
     }
   },
   {
@@ -1500,7 +1502,7 @@
     "image": "rogue_4_relic_fight_15.png",
     "themes": ["IS5"],
     "versions": {
-      "IS5": { "name": "Sarkaz King's Torn Banner", "idx": 215, "cost": 12, "effect": { "type": "internal", "label": "Internal" }, "sources": [], "description": "All Operators gain +30 ASPD at full Life Points." }
+      "IS5": { "name": "Sarkaz King's Torn Banner", "idx": 215, "cost": 12, "effect": { "type": "conditional", "label": "Conditional" }, "sources": [], "description": "All Operators gain +30 ASPD at full Life Points." }
     }
   },
   {
@@ -1512,7 +1514,7 @@
         "name": "King of Sarkaz's Vessel",
         "idx": 292,
         "cost": 16,
-        "effect": { "type": "internal", "label": "Internal" },
+        "effect": { "type": "conditional", "label": "Conditional" },
         "sources": [],
         "description": "All Operators gain +80% Max HP when Life Points are full, increased to 200% if you have collected 3 or more King of Sarkaz's Collectibles."
       }
@@ -1694,7 +1696,7 @@
         "cost": null,
         "effect": null,
         "sources": [],
-        "description": "When the battle begins, a random Operator will have +100% ATK and +100% Max HP within the operation.\nStats provided are external modifiers."
+        "description": "When the battle begins, a random Operator will have +100% ATK and +100% Max HP within the operation.\nStats provided are unconditional modifiers."
       }
     }
   },
@@ -1708,7 +1710,7 @@
         "cost": null,
         "effect": null,
         "sources": [],
-        "description": "When a battle begins, a random Operator will have +100% ATK and +100% HP for that battle.\nStats provided are external modifiers."
+        "description": "When a battle begins, a random Operator will have +100% ATK and +100% HP for that battle.\nStats provided are unconditional modifiers."
       },
       "IS5": {
         "name": "Chitinous Ripper",
@@ -1716,7 +1718,7 @@
         "cost": null,
         "effect": null,
         "sources": [],
-        "description": "When a battle begins, a random Operator will have +100% ATK and +100% HP for that battle.\nStats provided are external modifiers."
+        "description": "When a battle begins, a random Operator will have +100% ATK and +100% HP for that battle.\nStats provided are unconditional modifiers."
       }
     }
   },
@@ -1766,7 +1768,7 @@
         "name": "Mercenary's Accessory",
         "idx": 205,
         "cost": 16,
-        "effect": { "type": "external", "label": "External" },
+        "effect": { "type": "unconditional", "label": "Unconditional" },
         "sources": [],
         "description": "Grants a random Operator +5% ATK, DEF, and Max HP, plus an additional +5% after each perfectly cleared battle (Stacks up to 10 times).\nAutomatically gains 1 out of the 10 stacks when obtained and caps at 10 stacks."
       }
@@ -1781,7 +1783,7 @@
         "name": "Fearless Blade",
         "idx": 264,
         "cost": null,
-        "effect": { "type": "internal", "label": "Internal" },
+        "effect": { "type": "conditional", "label": "Conditional" },
         "sources": [],
         "description": "When the battle begins, the Operator with the highest DP Cost gains +50% ATK and DEF."
       }
@@ -1796,9 +1798,9 @@
         "name": "Blood Tax Mystery",
         "idx": 233,
         "cost": null,
-        "effect": { "type": "external", "label": "External" },
+        "effect": { "type": "unconditional", "label": "Unconditional" },
         "sources": ["Bizarre Fragment"],
-        "description": "All allied and enemy units have -35% Max HP; only active in Bizarre Fragments.\nExternal modifier."
+        "description": "All allied and enemy units have -35% Max HP; only active in Bizarre Fragments.\nUnconditional modifier."
       }
     }
   },
@@ -1886,9 +1888,9 @@
         "name": "Tranquil Mystery",
         "idx": 239,
         "cost": null,
-        "effect": { "type": "external", "label": "External" },
+        "effect": { "type": "unconditional", "label": "Unconditional" },
         "sources": ["Bizarre Fragment"],
-        "description": "All allied and enemy units have -25% ATK; only active in Bizarre Fragments.\nExternal modifier."
+        "description": "All allied and enemy units have -25% ATK; only active in Bizarre Fragments.\nUnconditional modifier."
       }
     }
   },
@@ -1912,7 +1914,7 @@
     "image": "rogue_4_relic_book_6.png",
     "themes": ["IS5"],
     "versions": {
-      "IS5": { "name": "Judgement: Guard", "idx": 276, "cost": 8, "effect": { "type": "external", "label": "External" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Guard Operators gain +20% ATK and +20 ASPD.\nExternal modifier, stacks additively with other Judgement relics." }
+      "IS5": { "name": "Judgement: Guard", "idx": 276, "cost": 8, "effect": { "type": "unconditional", "label": "Unconditional" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Guard Operators gain +20% ATK and +20 ASPD.\nUnconditional modifier, stacks additively with other Judgement relics." }
     }
   },
   {
@@ -1920,7 +1922,7 @@
     "image": "rogue_4_relic_book_7.png",
     "themes": ["IS5"],
     "versions": {
-      "IS5": { "name": "Judgement: Vanguard", "idx": 277, "cost": 8, "effect": { "type": "external", "label": "External" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Vanguard Operators gain +20% ATK and +30% Max HP.\nExternal modifier, stacks additively with other Judgement relics." }
+      "IS5": { "name": "Judgement: Vanguard", "idx": 277, "cost": 8, "effect": { "type": "unconditional", "label": "Unconditional" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Vanguard Operators gain +20% ATK and +30% Max HP.\nUnconditional modifier, stacks additively with other Judgement relics." }
     }
   },
   {
@@ -1928,7 +1930,7 @@
     "image": "rogue_4_relic_book_8.png",
     "themes": ["IS5"],
     "versions": {
-      "IS5": { "name": "Judgement: Defender", "idx": 278, "cost": 8, "effect": { "type": "external", "label": "External" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Defender Operators gain +20% DEF and +30% Max HP.\nExternal modifier, stacks additively with other Judgement relics." }
+      "IS5": { "name": "Judgement: Defender", "idx": 278, "cost": 8, "effect": { "type": "unconditional", "label": "Unconditional" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Defender Operators gain +20% DEF and +30% Max HP.\nUnconditional modifier, stacks additively with other Judgement relics." }
     }
   },
   {
@@ -1936,7 +1938,7 @@
     "image": "rogue_4_relic_book_9.png",
     "themes": ["IS5"],
     "versions": {
-      "IS5": { "name": "Judgement: Sniper", "idx": 279, "cost": 8, "effect": { "type": "external", "label": "External" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Sniper Operators gain +20% ATK and +20 ASPD.\nExternal modifier, stacks additively with other Judgement relics." }
+      "IS5": { "name": "Judgement: Sniper", "idx": 279, "cost": 8, "effect": { "type": "unconditional", "label": "Unconditional" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Sniper Operators gain +20% ATK and +20 ASPD.\nUnconditional modifier, stacks additively with other Judgement relics." }
     }
   },
   {
@@ -1944,7 +1946,7 @@
     "image": "rogue_4_relic_book_10.png",
     "themes": ["IS5"],
     "versions": {
-      "IS5": { "name": "Judgement: Specialist", "idx": 280, "cost": 8, "effect": { "type": "external", "label": "External" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Specialist Operators gain +20% ATK and +30% Max HP.\nExternal modifier, stacks additively with other Judgement relics." }
+      "IS5": { "name": "Judgement: Specialist", "idx": 280, "cost": 8, "effect": { "type": "unconditional", "label": "Unconditional" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Specialist Operators gain +20% ATK and +30% Max HP.\nUnconditional modifier, stacks additively with other Judgement relics." }
     }
   },
   {
@@ -1952,7 +1954,7 @@
     "image": "rogue_4_relic_book_11.png",
     "themes": ["IS5"],
     "versions": {
-      "IS5": { "name": "Judgement: Medic", "idx": 281, "cost": 8, "effect": { "type": "external", "label": "External" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Medic Operators gain +50% ATK.\nExternal modifier, stacks additively with other Judgement relics." }
+      "IS5": { "name": "Judgement: Medic", "idx": 281, "cost": 8, "effect": { "type": "unconditional", "label": "Unconditional" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Medic Operators gain +50% ATK.\nUnconditional modifier, stacks additively with other Judgement relics." }
     }
   },
   {
@@ -1960,7 +1962,7 @@
     "image": "rogue_4_relic_book_12.png",
     "themes": ["IS5"],
     "versions": {
-      "IS5": { "name": "Judgement: Caster", "idx": 282, "cost": 8, "effect": { "type": "external", "label": "External" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Caster Operators gain +20% ATK and +20 ASPD.\nExternal modifier, stacks additively with other Judgement relics." }
+      "IS5": { "name": "Judgement: Caster", "idx": 282, "cost": 8, "effect": { "type": "unconditional", "label": "Unconditional" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Caster Operators gain +20% ATK and +20 ASPD.\nUnconditional modifier, stacks additively with other Judgement relics." }
     }
   },
   {
@@ -1968,7 +1970,7 @@
     "image": "rogue_4_relic_book_13.png",
     "themes": ["IS5"],
     "versions": {
-      "IS5": { "name": "Judgement: Supporter", "idx": 283, "cost": 8, "effect": { "type": "external", "label": "External" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Supporter Operators gain +50% ATK.\nExternal modifier, stacks additively with other Judgement relics." }
+      "IS5": { "name": "Judgement: Supporter", "idx": 283, "cost": 8, "effect": { "type": "unconditional", "label": "Unconditional" }, "sources": [], "description": "For every Bizarre Fragment Collectible owned, Supporter Operators gain +50% ATK.\nUnconditional modifier, stacks additively with other Judgement relics." }
     }
   },
   {
@@ -2312,7 +2314,7 @@
         "name": "Roundstone Altar",
         "idx": 207,
         "cost": null,
-        "effect": { "type": "external", "label": "External" },
+        "effect": { "type": "unconditional", "label": "Unconditional" },
         "sources": [],
         "description": "There is a chance after battle to permanently increase all allied units' ATK and DEF by 5% (Can stack up to 10 times).\nThere is a 30% chance of gaining a stack after each combat. I heard if you can stack it up to 10 in two runs in a row you can win a free trip to Disneyland."
       },
@@ -2320,7 +2322,7 @@
         "name": "Roundstone Altar",
         "idx": 195,
         "cost": 8,
-        "effect": { "type": "external", "label": "External" },
+        "effect": { "type": "unconditional", "label": "Unconditional" },
         "sources": ["Rogue Trader", "False to Truth - 1+1"],
         "description": "There is a chance after battle to permanently increase all allied units' ATK and DEF by 5% (Can stack up to 10 times).\nThere is a 30% chance of gaining a stack after each combat. I heard if you can stack it up to 10 in two runs in a row you can win a free trip to Disneyland."
       }
@@ -2337,7 +2339,7 @@
         "cost": null,
         "effect": null,
         "sources": [],
-        "description": "All allied melee units gain a Barrier equal to 50% of their Max HP on deployment.\nThe barrier can mitigate the 30%/60% of HP loss caused by the injury trigger/crisis trigger collapsal paradigms and a portion of HP loss from sufferings epoch.\nThe 50% shield is based off the HP of the operator after external buffs are applied but before internal buffs like Aegis. There seems to be an exception with Cardigan’s talent which stacks additively with internal buffs but is displayed before deployment as external buffs normally do, here Cardigan’s talent buff is factored in into Woodplate’s shield. Generalizing, it seems to be applied based on the HP displayed on the operator stats before deployment."
+        "description": "All allied melee units gain a Barrier equal to 50% of their Max HP on deployment.\nThe barrier can mitigate the 30%/60% of HP loss caused by the injury trigger/crisis trigger collapsal paradigms and a portion of HP loss from sufferings epoch.\nThe 50% shield is based off the HP of the operator after unconditional buffs are applied but before conditional buffs like Aegis. There seems to be an exception with Cardigan’s talent which stacks additively with conditional buffs but is displayed before deployment as unconditional buffs normally do, here Cardigan’s talent buff is factored in into Woodplate’s shield. Generalizing, it seems to be applied based on the HP displayed on the operator stats before deployment."
       },
       "IS5": {
         "name": "Living Woodplate",
@@ -2345,7 +2347,7 @@
         "cost": 12,
         "effect": null,
         "sources": ["Rogue Trader", "False to Truth - 2+2"],
-        "description": "All allied melee units gain a Barrier equal to 50% of their Max HP on deployment.\nThe barrier can mitigate the 30%/60% of HP loss caused by the injury trigger/crisis trigger collapsal paradigms and a portion of HP loss from sufferings epoch.\nThe 50% shield is based off the HP of the operator after external buffs are applied but before internal buffs like Aegis. There seems to be an exception with Cardigan’s talent which stacks additively with internal buffs but is displayed before deployment as external buffs normally do, here Cardigan’s talent buff is factored in into Woodplate’s shield. Generalizing, it seems to be applied based on the HP displayed on the operator stats before deployment."
+        "description": "All allied melee units gain a Barrier equal to 50% of their Max HP on deployment.\nThe barrier can mitigate the 30%/60% of HP loss caused by the injury trigger/crisis trigger collapsal paradigms and a portion of HP loss from sufferings epoch.\nThe 50% shield is based off the HP of the operator after unconditional buffs are applied but before conditional buffs like Aegis. There seems to be an exception with Cardigan’s talent which stacks additively with conditional buffs but is displayed before deployment as unconditional buffs normally do, here Cardigan’s talent buff is factored in into Woodplate’s shield. Generalizing, it seems to be applied based on the HP displayed on the operator stats before deployment."
       }
     }
   },
@@ -2417,7 +2419,7 @@
         "name": "Empty Fowlbeast",
         "idx": 128,
         "cost": 16,
-        "effect": { "type": "internal", "label": "Internal" },
+        "effect": { "type": "conditional", "label": "Conditional" },
         "sources": ["Rogue Trader", "False to Truth - Eureka"],
         "description": "Summons have +30% HP, +30% ATK, and when on the field, grant +60% ATK to their summoners.\nApplies to a surprisingly large number of things beyond ordinary summons, including trapmaster mines, Ulpian's S3 return point, Wis'adel's shadows, Ebenholz's S2 goats, and more."
       }
@@ -2432,17 +2434,17 @@
         "name": "Lakebed Aegis",
         "idx": 141,
         "cost": null,
-        "effect": { "type": "internal", "label": "Internal" },
+        "effect": { "type": "conditional", "label": "Conditional" },
         "sources": [],
-        "description": "Shield +1; all allied units gain Max HP +60% if you have any Shield at the start of a battle.\nUnusually, this is implemented as an internal buff, meaning the +60% HP is multiplicative with most other +HP% collectibles.\nThe effect is granted as long as you had at least 1 shield when the operation starts."
+        "description": "Shield +1; all allied units gain Max HP +60% if you have any Shield at the start of a battle.\nUnusually, this is implemented as an conditional buff, meaning the +60% HP is multiplicative with most other +HP% collectibles.\nThe effect is granted as long as you had at least 1 shield when the operation starts."
       },
       "IS5": {
         "name": "Lakebed Aegis",
         "idx": 127,
         "cost": 12,
-        "effect": { "type": "internal", "label": "Internal" },
+        "effect": { "type": "conditional", "label": "Conditional" },
         "sources": ["Rogue Trader", "False to Truth - 2+2"],
-        "description": "Shield +1; all allied units gain Max HP +60% if you have any Shield at the start of a battle.\nUnusually, this is implemented as an internal buff, meaning the +60% HP is multiplicative with most other +HP% collectibles.\nThe effect is granted as long as you had at least 1 shield when the operation starts."
+        "description": "Shield +1; all allied units gain Max HP +60% if you have any Shield at the start of a battle.\nUnusually, this is implemented as an conditional buff, meaning the +60% HP is multiplicative with most other +HP% collectibles.\nThe effect is granted as long as you had at least 1 shield when the operation starts."
       }
     }
   },
@@ -2455,9 +2457,9 @@
         "name": "Children of the Walls",
         "idx": 206,
         "cost": 8,
-        "effect": { "type": "internal", "label": "Internal" },
+        "effect": { "type": "conditional", "label": "Conditional" },
         "sources": ["Rogue Trader", "False to Truth - 1+1"],
-        "description": "Operators deployed on the 8 tiles surrounding the Objective Point gain +2 Block and +50% Max HP.\nThe +50% Max HP is an internal modifier."
+        "description": "Operators deployed on the 8 tiles surrounding the Objective Point gain +2 Block and +50% Max HP.\nThe +50% Max HP is an conditional modifier."
       }
     }
   },
@@ -2502,7 +2504,7 @@
   {
     "id": "scouts-scope",
     "image": "rogue_4_relic_legacy_144.png",
-    "themes": ["IS2", "IS3", "IS4", "IS5"],
+    "themes": ["IS2", "IS3", "IS4", "IS5", "IS6"],
     "versions": {
       "IS2": {
         "name": "Scout's Scope",
@@ -2534,6 +2536,14 @@
         "effect": null,
         "sources": ["Rogue Trader", "False to Truth - Eureka"],
         "description": "Enemies take increased damage from allied units as range increases (max 100%).\nThe description for Scout’s Scope claims it maxes out at 50% in IS3, but it is incorrect, it maxes out at 100% just like it does in every IS forever.\nThe damage amplification provided by Scout’s Scope is a final modifier applied after all other damage calculations, not an ATK% multiplier. As a result, it does not improve the ability of physical damage operators to penetrate through defense like +ATK% or ATK% multiplier effects would.\nThe damage amplification provided by Scout’s Scope is approximately given by the equation: amplification = 20%*(x-1), where x is the distance between the operator and enemy measured in tiles. The damage amplification factor cannot go below 0% or exceed 100%, so the amplification factor begins scaling at a distance of 1 tile, and maxes out a distance of 6 tiles. X is treated continuously without rounding, x=1.35 tiles and x=1.36 tiles would produce a slightly different value of amplification.\nThe damage amplification provided by Scout’s Scope is multiplicative with effects like that of Fragile, Avenger (increased physical damage dealt) or Brilliant Lament (increased arts damage dealt), since it is a generic damage amplification effect."
+      },
+      "IS6": {
+        "name": "Scout's Scope",
+        "idx": 248,
+        "cost": 16,
+        "effect": null,
+        "sources": ["Rogue Trader", "Boss pool"],
+        "description": "Enemies take increased damage from allied units as range increases (max 100%).\nThe description for Scout’s Scope claims it maxes out at 50% in IS3, but it is incorrect, it maxes out at 100% just like it does in every IS forever.\nThe damage amplification provided by Scout’s Scope is a final modifier applied after all other damage calculations, not an ATK% multiplier. As a result, it does not improve the ability of physical damage operators to penetrate through defense like +ATK% or ATK% multiplier effects would.\nThe damage amplification provided by Scout’s Scope is approximately given by the equation: amplification = 20%*(x-1), where x is the distance between the operator and enemy measured in tiles. The damage amplification factor cannot go below 0% or exceed 100%, so the amplification factor begins scaling at a distance of 1 tile, and maxes out a distance of 6 tiles. X is treated continuously without rounding, x=1.35 tiles and x=1.36 tiles would produce a slightly different value of amplification.\nThe damage amplification provided by Scout’s Scope is multiplicative with effects like that of Fragile, Avenger (increased physical damage dealt) or Brilliant Lament (increased arts damage dealt), since it is a generic damage amplification effect."
       }
     }
   },
@@ -2561,7 +2571,7 @@
         "name": "'Bridge of Knowledge'",
         "idx": 204,
         "cost": 12,
-        "effect": { "type": "external", "label": "External" },
+        "effect": { "type": "unconditional", "label": "Unconditional" },
         "sources": ["Rogue Trader", "False to Truth - 2+2"],
         "description": "Every Inspirer used grants all allied units +5% HP (Stacks up to 10 times).\nJust using the inspirer is enough for a stack, you don't need to bring it into a combat."
       }
@@ -2672,6 +2682,7 @@
       },
       "IS6": {
         "name": "'End of Times'",
+        "idx": 228,
         "cost": null,
         "effect": null,
         "sources": [],
@@ -2835,7 +2846,7 @@
         "cost": null,
         "effect": null,
         "sources": ["D17+ F3"],
-        "description": "All enemies gain +3000 DEF, but lose 100 DEF upon taking damage (Stacks up to 30 times).\nApplied additively after EM buffs but before any external DEF multipliers."
+        "description": "All enemies gain +3000 DEF, but lose 100 DEF upon taking damage (Stacks up to 30 times).\nApplied additively after EM buffs but before any unconditional DEF multipliers."
       }
     }
   },
@@ -2850,7 +2861,7 @@
         "cost": null,
         "effect": null,
         "sources": ["D17+ F3"],
-        "description": "Elite and Leader enemies gain +20% HP, DEF, and ATK.\nMultiplicative with other enemy external multipliers."
+        "description": "Elite and Leader enemies gain +20% HP, DEF, and ATK.\nMultiplicative with other enemy unconditional multipliers."
       }
     }
   },
@@ -2878,9 +2889,9 @@
         "name": "Shard of the Untold Kings",
         "idx": 275,
         "cost": null,
-        "effect": { "type": "internal", "label": "Internal" },
+        "effect": { "type": "conditional", "label": "Conditional" },
         "sources": ["D17+ F3"],
-        "description": "Loadbearing Operators have -30% ATK.\nThe ATK reduction counts as an internal debuff instead of an external modifier."
+        "description": "Loadbearing Operators have -30% ATK.\nThe ATK reduction counts as an conditional debuff instead of an unconditional modifier."
       }
     }
   },
@@ -2966,7 +2977,7 @@
         "name": "Amma's Affection",
         "idx": 236,
         "cost": null,
-        "effect": { "type": "external", "label": "External" },
+        "effect": { "type": "unconditional", "label": "Unconditional" },
         "sources": [],
         "description": "All allied units gain +1% HP, ATK, and DEF; occasionally something wonderful will happen.\nThe “occasionally something wonderful will happen” effect refers to the fact that it unlocks a few special options in a few specific encounters that involve exchanging it away for some additional benefit.\nIn the On-site at Public Nomadic Station N6 encounter (the one that gives you a free collectible, not the one that gives you a recruit): you can exchange it away for 2 collectibles (instead of the default 1 collectible).\nIn the Regular Maintenance encounter: you can exchange it away for 15 hope (instead of the default 2/4 hope).\nIn the Unfreezing River encounter: you can exchange it away for 1 collectible (instead of being forced to take a penalty).\nAdditionally, in the Reconstruction prophecy node: you can trade it in to skip any one of the 3 requirements you must past for 4th ending."
       }
@@ -3125,7 +3136,7 @@
         "name": "Orange Storm",
         "idx": 3,
         "cost": 8,
-        "effect": {"type": "external", "label": "External"},
+        "effect": {"type": "unconditional", "label": "Unconditional"},
         "sources": ["Rogue Trader", "False to Truth - 2+2"],
         "description": "Squad Size Limit +1, all allied units gain 1%, 3%, 5%, 7% ATK for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
       }
@@ -3155,7 +3166,7 @@
         "name": "Screaming Cherry",
         "idx": 5,
         "cost": 12,
-        "effect": {"type": "external", "label": "External"},
+        "effect": {"type": "unconditional", "label": "Unconditional"},
         "sources": ["Rogue Trader", "False to Truth - 3+3"],
         "description": "Squad Size Limit +2, all allied units gain 2%, 4%, 6%, 8% ATK for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
       }
@@ -3170,7 +3181,7 @@
         "name": "Pitt's Assorted Fruits",
         "idx": 6,
         "cost": 16,
-        "effect": {"type": "external", "label": "External"},
+        "effect": {"type": "unconditional", "label": "Unconditional"},
         "sources": ["Rogue Trader - Rare Collectibles", "False to Truth - Eureka"],
         "description": "Squad Size Limit +3, all allied units gain 3%, 4%, 5%, 7% ATK, DEF, and HP for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
       }
@@ -3185,7 +3196,7 @@
         "name": "Topographical Map",
         "idx": 1,
         "cost": null,
-        "effect": {"type": "external", "label": "External"},
+        "effect": {"type": "unconditional", "label": "Unconditional"},
         "sources": ["Rogue Trader"],
         "description": "+1 Deployment Limit, all friendly units gain 4%, 5%, 6%, 6% and +0.5% DEF per allied unit on the field for Braving Nature 0-2, 3-5, 6-8, 9-15 respectively."
       },
@@ -3193,7 +3204,7 @@
         "name": "Topographical Map",
         "idx": 7,
         "cost": 8,
-        "effect": {"type": "external", "label": "External"},
+        "effect": {"type": "unconditional", "label": "Unconditional"},
         "sources": ["Rogue Trader", "False to Truth - 1+1"],
         "description": "Deployment Limit +1, all allied units gain 4%, 5%, 6%, 8% DEF for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
       }
@@ -3208,7 +3219,7 @@
         "name": "Conch of Divine Whispers",
         "idx": 2,
         "cost": null,
-        "effect": {"type": "external", "label": "External"},
+        "effect": {"type": "unconditional", "label": "Unconditional"},
         "sources": ["Rogue Trader"],
         "description": "+1 Deployment Limit, all friendly units gain 4%, 5%, 6%, 6% and +0.5% HP per allied unit on the field for Braving Nature 0-2, 3-5, 6-8, 9-15 respectively."
       },
@@ -3216,7 +3227,7 @@
         "name": "Conch of Divine Whispers",
         "idx": 8,
         "cost": 8,
-        "effect": {"type": "external", "label": "External"},
+        "effect": {"type": "unconditional", "label": "Unconditional"},
         "sources": ["Rogue Trader", "False to Truth - 1+1"],
         "description": "Deployment Limit +1, all allied units gain 4%, 5%, 6%, 8% HP for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
       }
@@ -3231,7 +3242,7 @@
         "name": "Night-Whispers in the Forest",
         "idx": 3,
         "cost": null,
-        "effect": {"type": "external", "label": "External"},
+        "effect": {"type": "unconditional", "label": "Unconditional"},
         "sources": ["Rogue Trader"],
         "description": "+2 Deployment Limit, all friendly units gain 6%, 7%, 8%, 8% and +0.5% DEF per allied unit on the field for Braving Nature 0-2, 3-5, 6-8, 9-15 respectively."
       },
@@ -3239,7 +3250,7 @@
         "name": "Night-Whispers in the Forest",
         "idx": 9,
         "cost": 12,
-        "effect": {"type": "external", "label": "External"},
+        "effect": {"type": "unconditional", "label": "Unconditional"},
         "sources": ["Rogue Trader", "False to Truth - 2+2"],
         "description": "Deployment Limit +2, all allied units gain 6%, 7%, 8%, 10% DEF for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
       }
@@ -3254,7 +3265,7 @@
         "name": "Church Alms Meal Voucher",
         "idx": 4,
         "cost": null,
-        "effect": {"type": "external", "label": "External"},
+        "effect": {"type": "unconditional", "label": "Unconditional"},
         "sources": ["Rogue Trader"],
         "description": "+2 Deployment Limit, all friendly units gain 6%, 7%, 8%, 8% and +0.5% HP per allied unit on the field for Braving Nature 0-2, 3-5, 6-8, 9-15 respectively."
       },
@@ -3262,7 +3273,7 @@
         "name": "Church Alms Meal Voucher",
         "idx": 10,
         "cost": 12,
-        "effect": {"type": "external", "label": "External"},
+        "effect": {"type": "unconditional", "label": "Unconditional"},
         "sources": ["Rogue Trader", "False to Truth - 2+2"],
         "description": "Deployment Limit +2, all allied units gain 6%, 7%, 8%, 10% HP for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
       }
@@ -3307,7 +3318,7 @@
         "name": "Letter of Termination Contract",
         "idx": 13,
         "cost": 8,
-        "effect": {"type": "external", "label": "External"},
+        "effect": {"type": "unconditional", "label": "Unconditional"},
         "sources": ["Rogue Trader"],
         "description": "Hope +4, All allied units gain 0, 3%, 5%, 7% ATK for Facing Souls 0-2, 3-5, 6-8, 9-18 respectively."
       }
@@ -3535,6 +3546,36 @@
         "effect": null,
         "sources": ["Rogue Trader", "False to Truth - Eureka"],
         "description": "Hope +6, Squad Size Limit +2."
+      }
+    }
+  },
+  {
+    "id": "tzu-wu-blade",
+    "image": "rogue_5_relic_explore_7.png",
+    "themes": ["IS6"],
+    "versions": {
+      "IS6": {
+        "name": "Tzu-Wu Blade",
+        "idx": 240,
+        "cost": 12,
+        "effect": null,
+        "sources": ["Rogue Trader"],
+        "description": "Reveals all Turmoil nodes on the current or next Sui's Remnant Consciousness visit; grants -5% Redeployment Time to all operators (additive with other Redeployment Time modifiers), and gains 1 stack for each complete Turmoil node (only stacks after obtaining the relic), up to 6 stacks."
+      }
+    }
+  },
+  {
+    "id": "bells-of-agreement",
+    "image": "rogue_5_relic_speg_1.png",
+    "themes": ["IS6"],
+    "versions": {
+      "IS6": {
+        "name": "Bells of Agreement",
+        "idx": 239,
+        "cost": 16,
+        "effect": { "type": "conditional", "label": "Conditional" },
+        "sources": ["Rogue Trader", "Boss pool"],
+        "description": "For every Candleguest promoted via combat, all Candleguests +40% ATK; after deployment, -4% Redeployment Time and gain 4 DP (Stacks up to 4 times).\nPromoting via combat includes: Pathfinder fight, Face-Off 2nd option, Lei Fa's Purge Tongbao."
       }
     }
   }
