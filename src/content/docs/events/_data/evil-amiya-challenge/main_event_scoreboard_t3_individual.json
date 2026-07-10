@@ -205,6 +205,20 @@
       "videos": [
         { "label": "VOD", "href": "https://youtu.be/2Aa7zzo4l08" }
       ]
+    },
+    {
+      "name": "Noid",
+      "score": 1,
+      "videos": [
+        { "label": "VOD", "href": "https://www.youtube.com/watch?v=COfeTdmU9TI" }
+      ]
+    },
+    {
+      "name": "Minku",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://www.youtube.com/live/7ovcMOJb1fU?si=XX7Hc6b0YwvbNoZO" }
+      ]
     }
   ]
 }

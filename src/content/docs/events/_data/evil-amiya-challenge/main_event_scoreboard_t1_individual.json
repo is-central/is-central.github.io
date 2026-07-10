@@ -64,6 +64,13 @@
       "videos": [
         { "label": "VOD", "href": "https://www.youtube.com/watch?v=n9yolrMz3nM" }
       ]
+    },
+    {
+      "name": "LeverBoi",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://www.youtube.com/live/klF9pe3YILg?si=pP8VhpKyg-iwMV6T" }
+      ]
     }
   ]
 }
