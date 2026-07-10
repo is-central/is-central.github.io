@@ -306,5 +306,44 @@
     "time": "2026-07-06T02:45:00Z",
     "duration": 120,
     "platform": "discord"
+  },
+  {
+    "player": "LeverBoi",
+    "notes": "Framework of the End (T1 Egg)",
+    "time": "2026-07-08T11:30:00Z",
+    "duration": 120,
+    "platform": "discord"
+  },
+  {
+    "player": "Minku",
+    "notes": "Reality of the End (T3 Egg)",
+    "time": "2026-07-09T02:00:00Z",
+    "duration": 120,
+    "platform": "discord"
+  },
+  {
+    "player": "Halca",
+    "notes": "Reality of the End (T3 Egg)",
+    "time": "2026-07-12T13:00:00Z",
+    "duration": 120,
+    "platform": "discord"
+  },
+  {
+    "player": "Zagan",
+    "notes": "Reality of the End (T3 Egg)",
+    "time": "2026-07-12T14:00:00Z",
+    "duration": 120
+  },
+  {
+    "player": "Elamoyyy",
+    "notes": "Reality of the End (T3 Egg)",
+    "time": "2026-07-14T02:00:00Z",
+    "duration": 120
+  },
+  {
+    "player": "Kevthink",
+    "notes": "Reality of the End (T3 Egg)",
+    "time": "2026-07-10T20:00:00Z",
+    "duration": 120
   }
 ]
