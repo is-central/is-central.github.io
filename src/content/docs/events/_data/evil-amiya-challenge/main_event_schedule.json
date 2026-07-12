@@ -342,8 +342,33 @@
   },
   {
     "player": "Kevthink",
-    "notes": "Reality of the End (T3 Egg)",
+    "notes": "Framework of the End (T1 Egg)",
     "time": "2026-07-10T20:00:00Z",
+    "duration": 120
+  },
+  {
+    "player": "Wingsvn",
+    "notes": "Reality of the End (T3 Egg)",
+    "time": "2026-07-12T10:00:00Z",
+    "duration": 120
+  },
+  {
+    "player": "Natsukoi",
+    "notes": "Framework of the End (T1 Egg)",
+    "time": "2026-07-10T16:30:00Z",
+    "duration": 120
+  },
+  {
+    "player": "RiguMaboru",
+    "notes": "Framework of the End (T1 Egg)",
+    "time": "2026-07-13T15:00:00Z",
+    "duration": 120,
+    "platform": "discord"
+  },
+  {
+    "player": "3366",
+    "notes": "Reality of the End (T3 Egg)",
+    "time": "2026-07-11T23:15:00Z",
     "duration": 120
   }
 ]
