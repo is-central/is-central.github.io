@@ -71,6 +71,28 @@
       "videos": [
         { "label": "VOD", "href": "https://www.youtube.com/live/klF9pe3YILg?si=pP8VhpKyg-iwMV6T" }
       ]
+    },
+    {
+      "name": "Kevthink",
+      "score": 1,
+      "videos": [
+        { "label": "VOD (part 1)", "href": "https://youtu.be/ORaPFkOFEyA" },
+        { "label": "VOD (part 2)", "href": "https://youtu.be/U5-5K7REJD8" }
+      ]
+    },
+    {
+      "name": "MarsiuMouse",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://www.youtube.com/watch?v=T97386kGRF4" }
+      ]
+    },
+    {
+      "name": "mm12",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://youtu.be/CMaEEJDHIRw" }
+      ]
     }
   ]
 }
