@@ -1,0 +1,242 @@
+---
+title: IS6 General Information
+description: Tongbaos, endings routing, node rewards, and more information related to IS6.
+---
+<div class="back-button-container">
+  <a href="/is6-sui/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">Back to IS6 Overview</span>
+  </a>
+</div>  
+---
+
+This page is mostly a compilation of varied, general information for IS6.
+
+## Yan operators
+<div style={{ display: "flex", justifyContent: "center" }}>
+![Yan operators](/guides/is6-sui/general-information/yan_ops.png)
+</div>
+
+
+## Face-Off rewards
+When you select Face-off, you can view the stage details to determine the types of operators permitted in the fight (Melee/Range or both).
+
+For the middle and right faceoffs, you are restricted to using operators of the specified type. However, the left faceoff always has the opposite restriction (e.g., if the stage specifies melee, the left option will be a ranged tile).
+
+The rewards are as follows:
+* Left: Voucher (2 options), Tongbao (2 options), Tongbao (2 options)
+* Middle: Tongbao (2 options), Relic, Voucher (2 options)
+* Right: Rare Relic, Voucher (1 option), Voucher (2 options)
+
+## Tongbaos
+### Tier system
+Tongbaos are classified in tiers which matters when trading them in the Plan node.
+As a general rule, most Tongbaos will be traded into Tongbaos of the same tier, with just a few exceptions.
+When trading a Tongbao, the pool of possible Tongbaos to obtain has certain Tongbaos originary from a lower or higher tier that can result in a downgrade or upgrade of the Tongbao traded.
+
+The following image contains which Tongbaos pertain to which tier.
+Note that while the bottom left pool is denoted as Tongbaos not available through trading, it actually denotes Tongbaos that cannot be traded but can be obtained through the Plan node.
+
+(A <a href="/is6-sui/overview/tongbao-exchange-calculator" target="_blank" rel="noopener noreferrer">Tongbao calculator</a> is also available to check the possible outcomes of one specific Tongbao to be traded, or general tossing probabilities)
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+![Tongbao Pool](/guides/is6-sui/general-information/tongbao_pool.png)
+</div>
+
+<a href="https://docs.qq.com/sheet/DSnJQZ3V2akZWRHpz?tab=hp9fd8" target="_blank" rel="noopener noreferrer">Tier classifiation source</a>
+
+### Interactions
+This section mainly covers non obvious interactions regarding Tongbaos, most of them involving the Plan node inside Sui's Remnant Consciousness, in which Tongbaos can be "flaired" by choosing the option to "add a condition" to them (e.g. Alloy, Light, Attract, etc.)
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+|  **Image**                                                                     | Name                 | **Effect**                                                                                                                                      | **Explanation**                                                                                                                            |
+| ------------------------------------------------------------------------------ | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| ![Zuo Le](/guides/is6-sui/general-information/rogue_5_copper_e_25.png)         | Risk-Zuo Le          | On toss, -2 Life Points and Operators +200 ATK. Successive tosses grant extra +100 ATK (max +1000)                                              | The ATK bonus affects directly the base ATK of the operator, meaning it gets amplified by other ATK modifiers. |
+| ![Vying Ventures](/guides/is6-sui/general-information/rogue_5_copper_e_01.png) | Risk-Vying Ventures  | On toss, -30 Ingots. +15 Ingots whenever you toss a Risk Coin.                                                                                  | The -30 ingots loss is calculated first, and then the +15 ingots gain, making it more profitable when tossing it while having a low ingots count and a full risk coffer. Does not give ingots if the Tongbao is locked when tossing. |
+| ![Gift Accord](/guides/is6-sui/general-information/rogue_5_copper_r_07.png)    | Risk-Gift Accord     | +30 Ingots when added to Coffer. On each toss, -10 Ingots                                                                                       | When flaired, it counts as a new Tongbao entering the coffer, meaning each flair results in +30 Ingots, with a total of 71 Ingots of profit after flairing 3 times. |
+| ![Lungmen Glory](/guides/is6-sui/general-information/rogue_5_copper_e_09.png)  | Flower-Lungmen Glory | On toss, +8 Ingots; when lost, lose up to 60 Ingots and gain a Collectible for every 12 Ingots lost this way                                    | When flaired, it counts as being lost, allowing you to cash out up to 3 times in a row. The number of relics obtained each time this is lost is $\min(\textrm{ceiling}(n/12), 5)$ where $n$ is the number of ingots, this means that having 49 ingots will result in 5 relics, and to obtain 15 relics by flairing 3 times, 169 ingots is enough. |
+| ![Odd Merchant](/guides/is6-sui/general-information/rogue_5_copper_s_5.png)    | Flower-Odd Merchant  | +4 Coupons when added to Coffer. On toss, +1 Hope when buying items or swapping Collectibles in Lost and Found (Turns into Dayan Tongbao after) | When flaired, it counts as a new Tongbao entering the coffer, rewarding 4 coupons each time. |
+| ![Debts Unending](/guides/is6-sui/general-information/rogue_5_copper_r_13.png) | Bal-Debts Unending   | +6 Max Life Points when added to Coffer; On toss, -1 Max Life Point when passing non-combat nodes (min 1)                                       | When flaired, it counts as a new Tongbao entering the coffer, rewarding +6 LP each time. |
+</div>
+
+### Attract and Little Ba'jie Sticker
+The flair Attract, as well as the relic Little Ba'jie Sticker provide a chance to toss extra Tongbaos.
+These work by, any Tongbao with the flair, or any Tongbao (when having the relic) that failed to be tossed initially, has a 2nd chance of being tossed, Attract providing a 30% chance and Little Ba'jie Sticker providing a 15% chance for each individual Tongbao.
+These 2 effects stack together, meaning if Attract failed to toss a tongbao, Little Ba'jie Sticker will roll for it again.
+These can also be calculated in the <a href="/is6-sui/overview/tongbao-exchange-calculator" target="_blank" rel="noopener noreferrer">Tongbao calculator</a>.
+
+{/* ### Toss checks (TODO)
+Tongbaos that stack on toss checks
+* Risk-Zuo Le
+
+Tongbaos that only stack
+* Flower-Dahuang Glory */}
+
+## Endings
+This section covers the steps required to reach each ending.
+
+### Ending 2
+- Enter a Wander into Wonderland node and go into Sui's Remnant Consciousness
+  - Found at the end of F1, F4 and inside F2, F3, F5
+- Explore Sui's Remnant Consciousness
+- Find the *Decision* node
+- After stepping into this node, pay 30 Ingots to guarantee *Ink of the Hidden Butterfly*
+  - This will make Sui (the foot) spawn in the following combat stages
+    - Note that it may not actually appear in certain stages sometimes
+- Damage the foot past 50% of its health, this will reward *Carved Inkstick Remnant*, which can be used in the Prophecy node on F5 to change the ending to ED2
+
+### Ending 3
+- Enter a Wander into Wonderland node and go into Sui's Remnant Consciousness
+  - Found at the end of F1, F4 and inside F2, F3, F5
+- With a very high chance, the first Doubt node found will be the ending 3 Doubt node
+- After having 5 candleguest operators, choose the first option to get *Unflinching Masterplan*
+- After having *Unflinching Masterplan*, go into a Pathfinder node and choose *Board to flame, characters to light* to fight the combat *Clarity*
+- This rewards the relic *Cloud & Paint* that will unlock F6 with ED3
+
+*Notes: Only candleguest operators are available in ED3.*
+
+### Ending 4
+- Enter a Wander into Wonderland node and go into Sui's Remnant Consciousness
+  - Found at the end of F1, F4 and inside F2, F3, F5
+- The first Trader node will offer the relic *Unsealed Case* that costs 5 Life Points that is required to be bought
+- After having *Unsealed Case*, go into a Scout node and choose *Apply for a case-carrier* which will require to scout an operator (will result promoted) and will only return on F6 before ED4
+  - This rewards *Inkless Scroll* that will unlock F6 with ED4
+
+*Notes: Only scrolled operators are available in ED4. The scouted operator will be scrolled and a special Wander into Wonderland node will be available in F6 that has multiple Doubt nodes with the option to scroll operators.*
+
+### Ending 5
+Relics:
+- Memory Scope: in tavern, *Use ink to birth a tool* (-5 Max LP, lose all Hope and Ingots) (unlocks a special option in bosky nodes)
+- 'Little Moji' (requires Memory Scope): in Wander into Wonderland, *Gaze at the instrument* (starts the fight *Recorded Memory* which rewards 'Little Moji', redirecting the run towards ED5)
+- Merciless (requires 'Little Moji'): in tavern, *Break apart Sui's defenses* (only required for the harder variants)
+- Ceaseless: in Pathfinder, *Break apart Sui's defenses* (+9 Coupons, Ceaseless) (only required for the harder variants)
+
+Ending variants from F7 prophecy options:
+- 1 *Look towards the shadow*: "harder fight options":
+  - 1a (map 1) *Go for a suppressive strike*: Yi appears
+  - 1b (map 1) *Study inheritance of form* (requires ed2 relic): Sui appears
+  - 1c (map 1) *Sculpt the calendar* (requires ed4 relic): Statuegeists appear
+  - 1d (map 1) (requires ed3 relic): Wang appears
+  - 1e (map 1) *Wage war against the entire pack* (requires both Merciless+Ceaseless): Yi, Sui, Wang appear, Chongyue and the dragon appear at the same time, tails reflect more %Dmg
+  - 1f (map 2) *Define a source* (requires both Merciless+Ceaseless): Chongyue and the dragon appear at the same time, tails reflect more %Dmg
+- 2 (map 2) *Shuo's form becomes clearer*: "easier variant"
+
+<a href="https://tomimi.dev/en/stages/ISW-DF_%E6%AD%A2%E5%8F%98" target="_blank" rel="noopener noreferrer">map 1: Stasis</a>\
+<a href="https://tomimi.dev/en/stages/ISW-DF_%E5%AE%9A%E4%B9%BE%E5%9D%A4" target="_blank" rel="noopener noreferrer">map 1: Defining the World</a>
+
+
+
+
+
+
+## Boss collectibles pool
+<div style={{ display: "flex", justifyContent: "center" }}>
+<table>
+  <tbody>
+    <tr>
+      <td><img src="/guides/is6-sui/general-information/rogue_5_relic_explore_3.png" alt="Family Stir-Fry" width="50" /></td>
+      <td>Family Stir-Fry</td>
+
+      <td><img src="/guides/is6-sui/general-information/rogue_5_relic_speg_6.png" alt="Metal Expedition Drum" width="50" /></td>
+      <td>Metal Expedition Drum</td>
+
+      <td><img src="/guides/is6-sui/general-information/rogue_5_relic_speg_1.png" alt="Bells of Agreement" width="50" /></td>
+      <td>Bells of Agreement</td>
+    </tr>
+
+    <tr>
+      <td><img src="/guides/is6-sui/general-information/rogue_5_relic_speg_2.png" alt="Strange Picky Statue" width="50" /></td>
+      <td>Strange Picky Statue*</td>
+
+      <td><img src="/guides/is6-sui/general-information/rogue_5_relic_speg_3.png" alt="Varied Fortune" width="50" /></td>
+      <td>Varied Fortune*</td>
+
+      <td><img src="/guides/is6-sui/general-information/rogue_5_relic_legacy_11.png" alt="Antique Casting" width="50" /></td>
+      <td>Antique Casting</td>
+    </tr>
+
+    <tr>
+      <td><img src="/guides/is6-sui/general-information/rogue_5_relic_raidian_1.png" alt="Raidian's Handheld Console" width="50" /></td>
+      <td>Raidian's Handheld Console</td>
+
+      <td><img src="/guides/is6-sui/general-information/rogue_5_relic_blockg_2.png" alt="Elder Mask" width="50" /></td>
+      <td>Elder Mask</td>
+
+      <td><img src="/guides/is6-sui/general-information/rogue_5_relic_cardg_4.png" alt="Craftsman Shadow" width="50" /></td>
+      <td>Craftsman Shadow</td>
+    </tr>
+
+    <tr>
+      <td><img src="/guides/is6-sui/general-information/rogue_5_relic_return_1.png" alt="Scout's Scope" width="50" /></td>
+      <td>Scout's Scope</td>
+
+      <td><img src="/guides/is6-sui/general-information/rogue_5_relic_return_12.png" alt="Godmother's Token" width="50" /></td>
+      <td>Godmother's Token</td>
+
+      <td><img src="/guides/is6-sui/general-information/rogue_5_relic_return_16.png" alt="Snow Doe's Glove" width="50" /></td>
+      <td>Snow Doe's Glove</td>
+    </tr>
+
+    <tr>
+      <td><img src="/guides/is6-sui/general-information/rogue_5_relic_return_7.png" alt="Survivor Contract" width="50" /></td>
+      <td>Survivor Contract</td>
+
+      <td><img src="/guides/is6-sui/general-information/rogue_5_relic_return_18.png" alt="Black Tulip" width="50" /></td>
+      <td>Black Tulip</td>
+
+      <td><img src="/guides/is6-sui/general-information/rogue_5_relic_return_9.png" alt="Fearless Blade" width="50" /></td>
+      <td>Fearless Blade</td>
+    </tr>
+
+    <tr>
+      <td><img src="/guides/is6-sui/general-information/rogue_5_relic_legacy_162.png" alt="Victory Guqin" width="50" /></td>
+      <td>Victory Guqin</td>
+
+      <td><img src="/guides/is6-sui/general-information/rogue_5_relic_legacy_167.png" alt="Soldier's Edge" width="50" /></td>
+      <td>Soldier's Edge</td>
+
+      <td><img src="/guides/is6-sui/general-information/rogue_5_relic_legacy_152.png" alt="Court Striking Block" width="50" /></td>
+      <td>Court Striking Block</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+## Stamp collection encounter
+
+
+**Melee *The one like a soldier and sword***
+* *The one like weighing scales*
+  * 'Plucked Balance': Melee Operators gain +35% HP and +35% ATK
+* *The one like flowers and plants*
+  * 'Plucked Flower': Melee Operators have +3 DP Cost, but gain +1 Block and +50% DEF
+* *The one like storm clouds*
+  * 'Plucked Risk': All Melee Operators restore HP equal to 5% of their Max HP every second after deployment for 20s
+
+**Ranged *The one like a bow and arrow***
+* *The one like weighing scales*
+  * 'Thrown Balance': All Ranged Operators gain +25% HP and +25% ATK
+* *The one like flowers and plants*
+  * 'Thrown Flower': All Ranged Operators +2 DP Cost, but gain 2 layers of Shield when deployed
+* *The one like storm clouds*
+  * 'Thrown Risk': All Ranged Operators gain status resistance and 15% Arts Dodge 
+
+**All operators *The one like mount and stream***
+* *The one like weighing scales*
+  * 'Seen Balance': When enemies become Weightless, -30% DEF and RES for 10s
+* *The one like flowers and plants*
+  * 'Seen Flower': On skill activation, Operators gain a Barrier equal to 10% of their Max HP that lasts for 10s (Does not stack)
+* *The one like storm clouds*
+  * 'Seen Risk': Allied Operators deal 50% more Physical and Arts damage to Apparition enemies
+
+**Candleguests *The one like a Feranmut***
+* *The one like weighing scales*
+  * 'Sui's Balance': Candleguest Operators gain +50% ATK and DEF
+* *The one like flowers and plants*
+  * 'Sui's Flower': All operators have +3 DP Cost, but Candleguest Operators gain +10% HP, ATK, and DEF for every Candleguest in the Squad
+* *The one like storm clouds*
+  * 'Sui's Risk': Candleguests gain 100% ATK for 10s after deployment, duration increased by 5s for every Candleguest promoted via combat (Can be increased up to 15 times) 
+
+
+
+
