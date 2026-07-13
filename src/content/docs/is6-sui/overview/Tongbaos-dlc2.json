@@ -598,7 +598,7 @@
       "output_tiers": [],
       "eligible_tiers": ["4"],
       "special_output": null,
-      "description": "On toss, Operators +40 ASPD when deployed facing left"
+      "description": "On toss, Operators +40 ASPD when deployed facing left/right/up/down"
     },
     {
       "name": "Flower-Beacon Tower",
@@ -614,7 +614,7 @@
       "output_tiers": [],
       "eligible_tiers": ["12"],
       "special_output": null,
-      "description": ""
+      "description": "Get 3 Collectibles on loss; Collectibles gained on loss -1 per toss (min 0)"
     },
     {
       "name": "Bal-The Middle Way",
@@ -622,7 +622,7 @@
       "output_tiers": ["8"],
       "eligible_tiers": ["8"],
       "special_output": null,
-      "description": ""
+      "description": "On toss, +10% ATK to allied Operators, and +10% more for each Balance Coin in the Coffer"
     },
     {
       "name": "Flower-Rejoin as One",
@@ -646,7 +646,7 @@
       "output_tiers": ["8"],
       "eligible_tiers": ["8"],
       "special_output": null,
-      "description": ""
+      "description": "On toss, all allies +10 ASPD, and +10 ASPD whenever you exchange Tongbao; max +80"
     },
     {
       "name": "Flower-Promotion",
@@ -654,7 +654,7 @@
       "output_tiers": ["4"],
       "eligible_tiers": ["4"],
       "special_output": null,
-      "description": ""
+      "description": "On toss, all Operators -5 DP Cost"
     },
     {
       "name": "Flower-Record Keeper",
@@ -662,7 +662,7 @@
       "output_tiers": ["8"],
       "eligible_tiers": ["8"],
       "special_output": null,
-      "description": ""
+      "description": "On toss, enemy RES -2 whenever they take damage"
     },
     {
       "name": "Risk-Liu'er",
@@ -670,7 +670,7 @@
       "output_tiers": ["8"],
       "eligible_tiers": ["8"],
       "special_output": null,
-      "description": ""
+      "description": "On toss, all allied Operators -35% ATK and +60 ASPD"
     },
     {
       "name": "Risk-Zuo Le",
@@ -678,7 +678,7 @@
       "output_tiers": ["8"],
       "eligible_tiers": ["8"],
       "special_output": null,
-      "description": ""
+      "description": "On toss, -2 Life Points and Operators +200 ATK. Successive tosses grant extra +100 ATK (max +1000)"
     },
     {
       "name": "Risk-Food and Remedy",
@@ -686,7 +686,7 @@
       "output_tiers": ["4"],
       "eligible_tiers": ["4"],
       "special_output": null,
-      "description": ""
+      "description": "On toss, allied Operators HP -45%, but gain 6 layers of Shield when deployed"
     },
     {
       "name": "Risk-Lone Aegis",
@@ -694,7 +694,7 @@
       "output_tiers": ["12"],
       "eligible_tiers": [],
       "special_output": null,
-      "description": ""
+      "description": "On toss, enemy Weight -1, and Operator skills greatly push away targets within range when they expire"
     },
     {
       "name": "Risk-Fate's Decree",
@@ -702,7 +702,7 @@
       "output_tiers": ["12"],
       "eligible_tiers": [],
       "special_output": null,
-      "description": ""
+      "description": "On toss, enemy Weight -1, and Operators greatly pull targets towards them on skill activation"
     },
     {
       "name": "Risk-Vying Ventures",
@@ -710,7 +710,7 @@
       "output_tiers": ["8"],
       "eligible_tiers": ["8"],
       "special_output": null,
-      "description": ""
+      "description": "On toss, -30 Ingots. +15 Ingots whenever you toss a Risk Coin."
     },
     {
       "name": "Risk-Omens of Woe",
@@ -718,7 +718,7 @@
       "output_tiers": ["12"],
       "eligible_tiers": [],
       "special_output": null,
-      "description": ""
+      "description": "On toss, untossed Tongbao in Coffer become random Risk Coins. Become Dayan Tongbao on returning to Coffer"
     },
     {
       "name": "Flower-Full Bloom",
@@ -726,7 +726,7 @@
       "output_tiers": ["12"],
       "eligible_tiers": [],
       "special_output": null,
-      "description": ""
+      "description": "On return to Coffer, causes tossed Tongbao to turn into random Flower Coins"
     },
     {
       "name": "Risk-Waterworks",
@@ -734,7 +734,7 @@
       "output_tiers": ["8"],
       "eligible_tiers": ["8"],
       "special_output": null,
-      "description": ""
+      "description": "-10 Life Points when added to Coffer; +3 Max Life Points on toss"
     },
     {
       "name": "Risk-Nanwu Glory",
@@ -766,7 +766,7 @@
       "output_tiers": ["12"],
       "eligible_tiers": ["12"],
       "special_output": null,
-      "description": ""
+      "description": "On loss, get 1 Collectible per toss (max 5)"
     },
     {
       "name": "Flower-Tianshi Lin",
@@ -782,7 +782,7 @@
       "output_tiers": ["8"],
       "eligible_tiers": ["8"],
       "special_output": null,
-      "description": ""
+      "description": "On toss, obtain extra Collectible(s) when exchanging Collectibles in Lost and Found"
     },
     {
       "name": "Bal-Coin Tray",
@@ -790,7 +790,7 @@
       "output_tiers": [],
       "eligible_tiers": ["12"],
       "special_output": null,
-      "description": ""
+      "description": "+2 Ingots when added to Coffer; cannot be tossed"
     },
     {
       "name": "Flower-Lucky Pouch",
@@ -806,7 +806,7 @@
       "output_tiers": ["8"],
       "eligible_tiers": ["8"],
       "special_output": null,
-      "description": ""
+      "description": "No command EXP from battles when in Coffer; +1 Command Level on toss"
     }
   ]
 }
