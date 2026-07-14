@@ -226,6 +226,27 @@
       "videos": [
         { "label": "VOD", "href": "https://www.youtube.com/watch?v=rzJvfnLWnVk" }
       ]
+    },
+    {
+      "name": "Halca",
+      "score": 1,
+      "videos": [
+        { "label": "VOD", "href": "https://www.youtube.com/watch?v=ZGytJ3Osc3I" }
+      ]
+    },
+    {
+      "name": "Zagan",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://www.youtube.com/live/nE63Oh4qDjw" }
+      ]
+    },
+    {
+      "name": "Elamoyyy",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://www.youtube.com/watch?v=BUSAV8a4k7g" }
+      ]
     }
   ]
 }

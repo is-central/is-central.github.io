@@ -370,5 +370,32 @@
     "notes": "Reality of the End (T3 Egg)",
     "time": "2026-07-11T23:15:00Z",
     "duration": 120
+  },
+  {
+    "player": "Zephs",
+    "notes": "Framework of the End (T1 Egg)",
+    "time": "2026-07-12T13:45:00Z",
+    "duration": 120
+  },
+  {
+    "player": "star_grubber",
+    "notes": "Framework of the End (T1 Egg)",
+    "time": "2026-07-15T10:00:00Z",
+    "duration": 120,
+    "platform": "discord"
+  },
+  {
+    "player": "Mayonachi",
+    "notes": "Framework of the End (T1 Egg)",
+    "time": "2026-07-14T10:00:00Z",
+    "duration": 120,
+    "platform": "twitch",
+    "link": "https://www.twitch.tv/mayonachi"
+  },
+  {
+    "player": "Dudeman",
+    "notes": "Framework of the End (T1 Egg)",
+    "time": "2026-07-15T00:01:00Z",
+    "duration": 120
   }
 ]
