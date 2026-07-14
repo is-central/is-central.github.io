@@ -93,6 +93,20 @@
       "videos": [
         { "label": "VOD", "href": "https://youtu.be/CMaEEJDHIRw" }
       ]
+    },
+    {
+      "name": "Zephs",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://www.twitch.tv/videos/2818236018" }
+      ]
+    },
+    {
+      "name": "RiguMaboru",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://youtu.be/g1uysIUJAb8" }
+      ]
     }
   ]
 }

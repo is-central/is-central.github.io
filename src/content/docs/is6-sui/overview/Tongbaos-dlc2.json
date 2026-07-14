@@ -692,7 +692,7 @@
       "name": "Risk-Lone Aegis",
       "ingot_cost": "12",
       "output_tiers": ["12"],
-      "eligible_tiers": [],
+      "eligible_tiers": ["12"],
       "special_output": null,
       "description": "On toss, enemy Weight -1, and Operator skills greatly push away targets within range when they expire"
     },
@@ -700,7 +700,7 @@
       "name": "Risk-Fate's Decree",
       "ingot_cost": "12",
       "output_tiers": ["12"],
-      "eligible_tiers": [],
+      "eligible_tiers": ["12"],
       "special_output": null,
       "description": "On toss, enemy Weight -1, and Operators greatly pull targets towards them on skill activation"
     },
