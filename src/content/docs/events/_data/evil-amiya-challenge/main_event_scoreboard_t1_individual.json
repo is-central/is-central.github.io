@@ -107,6 +107,56 @@
       "videos": [
         { "label": "VOD", "href": "https://youtu.be/g1uysIUJAb8" }
       ]
+    },
+    {
+      "name": "Mayonachi",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://www.twitch.tv/videos/2820591224" }
+      ]
+    },
+    {
+      "name": "Dudeman",
+      "score": 0,
+      "videos": [
+        { "label": "VOD (part 1)", "href": "https://youtu.be/MAm_BmY7BWs" },
+        { "label": "VOD (part 2)", "href": "https://www.youtube.com/watch?v=2U8t9Z2TMl8" }
+      ]
+    },
+    {
+      "name": "star_grubber",
+      "score": 1,
+      "videos": [
+        { "label": "VOD", "href": "https://youtu.be/OYGh4WVQ2VY?is=rx0-wkbdJcyNfP7Y" }
+      ]
+    },
+    {
+      "name": "Celestia",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://www.youtube.com/live/Wgj-n3QahRU" }
+      ]
+    },
+    {
+      "name": "Niechi",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://youtube.com/live/jE6t_sA7O1I" }
+      ]
+    },
+    {
+      "name": "NiceshotMate",
+      "score": 1,
+      "videos": [
+        { "label": "VOD", "href": "https://youtu.be/MKzOz0tRvZY" }
+      ]
+    },
+    {
+      "name": "yournicknm",
+      "score": 0,
+      "videos": [
+        { "label": "VOD", "href": "https://www.youtube.com/watch?v=gOYYObYVB5Y" }
+      ]
     }
   ]
 }
