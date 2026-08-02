@@ -21,4 +21,9 @@ export const collections = {
 		loader: glob({ pattern: "!(_)*.mdx", base: "src/content/docs/is5-sarkaz/stages" }),
 		schema: docsSchema(),
 	}),
+	docs: defineCollection({ loader: docsLoader(), schema: docsSchema() }),
+	is6_stage_guides: defineCollection({
+		loader: glob({ pattern: "!(_)*.mdx", base: "src/content/docs/is6-sui/stages" }),
+		schema: docsSchema(),
+	}),
 };
