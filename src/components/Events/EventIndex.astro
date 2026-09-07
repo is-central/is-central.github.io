@@ -8,13 +8,14 @@ const { events } = Astro.props;
   {events.map((event) => (
     <div
       class="event-item"
-      data-start={event.startDate}
+      data-start={event.startDate ?? ""}
       data-end={event.endDate ?? ""}
     >
       <EventCard
         name={event.name}
         icon={event.icon}
         banner={event.banner}
+        bannerPosition={event.bannerPosition}
         themes={event.themes}
         startDate={event.startDate}
         endDate={event.endDate}
@@ -26,6 +27,8 @@ const { events } = Astro.props;
 
 <script>
   function getStatus(startDate, endDate) {
+    if (!startDate) return "unscheduled";
+
     const now = new Date();
     const start = new Date(startDate);
     const end = endDate ? new Date(endDate) : null;
@@ -42,6 +45,7 @@ const { events } = Astro.props;
     const groups = {
       live: [],
       upcoming: [],
+      unscheduled: [],
       ended: []
     };
 
@@ -88,6 +92,7 @@ const { events } = Astro.props;
 
     renderSection("Ongoing Events", groups.live);
     renderSection("Upcoming Events", groups.upcoming);
+    renderSection("Events — Date TBD", groups.unscheduled);
     renderSection("Concluded Events", groups.ended);
   }
 

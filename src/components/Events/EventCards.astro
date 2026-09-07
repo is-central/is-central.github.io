@@ -1,5 +1,5 @@
 ---
-const { name, icon, banner, themes, startDate, endDate, href } = Astro.props;
+const { name, icon, banner, bannerPosition = "center top", themes, startDate, endDate, href } = Astro.props;
 
 // ── IS theme colorization ────────────────────────────────────
 const IS_COLORS = {
@@ -31,7 +31,7 @@ const parsedThemes = parseThemes(themes);
   data-end={endDate ?? ""}
 >
   {bannerPath && (
-    <div class="banner-bg" style={`background-image: url('${bannerPath}');`} />
+    <div class="banner-bg" style={`background-image: url('${bannerPath}'); background-position: ${bannerPosition};`} />
   )}
 
   <div class="card-accent" />
@@ -59,7 +59,7 @@ const parsedThemes = parseThemes(themes);
 
   <div class="card-meta">
     <span class="card-date" data-date-label>—</span>
-    <span class="status-badge badge-live"     data-status-badge style="display:none"></span>
+    <span class="status-badge badge-live" data-status-badge style="display:none"></span>
     <span class="status-badge badge-upcoming" style="display:none" aria-hidden="true"></span>
   </div>
 
@@ -77,12 +77,13 @@ const parsedThemes = parseThemes(themes);
       const end   = endStr ? new Date(endStr) : null;
 
       // ── Status ───────────────────────────────────────────────
-      const status = now < start ? "upcoming"
+      const status = !startStr ? "unscheduled"
+                   : now < start ? "upcoming"
                    : (!end || now <= end) ? "live"
                    : "ended";
 
       const badge = card.querySelector("[data-status-badge]");      if (badge) {
-        badge.classList.remove("badge-live", "badge-upcoming");
+        badge.classList.remove("badge-live", "badge-upcoming", "badge-tbd");
         if (status === "live") {
           badge.textContent = "LIVE";
           badge.classList.add("badge-live");
@@ -90,6 +91,10 @@ const parsedThemes = parseThemes(themes);
         } else if (status === "upcoming") {
           badge.textContent = "UPCOMING";
           badge.classList.add("badge-upcoming");
+          badge.style.display = "";
+        } else if (status === "unscheduled") {
+          badge.textContent = "TBD";
+          badge.classList.add("badge-tbd");
           badge.style.display = "";
         } else {
           badge.style.display = "none";
@@ -103,7 +108,9 @@ const parsedThemes = parseThemes(themes);
           : `${d.getDate()} ${d.toLocaleString("en", { month: "short" })} ${d.getFullYear()}`;
 
       let dateLabel;
-      if (!end) {
+      if (status === "unscheduled") {
+        dateLabel = "Date TBD";
+      } else if (!end) {
         dateLabel = fmt(start);
       } else {
         const monthsSinceEnd = (now.getTime() - end.getTime()) / (1000 * 60 * 60 * 24 * 30);
@@ -295,6 +302,12 @@ const parsedThemes = parseThemes(themes);
     color: #60a5fa;
     background: color-mix(in srgb, #60a5fa 12%, transparent);
     border: 1px solid color-mix(in srgb, #60a5fa 40%, transparent);
+  }
+
+  .badge-tbd {
+    color: #c4b5fd;
+    background: color-mix(in srgb, #c4b5fd 12%, transparent);
+    border: 1px solid color-mix(in srgb, #c4b5fd 40%, transparent);
   }
 
   /* ── Arrow ── */
