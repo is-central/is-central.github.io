@@ -1,0 +1,527 @@
+---
+const { data } = Astro.props;
+
+const STATUS_ORDER = { completed: 0, pending: 1, disqualified: 2 };
+const RESULT_ORDER = { cleared: 2, failed: 1, not_reached: 0 };
+
+const STATUS_LABELS = {
+  completed: "Complete",
+  pending: "Pending",
+  disqualified: "Disqualified",
+};
+
+const RESULT_LABELS = {
+  cleared: "Hidden Core cleared",
+  failed: "Hidden Core failed",
+  not_reached: "Hidden Core not reached",
+};
+
+function numberOr(value, fallback) {
+  return typeof value === "number" ? value : fallback;
+}
+
+function relevantTiebreaker(entry) {
+  const tiebreakers = entry.tiebreakers ?? {};
+
+  if (entry.hiddenCoreResult === "cleared") {
+    if (typeof tiebreakers.teamHpAtClear === "number") {
+      return {
+        label: "Team HP at clear",
+        value: tiebreakers.teamHpAtClear,
+        rankingValue: tiebreakers.teamHpAtClear,
+      };
+    }
+
+    return {
+      label: "HP entering Hidden Core",
+      value: tiebreakers.hpAtHiddenCoreEntry,
+      rankingValue: null,
+    };
+  }
+
+  if (entry.hiddenCoreResult === "failed") {
+    return {
+      label: "HP entering Hidden Core",
+      value: tiebreakers.hpAtHiddenCoreEntry,
+      rankingValue: tiebreakers.hpAtHiddenCoreEntry,
+    };
+  }
+
+  if (entry.hiddenCoreResult === "not_reached") {
+    return {
+      label: "Turns survived",
+      value: tiebreakers.turnsSurvived,
+      rankingValue: tiebreakers.turnsSurvived,
+    };
+  }
+
+  return { label: "Tiebreaker", value: null, rankingValue: null };
+}
+
+function compareCompetitive(a, b) {
+  const scoreDifference = numberOr(b.scoredDucklordHp, -1) - numberOr(a.scoredDucklordHp, -1);
+  if (scoreDifference !== 0) return scoreDifference;
+
+  const resultDifference = numberOr(RESULT_ORDER[b.hiddenCoreResult], -1) - numberOr(RESULT_ORDER[a.hiddenCoreResult], -1);
+  if (resultDifference !== 0) return resultDifference;
+
+  const aTiebreaker = relevantTiebreaker(a).rankingValue;
+  const bTiebreaker = relevantTiebreaker(b).rankingValue;
+  const tiebreakerDifference = numberOr(bTiebreaker, -1) - numberOr(aTiebreaker, -1);
+  if (tiebreakerDifference !== 0) return tiebreakerDifference;
+
+  return numberOr(a.tiebreakers?.allianceStacks, Number.MAX_SAFE_INTEGER)
+    - numberOr(b.tiebreakers?.allianceStacks, Number.MAX_SAFE_INTEGER);
+}
+
+function compareEntries(a, b) {
+  const statusDifference = numberOr(STATUS_ORDER[a.status], 99) - numberOr(STATUS_ORDER[b.status], 99);
+  if (statusDifference !== 0) return statusDifference;
+
+  if (a.status === "completed" && b.status === "completed") {
+    const competitiveDifference = compareCompetitive(a, b);
+    if (competitiveDifference !== 0) return competitiveDifference;
+  }
+
+  const registrationDifference = numberOr(a.registrationOrder, Number.MAX_SAFE_INTEGER)
+    - numberOr(b.registrationOrder, Number.MAX_SAFE_INTEGER);
+  if (registrationDifference !== 0) return registrationDifference;
+
+  return a.team.localeCompare(b.team, "en");
+}
+
+function rankEntries(entries) {
+  const sorted = [...entries].sort(compareEntries);
+  let completedCount = 0;
+  let currentRank = 0;
+  let previousCompleted = null;
+
+  return sorted.map((entry) => {
+    if (entry.status !== "completed") return { ...entry, rank: null };
+
+    completedCount += 1;
+    if (!previousCompleted || compareCompetitive(entry, previousCompleted) !== 0) {
+      currentRank = completedCount;
+    }
+    previousCompleted = entry;
+    return { ...entry, rank: currentRank };
+  });
+}
+
+const entries = rankEntries(data.entries ?? []).map((entry) => ({
+  ...entry,
+  advances: Boolean(
+    entry.rank
+    && data.advancementCount
+    && Number(entry.rank) <= Number(data.advancementCount)
+  ),
+}));
+const updatedAt = data.updatedAt
+  ? new Date(data.updatedAt).toLocaleString("en", {
+      dateStyle: "medium",
+      timeStyle: "short",
+      timeZone: "UTC",
+    })
+  : null;
+---
+
+<section class="wigglers-board" aria-labelledby={`wigglers-board-${data.round}`}>
+  <div class="board-heading">
+    <div>
+      <p class="board-kicker">Wigglers Cup</p>
+      <h2 id={`wigglers-board-${data.round}`}>{data.title}</h2>
+    </div>
+    {updatedAt && <span class="updated">Updated {updatedAt} UTC</span>}
+  </div>
+
+  {data.advancementCount && (
+    <p class="advance-note">The top {data.advancementCount} teams advance to Round 2.</p>
+  )}
+
+  <div class="board-table">
+    <div class="leaderboard-row leaderboard-header" aria-hidden="true">
+      <span>Rank</span>
+      <span>Team</span>
+      <span>Result</span>
+      <span class="numeric">Ducklord HP</span>
+      <span>Tiebreaker</span>
+      <span class="numeric">Alliance stacks</span>
+    </div>
+
+    {entries.map((entry) => {
+      const tiebreaker = relevantTiebreaker(entry);
+      return (
+        <article class:list={["leaderboard-row", `status-${entry.status}`, { advances: entry.advances }]}>
+          <div class="rank-cell" data-label="Rank">
+            <span class="rank">{entry.rank ? `#${entry.rank}` : "—"}</span>
+            {entry.advances && <span class="advance-badge">Advances</span>}
+          </div>
+
+          <div class="team-cell" data-label="Team">
+            <strong>{entry.team}</strong>
+            <span class="players">{entry.players?.join(" · ")}</span>
+            {entry.videos?.length > 0 && (
+              <span class="vods">
+                {entry.videos.map((video) => (
+                  <a href={video.href} target="_blank" rel="noopener noreferrer">▶ {video.label}</a>
+                ))}
+              </span>
+            )}
+          </div>
+
+          <div class="result-cell" data-label="Result">
+            <span class:list={["status-badge", `badge-${entry.status}`]}>{STATUS_LABELS[entry.status] ?? entry.status}</span>
+            {entry.status === "completed" && (
+              <span class="result-detail">{entry.resultLabel ?? RESULT_LABELS[entry.hiddenCoreResult] ?? entry.hiddenCoreResult}</span>
+            )}
+          </div>
+
+          <div class="score-cell numeric" data-label="Ducklord HP">
+            {entry.status === "completed" ? entry.scoredDucklordHp : "—"}
+            {entry.status === "completed"
+              && typeof entry.ducklordHpAtTurn14 === "number"
+              && entry.ducklordHpAtTurn14 !== entry.scoredDucklordHp
+              && <span class="score-detail">Turn 14: {entry.ducklordHpAtTurn14}</span>}
+          </div>
+
+          <div class="tiebreak-cell" data-label="Tiebreaker">
+            {entry.status === "completed" ? (
+              <>
+                <span>{tiebreaker.label}</span>
+                <strong>{tiebreaker.value ?? "—"}</strong>
+              </>
+            ) : (
+              <span>—</span>
+            )}
+          </div>
+
+          <div class="stacks-cell numeric" data-label="Alliance stacks">
+            {entry.status === "completed" ? entry.tiebreakers?.allianceStacks ?? "—" : "—"}
+          </div>
+        </article>
+      );
+    })}
+  </div>
+</section>
+
+<style>
+  .wigglers-board {
+    margin: 1.5rem 0 2.5rem;
+  }
+
+  .wigglers-board * {
+    margin-top: 0;
+  }
+
+  .board-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .board-heading h2 {
+    margin-bottom: 0;
+  }
+
+  .board-kicker {
+    margin-bottom: 0.1rem;
+    color: var(--sl-color-gray-3);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .updated {
+    color: var(--sl-color-gray-3);
+    font-size: 0.72rem;
+    white-space: nowrap;
+  }
+
+  .advance-note {
+    margin-bottom: 0.75rem;
+    color: var(--sl-color-gray-2);
+    font-size: 0.8rem;
+  }
+
+  .board-table {
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--sl-color-gray-4) 38%, transparent);
+    border-radius: 10px;
+  }
+
+  .leaderboard-row {
+    display: grid;
+    grid-template-columns: 5rem minmax(12rem, 1.5fr) minmax(9rem, 1fr) 7rem minmax(10rem, 1fr) 7rem;
+    align-items: center;
+    min-width: 760px;
+    margin: 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--sl-color-gray-5) 42%, transparent);
+    background: color-mix(in srgb, var(--sl-color-bg) 96%, transparent);
+  }
+
+  .leaderboard-row:last-child {
+    border-bottom: none;
+  }
+
+  .leaderboard-row > * {
+    min-width: 0;
+    padding: 0.48rem 0.6rem;
+  }
+
+  .leaderboard-header {
+    color: var(--sl-color-gray-2);
+    background: var(--sl-color-gray-6);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .board-table {
+    overflow-x: auto;
+  }
+
+  .advances {
+    box-shadow: inset 3px 0 #4ade80;
+  }
+
+  .status-pending,
+  .status-disqualified {
+    background: color-mix(in srgb, var(--sl-color-gray-6) 24%, var(--sl-color-bg));
+  }
+
+  .status-disqualified {
+    opacity: 0.62;
+  }
+
+  .rank-cell,
+  .team-cell,
+  .result-cell,
+  .tiebreak-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.18rem;
+  }
+
+  .result-cell,
+  .tiebreak-cell {
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .rank {
+    color: var(--sl-color-white);
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .advance-badge {
+    width: fit-content;
+    padding: 0.08rem 0.3rem;
+    border: 1px solid color-mix(in srgb, #4ade80 40%, transparent);
+    border-radius: 3px;
+    color: #4ade80;
+    background: color-mix(in srgb, #4ade80 10%, transparent);
+    font-size: 0.52rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .team-cell strong {
+    color: var(--sl-color-white);
+    font-size: 0.88rem;
+  }
+
+  .players,
+  .result-detail,
+  .tiebreak-cell span {
+    color: var(--sl-color-gray-3);
+    font-size: 0.72rem;
+  }
+
+  .vods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  .vods a {
+    font-size: 0.62rem;
+    text-decoration: none;
+  }
+
+  .status-badge {
+    width: fit-content;
+    padding: 0.12rem 0.38rem;
+    border-radius: 4px;
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .badge-completed {
+    color: #4ade80;
+    background: color-mix(in srgb, #4ade80 12%, transparent);
+  }
+
+  .badge-pending {
+    color: #60a5fa;
+    background: color-mix(in srgb, #60a5fa 12%, transparent);
+  }
+
+  .badge-disqualified {
+    color: #f87171;
+    background: color-mix(in srgb, #f87171 12%, transparent);
+  }
+
+  .numeric {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .score-cell {
+    color: var(--sl-color-white);
+    font-size: 1rem;
+    font-weight: 800;
+  }
+
+  .score-detail {
+    display: block;
+    color: var(--sl-color-gray-3);
+    font-size: 0.58rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .tiebreak-cell strong {
+    color: var(--sl-color-white);
+    font-size: 0.86rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media (max-width: 720px) {
+    .board-heading {
+      align-items: start;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .board-table {
+      overflow: visible;
+      border: none;
+    }
+
+    .leaderboard-header {
+      display: none;
+    }
+
+    .leaderboard-row {
+      grid-template-columns: 3.65rem minmax(0, 1fr) 4.25rem;
+      min-width: 0;
+      margin-bottom: 0.4rem;
+      border: 1px solid color-mix(in srgb, var(--sl-color-gray-4) 38%, transparent);
+      border-radius: 7px;
+      overflow: hidden;
+    }
+
+    .leaderboard-row > * {
+      padding: 0.38rem 0.5rem;
+    }
+
+    .leaderboard-row > *::before {
+      display: none;
+      margin-bottom: 0.12rem;
+      color: var(--sl-color-gray-3);
+      font-size: 0.56rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .rank-cell {
+      grid-column: 1;
+      grid-row: 1 / span 3;
+      align-self: stretch;
+      justify-content: flex-start;
+      border-right: 1px solid color-mix(in srgb, var(--sl-color-gray-5) 35%, transparent);
+    }
+
+    .team-cell {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .result-cell {
+      grid-column: 2 / 4;
+      grid-row: 2;
+      padding-top: 0.15rem;
+      padding-bottom: 0.15rem;
+    }
+
+    .score-cell {
+      grid-column: 3;
+      grid-row: 1;
+    }
+
+    .score-cell::before,
+    .stacks-cell::before {
+      content: attr(data-label);
+      display: block;
+    }
+
+    .tiebreak-cell {
+      grid-column: 2;
+      grid-row: 3;
+      align-items: baseline;
+      padding-top: 0.25rem;
+    }
+
+    .stacks-cell {
+      grid-column: 3;
+      grid-row: 3;
+      padding-top: 0.25rem;
+    }
+
+    .numeric {
+      text-align: right;
+    }
+
+    .players {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .result-detail {
+      font-size: 0.66rem;
+    }
+
+    .tiebreak-cell span {
+      font-size: 0.64rem;
+    }
+
+    .tiebreak-cell strong {
+      font-size: 0.76rem;
+    }
+
+    .status-pending .score-cell,
+    .status-pending .tiebreak-cell,
+    .status-pending .stacks-cell,
+    .status-disqualified .score-cell,
+    .status-disqualified .tiebreak-cell,
+    .status-disqualified .stacks-cell {
+      display: none;
+    }
+
+    .status-pending .rank-cell,
+    .status-disqualified .rank-cell {
+      grid-row: 1 / span 2;
+    }
+  }
+</style>
