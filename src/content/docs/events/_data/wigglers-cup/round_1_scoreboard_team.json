@@ -70,11 +70,11 @@
       "registrationOrder": 6,
       "team": "Our Light",
       "players": ["scyphonic", "crazylolty", "youknowwho6970"],
-      "status": "pending",
-      "hiddenCoreResult": null,
-      "scoredDucklordHp": null,
-      "ducklordHpAtTurn14": null,
-      "tiebreakers": { "teamHpAtClear": null, "hpAtHiddenCoreEntry": null, "turnsSurvived": null, "allianceStacks": null },
+      "status": "completed",
+      "hiddenCoreResult": "cleared",
+      "scoredDucklordHp": 23,
+      "ducklordHpAtTurn14": 23,
+      "tiebreakers": { "teamHpAtClear": 93, "hpAtHiddenCoreEntry": 93, "turnsSurvived": null, "allianceStacks": null },
       "videos": []
     },
     {
