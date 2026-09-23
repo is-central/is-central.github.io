@@ -150,6 +150,11 @@ const updatedAt = data.updatedAt
 
     {entries.map((entry) => {
       const tiebreaker = relevantTiebreaker(entry);
+      const scoreDetail = typeof entry.ducklordDeathTurn === "number"
+        ? `Died Turn ${entry.ducklordDeathTurn}`
+        : typeof entry.ducklordHpAtTurn14 === "number" && entry.ducklordHpAtTurn14 !== entry.scoredDucklordHp
+          ? `Turn 14: ${entry.ducklordHpAtTurn14}`
+          : null;
       return (
         <article class:list={["leaderboard-row", `status-${entry.status}`, { advances: entry.advances }]}>
           <div class="rank-cell" data-label="Rank">
@@ -178,10 +183,7 @@ const updatedAt = data.updatedAt
 
           <div class="score-cell numeric" data-label="Ducklord HP">
             {entry.status === "completed" ? entry.scoredDucklordHp : "—"}
-            {entry.status === "completed"
-              && typeof entry.ducklordHpAtTurn14 === "number"
-              && entry.ducklordHpAtTurn14 !== entry.scoredDucklordHp
-              && <span class="score-detail">Turn 14: {entry.ducklordHpAtTurn14}</span>}
+            {entry.status === "completed" && scoreDetail && <span class="score-detail">{scoreDetail}</span>}
           </div>
 
           <div class="tiebreak-cell" data-label="Tiebreaker">

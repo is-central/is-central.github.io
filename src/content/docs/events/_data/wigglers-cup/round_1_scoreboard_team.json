@@ -2,7 +2,7 @@
   "title": "Round 1 Standings",
   "round": 1,
   "advancementCount": 4,
-  "updatedAt": "2026-09-20T18:00:00Z",
+  "updatedAt": "2026-09-23T15:37:04Z",
   "entries": [
     {
       "teamId": "menang-jaya",
@@ -46,11 +46,12 @@
       "registrationOrder": 4,
       "team": "19 Million Alliance Stacks",
       "players": ["ak_mm12", "draa__", "hawkyy1"],
-      "status": "pending",
-      "hiddenCoreResult": null,
-      "scoredDucklordHp": null,
+      "status": "completed",
+      "hiddenCoreResult": "cleared",
+      "scoredDucklordHp": 0,
+      "ducklordDeathTurn": 8,
       "ducklordHpAtTurn14": null,
-      "tiebreakers": { "teamHpAtClear": null, "hpAtHiddenCoreEntry": null, "turnsSurvived": null, "allianceStacks": null },
+      "tiebreakers": { "teamHpAtClear": 46, "hpAtHiddenCoreEntry": null, "turnsSurvived": null, "allianceStacks": null },
       "videos": []
     },
     {
