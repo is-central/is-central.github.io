@@ -191,6 +191,9 @@ const updatedAt = data.updatedAt
               <>
                 <span>{tiebreaker.label}</span>
                 <strong>{tiebreaker.value ?? "—"}</strong>
+                {typeof entry.teamHpAtTurn14Entry === "number" && (
+                  <span class="tiebreak-detail">Team HP entering Turn 14: {entry.teamHpAtTurn14Entry}</span>
+                )}
               </>
             ) : (
               <span>—</span>
@@ -405,6 +408,11 @@ const updatedAt = data.updatedAt
     color: var(--sl-color-white);
     font-size: 0.86rem;
     font-variant-numeric: tabular-nums;
+  }
+
+  .tiebreak-cell .tiebreak-detail {
+    display: block;
+    font-size: 0.62rem;
   }
 
   @media (max-width: 720px) {

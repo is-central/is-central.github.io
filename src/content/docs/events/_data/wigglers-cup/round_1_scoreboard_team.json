@@ -2,7 +2,7 @@
   "title": "Round 1 Standings",
   "round": 1,
   "advancementCount": 4,
-  "updatedAt": "2026-09-24T04:18:13Z",
+  "updatedAt": "2026-09-25T20:01:33Z",
   "entries": [
     {
       "teamId": "menang-jaya",
@@ -22,11 +22,11 @@
       "registrationOrder": 2,
       "team": "Kev’s Falling Star(s)",
       "players": ["kevthink", "failing", "starnincy"],
-      "status": "pending",
-      "hiddenCoreResult": null,
-      "scoredDucklordHp": null,
+      "status": "completed",
+      "hiddenCoreResult": "cleared",
+      "scoredDucklordHp": 22,
       "ducklordHpAtTurn14": null,
-      "tiebreakers": { "teamHpAtClear": null, "hpAtHiddenCoreEntry": null, "turnsSurvived": null, "allianceStacks": null },
+      "tiebreakers": { "teamHpAtClear": 77, "hpAtHiddenCoreEntry": null, "turnsSurvived": null, "allianceStacks": null },
       "videos": []
     },
     {
@@ -83,11 +83,14 @@
       "registrationOrder": 7,
       "team": "All for duck lord",
       "players": ["Only One", "AV", "TAT"],
-      "status": "pending",
-      "hiddenCoreResult": null,
-      "scoredDucklordHp": null,
+      "status": "completed",
+      "hiddenCoreResult": "not_reached",
+      "resultLabel": "Regular Boss Failed",
+      "scoredDucklordHp": 0,
+      "ducklordDeathTurn": 11,
       "ducklordHpAtTurn14": null,
-      "tiebreakers": { "teamHpAtClear": null, "hpAtHiddenCoreEntry": null, "turnsSurvived": null, "allianceStacks": null },
+      "teamHpAtTurn14Entry": 44,
+      "tiebreakers": { "teamHpAtClear": null, "hpAtHiddenCoreEntry": null, "turnsSurvived": 13, "allianceStacks": null },
       "videos": []
     },
     {
