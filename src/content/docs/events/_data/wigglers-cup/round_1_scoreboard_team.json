@@ -2,7 +2,7 @@
   "title": "Round 1 Standings",
   "round": 1,
   "advancementCount": 4,
-  "updatedAt": "2026-09-25T20:01:33Z",
+  "updatedAt": "2026-09-26T15:04:41Z",
   "entries": [
     {
       "teamId": "menang-jaya",
@@ -59,11 +59,11 @@
       "registrationOrder": 5,
       "team": "ak_gen",
       "players": ["theoretica", "idyllanth", "colonellika"],
-      "status": "pending",
-      "hiddenCoreResult": null,
-      "scoredDucklordHp": null,
-      "ducklordHpAtTurn14": null,
-      "tiebreakers": { "teamHpAtClear": null, "hpAtHiddenCoreEntry": null, "turnsSurvived": null, "allianceStacks": null },
+      "status": "completed",
+      "hiddenCoreResult": "cleared",
+      "scoredDucklordHp": 9,
+      "ducklordHpAtTurn14": 9,
+      "tiebreakers": { "teamHpAtClear": 64, "hpAtHiddenCoreEntry": null, "turnsSurvived": null, "allianceStacks": null },
       "videos": []
     },
     {
@@ -98,11 +98,11 @@
       "registrationOrder": 8,
       "team": "Nymphs of Delusion",
       "players": ["imkrys", "flamikori", "scp5514"],
-      "status": "pending",
-      "hiddenCoreResult": null,
-      "scoredDucklordHp": null,
-      "ducklordHpAtTurn14": null,
-      "tiebreakers": { "teamHpAtClear": null, "hpAtHiddenCoreEntry": null, "turnsSurvived": null, "allianceStacks": null },
+      "status": "completed",
+      "hiddenCoreResult": "cleared",
+      "scoredDucklordHp": 29,
+      "ducklordHpAtTurn14": 29,
+      "tiebreakers": { "teamHpAtClear": 103, "hpAtHiddenCoreEntry": null, "turnsSurvived": null, "allianceStacks": null },
       "videos": []
     },
     {
@@ -158,11 +158,11 @@
       "registrationOrder": 13,
       "team": "NoPracticeRequired",
       "players": ["aizeref", "stertsl", "nightedge2709"],
-      "status": "pending",
-      "hiddenCoreResult": null,
-      "scoredDucklordHp": null,
-      "ducklordHpAtTurn14": null,
-      "tiebreakers": { "teamHpAtClear": null, "hpAtHiddenCoreEntry": null, "turnsSurvived": null, "allianceStacks": null },
+      "status": "completed",
+      "hiddenCoreResult": "failed",
+      "scoredDucklordHp": 0,
+      "ducklordHpAtTurn14": 11,
+      "tiebreakers": { "teamHpAtClear": null, "hpAtHiddenCoreEntry": 46, "turnsSurvived": null, "allianceStacks": null },
       "videos": []
     },
     {
@@ -170,11 +170,11 @@
       "registrationOrder": 14,
       "team": "Can you hold, I leaked only 30",
       "players": ["Aoao", "Larfa", "IronCobra"],
-      "status": "pending",
-      "hiddenCoreResult": null,
-      "scoredDucklordHp": null,
-      "ducklordHpAtTurn14": null,
-      "tiebreakers": { "teamHpAtClear": null, "hpAtHiddenCoreEntry": null, "turnsSurvived": null, "allianceStacks": null },
+      "status": "completed",
+      "hiddenCoreResult": "cleared",
+      "scoredDucklordHp": 17,
+      "ducklordHpAtTurn14": 17,
+      "tiebreakers": { "teamHpAtClear": 31, "hpAtHiddenCoreEntry": 78, "turnsSurvived": null, "allianceStacks": null },
       "videos": []
     }
   ]
