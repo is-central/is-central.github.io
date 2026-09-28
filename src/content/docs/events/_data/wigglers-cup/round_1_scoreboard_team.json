@@ -82,6 +82,7 @@
       "teamId": "all-for-duck-lord",
       "registrationOrder": 7,
       "team": "All for duck lord",
+      "rankOverride": 15,
       "players": ["Only One", "AV", "TAT"],
       "status": "completed",
       "hiddenCoreResult": "not_reached",

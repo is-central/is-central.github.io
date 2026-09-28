@@ -104,7 +104,10 @@ function rankEntries(entries) {
       currentRank = completedCount;
     }
     previousCompleted = entry;
-    return { ...entry, rank: currentRank };
+    const rank = Number.isInteger(entry.rankOverride) && entry.rankOverride > 0
+      ? entry.rankOverride
+      : currentRank;
+    return { ...entry, rank };
   });
 }
 
