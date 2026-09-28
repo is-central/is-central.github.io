@@ -2,7 +2,7 @@
   "title": "Round 1 Standings",
   "round": 1,
   "advancementCount": 4,
-  "updatedAt": "2026-09-26T15:04:41Z",
+  "updatedAt": "2026-09-28T01:21:15Z",
   "entries": [
     {
       "teamId": "menang-jaya",
@@ -110,11 +110,11 @@
       "registrationOrder": 9,
       "team": "John PopCornBoi",
       "players": ["1.w.o.w.1", "LeverBoi", "JohnnyAK47"],
-      "status": "pending",
-      "hiddenCoreResult": null,
-      "scoredDucklordHp": null,
-      "ducklordHpAtTurn14": null,
-      "tiebreakers": { "teamHpAtClear": null, "hpAtHiddenCoreEntry": null, "turnsSurvived": null, "allianceStacks": null },
+      "status": "completed",
+      "hiddenCoreResult": "failed",
+      "scoredDucklordHp": 0,
+      "ducklordHpAtTurn14": 7,
+      "tiebreakers": { "teamHpAtClear": null, "hpAtHiddenCoreEntry": 64, "turnsSurvived": null, "allianceStacks": null },
       "videos": []
     },
     {
@@ -175,6 +175,18 @@
       "scoredDucklordHp": 17,
       "ducklordHpAtTurn14": 17,
       "tiebreakers": { "teamHpAtClear": 31, "hpAtHiddenCoreEntry": 78, "turnsSurvived": null, "allianceStacks": null },
+      "videos": []
+    },
+    {
+      "teamId": "team-placeholder",
+      "registrationOrder": 15,
+      "team": "Team Placeholder",
+      "players": ["Cascades", "Mayonachi", "bread"],
+      "status": "completed",
+      "hiddenCoreResult": "cleared",
+      "scoredDucklordHp": 14,
+      "ducklordHpAtTurn14": null,
+      "tiebreakers": { "teamHpAtClear": 73, "hpAtHiddenCoreEntry": null, "turnsSurvived": null, "allianceStacks": null },
       "videos": []
     }
   ]
