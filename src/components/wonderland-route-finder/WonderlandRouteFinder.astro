@@ -1,0 +1,188 @@
+---
+// The tool renders inside a (declarative) shadow root, so the site's article / typography
+// CSS cannot restyle it and its CSS cannot leak out. The stylesheet is inlined into that root.
+import css from './wl.css?raw';
+
+interface Props {
+  /** Example map to load when the tool scrolls into view. */
+  sample?: 'variant' | 'regular' | 'good' | 'none';
+  showHeader?: boolean;
+}
+const { sample = 'variant', showHeader = true } = Astro.props;
+---
+
+<div class="wl-host" data-wl data-sample={sample} style="display:block;margin-block:1.5rem">
+  <template shadowrootmode="open">
+    <style is:inline set:html={css}></style>
+    <div class="wl" data-theme="">
+<div class="wrap">
+  {showHeader && (<header>
+    <p>Load a screenshot of the map. The page finds the grid and every bridge, works out the fewest explorations that reveal the whole 5 × 5, and numbers them on the map. On an ED4 Wonderland it also checks whether the wonderland is evil and, if so, plans the Tavern search first.</p>
+  </header>)}
+
+  <details class="guide" id="guide" open>
+    <summary>How to use</summary>
+    <ol>
+      <li><b>Load a map.</b> Either paste a screenshot (Ctrl/⌘ V), drag one onto the map, press Load screenshot, or pick an example. The page finds the grid and the bridges and decides the map type: <em>Wander into Wonderland</em> starts at (3,3) in the centre; <em>ED4 Wonderland</em> starts at (3,1), and anything outside its 5 × 5 is ignored.</li>
+      <li><b>Check the map.</b> Compare the pink lines with the game. Amber lines are faint, so check those first. Click between two nodes to add or remove a bridge, or click a node to move the start. Map type and grid calibration are under Settings.</li>
+      <li><b>Lock the map.</b> Press Lock map. The detection marks disappear and the routes are drawn instead. Press Edit map to go back.</li>
+      <li><b>Follow the route.</b> Explore all numbers the fewest explorations that reveal the whole 5 × 5. On an evil ED4 Wonderland, where none of (2,1), (3,2), (4,1) is a Tavern, the Tavern search comes first: set Steps you can take, and the page picks the paths that reveal the most Tavern candidates within that budget.</li>
+      <li><b>Save it.</b> Download or copy the labelled image under Labelled image.</li>
+    </ol>
+  </details>
+
+  <div class="layout">
+    <section class="stage" aria-label="Map">
+      <div class="bar">
+        <label class="btn" for="file">Load screenshot<input id="file" type="file" accept="image/*"></label>
+        <button id="exRegular" type="button">Wander into Wonderland</button>
+        <button id="exVariant" type="button">ED4, Evil</button>
+        <button id="exGood" type="button">ED4, Tavern</button>
+        <span class="grow"></span>
+        <span class="steplbl" id="stageLbl"></span>
+        <div class="seg" id="viewSeg" role="group" aria-label="What to show on the map" hidden>
+          <button type="button" id="vFull" aria-pressed="true">Explore all</button>
+          <button type="button" id="vTavern" aria-pressed="false">Tavern search</button>
+        </div>
+        <button type="button" id="editBtn" hidden>Edit map</button>
+        <button type="button" id="lockBtn" class="primary">Lock map</button>
+      </div>
+      <div class="canvas-box" id="box">
+        <canvas id="view" aria-label="Map with detected bridges and numbered route"></canvas>
+        <div class="drop">Drop the screenshot</div>
+      </div>
+      <div class="legend" id="legEdit">
+        <span><i></i>Detected bridge</span>
+        <span><i class="u"></i>Faint, check it</span>
+        <span><i class="s" style="border-color:var(--bridge)"></i>S = start</span>
+      </div>
+      <div class="legend" id="legLocked" hidden>
+        <span><i class="s"></i>Explore in this order</span>
+        <span id="legGold"><i class="g"></i>Tavern candidate (3 bridges)</span>
+        <span id="legPath" hidden><i style="border-top-style:dashed;border-color:var(--ink-soft)"></i>Dashed: reveals the candidate</span>
+      </div>
+      <p class="hint" id="hintEdit">Click between two nodes to add or remove a bridge. Click a node to make it the start. When the bridges match the game, press Lock map. You can also paste a screenshot (Ctrl/⌘ V) or drop one on the map.</p>
+      <p class="hint" id="hintLocked" hidden>The map is locked, so only the routes are drawn. Press Edit map to change bridges or the start.</p>
+      <div id="status">{sample === 'none' ? 'Load a screenshot or pick an example to begin.' : 'Loading the example map…'}</div>
+    </section>
+
+    <aside class="panel">
+      <div class="card" id="mapCard" aria-live="polite">
+        <h2>Map</h2>
+        <p class="sub" id="layoutLine"></p>
+        <div id="evilBox" hidden>
+          <div class="bar"><span class="pill" id="evilPill"></span><span class="sub" id="evilWhy"></span></div>
+          <div class="reads" id="reads" style="margin-top:8px"></div>
+        </div>
+      </div>
+
+      <div class="card" id="checkCard">
+        <h2>Check the map</h2>
+        <p class="sub" id="checkText"></p>
+        <p class="warn" id="checkFaint" hidden></p>
+        <div class="bar"><button type="button" class="primary" id="lockBtn2">Lock map</button></div>
+        <p class="sub">Locking keeps the bridges as they are and draws the Explore all and Tavern search routes over the screenshot.</p>
+      </div>
+
+      <div class="card" id="exploreCard" aria-live="polite">
+        <h2>Explore all</h2>
+        <p class="sub" id="ePriority" hidden>Still available, but on an evil ED4 Wonderland the Tavern search above comes first.</p>
+        <div class="total"><b id="steps">–</b><span id="stepsLbl">explorations</span></div>
+        <p class="sub" id="summary"></p>
+        <p class="warn" id="warn" hidden></p>
+        <div class="chips" id="chips"></div>
+        <p class="diff" id="diff"></p>
+        <div class="tbl"><table>
+          <thead><tr><th>#</th><th>Explore</th><th>Reveals</th></tr></thead>
+          <tbody id="order"></tbody>
+        </table></div>
+        <p class="sub">Nodes are (row, column) inside the 5 × 5, counted from its top-left corner.</p>
+      </div>
+
+      <div class="card evil" id="tavCard" hidden aria-live="polite">
+        <h2>Tavern search</h2>
+        <p class="diff" id="tPriority" hidden><span class="pill evil">Do this first</span> This ED4 Wonderland is evil, so finding the Tavern comes before exploring the rest. Already explored nodes might not be detected, if this is the case, consider adding the candles expended into the steps available for exploration.</p>
+        <div class="total"><b id="tSteps">–</b><span id="tLbl">explorations to reveal every candidate</span></div>
+        <p class="sub" id="tSummary"></p>
+        <div id="tPaths" class="paths"></div>
+        <label class="field" style="max-width:240px">Steps you can take
+          <input id="limit" type="number" min="0" max="30" step="1" value="7">
+        </label>
+        <p class="diff" id="tVerdict"></p>
+        <div class="tbl"><table>
+          <thead><tr><th>#</th><th>Path</th><th>Explore</th><th>Reveals</th><th style="text-align:right">Found by now</th></tr></thead>
+          <tbody id="tOrder"></tbody>
+        </table></div>
+        <p class="sub">A candidate counts as checked once it is revealed. "Found by now" is the chance the Tavern has turned up by that step, with every candidate equally likely. On the map, the paths you can afford are solid and numbered; the rest are faded.</p>
+      </div>
+
+      <div class="card" id="exportCard">
+        <h2>Labelled image</h2>
+        <div class="export" id="exports"></div>
+        <p class="sub">If a download doesn't start, right-click or long-press the image and save it.</p>
+      </div>
+
+      <div class="card" id="settingsCard">
+        <h2>Settings</h2>
+        <div class="row">
+          <label class="field">Map type
+            <select id="layoutMode">
+              <option value="auto" selected>Detect</option>
+              <option value="regular">Wander into Wonderland, start at (3,3)</option>
+              <option value="variant">ED4 Wonderland, start at (3,1)</option>
+            </select>
+          </label>
+          <label class="field">Area to reveal
+            <select id="regionMode">
+              <option value="square" selected>The 5 × 5</option>
+              <option value="all">Whole screenshot</option>
+            </select>
+          </label>
+          <label class="field">Evil wonderland
+            <select id="evilMode">
+              <option value="auto" selected>Read the names</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </label>
+        </div>
+        <details>
+          <summary>Grid calibration</summary>
+          <div class="row">
+            <label class="field">Column spacing (px)<input id="px" type="number" step="0.5"></label>
+            <label class="field">Row spacing (px)<input id="py" type="number" step="0.5"></label>
+            <label class="field">First column x (px)<input id="x0" type="number" step="1"></label>
+            <label class="field">First row y (px)<input id="y0" type="number" step="1"></label>
+          </div>
+          <div class="bar" style="margin-top:8px">
+            <button id="applyGrid" type="button">Use this grid</button>
+            <button id="autoGrid" type="button">Detect again</button>
+          </div>
+          <p class="sub">The small crosses mark the node centres the page found. If they sit off the nodes, adjust the spacing and the first node's position, then press "Use this grid".</p>
+        </details>
+      </div>
+    </aside>
+  </div>
+</div>
+    </div>
+  </template>
+</div>
+
+<script>
+  // Nothing heavy loads until the tool is near the viewport: the solver, templates and
+  // sample images are all behind this dynamic import.
+  const boot = async (host: HTMLElement) => {
+    if (!host.shadowRoot) { // browsers without declarative shadow DOM
+      const t = host.querySelector('template[shadowrootmode]') as HTMLTemplateElement | null;
+      if (t) host.attachShadow({ mode: 'open' }).appendChild(t.content);
+    }
+    const { init } = await import('./ui.js');
+    init(host, { sample: host.dataset.sample });
+  };
+  document.querySelectorAll<HTMLElement>('.wl-host[data-wl]').forEach((host) => {
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) { io.disconnect(); boot(host); }
+    }, { rootMargin: '400px' });
+    io.observe(host);
+  });
+</script>
