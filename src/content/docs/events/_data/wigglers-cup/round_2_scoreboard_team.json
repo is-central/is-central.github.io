@@ -1,6 +1,57 @@
 {
   "title": "Round 2 Finals",
   "round": 2,
-  "updatedAt": "2026-09-20T18:00:00Z",
-  "entries": []
+  "updatedAt": "2026-10-01T00:34:45Z",
+  "entries": [
+    {
+      "teamId": "our-light",
+      "registrationOrder": 6,
+      "team": "Our Light",
+      "players": ["scyphonic", "crazylolty", "youknowwho6970"],
+      "status": "completed",
+      "hiddenCoreResult": "cleared",
+      "scoredDucklordHp": 9,
+      "ducklordHpAtTurn14": 9,
+      "tiebreakers": { "teamHpAtClear": 37, "hpAtHiddenCoreEntry": null, "turnsSurvived": null, "allianceStacks": null },
+      "videos": []
+    },
+    {
+      "teamId": "nymphs-of-delusion",
+      "registrationOrder": 8,
+      "team": "Nymphs of Delusion",
+      "players": ["imkrys", "flamikori", "scp5514"],
+      "status": "completed",
+      "hiddenCoreResult": "cleared",
+      "scoredDucklordHp": 24,
+      "ducklordHpAtTurn14": 24,
+      "tiebreakers": { "teamHpAtClear": 94, "hpAtHiddenCoreEntry": null, "turnsSurvived": null, "allianceStacks": null },
+      "videos": []
+    },
+    {
+      "teamId": "kevs-falling-stars",
+      "registrationOrder": 2,
+      "team": "Kev’s Falling Star(s)",
+      "players": ["kevthink", "failing", "starnincy"],
+      "status": "completed",
+      "hiddenCoreResult": "not_reached",
+      "resultLabel": "Regular Boss Failed",
+      "scoredDucklordHp": 0,
+      "ducklordHpAtTurn14": 5,
+      "teamHpAtTurn14Entry": 68,
+      "tiebreakers": { "teamHpAtClear": null, "hpAtHiddenCoreEntry": null, "turnsSurvived": 13, "allianceStacks": null },
+      "videos": []
+    },
+    {
+      "teamId": "fowl-escort-squad",
+      "registrationOrder": 11,
+      "team": "Fowl Escort Squad",
+      "players": ["marsiumouse", "lukas05125", "polymer1281"],
+      "status": "completed",
+      "hiddenCoreResult": "cleared",
+      "scoredDucklordHp": 29,
+      "ducklordHpAtTurn14": 29,
+      "tiebreakers": { "teamHpAtClear": 109, "hpAtHiddenCoreEntry": null, "turnsSurvived": null, "allianceStacks": null },
+      "videos": []
+    }
+  ]
 }

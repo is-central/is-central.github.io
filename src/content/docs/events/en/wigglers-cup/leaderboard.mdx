@@ -1,11 +1,12 @@
 ---
 title: Wigglers Cup Leaderboard
-description: "Current standings for the Wigglers Cup tournament."
+description: "Round 1 standings and final Round 2 results for the Wigglers Cup tournament."
 tableOfContents: false
 ---
 
 import WigglersCupLeaderboard from '../../../../../components/Events/WigglersCupLeaderboard.astro';
 import RoundOne from '../../_data/wigglers-cup/round_1_scoreboard_team.json';
+import RoundTwo from '../../_data/wigglers-cup/round_2_scoreboard_team.json';
 
 <div class="back-button-container">
   <a href="/events/en/wigglers-cup/overview/" class="back-button">
@@ -18,6 +19,6 @@ Completed matches rank by scored Ducklord HP and the applicable result-specific 
 
 <WigglersCupLeaderboard data={RoundOne} />
 
-## Round 2 Finals
+Round 2 has concluded.
 
-Ongoing
+<WigglersCupLeaderboard data={RoundTwo} />
