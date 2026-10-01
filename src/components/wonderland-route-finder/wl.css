@@ -1,0 +1,121 @@
+/* Wonderland Route Finder (rendered inside a shadow root). Override fonts with --wl-font-body / --wl-font-mono / --wl-font-display. */
+
+/* Layout: a working table — the map stage on the left, the route ledger on the right; stacks on phones. */
+.wl {
+  --paper: #eef0f2;      /* cool rice-paper grey */
+  --sheet: #fbfcfc;
+  --ink: #1b2026;
+  --ink-soft: #5c6670;
+  --rule: #d5dadf;
+  --bridge: #e04a86;     /* the map's bridge pink */
+  --jade: #14866a;       /* explored / route */
+  --gold: #b07d12;       /* tavern candidates */
+  --danger: #b8304a;     /* evil wonderland */
+  --amber: #b7791f;      /* needs a look */
+  --chip: #e3e7eb;
+  --display: var(--wl-font-display, Georgia, serif);
+  --body: var(--wl-font-body, system-ui, -apple-system, "Segoe UI", sans-serif);
+  --mono: var(--wl-font-mono, ui-monospace, Menlo, Consolas, monospace);
+}
+@media (prefers-color-scheme: dark) { .wl:not([data-theme="light"]) {
+  --paper: #14171b; --sheet: #1c2026; --ink: #e8ebee; --ink-soft: #9aa4ae; --rule: #2f363e;
+  --bridge: #f0679d; --jade: #3fbf98; --gold: #e3b245; --danger: #ef6f86; --amber: #e0a845; --chip: #262c33; color-scheme: dark } }
+.wl[data-theme="dark"] {
+  --paper: #14171b; --sheet: #1c2026; --ink: #e8ebee; --ink-soft: #9aa4ae; --rule: #2f363e;
+  --bridge: #f0679d; --jade: #3fbf98; --gold: #e3b245; --danger: #ef6f86; --amber: #e0a845; --chip: #262c33; color-scheme: dark }
+
+.wl * { box-sizing: border-box; }
+.wl [hidden] { display: none !important; }
+.wl { background: var(--paper); color: var(--ink); font: 15px/1.5 var(--body); }
+.wl .wrap { max-width: 1480px; margin: 0 auto; padding-inline: 20px; padding-block: 22px 40px; display: grid; gap: 18px; }
+.wl header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; }
+.wl .wl-title { font: 800 1.7rem/1.1 var(--display); margin: 0; letter-spacing: .01em; text-wrap: balance; }
+.wl header p { margin: 0; color: var(--ink-soft); max-width: 72ch; }
+.wl .guide { background: var(--sheet); border: 1px solid var(--rule); border-radius: 6px; padding: 10px 14px; }
+.wl .guide summary { cursor: pointer; font: 600 12px/1.6 var(--body); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
+.wl .guide summary:focus-visible { outline: 2px solid var(--jade); outline-offset: 2px; }
+.wl .guide ol { margin: 10px 0 2px; padding-left: 1.4em; display: grid; gap: 6px; max-width: 110ch; }
+.wl .guide li { padding-left: 2px; }
+.wl .guide li b { font-weight: 600; }
+.wl .layout { display: grid; grid-template-columns: minmax(0, 1fr) 390px; gap: 18px; align-items: start; }
+@container (max-width: 980px) { .wl .layout { grid-template-columns: minmax(0, 1fr); } }
+
+.wl .stage { background: var(--sheet); border: 1px solid var(--rule); border-radius: 6px; padding: 12px; display: grid; gap: 10px; min-width: 0; }
+@container (min-width: 981px) { .wl .stage { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); } }
+.wl .bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.wl .bar .grow { flex: 1; }
+.wl button, .wl .btn { font: 500 14px/1 var(--body); color: var(--ink); background: var(--chip); border: 1px solid var(--rule);
+  border-radius: 4px; padding: 8px 12px; cursor: pointer; }
+.wl button:hover, .wl .btn:hover { border-color: var(--ink-soft); }
+.wl button:focus-visible, .wl input:focus-visible, .wl select:focus-visible, .wl .btn:focus-within { outline: 2px solid var(--jade); outline-offset: 2px; }
+.wl button.primary { background: var(--ink); color: var(--sheet); border-color: var(--ink); }
+.wl .btn input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.wl .steplbl { font: 600 12px/1 var(--body); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
+.wl .seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; }
+.wl .seg button { border: 0; border-radius: 0; background: transparent; padding: 8px 12px; }
+.wl .seg button + button { border-left: 1px solid var(--rule); }
+.wl .seg button[aria-pressed="true"] { background: var(--ink); color: var(--sheet); }
+.wl label.tog { display: inline-flex; gap: 6px; align-items: center; color: var(--ink-soft); font-size: 14px; cursor: pointer; }
+.wl .canvas-box { position: relative; overflow: auto; border-radius: 4px; background: #000; }
+.wl #view { display: block; width: 100%; height: auto; cursor: crosshair; }
+.wl .drop { position: absolute; inset: 0; display: none; place-items: center; background: color-mix(in srgb, var(--jade) 30%, transparent);
+  color: #fff; font: 600 1.2rem var(--body); }
+.wl .canvas-box.over .drop { display: grid; }
+.wl .hint { color: var(--ink-soft); font-size: 13.5px; margin: 0; }
+.wl .legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 13px; color: var(--ink-soft); }
+.wl .legend i { display: inline-block; width: 18px; height: 0; border-top: 4px solid var(--bridge); vertical-align: middle; margin-right: 5px; }
+.wl .legend i.u { border-top: 4px dashed var(--amber); }
+.wl .legend i.s, .wl .legend i.g { width: 12px; height: 12px; border: 3px solid var(--jade); border-radius: 50%; }
+.wl .legend i.g { border-color: var(--ink-soft); border-style: dashed; border-radius: 2px; }
+.wl #status { font-family: var(--mono); font-size: 12.5px; color: var(--ink-soft); }
+
+.wl .panel { display: grid; gap: 14px; min-width: 0; }
+.wl .card { background: var(--sheet); border: 1px solid var(--rule); border-radius: 6px; padding: 14px; display: grid; gap: 10px; min-width: 0; }
+.wl .card h2 { font: 600 12px/1 var(--body); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); margin: 0; }
+.wl .card.evil { border-color: var(--danger); }
+.wl .total { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.wl .total b { font: 800 3.2rem/1 var(--display); font-variant-numeric: tabular-nums; }
+.wl .total span { color: var(--ink-soft); }
+.wl .sub { margin: 0; color: var(--ink-soft); font-size: 14px; }
+.wl .warn { margin: 0; color: var(--amber); font-size: 14px; }
+.wl .pill { display: inline-block; font: 600 12px/1 var(--body); letter-spacing: .08em; text-transform: uppercase; padding: 6px 9px; border-radius: 999px; border: 1.5px solid currentColor; }
+.wl .pill.evil { color: var(--danger); }
+.wl .pill.ok { color: var(--jade); }
+.wl .pill.unk { color: var(--amber); }
+.wl .reads { display: flex; flex-wrap: wrap; gap: 6px; }
+.wl .reads span { font-family: var(--mono); font-size: 12.5px; background: var(--chip); border-radius: 4px; padding: 4px 7px; }
+.wl .chips { display: flex; flex-wrap: wrap; gap: 6px; max-height: 132px; overflow: auto; }
+.wl .chips button { padding: 6px 9px; font-family: var(--mono); font-size: 12.5px; }
+.wl .chips button[aria-pressed="true"] { background: var(--jade); border-color: var(--jade); color: #fff; }
+.wl .diff { margin: 0; font-size: 14px; }
+.wl .tbl { overflow-x: auto; }
+.wl table { border-collapse: collapse; width: 100%; font-size: 14px; }
+.wl th { text-align: left; font: 600 11.5px var(--body); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); padding: 4px 6px; border-bottom: 1px solid var(--rule); }
+.wl td { padding: 5px 6px; border-bottom: 1px solid var(--rule); font-family: var(--mono); font-size: 13px; font-variant-numeric: tabular-nums; vertical-align: top; }
+.wl td.n { width: 2.6em; color: var(--jade); font-weight: 500; }
+.wl #tOrder td.n { color: var(--gold); }
+.wl td.pl b { display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; color: #11161b; font: 700 11px var(--body); }
+.wl tr.cand td:nth-child(4) { font-weight: 500; }
+.wl td.pct { color: var(--ink-soft); text-align: right; }
+.wl tr.cand td.pct { color: var(--ink); }
+.wl .paths { display: grid; gap: 6px; }
+.wl .paths div { display: grid; grid-template-columns: auto 1fr; gap: 8px; align-items: start; font-size: 14px; }
+.wl .paths b { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; color: #11161b; font: 700 13px var(--body); }
+.wl .paths span { font-family: var(--mono); font-size: 12.5px; line-height: 1.6; }
+.wl .paths .off { opacity: .55; }
+.wl .export { display: grid; gap: 8px; }
+.wl .export img { width: 100%; border-radius: 4px; border: 1px solid var(--rule); }
+.wl .row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.wl .field { display: grid; gap: 3px; font-size: 13px; color: var(--ink-soft); }
+.wl .field input, .wl .field select { font: 14px var(--mono); color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 4px; padding: 6px 8px; width: 100%; }
+.wl details summary { cursor: pointer; font-weight: 500; }
+.wl details[open] summary { margin-bottom: 8px; }
+.wl .empty { color: var(--ink-soft); margin: 0; }
+@media (prefers-reduced-motion: no-preference) { .wl button { transition: border-color .15s; } }
+
+
+/* ---- embedding: the tool renders inside a shadow root, so site CSS can't reach it ---- */
+:host { all: initial; display: block; }   /* stop inherited site typography (text-align, letter-spacing, ...) */
+.wl { container-type: inline-size; border: 1px solid var(--rule); border-radius: 10px; }
+.wl .wrap { max-width: none; }
+.wl .wl-title { font-size: 1.4rem; }
