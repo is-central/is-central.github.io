@@ -20,7 +20,7 @@ const { sample = 'variant', showHeader = true } = Astro.props;
     <p>Load a screenshot of the map. The page finds the grid and every bridge, works out the fewest explorations that reveal the whole 5 × 5, and numbers them on the map. On an ED4 Wonderland it also checks whether the wonderland is evil and, if so, plans the Tavern search first.</p>
   </header>)}
 
-  <details class="guide" id="guide" open>
+  <details class="guide" id="guide">
     <summary>How to use</summary>
     <ol>
       <li><b>Load a map.</b> Either paste a screenshot (Ctrl/⌘ V), drag one onto the map, press Load screenshot, or pick an example. The page finds the grid and the bridges and decides the map type: <em>Wander into Wonderland</em> starts at (3,3) in the centre; <em>ED4 Wonderland</em> starts at (3,1), and anything outside its 5 × 5 is ignored.</li>
