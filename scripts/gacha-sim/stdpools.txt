@@ -1,0 +1,26 @@
+2020-01-16|Angelina, Croissant, Exusiai, Skyfire, Zima
+2020-01-24|Franka, Nightingale, Platinum, Siege, Texas
+2020-02-07|Istina, Projekt Red, Saria, Shining, Specter
+2020-02-21|Eyjafjalla, Ifrit, Lappland, Mayer, Silence
+2020-03-06|Exusiai, Nearl, Provence, Ptilopsis, Siege
+2020-03-20|Angelina, Cliffheart, Manticore, SilverAsh, Zima
+2020-04-03|Firewatch, Franka, Ifrit, Platinum, Saria
+2020-04-17|Hoshiguma, Lappland, Nightingale, Texas, Warfarin
+2020-05-01|Angelina, Istina, Ptilopsis, Shining, Sora
+2020-05-15|Ifrit, Liskarm, Nightmare, Skadi, Skyfire
+2020-05-29|Exusiai, Hoshiguma, Lappland, Nearl, Projekt Red
+2020-06-12|Blue Poison, Cliffheart, Saria, Siege, Warfarin
+2020-06-26|FEater, Ifrit, Magallan, Pramanix, Silence
+2020-07-10|Angelina, Executor, Meteorite, Nightingale, Zima
+2020-07-24|Astesia, Ch'en, Liskarm, SilverAsh, Swire
+2020-08-07|Firewatch, Hellagur, Mayer, Platinum, Shining
+2020-08-21|Franka, Glaucus, Nearl, Saria, Schwarz
+2020-09-04|Provence, Siege, Skadi, Specter, Texas
+2020-09-18|Blue Poison, Hoshiguma, Manticore, Mostima, Sora
+2020-10-02|Croissant, Eyjafjalla, FEater, Magallan, Warfarin
+2020-10-16|Cliffheart, Ifrit, Nightingale, Silence, Waai Fu
+2020-10-30|Angelina, Astesia, Hellagur, Projekt Red, Ptilopsis
+2020-11-13|Executor, Exusiai, Manticore, Platinum, SilverAsh
+2020-11-27|Blue Poison, Ch'en, Meteorite, Shining, Specter
+2020-12-11|Reed, Schwarz, Siege, Skyfire, Texas
+2020-12-25|Aak, Broca, Hoshiguma, Pramanix, Silence

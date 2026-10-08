@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://is-central.github.io',
@@ -11,6 +12,8 @@ export default defineConfig({
     rehypePlugins: [rehypeKatex],
   },
   integrations: [
+    // keep the unlinked gacha simulator page out of sitemap.xml
+    sitemap({ filter: (page) => !page.includes('/tools/gacha-sim') }),
     starlight({
       title: 'IS Central',
       lastUpdated: true,

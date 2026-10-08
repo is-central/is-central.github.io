@@ -1,0 +1,91 @@
+# type|name|start|end|operators ; type: lt, lim, link
+lt|The Glory of SilverAsh|2020-01-22|2020-02-05|Cliffheart, Matterhorn, Pramanix, SilverAsh
+lt|Behold the Sword of Tide|2020-02-05|2020-02-19|Beehunter, Nearl, Nightmare, Rope, Skadi
+lt|Chi Xiao, the Hidden Dragon|2020-02-26|2020-03-11|Ch'en, FEater, Greyy, Swire
+lt|Lungmen Spec Ops Headhunting|2020-03-11|2020-03-25|Hoshiguma, Liskarm, Meteorite
+lt|Frozen Land|2020-03-25|2020-04-08|Executor, Magallan, Silence, Vermeil
+lt|Forging Steel|2020-04-15|2020-04-29|Astesia, Croissant, Hellagur, Myrtle
+lt|Summer Guardians|2020-04-29|2020-05-13|Blue Poison, Glaucus, Schwarz, Sussurro
+lt|Fire Dancers|2020-05-13|2020-05-27|Eyjafjalla, Provence, Specter
+lt|Keeper of the Lock & Keys|2020-05-27|2020-06-10|Firewatch, May, Mostima, Waai Fu
+lt|Enthusiasm, Expansion, Explosion!|2020-06-30|2020-07-14|Ambriel, Blaze, GreyThroat, Skyfire
+lt|Drillelectric|2020-07-15|2020-07-29|Broca, Exusiai, Reed
+lt|Earthborn Metals|2020-07-29|2020-08-12|Aak, Hung, Nian
+lt|Thousand-Headed Arsenal|2020-08-26|2020-09-09|Ceobe, Lappland, Leizi
+lt|Grassy Bagpipe|2020-09-10|2020-09-24|Bagpipe, Sesa, Utage, Zima
+lt|First Snowfall|2020-09-29|2020-10-13|Istina, Leonhardt, Podenco, Rosa
+lt|Lisa of the Valley|2020-10-28|2020-11-11|Ayerscarpe, Click, Nightmare, Suzuran
+lt|Misty Wild|2020-11-11|2020-11-25|Asbestos, Tsukinogi
+lt|Quicksand Vortex|2020-11-26|2020-12-10|Beeswax, Chiave
+lt|Illusions of the Past|2020-12-10|2020-12-24|Cutter, Phantom, Ptilopsis, Shamare
+lim|Cremation Last Wish|2020-12-30|2021-01-13|Elysium, W, Weedy
+lt|Unbound Reflux|2021-01-20|2021-02-10|Andreana, Jaye, Provence, Thorns
+lt|Heart of Steel: The Raging Ironhide|2021-02-25|2021-03-18|Aciddrop, Eunectes, Flint, Meteorite
+lt|Unfettered Magma|2021-03-25|2021-04-08|April, Arene, Elysium, Surtr
+lt|Fractured Light|2021-04-08|2021-04-22|Aosta, Bubble, Blemishine, Platinum
+lim|Forget Me Not|2021-04-30|2021-05-14|Jackie, Mudrock, Rosmontis, W, Whisperain
+lt|Jail Tiger Unchained|2021-06-22|2021-07-06|Kafka, Mountain, Pinecone, Silence
+lt|The Wheat And The Anthem|2021-07-06|2021-07-20|Archetto, Beanstalk, Chiave, Iris
+lim|Hidden Moon|2021-07-30|2021-08-13|Dusk, Mr. Nothing, Nian, Saga
+link|Attack - Defence - Tactical Collide|2021-08-18|2021-09-01|Ash, Blitz, Frost
+lt|Erg Passenger|2021-09-30|2021-10-14|Passenger, Sesa, Toddifons
+lim|Deep Drown Lament|2021-10-21|2021-11-04|Akafuyu, Kal'tsit, Skadi the Corrupting Heart, W
+lt|Revolution Symphony|2021-12-09|2021-12-23|Carnelian, Cliffheart, Indigo, Kirara
+lt|From the Spark|2021-12-29|2022-01-12|Pallas, Projekt Red, Specter
+lim|Holiday Stars|2022-01-14|2022-01-28|Ch'en the Holungday, La Pluma, Mizuki
+lt|Saileach on the Hill|2022-03-17|2022-03-31|Mulberry, Roberta, Saileach
+lt|A Wanderer in the Wind|2022-04-14|2022-04-28|Ashlock, Fartooth, Manticore
+lim|Path of the Radiant|2022-04-28|2022-05-12|Corroserum, Flametail, Nearl the Radiant Knight, Rosmontis, W
+lt|Edelweiss' Vow|2022-06-30|2022-07-14|Aurora, Gnosis, Pramanix
+lim|Unstrained Liquor, Pellucid Heart|2022-07-29|2022-08-12|Blacknight, Dusk, Lee, Ling, Nian
+lt|Spark Blossom|2022-08-18|2022-09-01|Goldenglow, Quercus, Skyfire
+lt|Flame of Immaculacy|2022-09-16|2022-09-30|Executor, Fiammetta, Kazemaru
+lt|Roaring Cliffrunner|2022-10-19|2022-11-02|Chestnut, Horn, Rockrock, Warfarin
+lim|Abyss Corrosion|2022-11-03|2022-11-17|Irene, Rosmontis, Skadi the Corrupting Heart, Specter the Unchained, W, Windflit
+lt|Dissonanzen|2022-12-27|2023-01-10|Blue Poison, Ebenholz, Hibiscus the Purifier
+lim|Great Axe and Pen Nib|2023-01-13|2023-01-27|Cantabile, Ch'en the Holungday, Gavial the Invincible, Pozëmka
+lt|Pathfinder of Sands|2023-03-14|2023-03-28|Dorothy, Greyy the Lightningbearer, Ptilopsis
+lt|Never Vowed|2023-03-31|2023-04-14|Franka, Młynar, Proviso
+lt|Bearings And Sparks|2023-04-27|2023-05-11|Cliffheart, Paprika, Stainless, Totter
+lim|Through A Path of Briars|2023-05-23|2023-06-06|Lunacub, Nearl the Radiant Knight, Penance, Rosmontis, Skadi the Corrupting Heart, Texas the Omertosa
+lt|To Bloom From a Dim Flame|2023-07-13|2023-07-27|Harmonie, Reed the Flame Shadow, Skyfire
+lim|Solitude Universal|2023-07-28|2023-08-11|Chongyue, Dusk, Firewhistle, Lin, Ling, Nian
+lt|Springtide Snowfall|2023-08-22|2023-09-05|Hung, Qiubai, Wind Chimes
+link|Sharpened By Flame|2023-09-07|2023-09-21|Kirin R Yato, Rathalos S Noir Corne
+lt|As In My Adumbration|2023-10-24|2023-11-07|Cement, Humus, Ines, Windflit
+lim|Here I Stand|2023-11-07|2023-11-21|Ho'olheyak, Melanite, Muelsyse, Nearl the Radiant Knight, Skadi the Corrupting Heart, Specter the Unchained
+lt|Arbiter Aequissimus|2023-12-21|2024-01-04|Cantabile, Executor the Ex Foedere, Spuria
+lim|Cloudtop Lucid Dreams|2024-01-16|2024-01-30|Ch'en the Holungday, Eyjafjalla the Hvít Aska, Gavial the Invincible, Poncirus, Swire the Elegant Wit
+lt|The Woe-cleansing Hurricane|2024-02-27|2024-03-12|Proviso, Santalla, Typhon
+lt|Clank Liberty|2024-03-19|2024-04-02|Almond, Aosta, Jessica the Liberated
+lt|From Gleams And Smoke I Emerge|2024-04-16|2024-04-30|Hoederer, Quercus, Vendela, Verdant
+lim|By My Will|2024-04-30|2024-05-14|Bassline, Nearl the Radiant Knight, Specter the Unchained, Texas the Omertosa, Virtuosa, Viviana
+lt|The Sojourner|2024-06-21|2024-07-05|Degenbrecher, Kafka, Leto
+lt|Ray of Light|2024-07-09|2024-07-23|Mulberry, Ray, Warmy
+lim|Reap of Millenia|2024-07-31|2024-08-14|Chongyue, Dusk, Grain Buds, Ling, Shu, Zuo Le
+link|Storm, Reinforce, Missions Cycle|2024-09-05|2024-09-19|Doc, Ela, Iana
+lt|Like Ending Like Death|2024-10-10|2024-10-24|April, Aroma, Ascalon, Lutonada
+lim|Our Kind|2024-10-31|2024-11-14|Fang the Fire-Sharpened, Logos, Muelsyse, Specter the Unchained, Texas the Omertosa, Wiš'adel
+lt|Anchor In The Deep|2024-12-03|2024-12-17|Grain Buds, Lucilla, Ulpianus
+lim|Engraver of Quicksand|2025-01-16|2025-01-30|Ch'en the Holungday, Eyjafjalla the Hvít Aska, Gavial the Invincible, Narantuya, Pepe, Sand Reckoner
+lt|Clear Like Hearts, True Like Reflections|2025-02-07|2025-02-21|Mitm, Nymph, Proviso
+link|Terran Food, Ah, Terran Food|2025-03-10|2025-03-24|Chilchuck, Laios, Marcille
+lt|Never Gilded|2025-04-08|2025-04-22|Vina Victoria, Bobbing, Lucilla
+lim|We Mischievous Few|2025-04-24|2025-05-08|Figurino, Lappland the Decadenza, Muelsyse, Texas the Omertosa, Virtuosa, Vulpisfoglia
+lt|Confirmation, Completion, Conduction|2025-06-05|2025-06-19|Grain Buds, Tecno, Thorns the Lodestar
+lim|An Eternity Aflame|2025-07-17|2025-07-31|Blaze the Igniting Spark, Chongyue, Ling, Shu, Surfer, Yu
+lt|And The Canoe'll Carry Us To You|2025-08-07|2025-08-21|Entelechia, Nowell, Santalla
+lt|Returned From A Pyre|2025-08-28|2025-09-11|Mitm, Necrass, Wulfenite
+lt|Command: Reconstruction|2025-09-16|2025-09-30|Alanna, Cement, Mon3tr, Windscoot
+lim|Freedom of Preach|2025-10-14|2025-10-28|Exusiai the New Covenant, Gracebearer, Lemuen, Muelsyse, Virtuosa, Wiš'adel
+lt|Dithyramb Unending|2025-11-13|2025-11-27|Rockrock, Tippi, Tragodia
+lt|The Rolling Thunder|2025-12-11|2025-12-25|Leizi the Thunderbringer, Record Keeper, Warmy
+lim|Hanabi Exiled|2026-01-16|2026-01-30|Eyjafjalla the Hvít Aska, Gavial the Invincible, Haruka, Hoshiguma the Breacher, Kichisei, Pepe
+link|Cantilena Puppae|2026-02-10|2026-02-24|Uika Misumi, Sakiko Togawa, Mutsumi Wakaba
+lt|The Silent Wavelengths|2026-03-19|2026-04-02|Mantra, Poncirus, Snegurochka, Vetochki
+lim|A Shared Oath of Guardianship|2026-04-14|2026-04-28|Lappland the Decadenza, Pramanix the Prerita, SilverAsh the Reignfrost, Snow Hunter, Virtuosa, Wiš'adel
+lt|600 Meters Over The Facts|2026-05-21|2026-06-04|Cairn, Figurino, Nasti
+lt|Quester in Frozen Moments|2026-06-22|2026-07-06|Perfumer the Distilled, Spuria, Titi
+lim|Ashes to Ashes, Ages on Ages|2026-07-16|2026-07-30|Ch'en the Dawnstreak, Chongyue, Shu, Taraxacum, Yu, Wang
+lt|By My Rules|2026-08-13|2026-08-27|Bellone, Ripresa, Snow Hunter
+lt|Rage of the Many|2026-09-16|2026-09-30|Zima the Raging Tide, Ukusik, Kazemaru

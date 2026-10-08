@@ -1,0 +1,502 @@
+---
+// Headhunting (gacha) simulator. All logic runs in the browser; see ./engine.ts and ./data.json.
+---
+
+<div id="gs" class="gs not-content">
+  <div class="gs-wallet" aria-live="polite">
+    <img class="gs-ico" src="/gacha-sim/orundum.webp" alt="" width="20" height="20" />
+    <span class="gs-orundum-label">Orundum</span>
+    <strong class="gs-balance gs-bal">0</strong>
+    <button type="button" class="gs-btn gs-small" data-add="6000">+6,000</button>
+    <button type="button" class="gs-btn gs-small" data-add="60000">+60,000</button>
+    <button type="button" class="gs-btn gs-small gs-ghost" id="gs-reset">Reset everything</button>
+  </div>
+
+  <div class="gs-layout">
+    <details id="gs-picker" class="gs-picker" open>
+      <summary class="gs-picker-sum"><span>Banner</span><strong id="gs-picker-cur"></strong></summary>
+      <div class="gs-filters">
+        <input type="search" id="gs-search" placeholder="Search banners" aria-label="Search banners" />
+        <select id="gs-type" aria-label="Banner type">
+          <option value="all">All types</option>
+          <option value="lim">Limited (Festival / Celebration / Carnival)</option>
+          <option value="lt">Limited-Time</option>
+          <option value="link">Crossover</option>
+        </select>
+        <select id="gs-year" aria-label="Year"></select>
+      </div>
+      <ul id="gs-list" class="gs-list"></ul>
+    </details>
+
+    <section class="gs-main" aria-label="Selected banner">
+      <div id="gs-banner"></div>
+      <div id="gs-stats"></div>
+      <div class="gs-bar">
+        <p id="gs-msg" class="gs-msg" role="status"></p>
+        <div class="gs-actions">
+          <span class="gs-bar-bal"><small>Orundum</small><strong class="gs-barnum"><img class="gs-ico" src="/gacha-sim/orundum.webp" alt="" width="20" height="20" /><span class="gs-bal">0</span></strong></span>
+          <button type="button" class="gs-btn gs-primary" id="gs-pull1">Headhunt ×1<span><img class="gs-ico" src="/gacha-sim/orundum.webp" alt="" width="20" height="20" />600</span></button>
+          <button type="button" class="gs-btn gs-primary" id="gs-pull10">Headhunt ×10<span><img class="gs-ico" src="/gacha-sim/orundum.webp" alt="" width="20" height="20" />6,000</span></button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="gs-overlay" class="gs-overlay" hidden role="dialog" aria-modal="true" aria-label="Headhunting results">
+    <div class="gs-ov-head">
+      <span id="gs-ov-title">Headhunting Results</span>
+    </div>
+    <div id="gs-ov-cards" class="gs-cards"></div>
+    <div class="gs-ov-foot">
+      <button type="button" class="gs-btn" id="gs-skip">Skip animation</button>
+      <button type="button" class="gs-btn gs-primary" id="gs-ov-again1">Again ×1</button>
+      <button type="button" class="gs-btn gs-primary" id="gs-ov-again10">Again ×10</button>
+      <button type="button" class="gs-btn" id="gs-close">Close</button>
+    </div>
+  </div>
+
+  <p class="gs-sources">
+    Banner schedule, rate-up lists and rules: <a href="https://arknights.wiki.gg/wiki/Headhunting/Banners" rel="noopener">Arknights Wiki</a>
+    and the game's own EN data tables. Operators the game does not list per banner (the non-rate-up share) are
+    reconstructed from release dates, so those pools are close approximations. Arknights and all operator art are
+    © Hypergryph / Yostar.
+  </p>
+</div>
+
+<script>
+  import raw from './data.json';
+  import {
+    pullOnce, newSave, bannerState, pityState, rate6, baseOdds, seriesKey,
+    COST, SPARK_6, SPARK_5, FOCUSED_AFTER, SOFT_PITY_START,
+  } from './engine';
+  import type { Banner, Data, Save } from './engine';
+
+  const D = raw as unknown as Data;
+  const KEY = 'is-central-gacha-sim-v1';
+  const START_BALANCE = 6000;
+  const TYPE_LABEL: Record<string, string> = { lt: 'Limited-Time', lim: 'Limited', link: 'Crossover' };
+  const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  interface State { save: Save; log: string[]; selected: string }
+  let state: State = load();
+  let lastCount = 10;
+
+  function load(): State {
+    const fresh: State = { save: newSave(START_BALANCE), log: [], selected: D.banners[D.banners.length - 1].id };
+    try {
+      const t = localStorage.getItem(KEY);
+      if (!t) return fresh;
+      const p = JSON.parse(t);
+      if (p && p.save && typeof p.save.balance === 'number') {
+        return {
+          save: { ...newSave(START_BALANCE), ...p.save },
+          log: Array.isArray(p.log) ? p.log.slice(0, 30) : [],
+          selected: D.banners.some((b) => b.id === p.selected) ? p.selected : fresh.selected,
+        };
+      }
+    } catch { /* storage unavailable: start fresh */ }
+    return fresh;
+  }
+  function persist() {
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch { /* ignore */ }
+  }
+
+  const $ = (id: string) => document.getElementById(id) as HTMLElement;
+  // lift the overlay out of the page layout so it covers the site header too
+  document.body.appendChild($('gs-overlay'));
+  const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]!));
+  const fmt = (n: number) => n.toLocaleString('en-US');
+  const img = (id: string) => `/gacha-sim/ops/${id}.webp`;
+  const stars = (r: number) => '★'.repeat(r);
+  const banner = () => D.banners.find((b) => b.id === state.selected)!;
+
+  function fmtDate(iso: string) {
+    const [y, m, d] = iso.split('-').map(Number);
+    return `${MONTHS[m - 1]} ${d}, ${y}`;
+  }
+  function range(b: Banner) {
+    return `${fmtDate(b.start)} – ${fmtDate(b.end)}`;
+  }
+
+  // ---------- banner list
+  const years = [...new Set(D.banners.map((b) => b.start.slice(0, 4)))].sort().reverse();
+  $('gs-year').innerHTML = '<option value="all">All years</option>' + years.map((y) => `<option>${y}</option>`).join('');
+
+  function renderList() {
+    const q = ($('gs-search') as HTMLInputElement).value.trim().toLowerCase();
+    const type = ($('gs-type') as HTMLSelectElement).value;
+    const year = ($('gs-year') as HTMLSelectElement).value;
+    const items = [...D.banners].reverse().filter((b) => {
+      if (type !== 'all' && b.type !== type) return false;
+      if (year !== 'all' && !b.start.startsWith(year)) return false;
+      if (!q) return true;
+      const names = [...b.up6, ...b.up5, ...b.up4].map((id) => D.ops[id].n).join(' ');
+      return (b.name + ' ' + names).toLowerCase().includes(q);
+    });
+    $('gs-list').innerHTML = items.length
+      ? items.map((b) => `
+        <li><button type="button" class="gs-item${b.id === state.selected ? ' on' : ''}" data-banner="${b.id}">
+          <span class="gs-item-name">${esc(b.name)}</span>
+          <span class="gs-item-meta">${TYPE_LABEL[b.type]} · ${range(b)}</span>
+        </button></li>`).join('')
+      : '<li class="gs-empty">No banners match.</li>';
+  }
+
+  // ---------- banner details
+  function opChip(id: string, rate?: number) {
+    const o = D.ops[id];
+    return `<li class="gs-chip r${o.r}">
+      <img src="${img(id)}" alt="" loading="lazy" width="44" height="88" onerror="this.style.visibility='hidden'" />
+      <span class="gs-chip-txt"><strong>${esc(o.n)}</strong>
+      <small>${stars(o.r)} ${o.c}${o.l ? ' · limited' : ''}${rate !== undefined ? ` · ${(rate * 100).toFixed(rate < 0.001 ? 3 : 2)}% per pull` : ''}</small></span>
+    </li>`;
+  }
+
+  function rulesFor(b: Banner): string[] {
+    const r: string[] = [
+      'Base rates: 6★ 2%, 5★ 8%, 4★ 50%, 3★ 40%. After 50 pulls without a 6★ the 6★ rate rises by 2% each pull.',
+      'At least one 5★ or higher is guaranteed in every 10 pulls.',
+    ];
+    if (b.type === 'lt') {
+      r.push('Pity carries over between Limited-Time banners.');
+      if (b.up6.length) r.push('Rate-up 6★ share 50% of all 6★ pulls.');
+      if (b.focused) r.push(`Focused Selection: the first 6★ after ${FOCUSED_AFTER} pulls on this banner is the rate-up 6★ (once).`);
+    } else if (b.type === 'lim') {
+      r.push('Pity is tracked separately for this banner.');
+      r.push('The two new 6★ share 70% of 6★ pulls (35% each); the other 30% goes to other operators, with the remaining featured 6★ weighted ×5.');
+      r.push(`Each pull earns 1 Headhunting Data Contract: ${SPARK_6} buy the limited 6★, ${SPARK_5} buy the rate-up 5★.`);
+    } else {
+      r.push('Pity is tracked separately for this banner.');
+      r.push(`Crossover guarantee: the rate-up 6★ is guaranteed by pull ${b.guarantee ?? 120}. Rate-up 6★ share 50% of 6★ pulls.`);
+    }
+    return r;
+  }
+
+  const picker = $('gs-picker') as HTMLDetailsElement;
+  const narrow = window.matchMedia('(max-width: 860px)');
+  const syncPicker = () => { picker.open = !narrow.matches; };
+  syncPicker();
+  narrow.addEventListener('change', syncPicker);
+
+  function renderBanner() {
+    const b = banner();
+    $('gs-picker-cur').textContent = b.name;
+    const odds = new Map(baseOdds(D, b).map((o) => [o.id, o.rate]));
+    const primary = new Set(b.primary ?? []);
+    const main = [...b.up6.filter((id) => b.type !== 'lim' || primary.has(id)), ...b.up5, ...b.up4];
+    const side = b.type === 'lim' ? b.up6.filter((id) => !primary.has(id)) : [];
+    $('gs-banner').innerHTML = `
+      <h2 class="gs-title">${esc(b.name)}</h2>
+      <p class="gs-sub">${TYPE_LABEL[b.type]} headhunting · ${range(b)}</p>
+      <h3 class="gs-h">Rate-up</h3>
+      <ul class="gs-chips">${main.map((id) => opChip(id, odds.get(id))).join('') || '<li class="gs-empty">No rate-up operators.</li>'}</ul>
+      ${side.length ? `<h3 class="gs-h">Also boosted</h3><ul class="gs-chips">${side.map((id) => opChip(id, odds.get(id))).join('')}</ul>` : ''}
+      <details class="gs-rules"><summary>Banner rules</summary><ul>${rulesFor(b).map((t) => `<li>${esc(t)}</li>`).join('')}</ul></details>`;
+    renderStats();
+  }
+
+  function renderStats() {
+    const b = banner();
+    const s = state.save;
+    const pity = pityState(s, b);
+    const bs = bannerState(s, b);
+    const t = s.totals;
+    const next6 = (rate6(pity.s6) * 100).toFixed(0);
+    let extra = '';
+    if (b.type === 'lt' && b.focused) {
+      extra = `<li>Focused Selection: ${bs.focusedDone ? 'used' : `${Math.min(bs.pulls, FOCUSED_AFTER)}/${FOCUSED_AFTER} pulls`}</li>`;
+    }
+    if (b.type === 'link') {
+      extra = `<li>Rate-up 6★ guarantee: ${bs.targetDone ? 'obtained' : `${Math.min(bs.pulls, b.guarantee ?? 120)}/${b.guarantee ?? 120} pulls`}</li>`;
+    }
+    let spark = '';
+    if (b.type === 'lim') {
+      const l6 = b.limited6?.[0];
+      const f5 = b.up5[0];
+      spark = `<div class="gs-spark"><strong>Data Contracts: ${bs.contracts}</strong>
+        ${l6 ? `<button type="button" class="gs-btn gs-small" data-exchange="${l6}" data-cost="${SPARK_6}" ${bs.contracts >= SPARK_6 ? '' : 'disabled'}>${SPARK_6} → ${esc(D.ops[l6].n)}</button>` : ''}
+        ${f5 ? `<button type="button" class="gs-btn gs-small" data-exchange="${f5}" data-cost="${SPARK_5}" ${bs.contracts >= SPARK_5 ? '' : 'disabled'}>${SPARK_5} → ${esc(D.ops[f5].n)}</button>` : ''}
+      </div>`;
+    }
+    const log = state.log.length ? `<h3 class="gs-h">Recent 6★</h3><ol class="gs-log">${state.log.map((l) => `<li>${esc(l)}</li>`).join('')}</ol>` : '';
+    $('gs-stats').innerHTML = `
+      <h3 class="gs-h">This banner</h3>
+      <ul class="gs-statlist">
+        <li>Pulls here: ${bs.pulls}</li>
+        <li>Pulls since last 6★ (${b.type === 'lt' ? 'shared by Limited-Time banners' : 'this banner'}): ${pity.s6}${pity.s6 >= SOFT_PITY_START ? ' (soft pity)' : ''}</li>
+        <li>Current 6★ rate: ${next6}%</li>
+        ${extra}
+      </ul>
+      ${spark}
+      <h3 class="gs-h">All banners</h3>
+      <ul class="gs-statlist">
+        <li>Total pulls: ${fmt(t.pulls)} · Orundum spent: ${fmt(t.spent)}</li>
+        <li><span class="r6t">6★ ${t.r6}</span> · <span class="r5t">5★ ${t.r5}</span> · <span class="r4t">4★ ${t.r4}</span> · <span class="r3t">3★ ${t.r3}</span></li>
+        <li>Operators collected: ${s.owned.length}</li>
+      </ul>
+      ${log}`;
+    ($('gs-pull1') as HTMLButtonElement).disabled = false;
+    setBal();
+  }
+
+  // ---------- pulling
+  function setBal() {
+    document.querySelectorAll('.gs-bal').forEach((e) => (e.textContent = fmt(state.save.balance)));
+  }
+
+  function setMsg(t: string) {
+    $('gs-msg').textContent = t;
+  }
+
+  function doPull(n: number) {
+    const b = banner();
+    const s = state.save;
+    const cost = COST * n;
+    if (s.balance < cost) {
+      setMsg(`Not enough Orundum: ${n === 1 ? 'a single' : 'a ten-roll'} headhunt costs ${fmt(cost)} and you have ${fmt(s.balance)}. Use the +6,000 / +60,000 buttons to top up.`);
+      return;
+    }
+    setMsg('');
+    lastCount = n;
+    s.balance -= cost;
+    s.totals.spent += cost;
+    const owned = new Set(s.owned);
+    const out = [];
+    for (let i = 0; i < n; i++) {
+      const r = pullOnce(D, b, s);
+      const isNew = !owned.has(r.id);
+      owned.add(r.id);
+      out.push({ ...r, isNew });
+      if (r.r === 6) {
+        state.log.unshift(`${D.ops[r.id].n} · ${b.name} · pull ${r.bannerPull}${b.up6.includes(r.id) ? ' (rate-up)' : ''}`);
+      }
+    }
+    s.owned = [...owned];
+    state.log = state.log.slice(0, 30);
+    persist();
+    showResults(out, 'Headhunting Results');
+    renderStats();
+  }
+
+  function exchange(id: string, cost: number) {
+    const b = banner();
+    const bs = bannerState(state.save, b);
+    if (bs.contracts < cost) return;
+    bs.contracts -= cost;
+    const had = state.save.owned.includes(id);
+    if (!had) state.save.owned.push(id);
+    persist();
+    showResults([{ id, r: D.ops[id].r, isNew: !had }], 'Data Contract Exchange');
+    renderStats();
+  }
+
+  // ---------- results screen
+  function cardHtml(r: { id: string; r: number; isNew: boolean }, i: number, single: boolean) {
+    const o = D.ops[r.id];
+    return `<div class="gs-card r${r.r}${single ? ' single' : ''}" style="--i:${i}">
+      ${r.isNew ? '<span class="gs-new">NEW</span>' : ''}
+      <div class="gs-art"><img src="${img(r.id)}" alt="" onerror="this.style.visibility='hidden'" /></div>
+      <div class="gs-cardinfo"><span class="gs-stars">${stars(r.r)}</span><strong>${esc(o.n)}</strong><small>${o.c}</small></div>
+    </div>`;
+  }
+
+  function showResults(list: { id: string; r: number; isNew: boolean }[], title: string) {
+    const ov = $('gs-overlay');
+    $('gs-ov-title').textContent = title;
+    const top = Math.max(...list.map((x) => x.r));
+    ov.className = `gs-overlay top${top}`;
+    const box = $('gs-ov-cards');
+    box.className = `gs-cards${list.length === 1 ? ' one' : ''}`;
+    box.innerHTML = list.map((r, i) => cardHtml(r, i, list.length === 1)).join('');
+    ov.hidden = false;
+    document.body.classList.add('gs-lock');
+    (document.getElementById('gs-close') as HTMLElement).focus();
+  }
+  function closeResults() {
+    $('gs-overlay').hidden = true;
+    document.body.classList.remove('gs-lock');
+  }
+
+  // ---------- events
+  document.addEventListener('click', (e) => {
+    const t = (e.target as HTMLElement).closest('button') as HTMLButtonElement | null;
+    if (!t || !($('gs').contains(t) || $('gs-overlay').contains(t))) return;
+    if (t.dataset.banner) {
+      state.selected = t.dataset.banner;
+      persist();
+      setMsg('');
+      renderList();
+      renderBanner();
+      if (narrow.matches) { picker.open = false; $('gs-banner').scrollIntoView({ block: 'start', behavior: 'smooth' }); }
+    } else if (t.dataset.add) {
+      state.save.balance += Number(t.dataset.add);
+      persist();
+      setMsg('');
+      setBal();
+    } else if (t.dataset.exchange) {
+      exchange(t.dataset.exchange, Number(t.dataset.cost));
+    } else if (t.id === 'gs-pull1' || t.id === 'gs-ov-again1') {
+      closeResults();
+      doPull(1);
+    } else if (t.id === 'gs-pull10' || t.id === 'gs-ov-again10') {
+      closeResults();
+      doPull(10);
+    } else if (t.id === 'gs-close') {
+      closeResults();
+    } else if (t.id === 'gs-skip') {
+      $('gs-overlay').classList.add('skip');
+    } else if (t.id === 'gs-reset') {
+      if (confirm('Reset your Orundum, pity and collection on this device?')) {
+        state = { save: newSave(START_BALANCE), log: [], selected: state.selected };
+        persist();
+        setMsg('');
+        renderList();
+        renderBanner();
+      }
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !$('gs-overlay').hidden) closeResults();
+  });
+  for (const id of ['gs-search', 'gs-type', 'gs-year']) {
+    $(id).addEventListener('input', renderList);
+  }
+
+  renderList();
+  renderBanner();
+  // scroll the selected banner into view inside the list
+  $('gs-list').querySelector('.on')?.scrollIntoView({ block: 'nearest' });
+</script>
+
+<style is:global>
+  /* page chrome: tighter title and a sensible content width for this tool */
+  main:has(.gs) { --sl-content-width: min(1200px, 100%); --sl-content-pad-x: clamp(0.75rem, 3vw, 1.5rem); }
+  main:has(.gs) .content-panel:first-child { padding-block: 0.75rem; }
+  main:has(.gs) h1 { font-size: clamp(1.4rem, 3.4vw, 2rem); }
+  main:has(.gs) .content-panel:not(:first-child) { padding-top: 0.75rem; }
+
+  .gs, .gs-overlay { --gs-r6: #ff7a1a; --gs-r5: #f3c13a; --gs-r4: #b48cff; --gs-r3: #5ab0ff; }
+  .gs { --gs-bg: var(--sl-color-bg-nav, #17181c); --gs-line: var(--sl-color-hairline, #3a3d45);
+    --gs-text: var(--sl-color-text, #e5e7eb); --gs-dim: var(--sl-color-gray-3, #9aa0ab); --gs-accent: var(--sl-color-accent, #7c6cff);
+    font-size: 0.95rem; line-height: 1.45; color: var(--gs-text); }
+  .gs *, .gs *::before, .gs *::after { box-sizing: border-box; }
+  .gs :where(h2, h3, p, ul, ol) { margin: 0; }
+  .gs :where(ul, ol) { padding: 0; }
+  .gs-sources { color: var(--gs-dim); font-size: 0.85rem; }
+  .gs-ico { width: 1.3em; height: 1.3em; flex: none; vertical-align: middle; }
+  .gs-barnum { display: inline-flex; align-items: center; gap: 0.3rem; }
+  .gs-primary span { display: inline-flex; align-items: center; gap: 0.25rem; }
+  .gs-primary .gs-ico { width: 1.15rem; height: 1.15rem; }
+  .gs-sources { margin-top: 1.5rem; }
+
+  .gs-wallet { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-bottom: 1rem; padding: 0.5rem 0.8rem; border: 1px solid var(--gs-line); border-radius: 8px; background: var(--gs-bg); }
+  .gs-balance { font-size: 1.3rem; margin-right: 0.4rem; }
+  .gs-btn { font: inherit; cursor: pointer; min-height: 2.5rem; padding: 0.4rem 0.9rem; border-radius: 6px; border: 1px solid var(--gs-line); background: var(--sl-color-gray-6, #24262c); color: var(--gs-text); }
+  .gs-btn:hover:not(:disabled) { border-color: var(--gs-accent); }
+  .gs-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+  .gs-small { min-height: 2rem; padding: 0.2rem 0.65rem; font-size: 0.85rem; }
+  .gs-ghost { margin-left: auto; background: none; }
+  .gs-primary { background: var(--gs-accent); border-color: var(--gs-accent); color: #fff; font-weight: 700; font-size: 1rem; padding: 0.45rem 1.2rem; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.2; }
+  .gs-primary span { font-size: 0.72rem; font-weight: 400; opacity: 0.9; }
+
+  .gs-layout { display: grid; grid-template-columns: minmax(230px, 310px) minmax(0, 1fr); gap: 1.25rem; align-items: start; }
+  .gs-picker { position: sticky; top: calc(var(--sl-nav-height, 3.5rem) + 0.75rem); min-width: 0; }
+  .gs-picker-sum { display: none; }
+  .gs-filters { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; margin-bottom: 0.5rem; }
+  .gs-filters input { grid-column: 1 / -1; }
+  .gs-filters input, .gs-filters select { width: 100%; min-width: 0; min-height: 2.4rem; font: inherit; padding: 0.3rem 0.6rem; border-radius: 6px; border: 1px solid var(--gs-line); background: var(--gs-bg); color: var(--gs-text); }
+  .gs-list { list-style: none; max-height: max(14rem, calc(100dvh - 17rem)); overflow-y: auto; border: 1px solid var(--gs-line); border-radius: 8px; overscroll-behavior: contain; }
+  .gs-list li { margin: 0; padding: 0; }
+  .gs-item { all: unset; box-sizing: border-box; display: block; width: 100%; padding: 0.5rem 0.75rem; cursor: pointer; border-bottom: 1px solid var(--gs-line); }
+  .gs-item:hover { background: var(--sl-color-gray-6, #24262c); }
+  .gs-item.on { background: var(--gs-accent); color: #fff; }
+  .gs-item:focus-visible { outline: 2px solid var(--gs-accent); outline-offset: -2px; }
+  .gs-item-name { display: block; font-weight: 600; line-height: 1.3; }
+  .gs-item-meta { display: block; font-size: 0.75rem; opacity: 0.8; }
+  .gs-empty { padding: 0.8rem; color: var(--gs-dim); list-style: none; }
+
+  .gs-main { min-width: 0; }
+  .gs-title { font-size: clamp(1.25rem, 3vw, 1.6rem); line-height: 1.2; }
+  .gs-sub { margin-top: 0.15rem; color: var(--gs-dim); }
+  .gs-h { font-size: 0.95rem; margin: 1rem 0 0.4rem; }
+  .gs-chips { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 215px), 1fr)); gap: 0.45rem; }
+  .gs-chip { display: flex; gap: 0.55rem; align-items: center; margin: 0; padding: 0.3rem 0.55rem 0.3rem 0.3rem; border: 1px solid var(--gs-line); border-left: 4px solid var(--gs-r3); border-radius: 6px; background: var(--gs-bg); min-width: 0; }
+  .gs-chip.r6 { border-left-color: var(--gs-r6); } .gs-chip.r5 { border-left-color: var(--gs-r5); } .gs-chip.r4 { border-left-color: var(--gs-r4); }
+  .gs-chip img { flex: none; width: 44px; height: 56px; object-fit: cover; object-position: top; border-radius: 4px; background: #111; }
+  .gs-chip-txt { display: flex; flex-direction: column; line-height: 1.25; min-width: 0; }
+  .gs-chip-txt strong { overflow-wrap: anywhere; }
+  .gs-chip-txt small { color: var(--gs-dim); font-size: 0.78rem; }
+  .gs-rules { margin-top: 0.8rem; font-size: 0.88rem; }
+  .gs-rules summary { cursor: pointer; font-weight: 600; }
+  .gs-rules ul { margin: 0.4rem 0 0 1.1rem; padding: 0; }
+  .gs-statlist { list-style: none; margin: 0; }
+  .gs-statlist li { margin: 0.1rem 0; }
+  .r6t { color: var(--gs-r6); font-weight: 700; } .r5t { color: var(--gs-r5); font-weight: 700; } .r4t { color: var(--gs-r4); font-weight: 700; } .r3t { color: var(--gs-r3); font-weight: 700; }
+  .gs-spark { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin: 0.6rem 0; }
+  .gs-log { margin: 0 0 0 1.4rem; font-size: 0.85rem; }
+
+  /* pull bar: stays at the bottom of the screen while the banner is in view */
+  .gs-bar { position: sticky; bottom: 0; z-index: 5; margin-top: 1rem; padding: 0.5rem 0 max(0.5rem, env(safe-area-inset-bottom)); background: var(--sl-color-bg, #0f1013); box-shadow: -1rem 0 0 var(--sl-color-bg, #0f1013), 1rem 0 0 var(--sl-color-bg, #0f1013); border-top: 1px solid var(--gs-line); }
+  .gs-msg { min-height: 0; color: #e5484d; font-size: 0.85rem; margin-bottom: 0.3rem; }
+  .gs-msg:empty { display: none; }
+  .gs-actions { display: flex; align-items: center; gap: 0.6rem; }
+  .gs-actions .gs-primary { flex: 1 1 0; min-width: 0; max-width: 260px; }
+  .gs-bar-bal { display: flex; flex-direction: column; line-height: 1.15; margin-right: auto; }
+  .gs-bar-bal small { color: var(--gs-dim); font-size: 0.72rem; }
+  .gs-bar-bal strong { font-size: 1.15rem; }
+
+  @media (max-width: 860px) {
+    .gs-layout { grid-template-columns: minmax(0, 1fr); gap: 0.75rem; }
+    .gs-picker { position: static; }
+    .gs-picker-sum { display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; min-height: 2.6rem; padding: 0.4rem 0.8rem; border: 1px solid var(--gs-line); border-radius: 8px; background: var(--gs-bg); cursor: pointer; list-style: none; }
+    .gs-picker-sum::-webkit-details-marker { display: none; }
+    .gs-picker-sum > span { color: var(--gs-dim); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .gs-picker-sum > strong { margin-left: auto; text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .gs-picker-sum::after { content: '▾'; }
+    .gs-picker[open] .gs-picker-sum::after { content: '▴'; }
+    .gs-picker[open] .gs-filters { margin-top: 0.5rem; }
+    .gs-list { max-height: 50dvh; }
+    .gs-bar-bal small { display: none; }
+  }
+  @media (max-width: 480px) {
+    .gs { font-size: 0.92rem; }
+    .gs-actions .gs-primary { padding-inline: 0.5rem; font-size: 0.92rem; }
+    .gs-ghost { margin-left: 0; }
+  }
+
+  /* ---------- result screen ---------- */
+  .gs-overlay { position: fixed; inset: 0; z-index: 1000; display: flex; flex-direction: column; align-items: center; gap: 0.9rem; padding: 0.75rem; background: #0a0c10; color: #eee; overflow: auto; }
+  .gs-overlay > :first-child { margin-top: auto; }
+  .gs-overlay > :last-child { margin-bottom: auto; }
+  .gs-overlay[hidden] { display: none; }
+  .gs-overlay.top6 { background: radial-gradient(ellipse at 50% 0%, rgba(255, 122, 26, 0.38), transparent 65%), #0a0c10; }
+  .gs-overlay.top5 { background: radial-gradient(ellipse at 50% 0%, rgba(243, 193, 58, 0.26), transparent 65%), #0a0c10; }
+  .gs-ov-head { font-size: 1rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.85; text-align: center; }
+  /* the row is sized from the screen height so cards never run off a short laptop screen (card ratio 11:25) */
+  .gs-cards { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 0.4rem; width: min(100%, 1180px, calc((100dvh - 9.5rem) * 0.44 * 10 + 3.6rem)); }
+  @media (max-width: 900px) and (min-height: 480px) {
+    .gs-cards { grid-template-columns: repeat(5, minmax(0, 1fr)); width: min(100%, 560px, calc((100dvh - 9.5rem) / 2 * 0.44 * 5 + 1.6rem)); }
+  }
+  .gs-cards.one { display: flex; justify-content: center; width: 100%; }
+  .gs-card { --c: var(--gs-r3); container-type: inline-size; position: relative; aspect-ratio: 11 / 25; overflow: hidden; border-radius: 4px; border: 1px solid var(--c); background: #14161b; box-shadow: 0 0 0 1px rgba(0,0,0,.6), 0 0 14px color-mix(in srgb, var(--c) 35%, transparent); opacity: 0; transform: translateY(-28px) scale(1.05); animation: gs-drop 0.45s ease-out forwards; animation-delay: calc(var(--i) * 0.14s); }
+  .gs-card.r6 { --c: var(--gs-r6); box-shadow: 0 0 0 1px rgba(0,0,0,.6), 0 0 26px var(--c); }
+  .gs-card.r5 { --c: var(--gs-r5); } .gs-card.r4 { --c: var(--gs-r4); }
+  .gs-card::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--c); z-index: 2; }
+  .gs-art { position: absolute; inset: 0; }
+  .gs-art img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+  .gs-cardinfo { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 1px; padding: 1.6rem 0.1rem 0.35rem; text-align: center; background: linear-gradient(transparent, rgba(0,0,0,0.92) 55%); line-height: 1.15; }
+  .gs-cardinfo strong { font-size: clamp(0.5rem, 11cqw, 1.1rem); overflow-wrap: break-word; }
+  .gs-cardinfo small { font-size: clamp(0.5rem, 9cqw, 0.8rem); opacity: 0.75; }
+  .gs-stars { color: var(--c); font-size: clamp(0.45rem, 8.5cqw, 0.95rem); letter-spacing: -1px; }
+  .gs-new { position: absolute; top: 6px; left: 0; z-index: 3; background: #e5484d; color: #fff; font-size: clamp(0.45rem, 9cqw, 0.7rem); font-weight: 700; padding: 1px 6px 1px 4px; border-radius: 0 3px 3px 0; }
+  .gs-cards.one .gs-card { flex: none; width: min(200px, 60vw, calc((100dvh - 11rem) * 0.44)); }
+  .gs-overlay.skip .gs-card { animation: none; opacity: 1; transform: none; }
+  @keyframes gs-drop { to { opacity: 1; transform: none; } }
+  .gs-overlay .gs-btn { font: inherit; cursor: pointer; min-height: 2.5rem; padding: 0.4rem 0.9rem; border-radius: 6px; border: 1px solid #4a4f5c; background: #23262e; color: #f1f1f1; }
+  .gs-overlay .gs-btn:hover { border-color: #fff; }
+  .gs-overlay .gs-primary { background: #5b4bff; border-color: #5b4bff; color: #fff; font-weight: 700; }
+  .gs-ov-foot { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
+  body.gs-lock { overflow: hidden; }
+  @media (max-width: 480px) { .gs-overlay .gs-btn { padding-inline: 0.65rem; font-size: 0.9rem; } }
+  @media (prefers-reduced-motion: reduce) { .gs-card { animation: none; opacity: 1; transform: none; } }
+</style>
