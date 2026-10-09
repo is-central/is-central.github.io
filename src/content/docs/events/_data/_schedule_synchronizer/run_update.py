@@ -10,10 +10,10 @@ from dateutil import parser as dateparser
 # -------------------------------
 # CONFIG
 # -------------------------------
-SHEET_NAME = "schedule form test (Responses)"
-WORKSHEET_NAME = "Form Responses 1"
-TOURNAMENT_NAME = "tournament_name"
-TOURNAMENT_SCHEDULE_FILE = "event_phase_schedule.json"
+SHEET_NAME = "ISC Ocean Slayer Cup (Responses)"
+WORKSHEET_NAME = "Form responses 1"
+TOURNAMENT_NAME = "ocean-slayer-cup" # Tournament schedule folder path
+TOURNAMENT_SCHEDULE_FILE = "main_event_schedule.json" # Tournament schedule json file
 
 DEFAULT_DURATION = 120
 
@@ -21,13 +21,17 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "..", ".."))
 OUTPUT_PATH = os.path.join(REPO_ROOT, "events", "_data", TOURNAMENT_NAME, TOURNAMENT_SCHEDULE_FILE)
 
+# Column indices (0-based). Set a column to None if the sheet doesn't have it.
+# Required: COL_SUBMITTED_AT, COL_SCHEDULED_DATE, COL_SCHEDULED_TIME, and at least
+# one of COL_NAME / COL_NAME_TAG / COL_DISCORD_TAG.
+# Optional: everything else; a missing field is simply left out of the JSON.
 COL_SUBMITTED_AT = 0
 COL_NAME_TAG = 1
 COL_DISCORD_TAG = 2
-COL_NAME = 3
+COL_NAME = None          # None -> name defaults to the cleaned name+tag
 COL_SCHEDULED_DATE = 4
 COL_SCHEDULED_TIME = 5
-COL_LINK = 8
+COL_LINK = None          # None -> no "platform"/"link" in the JSON
 
 DISCRIMINATOR_PATTERN = re.compile(r"#\d{4}$")
 
@@ -41,6 +45,17 @@ PLATFORM_PATTERNS = {
 # -------------------------------
 # HELPERS
 # -------------------------------
+def get_cell(row, col):
+    """Return the cell at index col, or None if the column isn't configured / doesn't exist."""
+    if col is None or col >= len(row):
+        return None
+    value = row.iloc[col]
+    # treat NaN as empty
+    if value is None or str(value).strip().lower() == "nan":
+        return None
+    return value
+
+
 def parse_utc_datetime(value):
     """Parse a string into a timezone-aware UTC datetime, or None if invalid/empty."""
     if not value or not str(value).strip():
@@ -92,6 +107,8 @@ def normalize_key(value):
 
 def clean_name_tag(value):
     """Strip a trailing #1234 discriminator from a name tag, if present."""
+    if not value:
+        return ""
     value = str(value).strip()
     return DISCRIMINATOR_PATTERN.sub("", value).strip()
 
@@ -122,17 +139,13 @@ def build_schedule(df):
     for idx, row in df.iterrows():
         row_num = idx + 2
 
-        try:
-            submitted_raw = row.iloc[COL_SUBMITTED_AT]
-            name_tag_raw = row.iloc[COL_NAME_TAG]
-            discord_tag_raw = row.iloc[COL_DISCORD_TAG]
-            name_raw = row.iloc[COL_NAME]
-            date_raw = row.iloc[COL_SCHEDULED_DATE]
-            time_raw = row.iloc[COL_SCHEDULED_TIME]
-            link_raw = row.iloc[COL_LINK] if COL_LINK < len(row) else None
-        except IndexError:
-            print(f"[row {row_num}] skipped: missing expected columns", file=sys.stderr)
-            continue
+        submitted_raw = get_cell(row, COL_SUBMITTED_AT)
+        name_tag_raw = get_cell(row, COL_NAME_TAG)
+        discord_tag_raw = get_cell(row, COL_DISCORD_TAG)
+        name_raw = get_cell(row, COL_NAME)
+        date_raw = get_cell(row, COL_SCHEDULED_DATE)
+        time_raw = get_cell(row, COL_SCHEDULED_TIME)
+        link_raw = get_cell(row, COL_LINK)
 
         submitted_dt = parse_utc_datetime(submitted_raw)
         if submitted_dt is None:
@@ -145,12 +158,14 @@ def build_schedule(df):
                   f"'{date_raw}' '{time_raw}'", file=sys.stderr)
             continue
 
-        # name fallback: column 3 -> cleaned column 1
-        name = str(name_raw).strip()
+        # name fallback: name column -> cleaned name+tag -> cleaned discord+tag
+        name = str(name_raw).strip() if name_raw else ""
         if not name:
             name = clean_name_tag(name_tag_raw)
         if not name:
-            print(f"[row {row_num}] skipped: no usable name (column 3 and column 1 both empty)", file=sys.stderr)
+            name = clean_name_tag(discord_tag_raw)
+        if not name:
+            print(f"[row {row_num}] skipped: no usable name", file=sys.stderr)
             continue
 
         is_valid = scheduled_dt > submitted_dt
@@ -166,10 +181,12 @@ def build_schedule(df):
             "is_valid": is_valid,
         })
 
-    # ---- Pass 2: group repeated submissions by identity (col1 OR col2 match) ----
+    # ---- Pass 2: group repeated submissions by identity (any configured key matches) ----
     uf = UnionFind()
     for rec in records:
         keys = [k for k in (rec["name_key"], rec["discord_key"]) if k is not None]
+        if not keys:
+            keys = [normalize_key(rec["name"])]  # no tag columns: fall back to the name
         for k in keys:
             uf.union(("rec", rec["row_num"]), ("key", k))
 
