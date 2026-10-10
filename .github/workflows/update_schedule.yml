@@ -1,19 +1,23 @@
-
 name: Sync Schedule from Registration Google Sheet
 
 on:
   schedule:
     - cron: "7,37 * * * *"
   workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -28,8 +32,7 @@ jobs:
           python -m pip install pandas gspread google-auth python-dateutil
 
       - name: Sync schedule from Google Sheet
-        env:
-          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+        if: env.GOOGLE_CREDENTIALS != ''
         run: |
           python src/content/docs/events/_data/_schedule_synchronizer/run_update.py
 
@@ -39,8 +42,12 @@ jobs:
           path: .
 
   deploy:
+    if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
