@@ -5,7 +5,13 @@ on:
   schedule:
     - cron: "7,37 * * * *"
   workflow_dispatch:
+  push:
+    branches: [main]
 
+concurrency:
+  group: pages
+  cancel-in-progress: false
+  
 permissions:
   contents: read
   pages: write
