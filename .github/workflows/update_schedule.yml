@@ -33,16 +33,6 @@ jobs:
         run: |
           python src/content/docs/events/_data/_schedule_synchronizer/run_update.py
 
-      - name: Commit updated schedule
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/content/docs/events/_data/ocean-slayer-cup/main_event_schedule.json
-          if ! git diff --cached --quiet; then
-            git commit -m "chore: sync schedule from sheet"
-            git push
-          fi
-
       - name: Build and upload Astro site
         uses: withastro/action@v3
         with:
