@@ -1,6 +1,6 @@
 ---
-title: Ocean Slayer Cup
-description: "Ocean Slayer Cup (IS3): clear Ending 4 at difficulty 18 and win a Monthly Card."
+title: 대양의 기사 컵
+description: "ISC 월간 대양의 기사 컵 (미즈키 록라)"
 tableOfContents: false
 ---
 
@@ -10,7 +10,7 @@ import PhaseTimeline from '../../../../../components/Events/PhaseTimeline.astro'
 <div class="back-button-container">
   <a href="/events/en/overview/" class="back-button">
     <span class="back-arrow">←</span>
-    <span class="back-text">Back to Events page</span>
+    <span class="back-text">토너먼트 페이지로 돌아가기</span>
   </a>
 </div>
 
@@ -18,14 +18,14 @@ import PhaseTimeline from '../../../../../components/Events/PhaseTimeline.astro'
 
 export const phases = [
   {
-    name: "Main Event",
+    name: "메인 이벤트",
     startDate: "2026-10-14T07:00:00Z",
     endDate: "2026-11-14T06:59:00Z",
     links: [
-      { label: "Rules", href: "/events/en/ocean-slayer-cup/rules" },
-      { label: "Registration", href: "https://forms.gle/s7DrK8V55LfJzmWT6" },
-      { label: "Schedule", href: "/events/kr/ocean-slayer-cup/schedule" },
-      { label: "Scoreboard", href: "/events/kr/ocean-slayer-cup/scoreboard" },
+      { label: "규칙", href: "/events/kr/ocean-slayer-cup/rules" },
+      { label: "등록", href: "https://forms.gle/s7DrK8V55LfJzmWT6" },
+      { label: "일정", href: "/events/kr/ocean-slayer-cup/schedule" },
+      { label: "스코어보드", href: "/events/kr/ocean-slayer-cup/scoreboard" },
     ],
   },
 ];
@@ -36,4 +36,4 @@ export const phases = [
 
 <p style={{ textAlign: "center", fontSize: "0.85rem", margin: "-0.75rem 0 1.5rem" }}>Banner created by <a href="https://x.com/wiishhwooshh" target="_blank" rel="noopener noreferrer">Beansprout</a>.</p>
 
-<PhaseTimeline phases={phases} themes={["IS3"]} />
+<PhaseTimeline phases={phases} themes={["IS3"]} labels={{ timeZone: "시간대" }} />
