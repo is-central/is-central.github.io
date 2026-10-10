@@ -41,11 +41,12 @@ def read_google_sheet(sheet_name, worksheet_name):
     spreadsheet = client.open(sheet_name)
     # spreadsheet = client.open_by_key(SHEET_ID)
     worksheet = spreadsheet.worksheet(worksheet_name)
-    data = worksheet.get_all_values()
-    
+    data = worksheet.get_all_values(value_render_option="UNFORMATTED_VALUE")
+
     if data:
         df = pd.DataFrame(data[1:], columns=data[0])
     else:
         df = pd.DataFrame()
-    
-    return df
+
+    tz_name = spreadsheet.timezone or "UTC"  # e.g. "America/Los_Angeles"
+    return df, tz_name

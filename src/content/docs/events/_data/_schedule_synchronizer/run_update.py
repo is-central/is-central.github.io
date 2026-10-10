@@ -1,11 +1,18 @@
 import os
 import json
 import sys
-from datetime import timezone
+import numbers
+from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 import re
 from collections import defaultdict
 
 from dateutil import parser as dateparser
+
+# Timezone the sheet values are in. Form timestamps use the spreadsheet's
+# timezone (File → Settings → Time zone). Change this if people enter local times.
+SCHEDULE_TZ = ZoneInfo("UTC")   # players enter scheduled date/time in UTC
+SHEETS_EPOCH = datetime(1899, 12, 30)
 
 # -------------------------------
 # CONFIG
@@ -56,30 +63,36 @@ def get_cell(row, col):
     return value
 
 
-def parse_utc_datetime(value):
-    """Parse a string into a timezone-aware UTC datetime, or None if invalid/empty."""
-    if not value or not str(value).strip():
+def _is_number(v):
+    return isinstance(v, numbers.Real) and not isinstance(v, bool)  # also matches numpy ints
+
+
+def _from_serial(serial, tz):
+    """Sheets serial number, interpreted in tz -> timezone-aware UTC datetime."""
+    seconds = round(float(serial) * 86400)
+    naive = SHEETS_EPOCH + timedelta(seconds=seconds)
+    return naive.replace(tzinfo=tz).astimezone(timezone.utc)
+
+
+def parse_utc_datetime(value, tz):
+    """Datetime serial (or ISO text) in tz -> UTC datetime, or None."""
+    if _is_number(value):
+        return _from_serial(value, tz)
+    if value is None or not str(value).strip():
         return None
     try:
-        dt = dateparser.parse(str(value).strip())
-    except (ValueError, OverflowError):
+        dt = datetime.fromisoformat(str(value).strip())
+    except ValueError:
         return None
-
-    if dt.tzinfo is None:
-        dt = dt.replace(tzinfo=timezone.utc)
-    else:
-        dt = dt.astimezone(timezone.utc)
-    return dt
+    dt = dt.replace(tzinfo=tz) if dt.tzinfo is None else dt
+    return dt.astimezone(timezone.utc)
 
 
-def parse_scheduled_datetime(date_str, time_str):
-    """Combine separate date + time strings into one UTC datetime."""
-    date_str = (date_str or "").strip()
-    time_str = (time_str or "").strip()
-    if not date_str or not time_str:
+def parse_scheduled_datetime(date_value, time_value):
+    """Date serial + time-of-day serial, entered in UTC -> UTC datetime."""
+    if not (_is_number(date_value) and _is_number(time_value)):
         return None
-    combined = f"{date_str} {time_str}"
-    return parse_utc_datetime(combined)
+    return _from_serial(int(date_value) + (float(time_value) % 1), SCHEDULE_TZ)
 
 
 def detect_platform(link):
@@ -132,7 +145,7 @@ class UnionFind:
 # -------------------------------
 # BUILD SCHEDULE
 # -------------------------------
-def build_schedule(df):
+def build_schedule(df, sheet_tz):
     records = []
 
     # ---- Pass 1: parse every row ----
@@ -147,7 +160,7 @@ def build_schedule(df):
         time_raw = get_cell(row, COL_SCHEDULED_TIME)
         link_raw = get_cell(row, COL_LINK)
 
-        submitted_dt = parse_utc_datetime(submitted_raw)
+        submitted_dt = parse_utc_datetime(submitted_raw, sheet_tz)
         if submitted_dt is None:
             print(f"[row {row_num}] skipped: could not parse submission datetime '{submitted_raw}'", file=sys.stderr)
             continue
@@ -242,8 +255,8 @@ def write_schedule(schedule, output_path):
 def main():
     from fetch_sheet import read_google_sheet
 
-    df = read_google_sheet(SHEET_NAME, WORKSHEET_NAME)
-    schedule = build_schedule(df)
+    df, tz_name = read_google_sheet(SHEET_NAME, WORKSHEET_NAME)
+    schedule = build_schedule(df, ZoneInfo(tz_name))
     write_schedule(schedule, OUTPUT_PATH)
     print(f"Wrote {len(schedule)} entries to {OUTPUT_PATH}")
 
