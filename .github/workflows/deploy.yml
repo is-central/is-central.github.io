@@ -5,6 +5,9 @@ on:
   # Using a different branch name? Replace `main` with your branch’s name
   push:
     branches: [ main ]
+  # ADDED: rebuild periodically so the schedule picks up new sheet responses
+  schedule:
+    - cron: "*/30 * * * *"
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
@@ -20,6 +23,17 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
+      # ADDED: sync the schedule from the Google Sheet before building
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Python dependencies
+        run: pip install pandas gspread google-auth python-dateutil
+      - name: Sync schedule from Google Sheet
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+        run: python src/content/docs/events/_data/_schedule_synchronizer/run_update.py
       - name: Install, build, and upload your site
         uses: withastro/action@v3
         with:

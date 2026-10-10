@@ -1,5 +1,6 @@
 ---
-const { entries, notesHeader } = Astro.props;
+const { entries, notesHeader, labels = {} } = Astro.props;
+const L = { timeZone: "Time zone", player: "Player", time: "Time", countdown: "Countdown", stream: "Stream", status: "Status", ...labels };
 
 const PLATFORMS = {
   discord: {
@@ -57,7 +58,7 @@ const UTC_OFFSETS = [
 
 <div class="schedule-wrap">
   <div class="tz-controls">
-    <span class="tz-label">Time zone</span>
+    <span class="tz-label">{L.timeZone}</span>
     <div class="tz-options">
       <button class="tz-btn active" data-tz="local">Local</button>
       <button class="tz-btn" data-tz="utc">UTC</button>
@@ -74,12 +75,12 @@ const UTC_OFFSETS = [
   <div class="schedule">
     <div class="schedule-head">
       {hasTeams && <span class="col-team">Team</span>}
-      <span class="col-player">Player</span>
+      <span class="col-player">{L.player}</span>
       {hasNotes && <span class="col-notes">{notesHeader}</span>}
-      <span class="col-time" id="time-col-label">Time</span>
-      <span class="col-countdown">Countdown</span>
-      <span class="col-platform">Stream</span>
-      <span class="col-status">Status</span>
+      <span class="col-time" id="time-col-label" data-base={L.time}>{L.time}</span>
+      <span class="col-countdown">{L.countdown}</span>
+      <span class="col-platform">{L.stream}</span>
+      <span class="col-status">{L.status}</span>
     </div>
 
     <div class="schedule-body" id="schedule-body">
@@ -256,26 +257,27 @@ const UTC_OFFSETS = [
 
   function updateTimes(mode, customOffset) {
     const label = document.getElementById("time-col-label");
+    const base = label?.dataset.base || "Time";
     document.querySelectorAll(".time-cell").forEach((el) => {
       const iso = el.getAttribute("data-iso");
       if (!iso) return;
       const d = new Date(iso);
       if (mode === "utc") {
         el.textContent = fmtOffset(d, 0);
-        if (label) label.textContent = "Time (UTC)";
+        if (label) label.textContent = `${base} (UTC)`;
       } else if (mode === "local") {
         el.textContent = fmtDate(d);
         const localOffset = -new Date().getTimezoneOffset();
         const sign = localOffset >= 0 ? "+" : "−";
         const h = Math.floor(Math.abs(localOffset) / 60);
         const m = Math.abs(localOffset) % 60;
-        if (label) label.textContent = `Time (UTC${sign}${h}${m ? `:${String(m).padStart(2,"0")}` : ""})`;
+        if (label) label.textContent = `${base} (UTC${sign}${h}${m ? `:${String(m).padStart(2,"0")}` : ""})`;
       } else {
         el.textContent = fmtOffset(d, customOffset);
         const sign = customOffset >= 0 ? "+" : "−";
         const h = Math.floor(Math.abs(customOffset) / 60);
         const m = Math.abs(customOffset) % 60;
-        if (label) label.textContent = `Time (UTC${sign}${h}${m ? `:${String(m).padStart(2,"0")}` : ""})`;
+        if (label) label.textContent = `${base} (UTC${sign}${h}${m ? `:${String(m).padStart(2,"0")}` : ""})`;
       }
     });
   }

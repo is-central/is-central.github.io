@@ -1,5 +1,6 @@
 ---
-const { phases, themes } = Astro.props;
+const { phases, themes, labels = {} } = Astro.props;
+const L = { timeZone: "Time zone", ...labels };
 
 const IS_COLORS = {
   IS2: "#FBC02D",
@@ -65,7 +66,7 @@ const UTC_OFFSETS = [
 <div class="phase-wrap">
   {anyHasTime && (
     <div class="tz-controls">
-      <span class="tz-label">Time zone</span>
+      <span class="tz-label">{L.timeZone}</span>
       <div class="tz-options">
         <button class="tz-btn active" data-tz="local">Local</button>
         <button class="tz-btn" data-tz="utc">UTC</button>

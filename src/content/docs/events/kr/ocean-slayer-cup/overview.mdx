@@ -1,0 +1,39 @@
+---
+title: 대양의 기사 컵
+description: "ISC 월간 대양의 기사 컵 (미즈키 록라)"
+tableOfContents: false
+---
+
+import LanguageSwitcher from '../../../../../components/LanguageSwitcher.astro';
+import PhaseTimeline from '../../../../../components/Events/PhaseTimeline.astro';
+
+<div class="back-button-container">
+  <a href="/events/en/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">토너먼트 페이지로 돌아가기</span>
+  </a>
+</div>
+
+<LanguageSwitcher />
+
+export const phases = [
+  {
+    name: "메인 이벤트",
+    startDate: "2026-10-14T07:00:00Z",
+    endDate: "2026-11-14T06:59:00Z",
+    links: [
+      { label: "규칙", href: "/events/kr/ocean-slayer-cup/rules" },
+      { label: "등록", href: "https://forms.gle/s7DrK8V55LfJzmWT6" },
+      { label: "일정", href: "/events/kr/ocean-slayer-cup/schedule" },
+      { label: "스코어보드", href: "/events/kr/ocean-slayer-cup/scoreboard" },
+    ],
+  },
+];
+
+<div style="position: relative; width: 100%; max-width: 800px; margin: 0 auto 1.5rem;">
+  <img src="/events/banners/ocean-slayer-cup-banner.png" alt="Ocean Slayer Cup artwork featuring a large luminous jellyfish above an underwater reef" width="1920" height="1080" style="display: block; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+</div>
+
+<p style={{ textAlign: "center", fontSize: "0.85rem", margin: "-0.75rem 0 1.5rem" }}>Banner created by <a href="https://x.com/wiishhwooshh" target="_blank" rel="noopener noreferrer">Beansprout</a>.</p>
+
+<PhaseTimeline phases={phases} themes={["IS3"]} labels={{ timeZone: "시간대" }} />

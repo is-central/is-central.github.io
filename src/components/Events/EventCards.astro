@@ -27,7 +27,7 @@ const parsedThemes = parseThemes(themes);
 <a
   href={href}
   class:list={["event-card", { "has-banner": !!bannerPath }]}
-  data-start={startDate}
+  data-start={startDate ?? ""}
   data-end={endDate ?? ""}
 >
   {bannerPath && (

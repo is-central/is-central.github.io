@@ -1,0 +1,23 @@
+---
+title: 대양의 기사 컵 일정
+description: "대양의 기사 컵 일정"
+tableOfContents: false
+---
+
+import LanguageSwitcher from '../../../../../components/LanguageSwitcher.astro';
+
+<div class="back-button-container">
+  <a href="/events/kr/ocean-slayer-cup/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">토너먼트 페이지로 돌아가기</span>
+  </a>
+</div>
+
+<LanguageSwitcher />
+
+import TournamentSchedule from '../../../../../components/Events/Schedule.astro';
+import scheduleData from '../../_data/ocean-slayer-cup/main_event_schedule.json';
+
+대양의 기사컵은 10월 14일 오후 4시에 시작됩니다. <a href="https://forms.gle/s7DrK8V55LfJzmWT6">등록폼</a>을 통해 시간을 할당받으세요. 일정은 아래에 표기됩니다.
+
+<TournamentSchedule title="일정" entries={scheduleData} labels={{ timeZone: "시간대", player: "플레이어", time: "일정", countdown: "카운트다운", stream: "스트리밍", status: "상태" }} />
