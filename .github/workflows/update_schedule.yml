@@ -16,6 +16,8 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -30,8 +32,7 @@ jobs:
           python -m pip install pandas gspread google-auth python-dateutil
 
       - name: Sync schedule from Google Sheet
-        env:
-          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+        if: env.GOOGLE_CREDENTIALS != ''
         run: |
           python src/content/docs/events/_data/_schedule_synchronizer/run_update.py
 
