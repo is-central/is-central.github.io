@@ -17,8 +17,30 @@ SHEETS_EPOCH = datetime(1899, 12, 30)
 # -------------------------------
 # CONFIG
 # -------------------------------
-SHEET_NAME = "ISC Ocean Slayer Cup (Responses)"
-WORKSHEET_NAME = "Form responses 1"
+# One entry per form response sheet. All sources are merged into a single schedule.
+#   spreadsheet: title of the Google spreadsheet file
+#   worksheet:   tab name inside it (this is usually translated per form language,
+#                e.g. "Form responses 1" in English)
+#   timezone:    timezone the form's submission timestamps are in. Use None to read it
+#                from the spreadsheet's own settings, or an IANA name like "Asia/Shanghai".
+SOURCES = [
+    {
+        "spreadsheet": "ISC Ocean Slayer Cup (Responses)",
+        "worksheet": "Form responses 1",
+        "timezone": None,
+    },
+    {
+        "spreadsheet": "ISC Ocean Slayer Cup (Responses)",
+        "worksheet": "Form responses 2",
+        "timezone": None,
+    },
+    {
+        "spreadsheet": "ISC Ocean Slayer Cup (Responses)",  # ...or another tab in the same one
+        "worksheet": "Form responses 3",
+        "timezone": None,
+    },
+]
+
 TOURNAMENT_NAME = "ocean-slayer-cup" # Tournament schedule folder path
 TOURNAMENT_SCHEDULE_FILE = "main_event_schedule.json" # Tournament schedule json file
 
@@ -28,7 +50,8 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "..", ".."))
 OUTPUT_PATH = os.path.join(REPO_ROOT, "events", "_data", TOURNAMENT_NAME, TOURNAMENT_SCHEDULE_FILE)
 
-# Column indices (0-based). Set a column to None if the sheet doesn't have it.
+# Column indices (0-based), shared by every source (the forms have identical layouts).
+# Set a column to None if the sheets don't have it.
 # Required: COL_SUBMITTED_AT, COL_SCHEDULED_DATE, COL_SCHEDULED_TIME, and at least
 # one of COL_NAME / COL_NAME_TAG / COL_DISCORD_TAG.
 # Optional: everything else; a missing field is simply left out of the JSON.
@@ -143,14 +166,15 @@ class UnionFind:
             self.parent[rx] = ry
 
 # -------------------------------
-# BUILD SCHEDULE
+# LOAD SOURCES
 # -------------------------------
-def build_schedule(df, sheet_tz):
+def parse_source(df, sheet_tz, label, source_idx):
+    """Parse every row of one form's responses into records (Pass 1)."""
     records = []
 
-    # ---- Pass 1: parse every row ----
     for idx, row in df.iterrows():
         row_num = idx + 2
+        where = f"[{label} row {row_num}]"
 
         submitted_raw = get_cell(row, COL_SUBMITTED_AT)
         name_tag_raw = get_cell(row, COL_NAME_TAG)
@@ -162,12 +186,12 @@ def build_schedule(df, sheet_tz):
 
         submitted_dt = parse_utc_datetime(submitted_raw, sheet_tz)
         if submitted_dt is None:
-            print(f"[row {row_num}] skipped: could not parse submission datetime '{submitted_raw}'", file=sys.stderr)
+            print(f"{where} skipped: could not parse submission datetime '{submitted_raw}'", file=sys.stderr)
             continue
 
         scheduled_dt = parse_scheduled_datetime(date_raw, time_raw)
         if scheduled_dt is None:
-            print(f"[row {row_num}] skipped: could not parse scheduled date/time "
+            print(f"{where} skipped: could not parse scheduled date/time "
                   f"'{date_raw}' '{time_raw}'", file=sys.stderr)
             continue
 
@@ -178,13 +202,14 @@ def build_schedule(df, sheet_tz):
         if not name:
             name = clean_name_tag(discord_tag_raw)
         if not name:
-            print(f"[row {row_num}] skipped: no usable name", file=sys.stderr)
+            print(f"{where} skipped: no usable name", file=sys.stderr)
             continue
 
         is_valid = scheduled_dt > submitted_dt
 
         records.append({
-            "row_num": row_num,
+            "uid": (source_idx, row_num),   # unique across all sources
+            "where": where,
             "name_key": normalize_key(name_tag_raw),
             "discord_key": normalize_key(discord_tag_raw),
             "submitted_dt": submitted_dt,
@@ -194,18 +219,54 @@ def build_schedule(df, sheet_tz):
             "is_valid": is_valid,
         })
 
+    return records
+
+
+def load_source(spreadsheet, worksheet, timezone_name=None, source_idx=0):
+    """Fetch one spreadsheet/worksheet and return its parsed records.
+
+    timezone_name: IANA timezone of the form's submission timestamps, or None to
+    use the spreadsheet's own timezone setting.
+    """
+    from fetch_sheet import read_google_sheet
+
+    label = f"{spreadsheet} / {worksheet}"
+    try:
+        df, sheet_tz_name = read_google_sheet(spreadsheet, worksheet)
+    except Exception as exc:
+        # Abort instead of writing a schedule that silently lacks this form's players.
+        raise RuntimeError(f"Could not read source '{label}': {exc}") from exc
+
+    tz = ZoneInfo(timezone_name or sheet_tz_name)
+    records = parse_source(df, tz, label, source_idx)
+    print(f"Source '{label}' ({tz.key}): {len(records)} usable rows", file=sys.stderr)
+    return records
+
+
+def load_all_sources(sources):
+    records = []
+    for i, src in enumerate(sources):
+        records.extend(load_source(src["spreadsheet"], src["worksheet"], src.get("timezone"), i))
+    return records
+
+
+# -------------------------------
+# BUILD SCHEDULE
+# -------------------------------
+def build_schedule(records):
     # ---- Pass 2: group repeated submissions by identity (any configured key matches) ----
+    # Runs over the merged records, so the same player is matched across forms too.
     uf = UnionFind()
     for rec in records:
         keys = [k for k in (rec["name_key"], rec["discord_key"]) if k is not None]
         if not keys:
             keys = [normalize_key(rec["name"])]  # no tag columns: fall back to the name
         for k in keys:
-            uf.union(("rec", rec["row_num"]), ("key", k))
+            uf.union(("rec", rec["uid"]), ("key", k))
 
     groups = defaultdict(list)
     for rec in records:
-        root = uf.find(("rec", rec["row_num"]))
+        root = uf.find(("rec", rec["uid"]))
         groups[root].append(rec)
 
     # ---- Pass 3: within each group, drop invalids, keep latest-submitted valid one ----
@@ -215,7 +276,7 @@ def build_schedule(df, sheet_tz):
 
         for r in group_records:
             if not r["is_valid"]:
-                print(f"[row {r['row_num']}] ignored: scheduled time not after submission time", file=sys.stderr)
+                print(f"{r['where']} ignored: scheduled time not after submission time", file=sys.stderr)
 
         if not valid:
             continue  # entire group invalid, nothing to schedule
@@ -253,10 +314,8 @@ def write_schedule(schedule, output_path):
 # MAIN
 # -------------------------------
 def main():
-    from fetch_sheet import read_google_sheet
-
-    df, tz_name = read_google_sheet(SHEET_NAME, WORKSHEET_NAME)
-    schedule = build_schedule(df, ZoneInfo(tz_name))
+    records = load_all_sources(SOURCES)
+    schedule = build_schedule(records)
     write_schedule(schedule, OUTPUT_PATH)
     print(f"Wrote {len(schedule)} entries to {OUTPUT_PATH}")
 
