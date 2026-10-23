@@ -1,0 +1,45 @@
+{
+  "title": "Main Event",
+  "mode": "team",
+  "entries": [
+    {
+      "team": "Team A",
+      "score": 18200,
+      "videos": [
+        { "label": "Team VOD", "href": "https://youtu.be/team1" }
+      ],
+      "players": [
+        {
+          "name": "Player a1",
+          "score": 9800,
+          "videos": [
+            { "label": "Run 1", "href": "https://youtu.be/example1a" },
+            { "label": "Run 2", "href": "https://youtu.be/example1b" }
+          ]
+        },
+        { "name": "Player a2", "score": 8400 }
+      ]
+    },
+    {
+      "team": "Team B",
+      "score": 17500,
+      "players": [
+        {
+          "name": "Player b1",
+          "score": 9200,
+          "videos": [
+            { "label": "VOD", "href": "https://youtu.be/example3" }
+          ]
+        },
+        { "name": "Player b2", "score": 8300 }
+      ]
+    },
+    {
+      "team": "Team C",
+      "score": 15000,
+      "players": [
+        { "name": "Player c1", "score": 15000 }
+      ]
+    }
+  ]
+}
