@@ -1,5 +1,4 @@
 ---
-// Headhunting (gacha) simulator. All logic runs in the browser; see ./engine.ts and ./data.json.
 ---
 
 <div id="gs" class="gs not-content">
@@ -10,6 +9,15 @@
     <button type="button" class="gs-btn gs-small" data-add="6000">+6,000</button>
     <button type="button" class="gs-btn gs-small" data-add="60000">+60,000</button>
     <button type="button" class="gs-btn gs-small gs-ghost" id="gs-reset">Reset everything</button>
+  </div>
+
+  <div id="gs-gift" class="gs-gift" hidden role="status">
+    <span id="gs-gift-text"></span>
+    <span class="gs-gift-btns">
+      <button type="button" class="gs-btn gs-small gs-primary" data-gift="add">Add to my balance</button>
+      <button type="button" class="gs-btn gs-small" data-gift="replace">Replace my balance</button>
+      <button type="button" class="gs-btn gs-small gs-ghost" data-gift="ignore">Ignore</button>
+    </span>
   </div>
 
   <div class="gs-layout">
@@ -94,15 +102,24 @@
           selected: D.banners.some((b) => b.id === p.selected) ? p.selected : fresh.selected,
         };
       }
-    } catch { /* storage unavailable: start fresh */ }
+    } catch { }
     return fresh;
   }
   function persist() {
-    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch { /* ignore */ }
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch { }
+  }
+
+  const MAX_GIFT = 10_000_000;
+  let gift = 0;
+  function readGift(): number {
+    const m = /(?:^#|&)o=(\d{1,8})(?:&|$)/.exec(location.hash);
+    if (!m) return 0;
+    history.replaceState(null, '', location.pathname + location.search);
+    const n = Number(m[1]);
+    return n > 0 && n <= MAX_GIFT ? n : 0;
   }
 
   const $ = (id: string) => document.getElementById(id) as HTMLElement;
-  // lift the overlay out of the page layout so it covers the site header too
   document.body.appendChild($('gs-overlay'));
   const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]!));
   const fmt = (n: number) => n.toLocaleString('en-US');
@@ -118,7 +135,6 @@
     return `${fmtDate(b.start)} – ${fmtDate(b.end)}`;
   }
 
-  // ---------- banner list
   const years = [...new Set(D.banners.map((b) => b.start.slice(0, 4)))].sort().reverse();
   $('gs-year').innerHTML = '<option value="all">All years</option>' + years.map((y) => `<option>${y}</option>`).join('');
 
@@ -142,7 +158,6 @@
       : '<li class="gs-empty">No banners match.</li>';
   }
 
-  // ---------- banner details
   function opChip(id: string, rate?: number) {
     const o = D.ops[id];
     return `<li class="gs-chip r${o.r}">
@@ -239,7 +254,6 @@
     setBal();
   }
 
-  // ---------- pulling
   function setBal() {
     document.querySelectorAll('.gs-bal').forEach((e) => (e.textContent = fmt(state.save.balance)));
   }
@@ -290,7 +304,6 @@
     renderStats();
   }
 
-  // ---------- results screen
   function cardHtml(r: { id: string; r: number; isNew: boolean }, i: number, single: boolean) {
     const o = D.ops[r.id];
     return `<div class="gs-card r${r.r}${single ? ' single' : ''}" style="--i:${i}">
@@ -317,7 +330,6 @@
     document.body.classList.remove('gs-lock');
   }
 
-  // ---------- events
   document.addEventListener('click', (e) => {
     const t = (e.target as HTMLElement).closest('button') as HTMLButtonElement | null;
     if (!t || !($('gs').contains(t) || $('gs-overlay').contains(t))) return;
@@ -332,6 +344,13 @@
       state.save.balance += Number(t.dataset.add);
       persist();
       setMsg('');
+      setBal();
+    } else if (t.dataset.gift) {
+      if (t.dataset.gift === 'add') state.save.balance += gift;
+      else if (t.dataset.gift === 'replace') state.save.balance = gift;
+      gift = 0;
+      $('gs-gift').hidden = true;
+      persist();
       setBal();
     } else if (t.dataset.exchange) {
       exchange(t.dataset.exchange, Number(t.dataset.cost));
@@ -362,14 +381,27 @@
     $(id).addEventListener('input', renderList);
   }
 
+  gift = readGift();
+  if (gift) {
+    let hadSave = false;
+    try { hadSave = localStorage.getItem(KEY) !== null; } catch { }
+    if (hadSave) {
+      $('gs-gift-text').textContent = `This link offers ${fmt(gift)} Orundum. You already have a save (${fmt(state.save.balance)} Orundum).`;
+      $('gs-gift').hidden = false;
+    } else {
+      state.save.balance = gift;
+      persist();
+      gift = 0;
+    }
+  }
+
+  setBal();
   renderList();
   renderBanner();
-  // scroll the selected banner into view inside the list
   $('gs-list').querySelector('.on')?.scrollIntoView({ block: 'nearest' });
 </script>
 
 <style is:global>
-  /* page chrome: tighter title and a sensible content width for this tool */
   main:has(.gs) { --sl-content-width: min(1200px, 100%); --sl-content-pad-x: clamp(0.75rem, 3vw, 1.5rem); }
   main:has(.gs) .content-panel:first-child { padding-block: 0.75rem; }
   main:has(.gs) h1 { font-size: clamp(1.4rem, 3.4vw, 2rem); }
@@ -435,10 +467,12 @@
   .gs-spark { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin: 0.6rem 0; }
   .gs-log { margin: 0 0 0 1.4rem; font-size: 0.85rem; }
 
-  /* pull bar: stays at the bottom of the screen while the banner is in view */
   .gs-bar { position: sticky; bottom: 0; z-index: 5; margin-top: 1rem; padding: 0.5rem 0 max(0.5rem, env(safe-area-inset-bottom)); background: var(--sl-color-bg, #0f1013); box-shadow: -1rem 0 0 var(--sl-color-bg, #0f1013), 1rem 0 0 var(--sl-color-bg, #0f1013); border-top: 1px solid var(--gs-line); }
   .gs-msg { min-height: 0; color: #e5484d; font-size: 0.85rem; margin-bottom: 0.3rem; }
   .gs-msg:empty { display: none; }
+  .gs-gift { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem 1rem; margin-bottom: 0.75rem; padding: 0.6rem 0.9rem; border: 1px solid var(--gs-accent); border-radius: 8px; background: var(--gs-bg); }
+  .gs-gift[hidden] { display: none; }
+  .gs-gift-btns { display: flex; flex-wrap: wrap; gap: 0.4rem; }
   .gs-actions { display: flex; align-items: center; gap: 0.6rem; }
   .gs-actions .gs-primary { flex: 1 1 0; min-width: 0; max-width: 260px; }
   .gs-bar-bal { display: flex; flex-direction: column; line-height: 1.15; margin-right: auto; }
@@ -464,7 +498,6 @@
     .gs-ghost { margin-left: 0; }
   }
 
-  /* ---------- result screen ---------- */
   .gs-overlay { position: fixed; inset: 0; z-index: 1000; display: flex; flex-direction: column; align-items: center; gap: 0.9rem; padding: 0.75rem; background: #0a0c10; color: #eee; overflow: auto; }
   .gs-overlay > :first-child { margin-top: auto; }
   .gs-overlay > :last-child { margin-bottom: auto; }
@@ -472,7 +505,6 @@
   .gs-overlay.top6 { background: radial-gradient(ellipse at 50% 0%, rgba(255, 122, 26, 0.38), transparent 65%), #0a0c10; }
   .gs-overlay.top5 { background: radial-gradient(ellipse at 50% 0%, rgba(243, 193, 58, 0.26), transparent 65%), #0a0c10; }
   .gs-ov-head { font-size: 1rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.85; text-align: center; }
-  /* the row is sized from the screen height so cards never run off a short laptop screen (card ratio 11:25) */
   .gs-cards { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 0.4rem; width: min(100%, 1180px, calc((100dvh - 9.5rem) * 0.44 * 10 + 3.6rem)); }
   @media (max-width: 900px) and (min-height: 480px) {
     .gs-cards { grid-template-columns: repeat(5, minmax(0, 1fr)); width: min(100%, 560px, calc((100dvh - 9.5rem) / 2 * 0.44 * 5 + 1.6rem)); }

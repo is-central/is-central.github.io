@@ -1,6 +1,3 @@
-// Pull engine for the Arknights headhunting simulator.
-// Rules are taken from the Arknights wiki (arknights.wiki.gg/wiki/Headhunting) and the game's own data tables.
-
 export interface Op { n: string; r: number; c: string; a: string; l: number; p: number }
 export interface Banner {
   id: string;
@@ -35,7 +32,7 @@ export const BASE6 = 0.02;
 export const BASE5 = 0.08;
 export const BASE4 = 0.5;
 export const BASE3 = 0.4;
-export const SOFT_PITY_START = 50; // after 50 pulls without a 6*, +2% per pull
+export const SOFT_PITY_START = 50;
 export const FOCUSED_AFTER = 150;
 export const SPARK_6 = 300;
 export const SPARK_5 = 75;
@@ -50,7 +47,6 @@ export function newSave(balance = 6000): Save {
   };
 }
 
-/** Limited-Time banners share one pity counter ("standard"); limited and crossover banners are tracked on their own. */
 export function seriesKey(b: Banner): string {
   return b.type === 'lt' ? 'standard' : b.id;
 }
@@ -80,7 +76,6 @@ function pickWeighted(list: { id: string; w: number }[], rng: () => number): str
   return list[list.length - 1].id;
 }
 
-/** Operators that can come out of the non-rate-up part of a banner. */
 export function offPool(data: Data, b: Banner, rarity: number): string[] {
   const exclude = new Set([...b.up6, ...b.up5, ...b.up4]);
   const out: string[] = [];
@@ -90,11 +85,10 @@ export function offPool(data: Data, b: Banner, rarity: number): string[] {
   return out;
 }
 
-/** Weighted candidates for the non-primary 30% of a Limited Headhunting 6* pull. */
 function limitedOff6(data: Data, b: Banner): { id: string; w: number }[] {
   const primary = new Set(b.primary ?? []);
   const list: { id: string; w: number }[] = [];
-  for (const id of b.up6) if (!primary.has(id)) list.push({ id, w: 5 }); // secondary rate-up: 5x weight
+  for (const id of b.up6) if (!primary.has(id)) list.push({ id, w: 5 });
   for (const id of offPool(data, b, 6)) list.push({ id, w: 1 });
   return list;
 }
@@ -111,7 +105,6 @@ function pick6(data: Data, b: Banner, bs: BannerState, rng: () => number): strin
     if (prim.length && rng() < 0.7) return pickUniform(prim, rng);
     return pickWeighted(limitedOff6(data, b), rng);
   }
-  // limited-time
   if (b.focused && !bs.focusedDone && bs.pulls > FOCUSED_AFTER && b.up6.length) return pickUniform(b.up6, rng);
   if (b.up6.length && rng() < 0.5) return pickUniform(b.up6, rng);
   return pickUniform(offPool(data, b, 6), rng);
@@ -124,7 +117,6 @@ function pickLower(data: Data, b: Banner, rarity: number, rng: () => number): st
   return pickUniform(offPool(data, b, rarity), rng);
 }
 
-/** One headhunting pull. Mutates `save` (pity, counters, totals) but does not touch the balance. */
 export function pullOnce(data: Data, b: Banner, save: Save, rng: () => number = Math.random): PullResult {
   const pity = pityState(save, b);
   const bs = bannerState(save, b);
@@ -143,7 +135,6 @@ export function pullOnce(data: Data, b: Banner, save: Save, rng: () => number = 
   } else {
     const x = rng();
     rarity = x < p6 ? 6 : x < p6 + p5 ? 5 : x < p6 + p5 + p4 ? 4 : 3;
-    // a 5* or higher is guaranteed within every 10 pulls: the 10th pull is lifted to 5* if it would have been lower
     if (rarity < 5 && pity.s5 >= 9) rarity = 5;
   }
 
@@ -170,7 +161,6 @@ export function pullOnce(data: Data, b: Banner, save: Save, rng: () => number = 
   return { id, r: rarity, pityBefore, bannerPull: bs.pulls };
 }
 
-/** Per-pull probability of each rate-up operator at base rates (before pity), for display. */
 export function baseOdds(data: Data, b: Banner): { id: string; rate: number }[] {
   const out: { id: string; rate: number }[] = [];
   if (b.type === 'lim') {
