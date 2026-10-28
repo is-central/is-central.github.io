@@ -23,6 +23,7 @@ const ranked = assignRanks(sortByScore(data.entries ?? [])).map((e) =>
   isTeam && e.players ? { ...e, players: sortByScore(e.players) } : e
 );
 
+const hasResults = (data.entries ?? []).some((e) => e.result);
 const fmt = (n) => n?.toLocaleString("en") ?? "—";
 
 const TEAM_ACCENTS = ["#60a5fa", "#f472b6", "#34d399", "#fb923c", "#a78bfa", "#facc15"];
@@ -73,6 +74,7 @@ const TEAM_ACCENTS = ["#60a5fa", "#f472b6", "#34d399", "#fb923c", "#a78bfa", "#f
       <div class="indiv-head">
         <span class="ch-rank" />
         <span class="ch-name">Player</span>
+        {hasResults && <span class="ch-result">W/L</span>}
         <span class="ch-score">Score</span>
       </div>
       {ranked.map((entry) => (
@@ -84,6 +86,11 @@ const TEAM_ACCENTS = ["#60a5fa", "#f472b6", "#34d399", "#fb923c", "#a78bfa", "#f
               <a href={v.href} target="_blank" rel="noopener noreferrer" class="vod">▶ {v.label}</a>
             ))}
           </span>
+          {hasResults && (
+            <span class="e-result">
+              {entry.result && <span class:list={["result-badge", `result-${entry.result.toLowerCase()}`]}>{entry.result}</span>}
+            </span>
+          )}
           <span class="e-score">{fmt(entry.score)}</span>
         </div>
       ))}
@@ -111,7 +118,6 @@ const TEAM_ACCENTS = ["#60a5fa", "#f472b6", "#34d399", "#fb923c", "#a78bfa", "#f
     margin-bottom: 0.5rem;
   }
 
-  /* ── Individual list ── */
   .indiv-list {
     border: 1px solid color-mix(in srgb, var(--sl-color-gray-4) 35%, transparent);
     border-radius: 8px;
@@ -133,6 +139,7 @@ const TEAM_ACCENTS = ["#60a5fa", "#f472b6", "#34d399", "#fb923c", "#a78bfa", "#f
 
   .ch-rank { flex-shrink: 0; width: 2.2rem; }
   .ch-name { flex: 1; }
+  .ch-result { flex-shrink: 0; width: 2.5rem; text-align: center; }
   .ch-score { flex-shrink: 0; width: 5rem; text-align: right; }
 
   .entry-row {
@@ -149,9 +156,12 @@ const TEAM_ACCENTS = ["#60a5fa", "#f472b6", "#34d399", "#fb923c", "#a78bfa", "#f
 
   .e-rank { flex-shrink: 0; width: 2.2rem; text-align: center; font-size: 0.75rem; font-weight: 700; color: var(--sl-color-gray-3); }
   .e-name { flex: 1; font-weight: 600; color: var(--sl-color-white); display: flex; align-items: center; flex-wrap: wrap; gap: 0.35rem; }
+  .e-result { flex-shrink: 0; width: 2.5rem; text-align: center; }
+  .result-badge { display: inline-block; min-width: 1.5rem; padding: 0.05rem 0.35rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700; line-height: 1.4; }
+  .result-w { color: #22c55e; background: color-mix(in srgb, #22c55e 15%, transparent); }
+  .result-l { color: #ef4444; background: color-mix(in srgb, #ef4444 15%, transparent); }
   .e-score { flex-shrink: 0; width: 5rem; text-align: right; font-weight: 700; color: var(--sl-color-white); font-variant-numeric: tabular-nums; }
 
-  /* ── Team cards ── */
   .team-list { display: flex; flex-direction: column; gap: 0.5rem; }
 
   .team-card {
@@ -176,7 +186,6 @@ const TEAM_ACCENTS = ["#60a5fa", "#f472b6", "#34d399", "#fb923c", "#a78bfa", "#f
   .team-name { flex: 1; font-weight: 700; color: var(--sl-color-white); font-size: 0.9rem; display: flex; align-items: center; flex-wrap: wrap; gap: 0.35rem; }
   .team-score { flex-shrink: 0; font-weight: 700; color: var(--sl-color-white); font-variant-numeric: tabular-nums; }
 
-  /* Players */
   .players { border-top: 1px solid color-mix(in srgb, var(--sl-color-gray-5) 40%, transparent); }
 
   .player-row {
@@ -194,7 +203,6 @@ const TEAM_ACCENTS = ["#60a5fa", "#f472b6", "#34d399", "#fb923c", "#a78bfa", "#f
   .p-name { flex: 1; font-size: 0.82rem; color: var(--sl-color-gray-2); display: flex; align-items: center; flex-wrap: wrap; gap: 0.35rem; }
   .p-score { flex-shrink: 0; font-size: 0.8rem; color: var(--sl-color-gray-3); font-variant-numeric: tabular-nums; }
 
-  /* ── VOD buttons ── */
   .vod {
     display: inline-flex;
     align-items: center;

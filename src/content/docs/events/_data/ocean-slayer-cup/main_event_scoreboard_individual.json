@@ -3,43 +3,228 @@
   "entries": [
     {
       "name": "ひなぶ",
-      "score": 35
+      "score": 35,
+      "result": "W",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://www.youtube.com/live/rlBELRzQoq8"
+        }
+      ]
     },
     {
       "name": "Penguin",
-      "score": null
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtu.be/Lc7OIDr81Lw"
+        }
+      ]
     },
     {
       "name": "plasma",
-      "score": 34
+      "score": 34,
+      "result": "W",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtu.be/9J_DdoUWzR8"
+        }
+      ]
     },
     {
       "name": "Natsukoi_",
-      "score": -4
+      "score": -4,
+      "result": "W",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://www.youtube.com/watch?v=ynAh5OiSf-8"
+        }
+      ]
     },
     {
       "name": "Larksa",
-      "score": null
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://www.youtube.com/watch?v=45Jg9jGYysU"
+        }
+      ]
     },
     {
       "name": "Johnnyak47",
-      "score": 36
+      "score": 36,
+      "result": "W",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://www.youtube.com/watch?v=kOUe999qeaw"
+        }
+      ]
     },
     {
       "name": "awildraito",
-      "score": null
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://www.twitch.tv/videos/2902978216"
+        }
+      ]
     },
     {
       "name": "wet4pepe",
-      "score": null
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtu.be/9cBU0r_nXsE"
+        }
+      ]
     },
     {
       "name": "Frost",
-      "score": null
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtu.be/JE7AJHxgI88"
+        }
+      ]
     },
     {
       "name": "Leizi's chair 🪑",
-      "score": 38
+      "score": 38,
+      "result": "W",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtu.be/yW8kA6dTPwY"
+        }
+      ]
+    },
+    {
+      "name": "ゆうり",
+      "score": null,
+      "result": "W",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtu.be/rgVrIHLSfJs"
+        }
+      ]
+    },
+    {
+      "name": "Wasshoi",
+      "score": 38,
+      "result": "W",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://www.youtube.com/live/uk2GZm0AVDc"
+        }
+      ]
+    },
+    {
+      "name": "Azen",
+      "score": 36,
+      "result": "W",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtu.be/BNruWa3umWc"
+        }
+      ]
+    },
+    {
+      "name": "Zakarya",
+      "score": null,
+      "result": "W",
+      "videos": [
+        {
+          "label": "Part 1",
+          "href": "https://youtu.be/X465eGVM5n0"
+        },
+        {
+          "label": "Part 2",
+          "href": "https://youtu.be/x9qufgICy5Q"
+        }
+      ]
+    },
+    {
+      "name": "Bung the Bear",
+      "score": null,
+      "result": "W",
+      "videos": [
+        {
+          "label": "Part 1",
+          "href": "https://www.youtube.com/watch?v=-hosvSgQcv4"
+        },
+        {
+          "label": "Part 2",
+          "href": "https://youtu.be/7qOueliuGss"
+        }
+      ]
+    },
+    {
+      "name": "Maiya",
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://www.youtube.com/watch?v=YLskGYB672k"
+        }
+      ]
+    },
+    {
+      "name": "sweet_bitter1701",
+      "score": 40,
+      "result": "W",
+      "videos": [
+        {
+          "label": "Part 1",
+          "href": "https://youtu.be/-lVVgcOpIqE"
+        },
+        {
+          "label": "Part 2",
+          "href": "https://youtu.be/lKNf5bHg4Yk"
+        },
+        {
+          "label": "Part 3",
+          "href": "https://youtu.be/zRCBJUSwNmE"
+        }
+      ]
+    },
+    {
+      "name": "Aeph",
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtu.be/zg-qPBq0pjA"
+        }
+      ]
+    },
+    {
+      "name": "ukvsmwhy",
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtu.be/82KJRJSNV4g"
+        }
+      ]
     }
   ]
 }
