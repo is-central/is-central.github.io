@@ -225,6 +225,76 @@
           "href": "https://youtu.be/82KJRJSNV4g"
         }
       ]
+    },
+    {
+      "name": "NoManIsland",
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtu.be/67xntAcY8dk"
+        }
+      ]
+    },
+    {
+      "name": "ilovepriestess",
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtu.be/b1hcKHFZyto"
+        }
+      ]
+    },
+    {
+      "name": "空気",
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://www.youtube.com/live/PwMGesEF37s"
+        }
+      ]
+    },
+    {
+      "name": "Shishka",
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "First Run",
+          "href": "https://youtu.be/Od2ssZS07eE"
+        },
+        {
+          "label": "Second Run",
+          "href": "https://youtu.be/l1IkAZEQLU4"
+        }
+      ]
+    },
+    {
+      "name": "LinGu",
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://www.youtube.com/watch?v=y5NMHdlszX8"
+        }
+      ]
+    },
+    {
+      "name": "okthisissuck",
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtu.be/obuou_Aga18"
+        }
+      ]
     }
   ]
 }
