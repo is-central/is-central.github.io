@@ -37,9 +37,9 @@ function formatUTC(dateStr, includeTime) {
 }
 
 function formatRange(startStr, endStr, includeTime) {
-  const s = formatUTC(startStr, includeTime);
-  if (!endStr) return s;
-  const e = formatUTC(endStr, includeTime);
+  if (!startStr && !endStr) return "TBD";
+  const s = startStr ? formatUTC(startStr, includeTime) : "TBD";
+  const e = endStr ? formatUTC(endStr, includeTime) : "TBD";
   return `${s} – ${e}`;
 }
 
@@ -89,7 +89,7 @@ const UTC_OFFSETS = [
       return (
         <div
           class="phase-step"
-          data-start={phase.startDate}
+          data-start={phase.startDate ?? ""}
           data-end={phase.endDate ?? ""}
           style={color ? `--phase-color: ${color}` : ""}
         >
@@ -104,7 +104,7 @@ const UTC_OFFSETS = [
             </div>
             <span
               class="step-date"
-              data-start={phase.startDate}
+              data-start={phase.startDate ?? ""}
               data-end={phase.endDate ?? ""}
               data-has-time={phaseHasTime ? "1" : "0"}
             >
@@ -129,6 +129,7 @@ const UTC_OFFSETS = [
 <script>
   // ── Status computation (runs client-side on every page load) ──────────────
   function getStatus(startStr, endStr) {
+    if (!startStr) return "tbd";
     const now   = new Date();
     const start = new Date(startStr);
     if (now < start) return "upcoming";
@@ -137,7 +138,7 @@ const UTC_OFFSETS = [
     return now <= end ? "live" : "done";
   }
 
-  const STATUS_LABEL = { done: "Concluded", live: "Live", upcoming: "Upcoming" };
+  const STATUS_LABEL = { done: "Concluded", live: "Live", upcoming: "Upcoming", tbd: "TBD" };
 
   function applyStatuses() {
     document.querySelectorAll(".phase-step").forEach((step) => {
@@ -149,18 +150,18 @@ const UTC_OFFSETS = [
       const body   = step.querySelector(".step-body");
 
       // Dot
-      dot.classList.remove("dot-done", "dot-live", "dot-upcoming");
+      dot.classList.remove("dot-done", "dot-live", "dot-upcoming", "dot-tbd");
       dot.classList.add(`dot-${status}`);
 
       // Badge text + class
       if (badge) {
         badge.textContent = STATUS_LABEL[status];
-        badge.classList.remove("badge-done", "badge-live", "badge-upcoming");
+        badge.classList.remove("badge-done", "badge-live", "badge-upcoming", "badge-tbd");
         badge.classList.add(`badge-${status}`);
       }
 
       // Dim upcoming
-      body.classList.toggle("step-upcoming", status === "upcoming");
+      body.classList.toggle("step-upcoming", status === "upcoming" || status === "tbd");
     });
   }
 
@@ -190,18 +191,14 @@ const UTC_OFFSETS = [
       const hasTime = el.getAttribute("data-has-time") === "1";
       if (!hasTime) return;
 
-      let fmtStart, fmtEnd;
-      if (mode === "utc") {
-        fmtStart = fmtOffset(start, 0, true);
-        fmtEnd   = end ? fmtOffset(end, 0, true) : null;
-      } else if (mode === "local") {
-        fmtStart = fmtDate(new Date(start), true);
-        fmtEnd   = end ? fmtDate(new Date(end), true) : null;
-      } else {
-        fmtStart = fmtOffset(start, customOffset, true);
-        fmtEnd   = end ? fmtOffset(end, customOffset, true) : null;
-      }
-      el.textContent = fmtEnd ? `${fmtStart} – ${fmtEnd}` : fmtStart;
+      const f = (iso) => {
+        if (!iso) return "TBD";
+        if (mode === "utc")   return fmtOffset(iso, 0, true);
+        if (mode === "local") return fmtDate(new Date(iso), true);
+        return fmtOffset(iso, customOffset, true);
+      };
+
+      el.textContent = !start && !end ? "TBD" : `${f(start)} – ${f(end)}`;
     });
   }
 
@@ -336,6 +333,16 @@ const UTC_OFFSETS = [
   .dot-themed.dot-live     { background: var(--phase-color); border-color: var(--phase-color); box-shadow: 0 0 0 3px color-mix(in srgb, var(--phase-color) 20%, transparent); }
   .dot-themed.dot-upcoming { border-color: color-mix(in srgb, var(--phase-color) 40%, transparent); }
 
+  .dot-tbd {
+    background: var(--sl-color-bg);
+    border-style: dashed;
+    border-color: color-mix(in srgb, var(--sl-color-gray-5) 60%, transparent);
+  }
+
+  .badge-tbd {
+    background: color-mix(in srgb, var(--sl-color-gray-5) 30%, transparent);
+    color: var(--sl-color-gray-3);
+  }
   .step-line {
     flex: 1;
     width: 1px;

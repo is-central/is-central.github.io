@@ -1,0 +1,51 @@
+---
+title: Sui's Mahjong House
+description: "IS6 event: Sui's Mahjong House main page."
+tableOfContents: false
+---
+
+import LanguageSwitcher from '../../../../../components/LanguageSwitcher.astro';
+
+<div class="back-button-container">
+  <a href="/events/en/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">Back to Events page</span>
+  </a>
+</div>
+
+import PhaseTimeline from '../../../../../components/Events/PhaseTimeline.astro';
+
+export const phases = [
+  {
+    name: "Registration",
+    startDate: "2026-11-10T08:00:00Z",
+    endDate: "2026-11-30T07:59:00Z",
+    links: [
+      { label: "Registration", href: "/events/en/suis-mahjong-house/registration"},
+    ],
+  },
+  {
+    name: "Preliminary Round",
+    // startDate: "2026-11-30T08:00:00Z",
+    // endDate: "2026-12-07T07:59:00Z",
+    links: [
+      { label: "Rules", href: "/events/en/suis-mahjong-house/preliminary-rules" },
+      // { label: "Schedule", href: "/events/en/suis-mahjong-house/preliminary-schedule" },
+      // { label: "Scoreboard", href: "/events/en/suis-mahjong-house/preliminary-scoreboard" },
+    ],
+  },
+  {
+    name: "Finals",
+    // startDate: "2026-12-07T08:00:00Z",
+    // endDate: "2025-12-11T07:59:00Z",
+    links: [
+      // { label: "Rules", href: "/events/en/suis-mahjong-house/finals-rules" },
+      // { label: "Schedule", href: "/events/en/suis-mahjong-house/finals-schedule" },
+      // { label: "Scoreboard", href: "/events/en/suis-mahjong-house/finals-scoreboard" },
+    ],
+  },
+];
+
+<div style="position: relative; width: 100%; max-width: 800px; margin: 0 auto;"><img src="/events/banners/suis-mahjong-house-banner.png" alt="Sui's Mahjong House Tournament Banner" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /></div>
+
+<PhaseTimeline phases={phases} themes={["IS6"]} />
