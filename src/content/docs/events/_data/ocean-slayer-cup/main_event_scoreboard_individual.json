@@ -295,6 +295,222 @@
           "href": "https://youtu.be/obuou_Aga18"
         }
       ]
+    },
+    {
+      "name": "ごまだれ",
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "Part 1",
+          "href": "https://www.youtube.com/live/-cUDAjiKaSE"
+        },
+        {
+          "label": "Part 2",
+          "href": "https://www.youtube.com/live/c7Syi8xxNPw"
+        }
+      ]
+    },
+    {
+      "name": "kevthink",
+      "score": null,
+      "result": "W",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://www.youtube.com/watch?v=QBuoeE4pPlA"
+        }
+      ]
+    },
+    {
+      "name": "Hijkstuv",
+      "score": null,
+      "result": "L"
+    },
+    {
+      "name": "こーき",
+      "score": null,
+      "result": "W",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtube.com/live/F_zZfWkeMug"
+        }
+      ]
+    },
+    {
+      "name": "Anyar",
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtu.be/ryWjrYh7f6E"
+        }
+      ]
+    },
+    {
+      "name": "Bl4keP",
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtu.be/UXILFikkAgU"
+        }
+      ]
+    },
+    {
+      "name": "Sato",
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtu.be/q4-zT9havdc"
+        }
+      ]
+    },
+    {
+      "name": "しばケット",
+      "score": null,
+      "result": "W",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtube.com/live/4aQUo1S6v3Q"
+        }
+      ]
+    },
+    {
+      "name": "ゆゆれみ",
+      "score": -4,
+      "result": "W",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtube.com/live/MumI9CRgJQs"
+        }
+      ]
+    },
+    {
+      "name": "patar",
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtu.be/RQQRdc6Wdys"
+        }
+      ]
+    },
+    {
+      "name": "1o9",
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtu.be/r0t1h7Du1J0"
+        }
+      ]
+    },
+    {
+      "name": "Draa",
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtu.be/mtvBqRgHCOI"
+        }
+      ]
+    },
+    {
+      "name": "焼き鳥メガネ",
+      "score": null,
+      "result": "W",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://www.youtube.com/live/VDK_1qt1XvE"
+        }
+      ]
+    },
+    {
+      "name": "GURI",
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "Part 1",
+          "href": "https://youtu.be/Ufu6AFWqbO8"
+        },
+        {
+          "label": "Part 2",
+          "href": "https://youtu.be/XH_iTkVY0J4"
+        }
+      ]
+    },
+    {
+      "name": "Zagan",
+      "score": 40,
+      "result": "W",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://www.youtube.com/live/7HOMYiMyWOA"
+        }
+      ]
+    },
+    {
+      "name": "mm12",
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtu.be/hn6_2Wi_8dU"
+        }
+      ]
+    },
+    {
+      "name": "lukas",
+      "score": -7,
+      "result": "W",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtu.be/Nu005P7vRTk"
+        }
+      ]
+    },
+    {
+      "name": "Zephs",
+      "score": null,
+      "result": "L"
+    },
+    {
+      "name": "scp5514",
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtu.be/qACN9nrZQyk"
+        }
+      ]
+    },
+    {
+      "name": "1ab",
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://www.youtube.com/watch?v=o5usVFKmo-A"
+        }
+      ]
     }
   ]
 }
