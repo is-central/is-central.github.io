@@ -511,6 +511,33 @@
           "href": "https://www.youtube.com/watch?v=o5usVFKmo-A"
         }
       ]
+    },
+    {
+      "name": "Guider T",
+      "score": null,
+      "result": "L"
+    },
+    {
+      "name": "Kresnik",
+      "score": null,
+      "result": "W",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtu.be/5m0IrmBp4W4"
+        }
+      ]
+    },
+    {
+      "name": "Dudeman",
+      "score": null,
+      "result": "L",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://www.youtube.com/watch?v=kRvaEe1eSEs"
+        }
+      ]
     }
   ]
 }

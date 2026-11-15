@@ -2,11 +2,14 @@
 const { data } = Astro.props;
 const isTeam = data.mode === "team";
 
+const resultOrder = (r) => (r === "W" ? 0 : r === "L" ? 1 : 2);
+
 function sortByScore(entries) {
   return [...entries].sort((a, b) => {
-    if (a.score == null && b.score == null) return 0;
+    if (a.score == null && b.score == null) return resultOrder(a.result) - resultOrder(b.result);
     if (a.score == null) return 1;
     if (b.score == null) return -1;
+    if (a.score === b.score) return resultOrder(a.result) - resultOrder(b.result);
     return b.score - a.score;
   });
 }
