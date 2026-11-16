@@ -538,6 +538,17 @@
           "href": "https://www.youtube.com/watch?v=kRvaEe1eSEs"
         }
       ]
+    },
+    {
+      "name": "terra",
+      "score": null,
+      "result": "W",
+      "videos": [
+        {
+          "label": "VOD",
+          "href": "https://youtu.be/hz2XlWddmIk"
+        }
+      ]
     }
   ]
 }
