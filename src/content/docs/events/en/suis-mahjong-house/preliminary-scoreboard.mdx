@@ -15,10 +15,8 @@ import LanguageSwitcher from '../../../../../components/LanguageSwitcher.astro';
 
 <LanguageSwitcher />
 
-import Scoreboard from '../../../../../components/Events/Scoreboard.astro';
-import MainEventIndividualT3 from '../../_data/evil-amiya-challenge/main_event_scoreboard_t3_individual.json';
-import MainEventIndividualT1 from '../../_data/evil-amiya-challenge/main_event_scoreboard_t1_individual.json';
+import Scoreboard from '../../../../../components/Events/SmhScoreboard.astro';
+import ScoreboardJson from '../../_data/suis-mahjong-house/preliminary_smh_scoreboard_team.json';
 
-<Scoreboard data={MainEventIndividualT3} />
+<Scoreboard data={ScoreboardJson} />
 
-<Scoreboard data={MainEventIndividualT1} />
