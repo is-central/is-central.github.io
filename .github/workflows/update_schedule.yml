@@ -34,7 +34,7 @@ jobs:
       - name: Sync schedule from Google Sheet
         if: env.GOOGLE_CREDENTIALS != ''
         run: |
-          python src/content/docs/events/_data/_schedule_synchronizer/run_update.py
+          python src/content/docs/events/_data/_schedule_synchronizer/run_smh_scoreboard_update.py
 
       - name: Build and upload Astro site
         uses: withastro/action@v3

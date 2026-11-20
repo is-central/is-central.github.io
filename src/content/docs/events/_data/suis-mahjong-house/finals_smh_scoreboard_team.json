@@ -1,20 +1,4 @@
 {
-  "title": "Sui's Mahjong House: Preliminary Round",
-  "updated": "2026-11-19T21:50:00Z",
-  "entries": [
-    {
-      "team": "Dragons",
-      "videos": [{ "label": "Team VOD", "href": "https://youtu.be/team1" }],
-      "players": [
-        { "name": "Ann", "dollars": 3328.33,
-          "videos": [{ "label": "Run", "href": "https://youtu.be/example1a" }] },
-        { "name": "Bob", "dollars": 208.33 },
-        { "name": "Cy",  "dollars": 3987.33 }
-      ],
-      "yanGained": 1762,
-      "yanSpent": 1300,
-      "teamDollars": 8423.99,
-      "points": 9120
-    }
-  ]
+  "updated": "2026-11-20T01:34:10Z",
+  "entries": []
 }
