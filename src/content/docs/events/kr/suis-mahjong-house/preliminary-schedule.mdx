@@ -1,0 +1,21 @@
+---
+title: 쉐이의 일정
+description: "쉐이의 일정."
+tableOfContents: false
+---
+
+import LanguageSwitcher from '../../../../../components/LanguageSwitcher.astro';
+
+<div class="back-button-container">
+  <a href="/events/kr/suis-mahjong-house/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">토너먼트 페이지로 돌아가기</span>
+  </a>
+</div>
+
+<LanguageSwitcher />
+
+import TournamentSchedule from '../../../../../components/Events/Schedule.astro';
+import scheduleData from '../../_data/evil-amiya-challenge/main_event_schedule.json';
+
+<TournamentSchedule title="Schedule" entries={scheduleData} notesHeader="Category" />
