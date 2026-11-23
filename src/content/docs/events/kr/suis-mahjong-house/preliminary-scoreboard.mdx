@@ -1,0 +1,22 @@
+---
+title: 쉐이의 본선 스코어보드
+description: "쉐이의 본선 스코어보드."
+tableOfContents: false
+---
+
+import LanguageSwitcher from '../../../../../components/LanguageSwitcher.astro';
+
+<div class="back-button-container">
+  <a href="/events/kr/suis-mahjong-house/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">토너먼트 페이지로 돌아가기</span>
+  </a>
+</div>
+
+<LanguageSwitcher />
+
+import Scoreboard from '../../../../../components/Events/SmhScoreboard.astro';
+import ScoreboardJson from '../../_data/suis-mahjong-house/preliminary_smh_scoreboard_team.json';
+
+<Scoreboard data={ScoreboardJson} />
+

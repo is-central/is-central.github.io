@@ -1,0 +1,55 @@
+---
+title: Sui's Mahjong House
+description: "IS6 event: Sui's Mahjong House main page."
+tableOfContents: false
+---
+
+import LanguageSwitcher from '../../../../../components/LanguageSwitcher.astro';
+
+<div class="back-button-container">
+  <a href="/events/en/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">Back to Events page</span>
+  </a>
+</div>
+
+<LanguageSwitcher />
+
+import PhaseTimeline from '../../../../../components/Events/PhaseTimeline.astro';
+
+export const phases = [
+  {
+    name: "예선",
+    startDate: "2026-11-19T08:00:00Z",
+    endDate: "2026-12-05T07:59:00Z",
+    links: [
+      { label: "예선 규칙", href: "/events/kr/suis-mahjong-house/qualifiers-rules" },
+      { label: "등록", href: "https://tinyurl.com/suimahjonghouse"},
+      { label: "상품", href: "/events/kr/suis-mahjong-house/prizes"},
+    ],
+  },
+  {
+    name: "본선",
+    startDate: "2026-12-04T08:00:00Z",
+    endDate: "2026-12-14T07:59:00Z",
+    links: [
+      { label: "규칙", href: "/events/kr/suis-mahjong-house/preliminary-rules" },
+      // { label: "일정", href: "/events/kr/suis-mahjong-house/preliminary-schedule" },
+      { label: "스코어보드", href: "/events/kr/suis-mahjong-house/preliminary-scoreboard" },
+    ],
+  },
+  {
+    name: "결승",
+    startDate: "2026-12-16T08:00:00Z",
+    endDate: "2025-12-20T07:59:00Z",
+    links: [
+      // { label: "규칙", href: "/events/kr/suis-mahjong-house/finals-rules" },
+      // { label: "일정", href: "/events/kr/suis-mahjong-house/finals-schedule" },
+      { label: "스코어보드", href: "/events/kr/suis-mahjong-house/finals-scoreboard" },
+    ],
+  },
+];
+
+<div style="position: relative; width: 100%; max-width: 800px; margin: 0 auto;"><img src="/events/banners/suis-mahjong-house-banner.png" alt="Sui's Mahjong House Tournament Banner" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /></div>
+
+<PhaseTimeline phases={phases} themes={["IS6"]} />
