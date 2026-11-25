@@ -1,0 +1,55 @@
+---
+title: Sui's Mahjong House
+description: "IS6 event: Sui's Mahjong House トップページ。"
+tableOfContents: false
+---
+
+import LanguageSwitcher from '../../../../../components/LanguageSwitcher.astro';
+
+<div class="back-button-container">
+  <a href="/events/en/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">Back to Events page</span>
+  </a>
+</div>
+
+<LanguageSwitcher />
+
+import PhaseTimeline from '../../../../../components/Events/PhaseTimeline.astro';
+
+export const phases = [
+  {
+    name: "予選トーナメント",
+    startDate: "2026-11-19T08:00:00Z",
+    endDate: "2026-12-05T07:59:00Z",
+    links: [
+      { label: "予選ルール", href: "/events/jp/suis-mahjong-house/qualifiers-rules" },
+      { label: "登録", href: "https://tinyurl.com/suimahjonghouse"},
+      { label: "賞品", href: "/events/jp/suis-mahjong-house/prizes"},
+    ],
+  },
+  {
+    name: "予備フェーズ",
+    startDate: "2026-12-04T08:00:00Z",
+    endDate: "2026-12-14T07:59:00Z",
+    links: [
+      { label: "ルール", href: "/events/jp/suis-mahjong-house/preliminary-rules" },
+      // { label: "スケジュール", href: "/events/jp/suis-mahjong-house/preliminary-schedule" },
+      { label: "スコアボード", href: "/events/jp/suis-mahjong-house/preliminary-scoreboard" },
+    ],
+  },
+  {
+    name: "決勝戦",
+    startDate: "2026-12-16T08:00:00Z",
+    endDate: "2025-12-20T07:59:00Z",
+    links: [
+      // { label: "ルール", href: "/events/jp/suis-mahjong-house/finals-rules" },
+      // { label: "スケジュール", href: "/events/jp/suis-mahjong-house/finals-schedule" },
+      { label: "スコアボード", href: "/events/jp/suis-mahjong-house/finals-scoreboard" },
+    ],
+  },
+];
+
+<div style="position: relative; width: 100%; max-width: 800px; margin: 0 auto;"><img src="/events/banners/suis-mahjong-house-banner.png" alt="Sui's Mahjong House Tournament Banner" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /></div>
+
+<PhaseTimeline phases={phases} themes={["IS6"]} />

@@ -1,0 +1,874 @@
+---
+title: Sui's Mahjong House ルール
+description: "Sui's Mahjong House ルール."
+---
+
+import LanguageSwitcher from '../../../../../components/LanguageSwitcher.astro';
+
+<div class="back-button-container">
+  <a href="/events/jp/suis-mahjong-house/overview/" class="back-button">
+    <span class="back-arrow">←</span>
+    <span class="back-text">トーナメントページに戻る</span>
+  </a>
+</div>
+
+<LanguageSwitcher />
+
+## 概要
+Sui's Mahjong Houseは、3人1組のチームでスコアを獲得して勝利を目指すチーム制トーナメントです。
+プレイヤーはプレイ中に目標を達成することでドル（$）と炎（Yan）を獲得できます。炎はプレイ中のバフ効果の有効化に使用でき、ドルは走者3人のランが終了した後に後述のガチャシミュレーターを使用して順位ポイントに変換できます。
+上位4チームが第2ラウンドに進出し、<a href="/events/jp/suis-mahjong-house/prizes#最終スコア算出方法" target="_blank" rel="noopener noreferrer">最終順位</a>はリーダーボードに基づいて決定されます。
+
+
+## 形式
+* 3人1組のチーム
+  * プレイヤー1と2：迎客入園・15
+  * プレイヤー3：迎客入園・18
+* プレイヤーは1-2-3の順にプレイしなければならない
+* トーナメントは以下のように区分されます。
+  * 予選トーナメント
+  * 予備フェーズ
+  * 決勝戦
+
+予選期間中、各チームは出走スケジュールを登録し、ラン内容を録画してアップロードし、動画を提出します。チームがラン内容を録画できない場合は、大会主催者が対応してくれる可能性があります。
+
+決勝戦では、各試合は大会主催者が立ち会う形で、Discord、Twitch、またはYouTubeでライブ配信されなければならない。
+
+リーダーボード：
+* 上位4チームが決勝に進出
+* 最終順位は決勝戦のリーダーボードによって決定されます。
+
+### 参加資格
+[予選ルール](/events/jp/suis-mahjong-house/qualifiers-rules)を確認してください。
+
+
+## 配置ポイント
+チームはタスクやチャレンジを完了することで、ドルを獲得できます。
+獲得したドルはチーム全体で合算され、プレイヤー3のラン終了後にIS Centralが提供するガチャシミュレーターで使用することでスコアへと変換されます。スコアリングシステムと賞品に関する詳細は、<a href="/events/jp/suis-mahjong-house/prizes#最終スコア算出方法" target="_blank" rel="noopener noreferrer">こちらを</a>ご覧ください。
+
+
+## ルール
+### 出走前準備
+* 選手は予定されている試合の前にランの準備をすることができる。
+* 以下の3層ボーナスのみ使用可能：電気ケトル、希望2個、遊覧券2枚。
+* プレイヤーは1層のノード構造と振り銭を厳選しても良い。
+
+### 商店での引き出し限度額
+最初の2店舗では、源石錐残高の引き出し制限はありませんが、それ以降は一切引き出しはできません。
+
+### リセット
+すべてのプレイヤーは再走可能回数0回です。しかし、エミュレーターがクラッシュしたなどの場合、主催者の判断により、プレイヤーは1回のみ再走を許可される場合があります。
+また、後述の「炎ショップ」で特定の効果を有効化する事で、条件付きで再走権が得られます。
+
+### 時間制限
+プレイヤーには、プレイ時間として3時間30分が与えられます。プレイヤーがエンド5（どの分岐でも可）戦闘に到達すると、タイマーは一時停止します。
+
+時間超過によるペナルティは、ラン終了前またはエンド5到達前に15分以上超過した場合、15分ごとに500ドルの罰金が課せられます。
+
+### その他
+* プレイヤーはプレイ中、いつでも自由にチームメンバーとコミュニケーションを取ることができます。
+* プレイヤーは登録時に使用したアカウントのみを使用できます。
+* ボーナスとペナルティは全てレース終了時に計算されます。
+* プレイヤーは最大5個のケトルを所有できます。5個を超えるケトル1個につき15ドルの罰金が課せられます。
+
+### 招集コストと制限オペレーター
+モンスターハンターコラボイベント「泡影を穿つ碧雷」以降にリリースされたオペレーターとモジュールは使用禁止です（ただし、**焔狐竜オーキッドに関しては使用可能**です）。
+
+<ul style={{ paddingLeft: '2.5em' }}>
+  <li>
+    150ドル 6★:
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/HoshiAlter.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Hoshiguma the Breacher</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/YatoAlter.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Kirin R Yato</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Raidian.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Raidian</span>
+      </li>
+      
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Tragodia.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Tragodia</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Wang.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Wang</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    100ドル 6★:
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/ChenAlterAlter.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Ch'en the Dawnstreak</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/ExusiaiAlter.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Exusiai the New Covenant</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Gnosis.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Gnosis</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/KaltsitAlter.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Kal'tsit Esperanta</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/PramAlter.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Pramanix the Prerita</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/SilverAshAlter.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>SilverAsh the Reignfrost</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Surtr.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Surtr</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Sakiko.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Togawa Sakiko</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/OrchidAlter.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Violet Mizutsune Orchid</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Wisadel.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>Wiš'adel</span>
+      </li>
+    </ul>
+  </li>
+  <li>
+    その他星6オペレーター：25ドル
+  </li>
+</ul>
+
+* 同一の星6オペレーターがチーム内で2回ピックされた場合、2回目の雇用コストは通常の3倍になります。
+* 同一の星6オペレーターがチーム内で3回ピックされた場合、3回目の雇用コストは通常の6倍になります。
+
+
+### 分隊選択と開始前手当
+* プレイヤー1と2：開始前手当1000ドル
+* プレイヤー3：500ドル
+* 選手は分隊選択の際に借金をしてはならない。
+* 未使用のドルは選手のスコアに加算されます。
+* 選択した分隊のコストがマイナスの場合、記載されている金額がその選手のスコアに加算されます。
+* チームで重複した分隊を用いることはできません。
+* リスト外の分隊を用いることはできません。
+#### 分隊利用コスト：
+<div style={{ display: "flex", justifyContent: "center" }}>
+| 分隊                                                                                                                                                        | 料金  |
+|:-------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----:|
+| <span className="squad-inline"><img src="/events/suis-mahjong-house/squads/TacticalAssaultSquad.png" alt="" />突撃戦術分隊</span>                  | -500ドル |
+| <span className="squad-inline"><img src="/events/suis-mahjong-house/squads/TacticalRangedSquad.png" alt="" />援護戦術分隊</span>                    | -500ドル |
+| <span className="squad-inline"><img src="/events/suis-mahjong-house/squads/TacticalDestructionSquad.png" alt="" />破壊戦術分隊</span>          | -500ドル |
+| <span className="squad-inline"><img src="/events/suis-mahjong-house/squads/TacticalFortificationSquad.png" alt="" />要塞戦術分隊</span>      | -500ドル |
+| <span className="squad-inline"><img src="/events/suis-mahjong-house/squads/HighGroundBreachingOperators.png" alt="" />高台突破分隊</span> | -750ドル |
+| <span className="squad-inline"><img src="/events/suis-mahjong-house/squads/GroundBreachingOperators.png" alt="" />地面突破分隊</span>          | -750ドル |
+| <span className="squad-inline"><img src="/events/suis-mahjong-house/squads/FirstClassSquad.png" alt="" />高規格文体</span>                            | -250ドル |
+| <span className="squad-inline"><img src="/events/suis-mahjong-house/squads/TouristSquad.png" alt="" />観光客分隊</span>                                   | 250ドル  |
+| <span className="squad-inline"><img src="/events/suis-mahjong-house/squads/SuiRegulatorSquad.png" alt="" />司歳台分隊</span>                        | -250ドル |
+| <span className="squad-inline"><img src="/events/suis-mahjong-house/squads/TianshiBureauSquad.png" alt="" />天師府分隊</span>                      | 600ドル  |
+| <span className="squad-inline"><img src="/events/suis-mahjong-house/squads/ProxySquad.png" alt="" />代理人分隊</span>                                       | 1000ドル |
+| <span className="squad-inline"><img src="/events/suis-mahjong-house/squads/MerchantSquad.png" alt="" />商人分隊</span>                                 | 500ドル  |
+| <span className="squad-inline"><img src="/events/suis-mahjong-house/squads/BloomingFlowersSquad.png" alt="" />百花繚乱分隊</span>                  | 5000ドル |
+| <span className="squad-inline"><img src="/events/suis-mahjong-house/squads/PerilousGameSquad.png" alt="" />起死回生分隊</span>                        | -250ドル |
+| <span className="squad-inline"><img src="/events/suis-mahjong-house/squads/SuisShadowSquad.png" alt="" />歳影反響分隊</span>                           | 500ドル  |
+</div>
+
+
+
+### ボス実績
+* 以下のボス実績を満たしたプレイヤーには追加のドルが付与されます。
+* 迎客入園・18（プレイヤー3）でボス実績を達成すると、ボーナスには2倍の倍率が適用されます。
+
+
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+<table>
+  <thead>
+    <tr>
+      <th style={{ textAlign: "center" }}>エンディング</th>
+      <th>成果</th>
+      <th style={{ textAlign: "right" }}>褒美</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowSpan={7} style={{ textAlign: "center", verticalAlign: "middle" }}>ED5</td>
+      <td style={{ paddingLeft: 0, marginLeft: 0 }}>定乾坤(本源を定める)をクリア</td>
+      <td style={{ textAlign: "right" }}>500ドル</td>
+    </tr>
+    <tr>
+      <td>↳ 朔殻を倒す（追加加点）</td>
+      <td style={{ textAlign: "right" }}>250ドル</td>
+    </tr>
+    <tr>
+      <td>止変（群獣を役す）をクリア</td>
+      <td style={{ textAlign: "right" }}>250ドル</td>
+    </tr>
+    <tr>
+      <td>↳ 朔殻を倒す（追加加点）</td>
+      <td style={{ textAlign: "right" }}>10ドル</td>
+    </tr>
+    <tr>
+      <td>止変(対局に改める)をクリア</td>
+      <td style={{ textAlign: "right" }}>200ドル</td>
+    </tr>
+    <tr>
+      <td>止変(承形を遡る)をクリア</td>
+      <td style={{ textAlign: "right" }}>200ドル</td>
+    </tr>
+    <tr>
+      <td>止変(鎮撫と化す)をクリア</td>
+      <td style={{ textAlign: "right" }}>200ドル</td>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+      <td style={{ textAlign: "center", verticalAlign: "middle" }}>ED4</td>
+      <td style={{ paddingLeft: 0, marginLeft: 0 }}>末狩をクリア</td>
+      <td style={{ textAlign: "right" }}>400ドル</td>
+    </tr>
+    <tr>
+      <td style={{ textAlign: "center", verticalAlign: "middle" }}>ED3</td>
+      <td style={{ paddingLeft: 0, marginLeft: 0 }}>歳を謀る者をクリア</td>
+      <td style={{ textAlign: "right" }}>100ドル</td>
+    </tr>
+    <tr>
+      <td rowSpan={2} style={{ textAlign: "center", verticalAlign: "middle" }}>ED2</td>
+      <td style={{ paddingLeft: 0, marginLeft: 0 }}>往昔は憶い難しをクリア</td>
+      <td style={{ textAlign: "right" }}>250ドル</td>
+    </tr>
+    <tr>
+      <td>古き文字は煙の如しをクリア</td>
+      <td style={{ textAlign: "right" }}>150ドル</td>
+    </tr>
+    <tr>
+      <td rowSpan={3} style={{ textAlign: "center", verticalAlign: "middle" }}>ED1</td>
+      <td style={{ paddingLeft: 0, marginLeft: 0 }}>歳破りし陣を祀るをクリア</td>
+      <td style={{ textAlign: "right" }}>50ドル</td>
+    </tr>
+    <tr>
+      <td>天命将に易えんとすをクリアする</td>
+      <td style={{ textAlign: "right" }}>50ドル</td>
+    </tr>
+    <tr>
+      <td>↳ 隠蝶墨を所持しており、かつ墨化の残碑を所持していない状態でクリアする（追加加点）</td>
+      <td style={{ textAlign: "right" }}>200ドル</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+### 炎ショップ
+[炎は、下記の炎の実績](/events/jp/suis-mahjong-house/preliminary-rules#炎の実績)を達成することで獲得できます。
+獲得した炎は、プレイヤーのラン終了後に追加され、次のプレイヤーが使用できます。
+炎ショップでオプションを購入する場合は、ラン開始前に申告する必要があり、ラン中に炎ショップでの購入はできません。
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+<table>
+  <thead>
+    <tr>
+      <th>オプション</th>
+      <th style={{ textAlign: "right" }}>金額</th>
+      <th style={{ textAlign: "center" }}>ストック</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>オペレーターの重複使用に対するペナルティを削除する（各オペレーターごと）</td>
+      <td style={{ textAlign: "right" }}>炎200</td>
+      <td style={{ textAlign: "center" }}>$\infty$</td>
+    </tr>
+    <tr>
+      <td>出走前準備フェーズで、3層ボーナスの制限を解除し、秘宝の取得を選択できるようにする</td>
+      <td style={{ textAlign: "right" }}>炎1000</td>
+      <td style={{ textAlign: "center" }}>2</td>
+    </tr>
+    <tr>
+      <td>開始前手当を500ドル増額する</td>
+      <td style={{ textAlign: "right" }}>炎1000</td>
+      <td style={{ textAlign: "center" }}>2</td>
+    </tr>
+    <tr>
+      <td>一度使用した分隊をもう一度利用可能にする</td>
+      <td style={{ textAlign: "right" }}>炎200</td>
+      <td style={{ textAlign: "center" }}>2</td>
+    </tr>
+    <tr>
+      <td>3層ボス前に一度だけリセットが可能になる</td>
+      <td style={{ textAlign: "right" }}>炎200</td>
+      <td style={{ textAlign: "center" }}>5</td>
+    </tr>
+    <tr>
+      <td>キャノットから源石錐を引き出せるチャンスを1つ増やす</td>
+      <td style={{ textAlign: "right" }}>炎100</td>
+      <td style={{ textAlign: "center" }}>$\infty$</td>
+    </tr>
+    <tr>
+      <td>制限時間に30分を追加する</td>
+      <td style={{ textAlign: "right" }}>炎500</td>
+      <td style={{ textAlign: "center" }}>$\infty$</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+#### 炎の実績
+<div style={{ display: "flex", justifyContent: "center" }}>
+<table>
+  <thead>
+    <tr>
+      <th>対象</th>
+      <th style={{ textAlign: "right" }}>褒美</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>難易度：超ハードまたは狂気のバイアスチャレンジをクリアする（チャレンジごとに1つ、重複不可）</td>
+      <td style={{ textAlign: "right" }}>炎100</td>
+    </tr>
+    <tr>
+      <td>難易度：ハードのバイアスチャレンジをクリアする（チャレンジごとに1つ、重複不可）</td>
+      <td style={{ textAlign: "right" }}>炎50</td>
+    </tr>
+    <tr>
+      <td>プレイヤー1とプレイヤー2の間で、易、「歳」、望、後獣、矩獣を撃破する</td>
+      <td style={{ textAlign: "right" }}>炎500</td>
+    </tr>
+    <tr>
+      <td>不赦・不息を両所持した状態で朔殻と妄躯両方を撃破する（チームごとに1回）</td>
+      <td style={{ textAlign: "right" }}>炎250</td>
+    </tr>
+    <tr>
+      <td>戦にて血流る・左持燭人、法と律との振り出しなしで5層以降のボスを撃破する</td>
+      <td style={{ textAlign: "right" }}>炎100</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+### チームチャレンジ
+計4つのチームチャレンジが用意されており、それぞれクリアごとに追加のドルを取得可能です。
+#### 風の章
+チームとして、以下の通宝が振り出された状態で3層のボスに挑む。
+* 厲銭-北の刺面
+* 厲銭-南に山を見る
+* 厲銭-東の欠角
+* 厲銭-西の廉貞
+
+報酬: 通宝 3 個の場合 300ドル、通宝 4 個すべての場合 500ドル
+
+#### 花の章
+チームで協力して、以下の4つの課題をクリアしてください。
+* プリュム：プリュムの職分特性を用いて、計3つの悪路凶敵においてそれぞれ4コスト稼ぐ
+* オーキッド：1回の戦闘で敵を4体倒す
+* ポデンコ：1回の戦闘で4体の敵種別「化物」を倒す
+* マトイマル：4つのステージでエリート敵を倒す
+
+報酬: 各チャレンジで獲得した炎を乗数で増やします。
+
+課題1つクリアごとに炎の獲得数は1.1倍となり、花の章をすべてクリアした場合、倍率は最大の1.5倍になります。
+つまり、課題を1つ、2つ、3つ、4つクリアした場合、それぞれ1.1倍、1.2倍、1.3倍、1.5倍の倍率となります。
+この倍率は、現在獲得している炎と、今後獲得するすべての炎に適用されます。
+
+#### 四季の章
+特定のブランドのスキンを装備したオペレーターを単一のステージで展開してください。
+* 冬：ICEFIELD MESSENGERスキンを装着したオペレーターを4名、1ステージで配置する（チームごとに1回）。
+* 夏：CORAL COASTスキンを装着したオペレーターを4名、1ステージで配置する（チームごとに1回）。
+* 秋：WITCH FEASTスキンを装着したオペレーターを4名、1ステージで配置する（チームごとに1回）。
+* 春：VITAFIELDスキンを装着したオペレーターを4名、1ステージで配置する（チームごとに1回）。
+
+報酬：チャレンジ1つにつき200ドル
+
+#### ドラゴンチャレンジ
+各ゲームの開始時に、各プレイヤーは3種のドラゴンチャレンジのうちいずれかを開始宣言できます。
+各ドラゴンにはそれぞれ対象となるリソースが割り当てられており、いずれも一度しか選択できません。
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+<table>
+  <thead>
+    <tr>
+      <th>ドラゴン</th>
+      <th>リソース</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>レッドドラゴン</td>
+      <td>オペレーター</td>
+    </tr>
+    <tr>
+      <td>グリーンドラゴン</td>
+      <td>通宝</td>
+    </tr>
+    <tr>
+      <td>ホワイトドラゴン</td>
+      <td>秘宝</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+このチャレンジにおいては、対象となったリソースの獲得数を、チームの他プレイヤーと比較して以下のように調整しなければなりません。
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+<table>
+  <thead>
+    <tr>
+      <th>プレイヤー</th>
+      <th>数</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>最初のプレイヤー</td>
+      <td>チームの中で最も少ない</td>
+    </tr>
+    <tr>
+      <td>2人目のプレイヤー</td>
+      <td>チームで2番目に多い</td>
+
+    </tr>
+    <tr>
+      <td>3人目のプレイヤー</td>
+      <td>チームの中で最も多い</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+報酬：ドラゴンチャレンジを1つ達成するごとに333.33ドルが支払われます。
+
+例：
+* プレイヤー1がホワイトドラゴンを選択する場合
+  * 報酬を獲得するには、チーム内で最も少ない数の秘宝でランを終えなければならない。
+* プレイヤー2がレッドドラゴンを選択する場合
+  * 報酬を獲得するには、プレイヤー1より招集オペレーターが多く、かつプレイヤー3よりオペレーターが少ない状態、またはプレイヤー1よりオペレーターが少なく、かつプレイヤー3よりオペレーターが多い状態でランを終了しなければならない。
+
+### カウントチャレンジ
+各プレイヤーは、ゲーム開始前に「Dots」「Bamboo」「Symbol」のいずれかのチャレンジへの挑戦を宣言できます。
+これらはそれぞれ一度しか選択できません。
+
+#### Dots
+星6オペレーター1体の昇進につき200ドルを獲得。
+
+#### Bamboo
+エンディング画面に表示されるボス秘宝を4つごとに400ドルを獲得。
+
+#### Symbols 
+1回のプレイにつき1回、振り銭で衡銭・厲銭・花銭がすべて揃った最初のタイミングで500ドルを獲得できます。
+
+
+### バイアスボーナス
+* バイアスボーナスを達成すると、星6オペレーターの招集コストが0ドルになるだけでなく、追加のドルが獲得できます。
+* バイアスボーナス報酬のドルは、チームごとに1回のみ授与されます。
+* たとえチームメイトが先にバイアスボーナスチャレンジを完了していたとしても、バイアスを完了することでオペレーターのコストを0ドルに削減できます。
+* バイアスボーナスは、該当するオペレーターが招集された場合にのみ達成できます。
+* 臨時オペレーターはすべて0ドルで、重複採用ペナルティの対象にはなりません。
+* 臨時オペレーターにバイアスボーナスが規定されている場合、通常通り招集された場合と同様に完了できます。
+* バイアスボーナスを達成した走者の該当するオペレーターは、重複ペナルティ倍率が×0.0倍となり、ペナルティを回避できますが、後続の走者は通常通り重複ペナルティの仕様が適用されます。(≒バイアスボーナスによるペナルティ回避はその走者限りのものです)
+
+報酬は以下のとおりです。
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+<ul style={{ paddingLeft: '2.5em' }}>
+  <li>
+    簡単（50ドル）
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Akkord.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>アコルト：アコルトの射程範囲の先端にいる敵を倒す。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/April.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>エイプリル：秘宝「封のない長箱」を所持している状態で、エイプリルが彫像器鬼を単騎で破壊する。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Chongyue.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>チョンユエ：チョンユエがチームにいる間、1ステージで凍結した敵4体を浮遊させる。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/ChenAlterAlter.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>赤刃明霄チェン：1回の戦闘で、赤刃明霄チェンを3つの異なるタイルに3回再配置する。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Crackborne.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>クラックボーン：クラックボーンを用いて1ステージで6体の敵に侵食爆発状態を付与する。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/ExusiaiAlter.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>新約エクシア：新約エクシアがフィールドにいる間、弾薬スキルを合計3回発動する。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Gnosis.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ノーシス：ノーシスがフィールドにいる間、アルケット、エアースカーペ、フィリオプシス、ティッピ、またはアステジーニのいずれかをフィールドに展開する。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/HoshiAlter.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>斬業ホシグマ：斬業ホシグマで開局を行い、1層の終わりまでに昇進させる。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Lee.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>リー：昇進状態かつ臨時招集のリーを悪路凶敵ステージに投入する。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Luo.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>羅小黒：重傷を負った敵を耐久ラインに入れる。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Nian.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ニェン：ニェンがチームにいる間、ラン全体を通して反射ダメージで合計2体の敵を倒す。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Tragodia.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>トラゴーディア：トラゴーディアが部隊にいる場合に、各ステージでトラゴディアがスキルを発動する前に「ミス・クリスティーン」を配置する。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Windscoot.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ウィンドスクート：ラン全体を通して、ウィンドスクートの攻撃のみで彫像器鬼を3体破壊する。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Yu.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ユー：1回のプレイ全体を通して、合計4体の敵を高台タイル上にテレポートさせる。</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    普通（100ドル）
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Ascalon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>アスカロン：アスカロンに平剣客3体を1回の戦闘で倒させる。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/AstgenneAlter.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>遡光アステジーニ：編成内で唯一の補助オペレーターとして遡光アステジーニを配置し、戦闘/禍乱を完了する。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Brigid.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ブリジット：ブリジットが「今宵のお話」スキンを装備している状態で、ブリジットの範囲内にいる敵4体を眠らせる。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Haze.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ヘイズ：S2発動中にヘイズが悪路凶敵ボスの攻撃を受け、生き延びる。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Irene.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>アイリーニ：自身から1マス以内の敵を合計20秒間浮遊させる。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/YatoAlter.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>キリンRヤトウ：キリンRヤトウが招集されている場合、全ての戦闘において最初に配置するオペレーターはキリンRヤトウとし、かつそれを手動撤退してはならない。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Mutsumi.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>若葉睦：若葉睦が悪路凶敵ボスをブロックしている間に、それを撃破する。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Nyamu.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>祐天寺にゃむ：祐天寺にゃむがフィールドにいる間、豊川祥子を除く他のバンドメンバーを3人配置する。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Pepe.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ペペ：ペペがフィールドにいる間に新砥を2体倒す。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Sakiko.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>豊川祥子：豊川祥子を10種類の異なる攻撃で撃破させる。豊川祥子が倒された時に三角初華が射程範囲内にいた場合、2回分の撃破としてカウントされる。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/SkadiAlter.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>濁心スカジ：濁心スカジと他のオペレーターがフィールドにいる間、「歳」の攻撃を3回耐える。両方のオペレーターが濁心スカジ/スカジの場合、報酬が500ドルに増加する。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Surtr.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>スルト：スルトが分隊にいる間、「自由//失効」のスキンを装備させる。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Umiri.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>八幡海鈴：スキル「居場所なき者」発動中、スキル持続時間中に敵5体へ恐怖効果を付与する。</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    ハード（150ドル）
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Botani.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ボタニ：ボタニをこのランで最初に招集される補助オペレーターにする。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Cairn.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ケルン：ケルンを用いて「歳」に神経損傷を付与し、元素爆発を起こす。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Ceobe.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ケオベ：1回のラン全体を通じて、[斧/ハルバードを](/events/jp/suis-mahjong-house/preliminary-rules#武器リスト)持った敵にはS1を、[ナイフ/剣](/events/jp/suis-mahjong-house/preliminary-rules#武器リスト)を持った敵にはS2を、[槍/パイク](/events/jp/suis-mahjong-house/preliminary-rules#武器リスト)を持った敵にはS3を使用して撃破しなければならない(≒条件を満たせない場合、当該の敵を倒してはならない)。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Closure.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>クロージャ：スキル「Q.E.D.」が有効な間、クロージャの射程範囲を合計25タイル以上にする。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Degenbrecher.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>デーゲンブレヒャー：1ステージで敵2体を凍結させる。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Dusk.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>シー：一度の戦闘/禍乱で、5人の異なるオペレーターによって少なくとも5体の小自在を出現させる。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Ling.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>リィン：リィンがフィールドにいる間、フィールドに3種類の召喚ユニットを計8体配置する。ただし、その際フィールド上の補助オペレーターはリィンのみとする。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Logos.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ロゴス：スキル「差延視界」の発動中、10個の投射物の速度を低下させ、かつ1回の発動でそれら全てを消滅させる。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/PramAlter.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>聖玲プラマニクス：編成に聖玲プラマニクスしかいない状態で、戦闘/禍乱を突破する。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Raidian.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>レイディアン：$\beta$モジュールを使用して合計15回の戦闘/禍乱をクリアする。このチャレンジでは、禍乱のクリアは2倍のカウント対象となる。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/SilverAshAlter.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>凛御シルバーアッシュ：凛御シルバーアッシュがフィールド上に存在する間、同時にフィールド上に合計5体のイェラグオペレーターを展開する。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Suzuran.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>スズラン：スズランが部隊にいる間に、少なくとも3人の他の[子供](/events/jp/suis-mahjong-house/preliminary-rules#子供リスト)オペレーターを部隊に採用する。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Ukusik.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ウクシク：3人のオペレーターに「プリャートキ！」を使用して、合計60秒間迷彩バフを適用する。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Vigil.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ヴィジェル：ランで最初に招集する星6先鋒をヴィジェルにする。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/VinaVictoria.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ヴィーナ・ヴィクトリア：朔殻がヴィーナが生成したライオンによってブロックされており、かつフィールドに身形がなく、かつ妄躯が生きている間に、朔殻にダメージを与える。</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    超ハード（250ドル）
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Flametail.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>フレイムテイル：スズランがフレイムテイルを攻撃範囲に収めた状態で、フレイムテイルが悪路凶敵ボスの攻撃を10回回避する。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Ju.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ジュー: 後獣に重傷デバフを与える。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/KaltsitAlter.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ケルシー・エスペランタ：S3でMon3trの位置を調節し、位置調整後にMon3trで身形を倒す。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Nasti.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ナスティ：遠距離攻撃オペレーターをナスティによって作成された高台に配置し、そのオペレーターが朔殻の回避を無視して倒す（確定ダメージ・または元素）。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/OrchidAlter.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>焔狐竜オーキッド：オーキッドを、妄躯本体と身形にダメージを与える唯一のオペレーターにする。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/SpecterAlter.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>帰溟スペクター：分隊に斬業ホシグマを入れない。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Typhon.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ティフォン：1回の戦闘で、ティフォンを使って4種類の異なる[動物](/events/jp/suis-mahjong-house/preliminary-rules#動物リスト)を撃破する。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Wang.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ウァン：チーム全体で、歳一家の兄弟姉妹全員を勧誘し、かつ彼ら全てのバイアスボーナスを完了する。</span>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    狂気（777ドル）
+    <ul style={{ paddingLeft: '1.5em', marginTop: 0, marginBottom: 0 }}>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Phantom.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ファントム：悪路凶敵ステージにいる間、ファントムの攻撃力を60,000以上に上げ、ファントムが7層以降(6層では不可)ステージにおいて朔殻/妄躯の両方にトドメを刺す。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Wisadel.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ウィシャデル：ウィシャデルが部隊にいる間に、ベースライン、アンジェリーナ、クエルクス、ヘドリー、ロープ、アーミヤを招集・昇進させる。記載されたオペレーターのみで5層以降の悪路凶敵ステージをクリアした場合、獲得ポイントが2倍になる。</span>
+      </li>
+      <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+        <span style={{ position: 'absolute', left: '-1.2em' }}>⚬</span>
+        <img src="/events/suis-mahjong-house/operators/Yato.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+        <span style={{ lineHeight: 1 }}>ヤトウ：ヤトウが6層以降の悪路凶敵ステージにて、朔殻からの通常攻撃を20回連続で受けた状態で生き残る。なお、その間朔殻を麻痺状態にしてはならない。</span>
+      </li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+#### 動物リスト
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Animals List](/events/suis-mahjong-house/animals_list.png)
+</div>
+
+#### 武器リスト
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Pike/Spear List](/events/suis-mahjong-house/pike-spear_list.png)
+</div>
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Axe/Polearm List](/events/suis-mahjong-house/axe-polearm_list.png)
+</div>
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Knife/Sword List 1](/events/suis-mahjong-house/knife-sword_list_1.png)
+</div>
+
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center"  }}>
+  ![Knife/Sword List 2](/events/suis-mahjong-house/knife-sword_list_2.png)
+</div>
+
+#### 「子供」リスト
+<ul style={{ paddingLeft: '2.5em' }}>
+  <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+    <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+    <img src="/events/suis-mahjong-house/operators/Cuora.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+    <span style={{ lineHeight: 1 }}>クオーラ</span>
+  </li>
+  <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+    <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+    <img src="/events/suis-mahjong-house/operators/Gummy.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+    <span style={{ lineHeight: 1 }}>グム</span>
+  </li>
+  <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+    <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+    <img src="/events/suis-mahjong-house/operators/Ifrit.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+    <span style={{ lineHeight: 1 }}>イフリータ</span>
+  </li>
+  <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+    <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+    <img src="/events/suis-mahjong-house/operators/Lunacub.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+    <span style={{ lineHeight: 1 }}>ルナカブ</span>
+  </li>
+  <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+    <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+    <img src="/events/suis-mahjong-house/operators/Popukar.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+    <span style={{ lineHeight: 1 }}>ポプカル</span>
+  </li>
+  <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+    <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+    <img src="/events/suis-mahjong-house/operators/ProjektRed.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+    <span style={{ lineHeight: 1 }}>レッド</span>
+  </li>
+  <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+    <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+    <img src="/events/suis-mahjong-house/operators/Rosmontis.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+    <span style={{ lineHeight: 1 }}>ロスモンティス</span>
+  </li>
+  <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+    <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+    <img src="/events/suis-mahjong-house/operators/Shamare.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+    <span style={{ lineHeight: 1 }}>シャマレ</span>
+  </li>
+  <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+    <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+    <img src="/events/suis-mahjong-house/operators/Ukusik.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+    <span style={{ lineHeight: 1 }}>ウクシク</span>
+  </li>
+  <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25em', position: 'relative' }}>
+    <span style={{ position: 'absolute', left: '-1.2em' }}>•</span>
+    <img src="/events/suis-mahjong-house/operators/Vermeil.png" alt="" style={{ height: '1.5em', width: 'auto', marginRight: '0.3em', flexShrink: 0 }} />
+    <span style={{ lineHeight: 1 }}>ヴァーミル</span>
+  </li>
+</ul>
